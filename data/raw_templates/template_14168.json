@@ -1,0 +1,14 @@
+{
+  "id": 14168,
+  "name": "Summarize and answer Re:amaze support emails with Gemini and SOP knowledge base",
+  "description": "This template demonstrates an AI-powered email automation system for Re:amaze, summarizing and responding to customer inquiries using a structured knowledge base to ensure accurate and consistent replies.\n\n🔹 Ideal for:\nCustomer support teams handling high volumes of email queries (e.g., e-commerce, SaaS)\nBusinesses looking to automate SOP-based responses with AI while integrating actions like order lookup or issue logging\n\nWhat this workflow does\nFetches incoming customer emails from Re:amaze\nFilters only customer messages (ignores agent replies)\nClassifies email intent (e.g. security, pricing, setup etc.)\nMatches the request against a structured SOP knowledge base\nGenerates a response using AI based strictly on SOP\nSends reply back to the customer automatically\n\nKey Features:\nPrevents duplicate replies using deduplication logic\nEnsures responses follow SOP (reduces hallucination)\nScalable for high-volume email handling\n\nRequirements\nRe:amaze API access (for fetching & replying to conversations)\nAI model (e.g., OpenAI / Gemini configured in n8n)\nSOP knowledge base (Google Sheets or Code tool)\n\nHow to set up\nAdd your Re:amaze API credentials in HTTP nodes\n\nTo get the API Key, you have to login to the Re:amaze plateform(https://www.reamaze.com/)\n\nHere is the API documentation -https://www.reamaze.com/api/get_messages\n\nConfigure your AI model credentials\nConnect your SOP knowledge base (Google Sheets or internal tool)\nTest the workflow using sample customer emails\n\n🚀 This template can be extended to support multi-channel support (chat, tickets, etc.)\n\nNeed Help?\nask in the Forum!\n\nHappy Hacking!",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

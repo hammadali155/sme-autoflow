@@ -1,0 +1,9 @@
+{
+  "id": 4679,
+  "name": "Daily Auto-Archive for Gmail Messages",
+  "description": "Who is this for?\n\nProfessionals, solopreneurs, or productivity enthusiasts who want to keep their Gmail inbox clean and organized without manual effort.\n\nWhat problem does this solve?\n\nManually archiving emails clutters your time and slows you down. This workflow automates inbox cleanup by removing the \"INBOX\" label from messages received over 24 hours ago. A perfect companion to AI-based labeling workflows, this keeps your inbox light and relevant.\n\nWhat this workflow does\n\nTriggers every day at 4 AM\nFetches Gmail messages from the INBOX that are older than 24 hours\nProcesses them one by one using the Split Out node\nRemoves the INBOX label, effectively archiving the messages\n\nSetup\n\nConnect your Gmail account using OAuth2 credentials.\nCustomize the Schedule Trigger node to adjust the run time.\nModify the Gmail filter if you want to archive unread or labeled emails instead.\n\nHow to customize this workflow to your needs\n\nSchedule different frequencies (e.g. twice a day or weekly).\n\n🔄 Pairs Well With\n\nThis complements the Intelligent Email Organization with AI-Powered Content Classification workflow.\n\nUse that to label emails smartly using AI, and this one to auto-archive them for a clean, clutter-free inbox.",
+  "nodes": [
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

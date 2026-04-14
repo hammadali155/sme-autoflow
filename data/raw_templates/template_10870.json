@@ -1,0 +1,12 @@
+{
+  "id": 10870,
+  "name": "Transcribe Long Audio Files Beyond 25MB Limit with FileFlows and OpenAI Whisper",
+  "description": "Who's it for\n\nThis template is designed for content creators, podcasters, businesses, and researchers who need to transcribe long audio recordings that exceed OpenAI Whisper's 25 MB file size limit (~20 minutes of audio).\n\nHow it works\n\nThis workflow combines n8n, FileFlows, and OpenAI Whisper API to transcribe audio files of any length:\n\nUser uploads an MP3 file through a web form and provides an email address\nn8n splits the file into 4 MiB chunks and uploads them to FileFlows\nFileFlows uses FFmpeg to segment the audio into 15-minute chunks (safely under the 25 MB API limit)\nEach segment is transcribed using OpenAI's Whisper API (configured for French by default)\nAll transcriptions are merged into a single text file\nThe complete transcription is automatically emailed to the user\n\nProcessing time: Typically 10-15 minutes for a 1-hour audio file.\n\nRequirements\n\nn8n instance (self-hosted or cloud)\nFileFlows with Docker and FFmpeg installed\nOpenAI API key (Whisper API access)\nGmail account for email delivery\nNetwork access between n8n and FileFlows\n\nSetup\n\nComplete setup instructions, including FileFlows workflow import, credentials configuration, and storage setup, are provided in the workflow's sticky notes.\n\nCost\n\nOpenAI Whisper API: $0.006 per minute. A 1-hour recording costs approximately $0.36.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

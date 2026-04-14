@@ -1,0 +1,13 @@
+{
+  "id": 7470,
+  "name": "Summarize PDFs with Groq AI and Convert to Audio using Qwen TTS",
+  "description": "This workflow contains community nodes that are only compatible with the self-hosted version of n8n.\n\nHow it works\nUser Uploads PDF** : The workflow accepts a PDF via webhook.\nExtract Text** : n8n extracts the text content from the PDF.\nSummarize with AI** : The extracted text is passed to an AI model (Groq) with OpenAI model for summarization.\nGenerate Audio** : The summary text is sent to a TTS (Text-to-Speech) API (Qwen-TTS-Demo), you can use other free alternatives.\nServe Result** : The workflow outputs both Summary and Audio File URL (WAV link) which you can attached to your audioPlayer.\n\nThis allows users to read or listen to the summary instantly.\n\nHow to use / Requirements\nImport Workflow** : Copy/paste the workflow JSON into your n8n instance.\nSet Up Input Trigger** : If you want users to upload directly you can use webhook or any other trigger.\nConfigure AI Node** : Add your own API key for (Groq / Open AI).\nConfigure TTS Node** : Add credentials for your chosen TTS service.\nRun Workflow** : Upload a PDF and get back the summary and audio file url.\n\nn8n-smart pdf summarizer & voice generator\n\n\nPlease reach out to me at Laiba Zubair if you need further assistance with you n8n workflows and automations!",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.lmChatGroq"
+  ],
+  "tags": []
+}

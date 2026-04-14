@@ -1,0 +1,11 @@
+{
+  "id": 9735,
+  "name": "Subdomain Enumeration with Subfinder, HTTPX & GPT-4-Mini for Security Reconnaissance",
+  "description": "Generates a wordlist of 1,000–15,000 subdomains created by an AI agent by correlating detected technologies and recurring patterns.\nObjective\nAssist security researchers, bug bounty hunters, and web pentesters in the reconnaissance phase by incorporating an AI agent that generates additional potential subdomains. This enables discovery of assets outside the scope of traditional scans and expands the analyzable attack surface.\nHow it works\nThe user uploads a list of domains to scan (scope).\nThe workflow performs a passive, comprehensive scan using four sources (subfinder, assetfinder, crt.sh, Wayback Machine).\nThe scan results and detected technologies are passed to an AI agent.\nThe agent runs in a loop up to 20 iterations, generating new subdomains each pass (average output depends on input and model).\nGenerated subdomains are validated and deduplicated. Syntax is checked and availability is tested (host active / httpx).\nRequirements\nSSH access with a root user and the following tools:\n\nSubfinder\nAssetfinder\nHTTPX\n\nIt is recommended to use a VPS with SSH because if the scope is very large the workflow will take a long time.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

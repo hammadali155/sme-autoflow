@@ -1,0 +1,17 @@
+{
+  "id": 12462,
+  "name": "Create AI product images and marketing videos with NanoBanana Pro, Veo 3.1 and Blotato",
+  "description": "💥 Generate product images with NanoBanana Pro to Veo videos and Blotato\n\nWho is this for?\n\nThis workflow is designed for:\nContent creators and marketers\nE-commerce and product-based businesses\nAgencies producing social media visuals and videos\nAutomation builders looking for AI-powered creative pipelines\n\nIt is ideal for anyone who wants to automate product image and video creation using AI and publish content without manual work.\n\nWhat problem is this workflow solving? / Use case\n\nCreating product visuals and marketing videos usually requires multiple tools, manual prompt writing, and repetitive steps.\n\nThis workflow solves:\nManual image and video creation\nInconsistent visual quality across assets\nTime-consuming prompt iteration\nManual video publishing to social platforms\n\nThe workflow automates the entire process from image generation to video publishing using AI.\n\nWhat this workflow does\n\nThis workflow provides an end-to-end automation pipeline:\n\nGenerates high-quality product images using NanoBanana Pro\nApplies Contact Sheet Prompting to explore multiple visual variations\nConverts selected images into short marketing videos using Veo 3.1\nAutomatically publishes the final videos via BLOTATO\n\nThe result is a fully automated creative workflow that turns AI prompts into ready-to-publish video content.\n\nSetup\n\nTo use this workflow, you need the following services and credentials:\n\nOpenAI API**\n  Used for image analysis and prompt generation\nNanoBanana Pro (fal.ai)**\n  Product image generation  \n  API: https://fal.ai/models/fal-ai/nano-banana-pro/edit/api\nVeo 3.1 (fal.ai)**\n  Video generation  \n  API: https://fal.ai/models/fal-ai/veo3.1/first-last-frame-to-video\nBlotato**\n  Video publishing to social platforms  \n  Sign up at BLOTATO\n\nAll credentials must be added in n8n before running the workflow.\n\nHow to customize this workflow to your needs\n\nYou can easily adapt this workflow by:\nModifying AI prompts to match your brand style\nAdjusting image composition and realism parameters in NanoBanana Pro\nChanging video motion, pacing, and aspect ratio in Veo 3.1\nSelecting different social platforms or publishing rules in Blotato\nReplacing or extending individual steps while keeping the same architecture\n\nThe workflow is modular and can be reused for multiple products or campaigns.\n\n🎥 Watch This Tutorial\n\n👋 Need help or want to customize this?\n📩 Contact: LinkedIn  \n📺 YouTube: @DRFIRASS  \n🚀 Workshops: Mes Ateliers n8n\n\n📄 Documentation: Notion Guide\nNeed help customizing?\nContact me for consulting and support : Linkedin / Youtube / 🚀 Mes Ateliers n8n  ",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 2864,
+  "name": "🐋🤖 DeepSeek AI Agent + Telegram + LONG TERM Memory 🧠",
+  "description": "This n8n workflow template is designed to integrate a DeepSeek AI agent with Telegram, incorporating long-term memory capabilities for personalized and context-aware responses. Here's a detailed breakdown:\n\nCore Features\nTelegram Integration  \nUses a webhook to receive messages from Telegram users.\nValidates user identity and message content before processing.\n\nAI-Powered Responses  \nEmploys DeepSeek's AI models for conversational interactions.\nIncludes memory capabilities to personalize responses based on past interactions.\n\nError Handling  \nSends an error message if the input cannot be processed.\n\nModel Options 🧠\nDeepSeek-V3 Chat**: Handles general conversational tasks.\nDeepSeek-R1 Reasoning**: Provides advanced reasoning capabilities for complex queries.\nMemory Buffer Window**: Maintains session context for ongoing conversations.\n\nQuick Setup 🛠️\nTelegram Webhook Configuration\nSet up a webhook using the Telegram Bot API:\n      https://api.telegram.org/bot{my_bot_token}/setWebhook?url={url_to_send_updates_to}\n      Replace {my_bot_token} with your bot's token and {url_to_send_updates_to} with your n8n webhook URL.\nVerify the webhook setup using:\n      https://api.telegram.org/bot{my_bot_token}/getWebhookInfo\nDeepSeek API Configuration\nBase URL: https://api.deepseek.com\nObtain your API key from the DeepSeek platform.\n\nImplementation Details 🔧\nUser Validation\nThe workflow validates the user's first name, last name, and ID using data from incoming Telegram messages.\nOnly authorized users proceed to the next steps.\n\nMessage Routing\nRoutes messages based on their type (text, audio, or image) using a switch node.\nEnsures appropriate handling for each message format.\n\nAI Agent Interaction\nProcesses text input using DeepSeek-V3 or DeepSeek-R1 models.\nCustomizable system prompts define the AI's behavior and rules, ensuring user-centric and context-aware responses.\n\nMemory Management\nRetrieves long-term memories stored in Google Docs to enhance personalization.\nSaves new memories based on user interactions, ensuring continuity across sessions.\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDocs",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}

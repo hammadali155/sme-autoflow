@@ -1,0 +1,11 @@
+{
+  "id": 3078,
+  "name": "5 Ways to Process Images & PDFs with Gemini AI in n8n",
+  "description": "How it works\n\nMany users have asked in the support forum about different methods to analyze images and PDF documents with Google Gemini AI in n8n. This workflow answers that question by demonstrating five different approaches:\n\nSingle image with auto binary passthrough - The simplest approach using AI Agent's automatic binary handling\nMultiple images with predefined prompts - For customized analysis with different instructions per image\nNative n8n item-by-item processing - For handling multiple items using n8n's standard workflow paradigm\nPDF analysis via direct API - For document analysis and text extraction\nImage analysis via direct API - For direct control over API parameters\nEach method has advantages depending on your specific use case, data volume, and customization needs.\n\nSet up steps\n\nSetup time: ~5-10 minutes\n\nYou'll need:\n\nA Google Gemini API key\nn8n with HTTP Request and AI Agent nodes\nImportant: For the HTTP Request nodes making direct API calls to Gemini (Methods 3, 4, and 5), you'll need to set up Query Authentication with your Gemini API key. Add a parameter named \"key\" with your API key value in the Query Auth section of these nodes.\n\nI'll updated this if I find better ways. Also let me know if you know other ways. Eager to learn :) \n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

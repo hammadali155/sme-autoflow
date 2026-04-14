@@ -1,0 +1,12 @@
+{
+  "id": 4875,
+  "name": "Create a Telegram Customer Support Bot with GPT4-mini and Google Docs Knowledge",
+  "description": "🤖 AI Customer Support Agent with Google Docs Knowledge (Telegram + OpenAI)\n\nThis no-code workflow turns your Telegram bot into an intelligent, always-on AI support agent that references your business documentation in Google Docs to respond to customer queries—instantly and accurately.\n\nWatch full step-by-step video tutorial of the build here:\nhttps://youtu.be/Mlv7CjGO7wI\n\n🔧 How it works:\nTelegram Trigger – Captures incoming messages from users on your Telegram bot\n\nLangchain AI Agent (OpenAI GPT) – Interprets the message and uses RAG (retrieval-augmented generation) techniques to craft an answer\n\nGoogle Docs Tool – Connects to and retrieves context from your specified Google Doc (e.g. FAQ, SOPs, policies)\n\nMemory Buffer – Keeps track of recent chat history for more human-like conversations\n\nTelegram Reply Node – Sends the AI-generated response back to the user\n\n💡 Use Cases:\nE-commerce customer service\n\nSaaS product onboarding\n\nInternal helpdesk bot for teams\n\nWhatsApp-style support for digital businesses\n\n🧠 What makes this powerful:\nSupports complex questions by referencing a live Google Doc knowledge base\n\nWorks in plain conversational language (no buttons or forms needed)\n\nRuns 24/7 with zero code\n\nEasily extendable to Slack, WhatsApp, or email support\n\n🛠️ Tools used:\nTelegram Node (trigger + send)\n\nLangchain Agent with OpenAI GPT\n\nGoogle Docs Tool\n\nMemory Buffer\n\nSticky Notes for easy understanding",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}

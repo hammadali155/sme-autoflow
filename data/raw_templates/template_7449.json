@@ -1,0 +1,11 @@
+{
+  "id": 7449,
+  "name": "Talk to Your Google Sheets Using ChatGPT-5",
+  "description": "This n8n workflow template creates an intelligent data analysis chatbot that can answer questions about data stored in Google Sheets using OpenAI's GPT-5 Mini model. The system automatically analyzes your spreadsheet data and provides insights through natural language conversations.\n\nWhat This Workflow Does\n\nChat Interface**: Provides a conversational interface for asking questions about your data\nSmart Data Analysis**: Uses AI to understand column structures and data relationships\nGoogle Sheets Integration**: Connects directly to your Google Sheets data\nMemory Buffer**: Maintains conversation context for follow-up questions\nAutomated Column Detection**: Automatically identifies and describes your data columns\n\n🚀 Try It Out!\n\n1. Set Up OpenAI Connection\n\nGet Your API Key\nVisit the OpenAI API Keys page.\nGo to OpenAI Billing.\nAdd funds to your billing account.\nCopy your API key into your OpenAI credentials in n8n (or your chosen platform).\n\n2. Prepare Your Google Sheet\n\nConnect Your Data in Google Sheets\nData must follow this format: Sample Marketing Data\nFirst row** contains column names.\nData should be in rows 2–100.\nLog in using OAuth, then select your workbook and sheet.\n\n3. Ask Questions of Your Data\n\nYou can ask natural language questions to analyze your marketing data, such as:\nTotal spend** across all campaigns.\nSpend for Paid Search only**.\nMonth-over-month changes** in ad spend.\nTop-performing campaigns** by conversion rate.\nCost per lead** for each channel.\n\n📬 Need Help or Want to Customize This?\n📧 rbreen@ynteractive.com  \n🔗 LinkedIn\n🔗 n8n Automation Experts\n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}

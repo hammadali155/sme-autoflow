@@ -1,0 +1,19 @@
+{
+  "id": 2845,
+  "name": "Complete business WhatsApp AI-Powered RAG Chatbot using OpenAI",
+  "description": "The provided workflow in n8n is designed to create a Business WhatsApp AI RAG (Retrieval-Augmented Generation) Chatbot.\n\nHow it works:\nWebhook Setup: The workflow begins by setting up webhooks for verification and response. The Verify webhook receives GET requests and sends back a verification code, while the Respond webhook handles incoming POST requests from Meta regarding WhatsApp messages.\nMessage Handling: Once a message is received, the workflow checks if the incoming JSON contains a user message. If it does, the message is processed further; otherwise, a generic response is sent.\nAI Agent Interaction: The user's message is passed to the AI Agent node, which uses a conversational agent with a predefined system message tailored for an electronics store. This ensures that the AI provides accurate and professional responses based on the knowledge base.\nKnowledge Base Utilization: The AI Agent references a knowledge base stored in Qdrant, a vector database. Documents from Google Drive are downloaded, vectorized using OpenAI embeddings, and stored in Qdrant for retrieval during conversations.\nResponse Generation: The AI Agent generates a response using the OpenAI chat model (gpt-4o-mini) and sends it back to the user via WhatsApp.\n\nSet up steps:\nCreate Qdrant Collection:\n   Update the QDRANTURL and COLLECTION variables in the workflow.\n   Use the Create collection HTTP request node to initialize the collection in Qdrant.\n\nVectorize Documents:\n   Configure the Get folder and Download Files nodes to fetch documents from a specified Google Drive folder.\n   Use the Embeddings OpenAI node to generate embeddings for the downloaded files.\n   Store the vectorized documents in Qdrant using the Qdrant Vector Store node.\n\nConfigure Webhooks:\n   Ensure both Verify and Respond webhooks have the same URL.\n   Set the Verify webhook to use the GET HTTP method and the Respond webhook to use the POST HTTP method.\n\nSet Up AI Agent:\n   Define the system prompt for the AI Agent, specifying guidelines for product information, technical support, customer service, and knowledge base usage.\n   Link the AI Agent to the OpenAI chat model and configure any additional tools as needed.\n\nTest Workflow:\n   Trigger the workflow manually using the When clicking ‘Test workflow’ node to ensure all components are functioning correctly.\n   Monitor the flow of data through the nodes and verify that responses are being generated and sent accurately.\n\nBy following these steps, the workflow will be fully operational, enabling a robust AI-powered chatbot capable of handling customer inquiries via WhatsApp.\n\nNeed help customizing?  \nContact me for consulting and support or add me on Linkedin. ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.whatsApp",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

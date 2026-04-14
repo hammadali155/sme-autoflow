@@ -1,0 +1,13 @@
+{
+  "id": 2462,
+  "name": "Angie, Personal AI Assistant with Telegram Voice and Text",
+  "description": "How it works:\n\nThis project creates a personal AI assistant named Angie that operates through Telegram. Angie can summarize daily emails, look up calendar entries, remind users of upcoming tasks, and retrieve contact information. The assistant can interact with users via both voice and text inputs. \n\nStep-by-step:\n\nTelegram Trigger: The workflow starts with a Telegram trigger that listens for incoming message events. The system determines if the incoming message is voice or text. If voice, the voice file is retrieved and transcribed to text using OpenAI's API Speech to Text\n\nAI Assistant: The telegram request is passed to the AI assistant (Angie).\n\nTools Integration: The AI assistant is equipped with several tools:\n\nGet Email: Uses Gmail API to fetch recent emails, filtering by date.\nGet Calendar: Retrieves calendar entries for specified dates.\nGet Tasks: Connects to a Baserow (open-source Airtable alternative) database to fetch to-do list items.\nGet Contacts: Also uses Baserow to retrieve contact information.\n\nResponse Generation: The AI formulates a response based on the gathered information and sends back to the user on Telegram\n\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

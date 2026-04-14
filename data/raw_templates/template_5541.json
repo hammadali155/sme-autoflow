@@ -1,0 +1,14 @@
+{
+  "id": 5541,
+  "name": "Track AI Agent token usage and estimate costs in Google Sheets",
+  "description": "\nThis n8n template demonstrates how to obtain token usage from AI Agents and places the data into a spreadsheet that calculates the estimated cost of the execution.\n\nObtaining the token usage from AI Agents is tricky, because it doesn't provide all the data from tool calls. This workflow taps into the workflow execution metadata to extract token usage information.\n\nWorks well with OpenAI, Google and Anthropic. Other LLM providers might need small tweaks.\n\nHow it works\nThe AI Agent executes and then calls a subworkflow to calculate the token usage.\nThe data is stored in Google Sheets\nThe spreadsheet has formulas to calculate the estimated cost of the execution.\n\nHow to use\nThe AI Agent is used as an example. Feel free to replace this with other agents you have.\nCall the subworkflow AFTER all the other branches have finished executing.\n\nRequirements\nLLM account (OpenAI, Gemini...) for API usage.\nGoogle Drive and Sheets credentials\nn8n API key of your instance",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

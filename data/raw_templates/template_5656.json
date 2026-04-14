@@ -1,0 +1,16 @@
+{
+  "id": 5656,
+  "name": "Auto-Generate WhatsApp Proposals from Voice or Text using GPT & APITemplate",
+  "description": "How it works\n• Transcribes a WhatsApp voice or text message from a prospect using Whisper or GPT\n• Extracts key information (name, need, context, urgency) via AI\n• Matches the most relevant service pack by comparing the prospect’s need with Airtable data\n• Dynamically fills a branded template via APITEMPLATE (HTML or PDF)\n• Generates a clean, personalized business proposal — including dynamic links (payment, calendar, etc.)\n• Sends the final PDF back instantly via WhatsApp or email\n\nSet up steps\n• ⏱ Estimated setup time: 45–60 minutes\n• ✅ You’ll need:\n ◦ WhatsApp Business Cloud API access (with webhook configured)\n ◦ OpenAI API key (Whisper + GPT)\n ◦ Airtable (to store service packs and client input)\n ◦ APITEMPLATE account (template with placeholders like {{nom}}, {{prix}}, {{lien_reservation}}, etc.)\n ◦ n8n instance (cloud or self-hosted)\n\n• 📦 Create your service packs in Airtable with associated links (Stripe, Calendly…)\n• 🔗 The proposal auto-includes these links dynamically inside the PDF\n• 🚀 Workflow orchestrates the end-to-end process: from WhatsApp input to PDF delivery",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.apiTemplateIo",
+    "n8n-nodes-base.whatsApp",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

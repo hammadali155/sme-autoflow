@@ -1,0 +1,11 @@
+{
+  "id": 8904,
+  "name": "Automate Google Maps Lead Generation with Perplexity AI and Email Verification",
+  "description": "Overview ✨\n\nThis template finds businesses on Google Maps → writes to Google Sheets → enriches + **verifies email contact so your outreach stays clean and deliverable. It includes Sticky Notes  to explain the flow and setup.\n\nWhat it does 🔎➡️📄➡️✅\n\nSearch & save: Fetch places and append rows (Name, Address, Website, Rating, Phone) to your sheet.\nEnrich: Ask an LLM (Perplexity) for Email + a short company Background.\nVerify emails: For Email Verification we use VerificarEmails  to validate every email address before writing back (fewer bounces, less blocking).\n\n&gt; ℹ️ VerificarEmails node: install the community node @verificaremails/n8n-nodes-verificaremails (Settings → Community Nodes) and use it until it’s approved as a core node. ✨\nYoutube Video\n\nRequirements 🔐\n\nUse n8n Credentials for: Google Sheets, Perplexity (Bearer), and VerificarEmails.\nKeep prompts short and temperature: 0 to lower cost.\nCreate a Google Sheet with the following headers: UUID, Name, Address, Website, Rating\tEmail, Valid, Email, Phone, Valid Phone, Summary\n\nHow to run ▶️\n\nSet your search params (query, locale, pages).\nRun the flow: it saves results → enriches → verifies emails → updates the sheet.\nIf the read/update step doesn’t run, ensure the finalization (Done) path and the correct sheet/tab are selected.\n\nWhy verify? ✉️🧹\n\nBad emails cause bounces, throttling, and blocks. Verifying first protects sender reputation and improves deliverability.\nBeyond emails, VerificarEmails also offers **phone, names. Check Email Validation API documentation to better understand verification results.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

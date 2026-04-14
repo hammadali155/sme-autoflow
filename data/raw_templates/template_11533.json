@@ -1,0 +1,12 @@
+{
+  "id": 11533,
+  "name": "Generate course certificates from Google Sheets with Stencil PDF and Outlook",
+  "description": "Automatically generate and send course certificates when new participants are added to Google Sheets\n\nThis workflow creates PDF certificates using Stencil, stores them in Google Drive, and emails them to participants.\n\nHow it works\n\nA new row is added to the Google Sheets document (via form, webhook, or manual entry)\nThe workflow generates a PDF certificate using the Stencil API\nThe PDF is uploaded to a Google Drive folder for archiving\nThe certificate is sent to the participant via Outlook\nThe Google Sheet is updated with the file link and send timestamp\n\nSetup steps\n\nCreate a free account at stencilpdf.com and set up a certificate template\nConnect your Google account and select the target Sheet and Drive folder\nConnect your Outlook account for sending emails\nConfigure the Stencil API credentials (Bearer Auth)\nAdjust the email template text as needed\n\nPrerequisites\n\nFree Stencil account with certificate template\nGoogle account (Sheets + Drive)\nOutlook/Microsoft 365 account\n`",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.microsoftOutlook"
+  ],
+  "tags": []
+}

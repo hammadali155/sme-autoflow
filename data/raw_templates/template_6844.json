@@ -1,0 +1,14 @@
+{
+  "id": 6844,
+  "name": "Manage Cloudflare DNS Records with AI-powered Chat Assistant",
+  "description": "\nThis n8n flow demos basic dev-ops operation task, dns records management. \n\nAI agent with light and basic prompt functions like getter and setter for DNS records. \n\nIn this special case, we are managing remote dns server, via API calls - that are handled on CloudFlare platform side.\n\nUse-cases for this flow can be standalone, or you can chain it in your pipe-line to get powerful infrastructure flows for your needs.\n\nHow it works\n\nwe created basic agent and gave it a prompt to know about one tool: cf_tool - sub-routine (to itself flow - or it can be separate dedicated one)\nprompt have defined arguments that are needed for passing them when calling agent, for each action specifically\ntool it self have basic if switch that is - based of a action call - calling specific CloudFlare API endpoint (and pass down the args from the tool)\n\nRequirements\n\nFor storing and processing of data in this flow you will need:\n\nCloudFlare.com API key/token - for retrieving your data (https://dash.cloudflare.com/?to=/:account/api-tokens)\nOpenAPI credentials (or any other LLM provider) saved - for agent chat\n(Optional) PostGres table for chat history saving\n\nOfficial CloudFlare api Documentation\n\nFor full details and specifications please use API documentation from: https://developers.cloudflare.com/api/\n\nLinkedin post\n\nLet me know if you found this flow usefull on my Linkedin post &gt; here.\n\ntags: #cloudflare, #dns, #domain\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat"
+  ],
+  "tags": []
+}

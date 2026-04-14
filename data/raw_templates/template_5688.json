@@ -1,0 +1,10 @@
+{
+  "id": 5688,
+  "name": "Send Weekly Engagement Stats & Raffle Updates via WhatsApp using Airtable",
+  "description": "Scheduled Trigger:\nEvery X day at Y pm, the workflow is automatically triggered.\n\nFetch User Data:\nThe workflow retrieves all user records from the \"WhatsApp Engagement Database\" in Airtable. Each record contains the user’s WhatsApp ID, current points, and the number of raffle vouchers.\n\nPersonalized Message Preparation:\nFor each user, a personalized WhatsApp message is prepared. The message includes:\n\nThe user’s current point total\n\nThe number of raffle vouchers they have for the week\n\nEncouragement to keep engaging for more chances to win\n\nInformation about the weekly raffle and available prizes\n\nSend WhatsApp Message:\nThe workflow sends this personalized message to each user via the Whapi API, using their WhatsApp ID.\n\nResult:\nEvery active user receives a weekly update about their engagement status, raffle tickets, and a motivational message to encourage further participation. This helps boost engagement and keeps users informed about their progress and chances in the weekly raffle.",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

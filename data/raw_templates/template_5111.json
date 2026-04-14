@@ -1,0 +1,13 @@
+{
+  "id": 5111,
+  "name": "Create Adaptive RAG Chat Agent with Google Gemini and Qdrant",
+  "description": "Unlock adaptive, context-aware AI chat in your automations—no coding required!\n\nThis template is a plug-and-play n8n workflow that transforms how your chatbots, support agents, and knowledge systems respond to users. Powered by Google Gemini and a Qdrant vector database, it automatically classifies every incoming query and applies a tailor-made strategy for Factual, Analytical, Opinion, or Contextual requests—delivering the right answer, every time.\n\n🛠️ Key Features\nAutomatic Query Classification:\nSeamlessly detects whether the user wants facts, a deep analysis, opinions, or context—then routes each input to the best answering strategy.\n\nFour Dynamic Retrieval Modes:\n1) Factual: Delivers precise, accurate information\n2) Analytical: Breaks down complex topics for deep dives\n3) Opinion: Surfaces diverse viewpoints and perspectives\n4) Contextual: Connects the dots using implied or user-specific context\n\nEnd-to-End RAG Pipeline:\nUses Gemini to classify and answer, while Qdrant powers fast, smart knowledge retrieval.\n\nNo-Code Visual Editing:\nImport into n8n, connect your LLM and vector database credentials, and you’re live—customize, extend, and scale with zero backend code.\n\nReusable in Any Project:\nPerfect for customer support, research, onboarding bots, internal knowledgebases, or any adaptive AI chat interface.\n\n🚀 How it Works\n1) User submits a query (via chat or API)\n2) Query is auto-classified as Factual, Analytical, Opinion, or Contextual\n3) Adaptive retrieval strategy is triggered\n(each with its own prompt logic and memory buffer)\n4) Smart knowledge search is performed using Gemini and Qdrant\n5) Response is generated and sent back to the user—tailored to the query type!\n\n🧩 What’s Included\nFull n8n workflow (.json)\nStep-by-step setup instructions\nSample prompts and system messages for each strategy\nLifetime updates (as the workflow evolves)\n\n💡 Use Cases\nChatbots that adapt to every user’s intent\nInternal/external FAQ and helpdesk automations\nAI research and summarization agents\nProduct support and onboarding flows\n\nAny scenario where smarter, more relevant answers = better user experience\n\nReady to build smarter automations? Import this template, connect your Gemini & Qdrant accounts, and let your AI agent adapt to every conversation.",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+    "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

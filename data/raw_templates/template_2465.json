@@ -1,0 +1,18 @@
+{
+  "id": 2465,
+  "name": "Building Your First WhatsApp Chatbot",
+  "description": "This n8n template builds a simple WhatsApp chabot acting as a Sales Agent. The Agent is backed by a product catalog vector store to better answer user's questions.\n\nThis template is intended to help introduce n8n users interested in building with WhatsApp.\n\nHow it works\nThis template is in 2 parts: creating the product catalog vector store and building the WhatsApp AI chatbot.\nA product brochure is imported via HTTP request node and its text contents extracted.\nThe text contents are then uploaded to the in-memory vector store to build a knowledgebase for the chatbot.\nA WhatsApp trigger is used to capture messages from customers where non-text messages are filtered out.\nThe customer's message is sent to the AI Agent which queries the product catalogue using the vector store tool.\nThe Agent's response is sent back to the user via the WhatsApp node.\n\nHow to use\n\nOnce you've setup and configured your WhatsApp account and credentials\nFirst, populate the vector store by clicking the \"Test Workflow\" button.\nNext, activate the workflow to enable the WhatsApp chatbot.\nMessage your designated WhatsApp number and you should receive a message from the AI sales agent.\nTweak datasource and behaviour as required.\n\nRequirements\nWhatsApp Business Account\nOpenAI for LLM\n\nCustomising this workflow\n\nUpgrade the vector store to Qdrant for persistance and production use-cases.\nHandle different WhatsApp message types for a more rich and engaging experience for customers.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.whatsApp",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

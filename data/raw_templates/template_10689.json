@@ -1,0 +1,14 @@
+{
+  "id": 10689,
+  "name": "Automated SEO Watchlist: Continuous Audits with Decodo, Gemini & Google Sheets",
+  "description": "Automated SEO Watchlist: Continuous Audits Powered by Decodo, Gemini and Google Sheets\n\nAutomate continuous SEO audits with Decodo and Gemini AI — live data, smart insights, and Google Sheets tracking with team alerts.\n\nWho’s it for\n\nThis workflow is designed for SEO specialists, marketing teams, agencies, and website owners who want an effortless, automated way to monitor SEO health. It’s perfect for ongoing audits, content monitoring, and proactive SEO management — without the manual workload.\n\nHow it works / What it does\n\nEvery five days, the workflow:\n\nReads a list of URLs from Google Sheets.\nUses Decodo to fetch live on-page data — titles, meta descriptions, headings, schema, links, and Core Web Vitals.\nPasses that data to Gemini AI for an advanced SEO analysis and scoring based on key factors (content, metadata, links, speed, and structure).\nParses results via a Structured Output Parser for clean JSON output.\nStores findings in Google Sheets and sends a Telegram alert when the audit completes.\n\nWhy Decodo matters\n\nDecodo is the backbone of this workflow.\nIt powers the real-time page inspection, ensuring Gemini AI has complete, accurate data to analyze. Decodo transforms static audits into live, intelligent monitoring — making your SEO insights far more actionable and reliable.\n\nHow to set up\nConnect your Decodo API credentials.\nAdd your Google Sheets URL list.\nConfigure your Telegram bot credentials.\nEnable the workflow — it runs automatically every 5 days.\n\nRequirements\nDecodo API credentials\nGoogle Sheets OAuth connection\nTelegram Bot token\nn8n instance (Cloud or Self-hosted)\n\nHow to customize the workflow\nChange the trigger interval in the Schedule Trigger node.\nModify the SEO Analyzer (LLM Chain) weights for different scoring.\nExtend the Store Result node to integrate with dashboards or databases.\nAdjust the AI prompt for additional SEO checks (e.g., backlinks, readability, image optimization).\n\n✅ Highlights\nAutomated SEO auditing\nReal-time data from Decodo\nSmart analysis powered by Gemini AI\nStructured reporting in Google Sheets\nTeam notifications via Telegram",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

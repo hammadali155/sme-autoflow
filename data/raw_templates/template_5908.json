@@ -1,0 +1,15 @@
+{
+  "id": 5908,
+  "name": "Real-time Email RAG Assistant with Gmail, OpenAI GPT, and PGVector",
+  "description": "🧠 Email real time RAG Assistant with Gmail, OpenAI & PGVector\n\n📌 Who’s it for\n\nThis workflow is ideal for:\n\nProfessionals  \nProject managers  \nSales and support teams  \nAnyone managing high volumes of Gmail messages\n\nIt enables fast and intelligent search through your email inbox using natural language queries.\n\n⚙️ How it works / What it does\n\nContinuously monitors your Gmail inbox for new emails.  \nExtracts email content and metadata (subject, body, sender, date).  \nConverts email content into vector embeddings using OpenAI.  \nStores embeddings in a PostgreSQL database with PGVector.  \nA conversational AI agent performs semantic search on your stored email history.  \nSupports time-sensitive and context-aware responses via OpenAI Chat model.\n\n🚀 How to set up\n\nConnect your Gmail account to the Gmail Trigger node (with API access enabled).\nConfigure OpenAI credentials for the Embedding and Chat nodes.\nSet up a PostgreSQL database with the PGVector extension enabled.\nImport the workflow into your n8n instance (Cloud or Self-hosted).\nCustomize parameters like polling frequency, embedding settings, or vector query depth.\n\n📋 Requirements\n\n✅ n8n instance (Self-hosted or Cloud)  \n✅ Gmail account with API access  \n✅ OpenAI API Key  \n✅ PostgreSQL database with PGVector extension installed  \n\n🛠️ How to customize the workflow\n\nEmail Filtering**: Change filters in the Gmail Trigger to watch specific labels or senders.\nText Splitting Granularity**: Adjust chunkSize and chunkOverlap in the text splitter node.\nQuery Depth**: Modify topK in the vector search node to retrieve more or fewer similar results.\nPrompt Tuning**: Customize the system message or agent instructions in the RAG node.\nWorkflow Extensions**: Add notifications, error logging, Slack/Telegram alerts, or data exports.\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.vectorStorePGVector"
+  ],
+  "tags": []
+}

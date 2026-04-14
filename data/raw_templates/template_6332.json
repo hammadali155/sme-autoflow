@@ -1,0 +1,15 @@
+{
+  "id": 6332,
+  "name": "Qualify Real Estate Leads via SMS with GPT-4o, Twilio, and Google Sheets",
+  "description": "🏡 AI-Powered Real Estate Lead Qualifier (n8n Workflow)\n\nDescription\nThis n8n workflow automates lead engagement and qualification for real estate buyers. When someone submits a form on your real estate website, the system instantly responds via SMS, starting a conversation powered by an AI Agent. The AI asks pre-qualifying questions (like budget, location, and timeline), logs the entire conversation, and then summarizes and sends the lead info to a real estate agent. Chat history is stored in a PostgreSQL database (via Supabase) and tied to each buyer's phone number.\n\nKey Features\n📩 Instant SMS Response: Follows up immediately after form submission.\n\n🤖 AI Chat-Based Qualification: Conversational agent gathers buyer needs and preferences.\n\n🗂 Supabase Chat Memory: Stores chat history tied to the buyer’s phone number to maintain context.\n\n📊 Lead Summary & Agent Handoff: Summarizes conversation and logs it to Google Sheets for the agent.\n\n🔁 Customizable AI Questions: Easily edit the questions asked by the AI to suit your process.\n\n🤝 Connect with Me\n\nDescription  \nI’m Robert Breen, founder of Ynteractive — a consulting firm that helps businesses automate operations using n8n, AI agents, and custom workflows. I’ve helped clients build everything from intelligent chatbots to complex sales automations, and I’m always excited to collaborate or support new projects.\n\nIf you found this workflow helpful or want to talk through an idea, I’d love to hear from you.\n\nLinks  \n🌐 Website: https://www.ynteractive.com  \n📺 YouTube: @ynteractivetraining  \n💼 LinkedIn: https://www.linkedin.com/in/robert-breen  \n📬 Email: rbreen@ynteractive.com",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.twilio",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat"
+  ],
+  "tags": []
+}

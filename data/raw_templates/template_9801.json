@@ -1,0 +1,13 @@
+{
+  "id": 9801,
+  "name": "Summarize Meeting Transcripts with GPT-4 & Sentiment Analysis for Gmail",
+  "description": "Who it's for\nProject managers, AI builders, and teams who want structured, automated meeting summaries with zero manual work.\n\nWhat it does\nThis workflow monitors a Google Drive folder for new meeting notes (PDF/TXT), extracts text, summarizes it via OpenAI GPT-4o, groups tasks by sentiment, builds a styled HTML summary, and sends it via Gmail.\n\nHow to set it up\nConnect Google Drive, OpenAI, and Gmail credentials.  \nPoint the Drive Trigger to your meeting notes folder.  \nPaste the system prompt into the AI node.  \nSet Gmail Email Type to HTML and Message to {{$json.email_html}}.  \nDrop a test file and execute once.\n\nRequirements\nn8n account  \nGoogle Drive, OpenAI, and Gmail credentials  \nNon-scanned PDFs or plain text files\n\nCustomization ideas\nAdd Slack or Notion logging  \nSupport additional file types  \nTranslate summaries automatically\n\nTags\n#ai #automation #productivity #gmail #drive #meeting-summary #openai\n",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

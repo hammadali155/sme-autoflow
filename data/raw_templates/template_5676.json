@@ -1,0 +1,11 @@
+{
+  "id": 5676,
+  "name": "Customer Onboarding Automation with HubSpot, Email Sequences and Team Alerts",
+  "description": "\nLearn Customer Onboarding Automation with n8n\n\n✅ How It Works\nThis smart onboarding automation handles new customer signups by:\n\nReceiving signup data via webhook\nValidating required customer info\nCreating a contact in HubSpot CRM\nSending a personalized welcome email\nDelivering onboarding documents after 2 hours\nSending a personal check-in email after 1 day\nSending a Week 1 success guide after 3 days\nUpdating CRM status and notifying the team at each milestone\nIt’s designed for professional onboarding, with built-in timing, CRM integration, and smart notifications to improve engagement and retention.\n\n🛠️ Setup Steps\nCreate Webhook\nAdd a Webhook node in n8n with POST method — this triggers when a new customer signs up.\nValidate Customer Data\nAdd an IF node to check if email and customerName are present.\nCreate CRM Contact\nUse a HubSpot node to create a new contact, map fields (e.g., split name into first/last).\nSend Notifications\nAdd a Telegram or Slack node to alert your team instantly.\nSend Welcome Email\nUse an Email Send node for a warm welcome, customized with customer details.\nWait 2 Hours\nAdd a Wait node to delay next steps and avoid overwhelming the customer.\nSend Onboarding Documents\nUse another Email Send node to deliver helpful PDFs or guides.\nWait 1 Day & Send Check-in\nAnother Wait node, followed by a personal check-in email using the customer’s name.\nWait 2 More Days & Send Success Guide\nDeliver Week 1 content via email to reinforce engagement.\nUpdate CRM & Notify Team\nUse HubSpot to update status and Telegram/Slack to notify your team of completion.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.hubspot"
+  ],
+  "tags": []
+}

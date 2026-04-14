@@ -1,0 +1,16 @@
+{
+  "id": 10625,
+  "name": "Track Singapore COE Prices with AI Forecasting & Smart Buy Recommendations via Telegram",
+  "description": "Introduction\nAutomates Singapore COE price tracking with AI forecasts and buy/wait recommendations. Weekly scraping collects LTA data, enriches with economic indicators, predicts 6-month trends, and alerts users via Telegram/email—helping car buyers and fleet managers make data-driven purchase decisions while avoiding manual tracking.\n\nHow it Works\nWeekly trigger scrapes LTA COE → validates → stores in Google Sheets → calculates indicators → AI forecasts trends → multi-scenario analysis → generates buy/wait signals → sends actionable alerts.\n\nSetup Steps\nAdd OpenAI/NVIDIA API credentials in n8n\nAuthenticate Google Sheets and create spreadsheet\nConfigure Telegram bot or Gmail SMTP\nSet weekly trigger (Thursday 9AM SGT post-bidding)\nAdjust alert thresholds in conditional nodes\n\nWorkflow\nSchedule Trigger → Scrape COE → Validate → Store Sheets → Fetch Historical → Calculate Indicators → AI Prediction → Merge Economics → Multi-Scenario Analysis → Compare Conditions → Generate Dashboard → Send Alerts\n\nWorkflow Steps\nScraping: Fetch LTA COE results with retry logic\nValidation: Check completeness, flag anomalies\nStorage: Append timestamped records to Sheets\nEnrichment: Calculate moving averages, volatility, seasonality\nAI Analysis: Forecast next 6 months with confidence intervals\nDecision Engine: Output buy/wait/monitor recommendation\nReporting: Create dashboard and send alerts via Telegram/email\n\nPrerequisites\nOpenAI/NVIDIA API key, Google Sheets access, Telegram bot token or Gmail, basic COE category understanding\n\nUse Cases\nFirst-time buyers timing purchases, fleet operators coordinating bulk acquisitions\n\nCustomization\nAdd SMS alerts via Twilio, integrate loan calculators for total cost analysis\n\nBenefits\nSaves 5+ hours monthly, captures 10–18% price dips, provides predictive insights (potential $10K–$25K savings)\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

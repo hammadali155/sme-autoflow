@@ -1,0 +1,13 @@
+{
+  "id": 9605,
+  "name": "AI based Data Analysis, Data Visualization and Data Report with Ada.im",
+  "description": "How it works:\n\nThis template demonstrates how to build a low-code, AI-powered data analysis workflow in n8n. It enables you to connect to various data sources (such as MySQL, Google Sheets, or local files), process and analyze structured data, and generate natural language insights and visualizations using external AI APIs.\n\nKey Features:\n\nFlexible data source selection (MySQL, Google Sheets, Excel/CSV, etc.)\n\nAI-driven data analysis, interpretation, and visualization via HTTP Request nodes\n\nAutomated email delivery of analysis results (Gmail node)\n\nStep-by-step sticky notes for credential setup and workflow customization\n\nStep-by-step:\nApply for an API Key\n\nYou can easily create and manage your API Key in the ADA official website - API. To begin with, You need to register for an ADA account.\n\nOnce on the homepage, click the bottom left corner to access the API management dashboard.\n\n\n\nHere, you can create new APIs and set the credit consumption limit for each API. A single account can create up to 10 APIs.\n\n\n\nAfter successful creation, you can copy the API Key to set credentials. You can also view the credit consumption of each API and manage your APIs.\n\n\n\nSet credentials\n\nIn HTTP nodes(DataAnalysis, DataInterpretation, and DataVisualization) select Authentication → Generic Credential Type\n\n\nChoose Header Auth → Create new credential\n\n\nName the header Authorization, which must be exactly 'Authorization', and fill in the previously applied API key\n\n\nData Source:\n\nThe workflow starts by extracting structured data from your chosen source (e.g., database, spreadsheet, or file).\n\nAI Skills:\n\nData is sent to external AI APIs for analysis, interpretation, and visualization, based on your configured queries.\n\nResult Processing:\n\nThe AI-generated results are converted to HTML or Markdown as needed.\n\nOutput:\n\nThe final report or visualization is sent via email. You can easily adapt this step to other output channels.\n\nAPI Keys Required:\n\nAda API Key: For AI data analysis\n\nGmail OAuth2: For sending emails (if using Gmail node)\n\n(Optional) Data source credentials: For MySQL, Google Sheets, etc.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.mySql",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

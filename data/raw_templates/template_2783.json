@@ -1,0 +1,19 @@
+{
+  "id": 2783,
+  "name": "AI marketing report (Google Analytics & Ads, Meta Ads), sent via email/Telegram",
+  "description": "What this workflow does\nThis workflow retrieves Online Marketing data (Google Analytics for several domains, Google Ads, Meta Ads) from the last 7 days and the same period in the previous year. The data is then prepared by AI as a table, analyzed and provided with a small summary.\nThe summary is then sent by email to a desired address and, shortened and summarized again, sent to a Telegram account.\n\nThis workflow has the following sequence:\n\ntime trigger (e.g. every Monday at 7 a.m.)\nretrieval of Online Marketing data from the last 7 days (via sub workflows)\nassignment and summary of the data\nretrieval of Online Marketing data from the same time period of the previous year\nallocation and summary of the data\npreparation in tabular form and brief analysis by AI.\nsending the report as an email\npreparation in short form by AI for Telegram (optional)\nsending as Telegram message.\n\nRequirements\nThe following accesses are required for the workflow:\nGoogle Analytics (via Google Analytics API): Documentation\nGoogle Ads (via HTTP Request -&gt; Google Ads API):Documentation\nMeta Ads (via Facebook Graph API): Documentation\nAI API access (e.g. via OpenAI, Anthropic, Google or Ollama)\nSMTP access data (for sending the mail)\nTelegram access data (optional for sending as Telegram message): Documentation\n\nYou must set up the individual sub-workflows as separate workflows. Then set the “Execute workflow trigger” here. Then select the corresponding sub-workflow in the AI Agent Tools.\nYou can select the number of domains yourself. If the data queries are not required, simply delete the corresponding tool (e.g. “Analytics_Domain_5).\n\nFeel free to contact me via LinkedIn, if you have any questions!",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.googleAnalytics",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

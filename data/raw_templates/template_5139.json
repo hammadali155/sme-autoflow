@@ -1,0 +1,15 @@
+{
+  "id": 5139,
+  "name": "Automated Instagram Reels Workflow ",
+  "description": "This workflow automates the process of creating and posting Instagram Reels, combining Google Drive, AI, Airtable, and the Facebook Graph API. It supports two content creation paths:\n\nScheduled Random Video Selection & Posting\n\nSelects a random video from a Google Drive folder named \"Random video mover\" based on a schedule.\n\nMoves the video to a processing folder for posting.\n\nManual Upload Trigger & Posting\n\nWatches a specific Google Drive folder (\"n8n reels automation on instagram\").\n\nTriggers the workflow when a new video is uploaded.\n\nCore Process (applies to both paths)\n\nDownload Video from Google Drive.\n\nAI Caption Generation with Google Gemini, using the file name as context. The AI creates concise captions with hashtags and a call-to-action.\n\nAirtable Logging to store video name, caption, and URL.\n\nInstagram Reels Posting via the Facebook Graph API.\n\nRecent Change\nIn early 2025, Meta tightened its requirements for video_url and image_url parameters. URLs must now be direct, public links to the raw media file with no redirects or authentication. Google Drive links no longer work.\n\nOur Fix\n\nStore the binary file locally on the n8n server at /tmp/video.mp4.\n\nServe the file through a public n8n webhook with the correct Content-Type.\n\nUse the webhook URL in the Facebook Graph API request.\n\nUpload succeeds without the “Media download has failed” error.\n\nCleanup\n\nDeletes the temporary file after posting.\n\nBenefits\n\nSaves time with full automation.\n\nImproves engagement through AI-generated captions.\n\nKeeps content organized in Airtable.\n\nWorks with Meta’s updated API requirements by hosting files directly from the n8n server.",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

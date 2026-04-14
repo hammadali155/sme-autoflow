@@ -1,0 +1,14 @@
+{
+  "id": 5312,
+  "name": "Generate Viral Bigfoot Vlog Videos with Veo 3",
+  "description": "Transform simple ideas into viral-ready Bigfoot vlogs! This automated workflow creates charming 8-scene video content featuring \"Sam\" the Bigfoot - a lovable, outdoorsy character inspired by popular YouTube adventure channels.\n\nHow It Works\n\nThe workflow transforms your creative concept into professional video content through three automated stages:\nStory Generation - AI creates an 8-scene narrative arc featuring Sam the Bigfoot, complete with character-consistent dialogue and engaging plot development\nHuman Approval - Review and approve the generated storyline via Slack before proceeding to video production\nVideo Production - Each scene is automatically converted into 8-second video clips using Google's VEO 3 AI, then uploaded to Google Drive for easy access\n\nRequired Credentials\n\nAnthropic API - Add your Claude API key for story generation\nFAL API - Configure your FAL.ai key for VEO 3 video generation\nSlack OAuth - Set up Slack app with channel permissions for approvals\nGoogle Drive OAuth - Connect your Google Drive for video storage\n\nConfiguration Steps\n\nImport the workflow into your n8n instance\nUpdate Slack channel ID in the notification nodes to match your desired channel\nSet Google Drive folder - Update the folder ID where videos should be stored\nTest the form trigger - The workflow starts with a web form for video ideas\nCustomize character (optional) - Modify Sam's personality in the narrative prompts\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

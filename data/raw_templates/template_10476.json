@@ -1,0 +1,11 @@
+{
+  "id": 10476,
+  "name": "Monitor & Manage Docker Containers with Telegram Bot & AI Log Analysis",
+  "description": "Monitor and manage Docker containers from Telegram with AI log analysis\n\nThis workflow gives you a smart Telegram command center for your homelab. It lets you monitor Docker containers, get alerts the moment something fails, view logs, and restart services remotely. When you request logs, they're automatically analyzed by an LLM so you get a clear, structured breakdown instead of raw terminal output.\n\nWho it's for\n\nAnyone running a self-hosted environment who wants quick visibility and control without SSHing into a server. Perfect for homelab enthusiasts, self-hosters, and DevOps folks who want a lightweight on-call assistant.\n\nWhat it does\n\nReceives container heartbeat alerts via webhook\n\nSends Telegram notifications for status changes or failures\n\nLets you request logs or restart services from chat\n\nAnalyzes logs with GPT and summarizes them clearly\n\nSupports manual “status” and “update all containers” commands\n\nRequirements\n\nTelegram Bot API credentials\n\nSSH access to your Docker host\n\nHow to set it up\n\nCreate a Telegram bot and add its token as credentials\nEnter your server SSH credentials in the SSH node\nDeploy the workflow and set your webhook endpoint\nTailor container names or heartbeat logic to your environment\n\nCustomize it\n\nSwap SSH commands for Kubernetes if you're on k8s\n\nChange the AI model to another provider\n\nExtend with health checks or auto-healing logic",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 7666,
+  "name": "AI Guest Post Generator with OpenAI & Google Sheets Automation",
+  "description": "✨ About this Template\n\nThis n8n template automates the process of writing SEO guest post content using OpenAI, based on rules and topics provided in a Google Sheet. The generated articles are saved into a separate sheet for outreach or publishing.\n\nUse cases include:\n\nSEO guest post generation\n\nContent marketing automation for agencies\n\nOutreach planning and editorial automation\n\n💡 Good to Know\n\nOpenAI API usage costs apply based on the selected model (e.g., GPT-4).\n\nThis automation uses Google Sheets and OpenAI; credentials are required to connect your accounts.\n\nStatus filtering ensures only content marked as “Start” is processed — making it safe to use in multi-user workflows.\n\n⚙️ How It Works\n\nTrigger the workflow manually (can be changed to schedule/cron or webhook).\n\nReads from a Google Sheet with guest post planning data.\n\nMerges the writing prompt, brand guidelines, and posting rules.\n\nSends the merged data to OpenAI (via the AI Agent node) to generate a guest post in German.\n\nSaves the result into another Google Sheet.\n\nUpdates the original row's status from “Start” to “Finished” to prevent duplicates.\n\n▶️ How to Use\n\nYou must connect your Google Sheets and OpenAI accounts.\n\nCustomize the AI prompt, tone, or language by editing the input structure.\n\nYou can modify the filter to run only on certain months or categories.\n\nThe Gmail node is optional and only used to notify when no action was taken.\n\n🧰 Requirements\n\nOpenAI account (API key for GPT-4 or GPT-3.5)\n\nGoogle account with access to the configured Sheets\n\nBasic knowledge of how n8n expressions work (optional)\n\n🛠️ Customising This Workflow\n\nThis guest post writer workflow can easily be adapted to other use cases:\n\nWrite social media content from a spreadsheet\n\nGenerate product descriptions from catalog data\n\nAutomatically translate or rewrite articles in different tones/languages\n\nCreate personalized outreach emails using AI\n\n🎁 The workflow includes built-in explanations (sticky notes) to guide you through each part of the process.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

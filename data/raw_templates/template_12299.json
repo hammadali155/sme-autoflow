@@ -1,0 +1,13 @@
+{
+  "id": 12299,
+  "name": "Generate 5-level AI explanations for different audiences from Telegram to Google Docs with GPT-4.1-mini",
+  "description": "\nDescription\n\nAsk any question and get five different answers instantly. Each answer is written for a different audience—from kids to business executives. Your Telegram bot delivers all five explanations in under 10 seconds and saves them to Google Docs automatically. Perfect for teachers, writers, and anyone who needs to explain things to different people.\n\nWho's It For\n\n• Educators creating multi-grade  \ncurriculum content\n•\tContent creators generating material for diverse audiences\n•\tTechnical writers producing documentation at different expertise levels\n•\tParents explaining complex topics to children\n•\tAnyone who needs to explain things to different people.\n\nHow It Works\n\n•\tTransforms any question into five distinct explanations: kid-friendly stories (5-year-olds), relatable content (teenagers), professional explanations (graduates), academic analysis (PhD researchers), and strategic insights (business executives)\n•\tFive AI agents process simultaneously for 3-8 second response times\n•\tDelivers six formatted Telegram messages (header + five explanations)\n•\tAutomatically archives complete conversations to Google Docs\n•\tUses binary tree merge architecture for reliable data handling\n\nHow to Set Up\n\n•\tCreate Telegram bot via @BotFather and add token to n8n credentials\n•\tObtain OpenAI API key and add to n8n credentials\n•\tConnect Google account to grant Docs access\n•\tCreate blank Google Doc and paste URL in workflow's Google Docs node\n•\tActivate workflow and test with any question\n\nRequirements\n\n•\tTelegram Bot API token (free)\n•\tOpenAI API key (pay-per-use\n•\tGoogle account with Docs access (free)\n•\tn8n instance (cloud or self-hosted)\n\nHow to Customize\n•\tModify AI prompts in 'Create 5 Items' node for different tones and styles\n•\tAdjust character limits in formatting nodes to control message length\n•\tChange output destinations from Telegram to Slack, email, or other platforms\n•\tSwitch AI providers from OpenAI to alternatives\n•\tAdd additional comprehension levels by duplicating AI agent nodes\n\nNeed Help?\n\nFor detailed notes and implementation, please leverage the README document at:\nhttps://drive.google.com/file/d/19Fx-FoihL70qpOi4CnEwQ6Sud2dbUnE_/view?usp=sharing\n\nJoin the Discord (https://discord.com/invite/XPKeKXeB7d) or\nJoin the n8n community forum (https://community.n8n.io/) for support\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDocs",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

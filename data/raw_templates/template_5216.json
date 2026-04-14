@@ -1,0 +1,12 @@
+{
+  "id": 5216,
+  "name": "Auto-Sync Local Events to Google Calendar with n8n",
+  "description": "\nDescription\n\nThis workflow automates the process of finding local events and adding them directly to your Google Calendar. It eliminates the need for manual event tracking by automatically scraping event information and creating calendar entries.\n\nOverview\n\nThis workflow automates the process of finding local events and adding them to your Google Calendar. It uses Bright Data to scrape event information from a specified source and then creates new events in your calendar, ensuring you never miss out on what's happening around you.\n\nTools Used\n\nn8n:** The automation platform that orchestrates the workflow.\nBright Data:** For scraping event data from websites without getting blocked.\nGoogle Calendar API:** To create and manage calendar events.\n\nHow to Install\n\nImport the Workflow: Download the .json file and import it into your n8n instance.\nConfigure Bright Data: Add your Bright Data credentials to the Bright Data node.\nSet Up Google Calendar: Authenticate your Google Calendar account in the Google Calendar node.\nCustomize: Adjust the workflow to target the specific websites and event types you're interested in.\n\nUse Cases\n\nCommunity Managers:** Keep track of local meetups and community events.\nEvent Enthusiasts:** Never miss a concert, festival, or local gathering.\nMarketing Professionals:** Monitor competitor events and industry conferences.\n\nConnect with Me\n\nWebsite:** https://www.nofluff.online\nYouTube:** https://www.youtube.com/@YaronBeen/videos\nLinkedIn:** https://www.linkedin.com/in/yaronbeen/\nGet Bright Data:** https://get.brightdata.com/1tndi4600b25 (Using this link supports my free workflows with a small commission)\n\n#n8n #automation #googlecalendar #brightdata #webscraping #events #eventautomation #localevents #calendarintegration #eventtracking #n8nworkflow #workflow #nocode #eventmanagement #productivitytools #timemanagement #eventplanning #automatedcalendar #eventdiscovery #techautomation #eventnotifications #eventscheduling #calendarsync #eventorganizer #automatedevents\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

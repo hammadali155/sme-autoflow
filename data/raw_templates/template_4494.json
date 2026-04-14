@@ -1,0 +1,14 @@
+{
+  "id": 4494,
+  "name": "Airbnb Telegram Agent - AI-powered accommodation search with voice support",
+  "description": "Welcome to my Airbnb Telegram Agent Workflow!\nThis workflow creates an intelligent Telegram bot that helps users search and find Airbnb accommodations using natural language queries and voice messages.\n\nDISCLAIMER: This workflow only works with self-hosted n8n instances! You have to install the n8n-nodes-mcp-client Community Node!\n\nWhat this workflow does\nThis workflow processes incoming Telegram messages (text or voice) and provides personalized Airbnb accommodation recommendations. The AI agent understands natural language queries, searches through Airbnb data using MCP tools, and returns mobile-optimized results with clickable links, prices, and key details.\n\nKey Features:\nVoice message support (speech-to-text and text-to-speech)\nConversation memory for context-aware responses\nMobile-optimized formatting for Telegram\nReal-time Airbnb data access via MCP integration\n\nThis workflow has the following sequence:\nTelegram Trigger - Receives incoming messages from users\nText or Voice Switch - Routes based on message type\nVoice Processing (if applicable) - Downloads and transcribes voice messages\nText Preparation - Formats text input for the AI agent\nAirbnb AI Agent - Core logic that:\n   Lists available MCP tools for Airbnb data\n   Executes searches with parsed parameters\n   Formats results for mobile display\nResponse Generation - Sends formatted text response\nVoice Response (optional) - Creates and sends audio summary\n\nRequirements:\nTelegram Bot API**: Documentation \n  Create a bot via @BotFather on Telegram\n  Get bot token and configure webhook\nOpenAI API**: Documentation\n  Used for speech transcription (Whisper)\n  Used for chat completion (GPT-4)\n  Used for text-to-speech generation\nMCP Community Client Node**: Documentation\n  Custom integration for Airbnb data\n  Requires MCP server setup with Airbnb/Airtable connection\n  Provides tools for accommodation search and details\n\nImportant: You need to set up an MCP server with Airbnb data access. The workflow uses MCP tools to retrieve real accommodation data, so ensure your MCP server is properly configured with the Airtable/Airbnb integration.\n\nConfiguration Notes:\nUpdate the Telegram chat ID in the trigger for your specific bot\nModify the system prompt in the Airbnb Agent for different use cases\nThe workflow supports both individual users and can be extended for group chats\n\nFeel free to contact me via LinkedIn, if you have any questions!",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

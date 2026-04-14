@@ -1,0 +1,9 @@
+{
+  "id": 5466,
+  "name": "Automated Restaurant Call Handling & Table Booking System with VAPI and PostgreSQL",
+  "description": "Acts as a virtual receptionist for the restaurant, handling incoming calls via VAPI without human intervention. It collects user details (name, booking time, number of people) for table bookings, checks availability in a PostgreSQL database using n8n, books the table if available, and sends confirmation. It also provides restaurant details to users, mimicking a human receptionist.\n\nKey Insights\n\nVAPI must be configured to accurately capture user input for bookings and inquiries.\nPostgreSQL database requires a table to manage restaurant bookings and availability.\n\nWorkflow Process\n\nInitiate the workflow with a VAPI call to collect user details (name, time, number of people).  \nUse n8n to query the PostgreSQL database for table availability.  \nIf a table is available, book it using n8n and update the PostgreSQL database.  \nSend a booking confirmation and hotel service details back to VAPI via n8n.  \nStore and update restaurant table data in the PostgreSQL database using n8n.\n\nUsage Guide\n\nImport the workflow into n8n and configure VAPI and PostgreSQL credentials.  \nTest with a sample VAPI call to ensure proper data collection and booking confirmation.\n\nPrerequisites\n\nVAPI API credentials for call handling  \nPostgreSQL database with booking and availability tables  \n\nCustomization Options\n\nModify the VAPI input fields to capture additional user details or adjust the PostgreSQL query for specific availability criteria.",
+  "nodes": [
+    "n8n-nodes-base.postgres"
+  ],
+  "tags": []
+}

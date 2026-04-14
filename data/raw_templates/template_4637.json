@@ -1,0 +1,23 @@
+{
+  "id": 4637,
+  "name": "Automate Social Media Content with AI for Instagram, Facebook, LinkedIn & X",
+  "description": "AI Social Media Content Automation – n8n Workflow\n\nThis workflow is built for creators, solopreneurs, SaaS founders, and agencies looking to automate their social media content process from idea to publication. It combines the power of OpenAI, Google Sheets, and official APIs for Instagram, Facebook, X (Twitter), and LinkedIn to deliver fully automated, brand-consistent social media posts — including text, images, hashtags, CTAs, and scheduling.\n\nNo more switching tools, rewriting content, or forgetting to post. Just set it up once and let your brand grow automatically.\n\n🔧 What the Workflow Does\nGenerates platform-specific post ideas based on your brand tone.\nSelects the best idea (or lets you manually input one).\nWrites tailored posts for Instagram, Facebook, X, and LinkedIn.\nAuto-generates platform-specific visuals using OpenAI (DALL·E) and uploads to Cloudinary.\nPublishes content directly using official platform APIs.\nLogs all actions to Google Sheets and optionally sends a summary email via Gmail.\n\n⚙️ How It Works\nTrigger the workflow manually, on a schedule, or from a chatbot.\nAI generates multiple post ideas and filters the best one.\nBased on the selected idea, it generates full posts for each platform.\nCustom visuals are created using OpenAI and uploaded to Cloudinary.\nFinal post content is merged and sent to Instagram, Facebook, X, and LinkedIn.\nLogs and optional reports are created in Google Sheets and Gmail.\n\n🛠️ Setup Steps\nSet up your accounts and credentials: OpenAI, Cloudinary, Gmail, Meta, LinkedIn, X, and Google Sheets.\nImport the workflow and subworkflow (Get Brand Brief) into n8n.\nReplace all placeholders (sheet IDs, access tokens, profile/page IDs, brand brief URLs).\nOptionally personalize prompts and output templates to match your brand voice.\nSetup time: ~30–45 minutes (including credentials and testing).\n\nDetailed configuration notes are included in sticky nodes throughout the workflow.\n\n📦 Included in Your Package\nJSON workflow file (main flow + brand brief subflow)\nGoogle Sheets templates for history logging\nSetup documentation (Markdown & PDF)\nPlaceholder reference sheet\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.googleDocs",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

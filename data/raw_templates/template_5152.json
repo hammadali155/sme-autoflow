@@ -1,0 +1,15 @@
+{
+  "id": 5152,
+  "name": "Automate Customer Support with Gmail, Google Sheets, ERP Data & GPT-4o AI",
+  "description": "🌐 AI Customer Support Assistant - Cloud Version\n\nWhat this workflow does:\n\nThis AI-powered customer support automation processes incoming support requests via email or chat, analyzes them using AI, retrieves relevant context, and generates draft responses for support agents.\n\nKey Features:\n\n✅ Multi-channel Input: Email & chat triggers\n✅ AI-powered Analysis: Extracts sentiment, urgency, and key information\n✅ Context Integration: Combines product manuals, ERP data, and support history\n✅ Draft Response Generation: Creates professional responses in German\n✅ Human-in-the-loop: Approval workflow before sending to customers\n\nDemo Instructions:\nUse the Chat interface to test with sample customer queries\nOr send test emails to trigger the email workflow\nWatch how AI analyzes and generates contextual responses",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

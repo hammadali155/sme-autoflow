@@ -1,0 +1,18 @@
+{
+  "id": 4766,
+  "name": "Automate LinkedIn Posts with Claude AI, DALL-E Images & Google Sheets Approval",
+  "description": "How it works\n\nThis workflow automates your entire LinkedIn content strategy, from ideation to publishing.\n\nDaily Idea Generation:** Every day, the workflow uses an advanced AI agent (Anthropic's Claude model) to generate a new, viral-optimized LinkedIn post idea, complete with a title, full text, and a detailed image description. It analyzes your past posts from a Google Sheet to ensure content is fresh and aligns with one of your four content pillars: timeless principles, case studies, growth hacks, or controversial ads.\nAI Image Creation:** It then uses OpenAI's DALL-E to create a custom, high-quality image based on the generated description and a style reference image you provide, ensuring brand consistency.\nReview & Approval Workflow:** The generated post and its accompanying image are automatically saved as a new row in a Google Sheet, marked with a \"review\" status. This gives you full editorial control.\nAutomated Publishing:** Once you approve a post by changing its status to \"ready\" in the Google Sheet, a separate part of the workflow picks it up and automatically publishes it to your LinkedIn profile at a scheduled time.\nStatus Tracking:** After publishing, the workflow updates the status in your Google Sheet to \"posted,\" so you always have a clear overview of your content pipeline.\n\nSet up steps\n\nThis workflow integrates several services. Follow these steps to get it running:\n\nCopy the Google Sheet: Make a copy of the AI Posts Content Machine Google Sheet template and select your copy in the Get Past Ideas, Save Post, Get Ready Posts, and Update Status nodes.\nSet Up Credentials: You will need to create and add API credentials for the following services within the corresponding n8n nodes:\n    Google Sheets & Google Drive: Create a Google credential.\n    Anthropic: Add your API key in the Anthropic Chat Model node.\n    OpenAI: Add your API key as a Header Auth credential in the OpenAI Image node.\n    Perplexity AI: Add your API key as a Header Auth credential inside the Perplexity Research sub-workflow.\n    LinkedIn: Create a LinkedIn credential.\nCustomize Your Content:\n    In the Idea Generator node, adjust the system prompt to reflect your specific audience, topics, and content style.\n    Create a folder in Google Drive for your post images. Add a reference image to this folder that defines your desired visual style.\n    Paste the shareable link to your style reference image into the Image Style node.\nActivate the Workflow: Enable the workflow to start the automated content creation and publishing process.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

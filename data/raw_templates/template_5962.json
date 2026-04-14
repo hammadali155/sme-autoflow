@@ -1,0 +1,14 @@
+{
+  "id": 5962,
+  "name": "Track SEO Keyword Rankings with Bright Data MCP and GPT-4o AI Analysis",
+  "description": "This workflow contains community nodes that are only compatible with the self-hosted version of n8n.\n\nThis workflow automatically monitors keyword rankings across search engines to track SEO performance and identify optimization opportunities. It saves you time by eliminating the need to manually check keyword positions and provides comprehensive ranking data for strategic SEO decision making.\n\nOverview\n\nThis workflow automatically scrapes search engine results pages (SERPs) to track keyword rankings, competitor positions, and search features. It uses Bright Data to access search results without restrictions and AI to intelligently parse ranking data, track changes, and identify SEO opportunities.\n\nTools Used\n\nn8n**: The automation platform that orchestrates the workflow\nBright Data**: For scraping search engine results without being blocked\nOpenAI**: AI agent for intelligent ranking analysis and SEO insights\nGoogle Sheets**: For storing keyword ranking data and tracking changes\n\nHow to Install\n\nImport the Workflow: Download the .json file and import it into your n8n instance\nConfigure Bright Data: Add your Bright Data credentials to the MCP Client node\nSet Up OpenAI: Configure your OpenAI API credentials\nConfigure Google Sheets: Connect your Google Sheets account and set up your ranking tracking spreadsheet\nCustomize: Define target keywords and ranking monitoring parameters\n\nUse Cases\n\nSEO Teams**: Track keyword performance and identify ranking improvements\nContent Marketing**: Monitor content ranking success and optimization needs\nCompetitive Analysis**: Track competitor keyword rankings and strategies\nDigital Marketing**: Measure organic search performance and ROI\n\nConnect with Me\n\nWebsite**: https://www.nofluff.online\nYouTube**: https://www.youtube.com/@YaronBeen/videos\nLinkedIn**: https://www.linkedin.com/in/yaronbeen/\nGet Bright Data**: https://get.brightdata.com/1tndi4600b25 (Using this link supports my free workflows with a small commission)\n\n#n8n #automation #keywordrankings #seo #searchrankings #brightdata #webscraping #seotools #n8nworkflow #workflow #nocode #ranktracking #keywordmonitoring #seoautomation #searchmarketing #organicseo #seoresearch #rankinganalysis #keywordanalysis #searchengines #seomonitoring #digitalmarketing #serp #keywordtracking #seoanalytics #searchoptimization #rankingreports #keywordresearch #seoinsights #searchperformance",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

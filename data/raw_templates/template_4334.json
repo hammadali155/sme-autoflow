@@ -1,0 +1,12 @@
+{
+  "id": 4334,
+  "name": "TradingView Signal Extractor with Gmail, Google Sheets & Telegram Notifications",
+  "description": "Stay ahead in your trading game with this powerful n8n automation workflow. Designed for real-time efficiency, this setup continuously scans your Gmail inbox for trading alerts from TradingView and ensures you never miss a signal.\n\nEvery minute, this workflow will:\n\n📩 Check Gmail for new messages using a trigger.\n🔍 Identify emails coming specifically from TradingView.\n📊 Extract key trading signals like BUY or SELL along with the company name.\n🕒 Capture the exact date and time of the alert.\n📄 Log all extracted signals neatly into a Google Sheet for easy tracking and analysis.\n📲 Instantly notify you on Telegram with a custom message so you can act fast.\n\nPerfect for traders who want an automated assistant to handle alerts, record them for analysis, and provide timely updates — all without lifting a finger.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

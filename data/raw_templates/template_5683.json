@@ -1,0 +1,10 @@
+{
+  "id": 5683,
+  "name": "One-Click YouTube Shorts Generator with Leonardo AI, GPT and ElevenLabs",
+  "description": "🎬 What it does  \nThis workflow creates an engaging YouTube Short with a single click — from script to voiceover, to visuals and background music.  \nIt combines several AI tools to automate content creation and final video assembly.\n\n⚙️ How it works  \nAccepts an input prompt or topic  \nGenerates script using GPT  \nConverts script to voiceover using ElevenLabs  \nGenerates b-roll style images via Leonardo.Ai  \nMatches background music  \nAssembles a vertical 1080×1920 MP4 video using JSON render config  \nOptionally uploads to YouTube or saves to Cloudinary\n\n🧰 Setup steps  \nAdd your credentials:  \n  Leonardo API (image generation)  \n  ElevenLabs (voiceover)  \n  Cloudinary (upload destination)  \n  Any GPT-based text generator\n\nDrop your audio/music file in the right node  \nReplace API expressions with your own credentials\n\n&gt; 🟨 Full step-by-step instructions are in sticky notes inside the workflow.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

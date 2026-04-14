@@ -1,0 +1,15 @@
+{
+  "id": 6480,
+  "name": "PDF Invoice Data Extraction & Tracking with Google Drive, Claude AI & Telegram",
+  "description": "📥 Invoice Intake & Notification Workflow\n\nThis automated n8n workflow monitors a Google Drive folder for newly uploaded invoice PDFs, extracts essential information (like client name, invoice number, amount, due date), logs the data into a Google Sheet for recordkeeping, and sends a formatted Telegram message to notify the billing team.\n\nFor step-by-step video build of workflows like this:\nhttps://www.youtube.com/@automatewithmarc\n\n✅ What This Workflow Does\n🕵️ Watches a Google Drive folder for new invoice files\n📄 Extracts data from PDF invoices using AI (LangChain Information Extractor)\n📊 Appends extracted data into a structured Google Sheet\n💬 Notifies the billing team via Telegram with invoice details\n🤖 Optionally uses Claude Sonnet AI model to format human-friendly summaries\n\n⚙️ How It Works – Step-by-Step\nTrigger: Workflow starts when a new PDF invoice is added to a specific Google Drive folder.\n\nDownload & Parse: The file is downloaded and its content extracted.\n\nData Extraction: AI-powered extractor pulls invoice details (invoice number, client, date, amount, etc.).\n\nLog to Google Sheets: All extracted data is appended to a predefined Google Sheet.\n\nAI Notification Formatting: An Anthropic Claude model formats a clear invoice notification message.\n\nTelegram Alert: The formatted summary is sent to a Telegram channel or group to alert the billing team.\n\n🧠 AI & Tools Used\nGoogle Drive Trigger & File Download\n\nPDF Text Extraction Node\n\nLangChain Information Extractor\n\nGoogle Sheets Node (Append Data)\n\nAnthropic Claude (Telegram Message Formatter)\n\nTelegram Node (Send Notification)\n\n🛠️ Setup Instructions\nGoogle Drive: Set up OAuth2 credentials and specify the folder ID to watch.\n\nGoogle Sheets: Link the workflow to your invoice tracking sheet.\n\nTelegram: Set up your Telegram bot and obtain the chat ID.\n\nAnthropic & OpenAI: Add your Claude/OpenAI credentials if formatting is enabled.\n\n💡 Use Cases\nAutomated bookkeeping and invoice tracking\n\nReal-time billing alerts for accounting teams\n\nAI-powered invoice ingestion and summary\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

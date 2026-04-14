@@ -1,0 +1,12 @@
+{
+  "id": 9793,
+  "name": "Automating Job Searches on LinkedIn and X, then Saving Results to Notion",
+  "description": "LinkedIn Job Search Automation\n\nCreator: Summer Chang\n\nSetup Instructions\nThis n8n workflow automatically searches for senior designer jobs on LinkedIn every day at 5am and saves them to a Notion database.\nPrerequisites\n\nn8n instance (cloud or self-hosted)\nNotion account with API access\nA Notion database set up to receive job listings\n\nSetup Steps\n✅ 1. Create Your Notion Database\nOr duplicate my template\n\n✅ 2. Connect Notion to n8n\n\nIn the \"Save to Notion\" node, click on the Notion credentials\nFollow the authentication flow to connect your Notion account\nSelect your job search database from the dropdown\n\n✅ 3. Customize Your Search Criteria\nIn the \"Set Search Criteria\" node, modify these parameters to match your job preferences: \n\nsearch_keywords: Job titles to search for (comma-separated)\n\nDefault: senior product designer, product design lead, senior UX designer, AI designer\n\nexcluded_keywords: Terms to filter out (comma-separated)\n\nDefault: contract, freelance\n\nlocation: Where you want to work (comma-separated)\n\nDefault: remote, san francisco\n\nf_TPR: Time filter for job postings\n\nr86400 = Last 24 hours\nr604800 = Last week\nr2592000 = Last month\n\nsortBy: How to sort results\n\nDD = Most recent first\nR = Most relevant first\n\n✅ 4. Adjust the Schedule\nIn the \"Everyday @5am\" node:\n\nClick on the node\nModify the schedule to your preferred time\nYou can set it to run daily, weekly, or at custom intervals\n\n✅ 5. Set Result Limits\nIn the \"Limit1\" node:\n\nDefault: Processes 10 jobs per run\nAdjust the maxItems value to get more or fewer results\n\n✅ 6. Configure Wait Time (Optional)\nThe \"Wait2\" node adds a 10-second delay between requests to avoid rate limiting:\n\nDefault: 10 seconds\nIncrease if you're getting blocked by LinkedIn\nDecrease for faster processing (not recommended)\n\nHow It Works\n\nTrigger: Runs automatically every day at 5am\nSearch: Queries LinkedIn with your specified criteria\nParse: Extracts job title, company, location, and URL from search results\nFilter: Removes any jobs with missing critical information\nWait: Delays between requests to avoid rate limiting\nFetch Details: Retrieves full job descriptions and poster information\nSave: Adds each job to your Notion database",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

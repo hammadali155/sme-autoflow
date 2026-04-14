@@ -1,0 +1,11 @@
+{
+  "id": 5097,
+  "name": "Midjourney Image Generator via Telegram and GoAPI",
+  "description": "This workflow connects Telegram to Midjourney through GoAPI, enabling automated image generation and upscaling directly from chat.\n\nHow it Works\nTelegram Command Trigger**: The workflow activates upon receiving a message in Telegram.\nImage Generation**: Your prompt is sent to GoAPI, which then generates an image using Midjourney.\nUpscale Selection**: You receive the generated image and select an option for upscaling.\nImage Upscaling**: The selected image is upscaled via GoAPI.\nNotifications and Logs**: Progress updates are sent to Telegram, and all images are logged in Discord.\n\nSet Up Steps\nCreate a Telegram Bot and update credentials in Telegram nodes.\nCreate a GoAPI account, obtain an API key, and update the three HTTP nodes: \"Get Generation Task,\" \"Upscale,\" and \"Get Upscale Task\".\n(Optional) Configure the Discord node for logging if desired.\n\nSetup takes approximately 10-15 minutes. Detailed descriptions are available in sticky notes within the workflow.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.discord"
+  ],
+  "tags": []
+}

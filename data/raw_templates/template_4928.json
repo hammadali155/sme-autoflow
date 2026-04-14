@@ -1,0 +1,10 @@
+{
+  "id": 4928,
+  "name": "Control Your n8n Instance Remotely with Telegram Bot Commands",
+  "description": "This workflow contains community nodes that are only compatible with the self-hosted version of n8n.\n\nYour n8n Command Center in a Telegram Chat\nRemotely manage and operate your n8n instance from Telegram with powerful admin commands.\n\nThis workflow connects your n8n instance with a Telegram Bot, giving you remote control over key admin operations through simple chat commands.\n\n📱 You can\n\nList your workflows (workflows)\n\nExecute a workflow (execute [name])\n\nActivate/deactivate workflows (activate [name], deactivate [name])\n\nList past executions (executions [name])\n\nPermanently delete archived workflows (cleanup)\n\nCreate backups of all your workflows and credentials (backup)\n\nGet help (help)\n\nGet notified when a workflow fails and when n8n instance starts.\n\n\nThis is especially useful for self-hosted instances when you want quick access to your automation environment from your mobile device.\n\n📌 Notes\n\nbackup** only works on self-hosted setups.\nexecute, **activate, deactivate, and executions require the workflow name as argument.\nWorkflows must contain the appropriate trigger nodes to be executed or activated.\nCommands and arguments are not case sensitive, there is no need to prefix with slash and spaces in the argument name are supported.\n\n⚙️ Setup\nCreate your credentials for Telegram API and n8n API.\nEdit all Telegram and n8n nodes. Select your credentials on them. On telegram nodes provide your chatid.\nDetailed step-by-step instructions are available in the workflow notes.\nIn each workflow that fails and you want to receive a warning, configure this workflow as Error Workflow in its settings.",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

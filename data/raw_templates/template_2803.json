@@ -1,0 +1,14 @@
+{
+  "id": 2803,
+  "name": "Generate Instagram Content from Top Trends with AI Image Generation",
+  "description": "How it works\n\nThis automated workflow discovers trending Instagram posts and creates similar AI-generated content. Here's the high-level process:\n\n1. Content Discovery & Analysis\nScrapes trending posts from specific hashtags\nAnalyzes visual elements using AI\nFilters out videos and duplicates\n\n2. AI Content Generation\nCreates unique images based on trending content\nGenerates engaging captions with relevant hashtags\nMaintains brand consistency while being original\n\n3. Automated Publishing\nPosts content directly to Instagram\nMonitors publication status\nSends notifications via Telegram\n\nSet up steps\n\nSetting up this workflow takes approximately 15-20 minutes:\n\n1. API Configuration (7-10 minutes)\nInstagram Business Account setup\nTelegram Bot creation\nAPI key generation (OpenAI, Replicate, Rapid Api)\n\n2. Database Setup (3-5 minutes)\nCreate required database table\nConfigure PostgreSQL credentials\n\n3. Workflow Configuration (5-7 minutes)\nSet scheduling preferences\nConfigure notification settings\nTest connection and permissions\n\nDetailed technical specifications and configurations are available in sticky notes within the workflow.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

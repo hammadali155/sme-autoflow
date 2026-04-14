@@ -1,0 +1,14 @@
+{
+  "id": 7423,
+  "name": "Lead Generation Agent",
+  "description": "\nWho this is for\n\nThis workflow is for digital marketing agencies or sales teams who want to automatically find business leads based on industry & location, gather their contact details, and send personalized cold emails — all from one form submission.\n\nWhat this workflow does\n\nThis workflow starts every time someone submits the Lead Machine Form. It then:\n\nScrapes business data* (company name, website, phone, address, category) using *Apify** based on business type & location.\nExtracts the best email address* from each business website using *Google Gemini AI**.\nStores valid leads* in *Google Sheets**.\nGenerates cold email content** (subject + body) with AI based on your preferred tone (Friendly, Professional, Simple).\nSends the cold email** via Gmail.\nUpdates the sheet** with send status & timestamp.\n\nSetup\n\nTo set this workflow up:\n\nForm Trigger – Customize the “Lead Machine” form fields if needed (Business Type, Location, Lead Number, Email Style).\nApify API – Add your Apify Actor Endpoint URL in the HTTP Request node.\nGoogle Gemini – Add credentials for extracting email addresses.\nGoogle Sheets – Connect your sheet for storing leads & email status.\nOpenAI – Add your credentials for cold email generation.\nGmail – Connect your Gmail account for sending cold emails.\n\nHow to customize this workflow to your needs\n\nChange the AI email prompt to reflect your brand’s voice and offer.\nAdd filters to only target leads that meet specific criteria (e.g., website must exist, email must be verified).\nModify the Google Sheets structure to track extra info like “Follow-up Date” or “Lead Source”.\nSwitch Gmail to another email provider if preferred.\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

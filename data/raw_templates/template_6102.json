@@ -1,0 +1,12 @@
+{
+  "id": 6102,
+  "name": "Salesforce Lead Capture with GPT-4 Personalized Email & SMS Follow-Up",
+  "description": "How It Works\nThis workflow transforms n8n into a smart Web Lead Form alternative to Salesforce's traditional Web-to-Lead, capturing leads, creating Salesforce records, and sending AI-personalized responses via email or SMS.\n\nCapture Submission**: User submits form data (name, email, phone, description, preference) via n8n's hosted form.\nCreate Lead**: Maps data to a new Salesforce Lead.\nPersonalize Message**: Uses OpenAI to generate a tailored welcome based on description and preference (detailed for email, concise for SMS).\nRoute Outreach**: Branches to send via Twilio SMS or SMTP email depending on preference.\n\nSet Up Steps\nSetup takes about 15-30 minutes if you have credentials ready. Focus on connecting services; detailed configs are in workflow sticky notes.\n\nDuplicate this template in n8n.\nAdd your Salesforce, OpenAI, Twilio, and SMTP credentials (no hardcoding—use n8n's credential manager).\nCustomize form fields if needed and test with sample data.\nActivate and share the form URL on your site.\n\nn8n Web to Lead Form.json",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.twilio",
+    "n8n-nodes-base.salesforce",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

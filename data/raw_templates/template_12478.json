@@ -1,0 +1,15 @@
+{
+  "id": 12478,
+  "name": "Automate client onboarding with Asana, Google Docs, Gmail, Slack and Sheets",
+  "description": "📊 Description\nAutomate short-term trading research by generating high-quality trade ideas using MCP (Market Context Protocol) signals and AI-powered analysis. 📈🤖 This workflow evaluates market context, catalysts, momentum, and risk factors to produce structured trade ideas with clear reasoning, confidence scores, and execution notes. Designed for fast-moving markets, it helps traders and analysts spot actionable opportunities consistently—without manual screening or emotional bias. Perfect for systematic traders, research teams, and AI-driven trading desks. ⚡📊\n\n🔁 What This Template Does\n1️⃣ Ingests market context and asset data from MCP inputs. 📥\n 2️⃣ Normalizes symbols, sectors, and time horizons for analysis. 🧾\n 3️⃣ Evaluates short-term momentum and catalyst strength. 🚀\n 4️⃣ Analyzes risk, volatility, and downside exposure. ⚠️\n 5️⃣ Uses AI to generate a structured trade thesis. 🤖\n 6️⃣ Assigns a confidence score and risk level to each idea. 📊\n 7️⃣ Produces clear entry logic, rationale, and trade direction. 🧠\n 8️⃣ Filters out low-quality or low-conviction setups. 🚫\n 9️⃣ Outputs clean JSON-ready trade ideas for downstream systems. 🔁\n⭐ Key Benefits\n✅ Automates short-term trade idea generation\n ✅ Reduces emotional bias with AI-based scoring\n ✅ Combines market context, catalysts, and momentum\n ✅ Produces structured, repeatable trade logic\n ✅ Saves hours of manual chart and news analysis\n ✅ Ideal for fast-paced trading environments\n🧩 Features\nMCP (Market Context Protocol) data ingestion\nAI-powered trade thesis generation\nConfidence and risk scoring logic\nShort-term momentum and catalyst analysis\nStrict structured output for automation reliability\nEasy integration into dashboards or execution systems\n\n🔐 Requirements\nMCP-compatible market data source\nOpenAI API credentials (GPT-4o or GPT-4o-mini recommended)\nn8n instance with AI nodes enabled\nDefined schema for trade idea output\n\n🎯 Target Audience\nShort-term and swing traders\nQuant and discretionary trading teams\nMarket research analysts\nFintech platforms generating trade signals\nAutomation engineers building trading workflows",
+  "nodes": [
+    "n8n-nodes-base.asana",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.googleDocs"
+  ],
+  "tags": []
+}

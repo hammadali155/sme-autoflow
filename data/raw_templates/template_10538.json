@@ -1,0 +1,15 @@
+{
+  "id": 10538,
+  "name": "Discover & Analyze n8n Workflows from GitHub with OpenAI and Google Sheets",
+  "description": "🧠 Overview\nDiscover and analyze the most valuable community-built n8n workflows on GitHub.  \nThis automation searches public repositories, analyzes JSON workflows using AI, and saves a ranked report to Google Sheets — including summaries, use cases, difficulty, stars, node count, and repository links.\n\n⚙️ How It Works\nSearch GitHub Code API — queries for extension:json n8n and splits results  \nFetch & Parse — downloads each candidate file’s raw JSON and safely parses it  \nExtract Metadata — detects AI-powered flows and collects key node information  \nAI Analysis — evaluates the top N workflows (description, use case, difficulty)  \nMerge Insights — combines AI analysis with GitHub data  \nSave to Google Sheets — appends or updates by workflow name  \n\n🧩 Setup Instructions (5–10 min)\nOpen Config node and set:  \n  search_query — e.g., \"openai\" extension:json n8n  \n  max_results — number of results to fetch (1–100)  \n  ai_analysis_top — number of workflows analyzed with AI  \n  SPREADSHEET_ID, SHEET_NAME — Google Sheets target  \nAdd GitHub PAT via HTTP Header Credential:  \n  Authorization: Bearer &lt;YOUR_TOKEN&gt;  \nConnect OpenAI Credential to OpenAI Chat Model  \nConnect Google Sheets (OAuth2) to Save to Google Sheets  \n(Optional) Enable Schedule Trigger to run weekly for automatic updates  \n\n&gt; 💡 Tip: If you need to show literal brackets, use backticks like `&lt;example&gt;` (no HTML entities needed).\n\n📚 Use Cases\n1) Trend Tracking for AI Automations\nGoal:** Identify the fastest-growing AI-powered n8n workflows on GitHub.  \nOutput:** Sorted list by stars and AI detection, updated weekly.\n\n2) Internal Workflow Benchmarking\nGoal:** Compare your organization’s workflows against top public examples.  \nOutput:** Difficulty, node count, and AI usage metrics in Google Sheets.\n\n3) Market Research for Automation Agencies\nGoal:** Discover trending integrations and tool combinations (e.g., OpenAI + Slack).  \nOutput:** Data-driven insights for client projects and content planning.\n\n🧪 Notes & Best Practices\n🔐 No hardcoded secrets — use n8n Credentials  \n🧱 Works with self-hosted or cloud n8n  \n🧪 Start small (max_results = 10) before scaling  \n🧭 Use “AI Powered” + “Stars” columns in Sheets to identify top templates  \n🧩 Uses only Markdown sticky notes — no HTML formatting required  \n\n🔗 Resources\nGitHub (template JSON):** github-workflow-finder-ai.json￼\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

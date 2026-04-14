@@ -1,0 +1,12 @@
+{
+  "id": 11537,
+  "name": "Convert CDP Network Topology to Lucidchart Prompts with AWX and Gemini AI",
+  "description": "AI NETWORK DIAGRAM PROMPT GENERATOR\n\nTemplate Description\n\nThis workflow automates the creation of network diagram prompts using AI. It retrieves Layer-2 topology data from AWX, parses device relationships, and generates a clean, structured prompt ready for Lucidchart’s AI diagram generator.\n\nHow It Works\n\nThe workflow triggers an AWX Job Template that runs commands such as show cdp neighbors detail. After the job completes, n8n fetches the stdout, extracts neighbor relationships through a JavaScript parser, and sends the structured data to an LLM (Gemini). The LLM transforms the topology into a formatted prompt you can paste directly into Lucidchart to instantly generate a visual network diagram.\n\nSetup Steps\nConfigure AWX:\nEnsure your Job Template runs the required network commands and produces stdout.\nObtain your AWX base URL, credentials, and Job Template ID.\nAdd Credentials in n8n:\nCreate AWX API credentials.\nAdd Google Gemini credentials for the LLM node.\nUpdate Workflow Nodes:\nInsert your AWX URL and Job Template ID in the “Launch Job” node.\nVerify endpoints in the “Job Status” and “Job Stdout” nodes.\nRun the workflow:\nAfter execution, copy the generated Lucidchart prompt and paste it into Lucidchart’s AI to produce the network diagram.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDocs",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

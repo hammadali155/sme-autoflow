@@ -1,0 +1,14 @@
+{
+  "id": 8752,
+  "name": "AI-Powered Customer Feedback Collection with GPT-4o, Google Sheets & Slack Alerts",
+  "description": "Description\nAutomatically send personalized customer feedback requests once a support ticket is marked as closed and centralize responses for service quality tracking. Uses Google Sheets as the ticket source, filters only resolved tickets, and delivers tailored survey invitations via Gmail. Ensures timely, relevant outreach while reducing manual follow-ups. 📧✨\n\nWhat This Template Does\nFetches support ticket data from a Google Sheets database (“Ticket status dummy”). 📊\nFilters for tickets where Status = closed only. 🎯\nSends a personalized feedback request email via Gmail, including ticket details (ID, subject, customer name). 💌\nProvides a dynamic link to your survey form (Typeform/Google Form). 🔗\nRuns on manual trigger (can be scheduled/automated later). ▶️\n\nKey Benefits\nTargeted communication — only resolved tickets receive surveys.\nPersonalized emails — includes customer name + ticket details.\nZero manual work — feedback requests are automatically generated.\nQuality insights — structured process for customer satisfaction measurement.\nImproved experience — timely outreach builds trust and engagement. 🌟\n\nFeatures\nSmart filtering for closed tickets only. 🛡️\nDynamic Gmail email templates with emojis + survey link. 💬\nGoogle Sheets integration for centralized ticket management. 📂\nFully customizable email subject, body, and survey form. ✍️\nManual trigger for testing; can be extended with schedules/webhooks. ⏱️\n\nRequirements\nn8n instance (cloud or self-hosted).\nGoogle Sheets with ticket data (must include: Status, Ticket No., Description, Email, Owner).\nGmail account connected via OAuth2 credentials.\nSurvey form (Typeform/Google Form) with accessible link.\nTarget Audience\nCustomer Support Teams seeking structured feedback. 🛎️\nHR & Internal IT Teams using ticket-based systems (Keka, Google Sheets). 👥\nManagers wanting data-driven insights into support quality. 📈\nBusinesses committed to continuous service improvement. 🚀\n\nStep-by-Step Setup Instructions\nPrepare Google Sheet with required columns: Status, Ticket No., Description, Email, Owner.\nIn n8n, connect Google Sheets and Gmail credentials.\nUpdate the Gmail node with your survey link.\nImport workflow JSON and assign credentials to nodes.\nRun Manual Trigger to test → verify email delivery.\nExtend automation with schedules or webhooks for ongoing campaigns.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi"
+  ],
+  "tags": []
+}

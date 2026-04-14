@@ -1,0 +1,15 @@
+{
+  "id": 5396,
+  "name": "AI Timesheet Generator with Gmail, Calendar & GitHub to Google Sheets",
+  "description": "AI-Powered Automatic Timesheet Generator for Google Sheets\n\nStop wasting billable hours on manual time-tracking. AutoTimesheet Pro uses AI to collect emails, meetings, and GitHub work, then writes a clean timesheet straight into Google Sheets. Perfect for developers, consultants, agencies, and remote teams.\n\nGet Started with n8n now!\n\n🚀 Key Features\n\nAutomated Google Sheets time-tracking** — zero spreadsheet prep.  \nAI-generated activity summaries** (≤ 120 chars) via OpenAI GPT-4o-mini.  \nGmail integration** — logs only important emails, skipping newsletters & no-replies.  \nGoogle Calendar time logger** — captures confirmed events, duration, and attendees.  \nGitHub commit & PR tracker** — records your commits plus opened/closed PRs.  \nDaily 7 PM cron trigger** (easily adjustable).  \nMonth-based sheet creation** — new tab spins up on the first run each month.  \nNo-code n8n template* — just connect credentials and tweak one *Set Variables** node.\n🔌 Easily extensible** — drag-and-drop extra n8n nodes to add Slack, Jira, Notion, Asana, Trello, Toggl, or any other data source you need.\n\n🔍 How It Works\n\nCollect — n8n pulls data from Gmail, Google Calendar, and chosen GitHub repos.  \nClean — filters remove noise (newsletters, irrelevant commits, etc.).  \nCondense — OpenAI rewrites each item into a concise, SEO-friendly description.  \nWrite — workflow appends Date, Type, and Description to your Timesheet Google Sheet.\nExtend — simply insert new n8n nodes (e.g., Slack, Notion, Jira) and merge them into the same pipeline.\n\n📈 Benefits for SEO-Minded Professionals\n\nKeyword-rich activity log** improves internal search and reporting.  \nStructured data** in Sheets simplifies export to accounting or PM tools.  \nConsistent naming** (CALENDAR_EVENT, EMAIL, COMMIT, PR) makes analytics easy.\n\n✅ Why Choose AutoTimesheet Pro?\n\nZero manual entry — just open the sheet and bill clients.  \nImmediate visibility into where your hours went.  \nWorks with any GitHub repo list and any inbox you own.  \n100 % no-code setup — activate in minutes.\nBuilt on n8n, so you can customize and scale without limits.\n📥 Get Started\n\nReady to replace manual time-tracking with smart automation?  \n\nhttps://n8n.partnerlinks.io/ds9podzjls6d\n\nJoin N8N now, connect your Google & GitHub accounts, and let AI handle your daily log.\n\n",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

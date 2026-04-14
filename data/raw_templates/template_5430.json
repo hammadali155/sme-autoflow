@@ -1,0 +1,13 @@
+{
+  "id": 5430,
+  "name": "Market Research & Business Case Generator with GPT-4o, Perplexity & Claude",
+  "description": "This workflow contains community nodes that are only compatible with the self-hosted version of n8n. \n\n🧠 Market Research & Business Case Study Generator\nCategory: AI + Research | GPT + Perplexity | Business Strategy\nSkill Level: Intermediate\nUse Case: Market Research, Business Planning, Strategic Analysis\n\n📌 Description:\nThis template automates the creation of comprehensive, data-backed business case studies—perfect for entrepreneurs, analysts, consultants, and market researchers.\n\nFor more of such build + step-by-step video tutorials, check out:\nhttps://www.youtube.com/@Automatewithmarc\n\nJust send a simple message like:\n\n“Give me a market opportunity analysis of a bicycle rental business in North Africa.”\n\nAnd the workflow does the rest. It scopes your research topic, performs live web research, and crafts a well-structured 1500-word business case study—all automatically saved to Google Docs.\n\n🔧 How It Works:\n🟢 Chat Trigger:\nStart the workflow by sending a prompt via the built-in Chat interface (Langchain Chat Trigger).\n\n🧭 Research Scope Definer (GPT-4o):\nBreaks down the user input into structured components like industry, geography, trends, and challenges.\n\n🌐 Deep Research (Perplexity Sonar):\nPerforms live research to retrieve relevant industry data, consumer trends, competitive insights, and more.\n\n📘 Business Case Writer (Claude Sonnet):\nSynthesizes the findings into a detailed case study with sections including:\nExecutive Summary\nMarket Overview\nOpportunity Analysis\nCompetitive Landscape\nRisks & Challenges\nStrategic Recommendations\nConclusion\n📄 Google Docs Integration:\nThe final output is appended to a connected Google Doc, so all your insights are neatly stored and ready to share.\n🧰 Tools Used:\nOpenAI GPT-4o\nPerplexity Sonar Deep Research\nAnthropic Claude Sonnet\nGoogle Docs\nChat Trigger\n✅ Ideal For:\nBusiness consultants & strategy teams\nMarket researchers & analysts\nStartup founders & product managers\nEducators & MBA students",
+  "nodes": [
+    "n8n-nodes-base.googleDocs",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "n8n-nodes-base.perplexity"
+  ],
+  "tags": []
+}

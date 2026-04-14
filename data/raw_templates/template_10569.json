@@ -1,0 +1,11 @@
+{
+  "id": 10569,
+  "name": "Generate AI Meeting Summaries and Tasks from Fathom Recordings to Dart",
+  "description": "Automatically generate a meeting summary from your meetings through Fathom, save it to a Dart document, and create a review task with the Fathom link attached.\n\nWhat it does\nThis workflow activates when a Fathom meeting ends (via a webhook). It uses an AI model to generate a structured summary of the meeting. The workflow then:\n\nWho’s it for\n\nTeams or individuals needing automatic meeting notes.\nProject managers tracking reviews and actions from meetings.\nUsers of Fathom and Dart who want to streamline their documentation and follow-up process.\n\nHow to set up\nImport the workflow into n8n.\nConnect your Dart account (it will need workspace and folder access).\nAdd your PROD webhook link from the webhook node to your Fathom API settings.\nReplace the dummy Folder ID and Dartboard ID with your actual target IDs.\nChoose your preferred AI model for generating the summaries.\n\nRequirements\nn8n account\nConnected Dart account\nConnected Fathom account (with access to API webhooks)\n\nHow to customize the workflow\nEdit the AI prompt to adjust the tone, style, or format of the meeting summaries.\nAdd, remove, or change the summary sections to match your needs (e.g., Key Takeaways, Action Items, Next Items).",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

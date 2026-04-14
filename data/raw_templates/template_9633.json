@@ -1,0 +1,15 @@
+{
+  "id": 9633,
+  "name": "Newsletter Summarization & Briefing with Gmail, AI, Google Sheets & Email",
+  "description": "Your inbox is overflowing with daily newsletters: Public Affairs, ESG, Legal, Finance, you name it.\nYou want to stay informed, but reading 10 emails every morning? Impossible.\n\nWhat if you could get one single digest summarizing everything that matters, automatically?\n\n❌ No more copy-pasting text into ChatGPT\n❌ No more scrolling through endless email threads\n✅ Just one smart, structured daily briefing in your inbox\n\nWho Is This For\n\nPublic Affairs Teams: Stay ahead of political and regulatory updates—without drowning in emails.\nExecutives & Analysts: Get daily summaries of key insights from multiple newsletters.\nMarketing, Legal, or ESG Departments: Repurpose this workflow for your own content sources.\n\nHow It Works\n Gmail collects all newsletters from the day (based on sender or label).\n HTML noise and formatting are stripped automatically.\n Long texts are split into chunks and logged in Google Sheets.\n An AI Agent (Gemini or OpenAI) summarizes all content into one clean daily digest.\n The workflow structures the summary into an HTML email and sends it to your chosen recipients.\n\nSetup Guide\n • You’ll need Gmail and Google Sheets credentials.\n • Add your own AI Model (e.g., Gemini or OpenAI) with an API key.\n • Adjust the prompt inside the “Public Affairs Consultant” node to fit your topic (e.g., Legal, Finance, ESG, Marketing).\n • Customize the email subject and design inside the “Structure HTML-Mail” node.\n • Optional: Use Memory3 to let the AI learn your preferred tone and style over time.\n\nCost & Runtime\n\nRuns once per day.\nTypical cost: ~$0.10–0.30 per run (depending on model and input length).\nAverage runtime: &lt;2 minutes.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.code",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

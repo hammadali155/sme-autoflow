@@ -1,0 +1,13 @@
+{
+  "id": 9839,
+  "name": "Extract Medical Reports & Generate AI Health Advice with Mistral AI & GPT-4",
+  "description": "Try It Out!\n\nUse n8n to extract medical test data from diagnostic reports uploaded to Google Drive, automatically detect abnormal values, and generate personalized health advice.\n\nHow it works\n\nUpload a medical report (PDF or image) to a monitored Google Drive folder\nMistral AI extracts text using OCR while preserving document structure\nGPT-4 parses the extracted text into structured JSON (patient info, test names, results, units, reference ranges)\nAll test results are saved to the \"All Values\" sheet in Google Sheets\nJavaScript code compares each result against its reference range to detect abnormalities\nFor out-of-range values, GPT-4 generates personalized dietary, lifestyle, and exercise advice based on patient age and gender\nAbnormal results with recommendations are saved to the \"Out of Range Values\" sheet\n\nHow to use\n\nSet up Google Drive folder monitoring and Google Sheets with two tabs: \"All Values\" and \"Out of Range Values\"\nConfigure API credentials for Google Drive, Mistral AI, and OpenAI (GPT-4)\nUpload medical reports to your monitored folder\nReview extracted data and personalized health advice in Google Sheets\n\nRequirements\n\nGoogle Drive and Sheets with OAuth2 authentication\nMistral AI API key for OCR\nOpenAI API key (GPT-4 access required) for intelligent extraction and advice generation\n\nNeed Help?\n\nSee the detailed Read Me file at https://drive.google.com/file/d/1Wv7dfcBLsHZlPcy1QWPYk6XSyrS3H534/view?usp=sharing\nJoin the n8n community forum for support",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "n8n-nodes-base.mistralAi"
+  ],
+  "tags": []
+}

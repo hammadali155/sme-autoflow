@@ -1,0 +1,12 @@
+{
+  "id": 13685,
+  "name": "Scrape Reddit posts with BrowserAct, summarize with Gemini, and save to Google Sheets",
+  "description": "🕵️‍♂️ Reddit Intelligence Monitor: AI-Powered Scraping with BrowserAct\n\nAutomate your market research and competitor analysis with this powerful \"Set and Forget\" workflow. It monitors Reddit for specific keywords and competitor subreddits, uses BrowserAct for stealth scraping, analyzes the sentiment with AI, and delivers a daily intelligence digest to your Google Sheets.\n\n💡 Key Features\nPowered by BrowserAct**: Leverages cloud browser automation to stealthily scrape Reddit data without getting blocked.\nDual-Track Monitoring**: Simultaneously tracks \"Brand Competitors\" (Subreddits) and \"Topic Keywords\" (Search Results).\nAI Analysis**: Summarizes the top 3 trending posts into a single concise daily report, filtering out noise.\nStructured Archive**: Automatically cleans, formats, and archives intelligence with source links into Google Sheets.\n\n🛠️ How it Works\nConfig Read: Reads a list of monitoring targets from a Google Sheet.\nRoute: Splits the task into two paths (Competitor vs. Keyword) based on input type.\nScrape: BrowserAct navigates to the target Reddit pages and extracts the latest posts.\nProcess: Custom Code nodes clean the data and merge top 3 posts into a single prompt.\nAnalyze: AI Agent generates an executive summary for each topic.\nArchive: Final reports are appended to your \"Report\" Google Sheet.\n\n📋 Setup Guide\nGoogle Sheets: Create a sheet with two tabs:\n   Config: Columns keywords (for search terms) and competitor (for subreddit names).\n   Report: Columns Date, Competitor/Keyword, Summary, Link.\nBrowserAct: Connect your BrowserAct credentials and ensure you have the Reddit scraping task template ready.\nAI Model: Configure the Google Gemini Chat Model (or swap for OpenAI).\nSchedule: Enable the Schedule Trigger for daily automated runs.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

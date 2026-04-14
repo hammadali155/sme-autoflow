@@ -1,0 +1,12 @@
+{
+  "id": 5082,
+  "name": "AI-Powered Proposal Automation Using Google Slides",
+  "description": "\nWhen you fill out the form with business challenges and requirements\nGPT-4 analyzes the input and generates a customized proposal using your template\nSystem automatically creates a Google Slides presentation with personalized content\nProfessional proposal email is sent directly to the prospect with the presentation link\n\nSet up steps\nEstimated time: 15-20 minutes\n\nConnect your OpenAI API key for GPT-4 access\nLink your Google account for Slides and Gmail integration\nCreate your proposal template in Google Slides with placeholder variables\nCustomize the AI prompt and email template with your branding\nTest with sample data and activate the workflow\n",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.googleSlides",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

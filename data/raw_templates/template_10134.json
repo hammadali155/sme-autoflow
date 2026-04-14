@@ -1,0 +1,13 @@
+{
+  "id": 10134,
+  "name": "Get Daily Calendar Summaries via SMS with Google Calendar, Twilio and Claude AI",
+  "description": "This free n8n automation helps anyone—from busy parents to entrepreneurs—get a daily SMS summary of their calendar events. It’s a personal assistant that gives you a heads up of what your day will look like.\n\nGreat for: starting your day cognizant of the day's events, or for the neurodivergent.\n\nExample use case:\nParent receives a text summarizing the Family Calendar events at 5AM. Its a reminder of a child's doctor appointment at 1PM and soccer practice at 430PM. The AI then ends the message on an uplifting note.\n\nGood to Know\nRequires user to buy a Twilio phone number to send SMS from. Each message, at the time of writing, is $0.083 CAD. \nRequires basic knowledge of Google Cloud Console for the activation of Google Calendar API\n\nHow it Works\nEvery morning at 7AM, your workflow checks Google Calendar for the day’s events.\nIt formats your schedule into a friendly, easy-to-read summary using your favorite AI model (any LLM works—Anthropic, OpenAI, Gemini, etc).\nThat summary is texted directly to your phone via Twilio as a personal daily reminder.\n\nHow to Use\nCopy this n8n workflow into your own instance.\nHook up your Google Calendar and Twilio accounts. You can choose the specific calendar in the Calendar node.\nChoose or swap in any AI model you prefer to personalize your summaries. I find Claude sounds the most natural.\n\nEnjoy your daily, cheerful calendar digest by SMS at 7AM!\n\nRequirements\nA Google Cloud account (to activate the Calendar API and get credentials—see Google documentation).\nTwilio account (for sending SMS—get started with Twilio’s easy setup).\nAny LLM API account (optional, but recommended for polite/friendly summaries).\n\nCustomize this flow\nChange SMS times to fit your morning routine.\nAdjust message formatting for your style or brand.\nSwap LLM services, tweak prompts, or combine multiple calendars—whatever works for you.\n\nReach out anytime at ralleyreminders.com if you have questions or want to share ideas!\n",
+  "nodes": [
+    "n8n-nodes-base.twilio",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic"
+  ],
+  "tags": []
+}

@@ -1,0 +1,19 @@
+{
+  "id": 2752,
+  "name": "HR & IT Helpdesk Chatbot with Audio Transcription",
+  "description": "An intelligent chatbot that assists employees by answering common HR or IT questions, supporting both text and audio messages. This unique feature ensures employees can conveniently ask questions via voice messages, which are transcribed and processed just like text queries.\n\nHow It Works\nMessage Capture: When an employee sends a message to the chatbot in WhatsApp or Telegram (text or audio), the chatbot captures the input.\nAudio Transcription: For audio messages, the chatbot transcribes the content into text using an AI-powered transcription service (e.g., Whisper, Google Cloud Speech-to-Text).\nQuery Processing:\n   The transcribed text (or directly entered text) is sent to an AI service (e.g., OpenAI) to generate embeddings.\n   These embeddings are used to search a vector database (e.g., Supabase or Qdrant) containing the company’s internal HR and IT documentation.\n   The most relevant data is retrieved and sent back to the AI service to compose a concise and helpful response.\nResponse Delivery: The chatbot sends the final response back to the employee, whether the input was text or audio.\n\nSet Up Steps\nEstimated Time**: 20–25 minutes\nPrerequisites**:\n  Create an account with an AI provider (e.g., OpenAI).\n  Connect WhatsApp or Telegram credentials in n8n.\n  Set up a transcription service (e.g., Whisper or Google Cloud Speech-to-Text).\n  Configure a vector database (e.g., Supabase or Qdrant) and add your internal HR and IT documentation.\n  Import the workflow template into n8n and update environment variables for your credentials.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+    "@n8n/n8n-nodes-langchain.toolVectorStore",
+    "@n8n/n8n-nodes-langchain.vectorStorePGVector"
+  ],
+  "tags": []
+}

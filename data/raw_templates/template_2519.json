@@ -1,0 +1,12 @@
+{
+  "id": 2519,
+  "name": "Fetch Live ETF Metrics from JustETF to Excel with One-Click Updates",
+  "description": "Automate Your ETF Comparison: Real-Time Data & Analysis\n\nAutomate ETF research in Excel with one click.  \nThis n8n workflow pulls live data from justetf.com using ISIN codes from your Excel table, extracts key metrics (dividends, fees, 5-year performance), and updates your “Div study” sheet instantly — all triggered by a button in Excel.\n\nPerfect for dividend investors, ETF screeners, or portfolio trackers who want fresh, accurate data without manual copy-paste.\n\nHow it works\nTrigger: Click “Update Table” in Excel → calls n8n via webhook  \nExcel: Logs current time (GMT-2) and reads all rows from “DivComp” table  \nHTTP Request: Fetches ETF profile page from justetf.com using ISIN  \nHTML Extraction: Parses page with CSS selectors to grab dividends, fees, 5Y performance  \nCode Node: Cleans & structures data (e.g., last 5 years of dividends, yield, growth)  \nUpdate Excel: Writes clean values back to your table (fees, yield, performance, name)\n\nSetup steps\nIn Excel:  \n   Add a button → assign macro that calls your n8n webhook URL (path: /ETF)  \n   Ensure table “DivComp” has: ISIN, Dernière mise à jour, Frais, Performance depuis 5 ans, etc.\n\nIn n8n:  \n   Connect Microsoft Excel (OneDrive) credential  \n   Update workbook/worksheet/table references if needed  \n   Test with 1–2 ISINs first\n\nClick “Update Table” → watch data refresh in real time!\n\nTags: ETF, Excel, Web Scraping, Investing, Finance, Automation, justetf, Dividend Tracking",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.microsoftExcel",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

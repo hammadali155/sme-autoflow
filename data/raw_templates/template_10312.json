@@ -1,0 +1,15 @@
+{
+  "id": 10312,
+  "name": "Automate Peer Review Assignments with Sonar Pro AI & Multi-Channel Deadline Reminders",
+  "description": "Introduction\nAutomate peer review assignment and grading with AI-powered evaluation. Designed for educators managing collaborative assessments efficiently.\n\nHow It Works\nWebhook receives assignments, distributes them, AI generates review rubrics, emails reviewers, collects responses, calculates scores, stores results, emails reports, updates dashboards, and posts analytics to Slack.\n\nWorkflow Template\nWebhook → Store Assignment → Distribute → Generate Review Rubric → Notify Slack → Email Reviewers → Prepare Response → Calculate Score → Store Results → Check Status → Generate Report → Email Report → Update Dashboard → Analytics → Post to Slack → Respond to Webhook\nWorkflow Steps\nReceive & Store: Webhook captures assignments, stores data.\nDistribute & Generate: Assigns peer reviewers, AI creates rubrics.\nNotify & Email: Alerts via Slack, sends review requests.\nCollect & Score: Gathers responses, calculates peer scores.\nReport & Update: Generates reports, emails results, updates dashboard.\nAnalyze & Alert: Posts analytics to Slack, confirms completion.\nSetup Instructions\nWebhook & Storage: Configure endpoint, set up database.\nAI Configuration: Add OpenAI key, customize rubric prompts.\nCommunication: Connect Gmail, Slack credentials.\nDashboard: Link analytics platform, configure metrics.\nPrerequisites\nOpenAI API key\nGmail account\nSlack workspace\nDatabase or storage system\nDashboard tool\nUse Cases\nUniversity peer review assignments\nCorporate training evaluations\nResearch paper assessments\nCustomization\nMulti-round review cycles\nCustom scoring algorithms\nLMS integration (Canvas, Moodle)\nBenefits\nEliminates manual distribution\nEnsures consistent evaluation\nProvides instant feedback and analytics",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.microsoftTeams",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

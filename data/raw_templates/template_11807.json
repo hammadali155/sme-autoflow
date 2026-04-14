@@ -1,0 +1,21 @@
+{
+  "id": 11807,
+  "name": "Enhance Customer Support with RAG-Powered AI",
+  "description": "This workflow automates customer support across multiple channels (Email, Live Chat, WhatsApp, Slack, Discord) using AI-powered responses enhanced with Retrieval Augmented Generation (RAG) and your product documentation. It intelligently handles incoming queries, provides instant and context-aware answers, and escalates complex or negative-sentiment cases to your human support team. All interactions are logged and categorized for easy tracking and reporting.\n\nKey Features\n\nOmnichannel Support:** Handles customer queries from Email, Live Chat, WhatsApp, Slack, and Discord.\nAI-Powered Answers:** Uses RAG to generate accurate, context-aware responses based on your product documentation.\nAutomatic Escalation:** Detects low-confidence or negative-sentiment cases and escalates them to your human support team.\nConversation Logging:** Automatically logs and categorizes all conversations for future analysis.\nWeekly Reporting:** Sends automated weekly summaries and metrics to your support team.\n\nHow It Works\n\nTrigger: The workflow starts when a new message is received on any supported channel.\nNormalization: Incoming messages are normalized into a common format for unified processing.\nContext Management: Conversation history is fetched and merged with the new query for better AI context.\nAI Response: The workflow uses RAG to generate a response, referencing your product documentation.\nConfidence & Sentiment Analysis: The response is scored for confidence and sentiment.\nEscalation Logic: If the response is low-confidence or negative, the workflow escalates the case to your support team and creates a ticket.\nResponse Delivery: The answer (or escalation notice) is sent back to the customer on the original channel.\nLogging & Reporting: All interactions are logged, categorized, and included in weekly reports.\n\nConfiguration\n\nConnect Your Channels: Set up triggers for each channel you want to support (Email, Webhook, WhatsApp, Slack, Discord).\nAdd Your Documentation: Integrate your product documentation source (e.g., Google Docs, Notion, or a knowledge base) for the RAG model.\nConfigure AI Model: Set your preferred AI provider and model (e.g., OpenAI, Azure OpenAI, etc.).\nSet Escalation Rules: Adjust confidence thresholds and escalation logic to fit your support workflow.\nIntegrate Support Tools: Connect your ticketing system (e.g., Zendesk) and reporting tools (e.g., Google Sheets, Slack).\nTest the Workflow: Send test queries from each channel to ensure correct routing, AI responses, and escalation.\n\nUse Cases\n\nProvide instant, accurate answers to customer questions 24/7.\nReduce manual workload for your support team by automating common queries.\nEnsure complex or sensitive cases are quickly escalated to human agents.\nGain insights into support trends with automated logging and weekly reports.\n\nRequirements\n\nn8n version 2.0.2 or later\nAccounts and credentials for your chosen channels and AI provider\nAccess to your product documentation in a supported format\n\nNotes\n\nPlease review and customize the workflow to fit your company’s privacy and data handling policies.\nFor best results, keep your product documentation up to date and well-structured.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.zendesk",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader"
+  ],
+  "tags": []
+}

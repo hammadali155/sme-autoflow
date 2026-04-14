@@ -1,0 +1,14 @@
+{
+  "id": 11632,
+  "name": "Automated Product Review Monitoring with Sentiment Analysis via Decodo, Gemini & Telegram",
+  "description": "\nDecodo-powered review aggregation to Google Sheets with Gemini analysis and Telegram alerts\n\nWho’s it for\n\nThis template is designed for e-commerce owners, marketplace sellers, product teams, and CX/reputation managers who need an automated way to monitor product reviews. It’s ideal for anyone tracking Amazon listings or other URLs and wants AI-powered sentiment, summaries, and alerts without manual scraping.\n\nWhat it does\n\nThis workflow automatically retrieves product URLs from Google Sheets, scrapes reviews using Decodo (community node), formats the extracted data, and analyzes it using Gemini AI. It produces both sentiment classification and a concise review summary. Results are saved to a Google Sheets log, and the workflow sends a Telegram alert whenever new reviews are processed. The entire pipeline runs on a schedule, ensuring continuous and fully automated monitoring.\n\nHow it works\nA scheduled trigger starts the workflow.\nGoogle Sheets provides the list of product URLs.\nEach URL is processed through Decodo to extract user reviews.\nA Code node formats the raw review data.\nGemini performs sentiment analysis and summarization.\nResults are appended to a Google Sheets review log.\nA Telegram message delivers a real-time summary and sentiment snapshot.\n\nSign up for Decodo — get better pricing here\n\nRequirements\nDecodo API credentials (self-hosted community node)\nGoogle Sheets API Key\nGemini AI credentials\nTelegram Bot + Chat ID\nn8n self-hosted (required for Decodo community node)\n\nHow to set up\nAdd your Decodo credentials to the Decodo node.\nUpdate both Google Sheets nodes with your document ID and sheet names.\nInsert your Gemini API key.\nProvide your Telegram Bot token and Chat ID.\nAdjust the schedule interval to your preference.\nRun the workflow once to validate mappings and output fields.\n\nHow to customize\n\nModify the Code node to change how reviews are formatted.\nExtend Gemini prompts for deeper analysis (keywords, categories, toxicity).\nAdd filters to trigger alerts only on negative sentiment.\nAppend additional metadata (timestamps, product IDs) to the Sheets log.\nAdd email, Slack, or other communication channels.\n\nDisclaimer (Community Node)\n\nThis workflow uses a community node (Decodo) and therefore works only on self-hosted n8n instances. Be sure to install and trust the package before using it.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainSummarization",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.sentimentAnalysis"
+  ],
+  "tags": []
+}

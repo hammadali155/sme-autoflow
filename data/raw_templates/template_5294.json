@@ -1,0 +1,14 @@
+{
+  "id": 5294,
+  "name": "🧑‍⚖️ AI Legal Assistant Agent — AI-Powered Legal Q&A with Document Retrieval",
+  "description": "🧑‍⚖️ AI Legal Assistant Agent — AI-Powered Legal Q&A with Document Retrieval\n\nCategory: LegalTech / AI Agent / RAG / Chatbot\n\nDescription:\nThis no-code AI agent acts as a legal assistant chatbot that can answer user queries by retrieving information from a pre-indexed legal document library. It’s powered by OpenAI + Pinecone + Telegram and designed for law firms, compliance teams, or anyone who needs instant answers from contracts, policies, or regulatory documents.\n\nFor more of such builds and step-by-step video tutorial, check out:\nhttps://www.youtube.com/@Automatewithmarc\n\n🔍 How it Works:\n\nTelegram Trigger – Starts when a user sends a message via Telegram.\n\nAI Agent (Open AI Model) – Uses a retrieval-augmented generation (RAG) setup to understand the question and pull relevant context.\n\nPinecone Vector Store – Searches across a vectorized legal contract library for relevant clauses or documents.\n\nOpenAI Embeddings – Converts uploaded documents into vector embeddings for efficient search.\n\nMemory Buffer – Maintains conversation flow and context for follow-up questions.\n\nTelegram Response – Sends the final AI-generated answer directly to the user.\n\n🎯 Use Cases:\n\nIn-house legal teams automating internal policy Q&A\n\nLaw firms building client-facing legal bots\n\nStartups offering legal tech services with document-based queries\n\nCompliance teams monitoring contract terms and obligations\n\n✅ Key Features:\n\nReal-time legal Q&A via Telegram\n\nPinecone + OpenAI-powered vector search\n\nRetrieval-Augmented Generation (RAG) setup\n\nFactual, memory-aware assistant with fallback if info is unavailable\n\nFully customizable and extendable\n\n⚙️ Setup Instructions:\n\nConnect OpenAI, Pinecone, and Telegram credentials\n\nUpload your contracts or policy docs into Pinecone\n\nCustomize the system prompt or expand document sources as needed\n\nActivate and test via Telegram\n\nThis workflow is a solid foundation for any AI-powered legal assistant or chatbot solution—highly relevant for modern LegalOps and knowledge management teams.",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone"
+  ],
+  "tags": []
+}

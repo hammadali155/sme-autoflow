@@ -1,0 +1,15 @@
+{
+  "id": 5918,
+  "name": "Create AI Support Assistant for Any Device with GPT-4-mini & Pinecone",
+  "description": "Universal Digital Device Support Assistant\n\nTransform any device manual into an intelligent AI assistant that provides 24/7 support for your users. This template works with ANY household appliance, electronic device, or technical equipment.\n\n🎯 Use Cases\n\nManufacturers**: Provide instant support for your products\nSupport Teams**: Reduce ticket volume with AI-powered answers\nSmart Homes**: Centralized help for all devices\nPersonal Use**: Never lose a manual again\n\n✨ Features\n\nUniversal Compatibility**: Works with any device type\nMulti-Language Support**: Serve global customers\nIntelligent Search**: Semantic understanding of user queries\nContext Awareness**: Remembers conversation history\nEasy Setup**: Just upload your manual and go\n\n🛠️ What's Included\n\nWebhook Endpoint: Receive user queries via API\nAI Agent: Processes questions intelligently\nVector Database: Stores and searches manuals\nMemory System: Maintains conversation context\nUpload Pipeline: Easy manual ingestion\n\n📋 Setup Instructions\n\nAdd Your Credentials:\n   OpenAI API key (or alternative LLM)\n   Pinecone API key (or alternative vector DB)\n\nUpload Device Manuals:\n   Use the manual upload trigger\n   Paste manual text or upload PDF\n   System automatically indexes content\n\nConfigure Webhook:\n   Set your preferred endpoint path\n   Enable CORS if needed\n   Deploy and share URL\n\nOptional Customization:\n   Adjust chunk size for your content\n   Modify system prompts for your brand\n   Add additional tools or integrations\n\n🔧 Supported Devices (Examples)\n\nKitchen Appliances (ovens, dishwashers, coffee machines)\nHome Entertainment (TVs, sound systems, gaming consoles)\nSmart Home Devices (thermostats, cameras, lights)\nComputer Equipment (printers, routers, monitors)\nPower Tools & Garden Equipment\nMedical Devices\nAnd many more!\n\n🌐 Integration Options\n\nEmbed in your website\nConnect to chat platforms\nMobile app integration\nVoice assistant compatibility\nEmail support automation\n\n📈 Benefits\n\nReduce support costs by 70%\nAvailable 24/7 in multiple languages\nConsistent, accurate responses\nScales infinitely\nImproves with usage\n\n🔐 Privacy & Security\n\nYour data stays in your control\nCan be deployed on-premise\nGDPR compliant architecture\nNo data sharing between devices\n\n💡 Pro Tips\n\nUpload manuals in sections for better accuracy\nInclude troubleshooting guides and FAQs\nAdd model numbers and specifications\nRegular updates keep content fresh\n\nStart providing world-class device support today!",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 13954,
+  "name": "Repurpose YouTube Shorts to TikTok and Instagram using Blotato",
+  "description": "This workflow automatically mirrors your YouTube to TikTok and Instagram, so you don’t have to manually download and re-upload your content across platforms.\n\nIt fetches new videos from your YouTube channel, checks whether they have already been processed, downloads them locally using yt-dlp, and then uploads or schedules them via Blotato. Once successfully published, the workflow logs everything into Google Sheets and removes the local file to keep your storage clean.\n\nThis template is designed for creators, agencies, and social media managers who want a simple and reliable way to repurpose short-form content across multiple platforms.\n\n⚙️ How It Works\nThe workflow runs on a schedule (e.g., every 8 hours).\nIt retrieves the latest videos from your YouTube channel.\nIt checks Google Sheets to avoid duplicate uploads by Video ID.\nNew Shorts are downloaded using yt-dlp.\nThe video is uploaded (or scheduled) via Blotato to TikTok and Instagram.\nThe workflow logs the upload results.\nThe local file is deleted after a successful upload.\n\n🛠 Requirements\nA YouTube Data API key\nA Google Sheets connection\nBlotato API credentials\nSelf-hosted n8n instance (required for yt-dlp execution)\nyt-dlp installed on your server\nMake 'youtube' directory for Download location",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

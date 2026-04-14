@@ -1,0 +1,14 @@
+{
+  "id": 5070,
+  "name": "LinkedIn scraping, structuring, and messaging using PhantomBuster and GPT-4",
+  "description": "Description\n\nThis template automates the end-to-end process of extracting professional data from LinkedIn and converting it into a usable format—ideal for recruiters, SDRs, marketers, and growth teams. With a few simple configurations, you’ll be able to trigger the flow, scrape profiles, and use AI to extract name, headline, company, role, industry, and more—without writing a single line of code.\n\nKey Features\n\n🔗 Launch PhantomBuster Agent using a profile URL\n⏳ Wait 45 seconds for PhantomBuster to complete scraping\n📥 Fetch and parse scraped data (download URL to JSON)\n🤖 Use GPT-4 (OpenAI/Azure) to extract structured information\n📄 Output fields: Name, Headline, Company, Job Title, Industry, Experience, etc.\n🧰 Optional: Personalize messages using extracted data\n📊 Send structured output to Google Sheets, Airtable, or CRM\n\nSetup Instructions\n\nPhantomBuster Configuration\nSign up for PhantomBuster\nUse the LinkedIn Profile Scraper Phantom\nObtain your API Key and Agent ID\nProvide a valid LinkedIn session cookie (from browser dev tools)\n\nOpenAI or Azure Setup\nAdd your GPT-4 or GPT-4o API credentials\nCan be from either OpenAI or Azure OpenAI\n\n\nGoogle Sheet (Optional)\nAdd a sheet with LinkedIn profile URLs to process in batch mode\n\nEnvironment Cleanup\nThis version uses n8n credentials manager\nAll hardcoded tokens and API keys are removed for security compliance\n\nCustomization Tips\nYou can adjust the wait duration depending on PhantomBuster execution time\nReplace or extend the AI parsing prompt to include more fields (e.g., education, location, skills)\nAdd additional automations: Slack notifications, CRM sync, or enrichment tools like Clearbit or Hunter.io\n\nPerfect For\n\n🚀 Growth hackers and SDRs automating lead generation\n🧠 Recruiters scraping profiles for outreach\n📊 Marketing teams enriching data for campaigns\n🛠️ SaaS builders building LinkedIn intelligence tools",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi"
+  ],
+  "tags": []
+}

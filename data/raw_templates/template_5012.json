@@ -1,0 +1,16 @@
+{
+  "id": 5012,
+  "name": "Natural Language Database Queries with Dual-Agent AI & PostgreSQL Integration",
+  "description": "\nAI Database Assistant with Smart Query's & PostgreSQL Integration\n\nDescription:\n\n🚀 Transform Your Database into an Intelligent AI Assistant\n\nThis workflow creates a smart database assistant that safely handles natural language queries without crashing your system. Features dual-agent architecture with built-in query limits and PostgreSQL optimization – perfect for commercial applications!\n\n✅ Ideal for:\nSaaS developers building database search features 🔍\nDatabase administrators providing safe AI access 🛡️\nBusiness teams needing user-friendly data queries 📊\nAnyone wanting ChatGPT-like database interaction 🤖\n\n🔧 How It Works\n1️⃣ User asks a question – \"Show me top 10 popular products\"\n2️⃣ Main AI Agent – Interprets the request and ensures safety limits\n3️⃣ SQL Sub-Agent – Generates precise PostgreSQL queries\n4️⃣ Database executes – Returns formatted, limited results safely\n\n⚡ Setup Instructions\n\n1️⃣ Prepare Your Database\nEnsure PostgreSQL is accessible from n8n\nNote your table structure and column names\nSet up database connection credentials\n\n2️⃣ Customize the Templates\nReplace [YOUR_TABLE_NAME] with your actual table name\nUpdate [YOUR_FIELDS] with your column names\nModify examples to match your use case\nImportant**: Keep all LIMIT clauses intact!\n\n3️⃣ Configure the Agents\nCopy Main Agent system message to your primary AI node\nCopy Sub-Agent system message to your SQL generator node\nConnect the sub-workflow between both agents\n\n4️⃣ Test & Deploy\nTest with sample queries like \"Show me 5 recent items\"\nVerify query limits work (max 50 results)\nDeploy and monitor performance\n\n🎯 Why Use This Workflow?\n✔️ System Protection – Built-in limits prevent crashes from large queries\n✔️ Natural Language – Users ask questions in plain English\n✔️ Commercial Ready – Generic templates work with any database\n✔️ Dual-Agent Safety – Smart interpretation + precise SQL generation\n✔️ PostgreSQL Optimized – Handles complex schemas and data types\n\n🚨 Critical Features\nQuery Limits**: Default 10, maximum 50 results (can be modified)\nError Prevention**: No unlimited data retrieval\nSmart Routing**: Natural language → Safe SQL → Formatted results\nCustomizable**: Works with any PostgreSQL database schema\n\n🔗 Start building your AI database assistant today – safe, smart, and scalable!",
+  "nodes": [
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

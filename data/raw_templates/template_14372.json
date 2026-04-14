@@ -1,0 +1,14 @@
+{
+  "id": 14372,
+  "name": "Create daily historical AI videos with Gemini, fal.ai, Telegram and YouTube",
+  "description": "Who’s it for\nThis workflow is ideal for:\nContent creators producing daily historical or educational videos  \nYouTube automation enthusiasts building AI-driven channels  \nEducators sharing engaging historical facts in short-form video format  \nAnyone creating an automated AI video pipeline with human approval  \n\nHow it works\nThis workflow automates the full pipeline of generating and publishing historical videos:\n\nTriggers daily at 1 AM and initializes retry tracking (maximum 3 attempts)  \nFetches historical events for the current date and selects one randomly  \nUses Google Gemini to generate a cinematic text-to-video script  \nSends the prompt to fal.ai (Hunyuan LoRA) to generate a short video  \nPolls the generation status every 30 seconds until the video is ready  \nDownloads the generated video and sends it to Telegram with context  \nWaits for manual approval via Telegram  \nIf approved → uploads the video to YouTube and sends a confirmation message  \nIf declined → retries with a new event (up to 3 attempts total)  \n\nHow to set up\nImport the workflow into n8n  \nConfigure your Telegram credentials  \nSet your Telegram Chat ID using a variable or Set node (avoid hardcoding)  \nConfigure HTTP Header Auth credentials for fal.ai (API key required)  \nSet up Google Gemini API credentials  \nConnect your YouTube account using OAuth2  \n(Optional) Adjust the schedule time in the trigger node  \nActivate the workflow  \n\nRequirements\nn8n (cloud or self-hosted)  \nfal.ai account and API key (for video generation)  \nGoogle Gemini API access  \nYouTube account with upload permissions  \nTelegram account for approval notifications  \n\nHow to customize the workflow\nAdjust retry limits in the retry logic node  \nModify video parameters (resolution, frames, aspect ratio) in the fal.ai request  \nChange the script style by editing the Gemini prompt  \nReplace the historical events API with another content source  \nCustomize Telegram messages or approval flow  ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.youTube",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

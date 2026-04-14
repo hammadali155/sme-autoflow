@@ -1,0 +1,13 @@
+{
+  "id": 10466,
+  "name": "AI Image Generation & Editing with Google Gemini and Telegram Bot",
+  "description": "Who is this for?\n\nCreators, designers, and developers exploring AI-powered image generation.\nAutomation enthusiasts who want to integrate image creation into n8n workflows.\nTelegram bot builders looking to add visual AI capabilities.\nMarketers or freelancers automating creative content workflows.\n\nWhat problem is this workflow solving?\n\nCreating AI images usually requires multiple tools and manual setup. This workflow removes the complexity by:\n\nConnecting Nano Banana (AI image model) directly to n8n.\nAllowing image generation via Telegram chatbot.\nProviding a no-code setup that is fully automated and scalable.\n\nWhat this workflow does\n\nThis workflow demonstrates how to generate AI images using Nano Banana and n8n, with an integrated Telegram chatbot interface.  \nThe process includes:\n\nConnecting Gemini Nano Banana to n8n.\nAutomating image generation requests triggered from Telegram.\nReturning AI-generated images back to the user.\nAllowing customization of prompts and styles dynamically.\n\nBy the end, you’ll have a fully functional automation to generate and send AI-created images through Telegram — no coding required.\n\nSetup\n\nCreate accounts:\n\nSign up on n8n.io and ensure you have Telegram Bot API access.\nConnect your Nano Banana or Gemini API endpoint.\n\nSet up your Telegram Bot:\n\nUse BotFather to create a new bot and get the token.\nAdd the “Telegram Trigger” node in n8n.\n\nConfigure Nano Banana connection:\n\nAdd an HTTP Request node for Nano Banana API.\nInsert your API key and prompt parameters.\n\nHandle responses:\n\nParse the AI-generated image output.\nSend the image file back to the Telegram user.\n\nTest and Deploy:\n\nRun a sample image prompt.\nVerify that Telegram returns the correct generated image.\n\nHow to customize this workflow to your needs\n\nModify prompts or styles to fit different artistic use cases.\nAdd conditional logic for image size, aspect ratio, or filters.\nIntegrate with Google Drive or Notion for image storage.\nSchedule automatic image generation for campaigns or content creation.\nExpand with OpenAI or Stability AI for hybrid workflows.\n\nNotes\n\nNano Banana API may have rate limits depending on usage.\nEnsure your Telegram bot has permission to send files and images.\nYou can host this workflow on n8n Cloud or self-hosted setups.\n\nWant A Video Tutorial on How to Setup This Automation:\n\n https://youtu.be/0s6ZdU1fjc4",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

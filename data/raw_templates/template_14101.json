@@ -1,0 +1,11 @@
+{
+  "id": 14101,
+  "name": "Send personalized data engineer hiring emails with PredictLeads, OpenAI and Gmail",
+  "description": "Find companies hiring data engineers, enrich them with tech stack data from PredictLeads, and send AI-personalized service offering emails.\n\nThis workflow takes a target company domain, queries PredictLeads for data engineer job openings, enriches each result with company info and technology stack data, then uses OpenAI to generate a personalized outreach email that references the company's current tools (e.g., \"I see you're on Snowflake and looking for pipeline engineers\").\n\nHow it works:\nSchedule trigger runs the workflow daily at 8 AM.\nSets the target company domain to query.\nFetches data engineer job openings from PredictLeads for that domain.\nLoops through results and enriches each company with PredictLeads company data.\nFetches the company's technology stack from PredictLeads Technology Detections API.\nBuilds a personalized prompt combining company info, industry, and detected tech stack.\nSends the prompt to OpenAI to generate a tailored outreach email.\nSends the email via Gmail with a personalized subject line.\n\nSetup:\nSet the target domain in the \"set domain\" node (default: stripe.com).\nConnect your Gmail account (OAuth2) for sending outreach emails.\nAdd your OpenAI API key in the Generate Personalized Email HTTP Request node.\nAdd your PredictLeads API credentials (X-Api-Key and X-Api-Token headers).\n\nRequirements:\nGmail OAuth2 credentials.\nOpenAI API account (uses gpt-4o-mini, ~$0.003-0.008 per call).\nPredictLeads API account (https://docs.predictleads.com).\n\nNotes:\nChange the domain in the Set node to target different companies, or connect a Google Sheet for batch processing.\nThe AI prompt references the company's tech stack for maximum personalization.\nPredictLeads Job Openings, Company, and Technology Detections API docs: https://docs.predictleads.com\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

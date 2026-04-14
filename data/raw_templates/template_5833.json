@@ -1,0 +1,11 @@
+{
+  "id": 5833,
+  "name": "Automate Instagram Carousel Posts with Google Sheets, Drive & Cloudinary",
+  "description": "Who is this for?\n\nThis workflow is ideal for social media managers, content creators, marketers, and small businesses who want to automate Instagram Carousel posts using Google Sheets and Google Drive. It is also suitable for anyone looking to streamline repetitive Instagram publishing tasks with n8n, Cloudinary, and the Instagram Graph API.\n\nWhat problem is this workflow solving? / Use case\n\nManaging and publishing Instagram Carousel posts manually can be time-consuming, especially when handling multiple accounts or campaigns. This workflow solves that by automatically fetching scheduled posts from Google Sheets, uploading images from Google Drive to Cloudinary, and publishing them to Instagram, saving time and reducing the risk of errors.\n\nWhat this workflow does\n\nThis n8n workflow checks a Google Sheet every 5 minutes for new Carousel posts marked as \"ToDo.\" When found, it uploads images from a specified Google Drive folder to Cloudinary, prepares the media on Instagram using the Graph API, and publishes the Carousel post with the given caption.\n\nSetup\n\nPrepare a Google Sheet to track posts and image folder URLs.\n Example : https://docs.google.com/spreadsheets/d/1WEUHeQXFMYsWVAW3DykWwpANxxD3DxH-S6c0i06dW1g/edit?usp=sharing\nUpload post images to a dedicated Google Drive folder.\nSet up a Cloudinary account and gather API credentials.\nObtain Instagram access_token and ig_business_id for API publishing.\nConfigure the n8n workflow with required credentials and your custom intervals.\n\nHow to customize this workflow to your needs\n\nAdjust the schedule trigger interval to fit your publishing frequency.\nExpand the Google Sheet with additional metadata as required.\nModify the filter logic to support different content types or statuses.\nAdd extra automation steps, such as sending notifications after publishing.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive"
+  ],
+  "tags": []
+}

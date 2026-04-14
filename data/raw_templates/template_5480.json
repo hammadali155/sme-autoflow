@@ -1,0 +1,15 @@
+{
+  "id": 5480,
+  "name": "Automated Resume Scoring with Gemini LLM, Gmail and Notion Job Profiles",
+  "description": "This n8n template demonstrates how to use AI to score the all Resumes by matching it with Job profile\n\nProblem Statement: A Hr person is flooded with resume and spends hours manually checking each to find most suitable ones.\n\nHow it works\nIt is linked to Gmail Trigger which upon receving any mail with specific subject will check for the attachment.\nAttachment will be parsed to understand the resume\nCandidate informtion will be broken into Personal, Eductional and Professional type\nJob profile will be pulled from Notion Board\nA HR expert powered by Gemini LLM will score each profile on basis on its relevancy \nInformation will be updated back to Gsheet \nMessage lable will be updated back for clarity\n\nHow to use\nThe gmail trigger node is used as an example but feel free to replace this with other triggers such as webhook or even a form.\n\n\nRequirements\nGemini account for LLM\nGoogle sheet for upload\nGmail as trigger\nLlama parse credentials\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.notion",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

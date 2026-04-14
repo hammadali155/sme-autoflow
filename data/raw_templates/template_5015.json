@@ -1,0 +1,14 @@
+{
+  "id": 5015,
+  "name": "Find and email ANYONE on LinkedIn with OpenAI, Hunter & Gmail",
+  "description": "Setup Time\n\n5-10 minutes\n\nProblem\n\n🚨 LinkedIn search is BROKEN. Personalized cold-emailing takes hours!\n\n\nI waste hours on LinkedIn manually filtering profiles, reading summaries, hoping they’d reply—tedious, frustrating, inefficient.\n\nBut even after finding the email IDs of the contacts, the job to be done is incomplete. 𝗜 𝘄𝗮𝗻𝘁 𝘁𝗼 𝘀𝘁𝗮𝗿𝘁 𝗮 𝗰𝗼𝗻𝘃𝗲𝗿𝘀𝗮𝘁𝗶𝗼𝗻 𝘄𝗶𝘁𝗵 𝘁𝗵𝗲𝘀𝗲 𝗰𝗼𝗻𝘁𝗮𝗰𝘁𝘀.\n\nIf only I could type \"𝘗𝘳𝘰𝘥𝘶𝘤𝘵 𝘮𝘢𝘯𝘢𝘨𝘦𝘳𝘴 𝘸𝘰𝘳𝘬𝘪𝘯𝘨 𝘰𝘯 𝘨𝘦𝘯𝘦𝘳𝘢𝘵𝘪𝘷𝘦 𝘈𝘐 𝘪𝘯 𝘠𝘰𝘶𝘛𝘶𝘣𝘦 𝘪𝘯 𝘕𝘦𝘸 𝘠𝘰𝘳𝘬\" and seconds later have 10 personalized outreach emails in my Gmail drafts folder, ready for my review. \n\nIt would save me hours of research effort!\n\nIntroducing LinkGPT, a LinkedIn Agent, an automated agentic workflow powered by n8n.\n\nPrerequisites: \nRequired accounts/API keys for Hunter.io, Google, and OpenAI.\n\nThis would be helpful for:\n\n🎯 Job Seekers wanting direct outreach to hiring managers (everyone applies to multiple jobs, and crafting personal emails takes hours!)\n\n🎯 Recruiters looking to personalize candidate outreach at scale\n\n🎯 Sales & Founders aiming for targeted customer conversations \n\nStep-by-step workflow:\n\nTakes 5-10 minutes to setup.\n\nGenerate a Boolean search string for LinkedIn profiles.\nPerform authenticated Google searches using your query.\nExtract LinkedIn URLs and workplace context from the search results.\nUse OpenAI to extract first name, last name, and domain name from the context.\nUse Hunter.io to find emails of the contacts.\nAppend all results to your connected Google Sheet. Columns: first_name, last_name, domain_name, email, context\nRead everything publicly available about your target profiles\nIdentify common ground (shared backgrounds, interests, experiences)\nCraft highly personalized, thoughtful email drafts\nAutomatically save tailored drafts in your Gmail and Google Sheets\n\n\n\nI put together a clear, step-by-step guide on setting this up yourself.\n\nSample Query\n\nSample:\n\nInput: \"I am headed to NYC later this month, whom should I meet with that works in product management for gen AI products?\"\n\nOutput: List of 10 contacts with first name, last name, workplace, email address and context about them, and 10 personalized emails waiting for you review in your Gmail drafts folder \n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.hunter",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

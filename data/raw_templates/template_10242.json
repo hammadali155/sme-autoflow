@@ -1,0 +1,19 @@
+{
+  "id": 10242,
+  "name": "Personalize Resumes & Cover Letters with AI, GitHub Pages and Google Drive",
+  "description": "🧠 Automated Resume & Cover Letter Generator\n\nThis project is an automation workflow that generates a personalized resume and cover letter for each job listing.\n\n🚀 Features\n\nAutomated Resume Crafting\nGenerates an HTML resume from your data.  \nHosts it live on GitHub Pages.  \nConverts it to PDF using Gotenberg and saves it to Google Drive.\n\nAutomated Cover Letter Generation\nUses an LLM to create a tailored cover letter for each job listing.\n\nSimple Input Database Agent\nStores your experience in an n8n Data Table with the following fields:  \n  role, summary, task, skills, tools, industry.  \nThe main agent pulls this data using RAG (Retrieval-Augmented Generation) to personalize the outputs.\n\nOne-Time GitHub Setup\nInitializes a blank GitHub repository to host HTML files online, allowing Gotenberg to access and convert them.\n\n🧩 Tech Stack\n\nGotenberg** – Converts HTML to PDF  \nGitHub Pages** – Hosts live HTML files  \nn8n** – Handles data tables and workflow automation  \nLLM (OpenAI / Cohere / etc.)** – Generates cover letters  \nGoogle Drive** – Stores the final PDFs  \n\n⚙️ Installation & Setup\n\n1. Create a GitHub Repository\nThis repo will host your HTML resume through GitHub Pages.\n\n2. Set the Webhook URL\nIn the notify-n8n.yml file, replace:\nrole | summary | task | skills | tools | industry\n\n3. Create the n8n Data Table\n\nAdd the following columns:\n\nrole | summary | task | skills | tools | industry\n\n4. Create a Google Spreadsheet\nAdd these columns:  \ncompany | cover_letter | resume\n\n5. Install Gotenberg\nFollow the installation instructions on the Gotenberg GitHub repository: https://github.com/thecodingmachine/gotenberg\n\n6. Customize the HTML Template\nModify the HTML resume to your liking.  \nYou can use an LLM to locate and edit specific sections.\n\n7. Add Authentication and Link Your GitHub Repo\nEnsure your workflow has permission to push updates to your GitHub Pages branch.\n\n8. Run the Workflow\nOnce everything is connected, trigger the workflow to automatically generate and save personalized resumes and cover letters.\n\n📝 How to Use\n\nCopy and paste the job listing description into the Telegram bot.  \nWait for the \"Done\" notification before submitting another job.  \n   Do not use the bot again until the notification appears.  \n   The process usually takes a few minutes to complete.\n\n✅ Notes\n\nThis workflow is designed to save time and personalize your job applications efficiently.  \nBy combining n8n automation, LLMs, and open-source tools like Gotenberg, you can maintain full control over your data while generating high-quality resumes and cover letters for every job opportunity.\n",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

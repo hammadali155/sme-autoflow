@@ -1,0 +1,15 @@
+{
+  "id": 10460,
+  "name": "Stock Market Analysis & Prediction with GPT, Claude & Gemini via Telegram",
+  "description": "Introduction\nAutomates stock market analysis using multiple AI models to predict trends, analyze sentiment, and generate consensus-based investment insights. For traders and analysts seeking data-driven forecasts by eliminating manual research and combining AI perspectives for accurate predictions.\n\nHow It Works\nDaily trigger fetches stock data, news, ratings, and sentiment → AI models analyze each source → OpenAI generates report → Three AI validators (OpenAI, Anthropic, Gemini) cross-verify → Consensus evaluation → Telegram alert with insights.\n\nWorkflow Template\nSchedule → Fetch Stock Data → Fetch News → Fetch Ratings → Fetch Sentiment → AI Analysis → Combine → Generate Report (GPT) → Validate (3 AIs) → Evaluate Consensus → Send Telegram\n\nWorkflow Steps\nData Collection: Scheduled trigger fetches prices, news, analyst ratings, and social trends\nAI Analysis: Separate models analyze stocks, news sentiment, ratings, and social discussions\nReport Generation: OpenAI GPT combines analyses into comprehensive market report\nMulti-AI Validation: Three AI models independently validate predictions for accuracy\nConsensus Building: Evaluates AI agreement to determine confidence levels\nAlert Delivery: Sends Telegram alerts with buy/sell/hold recommendations\n\nSetup Instructions\nSchedule: Configure daily trigger time\nData Sources: Add API keys for stock data, news APIs, and social platforms\nAI Models: Configure OpenAI, Anthropic, and Google Gemini credentials\nTelegram: Create bot and add token\nThresholds: Define consensus requirements for recommendations\n\nPrerequisites\nStock data API (Alpha Vantage, Yahoo Finance)\nNews API key\nSocial media API\nOpenAI API key\nAnthropic API key\nGoogle Gemini API key\nTelegram bot token\n\nUse Cases\nDay Trading: Real-time volatile stock analysis with multiple AI perspectives. Portfolio Management: Daily consensus reports for rebalancing.  \n\nCustomization\nAdd technical indicators (RSI, MACD). Include crypto analysis. Integrate portfolio tracking. Add email/Slack notifications. Configure sector-specific analysis.  \n\nBenefits\nEliminates hours of daily research. Reduces AI hallucination through multi-model validation. Provides 24/7 monitoring. Combines multiple data sources. \n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

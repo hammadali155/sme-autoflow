@@ -1,0 +1,10 @@
+{
+  "id": 10200,
+  "name": "Perform Multi-type DNS Lookups with Google's Free Public DNS Service",
+  "description": "This n8n template makes it easy to perform DNS lookups directly within your n8n workflow using dns.google, without any API credentials.\n\nUse Cases\n\nTrack changes:** Schedule execution and log DNS answers to track changes to records over time.\n\nMonitoring and alerts:** Schedule execution for DNS monitoring to detect misconfiguration and to trigger immediate alerts.\n\nPrerequisite checks:** Use in more extensive workflows to ensure DNS resolves correctly before running a website crawl or other sensitive tasks.\n\nGood to Know\nRequires no API credentials. You do not need to sign up for any third party service for DNS resolution.\n\nCan easily be modified to use with a webhook instead of the default Forms node for external triggering.\n\nBy default performs lookup for: \nA\nCNAME\nAAAA\nMX\nTXT\nNS\n\nHow It Works\n\nThe workflow checks the input for a specified DNS type. If none is found, it uses all types in a predefined list.\n\nIt splits the data into separate items for each DNS type.\n\nIt loops through all items and executes DNS resolution via the highly reliable dns.google service.\n\nIt aggregates all results into a single, easy-to-use output structure.\n\nHow to Use\n\nImport the template and execute the workflow to enter the domain you want to look up in the Form interface.\n\nConnect the final output node to your specific use case (logging, alerting, subsequent workflow steps, etc.).",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

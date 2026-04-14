@@ -1,0 +1,16 @@
+{
+  "id": 4949,
+  "name": "Automate WhatsApp Booking System with GPT-4 Assistant, Cal.com and SMS Reminders",
+  "description": "\nAI-powered WhatsApp booking system with instant SMS confirmations\n\nWho is this for?\n\nThis workflow is designed for solo entrepreneurs, consultants, coaches, clinics, or any business that handles client appointments and wants to automate the entire scheduling experience via WhatsApp — without the need for live agents.\n\nWhat problem is this workflow solving?\n\nResponding to inbound messages, collecting booking details, suggesting available times, and sending reminders can be a huge time drain. This workflow eliminates manual handling by:\nAutomating WhatsApp conversations with an AI assistant\nBooking appointments directly into Cal.com\nSending timely SMS reminders before appointments\n\nIt ensures you never miss a lead or a follow-up — even while you sleep.\n\nWhat this workflow does\n\nFrom a single WhatsApp message, the workflow:\n\nTriggers via a WhatsApp webhook\nUses GPT-4 to handle conversation flow and qualify the prospect\nCollects name, email, selected service\nCalls Cal.com API to fetch available time slots\nBooks the appointment and stores it in Google Sheets\nSends a confirmation message via WhatsApp\nPeriodically scans for upcoming appointments\nSends SMS reminders to clients 2 hours before their session\n\nSetup\n\nConnect your Webhook node to a WhatsApp API (e.g., 360dialog, Twilio, or Ultramsg)\nAdd your OpenAI API key for the GPT-4 nodes\nConfigure your Cal.com API key and set your calendar ID\nLink your Google Sheets with fields like: name, email, date, time, status, reminder_sent\nConnect your SMS service (e.g., sms77) with API credentials\nAdjust the schedule in the reminder node as needed\n\nHow to customize this workflow to your needs\n\nChange the language or tone of the AI assistant** by editing the system prompt in the GPT node\nFilter available time slots** by service, team member, or duration\nModify the reminder timing** (e.g., 1 hour before, 24h before, etc.)\nAdd conditional logic** to route users to different booking flows based on their responses\nIntegrate additional CRMs** or notification channels like email or Slack\n\n📄 Documentation: Notion Guide\n\nNeed help customizing?\nContact me for consulting and support : Linkedin / Youtube",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.sms77",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolHttpRequest"
+  ],
+  "tags": []
+}

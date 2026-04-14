@@ -1,0 +1,11 @@
+{
+  "id": 3904,
+  "name": "Search LinkedIn companies, Score with AI and add them to Google Sheet CRM",
+  "description": "Search LinkedIn companies, Score with AI and add them to Google Sheet CRM\n\nSetup Video: https://youtube.com/watch?v=m904RNxtF0w&t\n\nWho is this for?\nThis template is ideal for sales teams, business development professionals, and marketers looking to build a targeted prospect database with automatic qualification. Perfect for agencies, consultants, and B2B companies wanting to identify and prioritize the most promising potential clients.\n\nWhat problem does this workflow solve?\nManually researching companies on LinkedIn, evaluating their fit for your services, and tracking them in your CRM is time-consuming and subjective. This automation streamlines lead generation by automatically finding, scoring, and importing qualified prospects into your database.\n\nWhat this workflow does\nThis workflow automatically searches for companies on LinkedIn based on your criteria, retrieves detailed information about each company, filters them based on quality indicators, uses AI to score how well they match your ideal customer profile, and adds them to your Google Sheet CRM while preventing duplicates.\n\nSetup\nCreate a Ghost Genius API account and get your API key\nConfigure HTTP Request nodes with Header Auth credentials\nCreate a copy of the provided Google Sheet template\nSet up your Google Sheet and OpenAI credentials following n8n documentation\nCustomize the \"Set Variables\" node to match your target audience and scoring criteria\n\nHow to customize this workflow\nModify search parameters to target different industries, locations, or company sizes\nAdjust the follower count threshold based on your qualification criteria\nCustomize the AI scoring system to align with your specific product or service offering\nAdd notification nodes to alert you when high-scoring companies are identified",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

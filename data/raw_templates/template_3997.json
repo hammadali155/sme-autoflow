@@ -1,0 +1,15 @@
+{
+  "id": 3997,
+  "name": "GitLab Merge Request Review & Risk Analysis with Claude/GPT AI",
+  "description": "Trigger\n\nThe workflow runs when a GitLab Merge Request (MR) is created or updated.\n\nExtract & Analyze\n\nIt retrieves the code diff and sends it to Claude AI or GPT-4o for risk assessment and issue detection.\n\nGenerate Report\n\nAI produces a structured summary with:\nRisk levels\nIdentified issues\nRecommendations\nTest cases\n\nNotify Developers\n\nThe report is:\nEmailed to developers and QA teams\nPosted as a comment on the GitLab MR\n\nSetup Guide\n\nConnect GitLab\nAdd GitLab API credentials\nSelect repositories to track\n\nConfigure AI Analysis\nEnter Anthropic (Claude) or OpenAI (GPT-4o) API key\n\nSet Up Notifications\nAdd Gmail credentials\nUpdate the email distribution list\n\nTest & Automate\nCreate a test MR to verify analysis and email delivery\n\nKey Benefits\n\nAutomated Code Review** – AI-driven risk assessment and recommendations\nSecurity & Compliance** – Identifies vulnerabilities before code is merged\nIntegration with GitLab CI/CD** – Works within existing DevOps workflows\nImproved Collaboration** – Keeps developers and QA teams informed\n\nDeveloped by Quantana, an AI-powered automation and software development company.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 5462,
+  "name": "Generate Images with OpenAI DALL-E via Telegram & Log to Google Sheets",
+  "description": "📌 Workflow Description\n\nThis workflow allows users to generate AI images directly from Telegram while automatically logging each request to Google Sheets for tracking. When a user sends a prompt to your Telegram bot, the workflow receives the prompt, generates an image using OpenAI, saves the prompt and generated image link to Google Sheets, and then sends the image back to the user in Telegram.\n\n⚙️ How to Set It Up\n\n\nConnect your Telegram credentials by adding your bot token in both the Telegram Trigger and Telegram Send Message nodes. Ensure your bot is added to the intended chat.\n\nConnect your OpenAI credentials by inserting your API key in the OpenAI node and configuring it for image generation.\n\nConnect your Google Sheets account by authorising the Google Sheets node and selecting the target spreadsheet and worksheet where you want to save prompts and image links.\n\nFinally, activate the workflow and test by sending a prompt to your Telegram bot to confirm that the image is generated, saved to Google Sheets, and sent back to Telegram seamlessly.\n\nThat’s it – your AI Image Generator with Google Sheets logging is ready to use.\n\t\t\n⸻\n\n✅ That’s it – your AI Image Generator with Google Sheets logging is ready for use.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

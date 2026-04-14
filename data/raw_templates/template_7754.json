@@ -1,0 +1,14 @@
+{
+  "id": 7754,
+  "name": "Extract Specific Website Data with Form Input, Gemini 2.5 flash and Gmail",
+  "description": "What this workflow does\n\nThis workflow creates an automated web scraper that accepts form submissions, extracts specific data from any website using AI, and emails the results back to you.\n\nStep by step:\nWeb Scraper Form Submission provides a web form interface where users submit a URL and specify what data to extract\nGet HTML from Source URL fetches the complete HTML content from the provided website\nHTML Extractor processes the raw HTML and extracts the body content for analysis\nData Extractor LLM Chain uses Google Gemini AI to intelligently analyze the content and extract only the specific data requested by the user\nStructured Output Parser formats the AI response into clean JSON structure with standardized format\nGmail Send Result delivers the extraction results via email including the source URL, extraction request details, and clean extracted results\n\nHow to set up\n\nConnect your Google Gemini API to the Google Gemini Chat Model node for AI-powered data extraction\nConnect your Gmail account to the Gmail node for sending result emails\nUpdate the recipient email in the Gmail node\nCustomize the extraction prompt in the Data Extractor LLM Chain node based on your specific requirements\n\nHow to customize this workflow to your needs\n\nSwitch AI models**: Replace Google Gemini with OpenAI, Claude, or other LLM providers in the Chat Model node based on your accuracy requirements and budget preferences\nChange result delivery**: Replace Gmail with Google Sheets for data storage, Outlook for corporate email, Slack for team notifications, or webhook integrations for custom applications\nCustomize extraction prompts**: Modify the LLM prompt in the Data Extractor Chain to handle specific data types, extraction formats, or industry-specific terminology for your use case\n\nNeed help customizing?\n\nContact me for consulting and support:   \n📧 billychartanto@gmail.com  ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

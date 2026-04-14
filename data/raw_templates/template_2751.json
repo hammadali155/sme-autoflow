@@ -1,0 +1,13 @@
+{
+  "id": 2751,
+  "name": "🤖 Telegram Messaging Agent for Text/Audio/Images",
+  "description": "🤖 This n8n workflow creates an intelligent Telegram bot that processes multiple types of messages and provides automated responses using AI capabilities. The bot serves as a personal assistant that can handle text, voice messages, and images through a sophisticated processing pipeline.\n\nCore Components\n\nMessage Reception and Validation 📥\n🔄 Implements webhook-based message reception for real-time processing\n🔐 Features a robust user validation system that verifies sender credentials\n🔀 Supports both testing and production webhook endpoints for development flexibility\n\nMessage Processing Pipeline ⚡\n🔄 Uses a smart router to detect and categorize incoming message types\n📝 Processes three main message formats:\n  💬 Text messages\n  🎤 Voice recordings\n  📸 Images with captions\n\nAI Integration 🧠\n🤖 Leverages OpenAI's GPT-4 for message classification and processing\n🗣️ Incorporates voice transcription capabilities for audio messages\n👁️ Features image analysis using GPT-4 Vision API for processing visual content\n\nTechnical Architecture\n\nWebhook Management 🔌\n🌐 Maintains separate endpoints for testing and production environments\n📊 Implements automatic webhook status monitoring\n⚡ Provides real-time webhook configuration updates\n\nError Handling ⚠️\n🔍 Features comprehensive error detection and reporting\n🔄 Implements fallback mechanisms for unprocessable messages\n💬 Provides user feedback for failed operations\n\nMessage Classification System 📋\n🏷️ Categorizes incoming messages into tasks and general conversation\n🔀 Implements separate processing paths for different message types\n🧩 Maintains context awareness across message processing\n\nSecurity Features\n\nUser Authentication 🔒\n✅ Validates user credentials against predefined parameters\n👤 Implements first name, last name, and user ID verification\n🚫 Restricts access to authorized users only\n\nResponse System\n\nIntelligent Responses 💡\n🤖 Generates contextual responses based on message classification\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.textClassifier"
+  ],
+  "tags": []
+}

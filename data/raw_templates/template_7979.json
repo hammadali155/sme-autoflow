@@ -1,0 +1,17 @@
+{
+  "id": 7979,
+  "name": "Chat with Google Drive Documents using GPT, Pinecone, and RAG",
+  "description": "📌 Short Overview\n\nAutomatically sync files from Google Drive into a searchable AI knowledge base with Pinecone, and answer user queries using GPT-4o with conversational memory.\n\n⸻\n\n🛠️ Workflow Usage Steps\n\n1.\tWatch Google Drive for file changes\nTrigger the workflow when a new file is uploaded or an existing file is updated in a specific Google Drive folder.\n2.\tDownload and process the file\nRetrieve the file, split it into smaller text chunks with a Recursive Character Text Splitter, and generate vector embeddings using OpenAI.\n3.\tStore embeddings in Pinecone\nSave the embeddings in a Pinecone vector database to keep your knowledge base continuously updated and searchable.\n4.\tSearch context for chat queries\nWhen a user asks a question, query Pinecone for relevant context, combine results with conversational memory, and process them with GPT-4o.\n\t5.\tRespond with AI-powered answers\nProvide a concise response (100–200 words) that blends knowledge from your documents with the conversation history.\n\n⸻\n\n✅ Use Cases\n•\tKeep a live, AI-ready knowledge base from your Google Drive files.\n\t•\tEnable team members to query company documents instantly.\n\t•\tBuild a personal assistant that stays up to date with your latest uploads.\n\n⚙️ Setup Steps\nGoogle Drive\n\t•\tCreate a Google Cloud project.\n\t•\tEnable the Google Drive API.\n\t•\tGenerate OAuth credentials and connect them in n8n.\nOpenAI\n\t•\tSign up at OpenAI.\n\t•\tCopy your API key from the dashboard.\n\t•\tAdd it to n8n under Credentials → OpenAI API.\nPinecone\n\t•\tCreate an account at Pinecone.\n\t•\tCreate a new index (e.g., docs-embeddings).\n\t•\tCopy your API key and environment, then add them to n8n under Credentials → Pinecone API.\nWorkflow Configuration\n\t•\tImport this workflow into your n8n instance.\n\t•\tSelect the Google Drive folder you want to monitor.\n\t•\tSet the Pinecone index name in the workflow.\n\t•\tAdjust chunk size / overlap in the text splitter if needed.\nTest the Workflow\n\t•\tUpload a new document to your Google Drive folder.\n\t•\tRun the workflow to confirm embeddings are created and stored in Pinecone.\n\t•\tAsk a sample query and verify the AI returns a context-aware answer.",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

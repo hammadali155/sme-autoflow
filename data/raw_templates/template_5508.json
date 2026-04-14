@@ -1,0 +1,18 @@
+{
+  "id": 5508,
+  "name": "Create a Private Document Q&A System with Llama3, Postgres, Qdrant and Google Drive",
+  "description": "⚙️ How It Works: LocalRAG.AI\n\n⚠️ Note: This system only works for self-hosted n8n instances. It will not function on n8n.cloud or other remote setups.\nLocalRAG.AI is a private, on-prem AI assistant that uses your own documents to answer questions intelligently. It combines LangChain, Ollama, Qdrant, and Postgres into a powerful AI pipeline — all running locally for maximum data privacy.\n\n🔄 What It Does\nMonitors Your Google Drive Folders for new or updated files.\nDownloads the file, extracts the text, and prepares it.\nGenerates Embeddings using your local Ollama model (e.g., LLaMA 3).\nStores them in Qdrant, your local vector database.\nDuring a chat, it:\nUses vector search to retrieve relevant chunks.\nCombines them with chat history stored in Postgres.\nResponds via a LangChain AI agent using your local model.\n🛠️ Setup Steps (Self-hosted Only)\nInstall and Self-host n8n (e.g., via Docker).\nSet up your Ollama instance locally and load your desired LLM (e.g., llama3).\nDeploy Qdrant locally for vector storage.\nConnect a Postgres DB to store chat history.\nCreate and import the workflow in n8n.\nAuthenticate Google Drive to monitor folders.\nConnect credentials for Ollama, Qdrant, Postgres in the n8n workflow.\nStart chatting through the Webhook Trigger or custom UI.\n🧠 Perfect For:\nResearch teams handling confidential data\nInternal documentation Q&A\nAI chatbots that don’t rely on OpenAI or cloud\n",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOllama",
+    "@n8n/n8n-nodes-langchain.lmOllama",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+    "@n8n/n8n-nodes-langchain.embeddingsOllama",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

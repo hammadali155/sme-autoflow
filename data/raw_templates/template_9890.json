@@ -1,0 +1,11 @@
+{
+  "id": 9890,
+  "name": "Automated B2B Lead Generation: Google Maps to Sheets with BrowserAct & Telegram",
+  "description": "\nAutomated B2B Lead Generation from Google Maps to Google Sheets using BrowserAct\n\nThis n8n template automates local lead generation by scraping Google Maps for businesses, saving them to Google Sheets, and notifying you in real-time via Telegram.\n\nThis workflow is perfect for sales teams, marketing agencies, and local B2B services looking to build targeted lead lists automatically.\n\nSelf-Hosted Only \nThis Workflow uses a community contribution and is designed and tested for self-hosted n8n instances only.\n\nHow it works\nThe workflow is triggered manually. You can set the Location, Bussines_Category, and number of leads (Extracted_Data) in the first BrowserAct node.\nA BrowserAct node (\"Run a workflow task\") initiates the scraping job on Google Maps using your specified criteria.\nA second BrowserAct node (\"Get details of a workflow task\") pauses the workflow and waits for the scraping task to be 100% complete.\nA Code node takes the raw JSON string output from the scraper and correctly parses it, splitting the data into individual items (one for each business).\nA Google Sheets node appends or updates each lead into your spreadsheet, matching on the \"Name\" column to prevent duplicate entries.\nFinally, a Telegram node sends a message with the new lead's details to your specified chat, providing instant notification.\n\nRequirements\nBrowserAct** API account for web scraping\nBrowserAct* \"Google Maps Local Lead Finder*\" Template\nBrowserAct** n8n Community Node -&gt; (n8n Nodes BrowserAct)\nGoogle Sheets** credentials for saving leads\nTelegram** credentials for sending notifications\n\nNeed Help?\nHow to Find Your BrowseAct API Key & Workflow ID\nHow to Connect n8n to Browseract\nHow to Use & Customize BrowserAct Templates\nHow to Use the BrowserAct N8N Community Node\n\nWorkflow Guidance and Showcase\n\nAUTOMATE Local Lead Generation: Google Maps to Sheets & Telegram with n8n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

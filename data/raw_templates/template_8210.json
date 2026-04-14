@@ -1,0 +1,11 @@
+{
+  "id": 8210,
+  "name": "Summarize Content from URLs, Text & PDFs using OpenAI ",
+  "description": "AI Content Summarizer Suite\n\nThis n8n template collection demonstrates how to build a comprehensive AI-powered content summarization system that handles multiple input types: URLs, raw text, and PDF files. Built as 4 separate workflows for maximum flexibility.\nUse cases: Research workflows, content curation, document processing, meeting prep, social media content creation, or integrating smart summarization into any app or platform.\n\nHow it works\nMulti-input handling: Separate workflows for URLs (web scraping), direct text input, and PDF file processing\nSmart PDF processing: Attempts text extraction first, falls back to OCR.Space for image-based PDFs\nAI summarization: Uses OpenAI's GPT-4.1-mini with customizable length (brief/standard/detailed) and focus areas (key points/numbers/conclusions/action items)\nLanguage support: Multi-language summaries with automatic language detection\nFlexible output: Returns clean markdown-formatted summaries via webhook responses\nUnified option: The all-in-one workflow automatically detects input type and routes accordingly\n\nHow to use\nReplace webhook triggers with your preferred method (manual, form, API endpoint)\nEach workflow accepts different parameters: URL, text content, or file upload\nCustomize summary length and focus in the AI prompt nodes\nAuthentication is optional - switch to \"none\" if running internally\nPerfect for integration with Bubble, Zapier, or any platform that can make HTTP requests\n\nRequirements\nOpenAI API key or OpenRouter Keys\nOCR.Space API key (for PDF fallback processing)\nn8n instance (cloud or self-hosted)\nAny platform that can make HTTP requests.\n\nSetup Steps\nReplace \"Dummy OpenAI\" with your OpenAI credentials\nAdd your OCR.Space API key in the OCR nodes is not mandatory.\nUpdate webhook authentication as needed\nTest each workflow path individually",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

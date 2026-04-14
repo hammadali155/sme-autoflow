@@ -1,0 +1,9 @@
+{
+  "id": 3705,
+  "name": "Generate Custom AI Images with OpenAI GPT-Image-1 Model",
+  "description": "How it works  \nTrigger the workflow manually via the n8n UI.  \nDefine key parameters like the image prompt, number of images, size, quality, and model.  \nSend a POST request to OpenAI’s image generation API using those inputs.  \nSplit the API response to handle multiple images.  \nConvert the base64 image data into downloadable binary files.\n\nSet up steps  \nInitial setup takes around 5–10 minutes. You’ll need an OpenAI API key, a configured HTTP Request node with credentials, and to customize the prompt/parameter fields in the “Set Variables” node. No advanced config or external services needed.\n\nImportant Note\nYou have to make sure to complete OpenAI's new verification requirements to use their new image API:\nhttps://help.openai.com/en/articles/10910291-api-organization-verification\n\nIt only takes a few minutes and does not cost any money.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

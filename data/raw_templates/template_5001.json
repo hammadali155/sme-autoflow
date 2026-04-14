@@ -1,0 +1,14 @@
+{
+  "id": 5001,
+  "name": "Interview Scheduling Automation with Google Sheets, Calendar, Gmail & GPT-4o'",
+  "description": "SEO-Optimized Description:\n\nStreamline your interview scheduling process with this intelligent n8n automation template powered by Google Calendar, Google Sheets, and GPT-4. This workflow reads candidate information from a spreadsheet, automatically schedules interviews in Google Calendar, and sends personalized interview invitation emails—all without manual input.\n\nWhat This Template Does:\n\n📋 Monitors a Google Sheet for new candidate entries every minute\n🕒 Auto-selects the next available interview slot (Mon/Wed/Fri at 3 PM)\n📅 Creates a calendar invite in your Google Calendar\n✍️ Uses GPT-4 to generate personalized emails based on candidate data\n📧 Sends the email invite with the interview link via Gmail\n\nBuilt-in logic ensures:\n\nCandidates never get same-day interviews\nAI-generated emails are concise, polite, and professionally formatted\nScheduling remains conflict-free and easy to manage\n\nRequirements:\n\nGoogle Calendar API credentials\nGoogle Sheets with candidate info (Name, Email, Background)\nGmail account with OAuth2\nAzure OpenAI API (GPT-4o recommended)\n\nPerfect For:\n\n Startups, HR teams, and recruiters looking to automate interview scheduling, eliminate back-and-forth emails, and deliver a professional candidate experience—all with zero hassle.\n",
+  "nodes": [
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi"
+  ],
+  "tags": []
+}

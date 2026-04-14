@@ -1,0 +1,10 @@
+{
+  "id": 5922,
+  "name": "Create Food Emoji Icons with OpenAI GPT & Image Generation",
+  "description": "\n\nThis workflow allows users to generate beautifully stylized 3D-rendered food emoji icons based on a simple text prompt. It combines user input, structured visual design generation, and image rendering using OpenAI’s GPT models.\n\n✨ What It Does\nCollects user input via a form: e.g. \"green apple\"\nGenerates a structured JSON specification describing the emoji’s form, lighting, texture, and color scheme\nUses AI to render an image based on that spec—styled like a high-quality emoji icon with a transparent background\n\n🧠 Use Case\nThis template is ideal for:\nDesigners or creators needing icon ideas or drafts for food items\nDevelopers building emoji packs or digital stickers\nInspiration for AI-assisted product illustration or branding\n\n💡 Why It's Useful\nInstead of prompting a model directly with vague terms, this flow creates a structured visual spec tailored to food items. The final emoji-style icon is polished, modern, and downloadable.\n\n✅ Requirements\nTo get started with this workflow, follow these steps:\n🔑 Configure Credentials: Set up your API credentials for OpenAI and Google Drive\n💳 Add OpoenAI Credit: Make sure to add credit to your OpenAI account, verify your organization (required for generating images)\n📊 Connect Google Drive: Authenticate your Google Drive account\n⚙️ (Optional) Customize Prompts: Adjust the prompts within the workflow to better suit your specific needs\n\nNote: Each image generation will cost you about $0.17\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

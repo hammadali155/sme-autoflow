@@ -1,0 +1,21 @@
+{
+  "id": 3066,
+  "name": "✨🤖Automate Multi-Platform Social Media Content Creation with AI",
+  "description": "Automate Multi-Platform Social Media Content Creation with AI\n\nWho is this for?  \nSocial Media Managers and Digital Marketers seeking to streamline content production across 7+ platforms (X/Twitter, Instagram, LinkedIn, Facebook, TikTok, Threads, YouTube Shorts) using AI-powered automation.\n\nWhat problem does this solve?  \nCreating platform-optimized content at scale while maintaining brand consistency across multiple channels, reducing manual work by 80% through AI generation and automated publishing.\n\nWhat this workflow does  \nAI Content Generation:  \n   Uses GPT-4/Gemini to create platform-specific posts  \n   Automatically generates hashtags, CTAs, and emoji placement  \n   Supports image/video suggestions and image creation using OpenAI or Pollinations.ai\n   Uses SERP api to search for relavent content\n\nApproval Workflow:  \n   Sends formatted HTML emails for human review  \n   Implements double-approval system with Gmail integration  \n\nCross-Platform Publishing:  \n   One-click deployment to:  \n     Instagram/Facebook (via Graph API)  \n     X/Twitter (Official API)  \n     LinkedIn (Sales Navigator integration)  \n\nSetup  \nCredentials:  \n   OpenAI API key  \n   Google Gemini API  \n   Social media platform tokens (X, LinkedIn, Facebook)  \n   ImgBB for image hosting  \n   Gmail\n   SERP API\n   Telegram\n\nConfiguration:  \n   Update all \"your-unique-id\" placeholders in API nodes  \n   Set email recipients in Gmail nodes  \n   Customize AI prompts \n\nCustomization:  \n   Adjust character limits per platform  \n   Modify approval thresholds  \n   Add/remove social platforms as needed  \n\nHow to customize  \nContent Style**: Edit prompt templates in the \"Social Media Content Factory\" agent node  \nApproval Process**: Modify email templates  \nAnalytics**: Connect to Google Sheets for performance tracking  \nImage Generation**: Switch between Pollinations.ai/DALL-E/Midjourney  \n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

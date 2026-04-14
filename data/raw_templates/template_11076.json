@@ -1,0 +1,12 @@
+{
+  "id": 11076,
+  "name": "Analyze Customer Reviews from 5 Platforms with Thordata Scraping & GPT-4.1 Reports",
+  "description": "Automatically gather hundreds of real customer reviews from five major platforms in one run using Thordata API and Proxy — Trustpilot, Capterra, Chrome Web Store, TrustRadius, and Product Hunt — then let GPT-4.1 perform deep collective sentiment analysis, uncover common praises & complaints, flag critical issues, assess churn risk, and deliver actionable recommendations straight to your inbox as a stunning executive HTML report.\n\nWho’s it for\nProduct managers & founders  \nGrowth and marketing teams  \nCustomer success & support leads  \nAgencies delivering competitor or product review reports\n\nHow it works\nSubmit product URLs via form, webhook, or use defaults  \nSmart, Cloudflare-safe scraping with automatic pagination  \nUniversal parser standardizes every review format  \nGlobal deduplication using deterministic unique IDs  \nGPT-4.1 analyzes all reviews collectively (not one-by-one)  \nBeautiful responsive HTML email with sentiment badges, stats, and recommendations\n\nRequirements\nThordata API key (free tier works) → set as HTTP Header Auth credential  \nOpenAI API key  \nGmail account (or replace with any email node)\n\nHow to set up\nAdd your Thordata and OpenAI credentials  \nConnect Gmail  \nClick “Execute Workflow” – instantly tests with Thordata’s own reviews\n\nHow to customize\nEdit default product in “Prepare Review Sources” node  \nModify the AI prompt or email design anytime  \nAdd more sources or change the output format easily\n\nZero browser automation · Rate-limit safe · Fully deduplicated · Plug-and-play in minutes.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

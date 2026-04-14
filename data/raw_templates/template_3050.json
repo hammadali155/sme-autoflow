@@ -1,0 +1,15 @@
+{
+  "id": 3050,
+  "name": "Build Your First AI Data Analyst Chatbot",
+  "description": "Enhance your data analysis by connecting an AI Agent to your dataset, using n8n tools.\n\nThis template teaches you how to build an AI Data Analyst Chatbot that is capable of pulling data from your sources, using tools like Google Sheets or databases. It's designed to be easy and efficient, making it a good starting point for AI-driven data analysis.\n\nYou can easily replace the current Google Sheets tools for databases like Postgres or MySQL.\n\nHow It Works\nThe core of the workflow is the AI Agent. It's connected to different data retrieval tools, to get data from Google Sheets (or your preferred database) in many different ways.\n\nOnce the data is retrieved, the Calculator tool allows the AI to perform mathematical operations, making your data analysis precise.\n\nWho is this template for\nData Analysts & Researchers:** Pull data from different sources and perform quick calculations.\nDevelopers & AI Enthusiasts:** Learn to build your first AI Agent with easy dataset access.\nBusiness Owners:** Streamline your data analysis with AI insights and automate repetitive tasks.\nAutomation Experts:** Enhance your automation skills by integrating AI with your existing databases.\n\nHow to Set Up\nYou can find detailed instructions in the workflow itself.\n\nCheck out my other templates\n👉 https://n8n.io/creators/solomon/",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

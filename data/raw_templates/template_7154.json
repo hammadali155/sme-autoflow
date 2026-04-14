@@ -1,0 +1,13 @@
+{
+  "id": 7154,
+  "name": "Beginner AI Dataset Generator using OpenAI + LangChain in n8n",
+  "description": "This n8n workflow dynamically generates a realistic sample dataset based on a single topic you provide. It uses OpenAI (via LangChain) and n8n’s built-in nodes to:\n\nGenerate structured JSON data for 5 columns with 3–5 values each  \nFlatten that data into a single text blob  \nInfer meaningful column names via a second AI call  \nPivot, split, merge, and rename columns automatically  \nOutput a clean, labeled dataset ready for export or further processing  \n\n⚙️ Prerequisites\n\nOpenAI API Key  \n   Visit: https://platform.openai.com/account/api-keys  \n   Create a new key  \n   In n8n: Credentials → New → OpenAI API, paste key, name it “OpenAi account”  \n\nLangChain nodes enabled in your n8n instance  \n\n🥇 Step 1: Set Up OpenAI Credential\nGo to OpenAI API Keys  \nCreate and copy your key  \nIn n8n: Credentials → New → OpenAI API → paste key as “OpenAi account”\n\n🥈 Step 2: Manual Trigger\nAdd Manual Trigger to start the workflow\n\n🥉 Step 3: Set Topic\nAdd a Set node named Set Topic to Search  \nField: Topic = n8n use cases (or any topic you choose)\n\n✨ Step 4: Generate Structured Data\nLangChain Agent** node Generate Random Data\nConnect to OpenAI Chat Model1 and Tool: Inject Creativity1  \nSystem prompt: instruct AI to output 5 columns of realistic values in JSON  \n\n🔧 Step 5: Parse AI Output\nStructured Output Parser** to validate JSON  \n\n🔄 Step 6: Flatten Data\nCode** node Outpt all Data to One Field  \nJoins all values into a comma-separated string for column naming\n\n🧠 Step 7: Generate Column Names\nLangChain Agent** Generate Column Names  \nConnect to OpenAI Chat Model2  \nPrompt: infer 5 column names from the string  \n\n🔢 Step 8: Pivot Names Row\nCode** node Pivot Column Names transforms array into { column1: name1, … }\n\n🪓 Step 9: Split Columns\n5 SplitOut nodes to break each array back into rows per column\n\n🔗 Step 10: Merge Rows\nMerge** node Merge Columns together using combineByPosition  \n\n🏷️ Step 11: Rename Columns\nSet** node Rename Columns assigns the AI-generated names to each column\n\n🔗 Step 12: Final Output\nMerge** Append Column Names combines data and header row\n\n🏁 Done! You now have a fully AI-driven, labeled dataset generated from a single topic—no external services needed. Easily extend by adding a Google Sheets or HTTP node to export.\n\n📬 Need Help or Want to Customize This?\n📧 robert@ynteractive.com  \n🔗 LinkedIn",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

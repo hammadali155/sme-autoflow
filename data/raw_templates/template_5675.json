@@ -1,0 +1,10 @@
+{
+  "id": 5675,
+  "name": "Transform Markdown Content into Structured Notion Blocks",
+  "description": "Markdown to Notion Blocks Converter\n\nTransform markdown-formatted text into properly structured Notion page content with this comprehensive workflow.\n\nOverview\nThis workflow automatically converts markdown text into Notion's block format and inserts it directly into a Notion page. Perfect for content creators, documentation teams, and anyone who needs to migrate markdown content to Notion.\n\nFeatures\nComplete Markdown Support**: Handles headers (H1-H4), paragraphs, lists, quotes, code blocks, and horizontal rules\nRich Text Formatting**: Preserves bold, italic, and link formatting\nSmart Text Processing**: Generates plain text excerpts and maintains original content structure\nDirect Notion Integration**: Automatically inserts converted blocks into your specified Notion page\nBatch Processing**: Efficiently handles large content blocks\n\nWhat It Does\nTakes markdown-formatted text as input\nParses and converts it to Notion's block structure\nHandles complex formatting including:\n   Headers and subheaders\n   Bulleted and numbered lists\n   Code blocks with syntax highlighting\n   Blockquotes\n   Bold and italic text\n   Links\n   Horizontal dividers\nUploads the converted content directly to your Notion page\n\nUse Cases\nContent Migration**: Move existing markdown documentation to Notion\nAutomated Publishing**: Convert blog posts or articles from markdown to Notion\nDocumentation Workflows**: Streamline technical documentation processes\nContent Syndication**: Publish the same content across multiple platforms\n\nRequirements\nNotion API credentials\nTarget Notion page ID\nMarkdown-formatted source content\n\nSetup\nConfigure your Notion API credentials\nReplace the page ID in the HTTP request node with your target Notion page\nConnect your markdown data source (replace the mock data node)\nExecute the workflow",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": 3025,
+  "name": "🧠 Empower Your AI Chatbot with Long-Term Memory and Dynamic Tool Routing",
+  "description": "Empower Your AI Chatbot with Long-Term Memory and Dynamic Tool Routing\n\nThis n8n workflow equips your AI agent with long-term memory and a dynamic tools router, enabling it to provide intelligent, context-aware responses while managing tasks across multiple tools. By combining persistent memory and modular task routing, this workflow makes your AI smarter, more efficient, and highly adaptable.\n\n👥 Who Is This For?\n\nAI Developers & Automation Enthusiasts: Integrate advanced AI features like long-term memory and task routing without coding expertise.  \nBusinesses & Teams: Automate tasks while maintaining personalized, context-aware interactions.  \nCustomer Support Teams: Improve user experience with chatbots that remember past interactions.  \nMarketers & Content Creators: Streamline communication across platforms like Gmail and Telegram.  \nAI Researchers: Experiment with persistent memory and multi-tool integration.\n\n🚀 What Problem Does This Solve?\n\nThis workflow simplifies the creation of intelligent AI systems that retain memory, manage tasks dynamically, and automate notifications across tools like Gmail and Telegram—saving time and improving efficiency.\n\n🛠️ What This Workflow Does\n\nSave & Retrieve Memories**: Uses Google Docs for long-term storage to recall past interactions or user preferences.  \nDynamic Task Routing**: Routes tasks to the right tools (e.g., saving/retrieving memories or sending notifications).  \nAI-Powered Context Understanding**: Combines OpenAI GPT-based short-term memory with long-term memory for smarter responses.  \nMulti-Channel Notifications**: Sends updates via Gmail or Telegram.\n\n🔧 Setup\n\nAPI Credentials:\n   Connect to OpenAI (AI processing), Google Docs (memory storage), Gmail/Telegram (notifications).  \nCustomize Parameters:\n   Adjust the AI agent's system message for your use case.\n   Define task-routing rules in the tools router node.\nTest & Deploy:\n   Verify memory saving/retrieval, task routing, and notification delivery.\n\n💡 How to Customize\n\nModify the system message in the OpenAI node to tailor your agent’s behavior.\nAdd or adjust routing rules for additional tools.\nUpdate notification settings to match your communication preferences.\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.googleDocs",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

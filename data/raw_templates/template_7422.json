@@ -1,0 +1,13 @@
+{
+  "id": 7422,
+  "name": "Amazon Affiliate Marketing Automation",
+  "description": "Who this is for\n\nThis workflow is for Amazon affiliate marketers and social media managers who want to quickly turn product links into engaging Facebook posts with AI-generated captions and images — fully automated.\n\nWhat this workflow does\n\nThis workflow starts every time a new Product Link is added to a connected Google Sheet. It then:\n\nExtracts the ASIN** from the product link.\nFetches product details** from Amazon using RapidAPI.\nGenerates a short, scroll-stopping Facebook caption** with OpenRouter AI.\nCreates a product image prompt** and sends it to Google Gemini for high-quality image generation.\nUploads the creative directly to Facebook** via the Facebook Graph API.\nMarks the Google Sheet row** as “Done ✅” after posting.\n\nThe Facebook post includes:\n\nProduct image (AI-enhanced)\nShort, benefit-focused caption with emojis\nAffiliate link\n\nSetup\n\nTo set this template up, follow the sticky notes inside the workflow and:\n\nGoogle Sheets → Connect your sheet and ensure the columns “Product Link” & “Facebook Upload” exist.\nRapidAPI → Add your API key in the “Amazon Product Details” node.\nOpenRouter → Add credentials for caption generation.\nGoogle Gemini → Add your API key for image generation.\nFacebook Graph API → Connect your Facebook account for posting.\n\nHow to customize this workflow to your needs\n\nChange the Facebook caption prompt to match your tone or branding.\nAdjust the AI image generation prompt to fit your preferred photography style.\nModify the Google Sheet update logic if you want to track additional info (e.g., posting date, engagement stats).\nSwitch Facebook posting to Instagram or another platform by replacing the final API call.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.facebookGraphApi",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 4295,
+  "name": "Automate Business Lead Scraping from Apify to Google Sheets with Data Cleaning",
+  "description": "\n🚀 Automated Lead Scraper Workflow (Apify + n8n + Google Sheets)\n\n🧠 What It Does\n\nThis n8n workflow automates the process of scraping leads using Apify, cleaning the extracted data, and exporting it to Google Sheets—ready for use in outreach, prospecting, or CRM pipelines.\n\n🔄 Workflow Steps\n\n✅ Start – Manually triggers the workflow.\n🧩 Set Variables – Stores required Apify credentials:\n\n   APIFY_TOKEN: Your Apify token.\n   APIFY_TASK_ID: The Apify task to run.\n🕸️ Run Apify Scraper – Launches the scraper and fetches the dataset.\n🧹 Clean Data – Processes scraped results to:\n\n   ✂️ Strip non-numeric characters from phone numbers.\n   ✉️ Format emails (lowercase + trimmed).\n📊 Export to Google Sheets – Appends clean data to your spreadsheet:\n\n   🏢 company name → from title\n   📞 phone → cleaned number\n   📍 address → from scraped info\n\n🛠️ Requirements\n\n🕷️ Apify Account\n\n  A valid APIFY_TOKEN\n  An existing Apify task (APIFY_TASK_ID)\n\n📗 Google Sheets Access\n\n  OAuth2 credentials set up in n8n (e.g., \"Google Sheets account 2\")\n\n🚦 How to Use\n\n⚙️ Open the Variables node and plug in your Apify credentials.\n📄 Confirm the Google Sheets node points to your desired spreadsheet.\n▶️ Run the workflow manually from the Start node.\n\n📥 Output\n\nA ready-to-use sheet of cleaned lead data containing:\n\nCompany names\nPhone numbers\nAddresses\n\n💼 Perfect For:\n\nSales teams doing outbound prospecting\nMarketers building lead lists\nAgencies running data aggregation tasks\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

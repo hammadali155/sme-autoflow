@@ -1,0 +1,20 @@
+{
+  "id": 5687,
+  "name": "Automated US Stock Portfolio Analysis with Telegram, Perplexity AI & PDF Reports",
+  "description": "System Architecture\nTwo integrated N8N workflows providing automated US stock portfolio management through Telegram:\n\nFLOW 1: Conversational Portfolio Manager\nTelegram bot for interactive portfolio management\nPDF upload & analysis via LlamaIndex Cloud API\nNatural language portfolio updates via GPT-4.1-mini\nReal-time user registration and data management\n\nFLOW 2: Automated Weekly Reports\nSchedule-triggered weekly analysis (every 7 days)\nPerplexity AI sonar-deep-research for market analysis\nProfessional PDF report generation via PDFco\nAutomatic Telegram delivery to all registered users",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.supabase",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+    "n8n-nodes-base.perplexity"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 4794,
+  "name": "Upwork Lead Generation: Extract Client Emails with LinkedIn Scraping and AI",
+  "description": "\nAutomated solution to extract and organize contact information from Upwork job postings, enabling direct outreach to potential clients who post jobs matching your expertise.\n\n🚀 What It Does\n\nScrapes job postings for contact information\nExtracts email addresses and social profiles\nOrganizes leads in a structured format\nEnables direct outreach campaigns\nTracks response rates\n\n🎯 Perfect For\n\nFreelancers looking to expand their client base\nAgencies targeting specific industries\nSales professionals in the gig economy\nRecruiters sourcing clients\nDigital marketing agencies\n\n⚙️ Key Benefits\n\n✅ Access to hidden contact information  \n✅ Expand your client base  \n✅ Beat the competition to opportunities  \n✅ Targeted outreach campaigns  \n✅ Higher response rates  \n\n🔧 What You Need\n\nUpwork account\nn8n instance\nEmail service (for outreach)\nCRM (optional)\n\n📊 Features\n\nEmail pattern detection\nSocial media profile extraction\nCompany website discovery\nLead scoring system\nOutreach tracking\n\n🛠️ Setup & Support\n\nQuick Setup\n\nStart collecting leads in 20 minutes with our step-by-step guide\n\n📺 Watch Tutorial\n\n💼 Get Expert Support\n\n📧 Direct Help\n\n\n\nTake control of your freelance career with direct access to potential clients. Transform how you find and secure projects on Upwork.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

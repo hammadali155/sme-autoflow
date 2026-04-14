@@ -1,0 +1,10 @@
+{
+  "id": 7145,
+  "name": "Send real-time Kubernetes(EKS/GKE/AKS) CPU spike alerts from Prometheus to Slack",
+  "description": "🧾 Summary\nThis workflow monitors Kubernetes pod CPU usage using Prometheus, and sends real-time Slack alerts when CPU consumption crosses a threshold (e.g., 0.8 cores). It groups pods by application name to reduce noise and improve clarity, making it ideal for observability across multi-pod deployments like Argo CD, Loki, Promtail, applications etc.\n\n👥 Who’s it for\nDesigned for DevOps and SRE teams and platform teams, this workflow is 100% no-code, plug-and-play, and can be easily extended to support memory, disk, or network spikes. It eliminates the need for Alertmanager by routing critical alerts directly into Slack using native n8n nodes.\n\n⚙️ What it does\nThis n8n workflow polls Prometheus every 5 minutes ⏱️, checks if any pod's CPU usage crosses a defined threshold (e.g., 0.8 cores) 🚨, groups them by app 🧩, and sends structured alerts to a Slack channel 💬.\n\n🛠️ How to set up\n🔗 Set your Prometheus URL with required metrics (container_cpu_usage_seconds_total, kube_pod_container_resource_limits)\n\n🔐 Add your Slack bot token with chat:write scope\n\n🧩 Import the workflow, customize:\n\nThreshold (e.g., 0.8 cores)\n\nSlack channel\n\nCron schedule\n\n📋 Requirements\nA working Prometheus stack with kube-state-metrics\nSlack bot credentials\nn8n instance (self-hosted or cloud)\n\n🧑‍💻 How to customize\n🧠 Adjust threshold values or query interval\n\n📈 Add memory/disk/network usage metrics\n\n💡 This is a plug-and-play Kubernetes alerting template for real-time observability.\n\n🏷️ Tags:\nPrometheus, Slack, Kubernetes, Alert, n8n, DevOps, Observability, CPU Spike, Monitoring\n\nPrometheus Spike Alert to Slack\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

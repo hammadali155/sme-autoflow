@@ -1,0 +1,14 @@
+{
+  "id": 6524,
+  "name": "Automate AI News Videos to Social Media with GPT-4o & HeyGen and Postiz",
+  "description": "🤖 Automated AI News Video Creation and Social Media Publishing Workflow\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 Overview:\nThis workflow fully automates the creation and social media distribution of AI-generated news videos. It fetches news, crafts captions, generates avatar videos via HeyGen, stores them, and publishes them across Instagram, Facebook, and YouTube via Postiz.\n\n🔄 WORKFLOW PROCESS:\nNews Fetching: Reads the latest news from an RSS feed.\nAI Captioning: Generates concise, engaging captions using an AI agent (GPT-4o-mini).\nVideo Generation: Creates an AI avatar video using HeyGen with the generated caption.\nVideo Storage: Downloads the video and uploads it to Google Drive for archival.\nData Logging: Records all news and video metadata into Google Sheets.\nPostiz Upload: Uploads the video to Postiz's internal storage for publishing.\nSocial Publishing: Fetches Postiz integrations and routes the video to Instagram, Facebook, and YouTube after platform-specific content cleaning.\n\n⚙️ KEY TECHNOLOGIES:\nRSS Feeds:** News source.\nLangChain (n8n nodes):** AI Agent and Chat OpenAI for caption generation.\nHeyGen API:** AI avatar video creation.\nGoogle Drive:** Video file storage.\nGoogle Sheets:** Data logging and tracking.\nPostiz API:** Unified social media publishing platform.\n\n⚠️CRITICAL CONFIGURATIONS:\nAPI Keys:** Ensure HeyGen and Postiz API keys are correctly set in credentials and the 'Setup Heygen Parameters' node.\nHeyGen IDs:** Verify avatar_id and voice_id in 'Setup Heygen Parameters'.\nPostiz URL:** Confirm https://postiz.yourdomain.com is your correct Postiz instance URL across all HTTP Request nodes.\nCredentials:** All Google, OpenAI, and Postiz credentials must be properly linked.\n\n📈BENEFITS:\nAutomated content creation and distribution, saving significant time.\nConsistent branding and messaging across multiple platforms.\nCentralized logging for tracking and performance analysis.\nScalable solution for high-volume content demands.\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

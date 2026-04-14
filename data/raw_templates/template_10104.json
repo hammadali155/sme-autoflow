@@ -1,0 +1,12 @@
+{
+  "id": 10104,
+  "name": "Form to Meeting: Google Calendar, Zoom, Gmail & Slack Booking Automation",
+  "description": "Who’s it for\n\nTeams that collect meeting requests via a form and want instant, error-free scheduling: customer success, sales, education, agencies, and community managers.\n\nHow it works / What it does\n\nThis workflow ingests a form submission (name, email, preferred date/time), checks Google Calendar for conflicts, and branches automatically. If the slot is free, it creates a calendar event, spins up a Zoom meeting, emails the guest a confirmation, and posts a Slack summary to your team. If busy, it sends a polite “please pick another time” email. Time handling defaults to Asia/Tokyo and converts to ISO internally to keep downstream integrations consistent.\n\nHow to set up\n\nImport the workflow and rename nodes for clarity if needed.\n\nOpen the Workflow Configuration (Set) node and adjust variables (calendar ID, meeting duration, Slack channel, sender info).\n\nMap your form fields in Extract Booking Details.\n\nConnect credentials in each service node (Google Calendar, Zoom, Gmail, Slack).\n\nTest once with a real submission.\n\nRequirements\n\nActive accounts and n8n credentials for Google Calendar, Zoom, Gmail, and Slack.\n\nA form or webhook source that sends name, email, and a valid datetime.\n\nHow to customize the workflow\n\nDuration & buffers: Change end time calculation in Extract Booking Details.\n\nTime zones: If you accept multiple time zones, normalize before building ISO strings.\n\nEmail copy: Personalize confirmation/alternative-time messages and add attachments if desired.\n\nSlack format: Enrich the post with fields (host, Zoom join URL, internal tags).\n\nRouting: Add CRM updates or reminders after the “slot free” branch.\n\nSecurity note: No hardcoded API keys in HTTP nodes. Configure all credentials via n8n’s credential manager.",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.zoom",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

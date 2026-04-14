@@ -1,0 +1,15 @@
+{
+  "id": 6535,
+  "name": "Lead Research Report Emails",
+  "description": "\nOverview\nThis workflow auto-generates a personalized research report on any prospect who books a call with you—using their LinkedIn profile and advanced web research.\n\nWhen a call is booked in your calendar, the system looks up the lead’s LinkedIn URL from a Google Sheets database. That profile is then scraped using Relevance AI to extract posts, experiences, and education. It also runs a deep-dive query on the person using Perplexity to uncover relevant news, insights, and context. This structured data is passed to an AI model that produces a clean profile summary, suggested pain points, and solution ideas. Finally, the system builds and sends you a fully formatted HTML report via email—ready to review before your meeting.\n\nWho’s it for\nFounders taking high-stakes sales calls  \nSDRs/BDRs booking back-to-back meetings  \nAgencies and consultants who want to personalize discovery calls  \nTeams doing high-touch enterprise sales or B2B outreach  \n\nHow it works\nTriggered when a new call is booked via Cal.com  \nFinds matching LinkedIn URL from a local database (Google Sheets)  \nScrapes public LinkedIn data via Relevance AI  \nRuns a Perplexity query on the prospect for deeper context  \nFormats the scraped data using Code nodes  \nSends structured info to AI to generate:\n  A company + person profile  \n  Suggested pain points and solutions  \nFormats everything into a clean HTML report  \nEmails you the final summary to prep for the call\n\nExample use case\n&gt; Someone books a call. You receive a report 2 minutes later in your inbox with:  \n&gt; - Their role, company, and latest posts  \n&gt; - What their business does  \n&gt; - Recent news and context from Perplexity  \n&gt; - Predicted pain points and how you might help  \n&gt;  \n&gt; You show up to the call prepped and ready\n\nHow to set up\nConnect your Cal.com trigger (or replace with any booking tool)  \nSet up your Google Sheet(s) with contact info + LinkedIn profiles  \nAdd Relevance AI API key and configure LinkedIn scraping (they have free credits)  \nLink Perplexity API for web research  \nCustomize the AI prompts and report formatting  \nConnect Gmail or preferred email provider to send reports\n\nRequirements\nCal.com or other booking platform  \nGoogle Sheets for lead storage  \nRelevance AI account and API access  \nPerplexity API key  \nOpenAI or similar LLM for summarization  \nEmail integration (e.g. Gmail)\n\nHow to customize\nReplace Cal.com with Calendly, SavvyCal, etc.  \nChange AI prompt tone and structure of the report  \nAdd CRM push (e.g. log into HubSpot, Notion, or Airtable)  \nAdd Slack or Telegram notifications for call alerts  \nFormat reports as PDF instead of HTML for download\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "n8n-nodes-base.perplexity"
+  ],
+  "tags": []
+}

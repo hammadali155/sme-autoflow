@@ -1,0 +1,11 @@
+{
+  "id": 5068,
+  "name": "Daily AI News Digest to LinkedIn Posts with OpenAI GPT and RSS Feeds",
+  "description": "🔁 What This Workflow Does\nThis automation fetches daily AI-related articles from trusted RSS feeds, summarizes them using OpenAI (GPT), and generates a ready-to-post LinkedIn update in your writing style. It then emails the post to you every morning for review and publishing.\n\nHigh-Level Steps:\nTriggers every morning via Cron.\nFetches latest AI news from multiple RSS sources.\nFilters recent articles (last 24 hrs).\nSummarizes each article using OpenAI (ChatGPT).\nGenerates a LinkedIn-style post using your tone.\nSends the post to your Gmail for review.\n\n⚙️ Setup Steps\nEstimated setup time: 15–30 minutes\n\nYou’ll need:\n\nOpenAI API key\nGmail account connected in n8n\nRSS feed URLs (defaults are provided)\n\nAdd your email in the Gmail node to receive daily posts.\n\nAdd your tone/style prompt in the ChatGPT nodes (instructions inside workflow).",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

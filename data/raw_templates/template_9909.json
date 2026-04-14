@@ -1,0 +1,13 @@
+{
+  "id": 9909,
+  "name": "Send Multi-City Weather Forecasts with AI-Enhanced Formatting from OpenWeatherMap to Gmail",
+  "description": "Overview\n\nThis workflow automates weather forecast delivery by collecting city names, fetching 5-day forecasts from OpenWeatherMap, and generating professionally formatted HTML emails using GPT-4. The AI creates condition-based color-coded reports with safety precautions and sends them via Gmail.\n\nHow It Works\n\nA form trigger collects up to three city names, which are geocoded via OpenWeatherMap API to retrieve coordinates and 5-day forecasts. \n\nJavaScript nodes process the raw weather data into daily summaries, calculating temperature ranges, precipitation levels, wind speeds, and dominant weather conditions. \n\nGPT-4 then generates professionally formatted HTML emails with condition-based color coding: The AI intelligently adds contextual safety warnings for heavy rain, extreme heat, high winds, and thunderstorms. \n\nA validation node ensures proper JSON formatting before Gmail sends the final briefing.\n\nUse Cases\n\n• Field ops & construction crew briefings\n• Travel planning and itinerary preparation\n• Outdoor event planning & coordination\n• Logistics and transportation route planning\n• Real estate property viewing scheduling\n• Sports and recreational activity planning\n\nSetup Requirements\n\n1) OpenWeatherMap API credentials\n2) OpenAI API key\n3) Gmail OAuth2 authentication\n\nNeed Help?\n\nJoin the Discord or ask in the Forum!\nREADME file available at https://tinyurl.com/MulticityWeatherForecast\n\n\n\n\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.openWeatherMap",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

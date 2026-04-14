@@ -1,0 +1,15 @@
+{
+  "id": 9636,
+  "name": "Automated Customer Feedback Triage with Gemini, Jotform, Google Sheets & Gmail Replies",
+  "description": "Who’s it for\n\nTeams that collect product feedback with Jotform and want automated triage: instant alerts for urgent issues, knowledge-based replies to questions, and a clean backlog for suggestions. \n\nHow it works / What it does\n\nNew Jotform submissions are classified by Feedback Type (comments, questions, suggestions) and analyzed for sentiment. Angry or negative messages trigger a Telegram alert to your support channel. Questions are answered automatically using an agent that consults your internal Google Sheet “Q&A” database, then replies via Gmail with a styled HTML email. Suggestions are summarized, sent to a team chat, and appended to a Google Sheets backlog with name, email, summary, and date. All comments are logged to a structured sheet for reporting. \n\nHow to set up\n\nConnect your Jotform form and map fields (Name, E-mail, feedback text).\n\nAdd credentials for Google Sheets, Gmail, Telegram, and LLM.\n\nPoint the agent to your “Q&A” sheet/tab.\n\nTest each branch (comments, questions, suggestions) with sample entries. \n\nRequirements\n\nJotform account and live form\n\nn8n (self-hosted recommended if using community/LLM nodes)\n\nGoogle Sheets, Gmail, Telegram bot, and LLM API keys \n\nHow to customize the workflow\n\nAdjust sentiment thresholds or add new categories in the Switch node.\n\nEdit the Gmail HTML template and subject line.\n\nChange backlog columns or target sheets/tabs.\n\nAdd rate-limits, SLA timers, or different alert channels.\n\nBest practice: rename all nodes, add a yellow Sticky Note with this description and per-step notes, and group user-config variables in a Set node. Remove any hard-coded IDs before sharing\n\nKnowledge base table\n\nSuggestions database\n\nSentiment database\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainSummarization",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.sentimentAnalysis"
+  ],
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": 5842,
+  "name": "Transform Reddit Questions into SEO Blog Posts with OpenAI and Google Sheets",
+  "description": "Turn Reddit Questions into SEO Articles Automatically\n\nThis workflow takes real user questions from Reddit and transforms them into fully structured blog posts — title, intro, steps, and conclusion — using AI.\n\nHow it works\n\nManually triggered when you want to run it\nScrapes the latest posts from a specific subreddit (e.g. r/n8n)\nFilters only posts that are real questions (based on keywords like “how,” “what,” “why”)\nLogs relevant questions into a Google Sheet as raw input\nEnhances each question using AI (rephrases, creates a clean title and slug)\nGenerates full-length blog content:\n  ✏️ Intro paragraph\n  ✅ Step-by-step guide\n  🧠 Clear conclusion\nSaves the final blog content to a second Google Sheet for publishing\n\nSet up steps\n\nYou’ll need access to:\n  Reddit API (OAuth)\n  OpenAI API\n  Google Sheets\nTakes around 15–20 minutes to connect all the credentials and tweak prompts\nCustomize the subreddit or topic focus by changing the Reddit node config\n\nPerfect for content teams who want to scale content output using real community pain points — without ever starting from a blank page.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.reddit",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}

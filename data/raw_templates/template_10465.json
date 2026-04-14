@@ -1,0 +1,15 @@
+{
+  "id": 10465,
+  "name": "AI Gmail Support Automation with Google Gemini, OpenAI & Pinecone",
+  "description": "💬 AI Gmail Support Automation with Google Gemini, OpenAI & Pinecone\n\n🚀 How it Works\nThis workflow turns your Gmail inbox into an AI-powered customer support assistant using Google Gemini, OpenAI embeddings, and Pinecone vector search.  \nIt automatically classifies incoming emails, retrieves context-based answers from your knowledge base, and replies instantly saving your support team valuable time.\n\n🔁 Workflow Overview\nGmail Trigger** → Detects new incoming customer emails.  \nIntent Classifier** → Identifies if the email is a support query or something else.  \nVector Store (Pinecone)** → Retrieves the most relevant information.  \nEmail Support Agent (Gemini)** → Generates a clear, human-like response.  \nGmail Node** → Sends the AI-generated reply automatically.  \nSlack Notification** → Updates your team about the response.  \nLabel Query** → Adds Gmail labels for tracking and organization.\n\nThis automation provides 24/7 AI-based email support, faster customer responses, and zero manual data lookup — ideal for busy teams handling repetitive queries.\n\n👥 Who It’s For\nSaaS companies** managing frequent customer support requests  \nStartups and agencies** looking to automate inbox replies  \nCustomer success teams** aiming to improve response time  \nFreelancers or small businesses** who want smart, auto-handled Gmail support  \n\n⚙️ Set Up Steps\n\nEstimated setup time: 10–15 minutes  \n\nConnect your Gmail and Slack accounts to n8n.  \nAdd your API keys:  \n   Google Gemini API key  \n   OpenAI API key  \nLink your Pinecone Vector Database (or create a new one).  \nCustomize the system message in the “Email Support Agent” node to match your tone or brand style.  \nSend test emails to ensure the automation responds correctly and labels messages as intended.  \nCheck Slack notifications to confirm your team gets updates on replies.  \n\n💡 Detailed setup notes are included in the sticky notes inside the workflow.\n\n🧩 Integrations Used\nGmail API  \nGoogle Gemini LLM  \nOpenAI Embeddings  \nPinecone Vector Database  \nSlack API  \n\n💡 Key Benefits\nProvides instant AI-based email replies 24/7  \nReduces manual workload for support teams  \nMaintains consistent and accurate tone using your knowledge base  \nKeeps your inbox organized with automatic labels and team alerts  \nIdeal for scaling customer support without hiring more agents\n",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.textClassifier"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 13703,
+  "name": "Register users and authenticate with magic links using Google Sheets",
+  "description": "This workflow implements a lightweight authentication system for n8n web portals using Google Sheets as a simple user and session store. It supports email-based registration, username and password login, one-click magic link authentication, and cookie-based session management.\n\nHow it works\nUsers register with an email address through a form.\nThe workflow generates a password and a one-time authentication token.\nUser credentials and token are stored in Google Sheets.\nAn email is sent with login credentials and a magic link.\nUsers can log in with username and password or click the magic link.\nThe /auth endpoint validates the token, creates a session id (sid), sets it as an HttpOnly cookie, and invalidates the token.\nThe /profile endpoint reads the sid cookie, verifies the session in Google Sheets, and displays a protected profile page.\n\nSet up steps\nCreate a Google Sheet with columns: username, password, role, token, sid.\nReplace YOUR_SPREADSHEET_ID with your Google Sheet ID in all Google Sheets nodes.\nReplace YOUR_DOMAIN with your n8n instance domain in redirect URLs and email links.\nConfigure Gmail or SMTP credentials in the email node.\nEnsure your n8n instance is served over HTTPS so Secure cookies function correctly.\n\nThis template is suitable for small internal portals, admin dashboards, or proof-of-concept authentication systems built entirely within n8n.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

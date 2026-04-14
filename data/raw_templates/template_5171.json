@@ -1,0 +1,9 @@
+{
+  "id": 5171,
+  "name": "🎓 Learn API Fundamentals with an Interactive Hands-On Tutorial Workflow",
+  "description": "How it works\n\nThis template is an interactive, hands-on tutorial designed to demystify what an API is and how it works, right inside your n8n canvas.\n\nIt uses a simple restaurant analogy to explain the core concepts:\nYou* are the \"Client\" (an *HTTP Request** node).\nThe Kitchen is the \"Server\" (a Webhook node).\nThe API is the Menu and the Waiter—the set of rules for how you can ask for things and get a response.\n\nThe workflow is a series of self-contained lessons. Each lesson pairs an HTTP Request node (the customer placing an order) with a Webhook node (the kitchen receiving and responding to the order) to demonstrate a key concept:\n\nThe Basics: Making a simple GET request to a URL.\nCustomizing: Using Query Parameters to filter or modify your request.\nSending Data: Using the POST method and a Body to send information to the server.\nIdentification: Using Headers and simple Authentication to prove who you are.\nHandling Delays: Understanding how Timeouts prevent your workflow from getting stuck.\n\nSet up steps\n\nSetup time: &lt; 1 minute\n\nThis workflow is a self-contained tutorial and requires no external services or credentials. You may want to check the Base URL.\n\nClick \"Execute Workflow\" to run the entire tutorial.\nFollow the flow from top to bottom, exploring each \"Lesson\".\nFor each lesson, click on the HTTP Request node and its corresponding Webhook node to see how they are configured and what they do.\nRead the sticky notes next to each lesson—they contain the core explanations!\n\nThat's it! Explore and have fun learning the fundamentals of APIs in an interactive way.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

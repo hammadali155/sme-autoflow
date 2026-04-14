@@ -1,0 +1,17 @@
+{
+  "id": 5140,
+  "name": "Build and Update RAG System with Google Drive, Qdrant, and Gemini Chat",
+  "description": "This workflow automates the creation and management of a Retrieval-Augmented Generation (RAG) system using Qdrant as a vector store and Google Drive as the document source. It enables full or incremental updates to documents in the Qdrant vector database and integrates with a chatbot using Google Gemini for question answering.\n\nHere is a clear and professional description in English of the n8n workflow “Create a RAG with Qdrant and update single files”, including its benefits:\n\nBenefits\n\nEfficient RAG Setup**\n  Seamlessly integrates OpenAI, Qdrant, and Google Drive to create a scalable RAG pipeline.\n\nSingle File Update**\n  You can replace the vector representation of a single file without reprocessing the entire collection—ideal for maintaining document freshness.\n\nFlexible File Source**\n  Works with Google Drive, allowing document management and updates from a familiar interface.\nHow It Works  \nThis workflow is designed to create a Retrieval-Augmented Generation (RAG) system using Qdrant as a vector store and Google Drive as a document source. It consists of four main phases:  \n\nCollection Setup**:  \n  Creates or clears a Qdrant collection to store vectorized documents.  \n  Configures the collection with cosine distance metrics and other parameters.  \n\nDocument Processing**:  \n  Retrieves files from a specified Google Drive folder.  \n  Downloads and processes each file (text extraction, chunking, and embedding using OpenAI).  \n  Stores the embeddings in Qdrant for vector search.  \n\nSingle-File Update**:  \n  Allows updating or deleting a specific file in the Qdrant collection by referencing its Google Drive ID.  \n  Re-embeds the file and updates the vector store.  \n\nRAG Querying**:  \n  Uses a chat trigger to receive user questions.  \n  Retrieves relevant documents from Qdrant using vector similarity.  \n  Generates answers using Google Gemini as the language model.  \n\nSet Up Steps  \n\nConfigure Qdrant:  \n   Replace QDRANTURL and COLLECTION in the \"Create collection\" and \"Clear collection\" HTTP nodes.  \n   Ensure Qdrant API credentials are correctly set in the credentials section.  \n\nGoogle Drive Integration:  \n   Specify the Google Drive folder ID in the \"Get files\" node.  \n   Ensure Google Drive OAuth credentials are configured.  \n\nOpenAI and Gemini Keys:  \n   Add OpenAI API credentials for embeddings (used in \"Embeddings OpenAI\" nodes).  \n   Configure Google Gemini credentials for the chat model.  \n\nSingle-File Update:  \n   Set the file_id in the \"Edit Fields3\" node to target a specific Google Drive file for updates.  \n\nTesting:  \n   Trigger the workflow manually to populate the Qdrant collection.  \n   Use the chat interface to test RAG responses.  \nNeed help customizing?  \nContact me for consulting and support or add me on Linkedin. ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 5292,
+  "name": "Summarize youtube videos from transcript for social media",
+  "description": "🎥 YouTube Video Summarizer for Social Media\n\nTurn any YouTube video into a short, structured summary using AI — perfect for content creators, marketers, or social media managers.\n\n🔧 What We Built\n\nWe created a no-code automation in n8n that:\n\nAccepts a YouTube Video ID via a form\nFetches the video transcript using an external API\nSummarizes the transcript using AI (Google Gemini)\nAutomatically saves the summary to Google Docs for team use\n\n🧩 Flow Overview\n\n| Step | Description |\n|------|-------------|\n| ✅ Form Trigger | User submits a YouTube video ID using an n8n form |\n| 🔁 Set Node | Maps the YouTube video ID for use in the API request |\n| 🌐 HTTP Request (External API) | Calls the YouTube Transcriptor AI API via RapidAPI to fetch transcript |\n| 🧹 Formatter (Code Node) | Joins transcript lines into a readable text block |\n| 🧠 AI Agent + Google Gemini (via Langchain) | Summarizes the full transcript into bullet points and tone |\n| 🧽 Optimizer (Code Node) | Extracts just the summary from the AI response |\n| 📝 Google Docs Node | Appends the clean summary to a shared Google Doc |\n\n🌍 Real-World Problem Solved\n\n❌ The Challenge\n\nCreators and marketers waste hours watching full videos just to extract the key points.\nManual summarization is inconsistent, repetitive, and delays content planning.\n\n✅ Our Solution\n\n⏱️ Reduces time spent watching videos\n🧠 AI-powered summaries keep tone consistent and structured\n📄 Auto-sync with Google Docs makes summaries instantly available for teams\n\n🔥 Bonus: This uses the YouTube Transcriptor AI API, so no need to manually scrape captions or use browser extensions.\n\n🚀 Ideal Use Cases\n\nRepurpose YouTube content into Instagram Reels, LinkedIn posts, or blog content\nBuild a video summary library for your editorial team\nQuickly extract talking points from podcast episodes\n\n🛠️ Tech Stack\n\nn8n** – workflow automation engine  \nYouTube Transcriptor AI API** – via RapidAPI  \nGoogle Gemini (via Langchain)** – AI summarization  \nGoogle Docs** – stores the final summary  \nJavaScript nodes** – custom text parsing & formatting\n\n💡 Want to customize it? Add Slack, Airtable, Notion, or Tweet auto-posting to expand the flow.\n\nCreate your free n8n account and set up the workflow in just a few minutes using the link below:\n\n👉 Start Automating with n8n\n\nSave time, stay consistent, and grow your LinkedIn presence effortlessly!",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDocs",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

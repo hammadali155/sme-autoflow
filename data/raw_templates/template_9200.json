@@ -1,0 +1,18 @@
+{
+  "id": 9200,
+  "name": "Automate & Publish Video Ad Campaigns with NanoBanana, Seedream, GPT-4o, Veo 3",
+  "description": "\n💥 Automate video ads with NanoBanana, Seedream 4, ChatGPT Image and Veo 3\n\nWho is this for?\nThis template is designed for marketers, content creators, and e-commerce brands who want to automate the creation of professional ad videos at scale. It’s ideal for teams looking to generate consistent, high-quality video ads for social media without spending hours on manual design, editing, or publishing.\n\nWhat problem is this workflow solving? / Use case\nCreating video ads usually requires multiple tools and a lot of time: writing scripts, designing product visuals, editing videos, and publishing them across platforms.  \nThis workflow automates the entire pipeline — from idea to ready-to-publish ad video — ensuring brands can quickly test campaigns and boost engagement without production delays.\n\nWhat this workflow does\nGenerates ad ideas from Telegram input (text + product image).  \nCreates product visuals using multiple AI image engines:  \n   🌊 Seedream 4.0 (realistic visuals)  \n   🍌 NanoBanana (image editing & enhancement)  \n   🤖 ChatGPT Image / GPT-4o (creative variations)  \nProduces cinematic video ads with Veo 3 based on AI-generated scripts.  \nMerges multiple short clips into a polished final ad.  \nPublishes automatically to multiple platforms (TikTok, Instagram, LinkedIn, X, Threads, Facebook, Pinterest, Bluesky, YouTube) via Blotato.  \nStores metadata and results in Google Sheets & Google Drive for easy tracking.  \nNotifies you via Telegram with the video link and copy.\n\nSetup\nConnect your accounts in n8n:\n   Telegram API (for input and notifications)  \n   Google Drive + Google Sheets (storage & tracking)  \n   Kie AI API (Seedream + Veo 3)  \n   Fal.ai API (NanoBanana + video merging)  \n   OpenAI (for script and prompt generation)  \n   Blotato API (for social publishing)  \nPrepare a Google Sheet with brand info and settings (product name, category, features, offer, website URL).  \nDeploy the workflow and connect your Telegram bot to start sending ad ideas (photo + caption).  \nRun the workflow — it will automatically generate images, create videos, and publish to your chosen channels.\n\nHow to customize this workflow to your needs\nBrand customization**: Adjust the Google Sheet values to reflect your brand’s offers and product features.  \nPlatforms**: Enable/disable specific Blotato nodes depending on which platforms you want to publish to.  \nVideo style**: Edit the AI agent’s system prompt to control tone, format, and transitions (cinematic, playful, modern, etc.).  \nNotifications**: Adapt Telegram nodes to send updates to different team members or channels.  \nStorage**: Change the Google Drive folder IDs to store generated videos and images in your preferred location.  \n\nThis workflow lets you go from idea → images → cinematic ad video → auto-published content in minutes, fully automated.\n\n📄 🎥 Watch This Tutorial: Step by Step\n\n📄 Documentation: Notion Guide\n\nNeed help customizing?\nContact me for consulting and support : Linkedin / Youtube",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 13759,
+  "name": "Upload Instagram Reels from Google Sheets with DeepSeek AI captions",
+  "description": "Overview\nThis n8n workflow template automates the entire process of publishing Instagram Reels from content stored in Google Sheets and Google Drive. It's designed for content creators, social media managers, and businesses who maintain a content calendar in spreadsheets and need automated publishing with AI-generated captions.\nWorkflow Steps\n\n1. Trigger Phase\nSchedule Trigger**: Runs every 12 hours (configurable)\nGoogle Sheets Trigger**: Alternatively triggers when new rows are added\nRetrieves the next unposted video from the spreadsheet (where POSTED = FALSE)\n\n2. Content Preparation\nDownloads video from Google Drive using file ID from spreadsheet\nProcesses video with FFmpeg to add custom text overlays:\n  Title text overlay\n  Numbering overlay\n  Sales hook text\nSends processed video using SSH \n\n3. Caption & Metadata Generation\nExtracts video filename and metadata\nUses AI Agent (DeepSeek) to generate engaging Instagram captions:\n  2-4 engaging sentences\n  3-5 relevant hashtags\n  Clear call-to-action\n  Under 150 characters total\nStores caption and metadata in Airtable for record-keeping\n\n4. Instagram Publishing\nCreates Facebook/Instagram media container with video URL and caption\nWaits and polls for video processing completion\nPublishes the Reel when ready\nUpdates Google Sheet to mark content as posted (POSTED = TRUE)\n\n5. Cleanup\nRemoves temporary video files from disk ",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.facebookGraphApi",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatDeepSeek"
+  ],
+  "tags": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": 6531,
+  "name": "LinkedIn Content Creator System",
+  "description": "Overview\n\nAutomate your entire LinkedIn content machine — from research and image generation to scheduling and posting — with this AI-powered workflow.\n\nThis workflow pulls in past content ideas, researches new ones using Perplexity, generates a new post (with image) using your brand's voice and style, saves the output to Google Sheets, and auto-posts twice a week to LinkedIn. It’s perfect for founders, creators, and marketers who want to stay consistent on LinkedIn without manually writing or designing every post.\n\nWho’s it for\n\nSolo founders or marketers building a LinkedIn presence  \nContent creators growing their audience  \nAgencies managing client content calendars  \nAnyone who wants to post consistently without spending hours on content  \n\nHow it works\n\nPulls old ideas from a Google Sheet  \nSchedules content creation using n8n’s cron node  \nUses Perplexity to research current topics and trends  \nFeeds the data into an AI agent (like Claude or GPT) to generate post copy  \nCreates a branded image using a reference style and OpenAI’s image model  \nSaves post content + image URL into Google Sheets  \nTwice a week, selects one ready post, downloads the image, and publishes it to LinkedIn\n\nHow to set up\n\nAdd your Google Sheet ID and column names for posts  \nConnect your OpenAI (or Claude) and Perplexity API keys  \nUpload a brand-style reference image to Google Drive  \nConfigure your LinkedIn account and connect the node  \nAdjust the cron schedule for both post creation and auto-posting  \n(Optional) Edit the AI prompt to match your personal voice or niche  \n\nRequirements\n\nGoogle Drive & Sheets access  \nOpenAI or Claude API key  \nPerplexity API key  \nLinkedIn credentials (via n8n’s LinkedIn integration)\n\nHow to customize\n\nChange the prompt for the AI to fit your voice or audience  \nSwap out Perplexity for another research method  \nAdjust how often you want posts scheduled or published  \nSwap LinkedIn for Twitter, Slack, or another platform  \nAdd Notion or Airtable as your CMS backend\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

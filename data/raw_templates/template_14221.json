@@ -1,0 +1,13 @@
+{
+  "id": 14221,
+  "name": "Onboard employees from Google Forms with Slack, Jira, and GitHub access",
+  "description": "How it works\nNew Google Form response triggers the workflow\nChecks if employee was already onboarded (prevents duplicates)\nAdds user to department-specific Slack channel\nIf in Software department, grants GitHub repo access\nInvites user to Jira and creates an onboarding task\nUpdates Google Sheet status to \"Completed\"\n\nSet up steps\nEstimated setup time: 10-15 minutes\n\nConnect Google Sheets (2 min) - Update sheet ID in trigger and update nodes\nConfigure Slack (3 min) - Add channel IDs and admin user ID to Code node config\nSet up Jira (3 min) - Add project keys and component IDs to Code node config\nConfigure GitHub (2 min) - Add org name and repo names to Code node config\n\nDetailed setup instructions are included in the sticky notes within the workflow.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.jira",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

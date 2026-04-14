@@ -1,0 +1,14 @@
+{
+  "id": 5857,
+  "name": "Multimodal Chat Assistant with GPT-4o for Text, Images, and PDFs",
+  "description": "Chat with thing\n\nThis n8n template lets you build a smart AI chat assistant that can handle text, images, and PDFs — using OpenAI's GPT-4o multimodal model. It supports dynamic conversations and file analysis, making it great for AI-driven support bots, personal assistants, or embedded chat widgets.\n\n🔍 How it Works\n\nThe chat trigger node kicks off a session using n8n's hosted chat UI.\nUsers can send text or upload images or PDFs — the workflow checks if a file was included.\nIf an image is uploaded, the file is converted to base64 and analyzed using GPT-4o's vision capabilities.\nGPT-4o generates a natural language description of the image and responds to the user's question in context.\nA memory buffer keeps track of the conversation thread, so follow-up questions are handled intelligently.\nOpenAI’s chat model handles both text-only and mixed media input seamlessly.\n\n🧪 How to Use\n\nYou can embed this in a website or use it with your own webhook/chat interface.\nThe logic is modular — just swap out the chatTrigger node for another input (e.g. form or API).\nTo use with documents, you can modify the logic to pass PDF content to GPT-4 directly.\nYou can extend it with action nodes, e.g. saving results to Notion, Airtable, or sending replies via email or Slack.\n\n🔐 Requirements\n\nYour OpenAI GPT-4o API key\nSet File Upload on the chat\n\n🚀 Use Cases\n\nPDF explainer bot\nInternal knowledge chat with media support\nPersonal assistant for mixed content",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.memoryManager",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

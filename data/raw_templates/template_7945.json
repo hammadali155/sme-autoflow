@@ -1,0 +1,9 @@
+{
+  "id": 7945,
+  "name": "Index Legal Documents for Hybrid Search with Qdrant, OpenAI & BM25",
+  "description": "Index Legal Dataset to Qdrant for Hybrid Retrieval\nThis pipeline is the first part of *\"Hybrid Search with Qdrant & n8n, Legal AI\"**.  \nThe second part, \"Hybrid Search with Qdrant & n8n, Legal AI: Retrieval\", covers retrieval and simple evaluation.* \n\nOverview\nThis pipeline transforms a Q&A legal corpus from Hugging Face (isaacus) into vector representations and indexes them to Qdrant, providing the foundation for running Hybrid Search, combining:\n\nDense vectors (embeddings) for semantic similarity search;  \nSparse vectors for keyword-based exact search.\n\n\nAfter running this pipeline, you will have a Qdrant collection with your legal dataset ready for hybrid retrieval on BM25 and dense embeddings: either mxbai-embed-large-v1 or text-embedding-3-small.\n\nOptions for Embedding Inference\nThis pipeline equips you with two approaches for generating dense vectors:\n\nUsing Qdrant Cloud Inference, conversion to vectors handled directly in Qdrant;\nUsing external provider, e.g. OpenAI for generating embeddings.\n\nPrerequisites\nA cluster on Qdrant Cloud  \n  Paid cluster in the US region if you want to use Qdrant Cloud Inference  \n  Free Tier Cluster if using an external provider (here OpenAI)  \nQdrant Cluster credentials: \n  You'll be guided on how to obtain both the URL and API_KEY from the Qdrant Cloud UI when setting up your cluster;  \nAn OpenAI API key (if you’re not using Qdrant’s Cloud Inference);  \n\nP.S.\nTo ask retrieval in Qdrant-related questions, join the Qdrant Discord.  \nStar Qdrant n8n community node repo &lt;3",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 5010,
+  "name": "RAG Starter Template using Simple Vector Stores, Form trigger and OpenAI",
+  "description": "This template quickly shows how to use RAG in n8n.\n\nWho is this for?\nThis template is for everyone who wants to start giving knowledge to their Agents through RAG.\n\nRequirements\nHave a PDF with custom knowledge that you want to provide to your agent.\n\nSetup\nNo setup required. Just hit Execute Workflow, upload your knowledge document and then start chatting.\n\nHow to customize this to your needs\nAdd custom instructions to your Agent by changing the prompts in it.\nAdd a different way to load in knowledge to your vector store, e.g. by looking at some Google Drive files or loading knowledge from a table.\nExchange the Simple Vector Store nodes with your own vector store tools ready for production.\nAdd a more sophisticated way to rank files found in the vector store.\n\nFor more information read our docs on RAG in n8n.\n\n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader"
+  ],
+  "tags": []
+}

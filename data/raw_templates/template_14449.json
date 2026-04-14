@@ -1,0 +1,21 @@
+{
+  "id": 14449,
+  "name": "Analyze Google Ads search terms with AI and send wastage alerts",
+  "description": "Who Is This For?\nThis workflow is designed for Google Ads advertisers, PPC managers, and marketing teams who want to automatically monitor and optimize their search term performance. It's particularly valuable for those running brand campaigns who need to identify and eliminate wasteful ad spend on non-brand keywords.\n\nWhat This Workflow Does\nThis workflow functions as an automated Google Ads performance monitoring and optimization system that:\nFetches search term data from active Google Ads campaigns daily\nFilters out brand terms and excluded search terms automatically\nAnalyzes performance metrics using AI to identify wasteful keywords\nGenerates optimization recommendations for negative keyword lists\nSends detailed reports through multiple communication platforms\nCalculates ad wastage in USD for better budget management\n\nKey Features\nAutomated Daily Monitoring** – Runs every day at 8 AM to check campaign performance\nAI-Powered Analysis** – Uses multiple AI models (DeepSeek, OpenAI, xAI, Anthropic) for intelligent keyword categorization\nPerformance Metrics Calculation** – Automatically calculates CTR, CPC, conversions, and ad wastage\nMulti-Channel Reporting** – Sends reports to Slack, Microsoft Teams, WhatsApp, and Discord\nSmart Filtering** – Automatically excludes brand terms and excluded search terms\nCost Analysis** – Calculates total ad wastage in USD for budget optimization\n14-Day Data Window** – Analyzes search terms from the past 14 days for comprehensive insights\n\nRequirements & Setup\nGoogle Ads API**: Required for fetching campaign and search term data\nAI Model APIs**: DeepSeek, OpenAI, xAI, or Anthropic for keyword analysis\nCommunication APIs**: Slack, Microsoft Teams, WhatsApp (Rapiwa), Discord for report distribution\nScheduled Trigger**: Configured to run daily at 8 AM\nGoogle Ads Manager and Client IDs**: For accessing specific campaign data\n\nHow It Works\nData Collection: Fetches active campaigns and extracts search term data from the past 14 days\nData Processing: Cleans and aggregates metrics by search term, campaign, and ad group\nAI Analysis: Uses AI to categorize keywords into wasteful (zero conversions) and review-worthy (has conversions)\nReport Generation: Creates structured reports with recommendations and cost analysis\nMulti-Platform Distribution: Sends formatted reports to all configured communication channels\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.microsoftTeams",
+    "n8n-nodes-base.googleAds",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+    "@n8n/n8n-nodes-langchain.lmChatXAiGrok",
+    "@n8n/n8n-nodes-langchain.modelSelector"
+  ],
+  "tags": []
+}

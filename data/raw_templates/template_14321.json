@@ -1,0 +1,14 @@
+{
+  "id": 14321,
+  "name": "Send weekly Databox paid ads performance reports to Slack and email",
+  "description": "Stop spending hours manually pulling paid ads data. This workflow connects to Databox via MCP, auto-discovers every connected paid platform, fetches 6 key metrics, and delivers a consolidated weekly report to Slack and email - every Monday at 9 AM, completely hands-free.\n\nWho's it for\n\nPerformance marketers** managing campaigns across multiple platforms\nMarketing managers** who need a weekly cross-platform overview\nAgencies** automating paid ads reporting for clients\n\nHow it works\n\nSchedule Trigger fires every Monday at 9 AM\nAI Agent connects to Databox via MCP and discovers all connected paid platforms (Google Ads, Facebook Ads, LinkedIn Ads, TikTok Ads, and 6 more)\nFetches Spend, Clicks, CPC, CTR, Impressions, and Conversions for this week and last week\nCalculates week-over-week changes and formats two outputs - a Slack summary and a color-coded HTML email\nDelivers both simultaneously\n\nRequirements\n\nDatabox account** with at least one paid ads platform connected (free plan works)\nOpenAI API key (or Anthropic)\nSlack account\nGmail account\n\nHow to set up\n\nClick Databox MCP Tool - set Authentication to OAuth2 and authorize\nAdd your OpenAI API key to the Chat Model node\nConnect Slack and update the channel ID in the Send to Slack node\nConnect Gmail and set the recipient address in the Send Email node\nActivate - your first report arrives next Monday",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.mcpClientTool"
+  ],
+  "tags": []
+}

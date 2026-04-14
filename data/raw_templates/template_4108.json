@@ -1,0 +1,11 @@
+{
+  "id": 4108,
+  "name": "AI image generator from text built on fal.ai",
+  "description": "Who this template is for\n\nThis template is for developers, content creators, or application builders who want to integrate an AI-powered text-to-image generation service into their applications or systems via an API endpoint.\n\nUse case\n\nCreating a secure API endpoint that converts text prompts into AI-generated images, with built-in content moderation to prevent inappropriate content generation. This can be used for creative applications, content creation tools, prototyping interfaces, or any system that needs on-demand image generation.\n\nHow this workflow works\n\nReceives text prompt through a webhook endpoint\nFilters the prompt for inappropriate content using AI moderation\nSubmits valid prompts to the Fal.ai Flux image generation service\nPolls for completion status and retrieves the generated image when ready\nReturns the image results in a structured JSON format to the client\n\nSet up steps\n\nCreate a Fal.ai account and obtain API credentials\nConfigure the HTTP Header Auth credentials with your Fal.ai API key\nSet up an OpenAI API key for the content moderation component\nDeploy the workflow and note the webhook URL for your API endpoint\nTest the endpoint by sending a POST request with a JSON body containing a \"prompt\" field",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.textClassifier"
+  ],
+  "tags": []
+}

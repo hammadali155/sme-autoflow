@@ -1,0 +1,14 @@
+{
+  "id": 4968,
+  "name": "Automated LinkedIn Content Creation with GPT-4 and DALL-E for Scheduled Posts",
+  "description": "How it works\nAutomatically generates trending LinkedIn content topics using AI\nResearches current industry angles and hooks  \nWrites posts in your authentic voice using OpenAI\nCreates professional images with DALL-E\nPosts everything on schedule without manual intervention\n\nSet up steps\nConnect OpenAI API for content generation and image creation\nLink LinkedIn API for automated posting\nConfigure scheduling triggers (daily/weekly posting)\nCustomize prompts to match your writing style and industry\nSet up content approval workflows (optional)\n\nResults you can expect\n400% increase in profile views within 3 weeks\nGenerate 120+ posts per month vs manual 12 posts\nFree up 15+ hours weekly for revenue-generating activities\nConsistent posting schedule that builds audience engagement\nProfessional content that converts followers to clients\n\nTime to set up: 30-45 minutes\nTechnical level: Beginner to intermediate\nAPIs required: OpenAI, LinkedIn API\nCost: OpenAI usage fees only (approximately $5-15/month)\n\nThis workflow transforms LinkedIn content creation from a time-consuming daily task into a fully automated system that works while you sleep. Perfect for entrepreneurs, marketers, and content creators who want consistent LinkedIn presence without the manual effort.",
+  "nodes": [
+    "n8n-nodes-base.linkedIn",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": 10199,
+  "name": "Predict Customer Churn with AI Analysis of HubSpot and Google Sheets Data",
+  "description": "Who it’s for\nBuilt for Customer Success and Account Management teams focused on proactive retention. This workflow helps you automatically identify at-risk customers – before they churn – by combining CRM, usage, and sentiment data into one actionable alert.\n\nWhat it does\nThis end-to-end workflow continuously monitors customer health by consolidating data from HubSpot and Google Sheets.\nHere’s how it works:\nFetch deals from HubSpot.\nCollect context — linked support tickets and feature usage from a Google Sheet.\nRun sentiment analysis on the tickets to generate a customer health score.\nEvaluate risk — an AI agent reviews deal age, sentiment score, and usage trends against predefined thresholds.\nSend alerts — if churn risk is detected, it automatically sends a clear, data-driven email to the responsible team member with next-step recommendations.\n\nHow to set it up\nTo get started, configure your credentials and parameters in the following nodes:\n\nCredentials:\n    HubSpot: Connect your account (HubSpot: Get All Deals).\n    LLM Model: Add credentials for your preferred provider (Config: Set LLM for Agent & Chains).\n    Google Sheets: Connect your account (Tool: Get Feature Usage from Sheets).\n    Email: Set up your SMTP credentials (Email: Send Churn Alert).\nTool URLs:\n    In Tool: Calculate Sentiment Score, enter the Webhook URL from the Trigger: Receive Tickets for Scoring node within this same workflow.\n    In Tool: Get HubSpot Data, enter the Endpoint URL for your MCP HubSpot data workflow. (Note: This tool *does call an external workflow)*.\nGoogle Sheet:\n    In Tool: Get Feature Usage from Sheets, enter the Document ID for your own Google Sheet.\nEmail Details:\n    In Email: Send Churn Alert, change the From and To email addresses.\n\nRequirements\nHubSpot account with Deals API access\nLLM provider account (e.g. OpenAI)\nGoogle Sheets tracking customer feature usage\nn8n with LangChain community nodes enabled\nA separate n8n workflow set up to act as an MCP endpoint for fetching HubSpot data (called by Tool: Get HubSpot Data).\n\nHow to customize it\nTailor this workflow to match your business logic:\nScoring logic:** Adjust the JavaScript in the Code: Convert Sentiment to Score node to redefine how customer scores are calculated.\nAlert thresholds:** Update the prompt in the AI Chain: Analyze for Churn Risk node to fine-tune when alerts trigger (e.g. deal age, score cutoff, or usage drop).\nData sources:** Swap HubSpot or Google Sheets for your CRM or database of choice — like Salesforce or Airtable.\n\n✅ Outcome: A proactive customer health monitoring system that surfaces risks before it’s too late — keeping your team focused on prevention, not firefighting.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.sentimentAnalysis",
+    "@n8n/n8n-nodes-langchain.mcpClientTool"
+  ],
+  "tags": []
+}

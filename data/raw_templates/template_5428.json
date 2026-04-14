@@ -1,0 +1,12 @@
+{
+  "id": 5428,
+  "name": "Qualify Real Estate Leads Automatically with OpenAI, Gmail & Airtable CRM",
+  "description": "🧠 How It Works\nThis AI Agent automatically qualifies property buyer leads from form submissions.\nForm Submission Trigger\nWhen a user submits their details via a property inquiry form, the workflow is triggered.\nAI Lead Classification\nThe buyer's input (budget, location, timeline, etc.) is analyzed by OpenAI to extract structured data and generate a lead score (0–100).\nLead Qualification Logic\nLeads with a score of 70 or above are marked as qualified, the rest are ignored or stored separately.\nFollow-Up Action\nQualified leads trigger:\nEmail notification to the agent\nRecord creation in Airtable as CRM\n\n⚙️ How to Set Up\nForm Setup\nReplace the form trigger with your preferred source (Typeform, Google Form, etc.)\nMake sure the form includes: Name, Email, Budget, Location, Timeline, Property Type\nConnect Your Credentials\nAdd your OpenAI API key for the LLM node\nConnect your Gmail account for notifications\nLink your Airtable base and table to store qualified leads\nCustomize Scoring Logic (Optional)\nYou can tweak the prompt in the Information Extractor node to change how scoring works\nTest the Workflow\nSubmit a test entry via the form\nCheck if you receive an email and see the lead in Airtable\nActivate & Go Live\nTurn on the workflow and start qualifying real buyer leads in real time\n\nConnect with my linkedin: https://www.linkedin.com/in/bheta-dwiki-maranatha-15654b227/\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

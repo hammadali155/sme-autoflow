@@ -1,0 +1,19 @@
+{
+  "id": 10457,
+  "name": "Predictive Health Monitoring & Alert System with GPT-4o-mini",
+  "description": "How It Works\nThe system collects real-time wearable health data, normalizes it, and uses AI to analyze trends and risk scores. It detects anomalies by comparing with historical patterns and automatically triggers alerts and follow-up actions when thresholds are exceeded.\n\nSetup Steps\nConfigure Webhook Endpoint - Set up webhook to receive data from wearable devices\nConnect Database - Initialize storage for health metrics and historical data\nSet Normalization Rules - Define data standardization parameters for different devices\nConfigure AI Model - Set up health score calculation and risk prediction algorithms\nDefine Thresholds - Establish alert triggers for critical health metrics\nConnect Notification Channels - Configure email and Slack integrations\nSet Up Reporting - Create automated report templates and schedules\nTest Workflow - Run end-to-end tests with sample health data\n\nWorkflow Template\nWebhook → Store Database → Normalize Data → Calculate Health Score → Analyze Metrics → Compare Previous → Check Threshold → Generate Reports/Alerts → Email/Slack → Schedule Follow-up\n\nWorkflow Steps\nIngest real-time wearable data via webhook, store and standardize it, and use GPT-4 for trend analysis and risk scoring. Monitor metrics against thresholds, trigger SMS, email, or Slack alerts, generate reports, and schedule follow-ups.\n\nSetup Instructions\nConfigure webhook, database, GPT-4 API, notifications, calendar integration, and customize alert thresholds.\n\nPrerequisites\nWearable API, patient database, GPT-4 key, email SMTP, optional Slack/Twilio, calendar integration.\n\nUse Cases\nMonitor glucose for diabetics, track elderly vitals/fall risk, assess corporate wellness, and post-surgery recovery alerts.\n\nCustomization\nAdjust risk algorithms, add metrics, integrate telemedicine.\n\nBenefits\nEarly intervention reduces readmissions and automates 80% of monitoring tasks.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.redis",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.twilio",
+    "n8n-nodes-base.mongoDb",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

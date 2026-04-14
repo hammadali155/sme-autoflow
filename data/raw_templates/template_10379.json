@@ -1,0 +1,14 @@
+{
+  "id": 10379,
+  "name": "Gold Market Prediction System with Perplexity Sonar-Pro, FRED Data, and WordPress Reporting",
+  "description": "Introduction\nAutomates gold market tracking using AI forecasting by collecting live prices, financial news, and macro indicators (inflation, interest rates, employment) to produce real-time insights and trend predictions for analysts and investors.\n\nHow It Works\nEvery 6 hours, the system fetches market data and news → runs AI sentiment and trend analysis → generates a concise forecast report → publishes it to WordPress → and alerts users via Slack or email.\n\nWorkflow Template\nTrigger → Fetch → Format → Merge → AI Analyze → Report → Publish → Notify\n\nWorkflow Steps\nSchedule: Executes automatically every 6 hours using a Cron trigger.\nFetch: Retrieves live gold prices (MetalPriceAPI), financial headlines (NewsAPI), and macroeconomic indicators (FRED).\nFormat & Merge: Cleans, normalizes, and merges all data into a single structured dataset for AI analysis.\nAI Analyze (OpenAI): Performs sentiment, trend, and correlation analysis to forecast short-term gold price movements.\nReport Generation: Creates a concise summary report with forecasts, insights, and confidence metrics.\nPublish & Notify: Automatically posts to WordPress and sends alerts via Slack and Email to keep analysts updated.\n\nSetup\nAdd API keys: MetalPrice, NewsAPI, FRED, OpenAI, WordPress, Slack, Gmail.\nConfigure scheduling interval, API endpoints, and authentication in n8n.\nPredefine WordPress post format and Slack message templates for smooth automation.\n\nPrerequisites\nn8n v1.0+, API keys, OAuth credentials, and internet access.\n\nUse Cases\nInvestment forecasting, financial newsletter automation, or market monitoring dashboards.\n\nCustomization\nAdd cryptocurrency or stock tracking, modify AI prompts, or route summaries to Telegram, Notion, or Google Sheets.\n\nBenefits\nSaves analyst time, ensures consistent insights, enhances accuracy, and delivers timely, AI-driven financial intelligence.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.wordpress",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

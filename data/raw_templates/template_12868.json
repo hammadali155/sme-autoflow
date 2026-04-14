@@ -1,0 +1,12 @@
+{
+  "id": 12868,
+  "name": "Extract passport data with OpenAI OCR and generate QR codes",
+  "description": "Overview\nThis workflow processes passport images submitted through a form, extracts structured data using OpenAI OCR, and generates QR codes with the extracted information. Results are displayed on the form completion page and sent via email.\n\nThe workflow reduces manual data entry and speeds up document processing workflows where passport information needs to be captured consistently. It works best with clear, front-facing passport images.\n\nHow it works\nUser submits a form with one or more passport images\nFiles are split and processed individually\nEach file is validated as an image and resized for OCR accuracy\nImage is converted to base64 and sent to OpenAI for data extraction\nExtracted fields are cleaned, standardized, and validated\nQR payload is generated from standardized data and converted to QR code image URL\nResults are aggregated into HTML summary\nSummary is displayed on form completion page and sent via email\n\nSetup steps\nAdd OpenAI API credentials to the OCR request node\nConnect your Gmail account for email delivery\nReplace YOUR_EMAIL placeholder with recipient address\nTest with 1–3 clear passport images\n\nCustomization\nModify OCR prompt to support other document types\nAdjust QR payload format to match your system requirements",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

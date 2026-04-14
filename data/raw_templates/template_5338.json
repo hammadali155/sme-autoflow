@@ -1,0 +1,15 @@
+{
+  "id": 5338,
+  "name": "Generate AI Viral Videos with Seedance and Upload to TikTok, YouTube & Instagram",
+  "description": "\nGenerate AI videos with Seedance & Blotato, upload to TikTok, YouTube & Instagram\n\nWho is this for?\n\nThis template is ideal for creators, content marketers, social media managers, and AI enthusiasts who want to automate the production of short-form, visually captivating videos for platforms like TikTok, YouTube Shorts, and Instagram Reels — all without manual editing or publishing.\n\nWhat problem is this workflow solving?\n\nCreating engaging videos requires:\nGenerating creative ideas  \nWriting detailed scene prompts  \nProducing realistic video clips and sound effects  \nEditing and stitching the final video  \nPublishing across multiple platforms  \n\nThis workflow automates the entire process, saving hours of manual work and ensuring consistent, AI-driven content output ready for social distribution.\n\nWhat this workflow does\n\nThis end-to-end AI video automation workflow:\n\nGenerates a creative idea using OpenAI and LangChain  \nCreates detailed video prompts with Seedance AI  \nGenerates video clips via Wavespeed AI  \nGenerates sound effects with Fal AI  \nStitches the final video using Fal AI’s ffmpeg API  \nLogs metadata and video links to Google Sheets  \nUploads the video to Blotato  \nAuto-publishes to TikTok, YouTube, Instagram, and other platforms\n\nSetup\n\nAdd your OpenAI API key in the LLM nodes  \nSet up Seedance and Wavespeed AI credentials for video prompt and clip generation  \nAdd your Fal AI API key for sound and stitching steps  \nConnect your Google Sheets account for tracking ideas and outputs  \nSet your Blotato API key and fill in the platform account IDs in the Assign Social Media IDs node  \nAdjust the Schedule Trigger to control when the automation runs  \n\nHow to customize this workflow to your needs\n\nChange the AI prompts** to target your niche (e.g., ASMR, product videos, humor)  \nAdd a Telegram or Slack step** for video preview before publishing  \nTweak scene structure** or video duration to match your style  \nDisable platforms** you don’t want by turning off specific HTTP Request nodes  \nEdit the sound generation prompts** for different moods or effects  \n\n📄 Documentation: Notion Guide\n\nNeed help customizing?\nContact me for consulting and support : Linkedin / Youtube",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

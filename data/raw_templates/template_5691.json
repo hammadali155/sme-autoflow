@@ -1,0 +1,14 @@
+{
+  "id": 5691,
+  "name": "Generate Personalized Sales Emails with LinkedIn Data & Claude 3.7 via OpenRouter",
+  "description": "How it works\nThe automation loads rows from a Google Sheet of leads that you want to contact.\nIt makes a Google search via Apify for LinkedIn links based on the First name / Last name / Company.\nAnother Apify actor fetches the right LinkedIn profile based on the first profile which is retuned\nThe same process is done for the company that the lead works for, giving extra context. If the lead has a current company listed on their LinkedIn, we use that URL to do the lookup, rather than doing a separate Google search.\nA call is made to OpenRouter to get an LLM to generate an email based on a prompt designed to do personalized outreach.\nAn email is sent via a Gmail node.\n\nSet up steps\nConnect your Google Sheets + Gmail accounts to use these APIs.\nMake an account with Apify and enter your credentials.\nSet your details in the \"Set My Data\" node to customize the workflow to revolve around your company + value proposition. \n\nI would recommend changing the prompt in the \"Generate Personalized Email\" node to match the tone of voice that you want your agent to have. \n\nYou can change the guidelines to e.g. change whether the agent introduces itself, and give more examples in the style you want to make the output better.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

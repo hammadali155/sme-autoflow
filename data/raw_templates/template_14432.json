@@ -1,0 +1,13 @@
+{
+  "id": 14432,
+  "name": "Automate Birthday Wishes from Google Contacts with Multi-Platform Messaging",
+  "description": "\nWho Is This For?\nThis workflow is designed for individuals, families, and teams who want to automate birthday greetings for their contacts. It's particularly useful for those who maintain their contacts in Google and want to send personalized birthday wishes through multiple communication platforms without manual intervention.\n\nWhat This Workflow Does\nThis workflow functions as an automated birthday reminder and greeting system that:\nChecks contacts daily to identify whose birthday it is\nSends personalized birthday wishes through multiple platforms\nProvides voice announcements through Google Home speakers\nHandles WhatsApp verification before sending messages\nFormats dates appropriately for Bengali locale (bd)\n\nKey Features\nAutomated Scheduling** – Runs every day at 10 AM\nMulti-Platform Messaging** – Telegram, Microsoft Teams, and WhatsApp\nVoice Announcements** – Google Home speaker integration\nContact Management** – Google Contacts integration\nDate Formatting** – Bengali locale (bd) date formatting\nWhatsApp Verification** – Checks if contact has WhatsApp before sending\nLoop Processing** – Handles multiple birthdays on the same day\n\nRequirements & Setup\nGoogle Contacts API**: Required for accessing contact information and birthdays\nTelegram Bot API**: For sending birthday messages\nMicrosoft Teams API**: For team notifications\nRapiwa API**: For WhatsApp messaging and verification\nHome Assistant API**: For Google Home speaker integration\nScheduled Trigger**: Set to run daily at 10 AM\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleContacts",
+    "n8n-nodes-base.microsoftTeams",
+    "n8n-nodes-base.homeAssistant",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

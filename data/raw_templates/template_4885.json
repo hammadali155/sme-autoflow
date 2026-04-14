@@ -1,0 +1,11 @@
+{
+  "id": 4885,
+  "name": "AI Icebreaker Builder: Scrape Sites with Dumpling AI and Save to Airtable",
+  "description": "Who is this for?\n\nThis workflow is ideal for sales teams, marketers, and virtual assistants who manage outbound campaigns and want to improve their cold outreach personalization. It helps automate the research and writing process for each lead, saving time while improving quality.\n\nWhat problem is this workflow solving?\n\nCold outreach often lacks personalization because manually reviewing each lead's website takes time. This workflow eliminates that bottleneck by using AI to auto-generate personalized icebreakers, summaries, and outreach emails based on a lead’s website—without human research.\n\nWhat this workflow does\n\nThis n8n workflow runs on a schedule and pulls leads from Airtable who don't yet have an \"Ice breaker\" field filled out. For each lead, it does the following:\n\nTrigger: Scheduled daily via the Run Daily to Process New Leads node.\nSearch Airtable: Finds leads in Airtable where the Ice breaker field is empty using the Search Cold Leads Without Icebreaker node.\nSplit in Batches: Iterates through each lead one by one using Loop Through Each Lead.\nRate Limiting: Waits briefly before each request using Wait Before Making Request to avoid rate limits.\nScrape Website: Sends each lead’s website to Dumpling AI's /scrape endpoint via the Scrape Lead Website with Dumpling AI HTTP request.\nGenerate AI Copy: Sends the scraped content to GPT-4o using the Generate Icebreaker, Summary & Email (GPT-4o) node. It asks the LLM to create:\n   A short personalized icebreaker\n   A 2–3 line website summary\n   A short email body for cold outreach\nSave Results: Updates the original Airtable record with the generated content using the Save AI Output Back to Airtable node.\nSticky Note: Provides an overview of the workflow and usage instructions for future editors or collaborators.\n\nThis loop continues for all leads found, updating Airtable with fresh AI-generated outreach content.\n\nIntegration Requirements\n\nAirtable (Personal Access Token)\nDumpling AI API Key (Header Auth)\nOpenAI (GPT-4o)\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

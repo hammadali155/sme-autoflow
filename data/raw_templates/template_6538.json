@@ -1,0 +1,20 @@
+{
+  "id": 6538,
+  "name": "Company Knowledge Base Agent (RAG)",
+  "description": "Overview\nTurn your docs into an AI-powered internal or public-facing assistant. This chatbot workflow uses RAG (Retrieval-Augmented Generation) with Supabase vector search to answer employee or customer questions based on your company documents—automatically updated via Google Drive.\n\nWhether it’s deployed in Telegram or embedded on your website, this agent supports voice and text input, transcribes voice messages, pulls relevant context from your internal files, and responds with a helpful, AI-generated answer. Two additional workflows listen for file changes in a shared Google Drive folder, convert them into embeddings using OpenAI, and sync them with your Supabase vector DB—so your knowledge base is always up to date.\n\nWho’s it for\nStartups building an internal ops or HR assistant  \nSaaS companies deploying help bots on their websites  \nCustomer support teams reducing repetitive questions  \nKnowledge-driven teams needing internal AI assistants  \n\nHow it works\nTriggered via Telegram bot (or easily swapped for website chatbot or “on chat message”)  \nIf user sends a voice message, it’s transcribed to text using OpenAI Whisper  \nInput is passed to a RAG agent that:\n  Searches a Supabase vector store for relevant docs  \n  Pulls context from matching chunks using OpenAI embeddings  \n  Responds with an LLM-powered answer  \nThe response is sent back as a Telegram message  \nTwo separate workflows:\n  New File Workflow: Listens for file uploads in Google Drive, extracts and splits text, then sends to Supabase with embeddings  \n  Update File Workflow: Detects file edits, deletes old rows, and updates embeddings for the revised file  \n\nExample use case\n&gt; You upload your internal policy docs and client FAQs into a Google Drive folder.  \n&gt;  \n&gt; Employees or customers can now ask:  \n&gt; - “What’s the refund policy for annual plans?”  \n&gt; - “How do I request a day off?”  \n&gt; - “What tools are approved for use by the engineering team?”  \n&gt;  \n&gt; The chatbot instantly pulls up the right section and responds with a smart, confident answer.\n\nHow to set up\nConnect a Telegram bot or use n8n’s webchat / chatbot widget  \nHook up OpenAI for transcription, embeddings, and completion  \nSet up a Supabase project and connect it as a vector store  \nUpload your internal docs to Google Drive  \nDeploy the “Add File” and “Update File” automations to manage embedding sync  \nCustomize the chatbot’s tone and personality with prompt tweaks  \n\nRequirements\nTelegram bot (or n8n Chat widget)  \nGoogle Drive integration  \nSupabase with pgvector or similar enabled  \nOpenAI API key (Whisper, Embeddings, ChatGPT)  \nTwo folders: one for raw documents and one for tracking updates  \n\nHow to customize\nSwap Supabase for Pinecone, Weaviate, or Qdrant  \nReplace Telegram with web chat, Slack, Intercom, or Discord  \nAdd logic to handle fallback answers or escalate to human  \nEmbed the chat widget on your site for public customer use  \nAdd filters (e.g. department, date, author) to narrow down context\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.supabase",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 8055,
+  "name": "Automate Client Communications & Management with Notion, Gmail, and GPT-4o",
+  "description": "I used to lose clients because I forgot follow-ups… now my workflow does it all.\n\nSay goodbye to manual check-ins, missed opportunities, and scattered client data.\n\nThis all-in-one automation turns your client journey into a seamless, self-running system — so you can focus on growing your business while your clients feel seen, supported, and valued.\n\n🎯 Perfect for:\n\nSolopreneurs & coaches\nSmall business owners (consulting, tax prep, boutique services)\nContent creators & influencers with clients\nAnyone running a single-member LLC or side hustle.\n\n✅ What this workflow does:\n\nAutomatically welcomes new clients with a warm email\n\nSends personalized check-ins based on service stage\n\nCollects feedback at key milestones\nGenerates testimonials automatically\n\nFlags inactive clients before they leave\n\nSchedules next steps & sends reminders\n\nAll in Notion + Email — no coding needed!\n\n🧠 Powered by GPT-4o, it learns your tone and writes messages that sound like you.\n\n⏱️ Set it up once → let it run forever\n\n💡 Why you’ll love it:\n\nNo more \"did I send that?\" anxiety\n\nBoost retention by 30%+ with consistent touchpoints\n\nTurn happy clients into free marketing (testimonials!)\n\nSave 5+ hours per week on client management\n\n📌 Tools Used:\n\nNotion • Gmail • CRM (Zoho/HubSpot) • GPT-4o • Cron • Telegram (optional)\n\n🔗 Includes:\n\nStep-by-step setup guide\nCustomizable templates\nAI message generator\nClient status tracking\n\n👉 Ideal for anyone who wants to run their business like a pro — without the team.\n\n🚀 Get started today and never lose another client again.",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.openAi"
+  ],
+  "tags": []
+}

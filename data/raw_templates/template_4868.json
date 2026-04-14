@@ -1,0 +1,14 @@
+{
+  "id": 4868,
+  "name": "Extract Invoice Data from Google Drive to Sheets with Mistral OCR and Gemini",
+  "description": "Extract data from any PDF or image invoice dropped in Google Drive directly into Google Sheets – powered by AI OCR. Free, fully modifiable n8n workflow. Optional add-ons for pro features.\n\n🚀 What this template does\n\nStop typing invoice data by hand. Drop a PDF or phone-snapshot into your Invoices Inbox folder in Google Drive and this n8n workflow will:\n\n\n\n\n\nAuto-OCR the document with the Mistral OCR API\n\n\n\nMatch any fields you list in Row 1 of your Google Sheet (totally schema-agnostic)\n\n\n\nAppend a clean, structured row – every time\n\nWorks with both PDFs and images, in any language supported by Mistral.\n\nTemplate JSON included, ready to import into self-hosted or n8n Cloud\n\n👀 Who’s this for?\n\n\n\n\n\nFreelancers & agencies processing client invoices\n\n\n\nSmall finance teams on Google Workspace\n\n\n\nAnyone self-hosting n8n who wants an AI OCR flow without glue-code\n\nNo coding skills required – but flow tweaking is possible for power users.\n\n🛠 Upcoming PRO Add-Ons\nI am also working on PRO add-ons for this template: \n\nAdd-On #1 – Error Handling & Alerts (ships Jul 2025)• Flags missing fields, branches to Email/Slack notification; prevents silent failures\n\n\n\nAdd-On #2 – Auto-Currency Converter (ships Jul 2025)• Detects invoice currency symbol/code → converts Total into your base currency via a free FX API\n\n\n\nAdd-On #3 – VAT / GST Breakdown (ships Jul 2025)• Extracts VAT number, net, tax rate, tax amount, gross – ready for EU/UK/AU filings\n\nTo pre-order these please see: https://ysqander.gumroad.com/l/N8N-AI-Workflow-Invoice-Data-Extraction-LITE\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}
