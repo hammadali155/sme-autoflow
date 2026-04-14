@@ -11,12 +11,18 @@ __pycache__/
 *$py.class
 .pytest_cache/
 
+# Pickle files (exclude from repo except models/)
+*.pkl
+!models/**/*.pkl
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Project specific
+# Project specific — auto-generated vector DB
 rag/chroma_db/
+chroma_db/
 
 # OS generated files
 .DS_Store
 Thumbs.db
+*.pyc
