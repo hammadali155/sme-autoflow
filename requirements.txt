@@ -12,3 +12,4 @@ requests
 joblib
 matplotlib
 seaborn
+wordcloud
