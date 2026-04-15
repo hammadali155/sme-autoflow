@@ -1,21 +1,19 @@
 """
-train.py -- Train the Node Recommender model (multi-label).
+train.py -- Node Recommender Training Script (Multi-Label)
+SME AutoFlow | GDGoC AI/ML Fellowship Final Project
+Author: Hammad Ali (FA23-BCS-007)
 
-Pipeline: TF-IDF vectoriser -> OneVsRest(Logistic Regression)
-Input:    Free-text business description
-Output:   List of predicted n8n node types
-
-Saves:
-    node_model.pkl -- the full sklearn Pipeline
-    mlb.pkl        -- MultiLabelBinarizer for encoding/decoding node labels
+Pipeline: TF-IDF + OneVsRest(Logistic Regression)
+Input:    data/labeled_dataset.csv  (description, nodes, intent)
+Output:   node_model.pkl, mlb.pkl
 
 Usage:
     python models/node_recommender/train.py
 """
 
 import sys
+from collections import Counter
 from pathlib import Path
-from typing import Any
 
 import joblib
 import numpy as np
@@ -26,8 +24,6 @@ from sklearn.metrics import (
     accuracy_score,
     f1_score,
     hamming_loss,
-    precision_score,
-    recall_score,
 )
 from sklearn.model_selection import train_test_split
 from sklearn.multiclass import OneVsRestClassifier
@@ -39,183 +35,200 @@ from sklearn.preprocessing import MultiLabelBinarizer
 # ---------------------------------------------------------------------------
 SCRIPT_DIR: Path = Path(__file__).resolve().parent
 PROJECT_ROOT: Path = SCRIPT_DIR.parent.parent
-DATA_DIR: Path = PROJECT_ROOT / "data"
-DATASET_CSV: Path = DATA_DIR / "labeled_dataset.csv"
-
+DATASET_CSV: Path = PROJECT_ROOT / "data" / "labeled_dataset.csv"
 MODEL_PATH: Path = SCRIPT_DIR / "node_model.pkl"
 MLB_PATH: Path = SCRIPT_DIR / "mlb.pkl"
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
+TOP_N_NODES: int = 30
 TEST_SIZE: float = 0.2
 RANDOM_STATE: int = 42
-TFIDF_MAX_FEATURES: int = 5000
-TFIDF_NGRAM_RANGE: tuple[int, int] = (1, 2)
-LR_MAX_ITER: int = 1000
-MIN_NODE_FREQUENCY: int = 5  # drop very rare nodes to keep model stable
 
 
+# ---------------------------------------------------------------------------
+# 1. Load data
+# ---------------------------------------------------------------------------
 def load_data() -> pd.DataFrame:
-    """Load the labelled dataset and parse the comma-separated nodes column.
-
-    Returns:
-        DataFrame with 'description' and 'nodes' (list[str]) columns.
-    """
+    """Load labeled_dataset.csv."""
     if not DATASET_CSV.exists():
-        print(f"[ERROR] Dataset not found at {DATASET_CSV}")
+        print(f"[ERROR] Dataset not found: {DATASET_CSV}")
         print("       Run  python data/build_dataset.py  first.")
         sys.exit(1)
 
-    df: pd.DataFrame = pd.read_csv(DATASET_CSV)
-
-    # Drop rows with missing descriptions or nodes
-    df = df.dropna(subset=["description", "nodes"])
-    df = df[df["description"].str.strip().astype(bool)]
-    df = df[df["nodes"].str.strip().astype(bool)]
-
-    # Parse comma-separated node strings into lists
-    df["nodes"] = df["nodes"].apply(lambda x: [n.strip() for n in str(x).split(",") if n.strip()])
-
-    # Filter out rows with empty node lists
-    df = df[df["nodes"].apply(len) > 0].reset_index(drop=True)
-
-    print(f"[DATA] Loaded {len(df)} rows from {DATASET_CSV.name}")
-
-    # Count unique nodes
-    all_nodes = [n for nodes in df["nodes"] for n in nodes]
-    unique_nodes = set(all_nodes)
-    print(f"       Unique node types: {len(unique_nodes)}\n")
-
+    df = pd.read_csv(DATASET_CSV)
+    print(f"[1/9]  Loaded {len(df)} rows from {DATASET_CSV.name}")
     return df
 
 
-def filter_rare_nodes(
-    df: pd.DataFrame, min_freq: int = MIN_NODE_FREQUENCY,
-) -> pd.DataFrame:
-    """Remove node types that appear fewer than min_freq times.
-
-    Args:
-        df: DataFrame with 'nodes' column (list[str]).
-        min_freq: Minimum occurrence count to keep a node type.
-
-    Returns:
-        DataFrame with rare nodes stripped from each row.
-    """
-    # Count frequencies
-    from collections import Counter
-    node_counts: Counter = Counter(n for nodes in df["nodes"] for n in nodes)
-    keep: set[str] = {n for n, c in node_counts.items() if c >= min_freq}
-    removed: int = len(node_counts) - len(keep)
-
-    # Filter
-    df["nodes"] = df["nodes"].apply(lambda ns: [n for n in ns if n in keep])
-    df = df[df["nodes"].apply(len) > 0].reset_index(drop=True)
-
-    print(f"[FILTER] Kept {len(keep)} node types (removed {removed} with freq < {min_freq})")
-    print(f"         Remaining rows: {len(df)}\n")
-    return df
-
-
-def train_model(df: pd.DataFrame) -> dict[str, Any]:
-    """Train the multi-label node recommender pipeline and save artefacts.
-
-    Args:
-        df: DataFrame with 'description' and 'nodes' columns.
-
-    Returns:
-        A dict of evaluation metrics.
-    """
-    # --- Binarise labels ---
-    mlb = MultiLabelBinarizer()
-    y: np.ndarray = mlb.fit_transform(df["nodes"])
-    X: pd.Series = df["description"]
-
-    print(f"[LABELS] {len(mlb.classes_)} node classes after binarisation")
-
-    # --- Split ---
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE,
+# ---------------------------------------------------------------------------
+# 2. Parse nodes column
+# ---------------------------------------------------------------------------
+def parse_nodes(df: pd.DataFrame) -> pd.DataFrame:
+    """Split 'nodes' column (comma-separated string) into lists."""
+    df = df.dropna(subset=["nodes", "description"]).copy()
+    df["node_list"] = df["nodes"].apply(
+        lambda x: [n.strip() for n in str(x).split(",") if n.strip()]
     )
-    print(f"[SPLIT]  Train: {len(X_train)}  |  Test: {len(X_test)}\n")
+    print(f"[2/9]  Parsed node lists. Rows with nodes: {(df['node_list'].apply(len) > 0).sum()}")
+    return df
 
-    # --- Pipeline ---
+
+# ---------------------------------------------------------------------------
+# 3. Count node occurrences and keep top 30
+# ---------------------------------------------------------------------------
+def get_top_nodes(df: pd.DataFrame, top_n: int = TOP_N_NODES) -> set[str]:
+    """Count all node occurrences and return the top_n most frequent."""
+    all_nodes = [n for nodes in df["node_list"] for n in nodes]
+    counter = Counter(all_nodes)
+    top_nodes = {node for node, _ in counter.most_common(top_n)}
+    print(f"[3/9]  Top {top_n} nodes selected from {len(counter)} unique node types")
+    return top_nodes
+
+
+# ---------------------------------------------------------------------------
+# 4. Filter node lists to top 30 only
+# ---------------------------------------------------------------------------
+def filter_to_top_nodes(df: pd.DataFrame, top_nodes: set[str]) -> pd.DataFrame:
+    """Keep only top-N nodes in each row's node list."""
+    df = df.copy()
+    df["node_list"] = df["node_list"].apply(
+        lambda ns: [n for n in ns if n in top_nodes]
+    )
+    print(f"[4/9]  Filtered each row's nodes to top-{TOP_N_NODES} only")
+    return df
+
+
+# ---------------------------------------------------------------------------
+# 5. Drop empty node lists
+# ---------------------------------------------------------------------------
+def drop_empty_nodes(df: pd.DataFrame) -> pd.DataFrame:
+    """Remove rows whose filtered node list is empty."""
+    before = len(df)
+    df = df[df["node_list"].apply(len) > 0].reset_index(drop=True)
+    print(f"[5/9]  Dropped {before - len(df)} rows with empty node lists  ->  {len(df)} remaining")
+    return df
+
+
+# ---------------------------------------------------------------------------
+# 6. Binarize labels
+# ---------------------------------------------------------------------------
+def binarize_labels(df: pd.DataFrame) -> tuple[np.ndarray, MultiLabelBinarizer]:
+    """Fit a MultiLabelBinarizer on the filtered node lists."""
+    mlb = MultiLabelBinarizer()
+    y = mlb.fit_transform(df["node_list"])
+    print(f"[6/9]  MultiLabelBinarizer fitted: {len(mlb.classes_)} node classes")
+    return y, mlb
+
+
+# ---------------------------------------------------------------------------
+# 7. Train / test split
+# ---------------------------------------------------------------------------
+def split_data(
+    X: pd.Series, y: np.ndarray
+) -> tuple[pd.Series, pd.Series, np.ndarray, np.ndarray]:
+    """80/20 random split (no stratify for multi-label)."""
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE
+    )
+    print(f"[7/9]  Split -> Train: {len(X_train)}  |  Test: {len(X_test)}")
+    return X_train, X_test, y_train, y_test
+
+
+# ---------------------------------------------------------------------------
+# 8 & 9. Build pipeline and fit
+# ---------------------------------------------------------------------------
+def build_and_train(
+    X_train: pd.Series, y_train: np.ndarray
+) -> Pipeline:
+    """Build TF-IDF + OneVsRest(LR) pipeline and fit."""
     pipeline = Pipeline([
         ("tfidf", TfidfVectorizer(
-            max_features=TFIDF_MAX_FEATURES,
-            ngram_range=TFIDF_NGRAM_RANGE,
+            max_features=5000,
+            ngram_range=(1, 2),
             stop_words="english",
             sublinear_tf=True,
         )),
         ("clf", OneVsRestClassifier(
             LogisticRegression(
-                max_iter=LR_MAX_ITER,
+                max_iter=500,
+                C=1.0,
                 random_state=RANDOM_STATE,
-                class_weight="balanced",
                 solver="lbfgs",
-            ),
+            )
         )),
     ])
-
+    print(
+        "[8/9]  Pipeline built: "
+        "TfidfVectorizer(max_features=5000, ngram_range=(1,2)) + "
+        "OneVsRestClassifier(LogisticRegression(max_iter=500, C=1.0))"
+    )
     pipeline.fit(X_train, y_train)
-    y_pred: np.ndarray = pipeline.predict(X_test)
+    print("[9/9]  Training complete")
+    return pipeline
 
-    # --- Metrics ---
-    h_loss: float = hamming_loss(y_test, y_pred)
-    acc: float = accuracy_score(y_test, y_pred)  # exact-match ratio
-    f1_micro: float = f1_score(y_test, y_pred, average="micro")
-    f1_macro: float = f1_score(y_test, y_pred, average="macro")
-    prec: float = precision_score(y_test, y_pred, average="micro")
-    rec: float = recall_score(y_test, y_pred, average="micro")
 
-    metrics: dict[str, Any] = {
-        "hamming_loss": round(h_loss, 4),
-        "exact_match_accuracy": round(acc, 4),
-        "f1_micro": round(f1_micro, 4),
-        "f1_macro": round(f1_macro, 4),
-        "precision_micro": round(prec, 4),
-        "recall_micro": round(rec, 4),
-    }
+# ---------------------------------------------------------------------------
+# 10. Evaluate
+# ---------------------------------------------------------------------------
+def evaluate(
+    pipeline: Pipeline,
+    X_test: pd.Series,
+    y_test: np.ndarray,
+) -> None:
+    """Print all required evaluation metrics."""
+    y_pred = pipeline.predict(X_test)
 
-    print("--- Evaluation Metrics ---")
-    for k, v in metrics.items():
-        print(f"  {k:>25s}: {v}")
+    h_loss = hamming_loss(y_test, y_pred)
+    f1_micro = f1_score(y_test, y_pred, average="micro", zero_division=0)
+    f1_macro = f1_score(y_test, y_pred, average="macro", zero_division=0)
+    f1_weighted = f1_score(y_test, y_pred, average="weighted", zero_division=0)
+    acc = accuracy_score(y_test, y_pred)   # exact-match (subset accuracy)
 
-    # --- Save ---
+    print(f"\n[Evaluation on test set — {len(y_test)} samples]")
+    print(f"  Hamming Loss          : {h_loss:.4f}")
+    print(f"  F1 Score (micro)      : {f1_micro:.4f}")
+    print(f"  F1 Score (macro)      : {f1_macro:.4f}")
+    print(f"  F1 Score (weighted)   : {f1_weighted:.4f}")
+    print(f"  Exact-Match Accuracy  : {acc:.4f}  ({acc*100:.2f}%)")
+
+
+# ---------------------------------------------------------------------------
+# 11 & 12. Save artefacts
+# ---------------------------------------------------------------------------
+def save_artefacts(pipeline: Pipeline, mlb: MultiLabelBinarizer) -> None:
+    """Save the trained pipeline and MLB with joblib."""
     joblib.dump(pipeline, MODEL_PATH)
     joblib.dump(mlb, MLB_PATH)
-    print(f"\n[SAVED] {MODEL_PATH.name}  ({MODEL_PATH.stat().st_size:,} bytes)")
-    print(f"[SAVED] {MLB_PATH.name}       ({MLB_PATH.stat().st_size:,} bytes)")
-
-    # --- Sample predictions ---
-    print("\n--- Sample Predictions (first 5 test rows) ---")
-    for i in range(min(5, len(X_test))):
-        idx = X_test.index[i]
-        desc_preview = X_test.iloc[i][:80].encode("ascii", errors="replace").decode() + "..."
-        true_nodes = mlb.inverse_transform(y_test[i:i+1])[0]
-        pred_nodes = mlb.inverse_transform(y_pred[i:i+1])[0]
-        print(f"\n  [{i+1}] {desc_preview}")
-        print(f"      True:  {list(true_nodes)}")
-        print(f"      Pred:  {list(pred_nodes)}")
-
-    return metrics
+    print(f"\n  node_model.pkl  saved ({MODEL_PATH.stat().st_size:,} bytes)")
+    print(f"  mlb.pkl         saved ({MLB_PATH.stat().st_size:,} bytes)")
+    print("\nModel saved successfully")
 
 
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
-
 def main() -> None:
-    """Entry-point: load data, filter, train, evaluate, save."""
+    """Entry-point: full training pipeline."""
     print("=" * 60)
     print("  Node Recommender -- Training (Multi-Label)")
     print("=" * 60 + "\n")
 
     df = load_data()
-    df = filter_rare_nodes(df)
-    metrics = train_model(df)
+    df = parse_nodes(df)
 
-    print("\n[DONE] Node recommender training complete.")
+    top_nodes = get_top_nodes(df)
+    df = filter_to_top_nodes(df, top_nodes)
+    df = drop_empty_nodes(df)
+
+    y, mlb = binarize_labels(df)
+    X = df["description"]
+
+    X_train, X_test, y_train, y_test = split_data(X, y)
+    pipeline = build_and_train(X_train, y_train)
+    evaluate(pipeline, X_test, y_test)
+    save_artefacts(pipeline, mlb)
 
 
 if __name__ == "__main__":
