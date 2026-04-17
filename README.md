@@ -86,6 +86,29 @@ uvicorn api.main:app --reload --port 8000
 streamlit run app/streamlit_app.py
 ```
 
+## Cloud Deployment
+
+**1. Deploy Backend (FastAPI):**
+Host the FastAPI app on Heroku, Render, or Railway using the included `Procfile`:
+```
+web: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+```
+Make sure to set `GEMINI_API_KEY` in your backend host's environment variables.
+
+**2. Deploy Frontend (Streamlit Cloud):**
+1. Connect your repository to [Streamlit Community Cloud](https://share.streamlit.io).
+2. Set the Main File path to `app/streamlit_app.py`.
+3. Click "Advanced Settings" ➔ "Secrets" and configure the backend URL (plus any n8n defaults if you want them pre-filled):
+```toml
+API_BASE_URL = "https://your-deployed-backend-url.com"
+
+# Optional n8n defaults
+N8N_URL = "https://your-n8n-instance.com"
+N8N_API_KEY = "your-n8n-api-key"
+```
+4. Click Deploy!
+
+
 ## The Two ML Models
 
 SME AutoFlow uses two traditional machine learning models strategically placed before the LLM to guide generation:

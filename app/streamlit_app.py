@@ -98,7 +98,10 @@ st.markdown("""
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
-API_BASE_URL = "http://localhost:8000"
+try:
+    API_BASE_URL = st.secrets.get("API_BASE_URL", "http://localhost:8000")
+except Exception:
+    API_BASE_URL = "http://localhost:8000"
 
 EXAMPLE_PROMPTS = [
     "Send a Slack notification when a new payment is received in Stripe",
@@ -114,13 +117,22 @@ with st.sidebar:
     st.markdown("---")
 
     st.markdown("### n8n Deployment (Optional)")
+    try:
+        default_n8n_url = st.secrets.get("N8N_URL", "")
+        default_n8n_key = st.secrets.get("N8N_API_KEY", "")
+    except Exception:
+        default_n8n_url = ""
+        default_n8n_key = ""
+
     n8n_url = st.text_input(
         "n8n Instance URL",
+        value=default_n8n_url,
         placeholder="https://your-n8n.example.com",
         help="Base URL of your n8n instance (e.g. https://n8n.example.com)",
     )
     n8n_api_key = st.text_input(
         "n8n API Key",
+        value=default_n8n_key,
         type="password",
         placeholder="n8n-api-key-here",
         help="API key from your n8n instance Settings → API",
