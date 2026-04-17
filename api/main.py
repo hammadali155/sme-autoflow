@@ -93,7 +93,9 @@ class WorkflowRequest(BaseModel):
         ...,
         min_length=10,
         max_length=5000,
-        example="When a new lead fills out our contact form, send a welcome email via Gmail and notify sales on Slack.",
+        json_schema_extra={
+            "example": "When a new lead fills out our contact form, send a welcome email via Gmail and notify sales on Slack."
+        },
     )
     top_k: int = Field(
         default=3,
