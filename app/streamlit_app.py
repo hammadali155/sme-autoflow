@@ -257,7 +257,10 @@ def deploy_to_n8n(
 # ---------------------------------------------------------------------------
 if generate_clicked and prompt and len(prompt.strip()) >= 10:
     with st.spinner("🤖 Classifying intent and generating workflow..."):
-        result = call_api("/generate", {"prompt": prompt.strip()})
+        st.session_state["generation_result"] = call_api("/generate", {"prompt": prompt.strip()})
+
+if "generation_result" in st.session_state:
+    result = st.session_state["generation_result"]
 
     # --- Success: show results ---
     st.success("✅ Workflow generated successfully!")
