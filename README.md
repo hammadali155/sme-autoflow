@@ -15,7 +15,8 @@ app_port: 7860
 SME AutoFlow bridges the gap between non-technical business owners and sophisticated automation tools. A user simply types what they want to achieve (e.g., "Send a Slack message when a new lead fills out a Google Form"). The system then runs natural language through a multi-stage ML pipeline to classify the intent, recommend relevant n8n nodes, and retrieve contextually similar, expert-built templates via RAG. Finally, Google Gemini processes this rich context to generate a highly accurate, fully-formed JSON workflow that can be immediately deployed to a live n8n instance via the integrated Streamlit UI.
 
 ## Demo
-[Streamlit App Placeholder - Insert deployment link here]
+- **Frontend (Streamlit UI)**: [https://sme-autoflow-medlszyhajohfddctwjqez.streamlit.app/](https://sme-autoflow-medlszyhajohfddctwjqez.streamlit.app/)
+- **Backend (FastAPI)**: [https://hammadali123-sme-autflow-backend.hf.space](https://hammadali123-sme-autflow-backend.hf.space)
 
 ## Architecture
 
