@@ -1,9 +1,0 @@
-{
-  "id": 4978,
-  "name": "Generate AI Responses with Perplexity Sonar Models (Reusable Module)",
-  "description": "Perplexity API Module\n\nThis reusable workflow allows you to interact with the Perplexity API using the sonar or sonar-pro models. It is designed to be triggered from other workflows and accepts dynamic prompts via input parameters.\n\nFeatures\n\n🧱 Modular: Triggered using Execute Workflow from any other workflow\n📥 Inputs:\n  SystemPrompt: Set your system-level instruction for the LLM\n  UserPrompt: The main user prompt for the conversation\n🧠 Uses Perplexity’s chat/completions endpoint\n🔐 Built with API authentication in mind (Bearer token or header auth)\n🔁 Easily extendable for any model in the Perplexity suite\n\nModels supported\nsonar\nsonar-pro  \nSee full model list and capabilities\n\nUsage\n\nSet up your credentials in n8n under HTTP Bearer or Header Auth.\nAdd this workflow as a subworkflow using the “Execute Workflow” node.\nPass the desired SystemPrompt and UserPrompt as input variables.\nReceive the model response in return.\n\nNotes\n\nThis template is inactive by default and safe to import.\nIncludes sticky notes with API references and model info.",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

@@ -1,9 +1,0 @@
-{
-  "id": 4203,
-  "name": "Extract Structured LinkedIn Profile Data with Airtop & AI Parsing",
-  "description": "Extracting LinkedIn Profile Information\nUse Case\nManually copying data from LinkedIn profiles is time-consuming and error-prone. This automation helps you extract structured, detailed information from any public LinkedIn profile—enabling fast enrichment, hiring research, or lead scoring.\n\nWhat This Automation Does\nThis automation extracts profile details from a LinkedIn URL using the following input parameters:\nairtop_profile**: The name of your Airtop Profile connected to LinkedIn.\nlinkedin_url**: The URL of the LinkedIn profile you want to extract data from.\n\nHow It Works\nStarts with a form trigger or via another workflow.\nAssigns the LinkedIn URL and Airtop profile variables.\nOpens the LinkedIn profile in a real browser session using Airtop.\nUses an AI prompt to extract structured information, including:\n   Name, headline, location\n   Current company and position\n   About section, experience, and education history\n   Skills, certifications, languages, connections, and recommendations\nReturns structured JSON ready for further use or storage.\n\nSetup Requirements\nAirtop API Key — free to generate.\nAn Airtop Profile connected to LinkedIn (requires one-time login).\n\nNext Steps\nSync with CRM**: Push extracted data into HubSpot, Salesforce, or Airtable for lead enrichment.\nCombine with Search Automation**: Use with a LinkedIn search scraper to process profiles in bulk.\nAdapt to Other Platforms**: Customize the prompt to extract structured data from GitHub, Twitter, or company sites.\n\nRead more about the Extract Linkedin Profile Information automation. \n",
-  "nodes": [
-    "n8n-nodes-base.airtop"
-  ],
-  "tags": []
-}

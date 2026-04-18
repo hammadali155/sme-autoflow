@@ -1,9 +1,0 @@
-{
-  "id": 5602,
-  "name": "Add TypeScript Intellisense Support to Code Nodes with JSDoc",
-  "description": "Are you writing complex Code nodes and need Intellisense support? Follow this simple pattern to get autocomplete for any n8n or custom classes.\n\n",
-  "nodes": [
-    "n8n-nodes-base.code"
-  ],
-  "tags": []
-}

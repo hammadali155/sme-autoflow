@@ -1,9 +1,0 @@
-{
-  "id": 3439,
-  "name": " Validate Seatable Webhooks with HMAC SHA256 Authentication",
-  "description": "📌 Validate Seatable Webhooks with HMAC SHA256 Authentication\n\nThis mini workflow is designed to securely validate incoming Seatable webhooks using HMAC SHA256 signature verification.\n\n🔐 What it does:\nListens for incoming Seatable webhook requests.\nCalculates a SHA256 HMAC hash of the raw request body using your shared secret.\nCompares the computed hash with the x-seatable-signature header (after removing the sha256= prefix).\nIf the hashes match: responds with 200 OK and forwards the request to subsequent nodes.\nIf the hashes don’t match: responds with 403 Forbidden.\n\n⚠️ Important Notes:\nThis workflow is provided as a template and is not intended to work standalone. Please duplicate it and integrate it with your custom logic at the \"Add nodes for processing\" node.\n\nConfiguration steps:\nSet your secret key in the “Calculate sha256” crypto node (replace the placeholder).\nAdjust the webhook path to suit your environment (or set it to \"manual\" for testing).\nConnect your actual logic after the verification step.\n",
-  "nodes": [
-    "n8n-nodes-base.crypto"
-  ],
-  "tags": []
-}

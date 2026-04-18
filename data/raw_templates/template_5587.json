@@ -1,9 +1,0 @@
-{
-  "id": 5587,
-  "name": "Evaluate Animal Advocacy Text with Hugging Face Open Paws AI Models",
-  "description": "This sub-workflow uses two custom Hugging Face regression models from Open Paws to evaluate and predict the real-world performance and advocacy alignment of text content. It’s designed to support animal advocacy organizations in optimizing their messaging across platforms like social media, email campaigns, and more.\n\n🛠️ What It Does\n\nSends input text to two deployed Hugging Face endpoints:\n\n  Predicted Performance Model – Estimates real-world content success (e.g., engagement, shares, opens) based on patterns from real online data.\n  Advocate Preference Model – Predicts how well the content will resonate with animal advocates (emotional impact, relevance, rationality, etc.)\nOutputs structured scores for both models\nCan be integrated into larger workflows for automated content review, filtering, or revision\n\n📊 About the Models\n\nText Performance Prediction Model**\n  Trained on real-world data from 30+ animal advocacy organizations, this model predicts actual online performance of content—including social media, email marketing, and other outreach channels.\n\nAdvocate Preference Prediction Model**\n  Trained on ratings from animal advocates to evaluate how well a piece of text aligns with advocacy goals and values.\n\nModel Repositories:\n\nopen-paws/text_performance_prediction_longform\nopen-paws/animal_advocate_preference_prediction_longform\n\n&gt; 📌 You must deploy each model as an inference endpoint on Hugging Face. Click \"Deploy\" on each model’s repo, then add the endpoint URL and your Hugging Face access token using n8n credentials.\n\n📦 Use Cases\n\nAdvocacy content review before publishing\nAutomated scoring of outreach messages\nFiltering or flagging content with low predicted impact\nA/B testing support for message optimization",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

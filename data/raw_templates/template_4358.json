@@ -1,9 +1,0 @@
-{
-  "id": 4358,
-  "name": "Auto-Delete SPAM, Social, and Promotions Emails in Gmail",
-  "description": "Who is this for?\nThis workflow is perfect for Gmail users who want a tidy inbox without manual effort. It’s especially great for those overwhelmed by SPAM, social media updates, or promotional emails and want them automatically removed regularly.\n\nWhat problem is this workflow solving?\nUnwanted emails like SPAM, social notifications, and promotions can clutter your Gmail inbox, making it hard to focus on what matters. Manually deleting them is repetitive and time-consuming. This workflow automates the cleanup, keeping your inbox streamlined.\n\nWhat this workflow does\nEvery 3 days, this workflow deletes emails from Gmail’s SPAM, Social, and Promotions categories. It uses n8n’s Gmail node to fetch these emails, merges them into a single list, splits out individual email IDs, and deletes each one. The scheduled process ensures consistent inbox maintenance.\n\nSetup\nSet up valid Gmail OAuth2 credentials in n8n.\nImport the \"Clean My Mail\" workflow into your n8n instance.\nConfirm the Gmail nodes target SPAM, CATEGORY_SOCIAL, and CATEGORY_PROMOTIONS labels.\nAdjust the \"Run Every 3 Days (Trigger)\" node’s schedule if needed.\nActivate the workflow to begin automated cleaning.\n\nHow to customize this workflow to your needs\nChange the Gmail node labels to target other categories or custom labels.\nAdjust the schedule frequency in the trigger node.\nAdd filters to spare specific emails from deletion.\nExtend functionality with nodes for archiving or notifications.\n\nmade by:* khmuhtadin\nNeed a custom? contact me on LinkedIn or Web",
-  "nodes": [
-    "n8n-nodes-base.gmail"
-  ],
-  "tags": []
-}

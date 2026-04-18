@@ -1,9 +1,0 @@
-{
-  "id": 5406,
-  "name": "Automated Server Log Cleanup via Email Alerts with SSH - Nginx, Docker, System",
-  "description": "This n8n workflow monitors email alerts for disk utilization exceeding 80%, extracts the server IP, logs into the server, and purges logs from Nginx, PM2, Docker, and system files to clear disk space.\n\nKey Insights\n\nEnsure email alerts are consistently formatted with server IP details.  \nSSH access must be properly configured to avoid authentication failures.\n\nWorkflow Process\n\nInitiate the workflow with the Check Disk Alert Emails node when an email triggers on high disk usage.  \nParse the email to extract the server IP using the Extract Server IP from Email node.  \nSet up SSH credentials and paths manually with the Prepare SSH Variables node.  \nExecute cleanup commands to delete logs from Nginx, PM2, Docker, and system files using the Run LogCleanup Commands via SSH node.\n\nUsage Guide\n\nImport the workflow into n8n and configure email and SSH credentials.  \nTest with a sample email alert to verify IP extraction and log deletion.\n\nPrerequisites\n\nEmail service (e.g., IMAP or API) for alert monitoring  \nSSH access with valid credentials  \n\nCustomization Options\n\nModify the Prepare SSH Variables node to target specific log directories or adjust cleanup commands for different server setups.",
-  "nodes": [
-    "n8n-nodes-base.code"
-  ],
-  "tags": []
-}

@@ -1,9 +1,0 @@
-{
-  "id": 13881,
-  "name": "Generate images from Airtable records with Layerre and Canva",
-  "description": "How it works\n\n• Reads records from an Airtable table (e.g. leads, events, products) with fields such as name and image URL.\n• Uses Layerre to create image variants from a Canva-based template; the template ID comes from the one-time “Create Template from Canva” node.\n• For each record, one image is rendered and the image URL is written back into the same Airtable row.\n\nSet up steps\n\n• Create a Layerre template from your Canva design: run the “Create Template from Canva” node once with your Canva URL, then disable it and paste the template ID into the Create Variant node.\n• Add Airtable credentials (Personal Access Token), select your base and table, and optionally use Filter By Formula to limit which records are processed.\n• In the Create Variant node, map your Airtable field names to your Canva layers (e.g. $json.fields.Name for a text layer, $json.fields['Image url'] for an image layer).\n• In the Update Airtable node, map the record id from the List step and the image URL from the variant output (e.g. $json.url) so each row is updated correctly. Add a column in your table for the output URL if needed.\n",
-  "nodes": [
-    "n8n-nodes-base.airtable"
-  ],
-  "tags": []
-}

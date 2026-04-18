@@ -1,9 +1,0 @@
-{
-  "id": 4920,
-  "name": "Upload & Categorize Files with Supabase Storage and Secure URL Generation",
-  "description": "Supabase Storage File Upload Workflow\n\nworks with selfhosted Supabase\n\nℹ️ How it works\n• Accepts file data (MIME type, filename, base64 content) from other workflows\n• Automatically routes files to appropriate storage buckets based on file type (images, audio, video, documents)\n• Uploads files to Supabase Storage using the REST API\n• Generates secure signed URLs for file access with 30-day expiration\n• Returns structured success/error responses for downstream processing\n\n🏗️ Set up steps\n• Configure Supabase API credentials in n8n \n\n• Create storage buckets in your Supabase project (image-files, audio-files, video-files, document-files) (or choose your own structuring system)\n\n• Replace url paths with your own\n\n• Test the workflow using the included form trigger\n\n• Remove test form and integrate with your main workflows\n\n📚 Reference: Supabase Storage Documentation",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

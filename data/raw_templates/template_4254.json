@@ -1,9 +1,0 @@
-{
-  "id": 4254,
-  "name": "Find Linkedin Company Page with Airtop",
-  "description": "\nAutomating LinkedIn Company Page Discovery\n\nUse Case\n\nFinding the official LinkedIn page of a company is crucial for tasks like outreach, research, or enrichment. This automation streamlines the process by intelligently searching the company’s website and LinkedIn to locate the correct profile.\n\nWhat This Automation Does\n\nThis automation identifies a company's LinkedIn page using the following input parameters:\n\nCompany domain**: The official website domain of the company (e.g., company.com).\nAirtop Profile (connected to LinkedIn)**: The name of your Airtop Profile authenticated on LinkedIn.\n\nHow It Works\n\nLaunches an Airtop session using the provided authenticated profile.\nAttempts to extract a LinkedIn link directly from the company's website.\nIf not found, performs a LinkedIn search for the company.\nIf still unsuccessful, falls back to a Google search.\nValidates the most likely result to confirm it’s a LinkedIn company page.\nOutputs the verified LinkedIn URL.\n\nSetup Requirements\n\nAirtop API Key — free to generate.\nAn Airtop Profile logged in to LinkedIn (requires one-time login).\n\nNext Steps\n\nCombine with People Enrichment**: Use this with LinkedIn profile discovery for full contact + company data workflows.\nCRM Integration**: Automatically enrich company records with LinkedIn links.\nBuild Custom Outreach Workflows**: Connect company pages to SDR tooling for deeper research and engagement.\n\nRead more about how to find Linkedin Company page\n",
-  "nodes": [
-    "n8n-nodes-base.airtop"
-  ],
-  "tags": []
-}

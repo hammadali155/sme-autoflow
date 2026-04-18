@@ -1,9 +1,0 @@
-{
-  "id": 2923,
-  "name": "Bitrix24 Chatbot Application Workflow example with Webhook Integration",
-  "description": "Use Case\nAutomate chat interactions in Bitrix24 with a customizable bot that can handle various events and respond to user messages.\n\nWhat This Workflow Does\nProcesses incoming webhook requests from Bitrix24\nHandles authentication and token validation\nRoutes different event types (messages, joins, installations)\nProvides automated responses and bot registration\nManages secure communication between Bitrix24 and external services\n\nSetup Instructions\nConfigure Bitrix24 webhook endpoints\nSet up authentication credentials\nCustomize bot responses and behavior\nDeploy and test the workflow",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

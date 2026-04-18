@@ -1,9 +1,0 @@
-{
-  "id": 3133,
-  "name": "Extract & Process Specific Links from sitemap.xml",
-  "description": "Description\nThis workflow reads a sitemap.xml file, extracts all URLs, and allows you to filter out specific types of links—such as PDF files, images, or any other content—based on your needs.\n\nWho Is This For?\nSEO Specialists** looking to analyze specific URLs in their sitemap.\nDevelopers** who need to extract links for automated processing.\nContent Managers** filtering out downloadable assets like PDFs or images.\n\nHow It Works\nFetch sitemap.xml – The workflow reads the sitemap file from a given URL.\nExtract URLs – Parses all the URLs listed in the sitemap.\nFilter URLs – Use a simple filter to extract only the links you need (e.g., *.pdf).\nExport or Process – The filtered list can be sent via email, stored in a database, or used in another workflow.\n\nCustomization\nEdit the Set sitemap URL block and edit the sitemapUrl value to the sitemap you want to fetch.\nEdit the Filter URLs block and edit the filter conditions to meet your needs.",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

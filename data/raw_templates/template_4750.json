@@ -1,9 +1,0 @@
-{
-  "id": 4750,
-  "name": "fetch the public IP addresses of your n8n instance",
-  "description": "Why\nIf you need to use n8n to connect to service providers of yours,  some of which happen to  rely on firewall white-listing as part of their access control, you'll need to determine or verify the public IP addresses of your n8n instance(s).\n\nHow does it work\nThe webhook, upon invocation, will use Http Request node to request public IP address information from ++api.ipify.org++ in json format, for 10 times, then aggregate results to an array.\n  The reason to repeat, is to get all the potential public IP addresses of your n8n instance.\n  Often than not, enterprises or network providers deploy at least a pair of gateway devices at the border for redundancy.\nbuilt-in array functions in a javascript expression are used to pluck all the values under 'ip' key, and to dedup to an array as response body.\n\nHow to set it up\nimport the workflow\nset up your own header-auth credential\nupdate the workflow to use the new credential\ntest or activate workflow as usual.\n\nexample invocation\n$ curl -H \"api-key: super-long-api-token\" http://localhost:5678/webhook-test/4879bc79-d6f8-48df-bfe4-613366c7f399\n[\"88.88.88.66\", \"88.88.88.88\"]\n\n",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

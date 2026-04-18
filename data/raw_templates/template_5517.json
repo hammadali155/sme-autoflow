@@ -1,9 +1,0 @@
-{
-  "id": 5517,
-  "name": "Manage Personal Expenses with Webhooks and Google Sheets Automated Tracker",
-  "description": "How it works:\nThis system functions by receiving expenses via webhook POST. It validates the data, stores it in Google Sheets, and, daily at 8 PM, generates and sends financial summaries. Automatic categorization simplifies the organization of expenses.\n\nSet up steps:\nSetup involves creating the Google Sheet, configuring the webhook, and defining the categorization rules. The process is quick and intuitive, taking about 10-15 minutes for the system to be ready to receive your expenses.",
-  "nodes": [
-    "n8n-nodes-base.googleSheets"
-  ],
-  "tags": []
-}

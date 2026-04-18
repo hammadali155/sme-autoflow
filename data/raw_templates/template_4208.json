@@ -1,9 +1,0 @@
-{
-  "id": 4208,
-  "name": "Extract and Structure X Post Comments with Airtop Browser Automation",
-  "description": "Extracting Comments from an X Post\n\nUse Case\nEngaging with conversations on X (formerly Twitter) is critical for brands and individuals monitoring sentiment, leads, or emerging trends. Manually collecting comments is time-consuming—this automation enables scalable extraction of comment data to inform your outreach or analysis.\n\nWhat This Automation Does\nThis automation extracts comments from a specified X post, with the following input parameters:\n\nairtop_profile**: The name of your Airtop Profile connected to X.\nx_post_url**: The URL of the X post to extract comments from.\nmax_number_of_comments**: The maximum number of comments to retrieve.\n\nHow It Works\nTakes input via a form or another workflow.\nNormalizes the input values.\nCreates a new browser session using Airtop.\nNavigates to the provided X post.\nUses a prompt to extract up to the specified number of comments, returning:\n   Author name\n   Author profile URL\n   Comment text\n\nSetup Requirements\nAirtop API Key — free to generate.\nAn Airtop Profile connected to X (requires one-time login).\n\nNext Steps\nPair with X Monitoring**: Use this with the X monitoring automation to detect relevant posts and extract discussion context automatically.\nFeed into Analytics**: Combine with summarization or sentiment analysis tools to understand audience response at scale.\nExport for CRM/BI**: Pipe the structured comment data into your CRM or business intelligence stack for lead tracking or reporting.\n\nRead more about Extracting Comments from X Posts\n",
-  "nodes": [
-    "n8n-nodes-base.airtop"
-  ],
-  "tags": []
-}

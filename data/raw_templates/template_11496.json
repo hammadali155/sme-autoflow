@@ -1,9 +1,0 @@
-{
-  "id": 11496,
-  "name": "Automate Video Translation from Multiple Sources with Rask AI",
-  "description": "🎬 Rask AI Video Translation Workflow\n\nThis workflow is designed to translate a video accessible by URL (supported sources: YouTube, Google Drive, S3, Vimeo, or a direct link) into a language supported by Rask AI.  \n\nIt automatically uploads your video, waits for it to finish processing, creates a translation project, and retrieves the final translated output.\n\nYou can use it to quickly build automations for localization, multilingual content creation, training materials, and more.\n\n🔐 Authentication\n\nTo run this workflow, make sure you have OAuth2 authentication configured in n8n under the name raskOAuth2.\n\nYour OAuth2 credentials must include Client ID  and Client Secret\n\nYou can find both in your Rask account settings:  \n👉 https://app.rask.ai/account\n\nFor details on Rask authentication, refer to the official documentation:  \n👉 https://docs.api.rask.ai/api-reference/authentication\n\nEnsure that the raskOAuth2 authentication is selected in the following nodes: Upload media,  Get media, Create project, Get project\n\nThese nodes interact with the Rask API and require valid credentials.\n\n🧪 Test Input\n\nYou can test the workflow using the following sample values (simply insert these values into your trigger or input node to run a full translation cycle end-to-end.):\n\nlink**:  \n  https://static.rask.ai/samples/sample_1.mp4\n\ndst_lang** (target translation language):  \n  en-us\nHappy Translating! 🌍✨",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

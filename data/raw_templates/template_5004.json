@@ -1,9 +1,0 @@
-{
-  "id": 5004,
-  "name": "Automate GitHub Issue Assignments via Comment Commands",
-  "description": "🤖 GitHub Auto-Assign Bot\n\nStreamline your open source project with intelligent issue assignment automation.\n\n✨ What It Does\nAutomatically assigns GitHub issues to contributors who comment \"assign me\" - eliminating manual triage work and creating a fair, first-come-first-served system.\n\n🔑 Key Features\nSmart Detection**:  \n  Monitors both new issues and comments for assignment requests\nConflict Prevention**:  \n  Checks existing assignments before making new ones\nAuto-Labeling**:  \n  Adds \"assigned\" labels for better tracking\nSelf-Service Assignment**:  \n  Contributors claim issues with simple \"assign me\" command\nPolite Responses**:  \n  Automatically notifies when issues are already assigned\n\n🎯 Perfect For\nOpen source maintainers\nDevelopment teams managing GitHub repos\nProjects with active contributor communities\nAnyone reducing manual issue management\n\n⚙️ Setup Requirements\nGitHub repository with issues enabled\nn8n instance with GitHub OAuth credentials\n5 minutes configuration time\n\n🚀 How Contributors Use It\nFind an unassigned issue\nComment assign me \nGet automatically assigned\nStart coding immediately → no maintainer approval needed!\n\n✅ Benefits\nReduces maintainer workload** - No manual assignments\nFaster contributor onboarding** - Instant self-service\nPrevents conflicts** - Built-in assignment checking\nScales automatically** - Works across unlimited issues\nImproves contributor experience** - Simple, clear process\n\n⚡ Workflow Triggers\nNew GitHub issues containing \"assign me\"\nNew comments with \"assign me\" on existing issues\nAutomatic label management\nConflict resolution responses\n\n&gt; Transform your GitHub workflow - Perfect for growing open source projects and development teams!",
-  "nodes": [
-    "n8n-nodes-base.github"
-  ],
-  "tags": []
-}

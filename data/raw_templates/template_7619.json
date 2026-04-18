@@ -1,9 +1,0 @@
-{
-  "id": 7619,
-  "name": "Automatic Trello Board Cleanup by Removing Cards with Specific Labels",
-  "description": "Automatically clean up Trello boards by deleting any cards labeled “Mark for Deletion.”  \n\nThis workflow checks all cards on your chosen Trello board, looks for the Mark for Deletion label, and removes those cards automatically — keeping your boards tidy without manual effort.  \n\n⚙️ Setup Instructions\n\n1️⃣ Connect Trello (Developer API)\nGet your API key: https://trello.com/app-key  \nGenerate a token (from the same page → Token)\nIn n8n → Credentials → New → Trello API, paste API Key and Token, save.  \nOpen each Trello node (Get Board, Get Lists, Get Cards) and select your Trello credential.\n\n2️⃣ Add Your Board URL to “Get Board”\nCopy your Trello board URL (e.g., https://trello.com/b/DCpuJbnd/administrative-tasks).  \nOpen the Get Board node → Resource: Board, Operation: Get.  \nIn ID, choose URL mode and paste the board URL.  \n   The node will resolve the board and output its id → used by Get Lists / Get Cards.\n\n📬 Contact\n📧 rbreen@ynteractive.com  \n🔗 Robert Breen  \n🌐 ynteractive.com\n",
-  "nodes": [
-    "n8n-nodes-base.trello"
-  ],
-  "tags": []
-}

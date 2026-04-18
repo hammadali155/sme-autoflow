@@ -1,9 +1,0 @@
-{
-  "id": 12789,
-  "name": "Build a full REST-API with n8n webhooks",
-  "description": "What is it?\nA clean, extensible REST-style API routing template for n8n webhooks with up to 3 path levels.\n\nHow does it work?\nServes API routes via Webhooks with path variables\n\nNormalizes incoming requests into \"global\" _REQUEST and _CFG nodes\n\nFlexible routing with Switch-nodes based on path segments & request method\n\nKey features\nNo setup required\nSupports multiple HTTP methods\nGlobal config via code node\nSeparation of concern between config/request and implementation data flow\nEasy to extend\n\nUse cases\nPrototyping backend APIs via JSON-responses\nServing interactive websites via HTML-nodes + TEXT responses",
-  "nodes": [
-    "n8n-nodes-base.code"
-  ],
-  "tags": []
-}

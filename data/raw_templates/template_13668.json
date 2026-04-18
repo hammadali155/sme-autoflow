@@ -1,9 +1,0 @@
-{
-  "id": 13668,
-  "name": "Get LinkedIn mutual connections with the TexAU API",
-  "description": "This workflow automates the process of retrieving mutual LinkedIn connections using the TexAU API. It is ideal for enrichment, lead qualification, and relationship-mapping tasks where understanding shared connections provides valuable context.\n\nHow it Works\n\nThe workflow is triggered manually for testing or can be linked to other workflows.\nA request is sent to TexAU’s LinkedIn Mutual Connections automation, passing the target LinkedIn profile URL or ID.\nTexAU begins processing the task in the background.\nThe workflow waits briefly to allow TexAU to complete the job.\nA follow-up request retrieves the final results from TexAU’s results endpoint.\nThe mutual-connection data is returned in structured form for downstream use such as enrichment, CRM updates, scoring, or AI workflows.\n\nSetup Steps\n\nAdd your TexAU API key to the HTTP Request node headers.\nSpecify the input LinkedIn profile URL.\nAdjust wait duration depending on TexAU’s processing speed.\nConnect any downstream CRM, database, or AI components as needed.\n\nGood to Know\nTexAU execution time varies based on task queue load. Returned fields may include connection names, profile URLs, job titles, and shared links.",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

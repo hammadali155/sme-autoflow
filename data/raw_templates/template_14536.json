@@ -1,9 +1,0 @@
-{
-  "id": 14536,
-  "name": "Track LLM costs and usage across OpenAI, Anthropic, Google and more",
-  "description": "Installation Steps\n\nGo to Settings → n8n API and create an API key\nAdd it as credential for the Get Execution Data node\nReview model mappings in Standardize Names node\nReview pricing in Model Prices node\n\nTo Monitor a Workflow\n\nAdd Execute Workflow node at the end of your target workflow\nSelect this monitoring workflow\nTurn OFF \"Wait For Sub-Workflow Completion\"\nPass { \"executionId\": \"{{ $execution.id }}\" } as input\n\nPrerequisites\n\nEnable \"Return Intermediate Steps\" in your AI Agent settings for best results.\n\nSupported Providers \n\nOpenAI · Anthropic · Google · DeepSeek · Meta · Mistral · xAI · Cohere · Alibaba Qwen · Moonshot Kimi\n\n120+ Model Variations Mapped\nIncludes all versioned variants (e.g., gpt-4o-2024-08-06 → gpt-4o)\n\nPrices sourced from official provider pages (March 2026)\n\nOutput Data\n\nPer LLM Call\nCost Breakdown (prompt, completion, total USD)\nToken Metrics (prompt, completion, total)\nPerformance (execution time, finish reason)\nContent Preview (first 100 chars I/O)\nModel Parameters (temp, max tokens, timeout)\nExecution Context (workflow, node, status)\nFlow Tracking (previous nodes chain)\n\nSummary Statistics\nTotal executions and costs\nBreakdown by model type\nBreakdown by node\nAverage cost per call\nTotal execution time\n\n💡 You can do anything with this data!\n\nStore in a database for historical tracking\nSend to Teams as a cost alert\nBuild dashboards with the summary data\nSet budget thresholds and trigger warnings\nExport to Google Sheets for reporting\n",
-  "nodes": [
-    "n8n-nodes-base.code"
-  ],
-  "tags": []
-}

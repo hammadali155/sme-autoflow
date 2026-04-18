@@ -1,9 +1,0 @@
-{
-  "id": 2245,
-  "name": "Generate Text-to-Speech Using Elevenlabs via API",
-  "description": "🎉 Do you want to master AI automation, so you can save time and build cool stuff? \n\nI’ve created a welcoming Skool community for non-technical yet resourceful learners.\n\n👉🏻 Join the AI Atelier 👈🏻\n\nThis workflow provides an API endpoint to generate speech from text using Elevenlabs.io, a popular text-to-speech service.\n\nStep 1: Configure Custom Credentials in n8n\nTo set up your credentials in n8n, create a new custom authentication entry with the following JSON structure:\n{\n  \"headers\": {\n    \"xi-api-key\": \"your-elevenlabs-api-key\"\n  }\n}\nReplace \"your-elevenlabs-api-key\" with your actual Elevenlabs API key.\n\nStep 2: Send a POST Request to the Webhook\nSend a POST request to the workflow's webhook endpoint with these two parameters:\nvoice_id: The ID of the voice from Elevenlabs that you want to use.\ntext: The text you want to convert to speech.\n\n\nThis workflow has been a significant time-saver in my video production tasks. I hope it proves just as useful to you!\n\nHappy automating!  \nThe n8Ninja",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

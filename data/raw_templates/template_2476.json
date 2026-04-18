@@ -1,9 +1,0 @@
-{
-  "id": 2476,
-  "name": "Convert URL HTML to Markdown Format and Get Page Links",
-  "description": "Use Case\nTransform web pages into AI-friendly markdown format:\nYou need to process webpage content for LLM analysis\nYou want to extract both content and links from web pages\nYou need clean, formatted text without HTML markup\nYou want to respect API rate limits while crawling pages\n\nWhat this Workflow Does\nThe workflow uses Firecrawl.dev API to process webpages:\nConverts HTML content to markdown format\nExtracts all links from each webpage\nHandles API rate limiting automatically\nProcesses URLs in batches from your database\n\nSetup\nCreate a Firecrawl.dev account and get your API key\nAdd your Firecrawl API key to the HTTP Request node's Authorization header\nConnect your URL database to the input node (column name must be \"Page\") or edit the array in Example fields from data source\nConfigure your preferred output database connection\n\nHow to Adjust it to Your Needs\nModify input source to pull URLs from different databases\nAdjust rate limiting parameters if needed\nCustomize output format for your specific use case\n\n\nMore templates and n8n workflows &gt;&gt;&gt; @simonscrapes\n",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

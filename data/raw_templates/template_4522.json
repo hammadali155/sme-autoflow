@@ -1,9 +1,0 @@
-{
-  "id": 4522,
-  "name": "Automated Video Download from Sample.cat using Airtop Browser Automation",
-  "description": "README\n\nAutomating Video File Download from Sample.cat with Airtop.ai\n\nUse Case\nAutomating file downloads from web pages is useful for scenarios like bulk media retrieval, dataset access, or recurring content backups. This workflow ensures a hands-free, consistent process for retrieving downloadable content.\n\nWhat This Automation Does\nThis automation performs a reliable download of a video file from a specified webpage using the following steps:\n\nInitiates an Airtop browser session.\nOpens a specified URL containing downloadable media.\nInteracts with the page to click the download button.\nWaits for the file to be processed and made available.\nRetrieves metadata to confirm availability.\nDownloads the file.\nTerminates the browser session to clean up resources.\n\nHow It Works\nManual Trigger: Activated by user test.\nSession: Starts an Airtop browser session.\nWindow: Navigates to https://sample.cat/en/webm.\nInteraction: Simulates a click on the download button for the video titled “SD 640x360 (Seawater, drone view video, 30 FPS)”.\nWait: Pauses for 10 seconds to allow the file to be ready for download.\nGet File Data: Checks for downloadable files in the session.\nDownload File: Retrieves the file using its ID.\nTerminate: Ends the browser session to free up resources.\n\nSetup Requirements\nAirtop API Key — required to authenticate API calls.\n\nNext Steps\nEnhance with Retry Logic**: Loop file availability check until status = available for more robust automation.\nCustomize File Targets**: Dynamically pass URLs and button descriptors for multi-source downloads.\nConnect to Storage**: Pipe downloaded files to cloud storage or databases for archiving.\n\nRead more about automating file downloads from the web",
-  "nodes": [
-    "n8n-nodes-base.airtop"
-  ],
-  "tags": []
-}

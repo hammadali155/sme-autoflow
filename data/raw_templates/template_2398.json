@@ -1,9 +1,0 @@
-{
-  "id": 2398,
-  "name": "KB Tool - Confluence Knowledge Base",
-  "description": "\nEnhance Query Resolution with the Knowledge Base Tool!\n\nOur KB Tool - Confluence KB is crafted to seamlessly integrate into the IT Ops AI SlackBot Workflow, enhancing the IT support process by enabling sophisticated search and response capabilities via Slack.\n\nWorkflow Functionality:\nReceive Queries**: Directly accepts user queries from the main workflow, initiating a dynamic search process.\nAI-Powered Query Transformation**: Utilizes OpenAI's models or local ai to refine user queries into searchable keywords that are most likely to retrieve relevant information from the Knowledge Base.\nConfluence Integration**: Executes searches within Confluence using the refined keywords to find the most applicable articles and information.\nDeliver Accurate Responses**: Gathers essential details from the Confluence results, including article titles, links, and summaries, preparing them to be sent back to the parent workflow for final user response.\n\nTo view a demo video of this workflow in action, click here. \n\nQuick Setup Guide:\nEnsure correct configurations are set for OpenAI and Confluence API integrations.\nCustomize query transformation logic as per your specific Knowledge Base structure to improve search accuracy.\n\n\nNeed Help?\nDive into our Documentation or get support from the Community Forum!\n\n\nDeploy this tool to provide precise and informative responses, significantly boosting the efficiency and reliability of your IT support workflow.\n",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

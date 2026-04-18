@@ -1,9 +1,0 @@
-{
-  "id": 4682,
-  "name": "Create an Image Enhancement API Endpoint with Nero AI Business API",
-  "description": "How it works\nThis template uses the n8n AI agent node as an orchestrating agent that decides which tool (knowledge graph) to use based on the user's prompt.\n\nHow to use\nCreate an account and apply for an API key on https://ai.nero.com/ai-api?utm_source=n8n-base-workflow.\n\nFill your key into the Create task and Query task status nodes.\nSelect an AI service and modify Create task node parameters, the API doc: https://ai.nero.com/ai-api/docs.\nExecute the workflow so that the webhook starts listening.\nMake a test request by postman or other tools, the test URL from the Webhook node.\n \nYou will receive the output in the webhook response.\n\nOur API doc\nPlease create an account to access our API docs.\nhttps://ai.nero.com/ai-api/docs.\n\nUse cases\nLarge Scale Printing\n\tUpscale images into ultra-sharp, billboard-ready masterpieces with 300+ DPI and billions of pixels.\n\n\nGame Assets Compression \n\tImprove your game performance with AI-Image Compression: Faster, Better & Lossless.\n\n\nE-commerce Image Editing \n\tRemove & replace your product image backgrounds, create virtual showrooms.\n\n\nPhoto Retouching \n\tRemove & reduce grains & noises from images.\n\n\nFace Animation \n\tTransform static images into dynamic facial expression videos or GIFs with our cutting-edge Face Animation API\n\n\nPhoto Restoration \n\tOur Al-driven Photo Restoration API offers advanced scratch removal, face enhancement, and image upscaling.\n\n\nColorize Photo \n\tTransform black & white images into vivid colors.\n\n\nAvatar Generator \n\tTurn your selfie into custom avatars with different styles and backgrounds\n\n\nWebsite Compression\n\tSpeed up your website, compress your images in bulk.\n\n",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

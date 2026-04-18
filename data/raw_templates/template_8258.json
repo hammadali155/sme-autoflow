@@ -1,9 +1,0 @@
-{
-  "id": 8258,
-  "name": "Learn Secure Webhook APIs with Authentication and Supabase Integration",
-  "description": "This template is a practical introduction to n8n Webhooks with built-in examples for all major HTTP methods and authentication types. It is designed as a learning resource to help you understand how webhooks work in n8n, how to connect them to a data store, and how to secure them properly.\n\nWhat’s included:\n\nWebhook nodes for GET, POST, PUT, PATCH, DELETE, and HEAD\nDemonstrations of Basic Auth, Header Auth, and JWT Auth\nSupabase integration for creating, retrieving, updating, and deleting rows\nExample response handling with Respond to Webhook nodes\nSticky notes explaining each method, response type, and security option\n\nUse this template to:\n\nLearn how to configure and test webhooks in n8n\nExplore different authentication strategies\nConnect webhooks to a simple Supabase table\nUnderstand best practices for securing webhook endpoints\n\nThis workflow is intended as an educational starting point. It shows you how to receive requests, map data, and return responses securely. For production use, adapt the structure, apply your own security policies, and extend the logic as needed.\n\nCheck out the YouTube video here: https://www.youtube.com/watch?v=o6F36xsiuBk\n\n",
-  "nodes": [
-    "n8n-nodes-base.supabase"
-  ],
-  "tags": []
-}

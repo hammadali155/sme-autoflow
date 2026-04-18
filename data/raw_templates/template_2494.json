@@ -1,9 +1,0 @@
-{
-  "id": 2494,
-  "name": "Generate SEO Keyword Search Volume Data using Google API",
-  "description": "Use Case\nGenerate accurate search volume data for SEO keyword research:\nYou have a list of potential keywords to target for your website SEO but don't know their actual search volume\nYou need historical data to identify seasonal trends in keyword popularity\nYou want to assess keyword difficulty to prioritize your content strategy\nYou need data-driven insights for planning your SEO campaigns\n\nWhat this Workflow Does\nThe workflow connects to Google's Keyword Planner API to retrieve keyword metrics for your SEO research:\n\nFetches monthly search volume for each keyword\nProvides historical trends data for the past 12 months\nCalculates keyword difficulty scores\nDelivers competition metrics from Google Ads\n\nSetup\nFill the Set 20 Keywords with up to 20 Keywords of your choosing in an array e.g. [\"keyword 1\", \"keyword 2\",...]\nCreate a Google Ads API account and add credentials to Get Search Data node\nReplace the Connect to your own database with your own database for the output\n\nHow to Adjust it to Your Needs\nChange the Set 20 Keywords node input to a source of your choosing e.g. Airtable database with 20 keywords\nConnect to output source of your choosing \n\n\nMore templates and n8n workflows &gt;&gt;&gt; @simonscrapes",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

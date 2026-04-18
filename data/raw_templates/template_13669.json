@@ -1,9 +1,0 @@
-{
-  "id": 13669,
-  "name": "Get LinkedIn profile data via TexAU API",
-  "description": "This workflow automates the extraction of detailed LinkedIn profile information through the TexAU API. It is designed for lead enrichment, prospect research, hiring workflows, and any automation requiring structured profile data from LinkedIn.\n\nHow it Works\n\nThe workflow is triggered manually or through another workflow.\nA request is sent to TexAU’s LinkedIn Profile Scraper task, providing the target LinkedIn profile URL or ID.\nTexAU starts a profile-scraping job in the background.\nThe workflow waits briefly to allow processing time.\nA follow-up request retrieves the completed results from TexAU’s results endpoint.\nThe workflow outputs a structured JSON representation of the profile, typically including name, headline, role, location, experience, skills, and education.\n\nSetup Steps\n\nAdd your TexAU API key to the HTTP Request node.\nSupply the LinkedIn profile URL dynamically or manually.\nAdjust the wait time depending on TexAU’s queue speed.\nConnect your CRM, database, or AI logic to process the profile results.\n\nGood to Know\nData availability depends on what is publicly visible. Processing time varies based on TexAU queue load.\n",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

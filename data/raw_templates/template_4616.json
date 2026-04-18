@@ -1,9 +1,0 @@
-{
-  "id": 4616,
-  "name": "Extract Google Ads Creatives by Domain with SerpAPI and Export to CSV",
-  "description": "🧾 Template: Extract Ad Creatives from Google’s Ads Transparency Center\n\nThis n8n workflow pulls ad creatives from Google's Ads Transparency Center using SerpApi, filtered by a specific domain and region. It extracts, filters, categorizes, and exports ads into neatly formatted CSV files for easy analysis.\n\n👤 Who’s it for?\n\nMarketing Analysts** researching competitive PPC strategies\nAd Intelligence Teams** monitoring creatives from specific brands\nDigital Marketers** gathering visual and copy trends\nJournalists & Watchdogs** reviewing ad activity transparency\n\n✅ Features\n\nFetch creatives** using SerpApi's google_ads_transparency_center engine\nFilter results** to include only ads with an exact match to your target domain\nCategorize** by ad format: text, image, or video\nExport CSVs**: Generates a downloadable file for each format under the /files/ directory\n\n🛠 How to Use\n\nEdit the “Set Domain & Region” node\n\n   domain: e.g. example.com\n   region: SerpApi numeric region code → See codes\n\nAdd your SerpApi API key\n\n   In the “Get Ads Page 1” node’s credentials section.\n\nRun the workflow\n\n   Click \"Test workflow\" to initiate the process.\n\nDownload your results\n\n   Navigate to /files/ to find:\n\n     text_{domain}_ads.csv\n     image_{domain}_ads.csv\n     video_{domain}_ads.csv\n\n📌 Notes\n\nOnly the first page (up to 50 creatives) is fetched; pagination is not included.\nSticky Notes inside the workflow nodes offer helpful internal annotations.\nCSV files include creative-level details: ad copy, images, video links, etc.\n",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

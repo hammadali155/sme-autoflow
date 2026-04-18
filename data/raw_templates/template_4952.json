@@ -1,7 +1,0 @@
-{
-  "id": 4952,
-  "name": "AI Agent Integration for Bubble Apps with MCP Protocol Data Access",
-  "description": "Let AI agents fetch communicate with your Bubble app automatically. It connects direcly with your Bubble data API. This workflow is designed for teams building AI tools or copilots that need seamless access to Bubble backend data via natural language queries.\n\n\nHow it works\nTriggered via a webhook from an AI agent using the MCP (Model-Chain Prompt) protocol.\nThe agent selects the appropriate data tool (e.g., projects, user, bookings) based on user intent.\nThe workflow queries your Bubble database and returns the result.\nIdeal for integrating with ChatGPT, n8n AI-Agents, assistants, or autonomous workflows that need real-time access to app data.\n\n\nSet up steps\nEnable access to your Bubble data or backend APIs (as needed).\nCreate a Bubble admin token.\nAdd your Bubble node/s to your n8n workflow.\nAdd your Bubble admin token.\nConfiger your Bubble node/s.\nCopy the generated webhook URL from the MCP Server Trigger node and register it with your AI tool (e.g., LangChain tool loader).\n(Optional) Adjust filters in the “Get an Object Details” node to match your dataset needs.\n\nOnce connected, your AI agents can automatically retrieve context-aware data from your Bubble app, no manual lookups required.\n\n",
-  "nodes": [],
-  "tags": []
-}

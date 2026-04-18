@@ -1,9 +1,0 @@
-{
-  "id": 5013,
-  "name": "Track n8n Workflow Changes Over Time with Compare Dataset & Google Sheets",
-  "description": "This n8n template runs daily to track and report on any changes made to workflows  on any n8n instance.\n\nUseful if a team is working within a single instance and you want to be notified of what workflows have changed since you last visited them. Another use-case might be monitoring your managed instances for clients and being alerted when changes are made without your knowledge.\n\nSee a sample Gsheet here: https://docs.google.com/spreadsheets/d/1dOHSfeE0W_qPyEWj5Zz0JBJm8Vrf_cWp-02OBrA_ZYc/edit?usp=sharing\n\nHow it works\nA scheduled trigger is set to run once a day to review all available workflows.\nAn n8n node imports the workflows as json.\nThe workflows are brought into a loop where each is first checked to see if it exists in the designated google sheet.\nIf not, a new entry is created and skipped.\nIf the workflow has been captured before, then the comparison subworkflow can be executed using the previous and current versions of the workflow json data.\nThe subworkflow uses the compare dataset tool to calculate the changes to nodes and connections for the given workflow.\nThe results are then recorded back to the google sheet for review.\n\nHow to use\nStart with the n8n node and try to filter by the workflows you're interested in tracking.\nSet the scheduled trigger interval to match the frequency to suit how often your workflows are being edited.\n\nCustomising the workflow\nWant to get fancy? Add in an AI agent to help determine changes between the previous and current versions of the workflow. Add contextual explanations to reveal the impact of the changes.",
-  "nodes": [
-    "n8n-nodes-base.googleSheets"
-  ],
-  "tags": []
-}

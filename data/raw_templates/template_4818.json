@@ -1,9 +1,0 @@
-{
-  "id": 4818,
-  "name": "Send Telegram Notification for New WooCommerce Orders",
-  "description": "🔧 How it works:\n• The workflow triggers when a new order is created in WooCommerce.\n• It extracts order details including ID, status, total, and products list.\n• Sends a formatted message via Telegram to the store admin.\n• Includes a clickable button that links directly to the order view page.\n\n⚙️ Set up steps:\n• Estimated setup time: 5–10 minutes.\n• Requires active WooCommerce REST API credentials.\n• Requires a Telegram bot and your admin chat ID.\n• Replace the Telegram chatId and WooCommerce credentials in the workflow.\n• Make sure your WooCommerce site allows external API access.\n",
-  "nodes": [
-    "n8n-nodes-base.telegram"
-  ],
-  "tags": []
-}

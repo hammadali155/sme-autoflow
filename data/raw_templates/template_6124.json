@@ -1,9 +1,0 @@
-{
-  "id": 6124,
-  "name": "Send Postcards to Contacts Automatically using CentralStationCRM and EchtPost",
-  "description": "Workflow Overview\nThis workflow benefits anyone, who:\nwants to automate sending Postcards to tagged CentralStationCRM contacts\n\nTools in this Workflow \nCentralStationCRM - the simple and intuitive CRM Software for small teams.\nEchtPost - send postcards online\n\nWorkflow Screenshot\n\nWorkflow Description\nThis workflow consists of:\na webhook trigger\na set node\nan if node\nan HTTP request\n\nThe Webhook Trigger\nThe webhook triggers when a person is updated in CentralStationCRM. \n\nThe persons data is sent to n8n, including the company name and the address. \n\nThe Set node\nThis node filters the webhook data for just the data the EchtPost node needs. It also transforms the country field to the associated country code (i.e. \"Deutschland\" -&gt; \"DE\")\n\nThe if node\nThis node checks if there is an \"EchtPost\" tag in the persons data.\n-&gt; if false: do nothing\n-&gt; if true: go to HTTP request\n\nThe HTTP Request\nThis node sends the persons name, address and country code alongside with the id of the EchtPost template (inserted manually in the node) to EchtPost. It also needs an E-Mail-Adress for a confirmation mail.\n\nThe data starts a \"Mail in 3 days\" process with the EchtPost service, which mails a postcard with that template to the person.\n\nPreconditions \nFor this workflow, you need:\na CentralStationCRM account with API access\nan EchtPost account with API access\nan EchtPost template, with a message, and the templates ID",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

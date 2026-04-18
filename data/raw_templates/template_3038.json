@@ -1,9 +1,0 @@
-{
-  "id": 3038,
-  "name": "Error Handler send Telegram: Real-Time Workflow Failure Alerts",
-  "description": "This workflow acts as an error handler, sending real-time notifications to Telegram when another workflow fails. It provides detailed error information, including workflow name, timestamp, execution URL, last executed node, and error message.\n\nPre-Conditions  \nA Telegram bot created via BotFather.  \nThe bot token and Telegram group/channel chatId.  \nAn active n8n instance with the Telegram and Error Trigger nodes installed.  \n\nSetup  \nWorkflow Configuration:  \n   Import the workflow into n8n.  \n   Update the Telegram chatId in the Config node.  \n   Add your Telegram bot token in the Telegram node credentials.  \n\nError Workflow Setup:  \n   Set this workflow as the Error Workflow in other workflows.  \n\nTesting:  \n   Trigger an error in another workflow to verify Telegram notifications.  \n\nWho the Workflow is For  \nDevelopers:** Monitoring workflow failures in real-time.  \nTeams:** Managing multiple n8n workflows and needing instant error alerts.  \nn8n Users:** Looking for a simple way to handle workflow errors via Telegram.  \n\nPrimary Use  \nAutomates error notifications for failed workflows.  \nSends detailed error reports to Telegram for quick troubleshooting.  \nEasily customizable to fit specific monitoring needs.",
-  "nodes": [
-    "n8n-nodes-base.telegram"
-  ],
-  "tags": []
-}

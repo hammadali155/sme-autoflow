@@ -1,9 +1,0 @@
-{
-  "id": 11842,
-  "name": "Automated Credentials Backup to Google Drive via SSH and Docker",
-  "description": "This workflow automates the backup of decrypted n8n credentials from a self-hosted Docker instance to Google Drive. It allows you to export credentials on n8n versions 2.x.x (where old CLI commands may not work) without accessing the server terminal manually.\n\nHow it works\nConfiguration**: Defines the Docker container name and file paths using a centralized variables node.\nSSH Execution**: Connects to the host machine via SSH and executes the n8n export:credentials command inside the specified Docker container.\nFile Retrieval**: Reads the newly created decrypted JSON file from the host filesystem.\nCloud Upload**: Uploads the JSON file to a specified folder in Google Drive with a timestamped filename.\n\nSet up steps\nConfigure Variables**: Open the \"Variables\" node and enter your Docker Container name (usually n8n or an ID).\nSSH Connection**: Configure the \"Execute a command\" (SSH) node with your host machine's IP, username, and SSH key/password.\nGoogle Drive Auth**: Authenticate the \"Google Drive Upload File\" node with your Google credentials.\nSelect Folder**: In the \"Google Drive Upload File\" node, select the specific folder on your Drive where you want the backups to be saved.\nSchedule**: (Optional) Adjust the \"Schedule Trigger\" to your preferred backup frequency (default is set to run periodically).",
-  "nodes": [
-    "n8n-nodes-base.googleDrive"
-  ],
-  "tags": []
-}

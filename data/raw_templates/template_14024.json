@@ -1,9 +1,0 @@
-{
-  "id": 14024,
-  "name": "Publish a social media post with Swonkie",
-  "description": "🚀 What this workflow does\n\nAutomate publishing social media posts through the Swonkie Public API. \nGiven a media file URL, a caption, and a target profile, this workflow handles \nthe full end-to-end flow: uploading the media, creating the post, validating \nit against platform rules, and publishing or scheduling it, all without \ntouching the Swonkie dashboard.\n\nUse this as a starting point to connect Swonkie to any other tool in n8n: \ntrigger posts from a CMS, a spreadsheet, a form submission, an AI agent, or \nany other data source.\n\n⚙️ How it works\n\nRegisters the media file in Swonkie's media library and uploads the binary \n  directly to Azure Blob Storage using a signed upload URL\nPolls the media processing status every 3 seconds until Swonkie confirms \n  the file is ready (SUCCESS) or stops with an error if processing fails\nCreates a new post with the uploaded media, caption, and target social profile\nValidates the post against Swonkie's network rules (caption length, media \n  format, profile connection) before publishing\nChanges the post stage to publishNow (publishes immediately) or schedule\n\n🛠️ Set up steps\n\nSign up at swonkie.dev and connect at least one social media profile\nGo to app.swonkie.com/settings/workspace/public-api to get your App ID and \n  API Key\nGet your Profile ID from the Swonkie API (GET /profiles) or the dashboard\nOpen the Configure node and fill in: apiId, apiKey, profileId, caption, \n  stage, mediaUrl and mediaName\nRun the workflow",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

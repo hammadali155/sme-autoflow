@@ -1,7 +1,0 @@
-{
-  "id": 5270,
-  "name": "🎓 Learn n8n Keyboard Shortcuts with an Interactive Hands-On Tutorial Workflow",
-  "description": "How it works\n\nThis template is an interactive playground designed to help you master the most useful keyboard shortcuts in n8n and supercharge your building speed. Forget boring lists—this workflow gives you hands-on tasks to complete, turning learning into a practical exercise.\n\nThe workflow is structured into four chapters, each focusing on a different aspect of workflow development:\n\nNode Basics: Learn the fundamentals of interacting with a single node, such as renaming, editing, duplicating, and deactivating.\nCanvas Navigation & Selection: Master the art of moving around the canvas and selecting multiple nodes efficiently.\nAdvanced Actions: Discover powerful moves like tidying up messy connections and creating sub-workflows.\nExecution & Debugging: Uncover essential shortcuts for testing your workflows, like pinning data and navigating the executions panel.\n\nEach step provides a clear task in a sticky note, guiding you to perform the action yourself.\n\nSet up steps\n\nSetup time: 0 minutes!\n\nThis workflow is a self-contained tutorial and requires no setup, credentials, or configuration.\n\nOpen the workflow.\nFollow the instructions in the sticky notes, starting from the top.\nPerform the actions as described to build muscle memory for each shortcut.\n\nThat's it! Get ready to become an n8n power user.",
-  "nodes": [],
-  "tags": []
-}

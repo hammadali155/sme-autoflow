@@ -1,9 +1,0 @@
-{
-  "id": 2886,
-  "name": "Backup all n8n workflows to Google Drive every 4 hours",
-  "description": "This workflow takes off the task of backing up workflows regularly on Github and uses Google Drive as the main tool to host these. \n\nThis can be a good way to keep track of your workflows so that you never lose any workflows in case your n8n goes down.\n\nHow does it work\n\nCreates a new folder within a specified folder with the time its backed up\nLoops around all workflows, converts them to a JSON file and uploads them to the created folder\nGets the previous backups and deletes them\n\nThis has a clean feel and look as it simplifies the backup while not keeping a cache of workflows on your drive.\n\nSetup\n\nCreate a new folder\nCreate new service account credentials\nShare the folder with the service account email\nUpload this workflow to your canvas and map the credentials\nSet the schedule that you need your workflows to run and manage your backups\nActivate the workflow\n\nHappy Productivity!\n\n@Imperol",
-  "nodes": [
-    "n8n-nodes-base.googleDrive"
-  ],
-  "tags": []
-}

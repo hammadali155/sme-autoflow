@@ -1,9 +1,0 @@
-{
-  "id": 4890,
-  "name": "UniPile LinkedIn Profile Lookup Subworkflow",
-  "description": "Who is this for?\n\nThis subworkflow is ideal for developers and automation builders working with UniPile and n8n to automate message enrichment and LinkedIn lead routing.\n\nWhat problem is this workflow solving?\n\nUniPile separates personal and organization accounts into two different API endpoints. This flow handles both intelligently so you're not missing sender context due to API quirks or bad assumptions.\n\nWhat this workflow does\n\nThis subworkflow is used by:\n\nLinkedIn Auto Message Router with Request Detection**  \nLinkedIn AI Response Generator with Slack Approval**\n\nIt receives a message sender ID and tries to enrich it using UniPile's /people and /organizations endpoints. It returns a clean, consistent profile object regardless of which source was used.\n\nSetup\n\nGenerate a UniPile API token and save it in your n8n credentials\nMake sure this subworkflow is triggered correctly by your parent flows\nTest both people and organization lookups to verify responses are normalized\n\nHow to customize this workflow to your needs\n\nAdd a secondary enrichment layer using tools like Clearbit or FullContact\nCustomize the fallback logic or error handling\nExpand the returned data for more AI context or user routing (e.g., job title, region)\n",
-  "nodes": [
-    "n8n-nodes-base.httpRequest"
-  ],
-  "tags": []
-}

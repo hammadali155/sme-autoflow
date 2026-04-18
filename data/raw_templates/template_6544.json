@@ -1,9 +1,0 @@
-{
-  "id": 6544,
-  "name": "Forward Chatwoot Messages to WhatsApp via Evolution API with Media Support",
-  "description": "Description\nThis workflow automates forwarding messages received in Chatwoot to WhatsApp using the Evolution API. It provides full support for different types of messages, ensuring rich and seamless communication with the end user.\n\nWhat Problem Does This Solve?\nManually forwarding messages from Chatwoot to WhatsApp can be time-consuming and error-prone, especially when handling diverse message types like media files. This subworkflow streamlines the process, automating message delivery while maintaining message fidelity and media compatibility.\n\nFeatures\n\nSupport for plain text messages;\nSupport for media messages including images, videos, documents, and audio;\nAutomatic detection of media type based on the content_type field;\nAutomatic processing of incoming messages from Chatwoot via webhook or native integration\n\nPrerequisites\nBefore using this subworkflow, make sure you have:\nEvolution API key and URL;\nIncoming messages from Chatwoot via webhook or native integration;\nConfigured HTTP Request node in n8n\n\nSuggested Usage\nThis subworkflow should be attached to a main workflow that receives messages from Chatwoot. It is ideal for automated customer service, help desks, or hybrid bots (human + automated), enabling messages originating from Chatwoot to be faithfully redirected to WhatsApp.\n\n\n\n\n",
-  "nodes": [
-    "n8n-nodes-base.code"
-  ],
-  "tags": []
-}
