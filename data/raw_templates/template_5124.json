@@ -1,0 +1,9 @@
+{
+  "id": 5124,
+  "name": "Generate QR Codes from URLs with QR Server API and Downloadable Images",
+  "description": "Easily generate QR codes from any URL! This workflow lets users submit a URL via a simple form and instantly receive a downloadable QR code image—perfect for quick sharing or promotions. Setup is fast and user-friendly, so you’ll be up and running in minutes!\n\n🚀 How it works\nThe end user submits a URL through a simple online form.\nThe workflow automatically sends the submitted URL to a QR code generation API.\nThe user receives a downloadable QR code image corresponding to their URL.\n\n⚙️ Setup instruction\nImport Workflow: Click \"Import from JSON\" in your n8n environment and paste the provided workflow JSON.\nClick \"Save\" and activate the workflow.\nDouble click the \"On form submission\" node to obtain the production URL.\nYou may now use this URL to do QR code generation.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

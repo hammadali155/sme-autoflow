@@ -1,0 +1,13 @@
+{
+  "id": 5219,
+  "name": "Automated Competitor Price Monitoring with Bright Data & n8n",
+  "description": "\nDescription\n\nThis workflow automatically monitors your competitors' product prices and notifies you of any changes. It helps you stay competitive in the market by providing real-time insights into pricing strategies without manual checking.\n\nOverview\n\nThis workflow automatically tracks your competitors' pricing across their websites and notifies you of any changes. It uses Bright Data to scrape pricing data and can generate reports or send alerts when prices change.\n\nTools Used\n\nn8n:** The automation platform that orchestrates the workflow.\nBright Data:** For scraping competitor websites without being blocked.\nSpreadsheets/Databases:** For storing and analyzing price data.\nNotification Services:** For alerting you to significant price changes.\n\nHow to Install\n\nImport the Workflow: Download the .json file and import it into your n8n instance.\nConfigure Bright Data: Add your Bright Data credentials to the Bright Data node.\nSet Up Data Storage: Configure where you want to store the price data.\nCustomize: Add your competitors' URLs and the specific products to monitor.\n\nUse Cases\n\nE-commerce Businesses:** Stay competitive with real-time price monitoring.\nPricing Analysts:** Automate data collection for pricing strategy.\nRetailers:** Adjust your pricing strategy based on market trends.\n\nConnect with Me\n\nWebsite:** https://www.nofluff.online\nYouTube:** https://www.youtube.com/@YaronBeen/videos\nLinkedIn:** https://www.linkedin.com/in/yaronbeen/\nGet Bright Data:** https://get.brightdata.com/1tndi4600b25 (Using this link supports my free workflows with a small commission)\n\n#n8n #automation #pricing #competitoranalysis #brightdata #ecommerce #pricemonitoring #competitiveintelligence #pricetracking #marketanalysis #n8nworkflow #workflow #nocode #pricingstrategy #competitortracking #ecommercetools #pricecomparison #businessintelligence #marketresearch #competitivepricing #retailautomation #pricealerts #datadriven #webscraping #pricinganalysis #competitorinsights\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

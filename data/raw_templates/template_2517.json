@@ -1,0 +1,12 @@
+{
+  "id": 2517,
+  "name": "Send Google analytics data to A.I. to analyze then save results in Baserow",
+  "description": "Who's this for?\nIf you own a website and need to analyze your Google analytics data\nIf you need to create an SEO report on which pages are getting most traffic or how your google search terms are performing\nIf you want to grow your site based on suggestions from data\n\nUse case\nInstead of hiring an SEO expert, I run this report weekly. It checks compares the data from this week to the week before:\nViews based on countries\nThe top performing pages\nGoogle search console performance\n\nWatch youtube tutorial here\n\nGet my SEO A.I. agent system here\n\nHow it works\nThe workflow gathers google analytics for the past 7 days then it gathers the data for the week before for comparison.\nIt does this 3 times to get: views per country, engagement per page and google search console results for organic search results.\nThe google analytics nodes has already chosen the correct dimensions and metrics. \nAt the end, it passes the data to openrouter.ai for A.I. analyse.\nFinally it saves to baserow. \n\nHow to use this\nInput your Google analytics credentials\nInput your property ID\nInput your Openrouter.ai credentials\nInput your baserow credentials\nYou will need to create a baserow database with columns: Name, Country Views, Page Views, Search Report, Blog (name of your blog).\n\nCreated by Rumjahn\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleAnalytics",
+    "n8n-nodes-base.baserow",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

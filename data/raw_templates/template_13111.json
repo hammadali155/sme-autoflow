@@ -1,0 +1,13 @@
+{
+  "id": 13111,
+  "name": "Send customer visit notifications from Google Calendar to Slack and Sheets",
+  "description": "Customer Visit Notification\nThis workflow monitors Google Calendar for events indicating that a customer will visit the company today or the next day, retrieves the required details, and sends reminder notifications to the relevant stakeholders. It also posts a company-wide announcement to ensure proper preparation and a professional reception for the customer.\n\n📌Who is this for?\nReception / Administration team\nSales / Account owners in charge of customers\nManagement / Related team leaders\nSecurity / IT / Logistics (for meeting room, equipment, and check-in preparation)\n\n📌The problem\nCustomer visit information is usually shared manually and can be easily missed.\nRelated staff are not informed in time to prepare.\nThis causes last-minute preparation for reception, meeting rooms, documents, and support.\nIt affects the customer experience and the company’s professional image.\n\n📌How it works\nWhen a customer meeting is scheduled, the system records the information (time, customer name, company, person in charge).\nThe system automatically sends notifications to related groups based on timeline:\n       Notify the whole office 1 hour before the visit.\n       Notify related members 24 hours in advance.\nNotifications can be sent via Email / Slack / Internal chat.\n\n📌Quick setup\nRequired information:\nN8n Version 2.4.6\nGoogle Calendar OAuth2 API: Client ID, Client Secret\nGoogle Sheets OAuth2 API: Client ID, Client Secret\nSlack App: Bot User OAuth Token\n\n\nGoogle Sheets will be used to log all notified events.\n\n📌Results\nEveryone is aware of the customer visit schedule.\nTeams can proactively prepare meeting rooms, documents, and manpower.\nReduce mistakes and missed communication.\nImprove customer experience and company professionalism.\n\n📌Take it further\nCustomer check-in using QR code / Visitor form\nSend reminders to prepare documents\nStore visit history\nMonthly/quarterly reports for number of customer visits\n\n📌Need help customizing?\nContact me for consulting and support:\nLinkedin / Website",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

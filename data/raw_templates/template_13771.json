@@ -1,0 +1,12 @@
+{
+  "id": 13771,
+  "name": "Summarize meeting recordings and create Notion action items with Gemini AI",
+  "description": "Who is this for\n\nTeam leads, project managers, and operations staff who want to automate meeting documentation. Useful for any team that records meetings and needs structured notes with clear action items.\n\nWhat this workflow does\n\nThis workflow accepts a meeting recording upload via a web form. The recording is uploaded to Gemini Files API for audio analysis. Gemini AI generates a structured summary including key decisions, action items with assignees, and follow-up topics. A Notion page is created with the complete notes, and the team is notified on Slack with a summary and the action item list.\n\nSetup\n\nAdd a Google Gemini API credential for file upload and audio analysis.\nAdd a Notion API credential and create a database with columns: Title, Date, Summary, Action Items, Status.\nAdd a Slack OAuth2 credential and set your meetings channel.\n\nRequirements\n\nGoogle Gemini API key (supports audio file analysis)\nNotion workspace with API integration enabled\nSlack workspace with OAuth2 app\n\nHow to customize\n\nEdit the analysis prompt in \"Analyze recording with Gemini\" to focus on specific meeting types (standup, retrospective, planning).\nChange the Gemini model to a larger variant for longer recordings.\nAdd a Google Calendar integration to automatically match recordings to calendar events.\n\nImportant disclaimer\n\nAI-generated summaries may not capture every detail or nuance from the recording. Always review the notes before sharing externally or making decisions based on them.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

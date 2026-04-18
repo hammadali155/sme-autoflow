@@ -1,0 +1,13 @@
+{
+  "id": 4187,
+  "name": "Discover HIDDEN Youtube Trends / Outlier Videos in Your Niche (Apify + Airtable)",
+  "description": "For Who?\n\nContent Creators\nYoutube Automation \nMarketing Team\n\nHow it works?\n\n1 - Every week, retrieve the keywords you want to track\n2 - Thanks to Apify, scrape videos from YouTube Search related to these keywords, filtered by relevance\n3 - Wait until the dataset is completed\n4 - Get the information contained in the dataset\n5 - For each video, clean and summarize the script\n6 - Upload everything to your Airtable database\n\n📺 YouTube Video Tutorial: \n\nSetup (~5min)\n\nScheduled Trigger: Select the frequency you want. If you change it, update the data accordingly in the \"Create Videos Dataset\" HTTP Request node in Body ➡️ JSON ➡️ dateFilter.\n\nSetup Keywords: Enter keywords related to the niche you want. If you change the number of keywords, update the data accordingly in the \"Create Videos Dataset\" HTTP Request node in Body ➡️ JSON ➡️ searchQueries.\n\nCreate Videos Dataset: Refer to the Apify documentation for more: https://docs.apify.com/api/v2/getting-started\n\nAPIs: For all HTTP Request nodes in the URL field, replace [YOUR_API_TOKEN] with your API token.\n\n👨‍💻 More Workflows : https://n8n.io/creators/nasser/",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatMistralCloud"
+  ],
+  "tags": []
+}

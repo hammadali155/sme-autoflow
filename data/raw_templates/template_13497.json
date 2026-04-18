@@ -1,0 +1,11 @@
+{
+  "id": 13497,
+  "name": "Sync Toggl Track time entries with Google Sheets detail and summary tabs",
+  "description": "How it works\n\nThis workflow syncs Toggl Track time entries to Google Sheets and creates monthly tabs automatically.\n\nIt fetches:\ntime entries from Toggl\nproject metadata from Toggl\n\nThen it:\nfilters entries by your selected project name\nwrites detailed rows to a Detail Sheet\nwrites daily aggregated rows to a Summary Sheet\ncreates/removes monthly tabs to keep both sheets clean and aligned\n\nSet up steps\n\nEstimated setup time: 10–15 minutes.\n\nConfigure HTTP Basic Auth for Toggl:\n   Username: your Toggl API token\n   Password: api_token\nConfigure Google Sheets OAuth2 credentials.\nIn Set Date Range, set start_date.\nIn Process Data, set:\n   PROJECT_NAME\n   TIMEZONE\nReplace placeholders in workflow nodes:\n   YOUR_DETAIL_SPREADSHEET_ID\n   YOUR_SUMMARY_SPREADSHEET_ID\n\nDetailed node-by-node guidance is included in sticky notes inside the workflow.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

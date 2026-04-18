@@ -1,0 +1,9 @@
+{
+  "id": 4065,
+  "name": "Serve Inspirational Quotes On-Demand via Webhook using ZenQuotes API",
+  "description": "This n8n template lets you instantly serve batches of inspirational quotes via a webhook using the free ZenQuotes API. It’s perfect for developers, content creators, community managers, or educators who want to add dynamic, uplifting content to websites, chatbots, or internal tools—without writing custom backend code.\n\n🔧 How it works\nA Webhook node listens for incoming HTTP requests on your chosen path.\nGet Random Quote from ZenQuotes sends an HTTP Request to https://zenquotes.io/api/random?count=5 and retrieves five random quotes.\nFormat data uses a Set node to combine each quote (q) and author (a) into a single string:\n\"“quote” – author\".\nSend response returns a JSON array of objects { quote, author } back to the caller.\n\n👤 Who is it for?\nThis workflow is ideal for:\n\nDevelopers building motivational Slack or Discord bots.\nWebsite owners adding on-demand quote widgets.\nEducators or trainers sharing daily inspiration via webhooks.\nAnyone learning webhook handling and API integration in n8n.\n\n🗂️ Response Structure\nYour webhook response will be a JSON array, for example:\n\n[\n{\n\"quote\": \"Life is what happens when you're busy making other plans.\",\n\"author\": \"John Lennon\"\n},\n{\n\"quote\": \"Be yourself; everyone else is already taken.\",\n\"author\": \"Oscar Wilde\"\n}\n]\n\n⚙️ Setup Instructions\nImport the workflow JSON into your n8n instance.\nIn the Webhook node, set your desired path (e.g., /inspire).\n(Optional) Change the count parameter in the HTTP Request node to fetch more or fewer quotes.\nActivate the workflow.\nTest by sending an HTTP GET or POST to https://&lt;your-n8n-domain&gt;/webhook/&lt;path&gt;.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

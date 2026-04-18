@@ -1,0 +1,10 @@
+{
+  "id": 4795,
+  "name": "Upwork Job Listings Auto-Export to Google Sheets with Apify",
+  "description": "\n\nAutomated pipeline that extracts job listings from Upwork and exports them to Google Sheets for better organization, analysis, and team collaboration.\n\n🚀 What It Does\n\nFetches job postings based on saved searches\nExtracts key job details (title, budget, description)\nOrganizes data in Google Sheets\nUpdates in real-time\nSupports multiple search criteria\n\n🎯 Perfect For\n\nFreelancers tracking opportunities\nTeams managing multiple projects\nAgencies monitoring client needs\nMarket researchers\nBusiness analysts\n\n⚙️ Key Benefits\n\n✅ Centralized job board  \n✅ Easy sharing with team members  \n✅ Advanced filtering and sorting  \n✅ Historical data tracking  \n✅ Customizable data points  \n\n🔧 What You Need\n\nUpwork account\nGoogle account\nn8n instance\nGoogle Sheets setup\n\n📊 Data Exported\n\nJob title and description\nBudget and hourly rate\nClient information\nPosted date\nRequired skills\nJob URL\n\n🛠️ Setup & Support\n\nQuick Setup\n\nGet started in 15 minutes with our step-by-step guide\n\n📺 Watch Tutorial\n\n💼 Get Expert Support\n\n📧 Direct Help\n\n\n\nStreamline your job search and opportunity tracking with automated data collection and organization.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

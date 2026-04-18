@@ -1,0 +1,9 @@
+{
+  "id": 13996,
+  "name": "Automatically solve reCAPTCHA v2 with CapSolver",
+  "description": "reCAPTCHA v2 Solver (CapSolver + n8n)\n\nHow it works\n\n• Receives reCAPTCHA v2 solving requests via webhook\n• Sends tasks to CapSolver and returns solved tokens in real time\n• Runs a scheduled check to validate solving performance\n• Submits tokens to target endpoint and verifies success/failure\n• Supports manual trigger for quick testing and debugging\n\nSet up steps\n\n• Add your CapSolver API key to all CapSolver nodes\n• Configure the webhook endpoint for incoming requests\n• Adjust target website URL and site key if needed\n• Review or modify the hourly schedule trigger\n• Run a quick manual test to confirm everything works\n\n⏱️ Setup time: ~5–10 minutes",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

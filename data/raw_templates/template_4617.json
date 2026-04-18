@@ -1,0 +1,12 @@
+{
+  "id": 4617,
+  "name": "Daily AI Stock Briefing Right to Your Email: OpenAI + Tavily + Gmail",
+  "description": "This n8n workflow template uses community nodes and is only compatible with the self-hosted version of n8n. \n\n📈 StockPulse: AI-Picked Daily News for Your Portfolio\nStay ahead of the market with this automated, AI-powered stock market news briefing delivered straight to your inbox — no code required.\n\nWatch Step-by-step Video Tutorial Here:\nhttps://www.youtube.com/watch?v=iZvPej9eLYE&t=201s\n\n⚙️ What it does:\nThis workflow runs every morning and:\n\nTriggers a scheduled prompt to a Langchain AI Agent (OpenAI)\n\nUses the Tavily Web Search API to fetch fresh financial news relevant to your watchlist or portfolio\n\nSummarizes the top stories, highlighting:\n\n🔍 Key headlines\n\n💡 Investment opportunities\n\n⚠️ Risks and macro trends\n\n📊 Suggested trades\n\nSends a clean, readable email via Gmail to your preferred address\n\n🔧 Built with:\n🧠 Langchain AI Agent (OpenAI GPT-4o)\n\n🔍 Tavily Search Tool\n\n📬 Gmail Node for Email Delivery\n\n⏰ Daily Cron Trigger (customizable)\n\n💼 Who it’s for:\nInvestors and traders who want to save time on news gathering\n\nFinancial creators looking for curated, actionable insights\n\nNon-technical users interested in automating stock news monitoring\n\nAnyone who wants to combine AI + automation + market data\n\n🟢 Customize easily: Edit your stock list or news focus inside the Agent prompt\n📨 Email ready: Just plug in your Gmail credentials and you’re good to go\n⏱️ 10-minute setup — no coding required!",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}

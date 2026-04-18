@@ -1,0 +1,10 @@
+{
+  "id": 7731,
+  "name": "Automate TikTok Video Posting from Google Sheets & Drive with Blotato",
+  "description": "Automate TikTok video posting from Google Sheets & Drive with Blotato. Perfect for content creators and social media managers.\n\n⚠️ IMPORTANT\nSelf-hosted n8n only - requires community nodes not available in cloud version.\n\nGoogle Sheets Structure\nRequired columns: ID, Media URL, Caption, Status\nVideos must be in Google Drive\nStatus must be \"pending\" for processing\nCaptions can include hashtags (5 max recommended)\n\nHow it works\nSchedule Trigger → Runs every hour\nFetch Data → Gets pending videos from Google Sheets\nProcess Video → Extracts Drive ID and shares file\nUpload → Transfers to Blotato platform\nPost → Automatically posts to TikTok\nUpdate Status → Marks as \"posted\" in spreadsheet\n\nRequirements\nSelf-hosted n8n instance\nBlotato API account\nGoogle Drive & Sheets OAuth2 credentials\nCommunity node: @blotato/n8n-nodes-blotato.blotato\n\nUse cases\nAutomated TikTok content posting\nBatch video processing\nContent management workflows\nScheduled social media distribution\n\nThe workflow processes one video per hour to avoid rate limits and maintains a clear audit trail through Google Sheets integration.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive"
+  ],
+  "tags": []
+}

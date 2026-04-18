@@ -1,0 +1,14 @@
+{
+  "id": 13563,
+  "name": "Review GitHub pull requests with Gemini and post feedback automatically",
+  "description": "Review GitHub pull requests with Gemini AI and post feedback automatically\n\nWho is this for\n\nDevelopment teams and tech leads who want to maintain consistent code quality without manual review bottlenecks. Perfect for teams handling multiple PRs daily and wanting AI-powered insights on security, bugs, and best practices.\n\nHow it works\n\nWhen a GitHub pull request is created or updated, the webhook triggers the workflow. The system fetches the PR diff via GitHub API and analyzes each file's changes. Google Gemini AI reviews the code for potential bugs, security vulnerabilities, performance issues, and style improvements. \n\nThe AI generates detailed feedback which gets posted as a GitHub review comment. Every review is logged to Google Sheets for tracking, and the team receives a Slack notification with the PR status and summary.\n\nHow to set up\n\nGitHub webhook: Configure your repository's webhook to send PR events to the n8n webhook URL\nGitHub API: Add a personal access token with repository permissions for API calls\nGoogle credentials: Connect your Gemini AI API key and Google Sheets OAuth\nSlack integration: Set up a Slack app with chat:write permissions for team notifications\nSheet setup: Create a Google Sheet and update the document ID in the workflow\n\nRequirements\n\nGitHub repository with webhook access\nGoogle Gemini API account\nGoogle Sheets and Slack workspace\nn8n cloud or self-hosted instance\n\nHow to customize\n\nModify the AI prompt in the \"Code review\" node to focus on your team's specific coding standards. Adjust the review criteria, change notification channels, or add email alerts. Configure different review templates for different repositories by checking the repo name in the webhook data.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

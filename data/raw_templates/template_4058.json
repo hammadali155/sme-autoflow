@@ -1,0 +1,12 @@
+{
+  "id": 4058,
+  "name": "Homey Pro - Smarthouse integration with LLM",
+  "description": "This n8n workflow sets up a smart home assistant using OpenAI and Homey integration. It uses LangChain agent tools to allow natural language queries (in Norwegian) to trigger workflows for controlling lights, curtains, temperature, TVs, and other devices across different rooms (e.g., living room, bedroom, cinema). The system uses tool-based workflows connected to specific smart home actions and responds in Norwegian. It’s designed to be modular and easily extended with new devices or capabilities.",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.lmChatXAiGrok"
+  ],
+  "tags": []
+}

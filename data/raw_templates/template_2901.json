@@ -1,0 +1,11 @@
+{
+  "id": 2901,
+  "name": "Convert Notion to Markdown and Back to Notion",
+  "description": "This workflow converts Notion pages to markdown, and then converts that markdown back to Notion blocks. It will triple the content of the last updated page it finds. This is useless by itself, but you can copy-paste from this workflow to create your own.\n\nPrerequisites\nA notion account with some pages or databases\n\nSetup instructions\nCreate a notion credential and share some pages as described here: https://docs.n8n.io/integrations/builtin/credentials/notion/\n\nHow it works\nThe HTTP Request gets notion child blocks from a page, because the default n8n block only gets plain text and no links.\nThe first code block converts it to markdown.\nThe second code block converts it back to Notion blocks\nThe last HTTP block appends everything to the original Notion page, essentially duplicating it for the purpose of demoing the script.\n\nI hope in the future we get official n8n blocks that extract markdown, or use markdown to write to Notion. There is community block that also does this, but this template is easier: you can simply copy-paste the blocks from this workflow.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": 4263,
+  "name": "Verify Linkedin Company Page by Domain with Airtop",
+  "description": "Automating LinkedIn Company URL Verification\n\nUse Case\n\nThis automation verifies that a given LinkedIn URL actually belongs to a company by comparing the website listed on their LinkedIn page against the expected company domain. It is essential for ensuring data accuracy in lead qualification, enrichment, and CRM updates.\n\nWhat This Automation Does\n\nInput Parameters\n\nCompany LinkedIn**: The LinkedIn URL to be verified.\nCompany Domain**: The expected domain (e.g., example.com) for validation.\nAirtop Profile (connected to LinkedIn)**: Airtop Profile with LinkedIn authentication.\n\nOutput\n\nConfirmation whether the LinkedIn page corresponds to the provided domain.\nReturns the verified LinkedIn URL if the match is confirmed.\n\nHow It Works\n\nExtracts the website URL from the specified LinkedIn company profile.\nCompares the extracted URL with the provided company domain.\nIf the domain is contained in the extracted website, the LinkedIn profile is confirmed as valid.\nReturns the original LinkedIn URL if the match is successful.\n\nSetup Requirements\n\nAirtop API Key\nLinkedIn-authenticated Airtop Profile\n\nNext Steps\n\nUse for LinkedIn Discovery Validation**: Ensure correctness after automated LinkedIn page discovery.\nCombine with CRM Updates**: Prevent incorrect LinkedIn links from being stored in CRM.\nAutomate in Data Pipelines**: Use this as a validation gate before enrichment or scoring steps.\n",
+  "nodes": [
+    "n8n-nodes-base.airtop"
+  ],
+  "tags": []
+}

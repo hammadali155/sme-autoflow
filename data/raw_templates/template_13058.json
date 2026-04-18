@@ -1,0 +1,12 @@
+{
+  "id": 13058,
+  "name": "Send application follow-up reminders from Airtable via email and SMS",
+  "description": "How it works\n\nThis workflow runs on a daily schedule and automatically sends follow-up reminders to candidates who have received an application link but have not yet applied. It checks Airtable for eligible records, calculates how much time has passed since outreach was sent, and decides whether to send a first reminder, second reminder, or no message.\n\nAll decision logic is handled in a single Code node, which outputs a simple routing value. This makes the workflow easy to understand and prevents fragile conditional logic.\n\nEach reminder is sent only once. After a reminder is sent, the workflow updates Airtable with a corresponding “sent” flag so the same reminder cannot be sent again on future runs.\n\nSetup steps\n\nConnect your Airtable account and select the table containing candidate records.\n\nEnsure Airtable includes a timestamp field indicating when outreach was sent.\n\nEnsure checkbox fields exist for each reminder (for example, “Reminder 1 Sent” and “Reminder 2 Sent”).\n\nConnect your email provider (Brevo) and SMS provider.\n\nSet the Cron node to run once per day at your preferred time.\n\nInitial setup typically takes 10–15 minutes.\n\nWhen to use this template\n\nYou want automated follow-ups without manual chasing\n\nYou need to avoid sending duplicate reminders\n\nYou want Airtable to remain the source of truth",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.sendInBlue",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

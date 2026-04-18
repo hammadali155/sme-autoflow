@@ -1,0 +1,13 @@
+{
+  "id": 2516,
+  "name": "📈 Receive Daily Market News from FT.com to your Microsoft outlook inbox",
+  "description": "📈 Daily Financial News - Description \n\nThis workflow automates the process of collecting, organizing, and delivering a daily summary of financial news by following these key steps:\n\nScheduled Activation  \n   The workflow starts at 7:00 AM each day, triggered by the Schedule Trigger node.\n\nNews Retrieval  \n   The HTTP Request node fetches the latest financial news from FT.com.\n\nContent Extraction  \n   The Extract Specific Content node scrapes targeted sections of the HTML (headlines, editor's picks, top stories, etc.) using CSS selectors to locate and capture relevant content.\n\nNews Aggregation  \n   The Set Node gathers and organizes the extracted news data, preparing it for summarization. Categories like \"Headline #1,\" \"Editor's Picks,\" and \"Europe News\" are all structured into a single data block.\n\nSummarization  \n   An AI Agent (Google Gemini) takes the aggregated news data and creates a concise, HTML-formatted summary tailored to give investors an insightful market snapshot.\n\nEmail Delivery  \n   Finally, the Microsoft Outlook node sends the summary via email to the designated recipient with the subject \"Financial news from today.\"\n\nThis process ensures that financial news is efficiently curated, summarized, and delivered without manual intervention.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.microsoftOutlook",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

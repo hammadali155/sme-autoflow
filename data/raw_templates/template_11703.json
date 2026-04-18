@@ -1,0 +1,7 @@
+{
+  "id": 11703,
+  "name": "Google Docs MCP Server — Read & Write Access for Agents",
+  "description": "How it works\n\nThis workflow creates an MCP server that allows coding agents\n(e.g. Claude, ChatGPT with MCP support, Clawed Code) to interact\nwith Google Docs programmatically.\n\nMany agents today can find files in Google Drive, but cannot\nopen, edit, or format documents. This workflow fills that gap.\n\nWhat users can do\n\nSearch for files in Google Drive\nCreate new Google Docs\nGet document content\nUpdate docs with:\n  Find & Replace\n  Insert text\n  Add page breaks\n  Bullet and numbered lists\n  Checkbox lists\n  Insert tables\n\nWhy it’s useful\n\nThis expands agent capabilities from read-only to full *read/write\nand content manipulation* within Google Docs, enabling workflows\nsuch as auto-writing reports, generating checklists, cleaning content,\nand formatting structured output via AI.\n\n",
+  "nodes": [],
+  "tags": []
+}

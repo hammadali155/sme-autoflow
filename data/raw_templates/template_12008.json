@@ -1,0 +1,17 @@
+{
+  "id": 12008,
+  "name": "Automated Business KPI Insights with GPT-4, MSSQL, Analytics & Multi-Channel Alerts",
+  "description": "WORKFLOW OVERVIEW\n\nThis workflow is an AI-powered business intelligence agent designed for founders and business owners.\nIt automatically collects key business metrics, calculates performance KPIs, applies decision logic, uses AI reasoning, and sends clear, actionable notifications — without dashboards or manual reports.\n\nKey Features:\n\n✅ Aggregates multiple data sources (MSSQL, Google Analytics, Google Sheets)\n✅ Calculates critical KPIs: ROAS, CAC, Revenue & User Growth\n✅ Applies rule-based decision logic for business risk and opportunity detection\n✅ AI-powered reasoning: summarizes insights and recommends actions\n✅ Multi-channel notifications: Email, WhatsApp, Slack, Telegram\n✅ Fully automated daily execution via Cron trigger\n✅ Enterprise-ready: error handling, structured data, KPI validation\n\nSetup & Requirements:\n\n\nAPI access to data sources (MSSQL, Google Analytics, Google Sheets)\nOpenAI or Google Gemini API for AI reasoning\nMessaging integration: Gmail, Twilio (WhatsApp), Slack, Telegram\nWorkflow Flow:\n\nCron Trigger – runs daily at a chosen time\nData Collection – revenue, users, marketing spend, website analytics\nMerge Node – combines all data sources\nFunction Node – consolidates into a single JSON object\nKPI Calculation – calculates ROAS, CAC, growth rates\nBusiness Logic Engine – identifies risks and opportunities\nAI Reasoning Agent – summarizes insights, suggests actions\nNotification Formatter – builds founder-friendly message\nNotification Delivery – sends via WhatsApp, Email, Slack, or Telegram\n\nExample Data Formation\n\nThese data below Getting from all different channels.\n\n`{\n  \"revenue\": 4290,\n  \"registeredUsers\": 20,\n  \"totalUsers\": 3,\n  \"adSpend\": 800\n}`\n\nApplies rule-based logic to detect potential risks or opportunities\n\n`{\n  \"ROAS\": 5.36,\n  \"CAC\": 40,\n  \"agentStatus\": \"normal\",\n  \"agentPriority\": \"low\",\n  \"insights\": [\"Marketing campaigns are performing very well\"]\n}`\n\nWorkflow Highlights\n\nFully automated, runs daily without human intervention\nIntegrates multiple business data sources\nConverts raw data into KPIs for actionable insight\nApplies both rule-based logic and AI reasoning\nGenerates concise, human-friendly notifications\nSending notification to different channels.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.microsoftSql",
+    "n8n-nodes-base.googleAnalytics",
+    "n8n-nodes-base.whatsApp",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolCalculator"
+  ],
+  "tags": []
+}

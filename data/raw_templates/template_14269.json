@@ -1,0 +1,13 @@
+{
+  "id": 14269,
+  "name": "Process invoices and send weekly AI reports with OpenAI and Gmail",
+  "description": "Overview\nThis workflow automates invoice handling from upload to reporting using AI.\n\nUsers submit invoices through a simple form. The workflow extracts key details, validates the data, stores valid invoices, and sends email notifications. It also generates a weekly summary report automatically.\n\nThis helps reduce manual data entry and ensures consistent invoice processing.\n\nHow It Works\n\nForm Submission\n   Users upload an invoice (PDF or image) along with their email.\n\nInitial Storage\n   The raw submission is stored for tracking and reference.\n\nText Extraction\n   The uploaded file is processed to extract text content.\n\nAI Data Extraction\n   AI converts the raw text into structured invoice data such as invoice number, vendor, date, currency, and totals.\n\nValidation\n   The workflow checks:\n   Date format (YYYY-MM-DD)\n   Allowed currencies\n   Total amount validity\n\nConditional Flow\n   If valid → invoice is stored and a success email is sent  \n   If invalid → an error email is sent with details\n\nWeekly Reporting\n   A scheduled trigger runs weekly to:\n   Fetch all validated invoices\n   Generate a summary report using AI\n   Send the report via email\n\nSetup Instructions\n\nAdd your OpenAI credentials (used for data extraction and reporting)\nConnect Gmail credentials for sending emails\nConfigure Data Tables:\n   invoice_form_submissions\n   validated_invoices\nUpdate the Workflow Configuration node:\n   Set report recipient email\n   Adjust allowed currencies if needed\nEnsure the file field (invoiceFile) is correctly mapped\nTest with a sample invoice\nActivate the workflow\n\nUse Cases\n\nAutomating invoice processing for small businesses\nReducing manual accounting data entry\nValidating invoices before storing them\nGenerating weekly financial summaries\nHandling invoice submissions from clients or teams\n\nRequirements\n\nOpenAI API credentials\nGmail account (for sending emails)\nn8n Data Tables (or replace with your preferred database)\nn8n instance with file upload support\n\nNotes\n\nMake sure to fix the IF condition:\n  Use {{$json.validation.isValid}} instead of accessing isValid directly.\n\nYou can extend validation rules in the Code node based on your business needs.\n\nThe reporting section can be customized to include more insights or formats.",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

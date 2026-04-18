@@ -1,0 +1,7 @@
+{
+  "id": 1750,
+  "name": "Creating an API endpoint",
+  "description": "Task:\nCreate a simple API endpoint using the Webhook and Respond to Webhook nodes\n\nWhy:\nYou can prototype or replace a backend process with a single workflow\n\nMain use cases:\nReplace backend logic with a workflow",
+  "nodes": [],
+  "tags": []
+}

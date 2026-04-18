@@ -1,0 +1,13 @@
+{
+  "id": 14409,
+  "name": "Route IAM events with GPT-4o-mini, forgeLLM, Slack, email, and audit logs",
+  "description": "How It Works\nThis workflow automates Identity and Access Management (IAM) event governance using an AI agent, targeting security operations teams, compliance officers, and IT governance teams managing cloud or enterprise IAM systems. The core problem it solves is the manual, error-prone review of IAM events, such as permission grants, role changes, and access revocations, which are high-risk and require rapid, consistent decision-making at scale. When an IAM event is received via webhook (POST), a Governance Agent powered by an LLM evaluates it using contextual memory, an Access Signal Agent, and a forgeLLM API. It cross-references compliance rules via a Compliance Query Tool and logs findings through an Audit Log Tool. Notifications are dispatched via Email and Slack. Based on the agent's decision, a Rules-based Router directs the event into one of three branches, namely: Approved, Revoked, or Escalated, where event data is prepared and stored accordingly. A unified response is then returned to the caller, ensuring every IAM event is audited, classified, and actioned without human bottlenecks.\n\nSetup Steps\nConfigure the Webhook node with your IAM event source endpoint.\nAdd LLM credentials to the forgeLLM API Tool node.\nSet up Governance Model with your policy prompt and connect Conversation Memory.\nConfigure Access Signal Agent with your access data source credentials.\nConnect Compliance Query Tool to your compliance database or API.\nAdd Gmail/SMTP credentials to the Email Notification Tool.\nAdd Slack Bot token to the Slack Notification Tool.\nPrerequisites\nforgeLLM or compatible LLM API key\nSlack Bot token\nGmail/SMTP credentials\nUse Cases\nAutomatically approve or revoke IAM role assignments based on policy.\nCustomization\nSwap forgeLLM for OpenAI or Anthropic models.\nBenefits\nEliminates manual IAM review bottlenecks.\n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

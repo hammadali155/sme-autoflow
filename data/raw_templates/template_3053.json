@@ -1,0 +1,16 @@
+{
+  "id": 3053,
+  "name": "Technical stock analysis with Telegram, Airtable and a GPT-powered AI Agent",
+  "description": "Video Guide\n\nI prepared a detailed guide that demonstrates the complete process of building a trading agent automation using n8n and Telegram, seamlessly integrating various functions for stock analysis.\n\n\n\nYoutube Link\n\nWho is this for?\nThis workflow is perfect for traders, financial analysts, and developers looking to automate stock analysis interactions via Telegram. It’s especially valuable for those who want to leverage AI tools for technical analysis without needing to write complex code.\n\nWhat problem does this workflow solve?\nMany traders desire real-time analysis of stock data but lack the technical expertise or tools to perform in-depth analysis. This workflow allows users to easily interact with an AI trading agent through Telegram for seamless stock analysis, chart generation, and technical evaluation, all while eliminating the need for manual interventions.\n\nWhat this workflow does\nThis workflow utilizes n8n to construct an end-to-end automation process for stock analysis through Telegram communication. The setup involves:\nReceiving messages via a Telegram bot.\nProcessing audio or text messages for trading queries.\nTranscribing audio using OpenAI API for interpretation.\nGathering and displaying charts based on user-specified parameters.\nPerforming technical analysis on generated charts.\nSending back the analyzed results through Telegram.\n\nSetup\n\nPrepare Airtable:\n    Create simple table to store tickers.\n\nPrepare Telegram Bot:\n    Ensure your Telegram bot is set up correctly and listening for new messages.\n\nReplace Credentials:\n    Update all nodes with the correct credentials and API keys for services involved.\n\nConfigure API Endpoints:\n    Ensure chart service URLs are correctly set to interact with the corresponding APIs properly.\n\nStart Interaction:\n    Message your bot to initiate analysis; specify ticker symbols and desired chart styles as required.",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

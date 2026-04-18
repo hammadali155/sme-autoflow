@@ -1,0 +1,15 @@
+{
+  "id": 5660,
+  "name": "Generate Personalized Language Learning News Digests with LLaMA-3.1 & DeepSeek AI",
+  "description": "\nAutomatically generate and email level-appropriate language learning content based on trending news.  \nThis workflow reads learner preferences from Google Sheets (language, level, and topic of interest), uses an AI web search model to fetch relevant news, and formats the result into a structured HTML digest featuring grammar explanations and vocabulary highlights.  \nEmails are sent automatically to each learner in a clean, mobile-friendly format.\n\n⚙️ What it does\n\n⏰ Daily Trigger at 6 AM  \n📄 Pulls learner data from Google Sheets (Language, Level, Topic)  \n🔍 Fetches news using perplexity/llama-3.1-sonar-small-128k-online  \n✨ Formats it into HTML using deepseek-chat, tailored to the learner's level  \n🧠 Adds grammar breakdowns and vocabulary highlights  \n📬 Sends personalized HTML email to each learner\n\n🧠 AI Models Used\n\nperplexity/llama-3.1-sonar-small-128k-online – web-connected LLM for up-to-date news  \ndeepseek-chat – formatting and simplifying articles for language learners\n\n📚 Examples\n\n🔗 Technologies used\n\nGoogle Sheets** – Learner database  \nOpenRouter API** – AI access and online reasoning  \nLangChain AI Agent + Output Parser** – Clean HTML structuring  \nGmail Node** – Email dispatch per user\n\n💡 Use Cases\n\n🧑‍🏫 Classroom-ready language micro-lessons  \n🌍 Personalized news digests for multilingual learners  \n✉️ Daily practice delivery via email  \n📚 Reading + grammar + vocab in one workflow\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

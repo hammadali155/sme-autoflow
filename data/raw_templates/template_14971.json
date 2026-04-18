@@ -1,0 +1,16 @@
+{
+  "id": 14971,
+  "name": "Promote calendar events with OpenAI graphics to LinkedIn, X, and Facebook",
+  "description": "Never let an event go unpromoted. This workflow monitors your Google Calendar, generates branded promotional graphics, and schedules a staggered social media countdown across LinkedIn, Twitter/X, and Facebook.\n\n🎯 What This Workflow Does\n\nThis template automates the full lifecycle of event promotion—from creation to multi-platform publishing.\n\n📅 Step 1 — Calendar Trigger & Intelligence\n\nInstant Trigger:** Fires when a new event is created in Google Calendar  \nData Enrichment:** Extracts title, location, and formatted date/time  \nSafety Gate:** Skips events starting in less than 2 hours  \n\n🖼️ Step 2 — Programmatic Design & CDN Hosting\n\nDynamic Graphic Creation:** Uses Edit Image node to overlay event details on a banner  \nCDN Hosting:** Uploads the image via UploadToURL to generate a public URL  \nSchedule Calculation:** Sets post timings at 48h, 24h, and 1h before the event  \n\n🔁 Step 3 — Staggered Countdown & AI Copy\n\nLoop Execution:** Iterates through each scheduled post time  \nSmart Wait:** Delays execution until the exact posting time  \nAI Captions:** Generates time-based captions using OpenAI  \n\n📊 Step 4 — Audit Logging & Admin Alerts\n\nGoogle Sheets Log:** Stores platform status and image URLs for each post  \nTelegram Alerts:** Sends a final campaign summary to the admin  \n\n✨ Key Features\n\nAutomated Graphic Design:** Creates visuals for every event  \nPersistent Wait Logic:** Handles long delays within a single workflow  \nMulti-Platform Posting:** Publishes to LinkedIn, Twitter/X, and Facebook  \nCDN Media Bridge:** UploadToURL ensures valid public image URLs  \n\n🔧 Setup Requirements\n\nRequired Integrations\n\nGoogle Calendar:** OAuth2 credentials  \nSocial Platforms:** LinkedIn, Twitter/X, Facebook Page credentials  \nOpenAI:** API key for captions  \nGoogle Sheets:** Sheet for logging  \nUploadToURL:** API key  \nTelegram:** Bot token and chat ID  \n\nRequired Assets\n\nPublic URL of your base banner template image  \n\nAutomate your event marketing. Import this template and connect your Google Calendar to start promoting events effortlessly!",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

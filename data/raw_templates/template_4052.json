@@ -1,0 +1,9 @@
+{
+  "id": 4052,
+  "name": "AI Chatbot Call Center: General Exception Flow (Production-Ready, Part 8)",
+  "description": "Workflow Name: 👻 Exception Flow\n\nTemplate was created in n8n v1.90.2\n\nSkill Level: Low\n\nCategories: n8n, Chatbot\n\nStacks\n\nError Trigger\nSlack node\n\nWhat this workflow does?\n\nThis is a n8n Error Workflow. It will trigger when there is an error in another workflow. When this happens, it then tries to send an error notification to the preset Slack channel.\n\nHow it works\n\nThe Error Trigger node will trigger when there is an error in another workflow, as long as that workflow is set up to do so.\nA error notification will be sent to the Slack Channel.\n\nSet up instructions\n\nCreate you Slack credentials, refer to n8n integration documentation for more information.\nSet up the Channel in 👻 Exception Alert node.\nFor any n8n workflows to trigger this, switch to that workflow, select menu &gt; settings, and set the Error Workflow to 👻 Exception Flow.\n\nHow to adjust it to your needs\n\nAlthough this workflow template is part of the AI Chatbot Call Center Series, it could be used with any n8n workflows.\n\nUpdate the Channel in 👻 Exception Alert to your own channel\n\nhttps://chatpaylabs.com/blog/part-8-build-your-own-ai-chatbot-call-center-general-exception-flow-production-ready-n8n-workflow-free-download-\n",
+  "nodes": [
+    "n8n-nodes-base.slack"
+  ],
+  "tags": []
+}

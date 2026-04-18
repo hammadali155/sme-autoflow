@@ -1,0 +1,9 @@
+{
+  "id": 4947,
+  "name": "Automated Repository Migration from GitLab Groups to Gitea Organizations",
+  "description": "This flow migrates all repositories of a Gitlab group to a Gitea organization by triggering Gitea's integrated migration tool.\n\nSet up steps:\nCopy this workflow\nCreate an empty Gitea-organization you want to migrate to. (The flow will skip all projects which have the same name of possibly already existing repos in the target Gitea organization.)\nCreate an access token in your Gitea (https://gitea.example.com/user/settings/applications), set it up as a Header Auth with it's name being \"Authorization\" and value being \"token [your-gitea-token]\" and select it for the \"Gitea:\"-named nodes.\nCreate a Personal access token in Gitlab (https://gitlab.com/-/user_settings/personal_access_tokens), create a Header Auth with name \"PRIVATE-TOKEN\" and value \"[your-gitlab-token]\" and select it for the \"Gitlab:\"-named node. Also keep the value of your Gitlab-token available for step 5.\nEdit the Set node right after the trigger node and set paste your personal access token in there as well as the names of the Gitlab source group and the Gitea target organization. Use the url-friendly version of their names by simply copy&pasting them from their URLs.\nRun the flow and enjoy the show :)",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

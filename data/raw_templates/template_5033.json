@@ -1,0 +1,9 @@
+{
+  "id": 5033,
+  "name": "Compare Lists and Identify Common Items & Differences Using Custom Keys",
+  "description": "This workflow compares two lists of objects (List A and List B) using a user-specified key (e.g. email, id, domain) and returns:\n\nItems common to both lists (based on the key)\nItems only in List A\nItems only in List B\n\nHow it works:\nAccepts a JSON input containing:\n   listA: the first list of items\n   listB: the second list of items\n   key: the field name to use for comparison\nPerforms a field-based comparison using the specified key\nReturns a structured output:\n   common: items with matching keys (only one version retained)\n   onlyInA: items found only in List A\n   onlyInB: items found only in List B\n\nExample Input:\n{\n  \"key\": \"email\",\n  \"listA\": [\n    { \"email\": \"alice@example.com\", \"name\": \"Alice\" },\n    { \"email\": \"bob@example.com\", \"name\": \"Bob\" }\n  ],\n  \"listB\": [\n    { \"email\": \"bob@example.com\", \"name\": \"Bobby\" },\n    { \"email\": \"carol@example.com\", \"name\": \"Carol\" }\n  ]\n}\n\nOutput:\ncommon: [ { \"email\": \"bob@example.com\", \"name\": \"Bob\" } ]\nonlyInA: [ { \"email\": \"alice@example.com\", \"name\": \"Alice\" } ]\nonlyInB: [ { \"email\": \"carol@example.com\", \"name\": \"Carol\" } ]\n\nUse Cases:\nDeduplicate data between two sources\nFind overlapping records\nIdentify new or missing entries across systems\n\nThis workflow is useful for internal data auditing, list reconciliation, transaction reconciliation, or pre-processing sync jobs.",
+  "nodes": [
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

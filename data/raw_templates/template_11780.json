@@ -1,0 +1,17 @@
+{
+  "id": 11780,
+  "name": "Aggregate & Update Documentation from Slack, Teams & GitHub with Claude Sonnet 4.5",
+  "description": "How It Works\nAggregates communication data from Slack, Microsoft Teams, Gmail, GitHub, and Confluence into a single, unified AI-powered analysis workflow designed for quality review and automated documentation updates. This solution is specifically aimed at teams managing distributed content and knowledge workflows across multiple platforms. It addresses the challenges of fragmented communication and isolated information silos that often prevent rapid content review and timely decision-making. The workflow begins with a scheduled trigger, followed by multi-source data collection, merging and normalizing inputs, Claude AI-powered analysis, validation and quality checks, formatting, and finally publishing updates to Notion and Confluence, accompanied by Slack notifications to ensure stakeholders are promptly informed.\n\nSetup Steps\n-Connect credentials: Slack API, Teams, Gmail OAuth, GitHub PAT. \n-Confluence API, Anthropic API key, Notion Integration. \n-Configure monitored channels/repositories. \n-Set schedule frequency. \n-Map output destinations (Notion/Confluence). \n-Test merged output before enabling automation.\n\nPrerequisites\nSlack workspace, Teams account, Gmail access, GitHub repository, Confluence space, Anthropic API key, Notion workspace, n8n instance.\n\nUse Cases\nContent review teams processing feedback, documentation teams aggregating updates, QA teams reviewing communications \n\nCustomization\nAdd/remove source nodes, adjust Claude prompts for analysis type, modify output destinations \n\nBenefits\nSaves 6+ hours weekly, eliminates missed content, AI-driven quality assurance \n\n\n",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.microsoftTeams",
+    "n8n-nodes-base.notion",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

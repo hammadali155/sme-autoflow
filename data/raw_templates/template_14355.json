@@ -1,0 +1,12 @@
+{
+  "id": 14355,
+  "name": "Nurture and email leads from Google Sheets with GPT‑4.1 Mini and Gmail",
+  "description": "How it works  \nThis workflow automates lead nurturing by pulling data from Google Sheets, analyzing leads with AI, and sending personalized outreach emails. It runs on a schedule, processes leads in batches, and routes them based on their status and step. AI generates both first-touch and follow-up emails while updating the CRM automatically. The system ensures consistent outreach and tracks lead progression without manual work.\n\nStep-by-step  \n\nTrigger and lead intake**  \n  Schedule Trigger – Runs the workflow at set intervals.  \n  Get row(s) in sheet – Fetches lead data from Google Sheets.  \n  If – Filters leads that need action based on status or date.  \n\nData preparation and batching**  \n  Code in JavaScript – Normalizes fields like email, name, and company.  \n  Loop Over Items – Processes leads in controlled batches.  \n\nAI lead scoring and routing**  \n  AI-Lead-Analysis – Evaluates lead quality and assigns score and priority.  \n  Parse AI – Extracts structured AI insights from the response.  \n  Switch – Routes leads based on outreach step or status.  \n\nFirst outreach automation**  \n  First AI mail – Generates a personalized cold email.  \n  Save Message – Stores the generated message.  \n  Send a message – Sends the email via Gmail.  \n  Update row in sheet – Updates CRM with outreach details.  \n\nFollow-up and pipeline completion**  \n  AI-Follow-up – Creates a follow-up email using AI.  \n  Parse Follow-up – Extracts follow-up message content.  \n  Send a message1 – Sends the follow-up email.  \n  Update row in sheet1 – Updates CRM with follow-up info.  \n  Wait – Delays before checking for response.  \n  If1 – Checks if the lead replied or not.  \n  Update row in sheet2 – Marks lead as closed if no response.  \n\nWhy use this?  \nAutomates end-to-end outbound lead nurturing  \nUses AI for smarter lead scoring and personalization  \nReduces manual CRM updates and follow-up tracking  \nImproves response rates with timely outreach  \nScales cold email campaigns efficiently  \n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

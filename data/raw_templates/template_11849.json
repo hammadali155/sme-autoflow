@@ -1,0 +1,14 @@
+{
+  "id": 11849,
+  "name": "Generate AI-powered contracts with OpenAI, e-signature, Gmail and Sheets",
+  "description": "Contract Template Generator with E-Signature Integration\n\nWhat this workflow does\n\nThis workflow automates the full contract lifecycle—from request intake to document generation and electronic signature completion.\n\nIt receives contract requests via webhook, generates customized contract documents using AI, converts them into professionally formatted HTML, and sends them to an e-signature service for execution. The workflow pauses until signatures are completed, then records outcomes and notifies all parties accordingly.\n\nThis template is designed to reduce legal and operational overhead while ensuring consistent, trackable, and scalable contract management.\n\nHow it works\n\nContract request intake\n   Triggered by a webhook or external form.\n   Validates required fields such as contract type and signatories.\n   Generates a unique contract ID for tracking.\n\nContract data preparation\n   Normalizes contract metadata (dates, value, currency).\n   Stores party and term information for downstream processing.\n\nTemplate routing\n   Routes requests based on contract type (e.g., NDA, Service Agreement, Employment).\n   Applies predefined base terms for each contract category.\n   Falls back to a generic template if no specific type is matched.\n\nAI-powered contract generation\n   An AI agent generates a complete contract in Markdown format.\n   Suggests additional clauses and provides a brief risk assessment.\n   Ensures a consistent contract structure across types.\n\nDocument processing\n   Converts Markdown into HTML for professional presentation.\n   Prepares signer metadata, signing order, and deadlines.\n\nE-signature request\n   Sends the document to an e-signature service (e.g., DocuSign, HelloSign).\n   Emails all signatories with signing instructions.\n   Uses a Wait node to pause execution until a signature webhook is received.\n\nSignature result handling\n   Processes webhook callbacks for completed, pending, or expired signatures.\n   Updates contract status accordingly.\n\nCompletion & notifications\n   Logs signed or expired contracts to Google Sheets.\n   Sends confirmation, reminder, or expiration emails to all parties.\n   Responds to the original webhook with a structured status message.\n\nSetup requirements\n\nBefore activating this workflow, make sure to:\n\nConnect the contract request webhook to your intake form or system.\nConfigure contract types and base terms as needed.\nSet up your e-signature provider webhook callback URL.\nPrepare Google Sheets for contract logging.\nCustomize email me\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

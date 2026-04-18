@@ -1,0 +1,16 @@
+{
+  "id": 4476,
+  "name": "AI-Powered Knowledge Assistant using Google Sheets, OpenAI, and Supabase Vector Search",
+  "description": "Description\nAn intelligent conversational AI system that provides contextual responses by combining chat history, vector database knowledge retrieval, and web search capabilities.\nHow it Works (High-level steps)\n\nMessage Detection: Google Sheets trigger monitors for new user messages and filters out already-processed entries\nContext Preparation: Extracts user message, retrieves chat history, and formats conversation context with system prompt\nKnowledge Retrieval: AI agent searches vector database for relevant context using Supabase + OpenAI embeddings\nResponse Generation: LangChain agent processes the request using:\n\nOpenAI GPT-4 language model\nVector store tool for knowledge base queries\nSerpAPI tool for web search when needed\nBuffer memory for conversation continuity\n\n\nResponse Storage: Updates Google Sheets with AI response and assigns unique timestamp ID\n\nSetup Steps\n\nConfigure Google Sheets with columns: user_message, ai_respond, id\nSet up Supabase vector store with OpenAI embeddings\nConnect OpenAI API credentials (GPT-4 + embeddings)\nConfigure SerpAPI for web search functionality\nSet up Google Sheets trigger and update permissions",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

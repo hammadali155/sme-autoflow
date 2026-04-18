@@ -1,0 +1,12 @@
+{
+  "id": 4786,
+  "name": "Automate Sales Pipeline: BuiltWith Technology Data to Trello Lead Cards with Google Sheets",
+  "description": "\n\nAutomated workflow that transforms BuiltWith technology data into actionable sales leads in Trello, creating a visual sales pipeline.\n\n🚀 What It Does\n\nConverts tech stack data into Trello cards\nOrganizes leads by technology stack\nTracks sales pipeline stages\nEnables team collaboration\nUpdates automatically\n\n🎯 Perfect For\n\nSales teams\nBusiness development\nAccount executives\nTech startups\nDigital agencies\n\n⚙️ Key Benefits\n\n✅ Visual sales pipeline  \n✅ Easy lead qualification  \n✅ Team collaboration  \n✅ Technology-based filtering  \n✅ Automated data entry  \n\n🔧 What You Need\n\nBuiltWith API access\nTrello account\nn8n instance\nGoogle account (for authentication)\n\n📊 Data Mapped to Trello\n\nCompany details\nTechnology stack\nContact information\nWebsite metrics\nCustom labels\n\n🛠️ Setup & Support\n\nQuick Setup\n\nStart in 20 minutes with our step-by-step guide\n\n📺 Watch Tutorial\n\n💼 Get Expert Support\n\n📧 Direct Help\n\n\n\nTurn technology intelligence into sales opportunities with automated lead management.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.trello",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

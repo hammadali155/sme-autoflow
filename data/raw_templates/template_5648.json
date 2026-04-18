@@ -1,0 +1,10 @@
+{
+  "id": 5648,
+  "name": "Sync Linear Issues to Todoist Tasks Automatically (Create, Update, Close)",
+  "description": "✨ Try It Out!\nSync your Linear issues to Todoist automatically with this n8n workflow. When an issue is created, updated, or completed in Linear, a corresponding task is created, updated, or closed in Todoist.\n\n⚙️ How It Works\n\nTriggered by issue changes via linearTrigger\nRoutes based on action (create, update, remove)\nChecks if a matching Todoist task already exists (via issue ID)\nIf the issue has:\n  A due date\n  And is assigned to you (youremail@example.com)  \n  ➤ Then it creates or updates the task accordingly\nIf the issue is marked Done, the Todoist task is closed\nIf it's deleted in Linear, the Todoist task is also removed\nSub-issues get enriched with their parent title for clarity\n\n🛠️ Customization\n\nReplace youremail@example.com with your Linear email in the IF nodes\nAdjust which states are synced (e.g. “In Progress”, “Todo”...)\nCustomize the Todoist project, labels, or title formatting\n\n⚠️ Bi-directional Sync?\n\nThis workflow is one-way (Linear ➜ Todoist).  \nBi-directional syncing might be possible but isn’t handled here—it would be a cool upgrade!\n\n✅ Requirements\n\nn8n with OAuth2 access to Linear and Todoist\nYour Linear email set in the workflow for filtering\nA target Todoist project (default: Inbox)\n\n💬 Need Help?\n\nAsk in the n8n Forum or join the Discord.\n\nHappy Automating! 🚀\n",
+  "nodes": [
+    "n8n-nodes-base.todoist",
+    "n8n-nodes-base.linear"
+  ],
+  "tags": []
+}

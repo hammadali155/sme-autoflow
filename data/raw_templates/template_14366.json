@@ -1,0 +1,12 @@
+{
+  "id": 14366,
+  "name": "Generate and qualify local business leads using Google Sheets, RapidAPI and OpenAI",
+  "description": "How it works  \nThis workflow automatically discovers and qualifies local business leads using structured inputs. It runs on a schedule, reads search queries from Google Sheets, and fetches business data via an API. The data is cleaned and enriched before being analyzed by AI for lead scoring and categorization. Finally, all enriched leads are stored back in Google Sheets for outreach and tracking.\n\nStep-by-step  \n\nTrigger workflow automatically**  \n  Schedule Trigger – Runs the workflow at defined time intervals.\n\nFetch lead search inputs**  \n  Read Search Requests – Retrieves keywords and locations from Google Sheets.\n\nCollect business data from API**  \n  Search Businesses API – Queries RapidAPI to find local businesses with contact details.\n\nClean and structure results**  \n  Format Business Results – Extracts and formats business name, email, phone, website, and address.\n\nAnalyze and score leads with AI**  \n  Message a model – Uses OpenAI to classify businesses, assign lead scores, and generate outreach lines.\n\nStore enriched leads**  \n  Write to Business Results – Saves all processed and scored leads into Google Sheets.\n\nWhy use this?  \n\nAutomates manual lead research and data collection  \nImproves lead quality with AI-based scoring and classification  \nCentralizes all lead data in a structured Google Sheets database  \nGenerates ready-to-use outreach messages for faster sales execution  \nScales easily by adding more keywords and locations  ",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

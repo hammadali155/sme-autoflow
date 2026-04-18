@@ -1,0 +1,11 @@
+{
+  "id": 5167,
+  "name": "Competitor LinkedIn Monitor with Airtop",
+  "description": "Automating LinkedIn Competitive Monitoring\n\nUse Case\n\nAutomatically track and summarize LinkedIn posts from key executives at competitor companies. This agent provides structured insights into hiring trends, product announcements, strategic shifts, and thought leadership, helping teams stay informed and responsive without manual monitoring.\n\nWhat This Automation Does\n\nThis automation monitors and summarizes LinkedIn posts from competitor profiles and shares the results on Slack. It uses the following input parameters:\n\nAirtop Profile**: A browser profile authenticated to LinkedIn. Create one\nGoogle Sheet**: A document listing LinkedIn profile URLs of competitors, copy this one.\nSlack Channel**: The destination for sharing summarized post insights.\n\nHow It Works\n\nTrigger: The workflow is scheduled to run weekly at a specific time.\nData Collection: Retrieves the list of competitor LinkedIn URLs from a Google Sheet.\nBrowser Automation: Uses Airtop to navigate to each LinkedIn profile and analyze up to 5 recent posts.\nSummarization: Summarizes number of recent posts, main topics, and engagement levels using Airtop’s AI.\nSlack Notification: Posts a formatted summary to a predefined Slack channel.\n\nSetup Requirements\n\nAirtop API Key — free to generate.\nAn Airtop Profile authenticated to LinkedIn.\nGoogle Sheet with competitor post URLs, copy this one.\nSlack Bot credentials with access to the target channel.\n\nNext Steps\n\nExpand Coverage**: Add more competitor profiles to the Google Sheet to scale monitoring.\nIntegrate with CRM**: Feed summarized insights into your CRM for competitor tracking.\nEnhance Analysis**: Include post-level engagement metrics over time for trend analysis.\n\nRead more about competitve analysis using Linkedin",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.airtop"
+  ],
+  "tags": []
+}

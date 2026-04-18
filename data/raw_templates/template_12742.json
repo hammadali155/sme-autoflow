@@ -1,0 +1,17 @@
+{
+  "id": 12742,
+  "name": "Capture and schedule HVAC leads with OpenAI, Google Sheets, Slack and SMS",
+  "description": "Who this workflow is for\nDoor-to-door HVAC companies seeking automated lead capture and appointment scheduling.\n\nWhat this workflow does\nAI classifies incoming leads, routes them by service type, logs lead info in Google Sheets, notifies team via Slack, sends confirmations, schedules appointments, and optionally sends SMS reminders.\n\nHow the workflow works\nLead submission triggers workflow\nAI classifies lead\nRoute lead based on service type\nLog in Google Sheets\nNotify team via Slack\nSend confirmation email\nSchedule appointment in calendar\nSend SMS reminder (optional)\nOptional CRM/dispatch integration\n\nAuthor: Hyrum Hurst, AI Automation Engineer  \nCompany: QuarterSmart  \nContact: hyrum@quartersmart.com\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.twilio",
+    "n8n-nodes-base.googleCalendar",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

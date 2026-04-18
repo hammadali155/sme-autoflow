@@ -1,0 +1,11 @@
+{
+  "id": 13852,
+  "name": "Production AI Playbook: Deterministic Steps & AI Steps (3 of 5)",
+  "description": "Combine AI classification with confidence-based routing and category-based fan-out. This template classifies incoming support tickets, routes them by confidence level, and shows an example of how to fan high-confidence items out to the right team.\n\nWhat you'll do\nSend a support ticket and watch the AI classify it by category and urgency.\nSee how a Confidence Threshold switch routes items to high, medium, or low confidence paths.\nWatch high-confidence tickets fan out to Billing, Technical, Sales, or General teams.\n\nWhat you'll learn\nHow to combine AI classification with Switch nodes for multi-path routing\nHow to implement confidence thresholds that balance automation with human review\n\nWhy it matters\nNot every AI classification deserves the same level of trust. High-confidence results can be auto-routed. Medium ones get flagged for review. Low ones go straight to a human. This lets you phase in automation gradually while keeping quality high.\n\nThis template is a learning companion to the Production AI Playbook, a series that explores strategies, shares best practices, and provides practical examples for building reliable AI systems in n8n.  \n\nhttps://go.n8n.io/PAP-D&A-Blog",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

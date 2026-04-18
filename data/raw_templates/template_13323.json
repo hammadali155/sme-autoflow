@@ -1,0 +1,16 @@
+{
+  "id": 13323,
+  "name": "Cross-post social content from Google Sheets to 5 platforms with OpenAI images",
+  "description": "This n8n template shows how to fully automate your social media workflow from Google Sheets to X, Threads, LinkedIn, Facebook, and Instagram — with AI-generated visuals.\n\nInstead of manually writing, designing, and posting content, this workflow turns a single Google Sheet row into multi-platform posts plus a custom AI image that matches your message.\n\nYou write once. n8n posts everywhere.\n\nHow it works\nA scheduled trigger checks your Google Sheet for content marked “Ready To Post.”\nThe post text is pulled from Sheets and sent to all text-only platforms (X and Threads).\nAt the same time, an AI agent analyzes your post and generates a high-quality image prompt.\nGPT-Image creates a custom visual based on that prompt.\nThe image is uploaded to ImgBB to create a shareable URL.\nThat image + your caption are automatically posted to LinkedIn, Facebook, and Instagram.\nFinally, your Google Sheet is updated so you never repost the same content twice.\n\nHow to use\nAdd your posts to Google Sheets in the Content column.\nSet Status = Ready To Post when you want it published.\nMake sure all platform credentials are connected in n8n.\nTurn the workflow on and let it run automatically.\n\nWhat you get\nHands-free posting to 5 platforms  \nAI-generated visuals for every post  \nZero manual design work  \nBuilt-in error handling  \nNo duplicate posts  \n\nRequirements\nGoogle Sheets access  \nX (Twitter) account  \nThreads account  \nLinkedIn account  \nFacebook & Instagram Page access  \nImgBB account  \nOpenAI credentials for image generation  \n\nNeed help?\nAsk in the n8n Forum or shoot me a DM on LinkedIn\n\nHappy automating 🚀",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.linkedIn",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

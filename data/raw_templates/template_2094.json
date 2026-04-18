@@ -1,0 +1,16 @@
+{
+  "id": 2094,
+  "name": "Allow your AI to call an API to fetch data",
+  "description": "Use n8n to bring data from any API to your AI. This workflow uses the Chat Trigger to provide the chat interface, and the Custom n8n Workflow Tool to call a second workflow that calls the API. \n\nThe second workflow uses AI functionality to refine the API request based on the user's query. It then makes an API call, and returns the response to the main workflow.\n\nThis workflow is used in Advanced AI examples | Call an API to fetch data in the documentation.\n\nTo use this workflow:\n\nLoad it into your n8n instance.\nAdd your credentials as prompted by the notes.\n\nRequires n8n 1.28.0 or above\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

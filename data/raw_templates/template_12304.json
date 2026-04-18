@@ -1,0 +1,13 @@
+{
+  "id": 12304,
+  "name": "Find high-quality remote jobs with OpenAI, Decodo, and Google Sheets",
+  "description": "What this workflow does\n\nThis workflow automates the discovery, evaluation, and notification of job opportunities based on a candidate’s professional profile.\n\nIt fetches remote job listings, compares each role against a structured candidate profile stored in Google Sheets, and uses AI to evaluate real alignment in terms of skills, seniority, salary, industry, and role complexity.\n\nOnly the most relevant opportunities are kept, stored in Google Sheets, and delivered via email as a Top 5 shortlist.\n\nDecodo – Web Scraper for n8n\n\nHow to configure (quick setup)\n\nDefine the candidate profile in Google Sheets (skills, salary expectations, preferences).\n\n\nConfigure credentials (Google Sheets, Gmail, decodo, AI provider).\n\nSet the matching threshold (e.g. skill match ≥ 90%).\n\nRun the workflow manually or on a schedule.\n\nOutput\n\nStructured job match results in Google Sheets\n\nAutomated email with the Top 5 best-matched job opportunities\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

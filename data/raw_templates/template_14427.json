@@ -1,0 +1,13 @@
+{
+  "id": 14427,
+  "name": "Support student questions via LINE using Gemini, Google Drive, and Slack",
+  "description": "Who is this for\nThis workflow is built for tutoring schools, cram schools, and independent teachers who want to offer students 24/7 Q&A support via LINE — Japan's most widely used messaging app. No coding knowledge is required to set it up.\n\nWhat this workflow does\nWhen a student sends a question on LINE, an AI Agent (powered by Gemini) reads the conversation history stored in Google Sheets, searches your teaching materials in Google Drive, and replies with a clear explanation directly in LINE.\nIf the agent cannot find a confident answer — for example, the topic is not covered in the materials or the question is too complex — it automatically sends an escalation alert to a designated Slack channel so a teacher can follow up personally.\nThe agent also logs every question and its resolution status to Google Sheets, giving teachers a running record of each student's weak points and question frequency.\n\nHow to set up\nConnect your LINE Messaging API credentials in n8n.\nCreate a Google Sheet with columns: student ID, timestamp, question, answer, resolved (yes/no).\nUpload your teaching materials (PDF or text files) to a Google Drive folder.\nSet the Drive folder ID and Sheet ID in the Set Fields node.\nAdd your Slack webhook URL for teacher escalation notifications.\nActivate the workflow and share the LINE bot link with students.\n\nRequirements\nLINE Messaging API channel (free tier works)\nGoogle Drive folder with study materials (PDF or .txt)\nGoogle Sheets spreadsheet for conversation history and progress tracking\nSlack incoming webhook URL\nGemini API key (free tier available)\n\nHow to customize\nYou can swap Google Drive for a different file source, adjust the Gemini prompt in the AI Agent node to change the explanation style (e.g., simpler language for younger students), or add more Slack channels to route questions by subject. The escalation threshold can be tuned by editing the condition in the If node.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

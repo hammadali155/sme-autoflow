@@ -1,0 +1,9 @@
+{
+  "id": 13859,
+  "name": "Create personalized images from Google Sheets data with Layerre",
+  "description": "  How it works\n  • Reads rows from a Google Sheet (e.g. Text + Image URL columns).\n  • Uses Layerre to create personalized image variants from a Canva-based template.\n  • Each row in the sheet becomes one rendered image, and the workflow outputs the final image URLs.\n\n  Set up steps\n  • Create a Layerre template from your Canva design (or use the “Create Template from Canva” node once, then optionally deactivate it).\n  • Connect your Google Sheets account and point the Google Sheets node to your spreadsheet or the example sheet.\n  • Make sure your sheet column names match the overrides in the Layerre node (e.g. Text → text layer, Image → image URL layer).\n  • Optionally add extra nodes after the Layerre node to save images, upload them, or send them via email / social / CRM.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 11721,
+  "name": "Poll Multiple Gmail Accounts with Unified Data Table Storage & Discord Notifications",
+  "description": "\n\nThis template lets you poll multiple Gmail accounts from a single workflow using n8n’s credential-aware execution. Instead of creating separate workflows for every inbox, this setup loops through all accounts stored in your data table and runs Gmail operations dynamically using the correct OAuth2 credential.\n\nIt’s built for cases like cold-email systems, multi-client mail monitoring, or anything that needs centralized polling and logging.\n\n### What It Does\n\nPulls all email account records from the cold_email_accounts table.\n\nFor every account, the workflow:\n\nRuns the Gmail “Get Many Messages” node for that account using \"Run Node With Credentials X\" community node.\n\n\nMessages are reformatted into a clean JSON object (from, subject, preview text, body, labels, attachments, etc.).\n\nSaved into the All Emails table using an upsert (avoids duplicates).\n\nSends a Discord notification like “15 new emails arrived”.\n\n### How to Set It Up\n\nCreate Gmail OAuth2 credentials in n8n, one for each email account you want to poll.\n\nAdd those credentials into a Data Table named cold_email_accounts with columns:\ncred_id\ncredentials_name\nemail\nlast_polled (datetime)\n\nImport this workflow template into n8n.\n\nUpdate:\nDataTable references (if your names/IDs differ)\nDiscord channel/server IDs\nAny domain filters inside the Gmail search query\n\nActivate the workflow and it will automatically:\nPoll each Gmail inbox every hour\nSave all new emails\nNotify you on Discord\nKeep everything synced via last_polled.",
+  "nodes": [
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

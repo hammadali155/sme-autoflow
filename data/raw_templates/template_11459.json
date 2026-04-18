@@ -1,0 +1,13 @@
+{
+  "id": 11459,
+  "name": "AI-Enhanced Image Generation with GPT-4.1, Google Drive & Slack Notifications",
+  "description": "Text-to-Image Generator with OpenAI\n\nWhat It Is\n\nThis is an automated text-to-image generation system that converts simple subject descriptions into AI-generated photos using OpenAI's image generation technology.\n\nSetup\n\nThe system works through a streamlined workflow:\n\nYou input a subject or brief description into a designated note field\nThe system automatically expands your simple subject into a detailed, comprehensive prompt\nThis enhanced prompt is sent to OpenAI's image generator\nOnce the image is created, it is automatically saved to your Google Drive for easy access and storage\nYou receive a notification in Slack to view it",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": 13999,
+  "name": "Validate JSON and CSV import data via webhook with configurable rules",
+  "description": "How it works\nSend a POST request with a JSON array of records and your validation rules. The workflow checks every field in every row and returns a structured report showing valid/invalid rows with specific error messages.\n\nSupported rules: required, type (string, number, email, date, url, boolean), min/max, minLength/maxLength, regex, enum, and dateFormat (YYYY-MM-DD, DD.MM.YYYY, MM/DD/YYYY).\n\nThe response includes a summary (total, valid, and invalid row counts) plus a detailed error list with row number, field name, failed rule, and error message.\n\nSet up steps\nImport the workflow and activate it\nSend a POST request to the webhook URL with \"data\" (array of objects) and \"rules\" (validation config)\nOptionally edit the Set Default Rules node to define fallback rules — these are used when no rules are sent in the request\n\nNo external services or API keys required. Works on self-hosted and cloud n8n instances.\n\nWho is this for\nOperations teams, data engineers, and anyone importing data into ERP systems, CRMs, or databases who needs to catch errors before bad data enters the system.\n\nHow to customize\nEdit the Set Default Rules node for your standard field definitions. Rules sent in the request body override the defaults, so one endpoint works for multiple data structures. Extend the Code node for custom checks like cross-field validation.\n",
+  "nodes": [
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

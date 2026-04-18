@@ -1,0 +1,10 @@
+{
+  "id": 5613,
+  "name": "Send Gmail Messages with Custom Aliases and Attachments via API",
+  "description": "This n8n template allows you to send emails with a custom alias from your Gmail account\nSince the native Gmail node has some limitations regarding use of email aliases, this template allows you to set up your own internal endpoint/sub-workflow to send emails as an email alias .\n\nHow it works\nThis workflow uses a Code node and the Gmail API via an HTTP node to format the email content and send using an alias on your Gmail account.\n\nSetup instructions\nYou must have added the email address as an alias you wish to send as in your Gmail account, guide on how to do so here.\nYou must have created a Gmail credential in N8N, guide on how to do so here.\nUse your Gmail OAuth Credential in the HTTP node. \nUse this template as an API endpoint or a sub-workflow, and send this payload to it via POST:\n{\n  \"senderName\": \"SENDER NAME HERE\",\n  \"fromEmail\": \"FROM EMAIL HERE\",\n  \"replyTo\": \"REPLY TO EMAIL HERE\",\n  \"toEmail\": \"jacob@vwork.digital\",\n  \"subject\": \"SUBJECT LINE HERE\",\n  \"htmlBody\": \"HTML BODY HERE - MUST BE JSON STRINGIFIED\",\n  \"file_urls\": [\n    \"FILE URLS FOR ATTACHMENTS HERE\"\n  ]\n}\nNotes\nOnly the following are required fields:\nfromEmail\ntoEmail\nsubject\nhtmlBody\nCustomizing this workflow\nYou can easily convert this to a sub-workflow by swapping out the Webhook trigger for a \"When executed by another workflow\" trigger\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

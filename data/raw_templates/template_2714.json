@@ -1,0 +1,10 @@
+{
+  "id": 2714,
+  "name": "Get Meta Ads insights and save them into Google Sheets",
+  "description": "Pull data using the Facebook Graph API and get your Meta Ads insights into your Google Sheets for analysis.\n\nGet metrics like impressions, spend, reach, conversions, CTR, and CPC.\n\nAutomate your data collection.\n\nWho is this template for?\nMarketing professionals looking to analyze Meta Ads data.\n\nYou can also replace the Google Sheets node for a database node like MySQL or Postgres, and then use your BI tool (Power BI, Looker Studio, Tableau) to analyze the data.\n\nHow it works\nEvery day the flow gets Meta Ads insights from the previous day and saves them to Google Sheets.\n\nHow to set up\nAll information you need to set up this workflow is already inside the template.\n\nCheck out my other templates\n👉 https://n8n.io/creators/solomon/\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.facebookGraphApi"
+  ],
+  "tags": []
+}

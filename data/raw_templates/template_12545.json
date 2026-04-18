@@ -1,0 +1,16 @@
+{
+  "id": 12545,
+  "name": "Onboard new hires with GPT-4, Notion, Jira, Google Drive, Gmail and Slack",
+  "description": "⚖️ HR Sovereign: AI-Powered Onboarding Hub\n\nA high-fidelity employee onboarding engine: Intake → Role-Based Enrichment → AI Personalization → IT Provisioning.\n\n⚙️ Core Sovereign Logic\nEnrichment:** Auto-classifies Tech, Sales, and Leadership roles to drive specific logic tracks.\nIntelligence:* Uses *AI Agent (GPT-4)** to generate personalized welcome messaging based on job DNA.\nAtomization:* *Merge PDF** node assembles role-specific policies and benefits into a single high-res package.\nProvisioning:* Dynamically generates *Jira* hardware/access tickets and *Notion** tracking dashboards.\nDelivery:* Sends branded HTML emails via *Gmail* and announces hires on *Slack**.\n\n📋 Setup & Prerequisites\nIntake: Connect your HRIS (BambooHR/Workday) to the Webhook URL.\nAssets: Organize Drive folders into \"Technical\", \"Leadership\", and \"Standard\" templates.\nTracking: Connect your Notion Onboarding Database and Jira IT Project.\n\nMetrics: Time_to_Provision, Engagement_Score, Document_Integrity_Hash.",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.jira",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

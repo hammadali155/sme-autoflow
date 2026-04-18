@@ -1,0 +1,25 @@
+{
+  "id": 4508,
+  "name": "Multi-Platform AI Sales Agent with RAG, CRM Logging & Appointment Booking ",
+  "description": "Multi-Platform AI Sales Agent with RAG, CRM Logging & Appointment Booking\n\nThis workflow acts as a 24/7 sales agent, engaging leads across WhatsApp, Instagram, Facebook, Telegram, and your website. It intelligently transcribes audio messages, answers questions using a knowledge base, and uses modular sub-workflows to manage your CRM in Airtable and book appointments in Google Calendar.\n\nWho Is It For?\n\nThis solution is designed for service-based businesses that require a sophisticated, multi-channel lead management and appointment booking system.\nAgencies, consultants, and clinics** looking to automate lead qualification and booking across text and voice messages.\nSales teams** needing a robust system that separates CRM and calendar logic for easier management and scalability.\nAdvanced n8n users** who want a powerful, agent-based framework that can be easily customized and extended.\n\nKey Features & Workflow\n\nThis system is composed of a parent workflow that orchestrates the conversation and calls specialized sub-workflows (agents) to perform specific tasks.\n\nOmni-Channel Engagement:* Greets and converses with leads naturally on *Website Chat, WhatsApp, Instagram, Facebook, and Telegram**.\nVoice Message Transcription:* Automatically transcribes incoming audio/voice notes from *WhatsApp and Telegram** into text, allowing the AI to understand and respond without manual intervention.\nRAG-Powered Intelligence:* The AI agent draws answers from your dedicated *PostgreSQL Knowledge Base (RAG)**, providing accurate information about your services, pricing, and process. A built-in tool allows you to load new knowledge documents from Google Drive.\nModular CRM Agent (Sub-Workflow):* When the conversation requires CRM actions (like creating a contact or updating an opportunity), the main agent calls a dedicated *Airtable CRM sub-workflow** to handle the task.\nModular Calendar Agent (Sub-Workflow):* To book appointments, the main agent calls a separate *Google Calendar sub-workflow**, which manages event creation, updates, and deletions.\n\nWhat You'll Need\n\nThis workflow framework requires credentials for the following services:\nAn AI provider (OpenAI is used for the main agent, transcription, and embeddings).\nPostgreSQL** database with the pgvector extension (for RAG and chat memory).\nAirtable** account (for the CRM sub-workflow).\nGoogle Calendar** account (for the Calendar sub-workflow).\nTelegram Bot** credentials.\nA Meta Developer Account (for WhatsApp, Instagram & Facebook).\n(Optional) Google Drive for loading knowledge documents.\n(Optional) Google Gemini for embeddings.\n\nHow to Set It Up\n\nThis is a modular system. You must set up the sub-workflows first.\n\nDeploy Sub-Workflows: Create two new, separate workflows using the provided templates for the CRM Agent and the Calendar Agent. Configure the credentials (Airtable, Google Calendar) within those workflows, then save and activate them.\nLink Sub-Workflows in Main Workflow: Return to this main workflow. In the \"CRM Agent\" and \"Consultation Agent\" tool nodes, select the new workflows you just created from the dropdown list.\nConfigure Main Credentials: Securely add the remaining credentials (OpenAI, PostgreSQL, Telegram, and your Meta App) in this main workflow.\nPersonalize the AI Agent: In the \"Update Agent Details\" node, fill in your business name, the agent's persona name, and your key services to customize the AI's personality.\nLoad Your Knowledge (Optional): To populate the RAG database, use the manual trigger path starting with \"When clicking ‘Execute workflow’\" to download a document from Google Drive and insert it into your PostgreSQL vector store.\nActivate: Configure your channel-specific details (e.g., Phone Number ID in WhatsApp nodes), save the workflow, and activate it.\n\nDemo CRM Table: View on Airtable\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.whatsApp",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+    "@n8n/n8n-nodes-langchain.toolVectorStore",
+    "@n8n/n8n-nodes-langchain.vectorStorePGVector"
+  ],
+  "tags": []
+}

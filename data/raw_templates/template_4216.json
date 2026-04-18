@@ -1,0 +1,13 @@
+{
+  "id": 4216,
+  "name": "Customer Authentication for Chat Support with OpenAI and Redis Session Management",
+  "description": "This n8n template demonstrates one approach to customer authentication via chat agents.\n\nUnlike approaches where you have to authenticate users prior to interacting with the agent, this approach allows guest users to authenticate at any time during the session or not at all. \n\nNote about Security: this template is for illustration purposes only and requires much more work to be ready for production!\n\nHow it works\nA conversational agent is used for this demonstration. The key component is the Redis node just after the chat trigger which acts as the session context.\nFor guests, the session item is blank. for customers, the session item is populated with their customer profile.\nThe agent is instructed to generate a unique login URL only for guests when appropriate or upon request.\nThis login URL redirects the guest user to a simple n8n form also hosted in this template. The login URL has the current sessionID as a query parameter as the way to pass this data to the form.\nOnce login is successful, the matching session item by sessionId is populated with the customer profile. The user can now return to the chat window.\nBack to the agent, now when the user sends their next message, the Redis node will pick up the session item and the customer profile associated with it. The system prompt is updated with this data which let's the agent know the user is now a customer.\n\nHow to use\nYou'll need to update the \"auth URL\" tool to match the URL of your n8n instance. Better yet, copy the production URL of your form from the trigger.\nActivate the workflow to turn on production mode which is required for this workflow.\nImplement the authentication logic in step 3. This could be sending the user and pass to a postgreSQL data for validation.\n\nRequirements\nOpenAI for LLM (feel free to swap to any provider)\nRedis for Cache/Sessions (again, feel free to swap this out for postgresql or other database)\n\nCustomising this workflow\nConsider not populating the session item with the user data as it can become stale. Instead, just add the userId and instruct the agent to query using tools.\nExtend the Login URL idea by experimenting with signup URLs or single-use Urls.",
+  "nodes": [
+    "n8n-nodes-base.redis",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

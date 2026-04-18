@@ -1,0 +1,23 @@
+{
+  "id": 13119,
+  "name": "Generate product-aware B2B leads and outreach emails with Gemini, Pinecone and Gmail",
+  "description": "How can you find your target market if you don't know what your product is.\n\nThis simple philosophy changes the way we think about automated sales agents. Context changes everything. In this 4-part workflow, we start by creating a knowledge base that will act as context across the workflow. This context will guide and provide our AI Agents across the workflow to locate better leads and perform market research based on what the product actually offers.\n\nUse Case: Lead generation for Product-based Sales\n\nTech Required\n\nNeon DB**: For storing Research and Lead Data. You can use Google sheets but it has a rate limiting problem.\nGoogle Serper**: As a web search tool for our AI.\nGoogle Drive**: For storing our knowledge base documents.\nPinecone**: Vector DB for converting our knowledge base into context for AI.\nHunter.io**: For finding emails for outreach.\nEmail Client**: An email client, maybe gmail or anything that can send an email on your behalf.\nGemini**: Our trusty AI LLM.\n\nGood to know\n\nAll of the tools that I use in this workflow are either free or have an extremely generous free-tier.\n\nHow it works\n\nWe start by converting our knowledge base into context for AI. Take in the documents from Google drive and convert it into embeddings and store them in a vector store like Pinecone. This needs to be only run once, or whenever you have a new document in your knowledge base.\nThen we pass this context to an AI agent and tell it to generate search queries for locating companies that actually need my services.\nThen for each company that we've located, we determine the company staff that we need to reach out to for selling our product. This will be done by a combination of Google Serper and Hunter.io\nOnce we have the list of employees and their emails, we start creating personalized emails based on the data we've collected for each of the employee and send them outreach emails.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.hunter",
+    "n8n-nodes-base.crypto",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

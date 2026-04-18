@@ -1,0 +1,11 @@
+{
+  "id": 12704,
+  "name": "Generate product videos from images with BrowserAct and Google Drive",
+  "description": "How it works\n\nThis workflow uses BrowserAct to run an AI-powered browser automation that collects structured product data, including image URLs and related metadata.\n\nThe workflow then:\nParses the BrowserAct output into individual product items\nIterates through each product entry\nDownloads the product image and converts it into Base64 format\nSends the image together with a predefined prompt to an AI video generation API\nPolls the generation status until the video is ready\nDownloads the generated short video file\nUploads both the original product image and the generated video to Google Drive\n\nEach product is processed independently, making the workflow suitable for batch-based and scalable automation scenarios.\n\nSet up steps\n\nConnect your BrowserAct account to enable the browser-based data extraction workflow\nConnect a Google Drive account where source images and generated videos will be stored\nReview the input parameters provided by the BrowserAct node, such as target URL, search keyword, or data limit\nAdjust the product processing limit or batch size if you want to control execution time\nRun the workflow manually once to verify the output before using it in regular automation\n\nAdditional explanations and configuration details are provided as sticky notes directly inside the workflow.\n\n\nWorkflow Guidance and Showcase\nhttps://www.youtube.com/watch?v=XS5vyh-bdz0",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

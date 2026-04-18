@@ -1,0 +1,11 @@
+{
+  "id": 15015,
+  "name": "Search your travel memories with Gmail, Google Photos, GPT-4 and Claude",
+  "description": "What This Does:\nSearch your past trips using natural language queries like:\n\"Show my Goa hotel from last year\"\n\"Where did I stay in Paris?\"\n\"Find my beach trips from 2024\"\n\"Show all Italy restaurants I visited\"\n\nHow It Works:\nUser sends natural language query\nAI extracts search parameters (location, date, type)\nSearches across multiple data sources\nAI enriches results with context\nReturns formatted memories with photos & details\n\nData Sources:\n📧 Gmail (booking confirmations)\n📅 Google Calendar (trip events)\n💳 Expense tracking (receipts)\n📸 Google Photos (trip images)\n🗺️ Google Maps (location history)\n\nAdvanced Features:\n⏱️ 3 Strategic wait nodes\n🧠 AI-powered query understanding\n🔍 Multi-source data fusion\n📊 Intelligent ranking & sorting\n🎨 Rich response formatting\n\nUse Cases:\nFind old booking confirmations\nRemember restaurant names\nRetrieve travel documents\nCreate trip summaries\nShare travel memories\n\n📊 Monitoring & Analytics\n\nSearch Logs:\nAll queries saved to Google Drive\nTrack popular searches\nIdentify data gaps\nImprove AI parsing\n\nMetrics:\nSearch success rate\nAverage response time\nData source coverage\nUser satisfaction\n\nPerformance:\nAPI call optimization\nCache frequently searched trips\nReduce wait times\nImprove relevance\n\nFuture Enhancements:\nVoice search support\nMulti-language queries\nAutomatic trip summaries\nShare memories feature\nTrip comparison tool",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

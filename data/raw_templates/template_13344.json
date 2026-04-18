@@ -1,0 +1,11 @@
+{
+  "id": 13344,
+  "name": "Enrich new HubSpot contacts with Lusha and alert reps in Slack",
+  "description": "How it works\nTriggers instantly when a new contact is created in HubSpot\nChecks the contact has a valid email, then enriches with Lusha\nA data quality check verifies Lusha returned meaningful data (phone, title, company)\nEnriched fields are written back to HubSpot; high-seniority contacts trigger a Slack alert\n\nSet up steps\nInstall the Lusha community node\nAdd your Lusha API, HubSpot OAuth2, and Slack credentials\nCustomize the seniority levels that trigger alerts\nActivate the workflow — every new HubSpot contact will be enriched in real time",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

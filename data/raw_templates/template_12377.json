@@ -1,0 +1,14 @@
+{
+  "id": 12377,
+  "name": "Reconcile bank transactions and generate reports with GPT-4 and Gmail",
+  "description": "How It Works\nThis workflow automates end-to-end financial transaction processing for finance teams managing high-volume bank data. It eliminates manual reconciliation by intelligently classifying transactions, detecting anomalies, and generating executive summaries. The system pulls transaction data from Fable Bank, routes it through multiple AI models (OpenAI GPT-4, NVIDIA NIM) for classification and analysis, reconciles accounts, and distributes formatted reports via email. Finance managers and accounting teams benefit from reduced processing time, improved accuracy, and real-time anomaly detection. The workflow handles transaction categorization, reconciliation schema generation, account matching, journal entry creation, and comprehensive reporting—transforming hours of manual work into minutes of automated processing with AI-enhanced accuracy.\n\nSetup Steps\nConfigure Fable Bank API credentials for transaction data access \nAdd OpenAI API key for GPT-4 classification and reconciliation models \nSet up NVIDIA NIM credentials for anomaly detection services \nConnect Google Sheets for reconciliation schema storage \nConfigure Gmail account for automated report distribution  \n\nPrerequisites\nOpenAI API account with GPT-4 access\n\nUse Cases\nMonthly financial close automation, daily transaction monitoring for fraud detection\n\nCustomization\nReplace Fable Bank with your banking API\n\nBenefits\nReduces reconciliation time by 90%, eliminates manual data entry errors\n\n\n \n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator"
+  ],
+  "tags": []
+}

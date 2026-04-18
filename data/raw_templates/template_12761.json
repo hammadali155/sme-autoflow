@@ -1,0 +1,14 @@
+{
+  "id": 12761,
+  "name": "Qualify and route consulting leads with GPT‑4.1-mini, Slack and Google Sheets",
+  "description": "Who this template is for\n\nThis workflow is designed for professional services firms that handle\ninbound client inquiries and need a smarter way to qualify, route,\nand respond to them.\n\nIdeal for:\nConsulting firms\nAccounting and bookkeeping firms\nFractional CFO and finance advisory services\n\nWhat this workflow does\n\nThis automation captures client inquiries and uses AI to analyze each\nsubmission in real time.\n\nThe workflow:\nClassifies the requested service type\nScores lead quality and urgency\nRoutes inquiries to the appropriate internal team\nSends Slack notifications with AI-generated summaries\nLogs qualified leads in Google Sheets\nSends a professional acknowledgment email to the client\n\nHigh-urgency leads can trigger executive alerts automatically.\n\nHow it works\n\nA client submits an inquiry via form or website\nData is normalized and structured\nAI evaluates the inquiry and generates a summary\nLow-quality leads are filtered out\nQualified leads are routed by service type\nInternal teams are notified in Slack\nLead data is logged for tracking and follow-up\nThe client receives a professional acknowledgment email\n\nHow to set up\n\nConnect your form or webhook trigger\nAdd OpenAI credentials\nConnect Slack and Google Sheets\nConfigure your email provider\nCustomize routing logic if needed\n\nNo credentials or IDs are hardcoded.\n\nPaid template notice\n\nThis is a paid n8n workflow template.\n\nTo purchase access or request more information, contact:\nHyrum Hurst — AI Automation Engineer\n📧 hyrum@quartersmart.com\n\nBuilt by QuarterSmart, specializing in AI automation systems for\nconsulting, accounting, and finance professionals.\n\nHow to customize the workflow\n\nYou can extend this workflow by adding:\nCRM integrations\nDeal value estimation\nFollow-up automation\nCustom AI prompts per service line\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

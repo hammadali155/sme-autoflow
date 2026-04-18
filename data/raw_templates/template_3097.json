@@ -1,0 +1,10 @@
+{
+  "id": 3097,
+  "name": "Restore your credentials from GitHub",
+  "description": "This workflow restores all n8n instance credentials from GitHub backups using the n8n API node. It complements the Backup Your Credentials to GitHub template by allowing users to seamlessly restore previously saved credentials.\n\nHow It Works\nThe workflow fetches credentials stored in a GitHub repository and imports them into your n8n instance. \n\nSetup Instructions\nTo configure the workflow, update the Globals node with the following values:\n\nrepo.owner** – Your GitHub username\nrepo.name** – The name of your GitHub repository storing the credentials\nrepo.path** – The folder path within the repository where credentials are stored\n\nFor example, if your GitHub username is john-doe, your repository is named n8n-backups, and credentials are stored in a credentials/ folder, you would set:\n\nrepo.owner → john-doe\nrepo.name → n8n-backups\nrepo.path → credentials/\n\nRequired Credentials\nGitHub API** – Access to your repository  \nn8n API** – To import credentials into your n8n instance  \n\nWho Is This For?\nThis template is ideal for users who want to restore their credentials from GitHub backups, ensuring easy migration and recovery in case of data loss.\n\nCheck out my other templates:  \n👉 My n8n Templates\n",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

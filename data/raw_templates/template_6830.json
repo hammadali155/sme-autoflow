@@ -1,0 +1,12 @@
+{
+  "id": 6830,
+  "name": "Send Daily 4K Bluray Preorder Updates from Blu-ray.com to Discord",
+  "description": "This is a simple webpage scraper that  specifically grabs today's newest 4K Bluray Preorders as listed on the Blu-ray.com website.  This is a scheduled workflow that can run every day and will post a formatted summary message of links to a Discord channel of your choice.\n\nMinimal setup required:\nJust create a webhook for the channel you want posted to in Discord and provide that in the final step.\nThe timezone format step is set to East Coast (NYC) by default, feel free to change.\nNo API keys or any special configuration needed (beyond your Discord webhook)\nFeel free to customize the formatting of the message that gets posted 👍\n\nHow it works:\nFirst format todays date to match the formatting used on the website\nGrab the HTML for the preorders page at www.blu-ray.com\nFilter only the hyperlinks for each Bluray on the page\nThen further filter only those with an html header matching today's date\nFormat how you want the message to be sent to your Discord channel (in this case a simple list of Hyperlinks for each Title)\nSend to Discord!\n\nDisclaimer:\nThis should be only for personal use.**\nThe links go back to the blu-ray.com website, which is a good thing!\nDon't abuse this by slamming their site with some crazy level of automation frequency.\nSupport the blu-ray.com website by using their affiliate links whenever you do want to preorder a title ;) \nThis is one of my first shared templates, so it may not be super optimal or perfect but it works for my needs and hopefully you'll find some use out of it!\nDiscord currently has a 2000 character limit on webhook messages. Some of the messages may get truncated as a result.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

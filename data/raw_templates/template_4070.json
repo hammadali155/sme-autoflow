@@ -1,0 +1,10 @@
+{
+  "id": 4070,
+  "name": "Linking NocoDB Records via API 🔗",
+  "description": "How it works:\nThe n8n flow grabs the needed IDs, fetches the current links, adds your new one, and sends a single HTTP request to NocoDB to update the record’s linked entries.\n\nSet up steps:\n\nPlan for 10 minutes setup if you’re already running n8n and NocoDB.\nYou’ll need to copy/paste table IDs, set up your HTTP node, and test once.\nNo coding, just copy IDs.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.nocoDb"
+  ],
+  "tags": []
+}

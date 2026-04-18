@@ -1,0 +1,7 @@
+{
+  "id": 5869,
+  "name": "Generate Interactive Quantity Reports from Revit and IFC Projects to HTML",
+  "description": "Revit to HTML Quantity Takeoff Generator\n\nAutomates extraction of wall quantities from Revit models and creates a professional interactive HTML report.\n\nKey Features\n\nAutomated wall quantity analysis\nCalculates volumes by wall type (\"Type Name\")\nGenerates interactive HTML QTO report\nIncludes summary statistics: total elements, total and average volumes\nProvides detailed breakdown by element type\n\nHow it works\n\nUpload a Revit file as input\nWorkflow extracts wall quantities and types\nCreates and saves a ready-to-share HTML dashboard with QTO data\n\nNo API keys required\nRuns offline\nOutput is a professional, ready-to-use HTML report\n\nConsulting and Training\nWe work with leading construction, engineering, consulting agencies and technology firms around the world to help them implement open data principles, automate CAD/BIM processing and build robust ETL pipelines.\n\nIf you would like to test this solution with your own data, or are interested in adapting the workflow to real project tasks, feel free to contact us.\n\nAuthor\n DataDrivenConstruction.io \n info@datadrivenconstruction.io\n\nDocs & Issues:  \n  Full Readme on GitHub",
+  "nodes": [],
+  "tags": []
+}

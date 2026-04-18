@@ -1,0 +1,11 @@
+{
+  "id": 13433,
+  "name": "Log new Google top-10 keywords to Airtable with DataForSEO and Slack alerts",
+  "description": "\n\nThis weekly workflow automatically identifies new ranked keywords for your domain within Google’s top 10 results without manual SERP monitoring. On each run, the workflow fetches the latest ranking and search volume data using the DataForSEO Labs API and stores a fresh results snapshot in Airtable. It then compares this data with the previous set to identify any new keywords your domain started ranking for, focusing on queries that rank in the top 10. \n\nAll newly ranked top-10 keywords are logged in Airtable, along with their ranking position and search volume. Once new terms and rankings are identified, the workflow sends you a Slack summary highlighting the latest changes.\n\nWho’s it for\nSEO experts and marketers who want an automated way to track new top-ranking keywords on Google for their domain(s).\n\nWhat it does\nThis workflow automatically detects when your domain enters top-10 results for new keywords on Google, records them in Airtable, and sends a weekly summary via Slack.\n\nHow it works\nRuns on a predefined schedule (default: weekly).\nReads your keywords and target domains from Airtable.\nFetches the latest Google rankings and keyword metrics via DataForSEO API.\nCompares the latest data with the previous run.\nLogs newly ranked top-10 keywords to Airtable.\nSends a Slack summary with key changes.\n\nRequirements\nDataForSEO account and API credentials \nAirtable table with your keywords, following the required column structure.\nAirtable table with your target domains, following the required column structure.\nSlack account\n\nCustomization\nYou can easily customize this workflow by adjusting the run schedule, changing the minimum ranking threshold (e.g., top 5 or top 20), exporting results to other tools, and tailoring the Slack message content to your team’s workflow. \n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

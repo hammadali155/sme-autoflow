@@ -1,0 +1,12 @@
+{
+  "id": 6675,
+  "name": "Manage Construction Projects with Tasks, Photo Reports, Telegram & Google Sheets",
+  "description": "How it works\nThis template helps project managers collect task updates and photo reports from field workers via Telegram and stores everything in a Google Sheet. It enables daily project reporting without paper or back-office overhead.\n\nHigh-level flow:\n\nWorkers receive daily tasks via Telegram\n\nThey respond with photo reports\n\nBot auto-saves replies (photos + status) to a Google Sheet\n\nThe system tracks task completion, adds timestamps, and maintains report history\n\nSet up steps\n🕒 Estimated setup time: 15–30 min\nYou’ll need:\n\nA Telegram bot (via BotFather)\n\nA connected Google Sheet (with specific column headers)\n\nA set of preconfigured tasks\n\n👉 Detailed setup instructions and required table structure are documented in sticky notes inside the workflow.\n\nConsulting and Training\nWe work with leading construction, engineering, consulting agencies and technology firms around the world to help them implement open data principles, automate CAD/BIM processing and build robust ETL pipelines.\n\nIf you would like to test this solution with your own data, or are interested in adapting the workflow to real project tasks, feel free to contact us.\n\n\nDocs & Issues:  \n  Full Readme on GitHub",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

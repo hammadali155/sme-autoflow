@@ -1,0 +1,10 @@
+{
+  "id": 13739,
+  "name": "Convert Google Drive PDFs into SEO blog HTML using OpenAI GPT-4.1",
+  "description": "Overview\n\nThis workflow automatically converts PDF files stored in Google Drive into structured, SEO-optimized blog articles in HTML format.\n\nIt eliminates repetitive manual rewriting and formatting by transforming raw PDF content into publish-ready blog files.\n\nWhat This Workflow Does\n\nRetrieves all PDFs from a specified Google Drive folder  \nProcesses each file sequentially using Split In Batches  \nDownloads and extracts text from each PDF  \nGenerates a long-form SEO blog article using OpenAI  \nEnsures the output is structured in HTML format  \nSaves the final blog back to Google Drive as a .html file  \nAutomatically converts the original .pdf filename to .html  \n\nHow It Works\n\nThe workflow begins with a manual trigger and fetches files from a configured Google Drive folder.\n\nUsing Split In Batches, each PDF is processed one at a time. This prevents API rate limits, reduces memory load, and ensures stable execution.\n\nThe extracted text is passed to OpenAI with a structured prompt that defines:\n\nBlog length  \nSEO formatting  \nHeading structure (H1, H2, H3)  \nTone and writing style  \nHTML output format  \n\nThe generated content is then saved as an HTML file in a destination Google Drive folder.\n\nRequirements\n\nGoogle Drive credentials  \nOpenAI credentials  \nSource folder containing PDFs  \nDestination folder for generated HTML files  \n\nOutput\n\nFor every PDF processed:\n\nA long-form SEO blog article is created  \nOutput is saved in HTML format  \nThe original filename is retained and converted from .pdf to .html  \n\nCustomization\n\nYou can modify:\n\nThe OpenAI prompt to change tone or niche  \nBlog length and SEO requirements  \nDestination folder  \nOutput format if integrating with a CMS  \n\nThis template is suitable for content teams, product managers, and creators who want to automate repetitive content transformation workflows while maintaining consistent output quality.",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

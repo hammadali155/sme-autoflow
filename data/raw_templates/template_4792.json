@@ -1,0 +1,13 @@
+{
+  "id": 4792,
+  "name": "Real-Time Startup Intelligence: Crunchbase Monitoring with AI Summaries & Email Alerts",
+  "description": "\nAutomated monitoring system that tracks startup activities, funding events, and company updates in real-time, providing valuable market intelligence.\n\n🚀 What It Does\n\nReal-time monitoring of startup activities\nFunding alerts and updates\nCompetitor tracking\nIndustry trend analysis\nCustomizable watchlists\n\n🎯 Perfect For\n\nVenture capitalists\nStartup founders\nBusiness development teams\nMarket researchers\nInvestment analysts\n\n⚙️ Key Benefits\n\n✅ Stay ahead of market movements  \n✅ Never miss important funding rounds  \n✅ Track competitor activities  \n✅ Identify emerging trends  \n✅ Save hours of manual research  \n\n🔧 What You Need\n\nCrunchbase API access\nn8n instance\nNotification preferences (email/Slack/Teams)\n\n📊 Data Points Tracked\n\nNew funding rounds\nCompany updates\nLeadership changes\nProduct launches\nMarket expansions\n\n🛠️ Setup & Support\n\nQuick Setup\n\nDeploy in 20 minutes with our step-by-step configuration guide\n\n📺 Watch Tutorial\n\n💼 Get Expert Support\n\n📧 Direct Help\n\n\n\nStay informed about the startup ecosystem with automated monitoring and alerts. Make data-driven decisions with timely, relevant information.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

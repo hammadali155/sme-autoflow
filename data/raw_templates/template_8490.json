@@ -1,0 +1,16 @@
+{
+  "id": 8490,
+  "name": "📩 Automated Email Management System with GPT-5, Multi-Agent AI & Pinecone DB",
+  "description": "Categorise and route emails with GPT 5\nThis workflow demonstrates how to use AI text classifier to classify incoming emails, and uses a multi-agent architecture to respond for each email category respectively.\n\nUse cases\nBusiness owners with a lot of incoming emails, or anyone who has huge influx of emails \n\nHow it Works\nAny incoming emails will be read by the text classifier powered by GPT 5, and routed according to the defined categories where respective agents will take next steps. \nWorkflow is triggered when an email comes in\nGPT will read email's \"subject\",\"from\" and \"content\" to route it accurately to respective designated categories\nFor customer support enquiries, customer support agent will take knowledge from the pinecone vector database about FAQs and policies, reply via gmail, and label the email as \"Customer Support\"\nFor finance-related queries, finance agent will label email as \"Finance\" and assess if email is about making payment or receiving from customers. If payment-related, email will be sent to the payments team to take action. If receipts-related, email will be sent to the receivables team to take action. User will be notified via telegram after any email is sent.\nFor sales/leads enquiries, leads agent will label the email as \"Sales Opportunities\", take knowledge from the pinecone vector database about the business to generate a response and draft into gmail and user will be notified via telegram to review and send. If there is lack of information for agent to generate a response, user will be notified of this via telegram as well. \nAny internal team member emails will be routed to the internal agent. The agent will label message as \"Internal\" and send user a summary of the email message via telegram. \n\nHow to set up\nSet up Telegram bot via Botfather. See setup instructions here \nSetup OpenAI API for transcription services (Credits required) here\nSet up Openrouter account. See details here\nSet up Pinecone database. See details here\n\nCustomization Options\nOther than Gmail, it is possible to connect to Outlook as well. Other than Pinecone vector database, there are other vector database that should serve the same purpose  eg. supabase, qdrant, weviate\n\nRequirements\nGmail account\nTelegram bot\nPinecone account\nOpen router account",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.textClassifier",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

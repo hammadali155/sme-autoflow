@@ -1,0 +1,11 @@
+{
+  "id": 10101,
+  "name": "AI Recruiter – Analyze Multiple CVs vs Job Description using OpenAI GPT",
+  "description": "An AI Recruiter that screens, scores, and ranks candidates in minutes — directly inside n8n.  \n\n🧠 Overview\nAn AI-powered recruiter workflow that compares multiple candidate CVs with a single Job Description (JD).  \nIt analyzes text content, calculates fit scores, identifies strengths and weaknesses, and provides automated recommendations.\n\n⚙️ How it works\n🔹 Webhook Trigger – Upload one Job Description (JD) and multiple CVs (PDF or text)\n🔹 File Detector – Auto-identifies JD vs CV\n🔹 Extract & Merge – Reads text and builds candidate dataset\n🔹 🤖 AI Recruiter Agent – Compares JD & CVs → returns Fit Score, Strengths, Weaknesses, and Recommendation\n🔹 📤 Output Node – Sends structured JSON or summary table for HR dashboards or Chat UI\n\n\nExample:  \nUpload JD.pdf + 3 candidate CVs → get instant JSON report with top match and recommendations.\n\n🧩 Requirements\nOpenAI or compatible AI Agent connection (no hardcoded API keys).  \nInput files in PDF or text format (English or Vietnamese supported).  \nn8n Cloud or Self-Hosted v1.50+ with AI Agent nodes enabled.\n🔸 “OpenAI API Key or n8n AI Agent credential required”\n🧱 Customizing this workflow\nSwap the AI model with Gemini, Claude, or another LLM.  \nAdd a Google Sheets export node to save results.  \nConnect to SAP HR or internal employee APIs.  \nAdjust scoring logic or include additional attributes (experience, skills, etc.).\n\n👩‍💼 Author\nhttps://www.linkedin.com/in/nguyen-phuong-17a71a147/  \nEmpowering HR through intelligent, data-driven recruitment.\n",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

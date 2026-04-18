@@ -1,0 +1,15 @@
+{
+  "id": 11347,
+  "name": "Generate Book Summaries with GPT-4o, Google APIs & Amazon Affiliate Links",
+  "description": "Description: Your personal AI Book Curator that reads reviews, recommends books, and supports affiliate links. 📚🤖\n\nThis advanced workflow acts as a complete \"Reading Assistant Application\" with monetization features. It takes a book title via form, researches it using Google APIs, and employs an OpenAI Agent to generate a summary and recommendations.\n\nWhy use this template?\n\nMonetization Support: Just enter your Amazon Affiliate Tag in the config node, and all email links will automatically include your tag.\n\nOrganized & Scalable: The workflow is clearly grouped into 4 sections (Input, Enrichment, AI, Delivery) with sticky notes for easy navigation.\n\nHow it works:\n\nInput: User submits a book title (e.g., \"Atomic Habits\").\n\nResearch: The workflow fetches book metadata and searches for real-world reviews.\n\nAnalyze: GPT-4o explains why the book is interesting and suggests 3 related reads.\n\nDeliver: Generates a beautiful HTML email with purchase links and logs the request to Google Sheets.\n\nSetup Requirements:\n\nGoogle Sheets: Create headers: date, book_title, author, ai_comment, user_email.\n\nCredentials: OpenAI, Google Custom Search, Gmail, Google Sheets.\n\nConfig: Open the \"1. Input & Config\" section to enter API Keys and IDs.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

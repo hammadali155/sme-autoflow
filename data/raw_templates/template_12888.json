@@ -1,0 +1,13 @@
+{
+  "id": 12888,
+  "name": "Collect LinkedIn details and generate CV feedback with Gemini and Google Workspace",
+  "description": "This workflow helps HR teams, career coaches, and training programs collect candidate data and automatically generate CV improvement recommendations and a cover letter draft. Candidates submit their LinkedIn profile URL, contact details, and an optional CV PDF using an n8n Form. The workflow logs submissions, processes the uploaded CV, and generates structured outputs in Google Docs using Gemini, then sends the candidate an email with the results.\n\nHow it works\n\nCollect candidate data\nAn n8n Form captures LinkedIn URL, name, email, phone number, and optional CV upload.\n\nStore submission\nThe workflow appends the submission to Google Sheets for tracking and follow-up.\n\nExtract CV text\nIf a CV PDF is uploaded, it’s processed to extract readable text.\n\nGenerate recommendations\nGemini creates structured CV/LinkedIn improvement notes and formats them into a Google Doc.\n\nDraft cover letter + notify\nA second AI step drafts a cover letter and the workflow sends the candidate an email with the generated document link.\n\nSetup steps\nCustomize the n8n Form fields (and required/optional fields)\nConnect Google Sheets for logging submissions\nConnect Google Drive + Google Docs for file storage and document output\nAdd Gemini API credentials for generation\nConnect Gmail to send the results email",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

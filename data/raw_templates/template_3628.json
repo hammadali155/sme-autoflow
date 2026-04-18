@@ -1,0 +1,10 @@
+{
+  "id": 3628,
+  "name": "3D Figurine Orthographic Views with Midjourney and GPT-4o-image API",
+  "description": "What this workflow does?\nThis workflow primarily uses the GPT-4o API from PiAPI and automatically creates front/side/top views of 3D models from commands.\n\nWho is this for？\n3D Designers： Quickly generate standardized orthographic views for design review\nE-commerce Operators： Create multi-angle product display images\n3D Modeling Beginners： Instantly produce basic reference views\n\nStep-by-step Instruction\nFill in X-API-Key of your PiAPI account and the image prompt based on your inspiration.\nClick Test workflow.\nGet the image url in the final node.\n\nOutPut\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

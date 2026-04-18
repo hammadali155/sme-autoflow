@@ -1,0 +1,13 @@
+{
+  "id": 11665,
+  "name": "Automate SEO Reporting with Google Search Console, GA4, and Google Sheets",
+  "description": "How it works:\nThis workflow automates comprehensive SEO reporting by:\nExtracting keyword rankings and page performance from Google Search Console.\nGathering organic reach metrics from Google Analytics.\nAnalyzing internal and external article links.\nTracking keyword position changes (gains and losses).\nFormatting and importing all data into Google Sheets reports.\n\nSet up steps:\nConnect Google Services: Authenticate Google Search Console, Google Analytics, and Google Sheets OAuth2 credentials.\nConfigure Source Sheet: Set up a data source Google Sheet with article URLs to analyze.\nSet Report Sheet: Create or specify destination Google Sheets for reports.\nUpdate Date Ranges: Modify date parameters in GSC and GA nodes for your reporting period.\nCustomize Filters: Adjust keyword filters and row limits based on your needs.\nTest Individual Sections: Each reporting section (keywords, pages, articles, position changes) can be tested independently.\n\nThe workflow includes separate flows for:\nKeyword ranking (top 1000).\nPage ranking analysis.\nOrganic reach reporting.\nInternal article link analysis.\nExternal article link analysis.\nPosition gain/loss tracking.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleAnalytics",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

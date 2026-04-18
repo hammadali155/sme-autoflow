@@ -1,0 +1,14 @@
+{
+  "id": 2035,
+  "name": "Telegram AI bot with LangChain nodes",
+  "description": "This workflow connects Telegram bots with LangChain nodes in n8n.\nThe main AI Agent Node is configured as a Conversation Agent. It has a custom System Prompt which explains the reply formatting and provides some additional instructions.\nThe AI Agent has several connections:\nOpenAI GPT-4 model is called to generate the replies\nWindow Buffer Memory stores the history of conversation with each user separately\nThere is an additional Custom n8n Workflow tool (Dall-E 3 Tool). AI Agent uses this tool when the user requests an image generation.\nIn the lower part of the workflow, there is a series of nodes that call Dall-E 3 model with the user Telegram ID and a prompt for a new image. Once image is ready, it is sent back to the user.\nFinally, there is an extra Telegram node that masks HTML syntax for improved stability in case the AI Agent replies using the unsupported format.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

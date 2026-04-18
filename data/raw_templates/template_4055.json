@@ -1,0 +1,16 @@
+{
+  "id": 4055,
+  "name": "AI Talent Screener – CV Parser, Job Fit Evaluator & Email Notifier",
+  "description": "AI Talent Screener – CV Parser, Job Fit Evaluator & Email Notifier\n\nWho is this for?\nThis template is ideal for HR teams, recruiters, staffing agencies, and tech-enabled hiring managers looking to automate the intake, analysis, and shortlisting of job applicants directly from CV submissions.\n\nWhat problem is this workflow solving?\nManually evaluating resumes for job openings is time-consuming and prone to bias or oversight. This workflow uses AI to extract candidate data, analyze fit based on job descriptions, and make data-backed shortlisting decisions — automatically updating Google Sheets and notifying both Talent Acquisition and candidates.\n\nWhat this workflow does\nThis workflow automates your recruitment pipeline by:\n\n1. Accepting CV submissions via an embedded form.\n\n2. Saving resumes to Google Drive.\n\n3. Extracting and parsing resume content using AI.\n\n4. Fetching the relevant job description from Google Sheets.\n\n5. Summarizing both job and applicant profiles.\n\n6. Conducting an AI-powered fit evaluation (semantic match, red flags, soft skills, etc.).\n\n7. Updating detailed analysis in a centralized Google Sheet.\n\n8. Notifying the TA team for approval.\n\n9. Automatically sending shortlisting or rejection emails to candidates based on approval.\n\nSetup\n1. Connect credentials for:\n\nGoogle Sheets\n\nGoogle Drive\n\nOpenAI API\n\nSMTP email (for notification)\n\n2. Update the Google Sheets document IDs and folder IDs in the relevant nodes.\n\n3. Adjust the form fields in the \"Form Trigger\" node if needed.\n\n4. Customize email sender/receiver addresses in the email nodes.\n\n5. Enable the workflow and embed the form on your career page.\n\nFor convenience, the sticky notes guide you through what each block does.\n\nHow to customize this workflow to your needs\nChange job roles by editing the dropdown options in the form.\n\nModify evaluation criteria in the “Semantic Fit & Evaluation by HR Expert” prompt.\n\nAdd more fields (e.g., GitHub, portfolio links) to the form and extend parsing.\n\nConnect to ATS or Slack if you'd like to integrate further.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.chainSummarization",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

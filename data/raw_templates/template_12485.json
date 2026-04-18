@@ -1,0 +1,12 @@
+{
+  "id": 12485,
+  "name": "Generate daily stock buy/sell signals using technical indicators and Google Sheets",
+  "description": "📊 Description\nThis automation calculates commonly used technical indicators for selected stocks and presents the results in a simple, structured dashboard. It removes the need for manual chart analysis by automatically fetching price data, calculating indicators, and generating clear Buy, Sell, or Neutral signals.\nThe workflow is designed to run daily and provides a consistent technical snapshot for each tracked stock. It is suitable for traders and analysts who want a repeatable and transparent way to monitor technical conditions without relying on manual tools.\n⚙️ What This Template Does\nRuns automatically on a daily schedule\nProcesses a predefined list of stock symbols\nFetches recent daily price data from a market data API\nCalculates RSI, Moving Averages, and MACD\nApplies rule-based logic to generate Buy, Sell, or Neutral signals\nStores indicator values and signals in Google Sheets\n✅ Key Benefits\nEliminates manual technical analysis\nUses standard, widely accepted indicators\nProduces clear and easy-to-interpret signals\nKeeps all results in a single dashboard\nEasy to customize and extend\n🧩 Features\nDaily scheduled execution\nHistorical price data integration\nRSI (14-period) calculation\nMoving Averages (SMA 20 and SMA 50)\nMACD (12, 26, 9) calculation\nRule-based Buy / Sell / Neutral classification\nGoogle Sheets dashboard output\nBuilt-in data validation checks\n🔐 Requirements\nTo use this workflow, you will need:\nA market data API key (Alpha Vantage or similar)\nA Google Sheets account for storing results\nGoogle Sheets credentials configured in n8n\nAn active n8n instance (cloud or self-hosted)\n🎯 Target Audience\nStock traders and investors\nTechnical analysts\nFinance and research teams\nAutomation builders working with market data\n🛠 Customization Options\nUpdate the stock list to track different symbols\nAdjust indicator periods or thresholds\nModify Buy / Sell signal rules\nChange the schedule frequency\nExtend the dashboard with additional indicators",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 14205,
+  "name": "Enrich Google Sheets rows via any REST API in rate-limited batches",
+  "description": "How it works\n• Reads all rows from a Google Sheet\n• Splits them into configurable batches (default: 5 rows per batch)\n• Calls any external REST API once per row (GET or POST, Header Auth)\n• Waits 1 second between batches to stay within API rate limits\n• Routes responses: writes enriched data back to the sheet on success, logs errors on failure\n• Loops through all batches until the full sheet is processed\n• Want more REST API workflows? See n8n webhook & API templates ranked by demand\n\nSet up steps\n• Takes ~10 minutes to configure\n• Connect your Google Sheets OAuth2 credential to both Sheet nodes\n• Set your Sheet ID and tab name in the Read Rows node\n• Paste your API endpoint URL in the Call API node and connect your Header Auth credential\n• Adjust batch size and wait duration via the sticky notes inside the workflow\n• Update the Update Row node with the column(s) you want to write back\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

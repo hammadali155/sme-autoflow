@@ -1,0 +1,9 @@
+{
+  "id": 2660,
+  "name": "Upload files via n8n form and save them to Digital Ocean Spaces",
+  "description": "How it works\nThis workflow provides a streamlined process for uploading files to Digital Ocean Spaces, making them publicly accessible. The process happens in three main steps:\n\nUser submits the form with file, in this case I needed it to upload images I use in my seo tags.\nFile is automatically uploaded to Digital Ocean Spaces using S3-compatible storage\nForm completion confirmation is provided\n\nSetup steps\nInitial setup typically takes 5-10 minutes\nConfigure your Digital Ocean Spaces credentials and bucket settings\nTest the upload functionality with a small sample file\nVerify public access permissions are working as expected\n\nImportant notes\nCredentials are tricky check the screenshot above for how I set the url, bucket etc.\nI am just using the S3 Node\nSet the ACL as seen below\n\nTroubleshooting\nBucket name might be incorrect\nRegion Wrong\nCheck Space permissions if uploads fail\nVerify API credentials are correctly configured\n\n\nYou can see a video here. (live in 24 hours)\nhttps://youtu.be/pYOpy3Ntt1o",
+  "nodes": [
+    "n8n-nodes-base.s3"
+  ],
+  "tags": []
+}

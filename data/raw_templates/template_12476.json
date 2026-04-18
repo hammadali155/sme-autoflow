@@ -1,0 +1,10 @@
+{
+  "id": 12476,
+  "name": "Turn Gmail meeting summaries into HubSpot CRM records with OpenAI",
+  "description": "How it works\nThis workflow listens for incoming meeting summary emails in Gmail and processes them automatically. The email content is cleaned and sent to an AI model that extracts CRM-ready sales data in a structured format. The parsed data is then used to create or update contacts, deals, and meeting engagements in HubSpot. This removes manual note-taking and ensures CRM data stays accurate and consistent after every call.\n\nStep-by-step\nTrigger on meeting summary email**\n  Gmail Trigger – Watches the inbox for new meeting summary emails from a specific sender.\n\nPrepare and normalize meeting notes**\n  Prepare Meeting Summary – Extracts the meeting text and stores it in a clean summary field for AI processing.\n\nExtract structured sales insights**\n  AI Extraction – Sends the meeting summary to an AI model to identify company details, problems, budget, decision makers, timing, competitors, and next steps.\n\nParse AI response**\n  Parse AI JSON Output – Validates and converts the AI response into structured JSON fields usable by CRM nodes.\n\nUpdate HubSpot CRM**\n  Create or Update Contact – Creates a new contact or updates an existing one based on extracted details.\n  Update Deal – Updates the related deal with budget, description, stage, and pipeline information.\n  Create Meeting Engagement – Logs a meeting engagement in HubSpot with key discussion points and next actions.\n\nWhy use this?\nEliminates manual CRM updates after sales or discovery calls.\nEnsures meeting insights are captured consistently and accurately.\nReduces admin work for sales teams and improves data quality.\nWorks seamlessly with meeting recap tools that send summary emails.\nScales easily as meeting volume increases without extra effort.\n",
+  "nodes": [
+    "n8n-nodes-base.hubspot",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

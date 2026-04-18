@@ -1,0 +1,12 @@
+{
+  "id": 11762,
+  "name": "Generate E-E-A-T SEO blog drafts for WordPress with OpenAI",
+  "description": "AI E-E-A-T WordPress Blog Generator (n8n)\n\nThis workflow generates SEO-optimized, E-E-A-T compliant blog posts using a form input and publishes them as WordPress drafts with featured images.\n\nFeatures\nForm-based blog brief\nSEO metadata + outline generation\nFull HTML blog writing\nFeatured image generation\nWordPress draft creation\n\nRequirements\nn8n v1.40+\nOpenAI API key\nWordPress REST API access\n\nEnvironment Variables\nWP_SITE_URL=https://example.com\nSITE_NAME=Your Website Name\nPROJECT_CONTEXT=Your niche description\n\nHow to Use\nImport workflow JSON\nConfigure OpenAI & WordPress credentials\nSet environment variables\nOpen the Form Trigger\nSubmit blog details\nDraft appears in WordPress\n\nNotes\nContent is created as draft\nNo credentials are included\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

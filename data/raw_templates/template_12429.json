@@ -1,0 +1,13 @@
+{
+  "id": 12429,
+  "name": "Coordinate move-out cleaning and repair tasks with Google Sheets, Slack, email and Claude",
+  "description": "Who this is for\n\nProperty management companies managing frequent tenant move-outs across multiple units.\n\nWhat this workflow does\n\nAutomatically schedules and coordinates move-out cleaning and repair tasks, sends vendor instructions, notifies internal teams, tracks completions, and logs everything for reporting.\n\nHow it works\n\nCron triggers workflow before lease end.\nAI generates personalized move-out instructions and checklists.\nVendors and property management teams are notified.\nCompletion updates logged in Google Sheets.\nOptional AI suggests follow-up actions for delays.\n\nHow to set up\n\nConnect tenant data, configure Cron, Slack, Email, and Task Manager credentials. Customize AI prompts and verify notification flows.\n\nRequirements\n\nGoogle Sheets\nEmail & Slack credentials\nAI Node access\nTask Manager (Trello/Asana/etc.)\n\nBuilt by QuarterSmart. Created by Hyrum Hurst.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic"
+  ],
+  "tags": []
+}

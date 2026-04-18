@@ -1,0 +1,12 @@
+{
+  "id": 12665,
+  "name": "Manage Patreon and Ko-fi leads with Gmail, OpenAI and Google Sheets",
+  "description": "Who is this for?\nThis is for creators who run Patreon and/or Kofi pages, support donations and want to automate their communication process.\n\nAbout\nThis system is listening for webhooks from patreon and kofi.\nOnce received, it detects the service by looking at headers. \n\nFor Kofi it parses and validates the payload to make sure it's not fake. Once validated, it checks whether the person is on your newsletter lead list. If not, it adds person to your newsletter list. Then it checks the status of the payload, either it's a donation, subscription or shop purchase. \n\nFor Patreon it checks whether the person is on your newsletter lead list and adds him if not. Then it checks the payload type using AI and returns a status, e.g. new patron, cancelled subscription etc.\n\nCustomization\nFor Kofi you can customize emails that you'll be sending to members. For shop orders you can add invoice generation, supplier file generation, connect with your stock etc.\nFor Patreon you can customize emails you'll send to followers and patrons.\nFor both you can enable a crm where you'll track how much each person paid you so you know whether somebody upgrades or downgrades their subscription based on CRM data.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

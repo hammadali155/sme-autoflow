@@ -1,0 +1,17 @@
+{
+  "id": 11879,
+  "name": "Generate Comprehensive Client Brief Reports with Llama 3 AI & Google Workspace",
+  "description": "How It Works\n\nTrigger:\nThe workflow starts automatically when a new file (PDF, DOCX, or TXT) is uploaded to a specific Google Drive folder for client briefs.\n\nConfiguration:\nThe workflow sets up key variables, such as the folder for storing reports, the account manager’s email, the tracking Google Sheet, and the error notification email.\n\nFile Type Check & Text Extraction:\nIt checks the file type and extracts the text using the appropriate method for PDF, DOCX, or TXT files.\n\nExtraction Validation:\nIf text extraction fails or the file is empty, an error notification is sent to the designated email.\n\nAI Analysis:\nThe extracted text is analyzed using Groq AI (Llama 3 model) to summarize the brief, extract client needs, goals, challenges, and more.\n\nIndustry Research:\nThe workflow performs additional AI-powered research on the client’s industry and project type, using Wikipedia and Google Search tools.\n\nReport Generation:\nThe analysis and research are combined into a comprehensive, formatted report.\n\nGoogle Doc Creation:\nThe report is saved as a new Google Doc in a specified folder.\n\nLogging:\nKey details are logged in a Google Sheet for tracking and record-keeping.\n\nNotification:\nThe account manager receives an email with highlights and a link to the full report.\n\nError Handling:\nIf any step fails (e.g., text extraction), an error email is sent with troubleshooting advice.\n\nSetup Steps\n\nGoogle Drive Folders:\nCreate a folder for incoming client briefs.\nCreate a folder for storing generated client summary reports.\n\nGoogle Sheet:\nCreate a Google Sheet with a sheet/tab named “Brief Analysis Log” for tracking analysis results.\n\nGoogle Cloud Project:\nSet up a Google Cloud project and enable APIs for Google Drive, Google Docs, Google Sheets, and Gmail.\nCreate OAuth2 credentials for n8n and connect them in your n8n instance.\n\nGroq AI Credentials:\nObtain API credentials for Groq AI and add them to n8n.\n\nSerpAPI (Optional, for Google Search):\nIf using Google Search in research, get a SerpAPI key and add it to n8n.\n\nn8n Workflow Configuration:\n\nIn the “Workflow Configuration” node, set the following variables:\nclientSummariesFolderId: Google Drive folder ID for reports.\naccountManagerEmail: Email address to notify.\ntrackingSheetId: Google Sheet ID for logging.\nerrorNotificationEmail: Email for error alerts.\n\nConnect All Required Credentials:\n\nMake sure all Google and AI nodes have the correct credentials selected in n8n.\nTest the Workflow:\n\nUpload a sample client brief to the monitored Google Drive folder.\nCheck that the workflow runs, generates a report, logs the result, and sends the notification email.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.googleDocs",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.toolWikipedia",
+    "@n8n/n8n-nodes-langchain.lmChatGroq"
+  ],
+  "tags": []
+}

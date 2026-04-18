@@ -1,0 +1,19 @@
+{
+  "id": 13171,
+  "name": "Translate RSS news and publish to WordPress, Facebook, LinkedIn and Telegram",
+  "description": "Who it's for\nThis n8n workflow is designed for content curators, digital marketers, and social media managers who want to automate the process of discovering, translating, and publishing news content from multiple reputable sources. It provides a complete end-to-end system capable of reading RSS feeds, extracting articles and images, translating them into a specific language, and automatically publishing the final content to WordPress, Facebook, LinkedIn, and Telegram.\n\nFeatures\nReads news from multiple RSS sources (TechCrunch, The - Verge, Analytics India Mag, Wired, The Next Web)\nPublishes content to WordPress, Facebook, LinkedIn Profile, LinkedIn Page, and Telegram\nSupports multiple languages with automatic translation (Bengali configured)\nExtracts article images, resizes them, adds watermarks, and uploads to WordPress\nAutomatically creates WordPress posts and sets featured images\nSends notification updates through Discord, Telegram, WhatsApp, and Gmail\nRuns automatically every hour\nProcesses multiple articles from different feeds at once\n\nRequirements\nGoogle Translate API credentials for translation\nWordPress API access for content and media management\nSocial media API credentials (Facebook, Telegram, LinkedIn)\nNotification service credentials (Discord, WhatsApp, Gmail)\nAccess to the specified RSS feeds\n\nImportant Notes\nWorkflow runs on an hourly schedule to fetch the latest news\nExtracts featured images from articles and processes them for publication\nContent is automatically translated to Bengali (language code: \"bn\")\nImages are resized and watermarked before social media posting\nWordPress posts are created with translated content and featured images\nNotifications are sent after processing all items from the RSS feeds\nThe workflow includes wait periods to prevent API rate limiting\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.microsoftTeams",
+    "n8n-nodes-base.googleTranslate",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": 4576,
+  "name": "Automated Expense Approval System with GPT-4, Airtable & Pinecone Vector DB",
+  "description": "Automate expense reviews with AI-powered CFO-level analysis. This workflow monitors Airtable expense submissions, uses GPT-4 to analyze expenses like an experienced CFO, flags suspicious expenses with detailed reasoning, and maintains comprehensive audit trails in Pinecone vector database.\n\n🚀 What It Does\nSmart Monitoring**: Watches Airtable for new expense submissions\nAI CFO Analysis**: GPT-4 applies financial expertise to review amounts, categories, and descriptions\nIntelligent Flagging**: Automatically identifies policy violations and suspicious patterns\nAudit Trail**: Stores all decisions in Pinecone for compliance and searchability\nAuto Updates**: Updates Airtable records with AI decisions and detailed reasoning\n\n🎯 Perfect For\nFinance teams needing intelligent expense oversight\nCFOs wanting to automate expense policy enforcement\nGrowing companies scaling expense management\nBusinesses requiring compliance documentation\n\n⚙️ Key Benefits\n✅ 99% faster expense processing vs manual review  \n✅ CFO-level intelligence applied to every expense  \n✅ Complete audit trail for compliance  \n✅ Real-time fraud detection and policy enforcement  \n✅ Detailed explanations for every decision  \n\n🔧 What You Need\nAirtable base with expense data (template included)\nOpenAI API for GPT-4 analysis\nPinecone account for audit trail storage\nBasic expense submission process\n\n📊 Sample Results\nInput: $4,500 business class flight to Tokyo  \nAI Decision: \"Flagged - Amount exceeds typical travel thresholds. Requires verification against travel policies and client justification for premium travel.\"\n\n🛠️ Setup & Support\n\nQuick Setup: Deploy in 60 minutes with included templates and documentation\n\n\nYouTube: https://www.youtube.com/@YaronBeen/videos\n\n💼 Expert Support  \nLinkedIn: https://www.linkedin.com/in/yaronbeen/\n\n📧 Direct Help  \nEmail: Yaron@nofluff.online\n\nTransform expense management from manual bottleneck to intelligent automation. Let AI handle policy compliance while your finance team focuses on strategy.",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader"
+  ],
+  "tags": []
+}

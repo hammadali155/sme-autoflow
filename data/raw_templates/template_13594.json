@@ -1,0 +1,12 @@
+{
+  "id": 13594,
+  "name": "Handle e-commerce support, orders and inventory with Claude, Shopify and Slack",
+  "description": "Creates an AI-powered sales and support agent connected to live store data from Shopify/WooCommerce. MCP ensures controlled access to inventory and order systems. Automatically handles customer queries, stock alerts, and refund logic to reduce manual workload.\n\nHow it works\n\nTrigger — Listens for incoming customer support requests via Webhook (chat, email, or API)\nFetch context — Retrieves live order status and inventory data from Shopify in parallel\nAI reasoning — Claude AI analyzes the query with full store context and decides action\nRoute intent — Classifies into: Order Inquiry, Inventory Check, Refund Request, or General Support\nAct — Processes refunds, sends stock alerts, or responds to customer automatically\nLog & notify — Saves interaction to PostgreSQL and notifies team via Slack for escalations\n\nSetup steps\n\nShopify / WooCommerce — Add your store API credentials to the HTTP Request nodes\nClaude AI — Set your Anthropic API key in the AI node credentials\nPostgreSQL — Create a support_interactions table to log all AI-handled tickets\nSlack — Add your incoming webhook URL to the Slack notification node\nEmail — Configure SMTP credentials for customer-facing response emails\nTest — Send a test webhook payload, verify all branches, then activate\n\nIntent branches the AI handles:\n\nORDER_INQUIRY → Tracks shipment, shows order details\nREFUND_REQUEST → Auto-processes eligible refunds via Shopify API\nINVENTORY_CHECK → Detects low-stock (≤5 units) and fires Slack alert\nPRICING_INQUIRY / GENERAL_SUPPORT → Smart contextual response\n\nBefore activating, update these placeholders:\n\nYOUR-STORE.myshopify.com + YOUR_SHOPIFY_ACCESS_TOKEN\nYOUR_SLACK_WEBHOOK_URL (appears in 3 nodes)\nSMTP credentials + support@yourstore.com\nPostgreSQL credentials (create a support_interactions table)\n\n\n\nExplore More LinkedIn & Social Automation:  \nContact us to design AI-powered lead nurturing, content engagement, and multi-platform reply workflows tailored to your growth strategy.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 5223,
+  "name": "Sneaker Price Drop Alerts with Bright Data & n8n",
+  "description": "\nDescription\n\nThis workflow automatically monitors sneaker prices across multiple retailers and sends you alerts when prices drop on your favorite models. It helps sneaker enthusiasts and collectors find the best deals without constantly checking multiple websites.\n\nOverview\n\nThis workflow automatically monitors sneaker prices across multiple retailers and sends you alerts when prices drop. It uses Bright Data to scrape sneaker websites and can notify you through various channels when your desired models go on sale.\n\nTools Used\n\nn8n:** The automation platform that orchestrates the workflow.\nBright Data:** For scraping sneaker retailer websites without getting blocked.\nNotification Services:** Email, SMS, or other messaging platforms.\n\nHow to Install\n\nImport the Workflow: Download the .json file and import it into your n8n instance.\nConfigure Bright Data: Add your Bright Data credentials to the Bright Data node.\nSet Up Notifications: Configure your preferred notification method.\nCustomize: Add the sneaker models you want to track and your price thresholds.\n\nUse Cases\n\nSneaker Collectors:** Get notified when rare models drop in price.\nResellers:** Find profitable buying opportunities.\nBudget Shoppers:** Wait for the best deals on your favorite sneakers.\n\nConnect with Me\n\nWebsite:** https://www.nofluff.online\nYouTube:** https://www.youtube.com/@YaronBeen/videos\nLinkedIn:** https://www.linkedin.com/in/yaronbeen/\nGet Bright Data:** https://get.brightdata.com/1tndi4600b25 (Using this link supports my free workflows with a small commission)\n\n#n8n #automation #sneakers #pricealerts #brightdata #webscraping #sneakerdeals #sneakermonitor #pricedrop #sneakerhead #n8nworkflow #workflow #nocode #sneakersales #dealfinder #sneakermarket #pricetracking #sneakerprices #shoealerts #sneakercollector #sneakershopping #reselling #sneakerreseller #dealnotifications #sneakerautomation #shoedeals\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

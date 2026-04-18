@@ -1,0 +1,14 @@
+{
+  "id": 12383,
+  "name": "Create multilingual localized speech audio with GPT-4 and ElevenLabs",
+  "description": "How It Works\nThis workflow delivers intelligent multilingual audio content creation for global marketing teams, e-learning providers, and content production studios. It solves the complex challenge of generating culturally adapted, professionally voiced translations optimized for each target language. The system begins with AI-powered localization that adapts source content for cultural context, idioms, and regional preferences rather than literal translation. Specialized AI agents then optimize speech parameters (pace, tone, emphasis) and voice characteristics (pitch, timbre, style) specific to each language's phonetic requirements. The workflow prepares language arrays and loops through each target language, generating optimized audio via ElevenLabs with customized voice parameters. All audio files are processed, formatted with metadata, and aggregated into a complete deliverable package, transforming single-source content into publication-ready multilingual audio assets.\n\nSetup Steps\nConfigure OpenAI API credentials in all AI agent nodes  \nSet up ElevenLabs account, obtain API key \nDefine target languages list in \"Workflow Configuration\" node using ISO language codes\nCustomize localization prompts in AI agents to match brand voice and content type\nAdjust voice parameter ranges and optimization criteria based on audio requirements\nConfigure output formatting in \"Aggregate Results\" node  \n\nPrerequisites\nOpenAI API access with GPT-4 capabilities, active ElevenLabs subscription with multi-voice access. \nUse Cases\nGlobal product launch campaigns, international e-learning course production\nCustomization\nModify AI prompts for industry-specific terminology, add quality validation checkpoints\nBenefits\nAchieves native-quality audio across languages, reduces production time by 80%",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

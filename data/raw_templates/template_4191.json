@@ -1,0 +1,14 @@
+{
+  "id": 4191,
+  "name": "Automated Lead Research – From LinkedIn to Ready-to-Send Report",
+  "description": "AI Prospect Researcher – Automated Lead Intelligence Workflow\n\nThis workflow is built for professionals and teams who want to scale their B2B outreach with context-rich, personalized communication. It automates the full prospect research process — from pulling lead data and scraping LinkedIn profiles, to gathering real-time company insights and generating high-quality outreach reports with GPT-4. \n\nUsing a combination of Apify, Perplexity AI, and OpenAI, this system creates a structured Google Doc for each lead, along with a logged summary in Google Sheets. Whether you’re preparing for sales calls, writing cold emails, or enriching your CRM — this tool delivers ready-to-use intelligence in minutes, without manual research.\n\nThe process is modular, production-ready, and suitable for agencies, SDR teams, or founders managing outbound on their own.\n\nHow it works\n\nOnce triggered, the workflow takes in a list of leads from Google Sheets. For each lead, it uses Apify to scrape both the LinkedIn profile and company page (no login or cookies required). Then, Perplexity AI fetches contextual insights and competitor data. GPT-4 validates the research and synthesizes a structured summary of the individual and their company. Finally, a complete outreach report is generated and saved in Google Docs, while key data is logged in Sheets for tracking or follow-up automation.\n\nThis is a powerful, production-grade automation for anyone serious about personalizing outreach without spending hours per lead.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDocs",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

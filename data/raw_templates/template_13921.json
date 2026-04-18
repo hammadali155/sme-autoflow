@@ -1,0 +1,13 @@
+{
+  "id": 13921,
+  "name": "Plan AI-powered travel itineraries with Apify, OpenAI, and Google Docs",
+  "description": "Who is this for\n\nTravel agencies, freelance travel planners, or anyone who wants to automate personalized trip planning by combining real-time hotel and flight data with AI-generated recommendations.\n\nWhat this workflow does\n\nCollects travel details (airports, dates, travelers) through an n8n form\nScrapes the top 5 hotels from Booking.com sorted by review score via Apify\nScrapes the best available flights from Google Flights via Apify\nGenerates restaurant, attraction, and day-by-day itinerary recommendations using OpenAI\nMerges all results into a formatted Google Doc and returns the link to the user\n\nHow to set up\n\nCreate an Apify account and add your API token as both an \"Apify API\" credential and an \"HTTP Query Auth\" credential (parameter name: token)\nAdd your OpenAI API key as an \"OpenAI\" credential\nConnect your Google account via OAuth2 and update the folderId in the \"Create Document\" node to your Google Drive folder\nActivate the workflow and share the form URL\n\nRequirements\n\nApify account with API token (for Booking.com and Google Flights scrapers)\nOpenAI API key\nGoogle account with Docs and Drive access\n\nHow to customize\n\nSwap the form trigger for a webhook or chatbot input\nChange the output from Google Docs to email, Slack, or Notion\nAdjust the OpenAI prompt to focus on budget travel, luxury, or specific interests",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDocs",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

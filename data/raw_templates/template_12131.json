@@ -1,0 +1,15 @@
+{
+  "id": 12131,
+  "name": "Convert GitHub Code Commits to LinkedIn Posts with Gemini AI and Code Image Generation",
+  "description": "Turn your code commits into engaging social media content automatically. This workflow monitors a GitHub repository, uses AI to write a LinkedIn post about your changes, generates a beautiful \"Mac-window\" style image of your code, and publishes it all to LinkedIn.\n\nHow it works\nGitHub Trigger: Watches for new push events in your selected repository.\nAI Analysis: Passes the code changes to an LLM (via LangChain) to write a professional LinkedIn post and select the best code snippet.\nImage Generation: Creates a custom HTML view of your code (with syntax highlighting and window controls) and converts it to an image using the HCTI API.\nHosting & Posting: Uploads the generated image back to GitHub for hosting, then combines the text and image to publish a live post on LinkedIn.\n\nSet up steps\nConfigure Credentials: You will need credentials for:\n   GitHub (OAuth2 or Access Token)\n   LinkedIn (OAuth2)\n   OpenRouter (or swap the model node for OpenAI/Anthropic)\n   HCTI.io (for the HTML-to-Image conversion)\nUpdate GitHub Nodes:\n   In the Trigger node: Set your Owner and Repository.\n   In the File Download node: Set the same Owner and Repository.\n   In the Upload Image node: Set the target repo where you want images stored.\nUpdate LinkedIn Node:\n   Add your LinkedIn Person URN in the Person field.",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

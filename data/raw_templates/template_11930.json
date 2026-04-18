@@ -1,0 +1,13 @@
+{
+  "id": 11930,
+  "name": "Auto-schedule Instagram & Facebook posts from Google Sheets",
+  "description": "How it works\n\nThis workflow automatically publishes Instagram and Facebook posts using Google Sheets as a content calendar. Users add post details to a sheet, and the workflow handles scheduling, image processing, posting, and status updates without manual intervention.\n\nStep-by-step\n\nScheduled Trigger\nThe workflow runs automatically at a fixed interval (for example, every 15 minutes) to check for posts that are ready to be published.\n\nConfiguration & Credentials\nA configuration step stores reusable values such as spreadsheet ID, sheet name, and platform settings, keeping the workflow easy to customize and secure.\n\nData Retrieval & Filtering\nPosts are read from Google Sheets and filtered to include only rows marked as “Pending” and scheduled for the current time or earlier.\n\nImage Handling\nIf an image link is provided, the workflow downloads the image from Google Drive. If no image is present, the post continues as text-only.\n\nPlatform Routing\nBased on the selected platform (Instagram, Facebook, or both), the workflow routes the post to the appropriate publishing path.\n\nSocial Media Publishing\nThe post is published to Instagram and/or Facebook using the connected business account credentials.\n\nStatus Update\nAfter publishing, the workflow updates the original Google Sheet with the post status (Success or Failed), published timestamp, and error message if applicable.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

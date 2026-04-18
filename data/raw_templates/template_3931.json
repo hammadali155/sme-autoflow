@@ -1,0 +1,13 @@
+{
+  "id": 3931,
+  "name": "Auto-Post Medium.com Articles to LinkedIn with Telegram Alerts",
+  "description": "🧠 Problem This Solves\nManually sharing Medium articles to LinkedIn daily can be repetitive and time-consuming. This automation:\n\nFetches the latest Medium articles based on a tag (e.g., android)\n\nPosts them on LinkedIn twice daily\n\nUses Airtable to prevent duplicates\n\nSends a confirmation to Telegram once posted\n\nStay consistently active on LinkedIn without lifting a finger.\n\n👥 Who This Template Is For\nDevelopers who write or follow Medium content\n\nTech creators or founders looking to grow an audience\n\nCommunity or page managers needing regular curated posts\n\nBusy professionals who want hands-free LinkedIn engagement\n\n⚙️ Workflow Breakdown\nThis automation runs at 9:00 AM and 7:00 PM daily and performs these steps:\n\nFetch articles from MediumAPI.com by tag\n\nCheck Airtable to prevent reposting the same article\n\nPost on LinkedIn if it’s new\n\nStore the article ID in Airtable\n\nSend a Telegram message after successful posting\n\n🧾 Step-by-Step Setup Instructions\n\n✅ 1. Airtable Configuration\nCreate a base with:\n\nTable Name: PostedArticles\n\nColumn: ArticleID (Single line text – to track posted articles)\n\n🔗 2. MediumAPI Setup\nGo to https://mediumapi.com\n\nSign up and generate your API key from the dashboard\n\nUse this API endpoint in an HTTP node:\n\nGET https://mediumapi.com/api/tag/YOUR_TAG/latest\n\nHeaders:\n  Authorization: Bearer YOUR_API_KEY\nReplace YOUR_TAG with a topic like android, ai, webdev, etc.\n\n💬 3. Telegram Bot Setup\nGo to @BotFather and create a new bot\n\nSave the bot token\n\nUse @userinfobot to get your Telegram chat ID\n\nAdd a Telegram node in n8n with the token + chat ID\n\n🔗 4. LinkedIn Setup\nCreate a LinkedIn Developer App\n\nConnect it via OAuth2 in n8n\n\nChoose to post on your profile or company page\n\n🧱 5. n8n Workflow Structure\nNode Type\tDescription\nCron\tTriggers the flow twice a day\nHTTP Request\tFetches articles from MediumAPI.com\nAirtable Search\tChecks if article ID already exists\nIF Node\tSkips duplicates\nLinkedIn Post\tPublishes to your LinkedIn profile/page\nAirtable Create\tStores posted article ID\nTelegram Node\tSends success notification\n\n🛠️ Customization Tips\nChange the tag in the API URL to match your niche\n\nAdd hashtags or personal comments to the LinkedIn message\n\nSchedule different posting times in the Cron node\n\nFilter Medium posts based on length or title keywords (optional)\n\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

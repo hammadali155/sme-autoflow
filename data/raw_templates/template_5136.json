@@ -1,0 +1,10 @@
+{
+  "id": 5136,
+  "name": "Facebook/Meta Conversion API for eCommerce Leads/Orders",
+  "description": "This n8n workflow helps eCommerce businesses (especially in the Cash on Delivery space) send real-time order events to the Meta (Facebook) Conversions API, ensuring accurate event tracking and better ad attribution.\n\nFeatures\nWebhook Listener**: Accepts incoming order data (name, phone, IP, user-agent, etc.) via HTTP POST/GET.\n\nData Normalization**: Cleans and formats first_name, last_name, phone, and event_time according to Facebook's strict specs.\n\nData Hashing**: Securely hashes sensitive user data (SHA256), as required by Meta.\n\nFull Custom Data Suppor**t: Pass order value, currency, and more.\n\nIdeal For:\nShopify, WooCommerce, custom stores (Laravel, Node, etc.)\n\nBusinesses using Meta Ads and needing high-quality server-side tracking\n\nTeams without access to full dev resources, but using n8n for automation\n\nHow It Works:\n\nReceive Order from your store via Webhook or API.\n\nFormat & Normalize fields to match Facebook’s expected structure.\n\nEncrypt Sensitive Fields using SHA256 (name, phone, email).\n\nSend to Facebook via the Conversions API endpoint.\n\nRequirements:\nA Meta Business Manager account with Conversions API access\n\nYour Access Token and Pixel ID set up in n8n credentials",
+  "nodes": [
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

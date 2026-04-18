@@ -1,0 +1,14 @@
+{
+  "id": 13338,
+  "name": "Validate property compliance risk and orchestrate actions with OpenAI, Google Calendar, Gmail, Slack, and Google Sheets",
+  "description": "How It Works\nThis workflow automates medical imaging analysis and diagnostic reporting for radiology departments, imaging centers, and hospital networks managing high patient volumes. Designed for radiologists, medical imaging technicians, and diagnostic coordinators, it solves the challenge of rapidly analyzing imaging studies, prioritizing critical findings, routing cases appropriately, and generating structured reports while maintaining diagnostic accuracy and regulatory compliance. The system triggers on new imaging studies, fetches imagery and metadata, prepares data through AI agents (Validation ensures image quality and completeness), calculates risk scores, routes by validation status and risk level through multiple pathways, deploys specialized AI agents for comprehensive analysis (Orchestration coordinates findings, Google Calendar manages scheduling, Slack Tool enables team communication, Email Actions handles notifications, Water Monitoring tracks contrast protocols, Compliance Validation ensures regulatory adherence, Leave Management coordinates radiologist availability), and generates final diagnostic reports with complete audit trails. Organizations reduce diagnosis turnaround time by 60%, improve critical finding detection rates, ensure consistent reporting standards, and enable radiologists to focus on complex cases requiring expert judgment.\n\nSetup Steps\nConnect imaging trigger for automatic study notifications\nConfigure PACS/VNA system APIs with credentials for DICOM image retrieval and metadata access\nAdd AI model API keys to Validation Agent and specialized diagnostic agents \nDefine risk stratification criteria in routing logic based on clinical protocols and imaging findings\nLink Google Calendar API for radiologist scheduling and case assignment workflows\nConfigure Slack integration for care team communication and critical finding alerts\nConnect email system for patient/referring physician notifications and report distribution\nPrerequisites\nPACS/VNA system API access, HIPAA-compliant AI service accounts\nUse Cases\nEmergency radiology triage (stroke, trauma), lung nodule detection and tracking\nCustomization\nModify AI models for modality-specific analysis (CT, MRI, X-ray, ultrasound)\nBenefits\nReduces diagnosis turnaround time by 60%, improves critical finding detection rates",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

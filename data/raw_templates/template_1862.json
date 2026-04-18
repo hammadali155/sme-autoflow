@@ -1,0 +1,12 @@
+{
+  "id": 1862,
+  "name": "OpenAI GPT-3: Company Enrichment from website content",
+  "description": "Enrich your company lists with OpenAI GPT-3 ↓\n\nYou’ll get valuable information such as:\n\nMarket (B2B or B2C)\nIndustry\nTarget Audience\nValue Proposition\n\nThis will help you to:\n\nadd more personalization to your outreach\nmake informed decisions about which accounts to target\n\nI've made the process easy with an n8n workflow.\n\nHere is what it does:\n\nRetrieve website URLs from Google Sheets\nExtract the content for each website\nAnalyze it with GPT-3\nUpdate Google Sheets with GPT-3 data",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.openAi"
+  ],
+  "tags": []
+}

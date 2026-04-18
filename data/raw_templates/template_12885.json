@@ -1,0 +1,14 @@
+{
+  "id": 12885,
+  "name": "Transform chatbots into AI advisors with memory and real-time context",
+  "description": "How it works\n• Receives a user message from a chat \n• Uses an LLM node to understand user intent and generate a response\n• Retrieves and stores conversation memory in a database (Supabase)\n• Fetches real-time product or business data from an external API (e.g. Shopify)\n• Applies custom logic to ensure a consistent, human-like tone\n• Sends a contextual response back to the user\n\nSet up steps\n• Import the workflow into n8n\n• Create and connect the required credentials (LLM, database, API)\n• Configure environment variables and placeholders\n• Adjust the prompt and logic to your specific business needs\n• Test the workflow using sample user messages\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.shopify",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat"
+  ],
+  "tags": []
+}

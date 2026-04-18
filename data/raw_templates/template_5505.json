@@ -1,0 +1,10 @@
+{
+  "id": 5505,
+  "name": "Capture Website Form Submissions to Notion CRM Database",
+  "description": "⚡️ How It Works\n\nThis workflow captures form submissions from your website, formats the data, and automatically creates a new entry in your Notion CRM database. It eliminates manual copy-pasting and keeps your leads or requests organised in one place.\n\n🛠 Setup Steps\n\tWebhook Node\n\t•\tCreate a webhook in n8n.\n\t•\tConnect your website form to POST submissions to this webhook URL.\n\tCode Node\n\t•\tFormats the incoming data to match your Notion database structure.\n\t•\tYou can customise the fields in the code to suit your specific form inputs.\n\tNotion Node (Create Page)\n\t•\tConnect your Notion account.\n\t•\tChoose your target database.\n\t•\tMap each field from the Code node output to your Notion database properties.\n\tTest\n\t•\tSubmit a test form entry.\n\t•\tConfirm the data appears correctly in Notion.\n\n⸻\n\n👥 Who It’s For\n\n✅ Freelancers collecting project inquiries\n✅ Agencies managing client onboarding forms\n✅ Business owners wanting organised lead capture\n✅ Teams that use Notion as their central CRM or task manager\n✅ Anyone tired of manually transferring form data into Notion\n",
+  "nodes": [
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

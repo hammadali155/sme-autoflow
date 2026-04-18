@@ -1,0 +1,11 @@
+{
+  "id": 13248,
+  "name": "Turn websites into RAG chatbot knowledge bases with Apify, OpenAI and Pinecone",
+  "description": "This n8n template transforms any website into a fully functional RAG-ready chatbot knowledge base. It crawls sites using the AI Training Data Scraper community node, chunks content intelligently, generates embeddings, and stores everything in Pinecone for semantic search-powered conversations. Perfect for turning documentation, blogs, or marketing sites into instant AI chat assistants.\n\nUse cases\nConvert documentation sites into intelligent support chatbots\nBuild product knowledge bases from marketing websites\nCreate internal search tools from company intranets\nPower customer support agents with scraped competitor analysis\nGenerate training data for fine-tuning company-specific AI models\n\nGood to know\nThis workflow connects to external services requiring API credentials. Works on n8n Cloud and self-hosted instances. Initial setup takes 10 minutes including community node installation.\n\nRequirements\nn8n Cloud or self-hosted instance\nCommunity Node\nApify API key\nOpenAI API key \nPinecone account & index \n\nCustomising this workflow\nReplace Pinecone with Qdrant, Weaviate, or pgvector for self-hosted vector storage\nSwap OpenAI embeddings with Ollama or Hugging Face for zero-cost processing\nAdd content filtering by language, code presence, or section type\nExtend with conversation memory using Redis or Postgres\nBuild a frontend dashboard for managing multiple website indexes\nAdd multi-site RAG (query across multiple domains simultaneously)\n",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

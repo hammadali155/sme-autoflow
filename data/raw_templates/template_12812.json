@@ -1,0 +1,13 @@
+{
+  "id": 12812,
+  "name": "Turn a YouTube channel into a second brain with Neo4j GraphRAG and GPT-4o-mini",
+  "description": "AI-powered \"Second Brain\" that can answer questions about any YouTube channel's content using Neo4j Graph Database and RAG.\n\nTurn any YouTube channel into a searchable knowledge base. The AI agent understands relationships between videos, topics, tools, and concepts - enabling powerful queries like \"Which videos talk about automation AND mention n8n?\" or \"What are the most discussed topics?\".\n\nGood to know\n\nNeo4j Aura Free Tier is sufficient for most channels (up to 200k nodes)\nApify credits are required for YouTube scraping (~$5 for 500 videos)\nLLM costs are minimal (~$0.01 per video for entity extraction)\n\nHow it works\n\nIngestion Flow**: Scrapes YouTube videos via Apify, including titles, descriptions, and transcripts.\nEntity Extraction**: GPT-4o-mini analyzes each video and extracts Topics, Tools, and Concepts mentioned.\nGraph Storage**: Data is stored in Neo4j with relationships: Video → COVERS → Topic, Video → USES → Tool, Video → EXPLAINS → Concept.\nAI Agent**: Receives user questions, generates Cypher queries to search the graph, and returns natural language responses with relevant video links.\n\nHow to use\n\nSet up a free Neo4j Aura instance and save credentials\nConvert your Neo4j username:password to Base64 for authentication\nConfigure Apify with your target YouTube channel URL\nRun the ingestion workflow to populate the database\nChat with the AI agent to query your video knowledge base\n\nRequirements\n\nNeo4j Aura account (free tier available)\nApify account for YouTube scraping\nOpenAI API key (GPT-4o-mini) for entity extraction\nAnthropic API key (Claude) or OpenAI for the AI agent\n\nCustomization\n\nModify the system prompt to change response style or language\nAdd more entity types (e.g., People, Companies, Frameworks)\nConnect multiple YouTube channels into one knowledge base\nExtend to other content sources (blogs, podcasts, Notion docs)",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

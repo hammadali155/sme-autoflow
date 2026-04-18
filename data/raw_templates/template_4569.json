@@ -1,0 +1,14 @@
+{
+  "id": 4569,
+  "name": "Create AI Videos with Scripts, Images & HeyGen Avatars (🔥 LIMITED-TIME OFFER)",
+  "description": "Short Content Automation 🎬 (AI Video System with Bulk Gen, Avatar & Music Customization)\n🔥 LIMITED-TIME OFFER: AI Video Automation (Previously \\$59)\nPreviously Template\n\n🚀 Transform Your Content Game in Minutes – Save Hours of Work!\nIntroducing a powerful AI Video System to automate short video creation — from scriptwriting to avatar + image generation, music, and assembly — all with n8n. This is not a basic template. It's a complete, customizable system with step-by-step videos and my personal enhancements.\n\n🎁 Why $10 Now? (Regular Price: \\$59)\n\n✅ Over 4000 people viewed my original automation — see it here — and I receive many messages from people who want it.\n\n✅ I learned n8n from free templates and I want to give back.\n\n✅ People asking for a more accessible price — this is my answer.\n\n⏳ Limited-Time Deal: 7 Days Only!\n\nAfter that, this price goes away and the blueprint will be unlisted.\n\n📦 What You Get\n\n✅ Full n8n Workflow: From text prompt → ready-to-publish short video\n✅ AI Tools Integration: OpenAI, Leonardo.AI, HeyGen, etc.\n✅ Customization Options: Avatar, Voice, Music, Style\n✅ Video Setup Guide: Step-by-step walkthrough\n✅ Clean UI, easy-to-use, even if you're not a developer\n\n💬 Made With Love by an n8n Creator\n\nThis system is based on months of refinement and feedback from users like you.\nNow it’s your turn to scale your content, automate your work, and stand out.\n\n💵 Only $10 – Let’s Build Together.\n\n&gt; 📌 Get it now. Use it forever. No subscriptions. Just value.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.baserow",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

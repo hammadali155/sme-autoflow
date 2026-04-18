@@ -1,0 +1,9 @@
+{
+  "id": 4285,
+  "name": "Automatically Delete Spam Emails in Gmail on Schedule",
+  "description": "Who is this for?\nIf you hate SPAM emails or don't want to clean them up frequently.\n\nWhat problem is this workflow solving?\nIt automatically deletes SPAM emails for you, so you don't have to. Save a bit of your time.\n\nWhat this workflow does\nYou can specify when to execute the workflow: daily, weekly, or monthly.\n\nSetup\nSelect the preferred execution time\nConfigure credentials for Gmail OAuth2\n\nHow to customize this workflow to your needs\nThere's no need. It just works!",
+  "nodes": [
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

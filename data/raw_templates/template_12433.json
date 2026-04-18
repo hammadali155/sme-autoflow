@@ -1,0 +1,14 @@
+{
+  "id": 12433,
+  "name": "Monitor Lis Pendens real estate filings via Telegram, BrowserAct and Gemini",
+  "description": "Monitor real estate filings via Telegram, BrowserAct and Gemini\n\nThis workflow transforms your Telegram bot into an automated real estate monitoring tool. Send a message like \"Check filings for the last 5 days,\" and the bot will scrape the official county clerk site for \"Lis Pendens\" (pre-foreclosure) filings, format the messy legal data into a readable report, and deliver it directly to your chat.\n\nTarget Audience\nReal estate investors, wholesalers, and agents looking for pre-foreclosure leads.\n\nHow it works\nUnderstand Request: The workflow receives your Telegram message. An AI Agent classifies it: are you chatting, or asking for real estate data?\nCalculate Dates: If you don't specify a date range, the workflow automatically calculates a default window (e.g., Today minus 5 days) to search for recent filings.\nScrape Records: BrowserAct executes a background task to search the public records site using the calculated dates and scrapes all matching \"Lis Pendens\" filings.\nFormat Data: A second AI Agent processes the raw legal text. It cleans up party names, extracts file numbers, and formats everything into a clean HTML list with download links.\nDeliver Report: The bot splits the report into multiple messages (if necessary) and sends them to your Telegram chat.\n\nHow to set up\nConfigure Credentials: Connect your Telegram, BrowserAct, Google Gemini, and OpenRouter accounts in n8n.\nPrepare BrowserAct: Ensure the Texas Foreclosure Leads template is saved in your BrowserAct account.\nConfigure Telegram: Create a bot via BotFather and add the API token to your Telegram credentials.\nActivate: Turn on the workflow.\nTest: Send \"Check filings\" to your bot to start the search.\n\nRequirements\nBrowserAct* account with the *Texas Foreclosure Leads** template.\nTelegram** account (Bot Token).\nGoogle Gemini* & *OpenRouter** accounts.\n\nHow to customize the workflow\nChange Search Query: Modify the BrowserAct template to search for different document types (e.g., \"Divorce Decrees\" or \"Probate\").\nAdjust Date Range: Update the From_Date node to search for a longer period (e.g., -30 days).\nFilter Results: Add logic to the Generate response agent to only show filings from specific banks or attorneys.\n\nNeed Help?\nHow to Find Your BrowserAct API Key & Workflow ID\nHow to Connect n8n to BrowserAct\nHow to Use & Customize BrowserAct Templates\n\nWorkflow Guidance and Showcase Video\n\n⚖️ How to Scrape Lis Pendens Records Automatically (Texas Real Estate)\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

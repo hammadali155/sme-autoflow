@@ -1,0 +1,24 @@
+{
+  "id": 2358,
+  "name": "Advanced AI Demo (Presented at AI Developers #14 meetup)",
+  "description": "This workflow was presented at the AI Developers meet up in San Fransico on 24 July, 2024. \n\nAI workflows\nCategorize incoming Gmail emails and assign custom Gmail labels. This example uses the Text Classifier node, simplifying this usecase.\nIngest a PDF into a Pinecone vector store and chat with it (RAG example)\nAI Agent example showcasing the HTTP Request tool. We teach the agent how to check availability on a Google Calendar and book an appointment.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.textClassifier",
+    "@n8n/n8n-nodes-langchain.toolHttpRequest"
+  ],
+  "tags": []
+}

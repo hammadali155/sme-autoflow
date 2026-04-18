@@ -1,0 +1,13 @@
+{
+  "id": 2433,
+  "name": "Daily Podcast Summary",
+  "description": "What this workflow does\nDownloads the daily top podcasts of a selected genre\nSummarizes the content of each podcast in a few paragraphs\nSends the summaries and the direct link to each podcast in a formatted email\n\nSetup\n Create a free API key on Taddy here: https://taddy.org/signup/developers\n Input your user number and API key into the TaddyTopDaily node in the header parameters X-USER-ID and X-API-KEY respectively.\n Create access credentials for your Gmail as described here: https://developers.google.com/workspace/guides/create-credentials. Use the credentials from your client_secret.json in the Gmail node.\n In the Genre node, set the genre of podcasts you want a summary for. Valid values are: TECHNOLOGY, NEWS, ARTS, COMEDY, SPORTS, FICTION, etc. Look at api.taddy.org for the full list (they will be displayed in the help docs as PODCASTSERIES_TECHNOLOGY, PODCASTSERIES_NEWS, etc.)\n Enter your email address in the Gmail node.\n Change the schedule time for sending email from Schedule to whichever time you want to receive the email.\n\nTest:\nHit Test Workflow.\nCheck your email for the results.\n\nThat's it! It should take less than 5 minutes total.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.openAi",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 5288,
+  "name": "WordPress context backup to github",
+  "description": "This template can backup WordPress context github。\n",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

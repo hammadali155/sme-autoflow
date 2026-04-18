@@ -1,0 +1,10 @@
+{
+  "id": 2974,
+  "name": "Bitrix24 Task Form Widget Application Workflow with Webhook Integration",
+  "description": "Use Case\nExtend Bitrix24 tasks with custom widgets that display relevant task information and enable seamless interaction through a custom tab interface.\n\nWhat This Workflow Does\nProcesses incoming webhook requests from Bitrix24 task interfaces\nHandles authentication and secure token validation\nManages application installation and placement registration\nDisplays task data in a custom formatted view\nStores and retrieves configuration settings persistently\nProvides user-friendly HTML interfaces for task information\n\nSetup Instructions\nConfigure Bitrix24 webhook endpoints for the task widget\nSet up authentication credentials in your Bitrix24 account\nInstall the application and register the task view tab placement\nCustomize the task data display format as needed\nDeploy and test the application functionality within Bitrix24 tasks",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

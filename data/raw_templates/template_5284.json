@@ -1,0 +1,12 @@
+{
+  "id": 5284,
+  "name": "Daily Govt Exam Quiz by Gopal Debnath (mrtechyguru)",
+  "description": "💡 How It Works:\n\n⏰ Triggers daily at 6:00 AM\n\n\n📊 Fetches one random question from your Google Sheet\n\n\n🧠 Formats question, options, correct answer, and explanation\n\n\n📤 Sends it to:\n\n📧 Email\n\n💬 Telegram (via Bot)\n\n📱 WhatsApp/SMS (via Twilio)\n\n\n\n\n\n🔧 What You Need to Configure:\n\nYOUR_GOOGLE_SHEET_ID → your sheet with columns: question, optionA, optionB, optionC, optionD, correctAnswer, explanation\n\nEmail credentials (SMTP)\n\nTelegram Bot Token & Chat ID\n\nTwilio phone numbers and credentials",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.twilio",
+    "n8n-nodes-base.telegram"
+  ],
+  "tags": []
+}

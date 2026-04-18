@@ -1,0 +1,11 @@
+{
+  "id": 14406,
+  "name": "Scrape Apollo.io leads with ScraperCity and sync enriched contacts to Airtable",
+  "description": "Who is this for\n\nSales teams, lead generation agencies, and growth marketers who want to pull targeted B2B contacts from Apollo.io, enrich them with verified emails and mobile numbers, and push clean records directly into an Airtable CRM -- without manual data entry or expensive Apollo subscriptions.\n\nHow it works\n\nA manual trigger kicks off the workflow. A configuration node lets you define your target job titles, industry, company size, and lead count.\nThe workflow calls the ScraperCity Apollo Filters API to start an async scrape job and captures the returned run ID.\nAn async polling loop checks the scrape status every 60 seconds until the job succeeds.\nOn success, the raw lead data is downloaded and parsed. Contacts without a work email are filtered out and duplicates are removed.\nClean, enriched records (name, title, company, email, phone, LinkedIn URL) are written to your Airtable base as new rows.\n\nHow to set up\n\nCreate a ScraperCity account at scrapercity.com and copy your API key.\nIn n8n, add an HTTP Header Auth credential named \"ScraperCity API Key\" with the header name Authorization and value Bearer YOUR_KEY.\nOpen the Configure Search Parameters node and edit job titles, industry, company size, and lead count.\nOpen the Save Leads to Airtable node and connect your Airtable credential, then set your Base ID and Table name.\n\nRequirements\n\nScraperCity account (scrapercity.com) -- Apollo scraper billed at $0.0039 per contact\nn8n instance (cloud or self-hosted)\nAirtable account with a base and table ready to receive contacts\n\nHow to customize the workflow\n\nChange the filter conditions in Filter Contacts with Email to also require a phone number.\nAdd a ScraperCity Mobile Finder step after download to enrich contacts with mobile numbers before writing to Airtable.\nSwap the Airtable output node for a HubSpot or Google Sheets node to route leads to a different destination.",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

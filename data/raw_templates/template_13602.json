@@ -1,0 +1,16 @@
+{
+  "id": 13602,
+  "name": "Create sprint goals from Google Sheets with Pega Agile Studio and Google Gemini",
+  "description": "Create sprint goals using Pega Agile Studio with AI\nBased on the Google Sheet data, the AI will retrieve the userstories ID's, retrieves the userstory data and the corresponding attachments and creates sprint goals according to the defined system prompt.\n\nWho's it for\nProduct owners/Scrum masters that use Pega Agile Studio\n\n\nHow it works \nIt retrieves the data from each userstory using the Agile Studio api, and the Google API to gather the attachments in the corresponding documents/sheets/slides.\nThen the AI processes it according to the system prompt and generates a mail.\n\n\nHow to set up \nCreate a Google Sheet and add the userstories you want in the Google Sheet in column named \"Userstory\".\nSet the GoogleSheet ID in the node \"Retrieve_Data_From_Sheet\" \nSetup other credentials.\nPublish the subworkflow for attachment handling.\nExecute the workflow.\n\nRequirements \nAccess to Pega Agile Studio OAuth2 Api.\nAI API.\nAccess to Google Cloud for the Google API's",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

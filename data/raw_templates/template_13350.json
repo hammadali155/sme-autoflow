@@ -1,0 +1,11 @@
+{
+  "id": 13350,
+  "name": "Auto-sync and qualify HubSpot CRM contacts with Lusha bulk enrichment",
+  "description": "How it works\nRuns every 6 hours to pull contacts needing a data refresh from HubSpot\nAll contacts are bulk-enriched with Lusha in a single API call\nEach contact is scored against your ICP criteria (seniority, company size, industry)\nCRM records are updated with fresh data; high-scoring fast-track leads trigger a Slack alert\n\nSet up steps\nInstall the Lusha community node\nAdd your Lusha API, HubSpot, and Slack credentials\nCustomize the ICP scoring weights in the Code node\nSet the Slack channel for fast-track alerts and activate",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 13946,
+  "name": "Score and auto-reply to new leads with OpenAI and Gmail",
+  "description": "++Who is this for++\nSmall business owners, freelancers, and agencies who receive inbound leads through a web form and want instant, personalized follow-up — without manually reading every submission.\n\n++What it does++\nWhen someone fills out your lead intake form, this workflow instantly:\n\nScores the lead 1-100 using OpenAI based on budget, project fit, and clarity\nClassifies them as Hot, Warm, or Cold\nSends a personalized email reply that references what they actually wrote\nLogs everything to Google Sheets with the score and AI reasoning\nHot leads get an enthusiastic reply with a calendar booking link. Warm leads get a helpful response with suggested next steps. Cold leads get a polite acknowledgment. Every lead gets a response within seconds.\n\n++How to set up++\nFill in the \"Configure Your Settings\" node with your business name, email, calendar link, and description\nConnect your Gmail and Google Sheets credentials\nAdd your OpenAI API key\nCreate a Google Sheet with the column headers listed in the workflow's sticky notes\nPaste your Sheet URL into the \"Log Lead with Score\" node\nActivate the workflow and share the form URL\nRequirements\nn8n account (cloud or self-hosted)\nOpenAI API key\nGmail account (OAuth2)\nGoogle Sheets (one blank sheet)\nHow to customize\nEdit the OpenAI system prompt to adjust scoring criteria for your industry\nModify the tier thresholds (currently Hot 70+, Warm 40-69, Cold 0-39)\nCustomize the email tone by editing each Gmail node\nAdd or remove form fields to match your intake need",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

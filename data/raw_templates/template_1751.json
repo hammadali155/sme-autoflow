@@ -1,0 +1,10 @@
+{
+  "id": 1751,
+  "name": "Preparing data to be sent to a service",
+  "description": "Task:\nMake sure that data is in the right format before injecting it into a database/spreadsheet/CRM/etc.\n\nWhy:\nSpreadsheets and databases require the incoming data to have the same fields as the headers of the destination table. You can decide which fields you would like to send with the database and rename them by using the set node\n\nMain use cases:\nChange fields names to match a database or a spreadsheet table structure\nKeep only the fields that are needed at the destination table",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.n8nTrainingCustomerDatastore"
+  ],
+  "tags": []
+}

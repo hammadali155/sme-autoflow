@@ -1,0 +1,13 @@
+{
+  "id": 13770,
+  "name": "Route and prioritize Gmail support tickets to Notion with Gemini AI and Slack alerts",
+  "description": "Who is this for\n\nCustomer support teams and operations managers who receive support requests via email and need automated triage. Works well for small to mid-size teams using Notion as their ticket tracker.\n\nWhat this workflow does\n\nThis workflow watches a Gmail inbox for incoming support emails. Each email is analyzed by Gemini AI to determine its category (billing, technical, feature request, or general), priority level, and a suggested response draft. A new page is created in a Notion database with all classified fields. Critical tickets trigger an immediate Slack alert to the on-call team, while all tickets get a summary notification.\n\nSetup\n\nAdd a Gmail OAuth2 credential and configure label or address filters.\nAdd a Google Gemini API credential for email classification.\nAdd a Notion API credential and create a database with columns: Title, Category, Priority, Status, Summary.\nAdd a Slack OAuth2 credential and set your alerts channel.\n\nRequirements\n\nGmail account with OAuth2 access\nGoogle Gemini API key\nNotion workspace with API integration enabled\nSlack workspace with OAuth2 app\n\nHow to customize\n\nEdit the AI prompt in \"Classify ticket with AI\" to add more categories or adjust priority rules.\nChange the critical priority condition in \"Is critical priority\" to include high-priority tickets.\nReplace Notion with Airtable or Google Sheets for a different ticket backend.",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 13864,
+  "name": "Handle Spanish-speaking vet clinic bookings with GPT-4o, Sheets, Calendar and Gmail",
+  "description": "Overview\nMeet Maria, a sophisticated AI Booking Agent designed for Veterinary Clinics (but easily adaptable to any service business). This workflow transforms a simple chat interface into a full-scale administrative assistant that handles client lookups, lead generation, and scheduling without human intervention.\n\nKey Features\nIntelligent CRM Lookup: Automatically checks Google Sheets to see if a customer is a \"New\" or \"Existing\" client.\n\nAutomated Lead Capture: If the client doesn't exist, the agent collects their details and creates a new entry in real-time.\n\nFull Calendar Management: Maria can Get, Create, Reschedule, and Delete appointments directly in Google Calendar.\n\nSmart Escalation: Uses a \"Human-in-the-loop\" logic; if a query is medical or complex, Maria triggers a Gmail notification to alert the professional staff.\n\nDual-Model Reliability: Powered by OpenRouter, utilizing GPT-4o for complex reasoning with built-in fallback support.\n\nHow it works\nNormalization: Incoming phone numbers are cleaned to ensure database consistency.\n\nThe Brain: The AI Agent uses a Window Buffer Memory to maintain context throughout the conversation.\n\nTooling: Maria is equipped with custom tools for Google Sheets (Database), Google Calendar (Booking), and Gmail (Escalation).\n\nConfirmation: No appointment is finalized until the agent confirms the date and time with the user in natural language.\n\nSetup Instructions\nCredentials: Connect your Google Sheets, Calendar, and Gmail accounts.\n\nAPI: Add your OpenRouter API key to the AI Agent node.\n\nSheet ID: Update the Google Sheets nodes to point to your specific Spreadsheet.\n\nTimezone: Ensure your n8n Workflow settings match your local clinic's timezone.",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

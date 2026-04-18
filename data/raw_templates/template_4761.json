@@ -1,0 +1,14 @@
+{
+  "id": 4761,
+  "name": "AI-Powered Interview Preparation System using Local LLM for Campus Placements",
+  "description": "Overview\nAn AI-powered, end-to-end interview preparation and mentoring automation system for campus placements. It enables placement cells to generate hyper-personalized 4-page interview preparation PDFs for shortlisted students, by combining job descriptions (JDs), candidate data, and LLMs via LangChain and Ollama.\n\nNote: This template requires self-hosted n8n to run community nodes like LangChain and Ollama.\n\nWhat This Workflow Does\nAccepts a CSV of shortlisted students and a JD via form upload\n\nAnalyzes student profile vs JD using Ollama LLM via LangChain\n\nGenerates personalized interview preparation PDFs\n\nSends the PDF to each student via email\n\nLogs all data in Google Sheets and prevents duplicate processing\n\nWorkflow Preview\n📷 Please add a workflow screenshot here showing the main nodes and flow\n\nStep-by-Step Flow\n1. Form Submission\nCSV of shortlisted students + JD + company name is submitted via HTTP Request form trigger.\n\n2. Data Parsing and Google Sheet Logging\nCSV parsed → structured rows added to Google Sheet named with company + batch.\n\n3. Candidate Filtering\nOnly students with N8N_Agent = Not Generated are selected to avoid reprocessing.\n\n4. AI-Powered Report Generation\nLangChain agent (via Ollama + Gemini Search Tool) generates a 4-page Markdown report:\n\nPage 1: Profile Summary, Skill Gap Analysis, Company Insights\n\nPage 2: 15–20 Personalized Interview Questions\n\nPage 3: 5 Group Discussion Topics + Strategy\n\nPage 4: Custom Preparation Plan + Suggested Resources\n\n5. PDF Creation\nMarkdown → Stylish PDF via APITemplate.io\n\n6. Email Delivery\nEach student receives a personalized email with the attached report.\n\n7. Google Sheet Status Update\nMarks the student’s row as “Generated” in N8N_Agent column.\n\nPrerequisites\nSelf-hosted n8n with Community Nodes enabled\n\nLocal or Docker-hosted Ollama with LLaMA3.2 or equivalent model\n\nActivated LangChain and Gemini Search Tool nodes\n\nAPITemplate.io API Key\n\nConnected Google Sheets account\n\nSMTP setup or Gmail node for email delivery\n\nCustomization Tips\nReplace the LLM prompt in the LangChain node with your own tone/style\n\nModify the PDF template on APITemplate.io to reflect your institution branding\n\nUpdate the email copy for formal or informal tones\n\nAdd new filters (e.g., minimum CGPA, branch) for student selection\n\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.apiTemplateIo",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOllama"
+  ],
+  "tags": []
+}

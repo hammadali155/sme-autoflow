@@ -1,0 +1,13 @@
+{
+  "id": 2534,
+  "name": "Telegram AI bot assistant: ready-made template for voice & text messages",
+  "description": "Free template for voice & text messages with short-term memory \n \nThis n8n workflow template is a blueprint for an AI Telegram bot that processes both voice and text messages. Ready to use with minimal setup. \n \nThe bot remembers the last several messages (10 by default), understands commands and provides responses in HTML. \n \nYou can easily swap GPT-4 and Whisper for other language and speech-to-text models to suit your needs. \nCore Features \n   Text: send or forward messages \n   Voice: transcription via Whisper \n \nExtend this template by adding LangChain tools. \nRequirements \nTelegram Bot API \nOpenAI API (for GPT-4 and Whisper) \n \n💡 New to Telegram bots? Check our step-by-step guide on creating your first bot and setting up OpenAI access. \nUse Cases \nPersonal AI assistant \nCustomer support automation \nKnowledge base interface \nIntegration hub for services that you use: \n  Connect to any API via HTTP Request Tool \n  Trigger other n8n workflows with Workflow Tool",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

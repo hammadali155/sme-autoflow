@@ -1,0 +1,10 @@
+{
+  "id": 14745,
+  "name": "Keep Supabase free plan projects alive with scheduled database pings",
+  "description": "Supabase Free Plan Keep-Alive\n\nPrevents Supabase from pausing an inactive project by writing randomised pings to a database table on a recurring schedule.\n\nOverview\n\nThe workflow runs every 4 days and performs 25 sequential database writes to the ping table in Supabase. Each write is separated by a random delay between 20 and 60 seconds to simulate organic activity rather than a mechanical burst.\n\nNodes\n\nSchedule Trigger\nFires every 4 days automatically. A manual trigger is also included for testing.\n\nCode – Generate Items\nCreates an array of 25 identical items to drive the loop.\n\nLoop Over Items\nProcesses one item per iteration until all 25 are complete.\n\nCode – Random Wait\nAssigns a random integer between 20 and 60 seconds to each item before the wait step.\n\nWait\nPauses execution for the duration assigned in the previous step.\n\nCreate a Row\nInserts a row into the ping table in Supabase with the current timestamp as created_at.\n\nSetup\n\nCreate a ping table in your Supabase project with a created_at column (timestamptz).\nAdd your Supabase credentials to the Create a Row node.\nActivate the workflow to enable the schedule.\n\nCustomization\n\nChange the trigger interval in Schedule Trigger if 4 days does not match your project's inactivity threshold.\nAdjust the item count in the first code node to write more or fewer rows per run.\nModify the random range (currently 20–60 s) in the second code node to change the spacing between writes.",
+  "nodes": [
+    "n8n-nodes-base.supabase",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

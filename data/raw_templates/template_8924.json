@@ -1,0 +1,20 @@
+{
+  "id": 8924,
+  "name": "Multi-Agent Salon Appointment Management with Telegram, GPT5-mini & Claude MCP",
+  "description": "🤖 Multi-Agent AI Telegram Bot for Service Businesses\n\nTransform your salon/service business with this streamlined Telegram automation system featuring Claude integration, zero-setup database management, and intelligent conversation handling.\n\nHow It Works\n\nCore Architecture\nClaude MCP Integration** - Direct connection to Claude Sonnet 4 via Model Context Protocol\nStreamlined 2-Agent System** - Booking Agent and Admin Agent (simplified from 5 for better reliability)\nGPT-5 Mini Primary** with Gemini 2.5 Flash backup for cost-effective processing\nMulti-Media Support** - Handles text, voice (Whisper transcription), images, and PDFs with cost extraction\nSmart Acknowledgments** - \"One moment…\", \"Let me check availability…\" during processing\nRate Limiting & Spam Protection** - Configurable limits (default: 100 msg/hour) with professional UX\n\nZero-Setup Database Management\n\nAutonomous Airtable Creation** - Bot creates all necessary tables automatically\nComplete CRUD Operations** - Create, edit, delete services and settings via Telegram\nDynamic Business Configuration** - Modify hours, pricing, services conversationally\nFriend Booking Support** - \"Book for my friend Sarah\" functionality\n\nSetup Steps\n\nTelegram Business API setup (detailed instructions included)\nAirtable Base ID extraction (store in Redis or hardcode - recommended)\nGoogle Calendar integration for scheduling\nRedis for caching, rate limiting, and conversation memory\nMCP Server deployment for Claude integration\nTelegram for notifications\n\nKey Features\n\nBooking Management\nBooking Limit Control** - Default 6 appointments per customer (configurable in workflow)\nService Name Matching** - GPT-5 Nano workflow for cost-optimized service recognition\n24-Hour Advance Reminders** - Automatic Telegram reminders sent at 8 PM\n\nConversation Handling\nConversation Memory** maintains context across interactions\nError Resilience** with backup models and graceful failure handling\n\nUse Cases\n\nPerfect for:\nSalons\nSpas\nClinics\nConsulting services\nAny appointment-based business\n\nComplete business setup happens through conversational commands - no manual database configuration required.\n\nTransform your service business with intelligent automation powered by AI and Telegram integration.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.redis",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryRedisChat",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.mcpClientTool",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

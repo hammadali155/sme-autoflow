@@ -1,0 +1,11 @@
+{
+  "id": 10898,
+  "name": "Web Security Scanner for OWASP Compliance with Markdown Reports",
+  "description": "How the n8n OWASP Scanner Works & How to Set It Up\n\nHow It Works (Simple Flow):\nInput**: Enter target URL + endpoint (e.g., https://example.com, /login)\nScan**: This workflow executes 5 parallel HTTP tests (Headers, Cookies, CORS, HTTPS, Methods)\nAnalyze**: Pure JS logic checks OWASP ASVS (Application Security Verification Standard) rules (no external tools)\nMerge**: Combines all findings into one Markdown report\nOutput: Auto-generates + downloads scan-2025-11-16_210900.md (example filename)\nEmail:** (Optional) Forward the report to an email address using Gmail.\n\nSetup in 3 Steps (2 Minutes)\n\nImport Workflow\n   Copy the full JSON (from \"Export Final Workflow\")\n   In n8n → Workflows → Import from JSON → Paste → Import\n\n(Optional) Connect your Gmail credentials\n   In the last node to auto-email the report\n\nClick Execute the workflow \n   Enter a URL in the new window, then click 'submit'.\n\nYou can alternatively download or receive the Markdown report directly from the Markdown to File node \n\n(Supports any HTTP/HTTPS endpoint. Works in n8n Cloud or self-hosted.)",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

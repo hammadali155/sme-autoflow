@@ -1,0 +1,13 @@
+{
+  "id": 13232,
+  "name": "Generate AI sales proposals using Anthropic Claude, PDF Noodle and your CRM",
+  "description": "What This Workflow Does\n\nTriggers via webhook connected to your CRM\nMaps all the fields needed for the proposal\nTransforms customer data and transcription into a formatted output using an AI Agent\nGenerates a custom PDF proposal using PDF Noodle\nSends the proposal via email (you can change this to send using other formats as well)\n\nSetup Guide\n\nCreate a pdf noodle account and use AI to create a custom proposal for your brand.\nConnect your CRM webhook and Gmail (with OAuth2 permissions) to n8n\nConfigure the AI Agent with your preferred model (OpenAI, Anthropic, Google, or Ollama)\n\nRequirements\n\nPDF Noodle** access: Create here\nAI API access** (e.g. via OpenAI, Anthropic, Google, or Ollama)\nGoogle OAuth2** connected (with Gmail permission): Documentation\n\nFeel free to contact me via LinkedIn if you have any questions! 👋🏻",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

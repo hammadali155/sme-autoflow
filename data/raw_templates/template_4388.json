@@ -1,0 +1,12 @@
+{
+  "id": 4388,
+  "name": "Smart Knowledge Base with Google Docs, Discord & GPT-4o-mini",
+  "description": "Need help? Want access to this workflow + many more paid workflows + live Q&A sessions with a top verified n8n creator?\n\nJoin the community\n\n🧠 MCP Memory Core: AI-Powered Knowledge Base\nStore, retrieve, and act on organizational memories using Google Docs + Discord. Part of the MCP ecosystem.\n\nAdvanced toolchain with multi-platform integration\n\n🔍 What It Does\n\n    📚 Save Memories: Log conversations, decisions, or code snippets to a Google Doc (timestamped).\n\n    🔍 Retrieve Memories: Fetch past context for AI agents or workflows.\n\n    📤 Auto-Send Updates: Push memories to Discord channels/DMs via GPT-4o-mini formatting.\n\n    🤖 MCP-Compatible: Works with your existing GitHub/Discord MCP workflows.\n\n🚀 Key Features\n\n    🌐 Multi-Trigger: Use via:\n\n        save_memory / retrieve_memory API routes.\n\n        Discord mentions via MCP Server integration.\n\n    🔐 Secure Storage: Memories live in your Google Docs (no third-party DB).\n\n    🧩 Modular Design: Swap Google Docs for Notion/Airtable with minimal changes.\n\n    🤖 AI Cleanup: GPT-4o-mini reformats raw data into Discord-friendly messages.\n\n⚙️ Use Cases\n\n    Team Knowledge Base: Archive meeting notes accessible via Discord commands.\n\n    AI Context Window: Give bots long-term memory for better issue resolution.\n\n    Audit Trail: Track project decisions with timestamps.\n\n🛠️ Setup Guide\n\n    📝 Configure Google Docs:\n\n        In \"Edit Fields\", set sheet_id to your Google Doc URL.\n\n    🤖 Discord Permissions:\n\n        Update discord_server_id, discord_channel_id, and discord_user_id.\n\n    🔗 Link to MCP:\n\n        Use the MCP Server Trigger node to connect to existing workflows.\n\n    🧠 Customize AI:\n\n        Tweak the AI Agent prompt for different formatting styles.\n\nWorks great with the $1 GitHub MCP Server template!",
+  "nodes": [
+    "n8n-nodes-base.googleDocs",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

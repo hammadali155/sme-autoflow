@@ -1,0 +1,10 @@
+{
+  "id": 5684,
+  "name": "Track WhatsApp Group Message Activity with Airtable Database",
+  "description": "This n8n workflow tracks user engagement in a specific WhatsApp group by capturing incoming messages via a Whapi webhook. \n\nIt first filters messages to ensure they come from the correct group, then identifies the message type—text, emoji reaction, voice, or image. The workflow searches for the user in an Airtable database using their WhatsApp ID and increments their message count by one. It updates the Airtable record with the new count and the date of the last interaction. \n\nThis automated process helps measure user activity and supports engagement initiatives like weekly raffles or rewards. The system is flexible and can be expanded to include more message types or additional actions. \n\nOverall, it provides a seamless way to encourage and track user participation in your WhatsApp community.\n\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

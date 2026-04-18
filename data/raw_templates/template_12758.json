@@ -1,0 +1,15 @@
+{
+  "id": 12758,
+  "name": "Analyze meeting sentiment with Azure OpenAI and save insights to Google Sheets",
+  "description": "📊 Description\nThis workflow analyzes meeting transcripts using AI to understand team sentiment, engagement, and morale.\nThe results are saved in Google Sheets for easy tracking and review.\nIt receives meeting data through a webhook, validates the input, sends the transcript to AI for analysis, cleans the output, and stores the insights in a structured format. This helps teams track morale over time and spot risks early.\n\n🔁 What This Template Does\nReceives meeting transcript data through a webhook.\nChecks that all required fields are present.\nSends the transcript to AI for analysis.\nIdentifies sentiment, engagement, emotional tone, and morale risk.\nCleans and structures the AI response.\nAdds a timestamp for when the analysis was done.\nLooks for an existing record in Google Sheets using the meeting ID.\nUpdates the row if the meeting already exists.\nCreates a new row if the meeting is new.\nSends a response back to the webhook caller.\n\n⭐ Key Benefits\nRemoves the need for manual sentiment review\nGives consistent and structured meeting insights\nHelps detect morale and engagement risks early\nAvoids duplicate records using meeting ID\nKeeps all sentiment data in one place\nWorks with any system that can send webhooks\n\n🧩 Features\nWebhook-based meeting data input\nAI-powered sentiment and engagement analysis\nClear extraction of morale and risk signals\nClean and predictable output structure\nGoogle Sheets create or update logic\nSafe retry handling using meeting ID\nWebhook response after completion\nProduction-ready workflow design\n\n🔐 Requirements\nA webhook source that can send meeting data\nAzure OpenAI credentials or a compatible AI model\nGoogle Sheets OAuth credentials\nA Google Sheet with required columns\nAn AI prompt for meeting sentiment analysis\n\n🎯 Target Audience\nEngineering and product teams\nHR and people operations teams\nProject and delivery managers\nLeadership teams tracking team health\nn8n automation builders\nOrganizations monitoring meeting effectiveness\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

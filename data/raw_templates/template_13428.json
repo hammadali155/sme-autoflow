@@ -1,0 +1,14 @@
+{
+  "id": 13428,
+  "name": "Analyze workforce data and generate planning reports with GPT-4o",
+  "description": "How It Works\nThis workflow automates workforce intelligence analysis and strategic planning for HR directors, workforce planners, and operations managers in enterprises managing distributed teams. It solves the challenge of transforming raw workforce data into actionable insights while maintaining human oversight on critical staffing decisions. Weekly triggers initiate the analysis cycle, generating synthetic workforce metrics that flow through specialized AI agents operating in parallel: workforce intelligence assessment, cognitive forecasting for demand prediction, attrition risk calculation, and intelligence analysis for pattern detection. A planning optimization agent synthesizes findings into mobility recommendations and scenario projections. Results route through human approval for critical workforce changes before generating final reports with strategic recommendations.\n\nSetup Steps\nConfigure API credentials with Llama-3.1-70B-Instruct model access\nSet up weekly schedule trigger for Monday morning analysis runs\nConfigure human approval node with workforce planning lead email address\nCustomize AI agent prompts for organization-specific workforce metrics and KPIs\nSet up final report distribution to stakeholders\n\nPrerequisites\nAPI key, HR data access (anonymized employee metrics) \nUse Cases\nStrategic workforce planning, seasonal staffing optimization\nCustomization\nIntegrate HRIS systems for live data, add department-specific forecasting models\nBenefits\nReduces planning cycle time by 70%, provides predictive insights for proactive decisions",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 8862,
+  "name": "Product Review Analysis with BrowserAct & Gemini-Powered Recommendations",
+  "description": "Product Review Analysis with BrowserAct & Gemini-Powered Recommendations.\n\nThis n8n template demonstrates how to perform product review sentiment analysis and generate improvement recommendations using an AI Agent.\n\nThis workflow is perfect for e-commerce store owners, product managers, or marketing teams who want to automate the process of collecting feedback and turning it into actionable insights.\n\nHow it works\nThe workflow is triggered manually.\nAn HTTP Request node initiates a web scraping task with the BrowserAct API to collect product reviews.\nA series of If and Wait nodes are used to check the status of the scraping task. If the task is not yet complete, the workflow pauses and retries until it receives the full dataset.\nAn AI Agent node, powered by Google Gemini, then processes the scraped review summaries. It analyzes the sentiment of each review and generates actionable improvement recommendations.\nFinally, the workflow sends these detailed recommendations via a Telegram message and an Email to the relevant stakeholders.\n\nRequirements\nBrowserAct** API account for web scraping\nBrowserAct* \"Product Review Sentiment Analysis*\" Template\nGemini** account for the AI Agent\nTelegram* and *SMTP** credentials for sending messages\n\nNeed Help ?\nHow to Find Your BrowseAct API Key & Workflow ID\nHow to Connect n8n to Browseract\nHow to Use & Customize BrowserAct Templates\nWorkflow Guidance and Showcase\n\nHow to INSTANTLY Get Product Improvement Ideas from Amazon Reviews | BrowserAct + n8n + Gemini",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

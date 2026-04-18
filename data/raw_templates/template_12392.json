@@ -1,0 +1,12 @@
+{
+  "id": 12392,
+  "name": "Create YouTube videos with OpenAI scripts, ElevenLabs voice, Pixabay and Shotstack",
+  "description": "Complete YouTube video automation workflow that creates ready-to-upload videos from start to finish. No manual editing required.\n\nHow it works:\nThis n8n automation fetches stock videos from Pixabay, generates AI-powered voiceover scripts with OpenAI, creates professional narration using ElevenLabs text-to-speech, merges all clips with beautiful transitions using Shotstack rendering, and automatically uploads your finished video to Google Drive.\n\nWhat you'll achieve:\nCreate 5-10 minute videos automatically\nGenerate unlimited faceless YouTube content\nSave hours of manual video editing\nBuild a consistent content pipeline\nScale your YouTube channel effortlessly\n\nRequirements:\nPixabay API (free tier available)\nElevenLabs API (text-to-speech)\nShotstack API (video rendering)\nOpenAI API (script generation)\nGoogle Drive API credentials\n\nPerfect for content creators, YouTube automation, educational channels, social media marketers, and faceless channel owners.\n\n📧 Questions? Need customization? Connect with me on LinkedIn: Click here\n\n👀 Check out my other automation workflows on my n8n creator profile for more productivity tools!",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.openAi"
+  ],
+  "tags": []
+}

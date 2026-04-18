@@ -1,0 +1,11 @@
+{
+  "id": 4472,
+  "name": "AI-Powered Loom Video Q&A with Gemini-2.5 and Slack Notifications",
+  "description": "How to use the workflow\nThis workflow takes a Loom link, extracts the video ID, uses the Loom API to download the video, then sends it to Gemini along with your question. Finally, it sends the output to Slack. \n\nTo use it, you just need to add your own API key for Gemini and Slack connection. \n\nClick the link above to get your Gemini API key, then add a generic \"Query auth\" type credential in n8n. The name will be \"key\" and the value will be your API key.\n\nOne way to customize this workflow would be to make the trigger any received email, extract the Loom link, and run an auto-prompt like \"Describe this video in detail\". ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

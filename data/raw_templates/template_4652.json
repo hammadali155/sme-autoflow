@@ -1,0 +1,16 @@
+{
+  "id": 4652,
+  "name": "AI Agent Creates Content to Be Picked by ChatGPT, Gemini, Google",
+  "description": "🧠 Who is this for?\nMarketing teams, content creators, solopreneurs, and agencies who want to generate emotionally-resonant, SEO-optimized content tailored to audience psychology and buyer journey stages — and get picked up by AI discovery engines like ChatGPT, Gemini, and Perplexity.\n\nHow it works: \n✅ Decodes why people buy (using buyer psychology)\n✅ Creates SEO + emotionally resonant content for 4 formats:\n→ Blog Posts, Newsletters, Landing Pages, Social Media\n✅ Structures the content to be picked up by ChatGPT, Gemini, Perplexity & Google\n✅ Automatically routes it to Google Sheets, Gmail, or even WordPress\n\nThis isn’t just about writing better content — it’s about getting seen by the tools that shape the internet.\n\nHow long does it take to set-up: 30 Mins ",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.mailgun",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.linkedIn",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.textClassifier"
+  ],
+  "tags": []
+}

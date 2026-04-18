@@ -1,0 +1,13 @@
+{
+  "id": 12043,
+  "name": "Schedule interviews and send GPT-4 reminders with Google Calendar, Gmail, Slack and Recrutei",
+  "description": "Overview: AI-Powered Interview Scheduling & Reminders\n\nThis workflow automates the end-to-end process of scheduling technical or behavioral interviews. It captures interview data via Webhook, creates a Google Calendar event with an integrated Google Meet link, generates a personalized, professional reminder email using AI (GPT-4.1-mini), and automatically sends it via Gmail exactly 24 hours before the interview.\n\nSetup Instructions\n\nTo implement this workflow, follow these steps:\n\nWebhook: Copy the Production URL and configure it in your Recrutei ATS to send interview JSON data.\nGoogle Calendar: Connect your account. The node is pre-configured to generate a \"hangoutsMeet\" conference link.\nOpenAI: Requires a valid API Key. The AI acts as a Recruitment Assistant to draft a professional email body.\nWait Node: Currently set to \"1 day before\" the interview. You can adjust this timing based on your communication policy.\nGmail: Connect your recruiter or company account to perform the final delivery.\nRecrutei's API: Inserts your Recrutei token in the Authorization header.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

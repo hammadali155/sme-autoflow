@@ -1,0 +1,12 @@
+{
+  "id": 5662,
+  "name": "Transform Voice Memos into Daily Journals & Tasks with OMI.ME & Gemini AI",
+  "description": "Who’s it for\n\nThis template is perfect for OMI pendant users or anyone with AI-generated memory transcripts who want to:\n\nAutomatically create daily journals in Markdown\nExtract actionable tasks from conversations\nStore memories in Google Drive\nSync action items to Google Tasks\n\nGreat for creators, ADHD professionals, techies, or productivity hackers who want to build a second brain workflow with no manual data entry.\n\nWhat it does / How it works\n\nThis workflow:\n\nAccepts POST data from the OMI AI pendant (via webhook)\nExtracts structured summaries, tasks, events, and raw transcript data\nConverts the transcript into Markdown using metadata like emoji, category, and overview\nUses Google Gemini or an AI Agent to generate a high-quality journal entry\nSplits out action items and creates tasks in Google Tasks\nUploads both the transcription and the final journal file into separate Google Drive folders for archival\nDeletes processed files if needed (cleanup path is included)\n\nHow to set up\n\nConnect your OMI device to send daily summaries to the webhook endpoint\nAuthenticate your Google Drive and Google Tasks accounts\nReplace any hardcoded values (like folder IDs or task list IDs) with your own\nReview the system prompt in the AI Agent node if you'd like to personalize your journal style\n\n## Requirements\n\nOMI pendant or device that generates .md summaries via API or webhook\nGoogle Drive & Google Tasks credentials set up in n8n\nOptional: Google Gemini or OpenAI for natural language journal generation\n\n## How to customize\n\nChange the output folder IDs for GDrive in the Upload Transcription and Upload Journal nodes. One folder is for long term storage and the other is short term, the contents of which are deleted every night to generate the journal entries. Ensure your workflow timezone is set correctly in the settings. \nReplace Google Tasks with another todo app (e.g. Notion, Todoist) using HTTP or native nodes\nCustomize the AI prompt in the AI Agent or Gemini Chat node to reflect your tone (e.g., poetic, minimalist, spiritual)\nModify the Markdown format in the Build Markdown Transcription node for your preferred structure\n",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.googleTasks",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

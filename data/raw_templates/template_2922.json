@@ -1,0 +1,12 @@
+{
+  "id": 2922,
+  "name": "Detect hallucinations using specialised Ollama model bespoke-minicheck",
+  "description": "Fact-Checking Workflow Documentation\n\nOverview\nThis workflow is designed for automated fact-checking of texts. It uses AI models to compare a given text with a list of facts and identify potential discrepancies or hallucinations.\n\nComponents\n\n1. Input\nThe workflow can be initiated in two ways:\n  a) Manually via the \"When clicking 'Test workflow'\" trigger\n  b) By calling from another workflow via the \"When Executed by Another Workflow\" trigger\nRequired inputs: \n  facts: A list of verified facts\n  text: The text to be checked\n\n2. Text Preparation\nThe \"Code\" node splits the input text into individual sentences\nTakes into account date specifications and list elements\n\n3. Fact Checking\nEach sentence is individually compared with the given facts\nUses the \"bespoke-minicheck\" Ollama model for verification\nThe model responds with \"Yes\" or \"No\" for each sentence\n\n4. Filtering and Aggregation\nSentences marked as \"No\" (not fact-based) are filtered\nThe filtered results are aggregated\n\n5. Summary\nA larger language model (Qwen2.5) creates a summary of the results\nThe summary contains:\n  Number of incorrect factual statements\n  List of incorrect statements\n  Final assessment of the article's accuracy\n\nUsage\nEnsure the \"bespoke-minicheck\" model is installed in Ollama (ollama pull bespoke-minicheck)\nPrepare a list of verified facts\nEnter the text to be checked\nStart the workflow\nThe results are output as a structured summary\n\nNotes\nThe workflow ignores small talk and focuses on verifiable factual statements\nAccuracy depends on the quality of the provided facts and the performance of the AI models\n\nCustomization Options\nThe summarization function can be adjusted or removed to return only the raw data of the issues found\nThe AI models used can be exchanged if needed\n\nThis workflow provides an efficient method for automated fact-checking and can be easily integrated into larger systems or editorial workflows.",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOllama",
+    "@n8n/n8n-nodes-langchain.lmOllama"
+  ],
+  "tags": []
+}

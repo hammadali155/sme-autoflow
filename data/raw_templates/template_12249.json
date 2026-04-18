@@ -1,0 +1,15 @@
+{
+  "id": 12249,
+  "name": "Send crypto BUY/SELL alerts for top 5 coins with OpenAI, WhatsApp, Telegram, and email",
+  "description": "Overview\n\nThis workflow is designed to monitor the Top 5 cryptocurrencies in real-time, calculate trading signals (BUY, SELL, HOLD), and send human-readable alerts through multiple channels. It integrates data fetching, signal processing, AI-generated insights, and multi-channel notifications to provide a professional-grade crypto monitoring solution.\n\nSetup\n\nSchedule the trigger\nFetch real-time coin data (CoinGecko, Binance API)\nFilter only required fields\nCheck each data from loop\nAdd the logic for minimum percentage comparison\nUse AI for analysis enhanced insights\nSend the notification only if signal is 'SELL' or  'BUY'\n\nKey Features\n\nReal-Time Crypto Monitoring: Continuously evaluates the top 5 cryptocurrencies for trading signals.\nDynamic Signal Calculation: Generates BUY, SELL, HOLD signals based on 24h price change.\nIf price changed below or above 2% the dynamic signal will assign to dedicated coin.\nSignal Change Alerts: Sends notifications only when meaningful changes occur.\nHuman-Readable Messaging: Converts numeric signals into readable alerts.\nAI Insights: Provides explanations or trading advice via OpenAI.\nMulti-Channel Delivery: Supports WhatsApp, Telegram, and Email.\nLooped Processing: Each coin is processed independently for accurate alerting.\nWait / Delay Node: Prevents API rate limit issues and controls alert flow.\nRequirements\n\nOpenAI API\nWhatsApp API\nTelegram API\nSMTP Credentials or Gmail Credentials.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.whatsApp",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

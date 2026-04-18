@@ -1,0 +1,12 @@
+{
+  "id": 4383,
+  "name": "Remote Job Updates Pipeline with RemoteOK, Airtable, and Telegram",
+  "description": "🚀 Remote Job Automation Workflow\nAutomatically fetch, clean, and broadcast the latest remote job listings — powered by RemoteOK, Airtable, and Telegram.\n\n🔧 Key Features\nSeamless Data Fetching:\nPulls the latest job listings from the RemoteOK API using an HTTP Request node.\n\nSmart Data Processing (via Code Node):\n\nFilters out irrelevant metadata\n\nCleans and sanitizes job descriptions (e.g., HTML tags, special characters)\n\nHandles malformed or encoded text gracefully\n\nExtracts and formats salary ranges for clarity\n\nAirtable Integration (Upsert):\n\nStores each job as a unique record using job ID\n\nAvoids duplication through conditional upserts using Airtable's Personal Access Token\n\nTelegram Bot Broadcasting:\n\nAutomatically formats and sends job posts to a Telegram group or channel\n\nKeeps your community or team updated in real-time\n\n📦 Tech Stack\nRemoteOK API – source of curated remote job listings\n\nAirtable – lightweight, accessible job database\n\nTelegram Bot API – for real-time job notifications\n\nn8n – workflow automation engine to tie everything together\n\n🔁 Workflow Overview\nFetch Jobs from RemoteOK API\n\nClean & Normalize job descriptions and metadata\n\nExtract Salary ranges and standardize them\n\nUpsert to Airtable (avoiding duplicates)\n\nFormat Post for visual clarity\n\nSend to Telegram via bot integration\n\n🧠 Perfect For\nRemote job boards or aggregators\n\nRecruitment agencies/startups\n\nDevelopers building personal job feeds\n\nCommunities or channels sharing curated remote opportunities\n\nAutomating newsletters or job digests\n\n✅ Benefits\n\nNear real-time updates\n\nMinimal maintenance\n\nFull control and extensibility with n8n\n\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

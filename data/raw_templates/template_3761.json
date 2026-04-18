@@ -1,0 +1,11 @@
+{
+  "id": 3761,
+  "name": "Email Assistant: Convert Natural Language to SQL Queries with Phi4-mini and PostgreSQL",
+  "description": "Who is this for?\n\n🧑🏻🫱🏻‍🫲🏻🤖 Humans and Robots alike.\n\nThis workflow can be used as a Chat Trigger, as well as a Workflow Trigger.\n\nIt will take a natural language request, and then generate a SQL query. The resulting query parameter will contain the query, and a sqloutput parameter will contain the results of executing such query.\n\nWhat's the use case?\n\nThis template is most useful paired with other workflows that extract e-mail information and store it in a structured Postgres table, and use LLMs to understand inquiries about information contained in an e-mail inbox and formulate questions that needs answering.\n\nPlus, the prompt can be easily adapted to formulate SQL queries over any kind of structured database.\n\nPrivacy and Economics\n\nAs LLM provider I'm using Ollama locally, as I consider my e-mail extremely sensitive information. As model, phi4-mini does an excellent job balancing quality and efficiency.\n\nSetup\n\nUpon running for the first time, this workflow will automatically trigger a sub-section to read all tables and extract their schema into a local file.\n\nThen, either by chatting with the workflow in n8n's interface or by using it as a sub-workflow, you will get a query and a sqloutput response.\n\nCustomizations\n\nIf you want to work with just one particular table yet keep edits at bay, append a condition to the List all tables in a database step, like so:\n\nWHERE table_schema='public' AND table_name='my_emails_table_name'\n\nTo repurpose this workflow to work with any other data corpus in a structured database, inspect the AI Agent user and system prompts and edit them accordingly.\n",
+  "nodes": [
+    "n8n-nodes-base.postgres",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOllama"
+  ],
+  "tags": []
+}

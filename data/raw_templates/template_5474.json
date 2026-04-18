@@ -1,0 +1,16 @@
+{
+  "id": 5474,
+  "name": "Airline Web Check-in Data Extraction with Ollama AI, Google Sheets & Postgres Vector DB",
+  "description": "Overview\n\nThis workflow retrieves airline web check-in URLs from Google Sheets, scrapes their content, employs an LLM to generate structured JSON data, refreshes the sheet, creates embeddings, and saves them in a Postgres vector DB for future semantic searches or question-answering.\n\nQuick Notes\n\nVerify that Google Sheets has accurate URLs for scraping.  \nEnsure the Postgres vector DB is set up correctly for embedding storage.\n\nProcess Flow\n\nStart the workflow with the Chat Trigger - Start node.  \nRetrieve airline check-in URLs using the Fetch Airline URLs node.  \nScrape webpage data with the Scrape Airline Webpage node.  \nExtract JSON data using the Extract info with LLM node with a Chat Model.  \nPause for a response with the Wait for Response node.  \nUpdate Google Sheets with the Store Extracted Data node.  \nCreate embeddings with the Generate Embeddings node and store in Postgres vector DB with the Save to Vector DB node.  \nBreak down long text with the Split Long Text node and delay the next batch with the Wait Before Next Batch node.\n\nGetting Started\n\nImport the workflow into n8n and set up Google Sheets and Postgres vector DB credentials.  \nRun a test with a sample URL to confirm scraping and embedding storage.\n\nTailored Adjustments\n\nTweak the Extract info with LLM node to adjust JSON output or modify the Fetch Airline URLs node to pull from different sheet fields.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOllama",
+    "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.embeddingsOllama",
+    "@n8n/n8n-nodes-langchain.vectorStorePGVector"
+  ],
+  "tags": []
+}

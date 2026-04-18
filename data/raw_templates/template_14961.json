@@ -1,0 +1,12 @@
+{
+  "id": 14961,
+  "name": "Generate trending X, Facebook, and Threads posts with Apify, Gemini, and Buffer",
+  "description": "🚀 Overview\n\nThis workflow automatically discovers trending topics, generates engaging social media content using AI, and publishes posts to X (Twitter) and Facebook via Buffer.\n\nIt combines trend monitoring + AI content generation + automated publishing into one seamless pipeline, helping creators and marketers stay consistent and relevant without manual effort.\n\n🎯 Who is this for\nContent creators & social media managers\nAgencies managing multiple accounts\nDevelopers building AI-powered automation systems\nAnyone who wants to post consistently on trending topics\n\n⚙️ What this workflow does\nFetches trending topics (e.g., from X or external sources)\nFilters and formats relevant trends\nUses Google Gemini to generate:\nX (Twitter) tweets\nFacebook posts\nThread posts\nFormats content for each platform\nPublishes posts automatically via Buffer API\n\n✨ Key Features\nFully automated content pipeline\nMulti-platform posting (X + Facebook + Thread)\nAI-generated threads + captions\nEasily customizable prompts and filters\nScalable for multiple niches or accounts\n\n🔧 Setup Instructions\nCredentials required\nGoogle Gemini API key\nApify API key\nBuffer API access token\n\nConfiguration steps\nAdd your API credentials to the respective nodes\nCustomize the prompt templates for your niche\nDefine your preferred trend source or keywords\nSet posting frequency (via Cron or trigger node)\n\nOptional customization\nAdd moderation/approval step before posting\nFilter trends by region, hashtags, or keywords\nAdjust tone (professional, funny, viral, etc.) and language\n\n🧠 How it works (high-level)\n\nThe workflow monitors trending data, processes it into structured input, and feeds it into AI models to generate platform-specific content. The output is then formatted and sent to Buffer for scheduled or immediate publishing.\n\n⚠️ Notes & Limitations\nAI-generated content may require review for accuracy\nRate limits may apply depending on APIs used\nEnsure Buffer supports your connected accounts\nTrending data source reliability may vary",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.googleGemini",
+    "@n8n/n8n-nodes-langchain.mcpClient"
+  ],
+  "tags": []
+}

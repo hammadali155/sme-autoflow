@@ -1,0 +1,14 @@
+{
+  "id": 13335,
+  "name": "Analyze public consultation data and coordinate governance with Claude AI",
+  "description": "\nHow It Works\nThis workflow automates environmental, social, and governance (ESG) data collection, compliance validation, and sustainability reporting for corporations managing complex regulatory requirements and stakeholder transparency expectations. Designed for sustainability officers, compliance teams, and investor relations departments, it solves the challenge of aggregating ESG metrics across global operations, validating data accuracy, and generating standardized reports for multiple frameworks. The system schedules regular monitoring, fetches consolidated ESG data from operational systems, generates S&D (sustainability and disclosure) submissions, validates compliance through dual AI agents (Compliance Analyzer ensures regulatory adherence, Decision Coordination orchestrates specialized sub-agents for aggregate analysis, traceability monitoring, summary generation, and governance reporting), checks star ratings for data quality, routes findings by compliance status (critical/routine), and produces standardized reports with traceability records. Organizations achieve 90% reduction in reporting cycle time, ensure multi-framework compliance, eliminate manual data aggregation errors, and maintain complete audit trails for regulatory scrutiny.\nSetup Steps\nConnect Schedule Trigger for monitoring frequency \nConfigure ESG data sources with API credentials\nAdd AI model API keys to Compliance Analyzer and Decision Coordination Agent nodes\nDefine reporting frameworks and compliance requirements in agent prompts\nSet quality rating thresholds for data completeness and materiality scoring parameters\nConfigure alert mechanisms for critical compliance gaps requiring immediate remediation\n\nPrerequisites\nESG data management system access, AI service accounts\nUse Cases\nCarbon emissions tracking and reporting, supply chain sustainability monitoring\nCustomization\nModify agent prompts for industry-specific materiality topics\nBenefits\nReduces reporting cycle time by 90%, ensures multi-framework compliance simultaneously",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCode"
+  ],
+  "tags": []
+}

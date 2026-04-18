@@ -1,0 +1,14 @@
+{
+  "id": 11859,
+  "name": "Automate SaaS Operations with GPT-4.1-mini for User, Support & Billing Management",
+  "description": "HOW IT WORKS :\nAutomates SaaS operations by consolidating user management, AI-driven support triage, analytics, and billing into one unified system. User signups flow through registration, support requests route via OpenAI prioritization, billing events trigger confirmations, and daily analytics feed dashboards. The AI Business Logic layer orchestrates real-time decisions, enriches data, and triggers Gmail notifications. Four data streams converge into centralized routing for customer onboarding, ticket triage, metrics aggregation, and revenue automation.\nSETUP STEPS:\nAdd OpenAI API credentials for chat model routing\nAuthenticate Gmail with app password for notifications\nConnect Data Table Tool for user/support/billing storage\nConfigure workflow settings: priority thresholds and routing rules\nTest each branch with sample data to verify all integrations\n\nPREREQUISITES:\nOpenAI API key, Gmail account with app password, MCP Server access, Data Table Tool credentials \n\nUSE CASES:\nManage SaaS customer lifecycle end-to-end; Route critical support instantly \nCUSTOMIZATION:\nExtend AI prompts for different support categories; add Slack/Teams notifications \nBENEFITS:\nReduces manual overhead 70%, routes tickets 10x faster, centralizes customer data\n\n \n\n ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

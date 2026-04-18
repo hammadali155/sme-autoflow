@@ -1,0 +1,18 @@
+{
+  "id": 14437,
+  "name": "Monitor IP conflicts and governance with GPT-4o, Slack, Gmail and Sheets",
+  "description": "How It Works\nThis workflow automates intellectual property (IP) monitoring, conflict detection, and governance reporting for IP counsel, legal operations teams, and compliance officers. It eliminates the manual effort of tracking IP lifecycle events, identifying conflicting registrations, and routing compliance actions across severity levels. IP alerts arrive via webhook and scheduled monitoring triggers. Both feeds are parsed and passed to the IP Monitoring Agent, backed by a monitoring model, shared memory, a Conflict Detection Agent (with knowledge base), an IP Lifecycle Tracking Agent, and an IP Tracking Sheet Tool. Structured outputs feed the IP Governance Agent, which coordinates a Governance Agent (with memory), a Licensing Compliance Agent, and a Documentation Generation Agent. Outputs are routed by severity: analytics data is formatted and exported to Google Sheets; conflicts are prepared, shared to Slack, and routed by severity level, critical conflicts trigger Gmail alerts while medium conflicts receive Slack notifications. Governance records, compliance reports, and governance decisions are stored and distributed in parallel.\nSetup Steps\nImport workflow; configure the External IP Alert Webhook and Schedule IP Monitoring trigger interval.\nAdd AI model credentials to the IP Monitoring Agent\nConnect Slack credentials to the Share IP Conflicts and Notify Medium Conflicts nodes.\nLink Gmail credentials to the Email High Priority Conflicts and Send Compliance Report nodes.\nLink Google Sheets credentials; set sheet IDs for IP Analytics, Governance Decisions, and Compliance Report tabs.\nConfigure the IP Knowledge Base tool with your IP registry or database source.\n\nPrerequisites\nOpenAI API key (or compatible LLM)\nSlack workspace with bot credentials\nGmail account with OAuth credentials\nGoogle Sheets with IP analytics and governance tabs pre-created\nIP knowledge base or registry API access\nUse Cases\nIP counsel automating conflict detection across trademark and patent registrations\nCustomisation\nExtend severity routing to include additional tiers such as low-risk advisory notifications\nBenefits\nDual-trigger ingestion eliminates IP monitoring blind spots between scheduled and real-time events\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

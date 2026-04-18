@@ -1,0 +1,11 @@
+{
+  "id": 14673,
+  "name": "Send scheduled IELTS grammar, writing and reading practice via Telegram with Gemini AI",
+  "description": "🚀 Overview\n\nThis workflow automatically generates IELTS practice content using AI and sends it to Telegram on a schedule.\n\nIt covers three key IELTS skills:\n🧠 Grammar Practice (Monday)\n✍️ Writing Task (Wednesday)\n📘 Reading Practice (Friday)\n\nThe workflow is designed to deliver structured, clean, and readable exercises directly to your Telegram chat.\n\n⚙️ How it works\n\nThe Schedule Trigger runs the workflow on specific days\nThe \"Select Test by Day\" node determines which practice to generate\nAI generates structured IELTS content in JSON format\nThe output is parsed and formatted into readable messages\nLong messages are split into chunks\nThe content is sent to Telegram\n\n🧩 Features\n\nAI-powered IELTS content generation\nClean JSON parsing and formatting\nTelegram-ready message delivery\nAutomatic scheduling by day\nSupports multiple IELTS skills in one workflow\n\n🛠 Setup\n\nCreate a Telegram Bot via @BotFather\nCopy your Bot Token\nAdd Telegram credentials in n8n\nAdd your AI credentials (Gemini or OpenAI)\nReplace the Chat ID in the \"Send\" nodes with your own\n\n📩 Telegram Setup\n\nTo get your Chat ID:\nSend a message to your bot\nOpen:\n   https://api.telegram.org/bot&lt;TOKEN&gt;/getUpdates\nCopy the chat.id\n\n⚠️ Important Notes\n\nThis workflow uses a fixed Chat ID for scheduled messages\nMake sure to replace the Chat ID before running\nDo not hardcode sensitive credentials\nEnsure the AI output format remains consistent (JSON)\n\n💡 Customization\n\nYou can easily customize:\nTopics and difficulty level\nMessage format\nSchedule timing\nAdd new modules (e.g., Speaking, Vocabulary)\n\n🎯 Use Cases\n\nIELTS learners who want daily practice\nTeachers sharing exercises with students\nAutomated English learning systems\nAI-powered educational bots\n\n🚀 Creator Note\n\nThis workflow demonstrates how to combine AI generation, structured parsing, and messaging automation into a scalable learning system.\n\nFeel free to adapt and extend it for your own use case.",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

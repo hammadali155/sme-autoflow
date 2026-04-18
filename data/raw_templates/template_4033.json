@@ -1,0 +1,17 @@
+{
+  "id": 4033,
+  "name": "AI-Powered Blog Post Promoter for Instagram, Facebook & X with GPT",
+  "description": "AI Social Media Promoter – Automated Blog Sharing Workflow\nThis workflow is built for bloggers, creators, and marketing teams who want to automatically promote new blog content across Instagram, Facebook, and X (Twitter). Its core purpose is to detect new blog posts from your RSS feed and instantly create platform-specific social media posts — complete with AI-generated captions and visuals — to drive traffic from social media back to your blog. Everything runs on autopilot: from detecting a new article to posting eye-catching content on each platform, while logging actions to Google Sheets and sending post previews by email. The result is a consistent and professional online presence with zero manual effort.\n\nHow it works\nOnce a new blog post appears in your RSS feed, the workflow kicks in. It checks Google Sheets to ensure the post hasn’t already been published. Then it calls GPT-4 to generate unique captions for Instagram, Facebook, and X, based on the post content and your brand’s tone. Simultaneously, OpenAI's GPT-Image generates a custom visual in the right format (square, portrait, or landscape). The workflow then publishes the complete posts using the Meta Graph API (for IG/FB) and X API (Twitter). All actions are logged in a Google Sheet, and a formatted email summary with images is sent to your inbox for review.\n\nHow to set up\nTo get started, connect the required APIs: OpenAI (for text and images), ImgBB or Cloudinary (for image hosting), Meta (Instagram/Facebook), X (Twitter), Google Sheets, and Gmail. Replace placeholder values in HTTP request nodes — such as your RSS URL, API keys, or spreadsheet ID. You can personalize the prompt content with your blog name, tone of voice, and call-to-action. Once connected, the system is fully automated. You can run it manually, or schedule it to check your blog daily with a Schedule Trigger node.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

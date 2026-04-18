@@ -1,0 +1,13 @@
+{
+  "id": 12921,
+  "name": "Monitor construction execution from Google Drive photos with GPT‑4.1‑mini, Gmail and Google Sheets",
+  "description": "AI-Driven construction execution monitoring\n\nWhat This Workflow Does\n\nMonitor construction execution with AI by analyzing site photos from Google Drive and automatically generating structured Work Performance Data.\n\nThis workflow enables you to:\n\nMonitor construction progress with Google Drive and OpenAI\nGenerate engineering analysis reports with AI\nDistribute structured technical reports via Gmail\nLog Work Performance Data into Google Sheets\nArchive processed evidence in Google Drive for audit traceability\n\nHow to Use This Template\n\nUse this template to automate construction inspection and execution monitoring by combining:\n\nGoogle Drive** → Retrieve and manage site photos  \nOpenAI (GPT model)** → Perform structured engineering analysis  \nGmail** → Send technical reports to stakeholders  \nGoogle Sheets** → Store structured Work Performance Data  \nGoogle Drive (Move & Share)** → Archive and control processed files  \n\nAction-Oriented Overview\n\nYou can:\n\nRetrieve construction photos with Google Drive and filter only image files**\nAnalyze construction execution with OpenAI using a structured engineering prompt**\nGenerate a technical report covering:**\n  Stage of work  \n  Execution quality  \n  Risks and non-conformities  \n  Safety conditions  \n  Technical recommendations  \nSend the structured report via Gmail with the original image attached**\nLog execution data into Google Sheets as Work Performance Data**\nMove processed images to an archive folder in Google Drive**\n\nWhat You Achieve\n\nWith this workflow, you can:\n\nDo AI-powered construction monitoring with Google Drive and OpenAI\nDo digital quality and safety verification using image analysis\nDo automated stakeholder reporting with Gmail\nDo structured execution logging with Google Sheets\nDo governance-ready documentation and traceability with Drive archiving\n\nIdeal For\n\nConstruction managers  \nProject control teams  \nPMO environments  \nEngineering consultants  \nOrganizations aligned with PMI / PMBOK® execution practices  \n\nThis template operationalizes Manage Project Execution by transforming raw site images into structured, traceable Work Performance Data.\n\nCategories\nAI**  \nProject Management**\n\nAlignment with PMI – PMBOK® 8\nFocus Area: Executing  \nProcess: Manage Project Execution  \nArtifact Generated: Work Performance Data (WPD)",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

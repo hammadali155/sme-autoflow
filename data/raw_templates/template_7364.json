@@ -1,0 +1,9 @@
+{
+  "id": 7364,
+  "name": "Create a Self-Hosted Blockchain Payment Processor with x402 and 1Shot API",
+  "description": "This workflow contains community nodes that are only compatible with the self-hosted version of n8n.\n\nSelf-Hosted x402 Facilitator\n\nIn the x402 payment protocol, a facilitator is a role which helps sellers settle stablecoin payments onchain without dealing with blockchain complexities. This workflow allows you to run your own fully-featured, specification-compliant facilitator in n8n. You might want to do this if you want to accept payments in tokens not supported by existing facilitators or as your own business!\n\nDetails\n\nA facilitator supports three routes: /verify, /settle, and /supported. These routes are all created for you in this workflow with proper error handling and responses. \n\nA seller will first hit /verify with their payment details to ensure the payment information is correct. Next they will hit the /settle endpoint with the same payment information to settle the paymet on the blockchain. The /supported endpoint is used to indicate to sellers which blockchains you choose to support in a programatic fashion.\n\nSetup\n\nCreate a 1Shot API account\nCreate 1Shot API wallets for the networks where you wish to facilitate token payments and load them with sufficient gas tokens.\nUsing 1Shot Prompts, import the transferWithAuthorization functions for the tokens you will settle payments for.\nImport this workflow into n8n and create a credential to link the 1Shot API community node to your 1Shot API business account.\nEnter the token and network information into the payment token and network configuration nodes indicated by the sticky nodes.\nTurn on your workflow and settle payments!\n",
+  "nodes": [
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

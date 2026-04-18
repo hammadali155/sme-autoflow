@@ -1,0 +1,15 @@
+{
+  "id": 13337,
+  "name": "Monitor supply chain risks and disruptions with GPT-4o and Slack alerts",
+  "description": "How It Works\nThis workflow automates end-to-end supply chain visibility and logistics coordination for manufacturers, distributors, and retailers managing complex multi-tier supply networks. Designed for supply chain planners, logistics managers, and operations directors, it solves the challenge of tracking inventory across procurement, warehousing, and transportation while optimizing decisions for cost, speed, and risk mitigation. The system schedules regular data collection from procurement and warehouse/transportation systems, consolidates supply chain data, analyzes patterns through dual AI agents (Signal Monitoring identifies anomalies and trends, Coordination Agent orchestrates optimization decisions), routes findings by risk level (critical/marginal/acceptable), triggers action-specific responses (critical issues send Slack alerts, escalation emails, and compliance audit logs with approval workflows; acceptable conditions generate standard reports), and maintains complete traceability. Organizations achieve 50% reduction in stockouts, optimize logistics costs by 30%, enable proactive disruption management, and maintain real-time visibility across global supply networks.\n\nSetup Steps\nConnect Schedule Trigger for monitoring frequency \nConfigure procurement system APIs with order and supplier data access credentials\nLink warehouse management systems (WMS) and transportation platforms (TMS) for inventory and shipment tracking\nAdd AI model API keys to Signal Monitoring and Coordination Agent nodes\nDefine optimization parameters in agent prompts\nConfigure Slack webhooks for critical supply chain alerts to operations teams\nSet up email credentials for escalation workflows  \n\nPrerequisites\nSupply chain system API access (ERP, WMS, TMS), AI service accounts.\nUse Cases\nInventory optimization across multi-tier networks, predictive stockout prevention\nCustomization\nModify agent prompts for industry-specific constraints (perishable goods, hazmat regulations)\nBenefits\nReduces stockouts by 50% and optimizes logistics costs by 30%",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

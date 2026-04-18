@@ -1,0 +1,15 @@
+{
+  "id": 13861,
+  "name": "Send personalized SaaS welcome emails with Stripe, Pinecone, GPT-4o, and Gmail",
+  "description": "Who it's for\n\nSaaS founders and developers who want to automate their customer onboarding experience from payment to welcome email, without any manual work.\n\nHow it works\n\nA Stripe Trigger listens for successful payment events.\nThe payment amount is converted and used to identify the subscription tier.\nCustomer details are extracted from the Stripe payload.\nThe AI Agent queries Pinecone to retrieve the correct plan details and generates a personalised HTML welcome email with the renewal date calculated automatically.\nThe email is parsed and sent via Gmail.\nCustomer details and subscription info are logged to Google Sheets for renewal tracking.\n\nSet up steps\n\nConnect your Stripe account and point it to listen for checkout.session.completed events.\nStore your tier information as chunks in Pinecone.\nAdd your OpenAI credentials for the AI Agent and Embeddings nodes.\nConnect Gmail as your sending account.\nCreate a Google Sheet with columns: Name, Email, Amount, Tier, Renewal Date, Status.\n\nRequirements\n\nStripe account\nPinecone account with tier knowledge base uploaded\nOpenAI account\nGmail account\nGoogle Sheets",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone"
+  ],
+  "tags": []
+}

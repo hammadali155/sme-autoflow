@@ -1,0 +1,12 @@
+{
+  "id": 13005,
+  "name": "Sync Note.com articles to WordPress with OpenAI categorization and tags",
+  "description": "Automatically publish your Note.com articles to WordPress with intelligent category and tag assignment powered by OpenAI.\n\nWho is this for\n\nContent creators and bloggers who publish on Note.com and want to maintain a synced WordPress blog without manual copy-pasting.\n\nWhat this workflow does\n\nMonitors your Note.com RSS feed for new articles (hourly)\nFetches full article content via Note.com's API\nUses OpenAI to analyze content and assign the best category and tags\nDownloads all images (including the featured image) from Note.com\nUploads images to your WordPress media library\nReplaces all image URLs in the article content\nPublishes the post with the correct featured image\n\nSetup\n\nAdd your OpenAI API credentials\nAdd your WordPress credentials (using Application Password)\nUpdate the RSS feed URL to your Note.com profile\nCustomize the AI prompt with your WordPress category and tag IDs\n\nRequirements\n\nNote.com account with published articles\nSelf-hosted WordPress site with REST API enabled\nOpenAI API key\nWordPress Application Password\n\nCustomization\n\nEdit the system prompt in the AI node to match your WordPress taxonomy. You can also change the polling frequency and post status (draft/publish).",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

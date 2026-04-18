@@ -1,0 +1,14 @@
+{
+  "id": 13341,
+  "name": "Route revenue transactions and assess AI outputs with Anthropic Claude and OpenAI",
+  "description": "How It Works\nThis workflow automates intelligent routing of user queries to optimal AI models (Anthropic, OpenAI) based on complexity analysis, then validates outputs through multi-stage quality assessment. Designed for teams managing high-volume AI operations, it solves the critical problem of balancing cost-efficiency with output quality—automatically selecting budget-friendly models for simple tasks while routing complex requests to premium models. The system analyzes incoming queries via validation tools, routes them through specialized AI agents based on assessment scores, executes parallel quality checks across compliance, bias, and risk dimensions, aggregates validation results, and stores flagged responses for human review. This ensures consistent, high-quality AI responses while optimizing computational costs and maintaining governance standards across diverse use cases.\n\nSetup Steps\nConnect Anthropic and OpenAI  API credentials in n8n credentials manager\nConfigure Google Sheets connection for storing validation results and flagged responses\nSet Schedule Trigger interval (recommended: hourly or daily based on volume)\nCustomize classification thresholds in validation nodes (confidence scores, risk levels)\nUpdate agent prompt templates to match your domain requirements\nConfigure Slack/Gmail notifications for high-priority quality flags\n\nPrerequisites\nActive API accounts for Anthropic Claude and OpenAI. \nUse Cases\nCustomer support ticket routing and quality monitoring. \nCustomization\nAdjust classification logic by modifying validation node expressions. \nBenefits\nReduces AI costs by 40-60% through intelligent model selection. ",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

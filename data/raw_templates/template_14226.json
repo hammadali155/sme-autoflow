@@ -1,0 +1,11 @@
+{
+  "id": 14226,
+  "name": "Auto-fill Monday.com lead boards with FullEnrich People Search results",
+  "description": "How it works\n\nThis workflow lets you search for leads using FullEnrich's People Search API directly from Monday.com, then auto-fills the results as new items on your board.\n\nA Monday.com automation sends a webhook when a new item is created on your \"search criteria\" board\nThe workflow responds to Monday.com's challenge handshake, then calls FullEnrich's People Search API with the criteria from your Monday.com columns (job title, industry, location, company size, number of results)\nThe search results are split into individual people and each one is created as a new item on your Monday.com \"results\" board with their name, title, company, domain, LinkedIn URL, and location\n\nSet up steps\n\nSetup takes about 15 minutes:\n\nMonday.com \"Search Criteria\" board — Create a board with these columns: Job Title (text), Industry (text), Location (text), Company Size (text), Number of Results (number). Note down the column IDs\nMonday.com \"Results\" board — Create a board with columns for: First Name, Last Name, Job Title, Company Name, Company Domain, LinkedIn URL, Location. Note down the board ID, group ID, and column IDs\nMonday.com automation — On your search criteria board, create an automation: When item created → send webhook to the production URL from the \"Monday.com Webhook\" node\nFullEnrich — Connect your FullEnrich API credentials\nMonday.com — Connect your Monday.com API credentials\nColumn mapping — Update the column IDs in the HTTP Request body and in the Monday.com node to match your boards\nActivate the workflow\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.mondayCom",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

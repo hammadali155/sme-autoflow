@@ -1,0 +1,10 @@
+{
+  "id": 4759,
+  "name": "Send Cryptocurrency Price Threshold Alerts from CoinGecko to Discord",
+  "description": "Crypto Price Alert – n8n Workflow\n\nA simple and effective crypto alert system for anyone who wants to stay up to date with coin price changes — without refreshing charts all day. This workflow checks the current price of your chosen cryptocurrency (via CoinGecko) and sends you an alert on Discord if it goes above or below your target range.\n\nIt’s lightweight, easy to set up, and runs on autopilot.\n\nWhat the Workflow Does\nChecks the live price of a selected coin using the CoinGecko API.\nCompares it to the max/min prices you define manually.\nDecides if the price is too high or too low.\nSends an alert message to Discord depending on the result.\n\nHow It Works\nThe flow is triggered manually or on a schedule (your choice).\nIt pulls the current price of the coin you set.\nCompares that price with your min and max values.\nSends a “high” or “low” message to your Discord webhook.\n\nSetup Steps\nEnter your coin ID and price thresholds in the “Set Low and High” node.\nPaste your Discord webhook URLs in the \"Message High\" and \"Message Low\" nodes.\nOptional: Adjust the schedule trigger to run every X minutes/hours.\nRun once manually to test — takes under 1 minutes.\n\nFull instructions and config tips are in sticky notes inside the workflow.\n",
+  "nodes": [
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.coinGecko"
+  ],
+  "tags": []
+}

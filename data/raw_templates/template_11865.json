@@ -1,0 +1,16 @@
+{
+  "id": 11865,
+  "name": "Automated Marketing Campaign Email System with GPT-4 and HubSpot Customer Tracking",
+  "description": "Overview\n\nThis workflow automates customer outreach for marketing campaigns, including customer prioritization, AI-generated emails, automated sending, reply tracking, and meeting scheduling.\n\nHow It Works\n\nData Synchronization\n\n   Customer and campaign data are periodically synchronized from Google Sheets and internal data tables.\n   New customers and campaigns are inserted into the system if they do not already exist.\n\nCustomer Evaluation and Prioritization\n\n   Customers are evaluated based on revenue, industry, capital, and location.\n   Each customer is classified into High / Medium / Low priority using AI.\n   Only high-priority customers are selected for campaign outreach.\n\nCampaign Detection\n\n   The workflow checks for new, unsent marketing campaigns.\n   Campaigns marked as already sent are excluded.\n\nPersonalized Email Generation\n\n   For each eligible customer, past email history is retrieved.\n   An AI agent generates a personalized campaign email:\n\n     Uses historical interaction data when available.\n     Uses customer interests and keywords for new customers.\n     Produces a professional, friendly email proposing a meeting.\n\nAutomated Email Sending\n\n   Emails are sent automatically via Gmail.\n   Sent emails are logged into the message history database.\n   Campaign status is updated to “sent” after completion.\n\nReply Handling\n\n   Incoming customer replies are detected via Gmail triggers.\n   Replies are matched with previous messages and stored in the database.\n   AI generates an appropriate follow-up reply when required.\n\nReply Classification and Scheduling\n\n   Customer replies are classified as Positive / Pending / Negative.\n   If a reply includes scheduling information, meeting details are extracted.\n   Calendar events are automatically created in Google Calendar.\n\nSetup Steps\n\nPrepare Data Sources\n\n   Set up Google Sheets for:\n\n     Customer master data\n       Format includes the following columns:\n       #/メール/ 氏名/ 会社名/ 所在地/ 売上(万円)/ 資本金(万円)/ 業界/関心/ Hubspot同期\n     Campaign data\n       Format includes the following columns:\n       No / campaign_name / description / sent\n\n   Prepare internal data tables for:\n\n     Campaign records\n     Email message histories\n\n\nCreate Data table\n   Campaign table:\n       campaign_name: String\n       description: String\n       is_sent: boolean\n\n   Mail Histories table:\n       customer_email: String\n       email_subject: String\n       message: String\n       reply: String\n       reply_category: String\n\nConfigure Credentials\n\n   Google Sheets API\n   Gmail OAuth\n   Google Calendar API\n   HubSpot App Token (for customer synchronization)\n   OpenAI API (for AI agents)\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

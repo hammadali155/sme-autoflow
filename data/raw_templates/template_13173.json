@@ -1,0 +1,17 @@
+{
+  "id": 13173,
+  "name": "AI WhatsApp Chatbot with RAG: Automate Text, Voice, Image & PDF Responses",
+  "description": "Who it's for\nThis n8n workflow creates an intelligent WhatsApp customer support bot that can handle text, image, audio, and document messages. The workflow automatically processes incoming messages through different AI agents, maintains conversation context, accesses company knowledge bases, and provides personalized responses. It's designed for businesses looking to automate customer support across multiple communication channels.\n\nFeatures\nMulti-Modal Processing** – Handles text, images, audio, and documents.\nSmart Message Routing** – Categorizes and directs messages automatically.\nAI Analysis** – Uses Google Gemini (images/audio) and Mistral Cloud (text).\nKnowledge Base Access** – Connects with Google Sheets, Docs, and product docs.\nConversation Memory** – Keeps context across multiple messages.\nDocument Recognition** – Supports PDF, XLS/XLSX, CSV, JSON, and more.\nSupport Logging** – Tracks customer issues in Google Sheets.\nProduct Docs** – Access for Salebot, Delix, Socialvibe, Faculty, Yoori, MeetAir, Oxoo, Flixoo.\n\nRequirements\nRapiwa API credentials** for WhatsApp integration\nGoogle Gemini API credentials** for image and audio analysis\nMistral Cloud API credentials** for language model processing\nGoogle Sheets OAuth2 credentials** for accessing and logging data\nGoogle Docs OAuth2 credentials** for accessing company documentation\nHTTP Request access** to various product documentation sites\n\nImportant Notes\nMessage Type Handling**: The workflow includes specialized processing for different message types\nDocument Support**: Supports multiple document formats including PDF, XLS, XLSX, CSV, JSON, XML, RTF, TXT, and HTML\nProduct Documentation**: Provides access to documentation for multiple products through HTTP requests\nConversation Memory**: Maintains context across multiple messages from the same session\nSupport Logging**: Automatically logs customer issues with categories and suggested solutions\nError Handling**: Provides appropriate error messages for unsupported file types\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.toolThink",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

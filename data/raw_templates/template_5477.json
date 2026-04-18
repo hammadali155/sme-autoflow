@@ -1,0 +1,10 @@
+{
+  "id": 5477,
+  "name": "Capture and Structure Web Form Leads for Odoo CRM (v15-v18 Compatible)",
+  "description": "This workflow captures raw lead data from a Webhook and formats it into a clean, structured object — perfectly tailored for Odoo CRM and create lead. It supports Odoo versions 15, 16, 17, and 18, both Community and Enterprise editions.\n\n🔧 How It Works:\nCaptures POST data from any web form or lead tool using Webhook.\n\nExtracts fields like:\nemail\nphone\nname\ncompany\ncompany_name\ncontact_name\ndescription\n\n🔐 Credentials Required:\nOdoo credentials\nhttps://docs.n8n.io/integrations/builtin/credentials/odoo/\n\nOptionally, connect to Odoo's /crm.lead endpoint via an HTTP Request node.\n\n🎯 Use Cases:\nStandardize messy input from lead forms\nPrepare API-ready data for direct CRM insert\nConnect web campaigns to Odoo CRM\nAutomate follow-up, lead scoring, or notifications\n\n🧰 Compatibility:\n✅ Odoo v15, v16, v17, v18\n✅ Odoo Community & Enterprise\n✅ API or custom model compatible\n✅ All n8n versions 1.0+\n\n🚀 Setup Instructions:\nOpen n8n and import the workflow file.\nConfigure the Webhook URL in your form or tool.\nTest the Webhook with sample data.\nReview the structured JSON output.\n(Optional) Add an HTTP node to push to Odoo CRM API.\n",
+  "nodes": [
+    "n8n-nodes-base.odoo",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

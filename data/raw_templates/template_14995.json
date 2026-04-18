@@ -1,0 +1,12 @@
+{
+  "id": 14995,
+  "name": "Check and deactivate broken job apply URLs with Postgres and Google Sheets",
+  "description": "Keep your job listings database clean without manual checks. Every three days, this workflow fetches all active jobs from your Postgres database, runs each application URL through a validation check, identifies dead links via HTTP status codes and soft-404 redirect detection, then marks failed entries as inactive in both Supabase and Google Sheets simultaneously.\n\nWho it's for\n\nTeams running a job aggregator, career platform, or internal hiring tracker who store job listings in Postgres and want stale or broken apply links removed automatically — without waiting for user reports.\n\nHow it works\n\nA Schedule Trigger fires every 3 days\nAll active jobs are fetched from your Postgres (Supabase) database via a SQL query\nA Prepare URLs node filters out any rows with missing, malformed, or non-HTTP URLs before they're checked\nAn HTTP Request node sends a HEAD request to each apply_url\nA Find Dead Jobs code node analyzes each response and flags a job as dead if:\n   Status code is 404 or 410\n   DNS resolution fails (ENOTFOUND)\n   Connection is refused (ECONNREFUSED)\n   A 301/302/307 redirect points to a different path — indicating the job was removed and the ATS is silently redirecting (soft-404 detection)\nIf dead jobs are found, an IF node routes them to both update nodes in parallel:\n   Supabase (Postgres) — status set to inactive via parameterized SQL\n   Google Sheets — row updated to reflect the new status\nIf no dead jobs are detected, the workflow exits cleanly with no writes\n\nSetup\n\nConnect your Postgres credentials and confirm the query in the Fetch Active Jobs node matches your table and column names (apply_url, job_hash, job_title)\nConnect your Google Sheets credentials and set the Resource ID and Sheet Name in the Mark Inactive node\nConfirm the inactive status value in the Postgres update query matches what your app expects\n(Optional) Adjust the soft-404 redirect detection logic in the Find Dead Jobs node if your ATS platforms use non-standard redirect patterns\n\nDatabase columns expected\n\njob_hash (unique identifier), apply_url, job_title, status\n\nRequirements\n\nSelf-hosted or cloud n8n instance\nSupabase (or any Postgres-compatible) database with an active jobs table\nGoogle Sheets with a matching jobs log",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

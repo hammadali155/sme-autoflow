@@ -1,0 +1,12 @@
+{
+  "id": 2804,
+  "name": "Analyse papers from Hugging Face with AI and store them in Notion",
+  "description": "This workflow automates the process of retrieving Hugging Face paper summaries, analyzing them with OpenAI, and storing the results in Notion. Here’s a breakdown of how it works:\n\n⏰ Scheduled Trigger: \nThe flow is set to run automatically at 8 AM on weekdays.\n📄 Fetching Paper Data: \nIt fetches Hugging Face paper summaries using their API.\n🔍 Data Check: \nBefore processing, the workflow checks if the paper already exists in Notion to avoid duplicates.\n🤖 Content Analysis with OpenAI: \nIf the paper is new, it extracts the summary and uses OpenAI to analyze the content.\n📥 Store Results in Notion: \nAfter analysis, the summarized data is saved in Notion for easy reference.\n\n⚙️ Set Up Steps for Automation\n\nFollow these steps to set up this automated workflow with Hugging Face, OpenAI, and Notion integration:\n\n🔑 Obtain API Tokens: \nYou’ll need the Notion and OpenAI API tokens to authenticate and connect these services with n8n.\n🔗 Integration in n8n: \nLink Hugging Face, OpenAI, and Notion by configuring the appropriate nodes in n8n.\n🔧 Configure Workflow Logic:\n   Set up a cron trigger for automatic execution at 8 AM on weekdays.\n   Use an HTTP request node to fetch Hugging Face paper data.\n   Add logic to check if the data already exists in Notion.\n   Set up the OpenAI integration to analyze the paper’s summary.\n   Store the results in Notion for easy access and reference.\n\nResult:\n\n ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

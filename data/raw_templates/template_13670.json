@@ -1,0 +1,9 @@
+{
+  "id": 13670,
+  "name": "Search for people on LinkedIn using the TexAU API",
+  "description": "\nThis workflow performs automated LinkedIn people search using the TexAU API. It is ideal for prospecting, recruitment, lead generation, and workflows where structured people-search results from LinkedIn are needed.\n\nHow it Works\n\nThe workflow is triggered manually or by another automation.\nSearch inputs such as name, role, keywords, or location are sent to TexAU’s People Search automation.\nTexAU starts a background job that executes the search on LinkedIn.\nThe workflow waits a short period to allow TexAU to finish processing.\nIt then polls TexAU’s results endpoint and retrieves the completed dataset.\nThe workflow outputs a structured list of matching profiles, typically including name, headline, job title, profile URL, and relevance indicators.\n\nSetup Steps\n\nAdd your TexAU API key to the HTTP Request node.\nSupply search parameters manually or dynamically.\nAdjust wait time based on TexAU’s queue load.\nRoute results to your CRM, AI agent, or lead pipeline.\n\nGood to Know\nSearch results depend on publicly visible LinkedIn data. TexAU processing time varies by query complexity.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

@@ -1,0 +1,7 @@
+{
+  "id": 1744,
+  "name": "Working with dates and times",
+  "description": "Task:\nHandle dates and times in your workflow\n\nWhy:\nDate and time formats can be hard to work with, we have 2 main ways of doing that with n8n that cover all the main needs\n\nMain use cases:\n Change date format\n Set custom dates (incl. now and today)\n Date math",
+  "nodes": [],
+  "tags": []
+}

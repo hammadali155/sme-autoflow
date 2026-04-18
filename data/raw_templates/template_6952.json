@@ -1,0 +1,11 @@
+{
+  "id": 6952,
+  "name": "Daily Calendar Summary Notifications via Telegram from Google Calendar",
+  "description": "Context:\nThis workflow automatically sends you a daily message on Telegram summarizing all your meetings and events for the day, straight from your Google Calendar.\n\nFor who ? \nPerfect for anyone who:\nUses Google Calendar to manage their schedule.\nWants Telegram reminders for daily events.\nLoves automation and productivity tools.\n\nRequirements:\nTelegram.\nGoogle account.\nGoogle Calendar.\n\nSteps:\n\n\n🗒️ Use the sticky notes in the n8n canvas to:\nAdd your Telegram and Google credentials.\nExecute and test the workflow.\nCheck if you receive your daily summary on Telegram.\n\nYou'll get this:\n\nTutorial video:\nWatch the Youtube Tutorial video\n\nHow does it work?\n⏰ The trigger runs every day at 7AM.\n📅 Your Google Calendar is checked.\n🔢 If there are events or meetings, a number &gt; 0 is returned. Otherwise, it's 0.\n📝 A text message is generated with a summary of all your events, including all relevant details.\n❌ If no events are found, a \"no event\" message is sent.\n\nAbout me :\nI’m Yassin a Project & Product Manager  Scaling tech products with data-driven project management.\n📬 Feel free to connect with me on Linkedin\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

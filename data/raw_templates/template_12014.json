@@ -1,0 +1,16 @@
+{
+  "id": 12014,
+  "name": "Automate Job Search & Resume Matching with LinkedIn, Gemini AI & Google Sheets",
+  "description": "Description\n\nThis workflow helps you find and evaluate job opportunities automatically, without spending hours searching and comparing roles. It uses your resume to look for relevant jobs on LinkedIn, checks how well each role matches your profile, and organises everything neatly in Google Sheets so you can focus on applying to the best opportunities.\n\nHow it works\n\nOn a schedule, the workflow downloads your resume from Google Drive and analyses it to understand your skills and experience. Based on this, it creates LinkedIn job searches and pulls in recent job listings. Each job is then reviewed using AI to compare the job description with your resume, produce a match score, suggest resume improvements, and generate a tailored cover letter. All results are saved to Google Sheets, and you’re notified by email when the run finishes.\n\nHow to use\n\nMake a copy of the Google Sheets template and keep it for your own job tracking.  \nUpload your resume (PDF) to Google Drive.  \nConnect your Google Drive, Google Sheets, Gmail, and AI credentials in n8n.  \nUpdate the Config node with your preferences (remote work, Easy Apply, job limit).  \nPaste your copied Google Sheet IDs into the workflow.  \nTurn on the Schedule Trigger and activate the workflow.\n\nRequirements\n\nGoogle Drive account for storing your resume  \nGoogle Sheets account for tracking results  \nGmail account for notifications  \nAI model access (Google Gemini or similar)  \nn8n (cloud or self-hosted)\n\nCustomising this workflow\n\nYou can easily adapt this workflow to suit your goals. Change the job limits, locations, or remote preferences in the Config node. Update the AI prompts to target different roles or industries, or extend the workflow to send results to tools like Notion, a CRM, or your own application tracker.\n\nGood to know\n\nThis workflow is designed to help you screen and prepare for jobs, not to apply automatically. Match scores are a guide, not a guarantee, so it’s always worth reviewing roles manually. Also, since LinkedIn pages can change over time, you may occasionally need to update HTML selectors to keep things running smoothly.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

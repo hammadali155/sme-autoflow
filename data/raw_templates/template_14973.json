@@ -1,0 +1,15 @@
+{
+  "id": 14973,
+  "name": "Turn GitHub releases into audio updates and newsletters with OpenAI and ElevenLabs",
+  "description": "Deliver your product updates in a modern, accessible format. This workflow automatically transforms GitHub releases into podcast-style audio announcements and distributes them via email and Slack.\n\n🎯 What This Workflow Does\n\nThis template bridges your development cycle with your marketing and communication channels.\n\n🐙 Step 1 — GitHub Trigger & Notion Synthesis\n\nGitHub Trigger:** Fires when a new release is published  \nParsing:** Converts raw markdown into structured categories (features, fixes, improvements)  \nNotion Merge:** Enriches data with additional context from your Notion changelog database  \n\n🎙️ Step 2 — AI Scriptwriting & Professional TTS\n\nScript Generation:** OpenAI converts technical notes into a conversational 60–90 sec script  \nVoice Generation:** ElevenLabs turns the script into high-quality audio  \nCDN Hosting:** Uploads MP3 via UploadToURL to generate a public URL  \n\n📧 Step 3 — Multimedia Newsletter Delivery\n\nSubscriber Fetch:** Loads email list from Google Sheets  \nEmail Creation:** Builds a rich HTML email with embedded audio player  \nDistribution:** Sends via Gmail using BCC list  \n\n💬 Step 4 — Internal Sync & Database Update\n\nSlack Alert:** Posts update with audio preview to team channel  \nNotion Update:** Marks entry as published and stores audio URL  \n\n✨ Key Features\n\nBidirectional Notion Sync:** Reads and updates changelog entries  \nConversational AI:** Converts technical updates into human-friendly audio  \nDynamic HTML Emails:** Includes inline audio playback  \nHigh-Quality Voice:** Uses ElevenLabs for realistic narration  \n\n🔧 Setup Requirements\n\nRequired Integrations\n\nGitHub:** Personal Access Token (repo read scope)  \nNotion:** Integration token + changelog database  \nElevenLabs:** API key + Voice ID  \nOpenAI:** API key  \nUploadToURL:** For MP3 hosting  \nSlack:** Bot token  \n\nEnvironment Variables\n\nNOTION_DATABASE_ID  \nAPPROVER_EMAIL  \nDISCORD_WEBHOOK_URL  \nSLACK_CHANNEL_ID  \n\nHumanize your software updates. Import this template and start broadcasting your product journey with audio.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

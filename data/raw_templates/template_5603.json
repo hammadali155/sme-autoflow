@@ -1,0 +1,15 @@
+{
+  "id": 5603,
+  "name": "Automated Stale User Re-Engagement System with Supabase, Google Sheets & Gmail",
+  "description": "Built this workflow because most of our users signed up, then vanished after ~30 days.\nIt runs daily, grabs those stale users from Supabase, updates a Google Sheet for tracking, and automatically sends each one a personalized HTML email through Gmail to bring them back.\n\nAll fully automated — so once it’s set up, it quietly does its job in the background.\nCurrently, it only supports Supabase, but the concept should work with any DB or API if you swap out the request node.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleVertex"
+  ],
+  "tags": []
+}

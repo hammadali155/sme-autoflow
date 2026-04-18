@@ -1,0 +1,19 @@
+{
+  "id": 12533,
+  "name": "Curate and generate an AI newsletter from RSS feeds with OpenAI and Slack",
+  "description": "Who’s it for\nThis workflow is for content creators, newsletter editors, and AI enthusiasts who want to automate the heavy lifting of news gathering. It acts as an autonomous research agent that monitors industry sources and drafts high-quality summaries for your review.\n\nHow it works\nThis workflow serves as a \"human-in-the-loop\" publishing agent:\nIngestion & Normalization: It monitors 15+ sources including RSS feeds (TechCrunch), Reddit (r/OpenAI), and company blogs (Anthropic, Google). It normalizes these diverse inputs into a standard format.\nFiltering & Curating: Using OpenAI (GPT-4o), it filters out noise to identify only high-impact stories. It then selects the top 4 stories based on relevance to a tech-savvy audience.\nDrafting: It writes a complete newsletter, including a catchy subject line, an intro hook, deep-dive summaries, and a \"quick hits\" list. It even generates viral short-form video scripts based on the news.\nSlack Approval: The draft is sent to Slack. You can approve it immediately or reply with feedback (e.g., \"Make the tone punchier\"), prompting the AI to revise the draft before generating the final file.\n\nHow to set up\nCredentials: Connect your OpenAI, Anthropic, Google Sheets, and Slack accounts in n8n.\nGoogle Sheets: Create a sheet with columns for Title, URL, Source, Published, and Content. Paste the Sheet ID into the \"Log to Google Sheets\" and \"Get_Stories\" nodes.\nSlack: Update the Slack nodes with your specific Channel ID where you want to receive drafts.\n\nRequirements\nn8n version:** 1.0+ (requires LangChain nodes).\nLLM API Keys:** OpenAI and Anthropic.\nGoogle Sheets:** For logging processed history.\nSlack:** For the approval interface.\n\nHow to customize\nChange Sources:** Edit the RSS Trigger nodes to track Finance, SaaS, or Crypto news instead of AI.\nAdjust Tone:** Open the stories_prompt node to change the persona of the AI editor (e.g., from \"Professional\" to \"Witty\").\nPublishing:** Connect the final output to a CMS like WordPress or Ghost to publish automatically upon approval.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.reddit",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

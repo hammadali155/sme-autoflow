@@ -1,0 +1,14 @@
+{
+  "id": 4278,
+  "name": "Extract and Structure Hacker News Job Posts with Gemini AI and Save to Airtable",
+  "description": "Workflow Overview\n\nThis workflow automatically fetches the latest \"Ask HN: Who is hiring?\" posts from Hacker News, extracts individual job listings, cleans the raw text, converts them into structured job listings using Google Gemini AI, and saves them into Airtable.\n\nComponents\n\nIt’s a full end-to-end automation system combining:\n\nAlgolia API** for HN data\nText cleaning**\nGemini AI (via LangChain)** for parsing job descriptions\nStructured JSON extraction**\nAirtable integration** to store the final data\n\n🎯 Use Cases\n\nAutomatically build a job board from HN posts\nTrack startup hiring trends\nFeed remote job alerts into a CRM or Slack\nEnrich a hiring intelligence database\n\n🔧 Nodes & Services Used\n\nHTTP Request (Algolia + Firebase API)\nSplitOut, Set, Filter, Function, Limit\nGoogle Gemini (via LangChain integration)\nOutput Parser Structured\nAirtable (API token required)\n\n📌 Credentials Required\n\nGoogle Gemini (PaLM/Gemini API)\nAirtable Personal Access Token\nAlgolia Application ID & API Key (via Header Auth)\n\n📦 Tags\n\nhacker-news, jobs, airtable, ai, gemini, automation, hn, langchain, workflow\n\nScreenshots\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

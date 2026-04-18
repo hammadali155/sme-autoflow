@@ -1,0 +1,9 @@
+{
+  "id": 5029,
+  "name": "Migrate Customer Data from Odoo v15 to v18",
+  "description": "📄 Description:\nThis workflow helps you migrate customer records directly from Odoo v15 to Odoo v18 without the need for manual exports or intermediate files.\n\n🔹 It connects to your v15 instance, retrieves customer (res.partner) records, and pushes them directly into your v18 database.\n🔹 The workflow uses pagination (SplitInBatches) for efficient handling of large datasets.\n🔹 Ideal for teams upgrading their Odoo infrastructure and looking to automate data replication between environments.\n\n⚡️ Note: Country and state ID mapping is excluded in this version for faster migration. If needed, logic can be added to map based on name lookup.\n\n🛠 Setup Instructions:\nConfigure Odoo API credentials for both v15 and v18. (https://docs.n8n.io/integrations/builtin/credentials/odoo/)\nAdjust domain filters in the “Get Customers” node if needed.\nRun the workflow to begin real-time customer syncing.\n\n📌 Compatibility:\nWorks with Odoo Community & Enterprise\nTested on n8n v1.17+\nRequires access to Odoo’s JSON-RPC API\n",
+  "nodes": [
+    "n8n-nodes-base.odoo"
+  ],
+  "tags": []
+}

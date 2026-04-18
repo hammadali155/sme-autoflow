@@ -1,0 +1,14 @@
+{
+  "id": 4467,
+  "name": "Generate Enhanced AI Images via Telegram with DALL-E and GPT",
+  "description": "PromptCraft AI – Telegram Image Generator\n\n🚀 How It Works\n\nPromptCraft AI is an n8n automation that transforms simple image ideas sent through Telegram into stunning AI-generated images using OpenAI's DALL·E (or other image models).\n\n🔁 Workflow Overview:\n\nTelegram Trigger: Listens for messages from a user on Telegram.\nPrompt Expansion: The message is transformed into a rich image description using GPT (OpenAI Chat Model).\nImage Generation: The prompt is passed to OpenAI's image API to generate a high-quality image.\nSend Image: The final image is sent back to the user on Telegram.\n(Optional) Log image titles and links to Google Drive and Google Sheets.\n\n⚙️ Setup Instructions\n\n📋 Prerequisites\n\n[ ] n8n installed (Self-hosted or via n8n.cloud)\n[ ] Telegram bot token (via @BotFather)\n[ ] OpenAI API key (platform.openai.com)\n[ ] Google Sheets & Drive OAuth2 credentials (optional)\n\n🧠 Step-by-Step Configuration\n\n1. 📥 Import the Workflow\n\nGo to n8n → click Import → upload PromptCraft_AI_Template.json\n\n2. 🔐 Set Up Credentials\n\nIn Credentials, add the following:\n\n  Telegram API → Paste your bot token\n  OpenAI API → Paste your OpenAI API key\n  (Optional) Google Sheets OAuth2, Google Drive OAuth2\n\n3. 🔄 Replace Placeholders\n\nOpen each node that requires credentials:\n\n  Replace REPLACE_OPENAI_API_KEY with your actual OpenAI API key\n  Replace REPLACE_TELEGRAM_API_ID and credential names as needed\n  (Optional) Update Google Drive Folder ID & Sheet ID in respective nodes\n\n4. ✅ Activate the Workflow\n\nTurn on the Telegram Trigger node.\nDeploy and activate the full workflow.\n\n5. ✉️ Test It Out\n\nSend your Telegram bot a message like:\n\n  &gt; a knight riding a robotic horse in the future\n\nReceive the generated image back in Telegram!\n\n💡 Pro Tips\n\nUse detailed or imaginative inputs for better outputs.\nFine-tune the GPT prompt for specific visual styles.\nExtend with Google Vision, image upscaling, or watermarking.\n\n🛟 Support\n\nFor setup assistance or custom feature requests, feel free to contact me @dimejicole21@gmail.com\n\nHappy Prompting! 🖼✨\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

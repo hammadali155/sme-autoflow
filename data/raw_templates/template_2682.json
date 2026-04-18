@@ -1,0 +1,15 @@
+{
+  "id": 2682,
+  "name": "🔍 Perplexity Research to HTML: AI-Powered Content Creation",
+  "description": "Transform simple queries into comprehensive, well-structured content with this n8n workflow that leverages Perplexity AI for research and GPT-4 for content transformation. Create professional blog posts and HTML content automatically while maintaining accuracy and depth.\n\nIntelligent Research & Analysis\n\n🚀 Automated Research Pipeline\nHarnesses Perplexity AI's advanced research capabilities\nProcesses complex topics into structured insights\nDelivers comprehensive analysis in minutes instead of hours\n\n🧠 Smart Content Organization\nAutomatically structures content with clear hierarchies\nIdentifies and highlights key concepts\nMaintains technical accuracy while improving readability\nCreates SEO-friendly content structure\n\nContent Transformation Features\n\n📝 Dynamic Content Generation\nConverts research into professional blog articles\nGenerates clean, responsive HTML output\nImplements proper semantic structure\nIncludes metadata and categorization\n\n🎨 Professional Formatting\nResponsive Tailwind CSS styling\nClean, modern HTML structure\nProper heading hierarchy\nMobile-friendly layouts\nBlockquote highlighting for key insights \n\nPerfect For\n\n📚 Content Researchers\nSave hours of manual research by automating the information gathering and structuring process.\n\n✍️ Content Writers\nFocus on creativity while the workflow handles research and technical formatting.\n\n🌐 Web Publishers\nGenerate publication-ready HTML content with modern styling and proper structure.\n\nTechnical Implementation\n\n⚡ Workflow Components\nWebhook endpoint for query submission\nPerplexity AI integration for research\nGPT-4 powered content structuring\nHTML transformation engine\nTelegram notification system (optional)\n\nTransform your content creation process with an intelligent system that handles research, writing, and formatting while you focus on strategy and creativity.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

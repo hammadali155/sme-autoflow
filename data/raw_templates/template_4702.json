@@ -1,0 +1,13 @@
+{
+  "id": 4702,
+  "name": "Post images and text from Google Drive and Sheets to LinkedIn",
+  "description": "How This LinkedIn Automation Workflow Helps You:\n\nSave time - Eliminate manual LinkedIn posting and content scheduling tasks\nStay consistent - Automated daily posting keeps your LinkedIn profile active and engaging\nKeep control - Preview every post before it goes live via Telegram approval system\nTrack everything - Complete posting history and status tracking in Google Sheets dashboard\nNever double-post - Smart status tracking prevents duplicate content and posting errors\nScale content - Manage multiple posts in advance through organized spreadsheets\nProfessional workflow - Streamlined process perfect for social media agencies and content creators\nReduce errors - Automated file handling eliminates manual upload mistakes\n\nHow This LinkedIn Auto-Posting System Works:\n\nSetup your content in Google Sheets with captions and Google Drive image URLs\nSchedule runs daily at your chosen time (default 4 PM) automatically via n8n\nFinds next eligible post with empty posting status column using smart filtering\nDownloads image directly from your Google Drive storage securely\nSends Telegram preview with image and caption for manual approval\nPosts to LinkedIn immediately if approved, or marks as declined in database\nUpdates sheet status automatically to \"Posted\" or \"Declined\" with timestamps\nSends confirmation message to Telegram with posting results and analytics\n\nRequirements:\n\nGoogle Sheets with organized post content and image URLs\nImages stored in Google Drive for reliable access\nTelegram bot configured for approval notifications\nLinkedIn business account connected to n8n platform\n\nHere is how your google sheet look like\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

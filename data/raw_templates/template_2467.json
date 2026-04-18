@@ -1,0 +1,15 @@
+{
+  "id": 2467,
+  "name": "Narrating over a Video using Multimodal AI",
+  "description": "This n8n template takes a video and extracts frames from it which are used with a multimodal LLM to generate a script. The script is then passed to the same multimodal LLM to generate a voiceover clip.\n\nThis template was inspired by Processing and narrating a video with GPT's visual capabilities and the TTS API\n\nHow it works\nVideo is downloaded using the HTTP node.\nPython code node is used to extract the frames using OpenCV.\nLoop node is used o batch the frames for the LLM to generate partial scripts.\nAll partial scripts are combined to form the full script which is then sent to OpenAI to generate audio from it.\nThe finished voiceover clip is uploaded to Google Drive.\n\nSample the finished product here: https://drive.google.com/file/d/1-XCoii0leGB2MffBMPpCZoxboVyeyeIX/view?usp=sharing\n\nRequirements\n\nOpenAI for LLM\nIdeally, a mid-range (16GB RAM) machine for acceptable performance!\n\nCustomising this workflow\n\nFor larger videos, consider splitting into smaller clips for better performance\nUse a multimodal LLM which supports fully video such as Google's Gemini.\n",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

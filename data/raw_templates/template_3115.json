@@ -1,0 +1,17 @@
+{
+  "id": 3115,
+  "name": "Create Product Satisfaction Surveys with Telegram, Google Sheets and AI",
+  "description": "This n8n template uses a Telegram chatbot to conduct a Product Satisfaction Survey and fetches questions and stores answers in a Google sheet. It augments an AI Agent to ask follow-up questions to engage the user and uncover more insights in their responses.\n\nThis template is intended to demonstrate how you'd realistically approach a workflow where there is structured conversation (static questions) but you still want to include an free-form element (follow-up questions) which can only be accomplished via AI.\n\nCheck out an example Survey results: https://docs.google.com/spreadsheets/d/e/2PACX-1vQWcREg75CzbZd8loVI12s-DzSTj3NE_02cOCpAh7umj0urazzYCfzPpYvvh7jqICWZteDTALzBO46i/pubhtml?gid=0&single=true\n\nHow it works\nA chat session is started with the user who needs to enter the bot command \"/next\" to start the survey.\nOnce started, the template pulls in questions from a google sheet to ask the user. Questions are asked in sequence from left column to right column.\nWhen the user answers the question, a text classifier node is used to determine \nif a follow-up question could be asked.\nIf so, a mini conversation is initiated by the AI agent to get more details.\nIf not, the survey proceeds to the next question.\nAll answers and mini-conversations are recorded in the Google Sheet under the respective question.\nWhen all questions are answered, the template will stop the survey and give the user a chance to restart.\n\nHow to use\nYou'll need to setup a Telegram bot (see docs)\nCreate a google sheet with an ID column. Populate the rest of the columns with your survey questions (see sample)\nEnsure you have a Redis instance to capture state. Either self-host or sign-up to Upstash for a free account.\nUpdate the \"Set Variable\" node with your google sheet ID and survey title.\nShare your bot to allow others to participate in your survey.\n\nRequirements\nTelegram for Chatbot\nGoogle Sheets for Survey questions and answers\nRedis for State Management and Chat Memory\nCommunity+ license and above for Execution data node - you can remove this node if you don't have this licence.\n\nCustomising this workflow\nNot using Telegram? This template technically works with other chat apps such as Whatsapp, wechat and even n8n's hosted chat!\nThis state management pattern can also be applied to other use-cases and scenarios. Try it for other types of surveys!",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.redis",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryRedisChat",
+    "@n8n/n8n-nodes-langchain.memoryManager",
+    "@n8n/n8n-nodes-langchain.textClassifier"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 11754,
+  "name": "Build a WhatsApp Assistant for Text, Audio & Images using GPT-4o & Evolution API",
+  "description": "Build an intelligent WhatsApp assistant that automatically responds to customer messages using AI. This template uses the Evolution API community node for WhatsApp integration and OpenAI for natural language processing, with built-in conversation memory powered by Redis to maintain context across messages.\n\n&gt; ⚠️ Self-hosted requirement: This workflow uses the Evolution API community node, which is only available on self-hosted n8n instances. It will not work on n8n Cloud.\n\nWhat this workflow does\n\nReceives incoming WhatsApp messages via Evolution API webhook\nFilters and processes text, audio, and image messages\nTranscribes audio messages using OpenAI Whisper\nAnalyzes images using GPT-4 Vision\nGenerates contextual responses with conversation memory\nSends replies back through WhatsApp\n\nWho is this for?\n\nBusinesses wanting to automate customer support on WhatsApp\nTeams needing 24/7 automated responses with AI\nDevelopers building multimodal chat assistants\nCompanies looking to reduce response time on WhatsApp\n\nSetup instructions\n\nEvolution API: Install and configure Evolution API on your server. Create an instance and obtain your API key and instance name.\nRedis: Set up a Redis instance for conversation memory. You can use a local installation or a cloud service like Redis Cloud.\nOpenAI: Get your API key from platform.openai.com with access to GPT and Whisper models.\nWebhook: Configure your Evolution API instance to send webhooks to your n8n webhook URL.\n\nCustomization options\n\nModify the system prompt in the AI node to change the assistant's personality and responses\nAdjust the Redis TTL to control how long conversation history is retained\nAdd additional message type handlers for documents, locations, or contacts\nIntegrate with your CRM or database to personalize responses\n\nCredentials required\n\nEvolution API credentials (self-hosted)\nOpenAI API key\nRedis connection",
+  "nodes": [
+    "n8n-nodes-base.redis",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat"
+  ],
+  "tags": []
+}

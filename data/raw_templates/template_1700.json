@@ -1,0 +1,9 @@
+{
+  "id": 1700,
+  "name": "Very quick quickstart",
+  "description": "Want to learn the basics of n8n? Our comprehensive quick quickstart tutorial is here to guide you through the basics of n8n, step by step.\n\nDesigned with beginners in mind, this tutorial provides a hands-on approach to learning n8n's basic functionalities.",
+  "nodes": [
+    "n8n-nodes-base.n8nTrainingCustomerDatastore"
+  ],
+  "tags": []
+}

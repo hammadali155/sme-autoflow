@@ -1,0 +1,14 @@
+{
+  "id": 12074,
+  "name": "Create weekly AI research briefings with Decodo, OpenAI, and Gmail",
+  "description": "What Problem Does It Solve?\nStaying up-to-date with AI and LLM developments requires reading dozens of articles every week.\nManual research is time-consuming and often leads to “information overload” or reading low-quality clickbait.\nImportant technical breakthroughs often get buried under marketing fluff.\n\nThis workflow solves these by:\nLeveraging Decodo to instantly find and scrape high-quality organic articles (automatically filtering out YouTube/video noise).\nUsing AI to read and summarize every article individually.\nUsing an \"Analyst Agent\" to score news by relevance and write a single, high-quality intelligence report.\n\nHow to Configure It\n\nDecodo & API Setup\nDecodo:** Connect your Decodo credentials. This is the core engine that handles the high-precision Google Search and content scraping.\nOpenAI:** Connect your OpenAI API key (GPT-4o or 4.1-mini recommended for best analysis).\nGmail:** Connect a Google Service Account or Gmail OAuth to send the emails.\n\nSearch Configuration\nOpen the Set Search Config node.\nEdit the search_query value to match your niche (e.g., \"Latest Large Language Model benchmarks\" or \"Generative AI in Healthcare\").\n\nHow It Works\nTrigger:** The workflow wakes up once a week (customizable).\nSearch (Powered by Decodo):** It searches Google using Decodo's organic results filter to ensure only high-quality reading material is selected.\nScraping:** It visits every URL found and extracts the raw text, cleaning up HTML tags.\nSummarization:** An LLM reads each article individually to extract key technical points.\nAnalyst Agent:** Reviews all summaries, assigns a \"Relevance Score\", and compiles the final newsletter.\nDelivery:** The final report is emailed to you immediately.\n\nCustomization Ideas\nChange the topic to any industry (Crypto, Finance, Sports).\nSwap the AI model for Claude or DeepSeek.\nLog the summaries into a Notion database.\n\nIf you need any help Get In Touch",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainSummarization",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

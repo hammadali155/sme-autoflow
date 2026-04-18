@@ -1,0 +1,11 @@
+{
+  "id": 5034,
+  "name": "Create AI Generated Videos 4x cheaper than veo3 with Google Sheets & Fal.AI",
+  "description": "Turn Your Ideas into Videos—Right from Google Sheets!\n\nThis workflow helps you make cool 5-second videos using Fal.AI and Kling 2.1, just by typing your idea into a Google Sheet. You can even choose if you want your video to have sound or not. It’s super easy—no tech skills needed! \n\nAnd the best?\n4x Cheaper than Veo3 model with similar quality!\n\nWhy use this?\n\nJust type your idea in a sheet—no fancy tools or uploads.\n\nGet a video link back in the same sheet.\n\nWorks with or without sound—your choice!\n\nHow does it work?\n\nYou write your idea, pick the video shape, and say if you want sound (true or false) in the Google Sheet.\n\nn8n reads your idea and asks Fal.AI to make your video.\n\nWhen your video is ready, the link shows up in your sheet.\n\nWhat do you need?\n\nA Google account and Google Sheets connected with service account (check this link for reference)\n\nA copy of the following Google Spreadsheet:\nSpreadsheet to copy\n\nAn OpenAI API key\n\nA Fal.AI account with some money in it\n\nThat’s it! Just add your ideas and let the workflow make the videos for you. Have fun creating!\n\nIf you have any questions, just contact me in X @maxrojasdelgado.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

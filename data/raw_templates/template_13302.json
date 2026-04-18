@@ -1,0 +1,13 @@
+{
+  "id": 13302,
+  "name": "Personalize creator onboarding in HubSpot with influencers.club and GPT-4",
+  "description": "How it works:\n\nGet multi social platform data for creators from CRM contacts.\n\nStep by step workflow to enrich CRM contacts with multi social (Instagram, Tiktok, Youtube, Twitter, Onlyfans, Twitch and more) profiles, analytics and metrics using the influencers.club API, and tailor onboarding flows and offers to increase activation rates.\n\nSet up:\n\nHubspot (can be swapped for any DB, Salesforce, Google Sheet)\nInfluencers.club",
+  "nodes": [
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

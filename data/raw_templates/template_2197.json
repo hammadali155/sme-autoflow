@@ -1,0 +1,12 @@
+{
+  "id": 2197,
+  "name": "Auto-label incoming Gmail messages with AI nodes",
+  "description": "This workflow uses AI to analyze the content of every new message in Gmail and then assigns specific labels, according to the context of the email. \n\nDefault configuration of the workflow includes 3 labels:\n„Partnership” - email about sponsored content or cooperation,\n„Inquiry” - email about products, services,\n„Notification” - email that doesn't require response.\n\nYou can add or edit labels and descriptions according to your use case. \n\n🎬 See this workflow in action in my YouTube video about automating Gmail. \n\nHow it works?\n\nGmail trigger performs polling every minute for new messages (you can change the trigger interval according to your needs). The email content is then downloaded and forwarded to an AI chain.\n\n💡 The prompt in the AI chain node includes instructions for applying labels according to the email content - change label names and instructions to fit your use case.\n\nNext, the workflow retrieves all labels from the Gmail account and compares them with the label names returned from the AI chain. Label IDs are aggregated and applied to processed email messages.\n\n⚠️ Label names in the Gmail account and workflow (prompt, JSON schema) must be the same.\n\nSet up steps\n\nSet credentials for Gmail and OpenAI. \nAdd labels to your Gmail account (e.g. „Partnership”, „Inquiry” and „Notification”).\nChange prompt in AI chain node (update list of label names and instructions). \nChange list of available labels in JSON schema in parser node. \nOptionally: change polling interval in Gmail trigger (by default interval is 1 minute).\n\nIf you like this workflow, please subscribe to my YouTube channel and/or my newsletter.\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

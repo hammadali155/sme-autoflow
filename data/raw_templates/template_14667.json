@@ -1,0 +1,19 @@
+{
+  "id": 14667,
+  "name": "Evaluate job fit and generate application assets from Telegram links with OpenAI, Pinecone, Apify and Google Sheets",
+  "description": "Summary\nThis workflow automates the early-stage job application process using AI.\n\nIt:\naccepts a job link from Telegram\nextracts and normalizes the URL\nscrapes the job page\nevaluates job fit against resume context stored in Pinecone\nasks for user approval if the role is a good match\ngenerates application materials like:\n  cover letter\n  recruiter email draft\n  resume improvement suggestions\nlogs the application in Google Sheets\ncreates supporting files in Google Drive\nsends status updates back on Telegram\n\nWhy this is useful\nThis helps reduce the manual effort involved in checking roles, deciding whether to apply, and preparing customized application material.\n\nStack used\nn8n\nTelegram\nOpenAI\nPinecone\nApify\nGoogle Sheets\nGoogle Drive\nGmail\n\nWorkflow overview\nUser sends a job link on Telegram\nAI extracts and validates the link\nJob page is scraped and normalized\nResume context is retrieved from Pinecone\nAI calculates fit score\nIf fit is low, user gets a rejection message\nIf fit is good, user is asked for approval\nOn approval, the workflow generates application assets\nA tracker entry is added and the user gets a final update\n\nNotes\nResume data is retrieved from a vector database\nApplication materials are generated only after approval\nThe workflow is designed to be modular and can be extended with auto-apply, ATS scoring, or multi-channel alerts later",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 13313,
+  "name": "Monitor AI infrastructure costs and route budget alerts with Claude, NVIDIA, Slack, and Gmail",
+  "description": "How It Works\nThis workflow automates cost analysis and budget optimization for enterprises managing complex operational expenses. Designed for CFOs, finance teams, and operations managers, it addresses the challenge of identifying cost inefficiencies and generating actionable recommendations in real-time. The system runs every 15 minutes, monitoring cost metrics and generating AI performance data. The Cost Intelligence Agent aggregates financial data before routing to parallel AI processing. Claude AI executes budget optimization analysis while a specialized cost model identifies spending patterns. Routing engines evaluate optimization strategies, with NVIDIA parsers ensuring standardized outputs. The Optimization Coordinator consolidates insights and routes by severity: critical overruns trigger executive alerts via email and Slack, warnings generate management notifications, while routine optimizations proceed to documentation and historical storage for trend analysis.\n\nSetup Steps\nConfigure Schedule Trigger for 15-minute intervals\nAdd Claude API credentials in Workflow Configuration and Budget Alert Tool nodes\nSet up NVIDIA API keys in Cost Intelligence Agent and Structured Output Parser nodes\nConnect Gmail authentication and configure finance team distribution lists\nIntegrate Slack workspace credentials and specify budget alert channels\nConfigure storage endpoints in cost history nodes with database connections\n\nPrerequisites\nClaude API access, NVIDIA API credentials, Gmail/Google Workspace account, Slack workspace integration\nUse Cases\nMulti-department budget variance analysis, cloud cost optimization, procurement pattern detection\nCustomization\nIntegrate ERP systems, add department-specific rules, customize alert thresholds by category\nBenefits\nReduces overruns 40% through early detection, identifies 15-20% monthly savings",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCode"
+  ],
+  "tags": []
+}

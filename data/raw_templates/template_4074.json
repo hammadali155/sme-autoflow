@@ -1,0 +1,14 @@
+{
+  "id": 4074,
+  "name": "Financial News Digest with Google Gemini AI to Outlook Email",
+  "description": "🧠 Key Features\n\nLooping source scraping: Collects content from news sites you have selected (it might not work for all of them however)\nHTML extraction & cleaning: Parses, cleans, and filters messy website data to isolate only the most relevant content.\nAI-powered synthesis: Uses Google Gemini (via LangChain agent) to summarize and structure financial news into a clear, bullet-pointed format.\nEmail-ready output: Generates styled HTML summaries with coral-colored headings, ideal for daily email reports.\nFully automated delivery: Sends out beautifully formatted updates via Outlook — no manual work required.\n\n🔧 Technologies Used\n\nn8n workflow orchestration\nLangChain agents for prompt logic and formatting\nGoogle Gemini API for advanced NLP\nCustom JS logic to manage dynamic inputs and cleanup\nMicrosoft Outlook API for final distribution\n\n&gt; Feel free to reach out if needed ! ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.microsoftOutlook",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserItemList",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

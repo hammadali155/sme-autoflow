@@ -1,0 +1,14 @@
+{
+  "id": 9655,
+  "name": "Automate Bug Reports with Gemini AI: Jotform to GitHub with Telegram Alerts",
+  "description": "Execution video: https://youtu.be/Gj7uzz9cIfU?si=jTu8nktmxM-dfKoZ\n\n\nThis workflow automates the process of handling bug reports submitted through a form, from checking for duplicates on GitHub to logging the report and sending a notification.\n\n1. A Bug is Reported 🐛\n\nTrigger:* The entire process kicks off when a user submits a bug report through a *JotForm**. This form collects the user's name, email, and a description of the bug.\n\n2. The AI Agent Gets to Work 🤖\n\nAction:* The submitted bug description is sent to an *AI Agent** powered by Google Gemini.\nIntelligence:** The agent has a clear set of instructions:\n    Check for Duplicates: It first connects to a specific GitHub repository (iamvaar-dev/pomodoro-timer) and checks if an issue matching the bug description already exists.\n    Create a New Issue: If it's a new bug (not found on GitHub), the agent automatically creates a new issue in the repository.\n    Report Back: The agent then neatly packages its findings into a structured JSON format, noting the issue's details and whether it was already present on GitHub.\n\n3. Log Everything in Google Sheets 📝\n\nAction:* The information from the JotForm submission and the AI Agent's analysis is sent to a *Google Sheet**.\nPurpose:** This step creates a clean log of all submitted bugs, including who submitted them and whether a new GitHub issue was created for them.\n\n4. Prepare a Smart Notification 📣\n\nAction:* A small piece of *JavaScript code** runs to create a custom notification message.\nLogic:** The message is dynamic:\n    If the bug was already on GitHub, the message will say something like, \"An issue was submitted, but it's already reported. No action is needed.\" ✅\n    If the bug was new, the message will be more urgent, like, \"A new bug was reported and an issue has been created on GitHub. Please review it.\" ❗\n\n5. Send the Alert via Telegram 📲\n\nFinal Step:* The custom message created in the previous step is sent to a specific *Telegram chat** using a bot. This instantly notifies the relevant people about the new bug report and what action (if any) is required.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 9889,
+  "name": "Automate YP.com Directory Scraping to Google Sheets using BrowserAct",
+  "description": "\nAutomate Directory Scraping to Google Sheets using BrowserAct\n\nThis n8n template helps you generate local business leads by automatically scraping online directories and saving the results directly to a spreadsheet.\n\nThis workflow is perfect for sales teams, marketing agencies, or anyone looking to build a list of local business leads by scraping online directories like YP.com.\n\nSelf-Hosted Only \nThis Workflow uses a community contribution and is designed and tested for self-hosted n8n instances only.\n\nHow it works\nThe workflow is triggered manually. You can set the business_category and city_location inputs in the \"Run a workflow task\" node.\nA BrowserAct node initiates the web scraping task on your BrowserAct account using the template specified.\nA second BrowserAct node (\"Get details of a workflow task\") patiently waits for the scraping job to finish before allowing the workflow to proceed.\nA Code node takes the raw output from the scraper (which is a single JSON string) and correctly parses it, splitting the data into individual items for each business.\nFinally, a Google Sheets node appends or updates each business as a new row in your spreadsheet, matching on \"Company Name\" to prevent duplicates.\n\nRequirements\nBrowserAct** API account for web scraping\nBrowserAct* \"Online Directory Lead Scraper (YP.com)*\" Template\nBrowserAct** n8n Community Node -&gt; (n8n Nodes BrowserAct)\nGoogle Sheets** credentials for saving the leads\n\nNeed Help?\nHow to Find Your BrowseAct API Key & Workflow ID\nHow to Connect n8n to Browseract\nHow to Use & Customize BrowserAct Templates\nHow to Use the BrowserAct N8N Community Node\n\nWorkflow Guidance and Showcase\n\nSTOP Manual Leads! Automate Lead Gen with BrowserAct & n8n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

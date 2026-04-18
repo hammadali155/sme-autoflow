@@ -1,0 +1,15 @@
+{
+  "id": 8967,
+  "name": "AI Email Reply Based on HubSpot Data + Slack Approval",
+  "description": "This n8n template drafts customer-ready email replies using Google Gemini, enriched with HubSpot context (contact, deals, companies, tickets). Each draft is routed to Slack for one-click approval before it’s sent from Gmail—so you move fast without losing control.\n\nIdeal for support and sales teams that want speedy, personalized responses while keeping humans in the loop.\n\nHow it works\n\nGmail Trigger** watches for new inbound emails.\nSender filter** excludes internal domains (e.g., n8n.io) to avoid auto-replying to teammates.\nHubSpot contact lookup* finds the sender and fetches associated *deals/companies/tickets** via association + batch read.\nCRM context is normalized** into clean, LLM-friendly fields (no IDs or sensitive noise).\nGemini (Google AI Studio)** generates a concise, friendly reply using:\n\n  Sender name, subject, and message snippet\n  Safe, relevant HubSpot context (e.g., top 1–2 deals or an open ticket)\n  Style constraints (≤ \\~150 words, single CTA, optional clarifying question)\nSlack approval* posts the draft to a channel; if *approved, n8n **replies via Gmail in the original thread.\n\nHow to use\n\nGmail: Connect the same account for the trigger and reply nodes.\nHubSpot: Connect OAuth on the search + HTTP request nodes.\nGemini: Add your Google AI Studio API key to the Google Gemini Chat Model node.\nSlack: Connect and select the channel for draft approvals.\n(Optional) Filter: Adjust the Allowed Sender filter before going live.\n(Optional) Prompt: Edit “Draft Reply (AI Agent)” tone/length or how much CRM detail to include.\nActivate the workflow. New emails will produce Slack-approved replies automatically.\n\nRequirements\n\nGmail** (trigger + send)\nHubSpot** (OAuth2) for contact + associations\nSlack** for approval step\nGoogle Gemini** (Google AI Studio API key)\n\nNotes & customization\n\nSafety rails:** The prompt avoids exposing IDs/raw JSON and caps CRM details to what’s useful.\nAuto-send mode:** Skip Slack if you want fully automated replies for specific senders/labels.\nRicher context:** Extend the batch read to pull more properties (e.g., next step, renewal date).\nTriage:** Branch on subject/labels to route billing vs. technical requests to different prompts.\nQA queue:* If the model asks a clarifying question, keep it to *one**—the node enforces that.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

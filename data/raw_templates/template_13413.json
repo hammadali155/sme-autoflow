@@ -1,0 +1,19 @@
+{
+  "id": 13413,
+  "name": "Automatically Share Shopify New Products Across All Social Media Platforms",
+  "description": "Who it's for\nThis n8n workflow is designed for Shopify store owners, e-commerce managers, and digital marketers who want to automate their product promotion across multiple platforms. The workflow automatically creates promotional content for new products and distributes them across various social media and content management platforms.\n\nKey Features\nAutomatically detects new Shopify products\nAI converts product descriptions into clear bullet points\nOptimizes images for each platform\nPublishes formatted posts to WordPress\nShares content across multiple social platforms\nSends notifications after successful posts\n\nRequirements\nShopify Access Token**: For detecting new products in your store\nOpenAI API Credentials**: For enhancing product descriptions\nWordPress API Credentials**: For creating posts and uploading media\nSocial Media Platform Credentials**:\n  Facebook Graph API\n  Telegram Bot API\n  LinkedIn OAuth2 API\n  Discord Bot API\nNotification Service Credentials**:\n  Gmail OAuth2\n  Rapiwa API (for WhatsApp)\n\nWorkflow Steps\nShopify Trigger: Detects when a new product is created in your Shopify store\nImage Processing: Extracts and processes product images from the Shopify data\nContent Enhancement: Uses OpenAI to convert HTML product descriptions into concise, customer-friendly bullet points\nWordPress Integration: Creates a blog post on your WordPress site with the product information\nMulti-Platform Sharing: Automatically shares the product on: Facebook page, Telegram channel, LinkedIn profile and page, Discord channel, Instagram\nNotification System: Sends completion notifications through multiple channels (Telegram, Gmail, Discord, WhatsApp)\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.microsoftTeams",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

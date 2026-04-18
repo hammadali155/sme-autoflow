@@ -1,0 +1,11 @@
+{
+  "id": 13638,
+  "name": "Insert Notion database fields from a public URL via WhatsApp",
+  "description": "Insert Notion Database Fields from a Public URL via WhatsApp\n\nHow it works\nWhatsApp Trigger receives a message containing a public URL.\nThe workflow extracts the URL and retrieves the page content (via Apify).\nThe content is parsed and transformed into structured fields.\nA new record is created in Notion, mapping the extracted fields to your database properties.\n\nSetup steps\nConfigure your WhatsApp credentials in the WhatsApp Trigger node.\nIn the Search / URL Extraction step, adjust the input logic if your message format differs.\nConfigure your Apify credentials (and actor/task) to scrape the target page.\nConnect your Notion database and map the extracted values in Properties.\n\nCustomization\nDefault example: Amazon/Goodreads/Casa del Libro book pages.\n\nUpdate the scraping/parsing logic to match your target sources (e.g., books, products, articles, recipes, news, or LinkedIn profiles).\n\nIf you change the data model in Notion, update the Properties mapping accordingly in the final node.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

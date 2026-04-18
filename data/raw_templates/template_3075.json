@@ -1,0 +1,11 @@
+{
+  "id": 3075,
+  "name": "Error handling: Send email via Gmail on execution or trigger-level errors",
+  "description": "This error handling workflow emails detailed notifications on workflow execution and trigger errors.\n\nIt extends Send email via Gmail on workflow error template by covering trigger-level errors.\n\nFeatures\nGet notifications on both main workflow trigger and execution time errors.\nSubject line will have failed workflow id, name, error source (execution or trigger), error message.\nBody will contain links to both failed and error handling workflows as well as execution or trigger-level error details.\nBody will also contain a machine readable and enriched JSON from Error Trigger describing the error.\n\nUse this error handling workflow for as many workflows as you need.\n\nConfigiration\nCopy this workflow to your workspace and, optionally, move it under the project that contains your main workflow\nIn this error handling workflow settings, set This workflow can be called by as appropriate\nIn Config node, define your app url, notifications recipient email, and sender name (useful to build filters in your inbox)\nIn Gmail node, create and select credentials\nIn your main workflow settings, pick this error handling workflow in the Error Workflow field (How to...)\n\nRelated resources\nn8n Error Trigger documentation.\n\nAuthor\nReach out Olek on community.n8n.io\nOlek on n8n creators hub",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

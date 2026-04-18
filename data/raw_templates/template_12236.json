@@ -1,0 +1,15 @@
+{
+  "id": 12236,
+  "name": "Run AI-powered market research with Groq, OpenAI, Documentero and Gmail",
+  "description": "Description\nThis n8n template demonstrates how to build an AI-powered Market Research Assistant using a multi-agent workflow.\nIt helps you get a 360-degree view of a product idea or research topic by analysing:\nCustomer insights and pain points\nMarket size and macro/micro-economic trends\nCompetitive landscape and alternatives\nThe workflow mirrors how product managers and strategy teams conduct discovery — by breaking down research into parallel workstreams and then synthesizing insights into a single narrative.\n\nHow it works\nPlanner Agent The main agent receives your research topic as input and defines:\n    Research objective\n    Key areas of focus (Customer, Market, Competition)\n    Assumptions and constraints\nParallel Research Agents Based on the planner’s output, three specialist agents run in parallel:\n    Customer Insights Agent Researches public sources such as articles and forums to infer customer behaviour, pain points, and existing tools.\n    Market Scan Agent Analyses macro-economic and micro-economic trends, estimates TAM/SAM/SOM, and highlights key risks and assumptions.\n    Competitor Insights Agent Identifies existing competitors and substitutes and summarises how they are positioned in the market.\nSynthesis Agent The outputs from all research agents are consolidated and analysed by a synthesis agent, which produces a market discovery memo.\nFinal Output The discovery memo is generated as a document and sent to your email.\n\nHow to use\nTrigger the workflow via the chat message node.\nProvide your research topic or product idea, along with optional context such as target market.\nThe workflow runs automatically and delivers a structured discovery memo to your inbox.\n\nSetup Steps\nAPI credentials for:\n    Groq or OpenAI (LLM)\n    Documentero (document generation)\nA configured Documentero template\nGmail OAuth or email credentials for delivery of memo\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGroq"
+  ],
+  "tags": []
+}

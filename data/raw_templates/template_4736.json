@@ -1,0 +1,12 @@
+{
+  "id": 4736,
+  "name": "Generate Personalized Strava Ride Titles & Descriptions with DeepSeek AI",
+  "description": "Title: Automatic Strava Titles & Descriptions Generation with AI\n\nDescription:\nThis n8n workflow connects your Strava account to an AI to automatically generate personalized titles and descriptions for every new cycling activity. It leverages the native Strava trigger to detect new activities, extracts and formats ride data, then queries an AI agent (OpenRouter, ChatGPT, etc.) with an optimized prompt to get a catchy title and inspiring description. The workflow then updates the Strava activity in real time, with zero manual intervention.\n\nKey Features:\nSecure connection to the Strava API (OAuth2)\nAutomatic triggering for every new activity\nIntelligent data preparation and formatting\nAI-powered generation of personalized content (title + description)\nInstant update of the activity on Strava\n\n\nUse Cases:\nCyclists wanting to automatically enhance their Strava rides\nSports content creators\nCommunity management automation for sports groups\n\n\nPrerequisites:\nStrava account\nStrava OAuth2 credentials set up in n8n\nAccess to a compatible AI agent (OpenRouter, ChatGPT, etc.)\n\n\nBenefits:\nSaves time\nAdvanced personalization\nBoosts the appeal of every ride to your community",
+  "nodes": [
+    "n8n-nodes-base.strava",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

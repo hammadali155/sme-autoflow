@@ -1,0 +1,14 @@
+{
+  "id": 14557,
+  "name": "Send AI upsell emails with Groq, Gmail, HubSpot CRM and Slack alerts",
+  "description": "How it works  \nThis workflow monitors user usage via a webhook and automatically triggers an upsell process when limits are exceeded. It formats incoming data, generates a personalized email using AI, and sends it to the user. The workflow then logs the activity in HubSpot and notifies the team via Slack. This ensures timely engagement and improves upgrade conversion rates without manual intervention.\n\nStep-by-step  \n\nTrigger & prepare data**  \n  Webhook – Receives real-time user usage data from your app.  \n  Edit Fields – Extracts and formats key fields like email, plan, and usage.  \n\nGenerate and send AI email**  \n  AI Agent – Creates a personalized upsell message based on usage data.  \n    Groq Chat Model – Sub-node that powers AI text generation.  \n  Send a message (Gmail) – Sends the generated email to the user.  \n\nUpdate CRM with activity**  \n  Search contacts (HubSpot) – Finds the user in HubSpot using email.  \n  HTTP Request – Logs an upsell note/activity in the contact record.  \n\nNotify team for follow-up**  \n  Send a message (Slack) – Alerts the team with user and usage details.  \n\nWhy use this?  \n\nAutomates upsell outreach at the perfect moment of high intent  \nReduces manual monitoring of user usage and limits  \nEnsures CRM is always updated with customer activity  \nImproves team visibility with real-time Slack notifications  \nIncreases upgrade conversions with personalized AI messaging  ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGroq"
+  ],
+  "tags": []
+}

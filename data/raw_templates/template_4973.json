@@ -1,0 +1,12 @@
+{
+  "id": 4973,
+  "name": "Automated SSL Certificate Monitoring and Renewal with Notion and Telegram",
+  "description": "Automatically fetch existing domains from Notion's Database and verify the validity of SSL certificates through SSL-Checker. If the validity period is less than 14 days, send a Telegram message notification and trigger SSH remote automatic refresh. Successful refresh notification will be sent through Telegram.\nThis can prevent problems with the server-side automatic refresh program, which may cause unexpected service interruptions.\n\nMain use cases:\nNotion store domain.\nTelegram receives warning messages.\nRemotely trigger Certbot to refresh SSL.\n\nHow it works:\nRecord who triggered this workflow, because if there is a credential that is about to expire, this workflow will be triggered repeatedly.\nAfter getting all the domains from Notion, send an http request to SSL-Checker.\nAfter getting all the SSL-Checker results, add the validity label. And use the IF node to check if there are any certificates that are about to expire.\n\nThen there are two workflows:\nIf there is a certificate that is about to expire: send an SSH command to the remote control server to refresh the certificate, notify through Telegram, and call this workflow again to re-verify the validity of the SSL certificate.\nIf the validity period of SSL is normal: then refresh the data on Notion, and if a re-called workflow is detected, Telegram will be used to notify that the SSL has been updated.\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

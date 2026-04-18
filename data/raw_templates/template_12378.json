@@ -1,0 +1,13 @@
+{
+  "id": 12378,
+  "name": "Generate multilingual audio content with OpenAI, ElevenLabs, Google Drive and Slack",
+  "description": "How It Works\nThis workflow automates multilingual audio content creation for content creators, educators, and marketing teams distributing materials globally. It solves the challenge of producing high-quality, translated audio content at scale without manual intervention. Starting with source text, the system translates content into English, Spanish, French, and German using AI translation services, validates translation quality through automated scoring, generates natural-sounding audio using ElevenLabs text-to-speech technology, calculates audio metrics for quality assurance, combines all language versions into a single package, uploads to Google Drive for centralized storage, and sends Slack notifications for team collaboration. The workflow eliminates weeks of manual translation and voice recording work while maintaining consistent quality across all language variants.\n\nSetup Steps\nConfigure AI translation service credentials for multilingual processing \nAdd ElevenLabs API key and select voice models for each target language \nSet quality threshold scores for translation validation gates \nConnect Google Drive with designated folder for audio storage \nConfigure Slack webhook for team notifications with custom message\n\nPrerequisites\nAI translation API access (OpenAI/DeepL), ElevenLabs account with sufficient character quota\n\nUse Cases\nE-learning course localization, podcast multilingual distribution\n\nCustomization\nAdd additional languages, modify quality score thresholds\n\nBenefits\nReduces content localization time by 95%, eliminates voice talent costs\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

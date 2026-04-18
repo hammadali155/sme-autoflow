@@ -1,0 +1,12 @@
+{
+  "id": 8491,
+  "name": "Track Forex Factory News Releases with MyFxBook, Telegram & Google Sheets",
+  "description": "Get Forex Factory News Release to Telegram, Google Sheets. Record News Data and Live Price from MyFxBook for Affected Currency Pairs.\nThis n8n template demonstrates how to capture Actual Data Releases as quickly as possible for trading decisions.\n\nUse cases:\nGet notified if the actual data release is positive or negative for the relevant currency.\nUse the Telegram chat message about the news release as a trigger to open a trading position in MetaTrader 4.\nRecord news data and live price to google sheets for analysis.\n\nCurrency Pairs\nEURUSD, GBPUSD, AUDUSD, NZDUSD, USDJPY, USDCHF, USDCAD, XAUUSD\n\nHow it works\nA news release event acts as the trigger.\nOnly news with a numerical Forecast value will be processed. Events that cannot be measured numerically (e.g., speeches) are ignored.\nExtract news details: currency, impact level (high/medium), release date, and news link.\nWait 10 seconds to ensure the Actual value is available on the news page.\nScrape the Actual value from the news link using Airtop.\nIf the Actual value is not available, wait another 5 seconds and retry scraping.\nExtract both Actual and Forecast values from the scraped content.\nRemove non-numeric characters (%, K, M, B, T) and convert values to numbers.\nDetermine the effect:\nIf the Actual value is lower than the Forecast value (and lower is better), send it to the True branch.\nOtherwise, send it to the False branch.\nRecord news data and live price from MyFxBook to Google Sheets.\n\nHow to use\nEnter all required credentials.\nCreate or Download Google Sheets file like this in your Google Drive: https://docs.google.com/spreadsheets/d/1OhrbUQEc_lGegk5pRWWKz5nrnMbTZGT0lxK9aJqqId4/edit?usp=drive_link\nRun the workflow.\n\nRequirements\nGoogle Calendar credentials\nAirtop API key\nTelegram Chat ID\nTelegram Bot API token\nEnable Google Drive API in Google Cloud Console\nGoogle Sheets credentials\n\nNeed Help?\nJoin the Discord or ask in the Forum!\n\nThank you!\n\nUpdate Sept 26, 2025:\nAdd new edit node",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.airtop"
+  ],
+  "tags": []
+}

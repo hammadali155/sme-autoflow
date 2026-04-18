@@ -1,0 +1,9 @@
+{
+  "id": 4521,
+  "name": "Automate Screenshot Upload to Postimages.org with Airtop Browser Automation",
+  "description": "\nAutomating File (Image) Upload to Postimages.org\n\nUse Case\nManually uploading screenshots or other image files to hosting platforms like Postimages.org can be tedious and time-consuming. This automation simplifies the process by automatically uploading an image to Postimages.org and validating the result, which is especially useful for repetitive QA tasks, reporting, or archiving visual web data.\n\nWhat This Automation Does\nThis automation uploads a screenshot to Postimages.org using the following steps:\n\nCreates a browser session using Airtop.\nNavigates to the Postimages.org upload page.\nTakes a screenshot using the browser session.\nUploads the screenshot to the site via the \"Choose images\" button.\nWaits briefly to ensure upload processing.\nCaptures a post-upload screenshot for validation.\n\nHow It Works\nSession Initialization: Starts a browser session using the Airtop node.\nNavigation: Opens the URL https://postimages.org/ in a new window.\nScreenshot Capture: Takes a screenshot to use for upload.\nFile Upload: Uploads the screenshot to the site using the file upload interaction.\nValidation: Waits 5 seconds and then captures a second screenshot to confirm the image was uploaded successfully.\n\nSetup Requirements\nAirtop API Key — required for session creation and browser interactions.\n\nNext Steps\nCustomize for Other Sites**: Adapt this workflow to automate file uploads to different platforms.\nIntegrate with Reporting Tools**: Combine this automation with workflows that require image reporting or archiving.\nEnhance Validation**: Add logic to parse the upload confirmation or retrieve the image URL programmatically for logging or sharing.\n\nRead more about how to automate file uploads to the web\n",
+  "nodes": [
+    "n8n-nodes-base.airtop"
+  ],
+  "tags": []
+}

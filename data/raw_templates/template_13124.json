@@ -1,0 +1,17 @@
+{
+  "id": 13124,
+  "name": "Turn HR news into policy update tasks and a weekly Gmail digest with RSS, Google Drive, Gemini, and GPT-5.2",
+  "description": "HR Weekly Radar\nAI powered workflow that scans HR news via RSS, checks which of your policies or contract templates might need updates, and sends a weekly internal newsletter as HTML.\n\nWhat this template is for\nIf you maintain an HR policy and template library, this helps you spot relevant changes faster and turn them into a small, actionable review list.\n\nGood to know\nThis workflow fetches article pages and sends extracted text to LLMs\nRespect the publisher’s terms and avoid redistributing full article text outside your organization\nCost and runtime depend on how many articles you process and how long the extracted text is\n\nHow it works\nWeekly trigger starts the workflow\nRSS feed read pulls new HR articles\nFilter keeps only the last 7 days\nLimit node caps processing to maxArticles\nHTTP request fetches each article page\nHTML extract + cleanup converts the article body to plain text\nGoogle Drive node lists your policy and template file names\nMerge combines each article with the document list\nReading agent evaluates relevance and suggests:\n  which documents to review or update\n  what change to consider\n  missing document ideas\nBuild report aggregates results across all articles\nSummary agent writes a short, scannable HTML email\nGmail sends the newsletter to your chosen recipient\n\nHow to use\nAdd your RSS feed URL in the Workflow Configuration node (newsUrl)\nSet your recipient email (userEmail)\nSet your Google Drive folder id that contains policies and templates (templatesFolderId)\nConnect credentials for:\n  Google Drive\n  LLM provider nodes\n  Gmail\nRun once manually and verify the email formatting, then activate the workflow\n\nRequirements\nRSS feed URL with HR or compliance updates\nGoogle Drive folder containing policy and template files\nLLM credentials for:\n  per article analysis\n  newsletter drafting\nGmail account to send the email\n\nCustomising this workflow\nIncrease or decrease maxArticles to control cost and speed\nAdjust the last 7 days filter if you want a different reporting window\nChange the HTML extraction selector if your news source has a different page layout\nSwap the final Gmail node for Slack, Teams, Notion, or Google Docs\nAdd a redaction step before the Reading Agent if you want to remove signatures or long quoted sections\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

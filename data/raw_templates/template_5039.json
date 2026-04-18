@@ -1,0 +1,15 @@
+{
+  "id": 5039,
+  "name": "Stock Market Information Assistant with Telegram, Yahoo Finance, and GPT-4 Nano",
+  "description": "How it works\n\nListens to Telegram messages to detect stock-related queries.\nExtracts company name and identifies its exact stock ticker symbol.\nSearches Yahoo Finance for stock info using the ticker.\nFetches and formats the latest stock data like price and key stats.\nSends a clean, simplified reply back to the user on Telegram.\n\nSet up steps\nRequires Telegram Bot Token and Apify API credentials.\nImport workflow to n8n and link both Apify actors (Google Search + Yahoo Finance).\nLink OpenRouter for AI and enable Telegram trigger.\nTakes ~10–15 min to connect services and test.\nIncludes sticky notes with setup links and tutorial videos.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.informationExtractor",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

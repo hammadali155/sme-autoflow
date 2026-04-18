@@ -1,0 +1,11 @@
+{
+  "id": 4946,
+  "name": "Automatically Create Trello Cards from Google Forms Lead Submissions",
+  "description": "Transform your lead generation process with this powerful n8n workflow that automatically captures form submissions from Google Forms and creates organized lead cards in Trello.\n\n🎯 Who Is This For?\nThis workflow is perfect for:\n\nSales teams who need to quickly organize and track incoming leads.\nMarketing professionals running lead generation campaigns\nSmall business owners wanting to streamline their customer acquisition process\nConsultants and service providers collecting client information through forms\nAnyone who wants to eliminate manual data entry between forms and project management tools\n\n🛠️ Tools Involved & Prerequisites\nRequired Tools:\n\nn8n\nGoogle Forms - for lead capture forms\nTrello - for lead management and organization\n\nPrerequisites:\n\nActive Google account with Forms access\nTrello account with board creation permissions\n\n⚙️ How It Works\nThis workflow automatically transforms Google Form submissions into organized Trello cards for lead management:\n\nForm Trigger: When someone submits your Google Form, the workflow instantly captures all their information\nData Mapping: The system takes the form responses and maps them to the appropriate Trello card fields\nTrello Card Creation: Each lead becomes a structured Trello card with the person's name and company as the title, plus all form data organized in custom fields\n\n🚀 Setup Instructions\nImport the workflow template into your n8n instance\nAccess the set up instructions here: https://www.notion.so/Google-Forms-to-Trello-Automation-Setup-Instructions-213718e8c6ba807f9972ff2f81f1057a?source=copy_link",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.trello",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

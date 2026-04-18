@@ -1,0 +1,17 @@
+{
+  "id": 14687,
+  "name": "Capture and enrich leads with GPT-4o, Postgres, Slack, Gmail and your CRM",
+  "description": "\nOverview\nThis workflow captures incoming leads from a webhook, enriches them using AI, and automates the entire sales pipeline. It validates data, scores leads as hot, warm, or cold, assigns them to sales reps, syncs with CRM systems, and triggers notifications and follow-ups.\n\nIt helps teams respond faster, prioritize high-value leads, and streamline sales operations with minimal manual effort.\n\nHow It Works\n\nWebhook Trigger\n   Captures lead data from forms or landing pages.\n\nWorkflow Configuration\n   Defines:\n     CRM API endpoint\n     Slack notification channel\n     Sales reps list for assignment\n\nValidation\n   Ensures required fields (name and email) are present.\n   Routes invalid submissions to error handling.\n\nData Normalization\n   Structures lead data (name, email, phone, company, message).\n\nAI Lead Enrichment\n   Classifies lead as:\n     Hot\n     Warm\n     Cold\n   Generates:\n     Score reasoning\n     Estimated deal value\n     Company insights\n     Recommended next actions\n\nDatabase Storage\n   Stores enriched lead data in Postgres.\n\nSales Assignment\n   Assigns leads using round-robin distribution logic.\n\nCRM Integration\n   Sends lead data to CRM (e.g., HubSpot, GoHighLevel)\n   Optionally creates Salesforce leads\n\nAutomated Communication\n   Sends welcome email to the lead\n   Notifies sales team via Slack\n\nActivity Logging\n   Logs all actions for tracking and analytics\n\nSetup Instructions\n\nWebhook Setup\n   Configure endpoint (lead-capture)\n   Connect your form or frontend\n\nOpenAI Credentials\n   Add API key for lead scoring and enrichment\n\nDatabase Setup\n   Configure Postgres credentials\n   Create tables:\n     leads\n     activity_log\n\nCRM Integration\n   Add API credentials for your CRM\n   Set endpoint URL\n\nSalesforce (Optional)\n   Configure Salesforce credentials if used\n\nSlack Integration\n   Add Slack credentials\n   Set channel ID for notifications\n\nEmail Setup\n   Connect Gmail account for sending emails\n\nConfigure Sales Reps\n   Add email list in configuration node\n\nUse Cases\n\nAutomated lead qualification for marketing teams  \nSaaS lead management pipelines  \nAgency client acquisition workflows  \nCRM automation with AI enrichment  \nSales team lead distribution systems  \n\nRequirements\n\nOpenAI API key  \nPostgres database  \nCRM system (HubSpot, GoHighLevel, or similar)  \nGmail account  \nSlack workspace  \nSalesforce account (optional)  \nn8n instance  \n\nKey Features\n\nAI-powered lead scoring and enrichment  \nAutomated validation and error handling  \nRound-robin sales assignment  \nMulti-CRM integration support  \nReal-time Slack notifications  \nAutomated email follow-ups  \nFull activity tracking and logging  \n\nSummary\n\nA complete AI-driven lead management system that captures, enriches, scores, and routes leads automatically. It enables faster response times, better lead prioritization, and scalable sales automation for modern teams.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.salesforce",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

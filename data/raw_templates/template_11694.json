@@ -1,0 +1,14 @@
+{
+  "id": 11694,
+  "name": "Create & Publish Instagram Carousels with AI Research, Nano Banana Pro & Slack",
+  "description": "This workflow allows you to complete the entire process of creating and publishing detailed Instagram Carousels—from research to posting—without ever leaving Slack. It leverages Nano Banana Pro, a state-of-the-art image generation model capable of rendering perfect text, to create professional \"consultant-style\" slides that AI previously struggled with.\n\nHow it works\nStart in Slack: You trigger the workflow by entering a topic ensuring the entire process starts in Slack.\nResearch (AI Agent): An AI agent searches the web for deep insights on the topic.\nDrafting (AI Agent): Structures research into a carousel format designed for engagement.\nReview in Slack: The draft is sent to Slack as a formatted message. You approve it with a single click.\nImage Generation: Upon approval, Nano Banana Pro generates professional infographic-style images with legible, high-density text.\nFinal Review in Slack: The created images and caption are sent back to Slack.\nPublish from Slack: One final approval in Slack automatically publishes the Carousel to Instagram.\n\nSetup steps\nConfigure Credentials:\n    OpenAI API: Required for the Research and Drafting agents (GPT-4o/GPT-5 recommended).\n    Slack API: Required for notifications and approval buttons.\n    Kie.ai (Nano Banana Pro): Required for high-quality text-in-image generation.\n    Facebook Graph API: Required for publishing to Instagram.\nSet IDs:\n    Open the \"Slack Approval\" nodes and set your Channel ID.\n    Open the \"Instagram\" nodes and set your Instagram Business Account ID.\nCustomize Prompts (Optional): Adjust the system prompts in the AI nodes to match your brand's tone of voice.\n\nRequirements\nn8n version**: 1.0+ (AI nodes required)\nKie.ai Account**: For using the Nano Banana Pro model (excellent at rendering text).\nSlack Workspace**: For the Human-in-the-loop approval process.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

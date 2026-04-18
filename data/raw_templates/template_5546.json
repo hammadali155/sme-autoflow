@@ -1,0 +1,12 @@
+{
+  "id": 5546,
+  "name": "Create Evergreen Content with GitHub Dynamic Images & URL Redirects",
+  "description": "Transform static digital assets into dynamic, self-updating powerhouses that stay relevant for years to come!\n\nThis workflow solves a common problem: once you publish forms, emails, or templates, their content becomes frozen in time. Users discovering them months later see outdated information, missed opportunities, and stale offers.\n\nStop losing opportunities to stale content – make your digital assets work harder and stay fresher, automatically!\n\nHere's how it works:\n🔗 Stable embed links mean your original assets never need updating\n🔄 Dynamic URL redirects that automatically point to the latest pages\n🖼️ Auto-updating images that showcase fresh offers or content\n📅 Scheduled updates keep everything current without manual intervention\n\nPerfect for:\nWorkflow sticky notes that become evergreen marketing billboards\nRegistration forms with current promotions\nEmail signatures with latest offers  \nWebsite banners that stay seasonally relevant\nAny digital asset you want to \"future-proof\"\n\nThe magic: Set it up once, embed the stable URLs/images in your content, then forget about it. Years later, users will still see fresh, as current information automatically pulled from your workflow.\n\nRequirements: Free accounts with GitHub (image storage) and shorten.rest  (URL redirects).\n\nBoth can be swapped for your preferred services.\n\nFollow me on LinkedIn for more tips on AI automation and n8n workflows!",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

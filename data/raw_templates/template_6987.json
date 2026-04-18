@@ -1,0 +1,11 @@
+{
+  "id": 6987,
+  "name": "Website Contact Form to Slack with Optional Email Confirmation",
+  "description": "This n8n workflow sends a real-time Slack notification when a user submits a contact form on your website. It also optionally sends a confirmation email via either Outlook or Gmail.\n\nYou can embed the form directly into your website and route all submissions to your preferred Slack channel for quick follow-up.\n\n✅ Key Features\n\n🌐 Website Form Trigger**: A no-code form that can be embedded directly on your website.\n⚡ Slack Integration**: Instantly posts lead details to a designated Slack channel.\n📧 Email Follow-Up (Optional)**: Sends a thank-you email to the user via either Gmail or Microsoft Outlook.\n🔗 Easy to Connect**: Requires minimal setup with OAuth for Slack and email APIs.\n\n🧰 What You'll Need\n\nSlack Bot Token & Permissions**\nGmail or Outlook account (optional)**\nn8n instance (cloud or self-hosted)**\n\n🛠️ Step-by-Step Setup\n\n1️⃣ Embed Contact Form on Website\nNode**: Form Submission on Website\nWhat it does**: Captures user inputs — Name, Email, and Phone.\nHow to use**:\n  Grab the public webhook URL from this node.\n  Embed it as a form action on your website (HTML form or no-code builder).\nAPI**: None required. Webhook-based.\n\n2️⃣ Send to Slack\nNode**: Slack\nWhat it does**: Posts a message to your Slack #leads channel with submission details.\nMessage format**:\n    You have a form submission with these details.\n  Name: {{ Name }}\n  Email: {{ Email }}\n  Phone: {{ Phone }}\n  API**: Slack Bot Token (OAuth2)\n\n3️⃣ Optional: Send Confirmation Email\nNode**: Send Email - Gmail\n  Sends email using Gmail API.\nNode**: Send Email - Outlook\n  Sends email using Microsoft Outlook API.\nMessage**:\n    Hi {{ Name }},\n\n  Thank you for reaching out on our website. We'll be in touch soon!\n  API**: Gmail or Microsoft Outlook OAuth2\n\n👤 Created By\nRobert Breen  \nAutomation Consultant | AI Workflow Designer | n8n Expert  \n📧 rbreen@ynteractive.com  \n🌐 ynteractive.com  \n🔗 LinkedIn\n\n🏷️ Tags\nslack lead alerts website form n8n email automation real-time notification lead generation form trigger webhook\n",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.microsoftOutlook"
+  ],
+  "tags": []
+}

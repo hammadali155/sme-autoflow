@@ -1,0 +1,12 @@
+{
+  "id": 8769,
+  "name": "Manage WooCommerce Store with Natural Language using GPT-4.1 and MCP Server",
+  "description": "WooCommerce AI Agent — n8n Workflow (Overview)\n\nDescription: Turn your WooCommerce store into a conversational AI assistant — create products, place orders, run reports and manage coupons using natural language via n8n + an MCP Server.\n\nKey features\nNatural-language commands mapped to WooCommerce actions (products, orders, reports, coupons).  \nStructured JSON outputs + lightweight mapping to avoid schema errors.  \nCalls routed through your MCP Server for secure, auditable tool execution.  \nMinimal user prompts — agent auto-fetches context and asks only when necessary.  \nExtensible: add new tools or customize prompts/mappings easily.\n\nDemo of the workflow:\n\nYoutube Video\n\n🚀 Setup Guide: WooCommerce + AI Agent Workflow in n8n\n\n1. Prerequisites\nRunning n8n instance  \nWooCommerce store with REST API keys  \nOpenAI API key  \nMCP server (production URL)  \n\n2. Import Workflow\nOpen n8n dashboard  \nGo to Workflows → Import  \nUpload/paste the workflow JSON  \nSave as WooCommerce AI Agent  \n\n3. Configure Credentials\n\nOpenAI\nCreate new credential → OpenAI API  \nAdd your API key → Save & test  \n\nWooCommerce\nCreate new credential → WooCommerce API  \nEnter Base URL, Consumer Key & Secret → Save & test  \n\nMCP Client\nIn MCP Client node, set Server URL to your MCP server production URL  \nAdd authentication if required  \n\n4. Test Workflow\nOpen workflow in editor  \nRun a sample request (e.g., create a test product)  \nVerify product appears in WooCommerce  \n\n5. Activate Workflow\nOnce tested, click Activate in n8n  \nWorkflow is now live 🎉  \n\n6. Troubleshooting\nSchema errors** → Ensure fields match WooCommerce node requirements  \nConnection issues** → Re-check credentials and MCP URL  \n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.mcpClientTool"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 4850,
+  "name": "Export Cloudflare Domains with DNS Records and Settings to Google Sheets",
+  "description": "How it works\n\nThis workflow simply exports all your CloudFlare domains to Google Sheet to get high overview of all of your settings. This could help for easy debugging, searching or similar needs. \nIn flow simple pagging nodes are used to iterate over all your domains, because this list could be huge. \nFor each host we are merging DNS & Settings and transforming them into columns for all our domains.\n\nRequirements\n\nFor storing and processing of data in this flow you will need:\n\nCloudFlare.com API key/token - for retrieving your data (https://dash.cloudflare.com/:account/api-tokens) (need full access)\nGoogle Spreadsheet auth connected in your n8n Credentials\nGoogle Spreadsheet template - you can copy my sheet as starting point, start by copying it to your account \nMatch Sheet ID in 'Export' node to your newly created.\n\nOfficial CloudFlare api Documentation\nFor full details and specifications please use API documentation from: https://developers.cloudflare.com/api/\n\nPotential API timeouts\nIf you encounter CF API timeouts - I would suggest to only put somewhere in the loop simple sleep/wait node - for couple of seconds - and it should resolve timeouts.\n\nGoogle Sheet\nI've used simple Google Sheet feature conditional formatting to visually distinct my on|off toggles that was of my interest to easily get high overview for debuggint some of the settings on my hosts - but please use your own logic or change it completely.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

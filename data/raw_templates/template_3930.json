@@ -1,0 +1,14 @@
+{
+  "id": 3930,
+  "name": "Voice-to-Email Response System with Telegram, OpenAI Whisper & Gmail",
+  "description": "This workflow gives you the ability to reply to a long email with a voice note, rather than having to type everything out. \n\nChatGPT will format your audio response and create an email draft for you.\n\nHow it works\nWhen a new email arrives in your inbox, the workflow checks if it needs a response, and it it does, it sends a message to you on Telegram via a VoiceEmailer bot.\n\nWhen you reply to that message with an audio message, the second part of this workflow is triggered. It checks if the message is in the right format, transcribes the audio, and creates a draft response that shows up in the same email thread.\n\nSet up steps\nAdd your credentials for Gmail and OpenAI\nCreate an Telegram bot following the instructions here.\nConnect your telegram credentials so the workflow will use your bot.\nTurn on the workflow, and message the bot from your telegram. Find the Chat ID from the Executions tab of your workflow, and enter it in as a variable.\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

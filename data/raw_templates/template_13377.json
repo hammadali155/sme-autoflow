@@ -1,0 +1,14 @@
+{
+  "id": 13377,
+  "name": "Monitor product prices with Decodo, Google Sheets, Gemini and Gmail",
+  "description": "Categories: Business Automation, E-commerce, Intelligence, AI\nThis workflow automates high-frequency price tracking across e-commerce platforms. It combines the data-handling power of the Decodo node with the intelligence of Google Gemini to eliminate manual price checks. It is for businesses seeking real-time market intelligence.\nBenefits\nTotal Automation: Handles data sourcing, and email notifications without human help.\nIntelligent Extraction: Uses AI to analyze the full page content.\nPrecision Alerting: Triggers notifications when a product's price meets or falls below the \"Desired Price.\"\nScalable Architecture: Processes large batches of products.\n\nHow It Works\nScheduled Data Retrieval: The Schedule Trigger pulls a list of URLs and target prices from Google Sheets.\nRaw Data Processing: Data flows through a Decodo node.\nFull-Body Extraction: The workflow captures the entire body of the webpage.\nAI-Driven Analysis: An AI Agent, powered by Google Gemini, analyzes the text to identify the product name and price.\nRegex Data Cleaning: A JavaScript node uses Regular Expressions to sanitize the AI's response.\nSmart Comparison & Alerting: An If Node compares the live price against the \"Desired Price.\" If the condition is met, an automated alert is sent via Gmail.\n\nRequirements\nn8n Instance\nGoogle Account\nGoogle Gemini API Key\nDecodo Credentials\n\nHow to Use\nSetup your Spreadsheet: Create a Google Sheet with columns for the product link and \"Desired price.\"\nAuthenticate Nodes: Connect your Google Sheets, Gmail, and Gemini credentials within n8n.\nConfigure Parameters: Ensure the If node correctly references the \"Desired price\" column from your Google Sheet output.\nDeploy: Activate the workflow. The system will now run automatically, monitoring the list and notifying of deals.\n\nBusiness Use Cases\nRetail Arbitrage Agencies: Spot price drops on supplier sites to maximize profit margins.\nCompetitor Intelligence: Monitor rival pricing strategies.\nProcurement Departments: Automate the \"buy\" signal for raw materials when they hit a specific price point.\nE-commerce Managers: Track MAP (Minimum Advertised Price) compliance.\nRevenue Potential\nIncreased Margins: Buy inventory at the lowest prices.\nMarket Leadership: React faster than competitors to market-wide price shifts.\nService Offering: Provide \"Price Watch\" services for e-commerce clients.\n\nDifficulty Level: \nIntermediate\nEstimated Setup Time: 40 min\nMonthly Operating Cost: Low (based on Gemini API tokens)",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

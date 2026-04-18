@@ -1,0 +1,11 @@
+{
+  "id": 14058,
+  "name": "Scrape Shopify store leads with ScraperCity and send contacts to Slack",
+  "description": "Who is this for\n\nThis workflow is for sales teams, growth hackers, and lead generation agencies who want to build a targeted list of Shopify store owners -- complete with emails, phone numbers, and social profiles -- and receive those contacts directly in Slack for immediate follow-up.\n\nHow it works\n\nA manual trigger starts the workflow and passes your search parameters (country, platform, lead count) to the ScraperCity store-leads API.\nThe API returns a runId immediately. Because scrapes can take 10--60 minutes, the workflow enters an async polling loop -- waiting 60 seconds between each status check.\nOnce the scrape status returns SUCCEEDED, the workflow downloads the full CSV result set.\nA Code node parses the CSV, removes duplicates, and formats each lead into a clean Slack message block.\nEach contact (store name, email, phone, social links) is posted as a structured Slack message so your team can act on leads in real time.\n\nHow to set up\n\nCreate a ScraperCity account at scrapercity.com and copy your API key.\nIn n8n, add an HTTP Header Auth credential named ScraperCity API Key with the header name Authorization and value Bearer YOUR_KEY.\nAdd a Slack credential (OAuth2) and connect it to the Post Lead to Slack node.\nIn the Configure Search Parameters node, update countryCode, totalLeads, and slackChannel to match your needs.\nClick Execute workflow to run.\n\nRequirements\n\nScraperCity account and API key (scrapercity.com)\nn8n instance (cloud or self-hosted)\nSlack workspace with a bot token and target channel\n\nHow to customize the workflow\n\nChange platform in Configure Search Parameters from shopify to woocommerce to target WooCommerce stores instead.\nIncrease totalLeads up to 5000 per run.\nAdd a Filter node after CSV parsing to keep only leads with verified emails.\nReplace the Slack node with a Google Sheets or HubSpot node to store leads in a CRM.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

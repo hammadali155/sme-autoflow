@@ -1,0 +1,12 @@
+{
+  "id": 2452,
+  "name": "Automated Email Marketing Campaign Workflow ",
+  "description": "This n8n workflow demonstrates how to automate a large-scale personalized promotional email campaign, leveraging artificial intelligence to generate unique content for each recipient.\n\nSave time and increase the effectiveness of your marketing campaigns by allowing AI to handle the creation of personalized content and email sending.\n\nHow it works:\nThe workflow fetches recipient data from a Google Sheets document.\nIt validates email addresses and checks if recipients haven't been contacted before.\nFor each valid recipient, the AI agent (using GPT-3.5) generates a personalized email including the recipient's name, product introduction, exclusive offer, and a unique promotional link.\nThe personalized email is sent via SMTP to the recipient.\nThe workflow updates the Google Sheet to mark the recipient as contacted.\nA random delay is introduced between emails to mimic natural sending patterns and avoid triggering spam filters.\n\nRequirements:\nGoogle Sheets account for storing and managing recipient data.\nOpenAI account for access to the GPT-3.5 model.\nSMTP server for sending emails.\n\nCustomizing the workflow:\nThis example focuses on sending personalized promotional emails, but it could be extended to include follow-up sequences, tracking email opens and clicks, or integrating with a CRM system for more comprehensive customer management.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

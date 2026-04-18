@@ -1,0 +1,12 @@
+{
+  "id": 9307,
+  "name": "Automatically Classify Zoho Desk Support Tickets using Gemini AI",
+  "description": "Automatically Classify Support Tickets in Zoho Desk with AI with Gemini\n\nTransform your customer support workflow with intelligent ticket classification. This automation leverages AI to automatically categorize incoming support tickets in Zoho Desk, reducing manual work and ensuring faster ticket routing to the right teams.\n\nHow It Works\n\nFetches all tickets from Zoho Desk with pagination support\nFilters unclassified tickets (where classification field is null)\nRetrieves complete ticket threads for full conversation context\nUses OpenRouter AI (GPT-4, Claude, or other models) to classify tickets into predefined categories\nUpdates tickets in Zoho Desk with accurate classifications automatically\n\nUse Cases\n\nCustomer Support Teams**: Automatically route tickets to specialized departments (billing, technical, sales)\nHelp Desks**: Prioritize urgent issues and categorize feature requests\n\nPrerequisites\n\nActive Zoho Desk account with API access\nOpenRouter API account (supports multiple AI models)\nBasic understanding of OAuth2 authentication\nPredefined ticket categories in your Zoho Desk setup\n\nSetup Steps\nTime: ~15 minutes\n\nConfigure Zoho Desk OAuth2 - Follow our step-by-step GitHub guide for OAuth2 credential setup\nSet up OpenRouter API - Create an account and generate API keys at openrouter.ai\nCustomize classifications - Define your ticket categories (e.g., Technical, Billing, Feature Request, Bug Report)\nAdapt the workflow - Modify for any field: status, priority, tags, assignment, or custom fields\nReview API documentation - Check Zoho Desk Search API docs for advanced filtering options\nTest thoroughly - Run manual triggers before automation\n\nNote: This workflow demonstrates proper Zoho Desk API integration, including OAuth2 authentication and pagination handling—two common integration challenges.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

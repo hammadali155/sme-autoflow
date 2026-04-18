@@ -1,0 +1,14 @@
+{
+  "id": 13709,
+  "name": "Coordinate smart factory operations with OpenAI GPT-4.1-mini and Slack alerts",
+  "description": "How It Works\nThis workflow automates cross-factory operations management by deploying a multi-agent AI system that validates production data, coordinates scheduling, procurement, and quality escalation, then routes outcomes by priority. Designed for manufacturing operations managers, supply chain coordinators, and factory floor teams, it eliminates manual coordination delays and ensures critical issues trigger immediate alerts. A schedule trigger fetches production and supply chain data in parallel, merges them, then passes to an Operations Validation Agent for data integrity checks. A Cross-Factory Coordination Agent orchestrates three sub-agents—Scheduling, Procurement, and Quality Escalation—producing consolidated coordination outputs. Results are routed by priority: high and critical cases trigger dedicated Slack alerts, while routine operations are logged for standard review.\n\nSetup Steps\nSet schedule trigger interval to match operational review frequency.\nAdd OpenAI API credentials to all OpenAI Model nodes.\nConnect production and supply chain data sources to fetch nodes.\nConfigure Slack credentials for high-priority and critical alert channels.\nDefine priority routing thresholds in the Route by Priority rules node.\n\nPrerequisites\nSlack workspace with bot token\nProduction and supply chain data sources (API or database)\nUse Cases\nAutomated cross-factory scheduling conflict detection and resolution\nCustomization\nAdd sub-agents for logistics, maintenance, or inventory optimisation\nBenefits\nAutomates cross-factory coordination across scheduling, procurement, and quality\n\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

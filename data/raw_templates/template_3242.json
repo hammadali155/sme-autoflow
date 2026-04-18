@@ -1,0 +1,14 @@
+{
+  "id": 3242,
+  "name": "Smart Email Classifier & Auto-Responder with AI",
+  "description": "This n8n workflow automates email management by classifying incoming messages, drafting replies, and sending alerts—all powered by AI.  \n\nFeatures  \n\n🚀 AI-Powered Email Categorization  \nClassifies emails into Spam, Important, Promotion, Notification, Personal, Call Request, Needs Reply.  \nUses GPT-4o to determine whether an email requires a response.  \n\n✉️ Automated Smart Replies  \nGenerates context-aware responses using AI.  \nSupports email threading for seamless conversations.  \n\n🔔 Real-Time Notifications  \nTelegram Alerts** for important emails.  \nGmail Drafts** auto-generated for quick replies.  \n\n🛠️ Google Calendar Integration  \nSchedules follow-ups based on email content.  \n\nSetup Instructions  \nConnect Gmail, OpenAI, Telegram, and Google Calendar.  \nSet up classification categories and notification preferences.  \nCustomize AI response styles if needed.  \nRun the workflow—watch it organize your inbox effortlessly.  \n\nWho Should Use This?  \nBusy Professionals**: Focus on high-priority emails.  \nCustomer Support**: Manage inquiries with quick replies.  \nSales Teams**: Respond to leads instantly.  \n\nKeep your inbox under control with this automation! 🚀  ",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi",
+    "@n8n/n8n-nodes-langchain.sentimentAnalysis"
+  ],
+  "tags": []
+}

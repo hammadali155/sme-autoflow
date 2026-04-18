@@ -1,0 +1,12 @@
+{
+  "id": 2327,
+  "name": "Host your own Uptime Monitoring with Scheduled Triggers",
+  "description": "This n8n workflow demonstrates how to build a simple uptime monitoring service using scheduled triggers.\n\nUseful for webmasters with a handful of sites who want a cost-effective solution without the need for all the bells and whistles.\n\nHow it works\nScheduled trigger reads a list of website urls in a Google Sheet every 5 minutes\nEach website url is checked using the HTTP node which determines if the website is either in the UP or DOWN state.\nAn email and Slack message are sent for websites which are in the DOWN state.\nThe Google Sheet is updated with the website's state and a log created.\nLogs can be used to determine total % of UP and DOWN time over a period.\n\nRequirements\nGoogle Sheet for storing websites to monitor and their states\nGmail for email alerts\nSlack for channel alerts\n\nCustomising the workflow\n\nDon't use Google Sheets? This can easily be exchanged with Excel or Airtable.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

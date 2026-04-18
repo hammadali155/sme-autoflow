@@ -30,7 +30,7 @@ PROJECT_ROOT: Path = Path(__file__).resolve().parent.parent
 load_dotenv(PROJECT_ROOT / ".env")
 
 GEMINI_API_KEY: str | None = os.getenv("GEMINI_API_KEY")
-MODEL_NAME: str = "gemini-2.0-flash"
+MODEL_NAME: str = "gemini-2.5-flash"
 MAX_RETRIES: int = 2
 MAX_TEMPLATE_CHARS: int = 800
 MAX_REFERENCE_TEMPLATES: int = 3

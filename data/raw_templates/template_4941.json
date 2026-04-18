@@ -1,0 +1,14 @@
+{
+  "id": 4941,
+  "name": "Build Your First AI Agent – Powered by Google Gemini with Memory",
+  "description": "A smart personal assistant that can reason, search, calculate, and remember — powered by Google Gemini and ready in one click.\n\nMost AI agents only respond — this one thinks before replying, pulls in real-time facts, does the math, and even remembers the last 5 things you said.\n\n🔧 How it works\nThis template builds a conversational agent using the Google Gemini API. It uses multiple tools like:\n\n🧠 Think – to reason step-by-step\n🔍 SerpAPI – to search live data on Google\n➗ Calculator – to solve math problems\n💾 Memory – to remember short-term chat history\n\nYou can embed this agent into a chatbot, web app, or automate any customer support, research, or productivity workflow.\n\n🧠 Your agent will:\nUnderstand what you're asking\nThink logically using the Think tool\nSearch facts in real-time using SerpAPI\nCalculate numbers using a math engine\nRecall past context using a memory buffer\nAnd respond clearly — just like a real assistant.\n\n🧑‍💼 Who is this template for?\nThis template is ideal for:\nCreators & developers building AI agents\nTeams needing a Gemini-powered assistant\nBeginners exploring LangChain + n8n\nAnyone curious about combining LLMs + tools + memory\n\n🚀 How to set up\nPlug in your Google Gemini API key\nAdd your SerpAPI key\nRun the workflow and start chatting!\nEverything is pre-wired for you — just import and go.\n\n📬 Use cases\nYou can connect this agent to:\n\nTelegram bots 🤖\nWhatsApp via Twilio 📱\nSlack, Discord, or Gmail 💬\nOr just trigger it inside n8n manually 🔁\n\n👉 Check out my other templates\nhttps://n8n.io/creators/digimetalab",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

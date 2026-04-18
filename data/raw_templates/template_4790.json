@@ -1,0 +1,13 @@
+{
+  "id": 4790,
+  "name": "Personalized CrunchBase Lead Outreach with AI-Generated Summaries and Gmail",
+  "description": "\nAutomated outreach system that identifies and contacts potential leads from CrunchBase with personalized, timely messages.\n\n🚀 What It Does\n\nIdentifies target companies and contacts\nPersonalizes email content\nSchedules follow-ups\nTracks responses\nIntegrates with email providers\n\n🎯 Perfect For\n\nSales development reps\nBusiness development teams\nStartup founders\nInvestment professionals\nPartnership managers\n\n⚙️ Key Benefits\n\n✅ Automated lead generation  \n✅ Personalized outreach at scale  \n✅ Follow-up automation  \n✅ Response tracking  \n✅ Time-saving workflow  \n\n🔧 What You Need\n\nCrunchBase API access\nEmail service (e.g., Gmail, SendGrid)\nn8n instance\nCRM (optional)\n\n📊 Features\n\nContact information extraction\nEmail template personalization\nSend time optimization\nOpen/click tracking\nResponse handling\n\n🛠️ Setup & Support\n\nQuick Setup\n\nStart sending in 30 minutes with our step-by-step guide\n\n📺 Watch Tutorial\n\n💼 Get Expert Support\n\n📧 Direct Help\n\n\n\nTransform your outbound sales process with automated, personalized outreach to high-quality leads from CrunchBase.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

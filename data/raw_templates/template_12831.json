@@ -1,0 +1,10 @@
+{
+  "id": 12831,
+  "name": "Book, manage, and check appointments using Vapi and Google Calendar",
+  "description": "Use this workflow to book, cancel, or reschedule appointments using Vapi and Google Calendar\n\nHow it works\nThe Check Availability workflow checks if appointments exist on Google Calendar and returns a response to Vapi.\n\nThe Book Appointment workflow schedules an appointment on Google Calendar.\n\nThe Manage Appointments workflow updates or cancels appointments based on the user’s request.\n\nKey Features:\nAbility to book, update, or cancel an appointment\n\nValidates required fields before booking\n\nHandles errors with helpful user messages\n\nReturns a Vapi-compatible response format\n\nSet up steps\nPrerequisites\nVapi.ai account\n\nGoogle Calendar\n\nn8n instance - Self-hosted or cloud\n\nSteps\nStep 1: Configure Google Calendar Access\n\nStep 2: Import and Configure Workflows\n\nStep 3: Create Vapi Custom Tools\n\nStep 4: Configure Vapi Assistant\n\nUse Cases\nAppointment booking automation for service businesses\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

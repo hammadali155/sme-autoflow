@@ -1,0 +1,12 @@
+{
+  "id": 13334,
+  "name": "Repurpose blog articles into social media posts with Google Gemini AI",
+  "description": "Who is this for\nContent creators, marketers, and solopreneurs who want to maximize reach from every blog post without spending hours manually adapting content for each social platform.\n\nWhat this workflow does\n\nThis workflow automatically transforms any blog article into ready-to-publish social media content using Google Gemini AI (free API). Send a blog URL via webhook, and receive structured JSON output containing:\n\nSummary**: 2-3 sentence article overview\nTwitter**: Platform-optimized tweet with hashtags (280 chars)\nLinkedIn**: Professional post with hook, insights, and CTA (150-300 words)\nInstagram**: Engaging caption with emojis and 20-30 hashtags\nKey Takeaways**: 3-5 actionable bullet points\n\nHow to set up\nGet a free Google Gemini API key from Google AI Studio\nAdd it as a Google Gemini (PaLM) Api credential in n8n\nSelect the credential in the Google Gemini Chat Model node\nCustomize language and tone in the Config node\nActivate and send a POST request with {\"url\": \"https://your-blog-post.com\"}\n\nRequirements\n\nGoogle Gemini API key (free tier available)\nn8n instance (cloud or self-hosted)\n\nHow to customize\n\nEdit the Config node to change output language or tone\nModify the AI prompt to add platforms (TikTok, Pinterest, etc.)\n\nReplace webhook response with Google Sheets, Notion, or Slack output",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

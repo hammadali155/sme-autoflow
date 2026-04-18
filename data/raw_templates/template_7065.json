@@ -1,0 +1,11 @@
+{
+  "id": 7065,
+  "name": "Automate Personalized Email Campaigns with Google Docs, Sheets and SMTP",
+  "description": "Emailing Using Google Sheet, Google Docs, and SMTP\n\nAutomate personalized email campaigns using a Google Sheets contact list, a Google Docs template, and SMTP delivery.\n\nHow It Works\n\nGoogle Docs** is used as the email template with variables: {{firstname}}, {{lastname}}, {{company}}, {{email}}.\nGoogle Sheet** contains your list of recipients (one per row).\nFor each contact, the workflow merges personal data into the Google Docs template.\nEmail is sent to each recipient via SMTP (batch size: 1). Use the Wait node to respect provider quotas.\nAfter sending, the workflow updates the \"process\" column of the Google Sheet with the date/time.\n\nHow to Use\n\nCopy Templates:\n   Google Docs Template\n   Google Sheet Template\n   Find each document’s ID (the text after /d/ and before /edit in the URL).\n\nConfigure Workflow:\n   Enter your Google Docs and Google Sheets IDs in the settings node.\n   Set your email subject in the appropriate parameter.\n\nSet Up Credentials:\n   Connect your Google account.\n   Configure the SMTP node with your mail server details.\n\nUpdate Data:\n   Edit the Google Docs template with your message and variables.\n   Prepare your Google Sheet with these columns: email, firstname, lastname, company.\n\nDeploy and Test:\n   Connect all nodes.\n   Test with a small contact batch.\n   Troubleshoot any node errors (indicated in red in n8n).\n\nRequirements\n\nGoogle Credentials & permissions**: For Sheets and Docs access.\nSMTP Server**: For email delivery (adjust Wait node for rate limits).\nn8n Version**: Tested on 1.105.2 (Ubuntu). \n\nNeed Help?\n\nComment this post or contact me on LinkedIn\nAsk in the n8n Community Forum!\n\nSee Also\n\nAfter running your email campaign, some messages may fail to deliver. This workflow scans your email inbox for delivery errors (e.g., bounced messages), flags problematic email addresses in the Google Sheet and ensures future campaigns skip them.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDocs"
+  ],
+  "tags": []
+}

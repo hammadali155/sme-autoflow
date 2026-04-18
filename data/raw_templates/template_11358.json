@@ -1,0 +1,18 @@
+{
+  "id": 11358,
+  "name": "WordPress blog generation with AI Research, Image Creation & Auto Publishing",
+  "description": "How This N8n Workflow Works\n\nThis is an automated blog post generation system that:\n\nResearches topics using AI agents and web search tools\nWrites complete blog posts with proper SEO structure\nGenerates custom images for each post\nPublishes directly to WordPress with images embedded\n\nSetup Steps\n\n1. API Keys & Credentials\nSet in \"API Keys\" node:**\n  tavily: Get from tavily.com (free tier available)\n  wavespeed: Get from wavespeed.ai for image generation\n  wordpress-website-url: Your WordPress site URL\n\n2. WordPress Authentication\nCreate WordPress Application Password:\n  Go to Users → Your Profile → Application Passwords\n  Create new password and save it\nSet up WordPress API credential in n8n with:\n  Username: Your WordPress username\n  Password: The application password you created\n\n3. Data Table Setup\nCreate an n8n Data Table with these columns:\n  title, topic, content, slug, excerpt, featured_image, audience, category, author, status\n\n4. AI Model Configuration\nConfigure AI models in these nodes:\n  Researcher Agent (uses OpenAI or Google Gemini)\n  Writer Agent (uses OpenAI or Google Gemini) \n  Image Prompts Writer (uses OpenAI)\n\n5. Image Generation\nUpdate image upload URL in \"Upload image\" node:\n  Change to: https://yourdomain.com/wp-json/wp/v2/media\nConfigure your preferred image generation service\n\nHow to Trigger\n\nFill the form with:\n   Topic\n   Target audience  \n   Industry\nSubmit to start the automation\n\nWorkflow Process\n\nResearch Phase: AI researches topic and analyzes existing content\nWriting Phase: AI writes complete blog post with HTML structure\nImage Creation: Generates featured image + content images\nWordPress Integration: \n   Uploads images to media library\n   Creates blog post with embedded images\n   Sets featured image and metadata\n\nKey Features\n\nSEO-optimized** content structure\nAutomatic image generation** and embedding\nWordPress native integration**\nQuality checks** and retry logic\nHuman-like writing** with anti-AI detection\n\nThe system handles everything from research to published post with images in one automated workflow.",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

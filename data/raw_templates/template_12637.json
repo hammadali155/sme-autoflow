@@ -1,0 +1,13 @@
+{
+  "id": 12637,
+  "name": "Publish Zoom class recordings to Google Classroom automatically",
+  "description": "About\nThis flow is ideal for online schools that use Zoom to teach classes and Google Classroom for storing materials and homework.\n\nIt listens for Zoom webhooks that come after each recorded call is uploaded to Zoom Cloud (you'll need Zoom paid plan).\nWhen new meeting comes, it filters out calls that last less than 30 mins. \nAfter duration check, it checks if there is a Google Class that matches the call name. Your call must be named exactly as the Google Class you want the call to be uploaded to. \nIf the class is found, it will extract the Class ID. This flow assumes that you have a specific topic used for storing class recordings and materials, so it will look for this topic and upload the material. If topic is not found, you'll get an email.\n\nRequirements\nYou'll need a:\nZoom paid plan that supports Zoom Cloud\nGoogle cloud console to set up Classroom API and Gmail API\nOpenAI API key or any other provider",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.crypto",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": 2299,
+  "name": "Scrape every url on the web without getting blocked by Anti-Bot technologies with Scrappey",
+  "description": "Purpose of the workflow\nMost scraping workflows get blocked by anti-bot technologies. To avoid this, you can use Scrappey to scrape every website you want.\n\nHow it works:\nWe use Test Data and make a API Call to the Scrappey service. \nWe get the scraped website data back as a result.\n\nSetup Steps:\nReplace YOUR_API_KEY in the \"Scrappey API Call\" node with your Scrappey API Key (Register For Free)\nReplace the test data with your production data. You can plug in any type of data connector at this point of your workflow.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

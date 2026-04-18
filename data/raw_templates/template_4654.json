@@ -1,0 +1,11 @@
+{
+  "id": 4654,
+  "name": "Daily Insight Email from Structured Web Data with Firecrawl",
+  "description": "🔥 Daily Web Scraper & AI Summary with Firecrawl + Email Automation\nNeed to extract and summarize web content from a site that doesn’t have an API? This workflow runs daily to scrape a web page using Firecrawl, summarize the content with OpenAI, and send it directly to your email — fully automated.\n\nWatch Full Video Step-by-step Tutorial Here:\nhttps://www.youtube.com/@Automatewithmarc\n\n🔧 How It Works\nDaily Trigger – Starts the workflow every 24 hours.\n\nFirecrawl Node – Crawls and extracts structured data from any web page you specify.\n\nOpenAI Node (Optional) – Processes and summarizes the raw content using a prompt you control.\n\nGmail Node – Sends the final summary or content snapshot to your email inbox.\n\n✅ Perfect For\nBusiness analysts tracking daily market or industry news\n\nResearchers and founders automating competitive intelligence\n\nAnyone who wants web data delivered without coding or scraping scripts\n\n🪜 Setup Instructions\nFirecrawl API Key – Sign up and insert your key in the credentials.\n\nUpdate Target URL – Edit the URL in the Firecrawl node to your desired site.\n\nCustomize the Prompt – Tailor the OpenAI prompt to extract the insights you want.\n\nConnect Gmail – Add your Gmail credentials and set your recipient email.\n\n🧰 Built With\nFirecrawl (Web scraping without code)\n\nOpenAI (For summarizing and insight extraction)\n\nGmail (Automated notifications)\n\nn8n (Workflow automation engine)\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

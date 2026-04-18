@@ -1,0 +1,14 @@
+{
+  "id": 11775,
+  "name": "Monitor Compliance with GPT-4 Analysis of System Logs and Generate Audit Reports",
+  "description": "\nHow It Works\nThis solution centralizes communication data from Slack, Microsoft Teams, Gmail, and GitHub into a unified AI-powered analysis and documentation workflow for teams managing distributed knowledge. Manual aggregation across multiple tools is time-consuming and leads to information silos that obscure key decisions and context. By automating secure data collection and normalization, the workflow enables AI models to analyze conversations, extract decisions, action items, and key themes, and convert these insights into continuously updated documentation such as design notes and knowledge base articles. This improves visibility, preserves organizational knowledge, and supports more effective collaboration and decision-making.\n\nSetup Steps\nConnect credentials:** Slack App API, Microsoft Teams credentials, Gmail OAuth, GitHub Personal Access Token, Anthropic API key \nConfigure monitoring parameters:** Specify channels, repositories, and email labels to track\nSet schedule triggers: \nPrerequisites\nSlack workspace admin, Teams account, Gmail account, GitHub repository access, Anthropic API subscription, Notion workspace, n8n self-hosted or cloud instance.\n\nUse Cases\nMarketing teams aggregating customer feedback across channels; Documentation teams collecting technical updates; \n\nCustomization\nModify source integrations by adding/removing trigger nodes. Adjust AI prompts in Anthropic node for different analysis types.  \n\nBenefits\nSaves 5+ hours weekly on manual data collection. Ensures no communication missed across platforms.  \n\n\n \n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

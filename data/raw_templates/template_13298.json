@@ -1,0 +1,10 @@
+{
+  "id": 13298,
+  "name": "Monitor Google Search rankings with SerpApi and Google Sheets",
+  "description": "Google Keyword SEO Monitoring\n\nWhat this is about\n\nThis workflow enables SEO monitoring by checking Google rank positions for a list of keywords and domains. It uses SerpApi's Google Search API, but can be customized to use any of SerpApi's APIs.\n\nHow it works\n\nThe workflow accepts Google Sheet with a list of keywords and domains to identify their rank in Google search results.\n\nThe results are synced to two sheets in a Google Sheet. The first is a log of all past runs. The second is an overview list showing the results from the latest run.\n\nThe workflow includes a Wait node that delays between each keyword to avoid Google Sheets API rate limiting. Adjust this if you have a custom rate limit.\n\nSetup\n\nCreate a free SerpApi account here: https://serpapi.com/\nAdd SerpApi credentials to n8n. Your SerpApi API key is here: https://serpapi.com/manage-api-key\nConnect your Google Sheets accounts to n8n. Help available here: https://n8n.io/integrations/google-sheets/\nCopy this Google Sheet to your own Google account: https://docs.google.com/spreadsheets/d/148gjSSqSY5x9Gz5JWE_FDXHOuB7ASTomSyxkZjrjuNc/edit?gid=1750873622#gid=1750873622\nSet your list of keywords and domains in the 'Latest Run' sheet.\nConnect your Google Sheet in the 'Get Keywords and Domains to Match' node\nConnect your Google Sheet in the 'Update Rank Log' node\nConnect your Google Sheet again in the 'Update Latest Run' node\n(Optional) Customize the schedule to your needs\n(Optional) Set a custom page limit and match type in 'Set Page Limit & Match Type'\n\nDocumentation\n\nSerpApi Google Search API\nSerpApi n8n Node Intro Guide\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

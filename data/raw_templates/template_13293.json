@@ -1,0 +1,13 @@
+{
+  "id": 13293,
+  "name": "Enrich newsletter subscribers with social data and tag in Mailchimp",
+  "description": "How it works:\n\nGet multi social platform data for newsletter subscribers with their email and tag them to enter organic creator, partner and ambassador workflows.\n\nStep by step workflow to enrich subscriber emails with multi social (Instagram, Tiktok, Youtube, Twitter, Onlyfans, Twitch and more) profiles, analytics and metrics using the influencers.club API and tagging them on Mailchimp to route campaigns.\n\nSet up:\n\nMailchimp (can be swapped for any email marketing sender eg. ActiveCampaign)\nInfluencers.club API",
+  "nodes": [
+    "n8n-nodes-base.mailchimp",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

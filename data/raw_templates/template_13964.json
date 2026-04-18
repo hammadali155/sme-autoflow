@@ -1,0 +1,16 @@
+{
+  "id": 13964,
+  "name": "Scrape and ingest web pages into a Pinecone RAG stack with Firecrawl and OpenAI",
+  "description": "What this does\n\nReceives a URL via webhook, uses Firecrawl to scrape the page into clean markdown, and stores it as vector embeddings in Pinecone. A visual, self-hosted ingestion pipeline for RAG knowledge bases. Adding a new source is as simple as sending a URL.\n\nThe second part of the workflow exposes a chat interface where an AI Agent queries the stored knowledge base to answer questions, with Cohere reranking for better retrieval quality.\n\nHow it works\n\nPart 1: Ingestion Pipeline\nWebhook receives a POST request with a url field\nVerify URL validates and normalizes the domain, returning a 422 error if invalid\nFirecrawl /scrape fetches the page and converts it to clean markdown\nEmbeddings OpenAI generates 1536-dimensional vector embeddings from the scraped content\nDefault Data Loader attaches the source URL as metadata\nPinecone Vector Store inserts the content and embeddings into the index\nRespond to Webhook confirms how many items were added\n\nPart 2: RAG Chat Agent\nChat trigger receives a user question\nAI Agent (OpenRouter / Claude Sonnet) queries the Pinecone vector store\nCohere Reranker improves retrieval quality before the agent responds\nAgent answers based solely on the ingested knowledge base\n\n🔥 Firecrawl   \n🌲 Pinecone   \n🧠 OpenAI Embeddings   \n🤖 OpenRouter (Claude Sonnet)   \n🎯 Cohere Reranker\n\nWebhook usage\n\nSend a POST request to the webhook URL:\n\ncurl -X POST https://your-n8n-instance/webhook/your-id \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"url\": \"firecrawl.dev\"}'\n\nPinecone setup\n\nYour Pinecone index must be configured with 1536 dimensions to match the OpenAI text-embedding-3-small model output. See the sticky note inside the workflow for the exact index settings.\n\nRequirements\nFirecrawl API key\nOpenAI API key (for embeddings)\nOpenRouter API key (for the chat agent)\nCohere API key (for reranking)\nPinecone account with a properly configured index",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+    "@n8n/n8n-nodes-langchain.rerankerCohere"
+  ],
+  "tags": []
+}

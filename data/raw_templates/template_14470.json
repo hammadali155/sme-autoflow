@@ -1,0 +1,14 @@
+{
+  "id": 14470,
+  "name": "Orchestrate credit onboarding checks with GPT-4o, Airtable, Gmail and Slack",
+  "description": "How It Works\nThis workflow automates credit operations onboarding by running KYC verification, credit bureau checks, identity validation, and sanctions screening through a single AI-powered agent. Built for credit operations teams, compliance officers, and fintech platforms, it eliminates manual eligibility reviews that are slow and error-prone. Triggered via webhook, the Credit Operations Agent orchestrates all verification tools simultaneously, then routes customers by eligibility status, eligible, ineligible, pending documentation, or compliance escalation. Each path prepares structured data stored in Airtable, triggers appropriate follow-up actions (email, Slack alerts), and logs a full audit trail. A final formatted response is returned to the originating system, closing the loop end-to-end with no manual handoffs.\n\nSetup Steps\nSet webhook URL and connect Credit Operations webhook node to your intake system.\nAdd OpenAI API key to the OpenAI Chat Model node.\nConfigure KYC, Credit Bureau, Identity, and Sanctions tool credentials.\nAdd Gmail OAuth2 and Slack bot token for notification nodes.\nConnect Airtable API key; set base/table IDs for eligible and ineligible customer stores.\nPrerequisites\nKYC & Credit Bureau API credentials\nSanctions screening API access\nGmail OAuth2 and Slack bot token\nAirtable API key\nUse Cases\nFintech platforms automating loan application eligibility screening\nCustomisation\nAdd extra verification tools (e.g., biometric or document OCR APIs)\nBenefits\nEliminates manual KYC and sanctions review bottlenecks\n",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

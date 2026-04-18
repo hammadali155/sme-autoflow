@@ -1,0 +1,15 @@
+{
+  "id": 13007,
+  "name": "Scrape LinkedIn B2B leads with Apify and GPT-4 and approve emails in Sheets",
+  "description": "What this workflow does\n\nFully production-ready B2B lead outreach pipeline that:\n\nTakes industry keywords from a form trigger (or you can manually add rows to Google Sheets)\nScrapes targeted LinkedIn leads using Apify (peakydev~leads-scraper-ppe actor)\nFilters for valid emails\nAutomatically creates company + contact records in HubSpot CRM\nGenerates highly personalized, non-salesy cold emails using GPT (tailored to the company’s industry)\nLogs every lead to Google Sheets with \"Pending\" status\nWaits for human approval or rejection — triggered directly from Google Sheets via two webhooks:\n   Approve (via button/script in sheet) → sends the email via Gmail\n   Reject (via button/script in sheet) → automatically rewrites a softer, more value-focused version with a different angle → updates the same row in the sheet\n\nWhy this is useful\n\nMost outreach automations send emails blindly.  \nThis one gives you full control with a human-in-the-loop layer inside Google Sheets + automatic intelligent rewrite on rejection — which greatly improves reply rates, reduces spam complaints, and protects your sender reputation.\n\nIdeal if you:\nRun outbound campaigns at reasonable scale\nAlready live in Google Sheets for lead review\nWant clean HubSpot CRM records before sending anything\nNeed traceable approval (who approved what, when)\nOften hear “too salesy” and want the AI to adapt automatically\n\nHow to use\n\nImport the workflow into n8n\nConnect the required credentials:\n   Apify API token\n   HubSpot App Token (Private App)\n   Gmail OAuth2\n   Google Sheets OAuth2\n   OpenAI API key\nReplace placeholders:\n   Your Google Sheet ID in the “Leads Log” node\n   Your name & signature in the AI prompts\n   Any test email addresses if needed\nActivate the main Form Trigger (Lead Campaign Setup) to start campaigns\nReview & act from Google Sheets:\n   Leads appear in your sheet with \"Pending\" status\n   Use simple buttons or a dropdown + Apps Script (code examples provided in workflow sticky notes) to trigger:\n     Approve → POST to /webhook/approved\n     Reject → POST to /webhook/rejected\nRequired credentials\n\nApify\nHubSpot (App Token)\nGmail OAuth2\nGoogle Sheets OAuth2\nOpenAI\n\nOnce set up, you get a beautiful hybrid system: generate leads automatically → review & decide in familiar Google Sheets → one-click action → n8n handles sending or smart rewriting.\n\nEnjoy — and feel free to share your reply rates or any tweaks you make after running a few campaigns! 🪄",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 7428,
+  "name": "Daily Tech & Cyber Security Brief with RSS, OpenAI GPT-4o, and Gmail",
+  "description": "What this workflow does\nPulls free security/tech headlines from multiple RSS feeds (e.g., CISA, BleepingComputer, Krebs, SecurityWeek, Ars Technica, TechCrunch, Hacker News).\n\nDe-duplicates stories, keeps only the last 24 hours, and limits to a manageable number.\n\nUses OpenAI to write a concise brief with sections and \"Why it matters.\"\n\nSends a clean HTML email via Gmail.\n\nCategory: Security / News\\\nTime to set up: ~10--15 minutes\\\nDifficulty: Beginner--Intermediate\\\nCost: Mostly free (OpenAI tokens + Gmail)\n\n*\n\nWhat you'll need\nn8n (recent version)\nOpenAI credentials\nGmail (or SMTP) credentials\nA few free RSS feed URLs (swap in/out as you like)\n\n*\n\nSet up steps\nTrigger -- Add a Cron to run daily (pick your time and timezone).\nFetch -- Add one RSS Read node per source and connect all to a Merge (append).\nDe-duplicate (this run) -- Add Remove Duplicates and compare on a stable key (prefer the article URL).\nFreshness -- Add an IF to pass only items published in the last 24 hours.\nLimit -- Add Limit to cap the total items (e.g., 25).\nSummarize -- Add OpenAI → Message a model to produce a JSON brief with subject + HTML body.\nEmail -- Add Gmail → Send to deliver the brief to your inbox.\n\n*\n\nTips & troubleshooting\nIf everything gets discarded at de-dup e while testing, switch to \"within current input\" or reset the node's stored values.\nIf no items pass the IF, widen the date window temporarily (some feeds publish late).\nIf the email arrives blank, ensure Gmail email type is set to HTML and the subject/body fields map to the model's output.\n\n*\n\nSources you can start with (swap freely)\nCISA, BleepingComputer, KrebsOnSecurity, SecurityWeek, Ars Technica (Security), TechCrunch (Security), Hacker News (front page).",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

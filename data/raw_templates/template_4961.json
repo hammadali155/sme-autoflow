@@ -1,0 +1,11 @@
+{
+  "id": 4961,
+  "name": "Validate and Create LEDGERS Contacts from Google Sheets with Error Handling",
+  "description": "Before Using this Template first search LEDGERS in the nodes list and Update!\n\nThe workflow automates contact creation in LEDGERS from a Google Sheets document, while performing validation checks on contact data to ensure data quality.\n\nKey Features:\n✅ Google Sheets Trigger – Polls the sheet every minute to detect new or updated rows.\n✅ Contact Name Validation – Checks if the contact name is provided; sends an email notification if missing.\n✅ Email & Mobile Validation – Uses custom code to validate the format of email and mobile fields.\n✅ Dynamic Routing –\n\nIf both email and mobile are valid → proceeds to create the contact in LEDGERS.\n\nIf either is invalid → sends an error notification via Gmail.\n✅ Mobile Number Formatter – Extracts country code and mobile number for consistent formatting before creating the contact.\n✅ LEDGERS API Integration – Creates the contact using the LEDGERS custom node.\n✅ Error Handling – If contact creation fails (e.g., duplicate email), sends a failure email with details.\n✅ Audit Trail – Appends results (including timestamps) back to Google Sheets for record-keeping.\n\nExtended Field Support\nThis workflow is designed to be flexible.\n👉 Along with core fields (Name, Email, Mobile), users can optionally map and include additional fields when creating a contact in LEDGERS, such as:\n\nMobile Country Code\nGSTIN\nBusiness Name\nBilling Address 1\nBilling Address 2\nCity\nState\nCountry\n\n➡ The workflow’s LEDGERS node can be configured to map these fields dynamically from Google Sheets if desired.\n\nCustomization\n✅ Users can extend or modify the workflow to handle these additional fields without needing structural changes — just by updating the mapping in the LEDGERS node parameters.\n\nRequirements:\nA connected Google Sheets document with at least Name column\n\nConfigured Gmail credentials for sending email notifications\n\nA LEDGERS account with API access and credentials set up in n8n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

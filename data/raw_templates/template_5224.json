@@ -1,0 +1,11 @@
+{
+  "id": 5224,
+  "name": "Find the Best Airbnb Deals Automatically with Bright Data & n8n",
+  "description": "F\n\nDescription\n\nThis workflow automatically searches Airbnb for the best deals in your target locations and saves them for later reference. It helps travelers find affordable accommodations by continuously monitoring listings and identifying properties that match your budget and preferences.\n\nOverview\n\nThis workflow automatically searches Airbnb for the best deals in your target locations and saves them for later reference. It uses Bright Data to scrape Airbnb listings and can filter results based on your preferences for price, amenities, and ratings.\n\nTools Used\n\nn8n:** The automation platform that orchestrates the workflow.\nBright Data:** For scraping Airbnb listings without being blocked.\nSpreadsheets/Databases:** For storing and comparing property deals.\n\nHow to Install\n\nImport the Workflow: Download the .json file and import it into your n8n instance.\nConfigure Bright Data: Add your Bright Data credentials to the Bright Data node.\nSet Up Data Storage: Configure where you want to store the Airbnb deals.\nCustomize: Specify locations, date ranges, and your budget constraints.\n\nUse Cases\n\nTravelers:** Find the best accommodation deals for your trips.\nDigital Nomads:** Track affordable long-term stays in different locations.\nProperty Managers:** Monitor competitor pricing in your area.\n\nConnect with Me\n\nWebsite:** https://www.nofluff.online\nYouTube:** https://www.youtube.com/@YaronBeen/videos\nLinkedIn:** https://www.linkedin.com/in/yaronbeen/\nGet Bright Data:** https://get.brightdata.com/1tndi4600b25 (Using this link supports my free workflows with a small commission)\n\n#n8n #automation #airbnb #travel #brightdata #dealhunting #vacationrentals #traveldeals #accommodationdeals #airbnbdeals #n8nworkflow #workflow #nocode #travelhacks #budgettravel #propertydeals #travelplanning #airbnbscraper #vacationplanning #bestairbnbs #travelautomation #affordableaccommodation #staydeals #traveltech #digitalnomad #accommodationfinder\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

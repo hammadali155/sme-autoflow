@@ -1,0 +1,14 @@
+{
+  "id": 5373,
+  "name": "US Stocks Earnings Calendar AI Updates to Telegram (Finnhub + Gemini)",
+  "description": "Purpose & Audience\nThis n8n workflow is designed for investors, traders, financial analysts, and community managers who want real-time, structured US stocks upcoming earnings calendar updates directly to their Telegram channels or chats. It’s perfect for anyone running a financial community, managing a trading group, or tracking earnings for personal investment decisions.\n\nWhat It Does\nFetches upcoming earnings calendar for US-listed stocks using the Finnhub API (free-tier), with a default window of the next 3 days (customizable to any date range).\nUses Google Gemini AI to automatically format and structure the earnings data into a clean, grouped, and enhanced message, including company names, tickers, quarters, estimated EPS, and revenue (with intelligent scaling for billions/millions).\nSends the formatted earnings update directly to your chosen Telegram chat or channel via a Telegram bot.\n\nWho Is It For?\nRetail and professional investors\nFinancial influencers and Telegram group admins\nTrading desk or community managers\nAnyone who wants hands-off, AI-powered earnings alerts for US stocks\n\nHow to Set Up\nGet Finnhub API Key:\nSign up at https://www.finnhub.io and copy your API key. \nConnect Google Gemini (or OpenAI) Model: \nAdd your Gemini API credentials in n8n for advanced AI formatting and structuring of earnings updates. \nSet Up Your Telegram Bot: \nCreate a bot with @BotFather, get your API token, and add it to n8n’s Telegram credentials. \nObtain your Telegram chat or group ID (use @RawDataBot for this). \nCustomize Date Range (Optional):\nBy default, the workflow fetches earnings for the next 3 days, but you can adjust it to any custom window (e.g., today to 7 days in the future).\nActivate the Workflow: \nSchedule how often you want updates (default: every 3 days; can be as frequent as daily). \nThe workflow will automatically fetch, format, and send the latest US earnings calendar to your Telegram.\n\nKey Features\nNo coding required—fully automated and customizable.\nHandles Telegram’s message length limit by default.\nAI-enhanced formatting for maximum readability and engagement.\nFree to use with Finnhub’s free API tier.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 12581,
+  "name": "Generate AI market research reports from NewsAPI and competitor sites to Notion, Sheets and Slack",
+  "description": "Generate market research reports from news and competitor sites to Notion and Slack\n\nThis workflow automates market research and competitive intelligence by collecting industry news and competitor website updates, analyzing them with AI, and publishing structured insights to Notion and Slack.\nIt replaces manual monitoring and summarization with a repeatable, scalable workflow suitable for daily or weekly use.\n\nWho’s it for\n\nMarketing teams** who want to track industry trends and competitor messaging in one place\nProduct managers** looking for early signals to inform roadmap and prioritization decisions\nFounders and analysts** who need automated market briefings without manual research\n\nHow it works\n\nA scheduled trigger starts the workflow (daily by default).\nIndustry news is fetched via NewsAPI while competitor websites are scraped in parallel.\nAll collected content is consolidated and sent to OpenAI (GPT-4o) for analysis.\nThe AI generates a structured report including trends, SWOT insights, and recommended actions.\nThe full Markdown report is saved to a Notion database, and an executive summary is posted to Slack.\nIf any API call or scraping step fails, an error notification is sent to Slack.\n\nHow to set up\n\nAdd API credentials for OpenAI, NewsAPI, Notion, and Slack.\nConfigure keywords and competitor URLs in the Research Configuration node.\nSelect your Notion database and Slack channels in the relevant nodes.\n\nRequirements\n\nOpenAI API key (GPT-4o access)\nNewsAPI account\nNotion and Slack accounts\n\nHow to customize the workflow\n\nChange the trigger to run weekly or on demand\nModify the AI prompt to focus on pricing, features, or specific competitors\nAdd additional sources such as RSS feeds or more competitor sites\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 4831,
+  "name": "Automate LinkedIn Profile Search & Cold Email Outreach with OpenAI and Hunter",
+  "description": "Problem\n\n🚨 LinkedIn search is BROKEN. \n\n\nI waste hours on LinkedIn manually filtering profiles, reading summaries, hoping they’d reply—tedious, frustrating, inefficient.\n\nI wish LinkedIn had built an agent that would get me to the right profile with one click!\n\nIf only I could just type:\n\"Product managers working on YouTube Shorts' generative AI features.\"\n\nand seconds later, have LinkedIn URLs, names, emails, and full context about them.\n\nIntroducing LinkGPT, a LinkedIn Agent, an automated agentic workflow powered by n8n.\n\nPrerequisites: \nRequired accounts/API keys for Hunter.io, Google, and OpenAI.\n\nThis would be helpful for:\n\n🎯 Job Seekers: Skip ATS, email hiring managers directly ( I wish I had this when I was recruiting!)\n\n🎯 Recruiters: Reach your dream candidates first\n\n🎯 Founders & Sales Teams: Share your demos with customers directly (this does NOT use the expensive Sales Navigator API)\n\nStep-by-step workflow:\n\nTakes 5-10 minutes to setup.\n\nGenerate a Boolean search string for LinkedIn profiles.\nPerform authenticated Google searches using your query.\nExtract LinkedIn URLs and workplace context from the search results.\nUse OpenAI to extract first name, last name, and domain name from the context.\nUse Hunter.io to find emails of the contacts.\nAppend all results to your connected Google Sheet. Columns: first_name, last_name, domain_name, email, context\n\n\n\nI put together a clear, step-by-step guide on setting this up yourself.\n\nSample Query\n\nSample:\n\nInput: \"I am headed to NYC later this month, whom should I meet with that works in product management for gen AI products?\"\n\nOutput: List of 10 contacts with first name, last name, workplace, email address and context about them so you can email them. \n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.hunter",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

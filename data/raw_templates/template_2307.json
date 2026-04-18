@@ -1,0 +1,11 @@
+{
+  "id": 2307,
+  "name": "Backup your credentials to GitHub",
+  "description": "Based on Jonathan's work. Check out his templates.\n\nThis workflow will backup your credentials to GitHub. It uses a CLI command to export all credentials.\n\nIt then loops over the data, checks in GitHub to see if a file exists that uses the credential's ID. Once checked it will:\nupdate the file on GitHub if it exists;\ncreate a new file if it doesn't exist;\nignore if it's the same.\n\nConfig Options\nrepo.owner - Github owner\n\nrepo.name - Github repository name\n\nrepo.path - Path within the Github repository\n\n⚠ The credentials are all decrypted. Make sure you save them safely or tweak the CLI command to store them encrypted.==\n\nCheck out my other templates\n👉 https://n8n.io/creators/solomon/",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

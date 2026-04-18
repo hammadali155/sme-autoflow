@@ -1,0 +1,16 @@
+{
+  "id": 3005,
+  "name": "✨🔪 Advanced AI Powered Document Parsing & Text Extraction with Llama Parse",
+  "description": "Description\n\nThis workflow automates document processing using LlamaParse to extract and analyze text from various file formats. It intelligently processes documents, extracts structured data, and delivers actionable insights through multiple channels.\n\nHow It Works\n\nDocument Ingestion & Processing 📄\nMonitors Gmail for incoming attachments or accepts documents via webhook\nValidates file formats against supported LlamaParse extensions\nUploads documents to LlamaParse for advanced text extraction\nStores original documents in Google Drive for reference\n\nIntelligent Document Analysis 🧠\nAutomatically classifies document types (invoices, reports, etc.)\nExtracts structured data using customized AI prompts\nGenerates comprehensive document summaries with key insights\nConverts unstructured text into organized JSON data\n\nInvoice Processing Automation 💼\nExtracts critical invoice details (dates, amounts, line items)\nOrganizes financial data into structured formats\nCalculates tax breakdowns, subtotals, and payment information\nMaintains detailed records for accounting purposes\n\nMulti-Channel Delivery 📱\nSaves extracted data to Google Sheets for tracking and analysis\nSends concise summaries via Telegram for immediate review\nCreates searchable document archives in Google Drive\nUpdates spreadsheets with structured financial information\n\nSetup Steps\n\nConfigure API Credentials 🔑\nSet up LlamaParse API connection\nConfigure Gmail OAuth for email monitoring\nSet up Google Drive and Sheets integrations\nAdd Telegram bot credentials for notifications\n\nCustomize AI Processing ⚙️\nAdjust document classification parameters\nModify extraction templates for specific document types\nFine-tune summary generation prompts\nCustomize invoice data extraction schema\n\nTest and Deploy 🚀\nTest with sample documents of various formats\nVerify data extraction accuracy\nConfirm notification delivery\nMonitor processing pipeline performance\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.textClassifier"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 3652,
+  "name": "WhatsApp Product Catalog Bot with PostgreSQL Database",
+  "description": "Who is this for?\nThis workflow is designed for businesses or developers who want to integrate product information into a WhatsApp bot and allow users to retrieve details about products from a database.\n\nWhat problem is this workflow solving?\nThis workflow automates the process of managing and retrieving product information via WhatsApp, allowing businesses to easily share product details with customers without manual interaction.\n\nWhat this workflow does\nBasis version:\nIt adds product data to a Postgres database.\nIt enables a WhatsApp bot to retrieve a list of products.\nUsers can select a product to receive detailed information about it.\n\nAdditional version:\nAll features from Basis Version.\nGet a list of product categories.\nGet a list of products in a category.\nAdd product to cart.\nGo to the cart or select more products.\nRemove unnecessary items in the cart or clear the entire cart.\nWhen all the desired items are in the cart, click Buy.\nThe bot will send you a payment link.\n\nSetup\nCreate Tables in Postgres DB\n   Modify the SQL script to replace \"n8n\" with your schema name.\n   Run the provided SQL script in your database (available in the workflow).\n\nAdd Credentials\n   Add WhatsApp credentials (OAuth, Account).\n   Add Postgres credentials to connect the bot to your database.\n\nHow to customize this workflow to your needs\nUpdate the database schema or table structure if you need additional product information.\nModify the bot interaction to suit your specific product listing and display preferences.",
+  "nodes": [
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.whatsApp"
+  ],
+  "tags": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": 15033,
+  "name": "Generate Instagram posts with OpenAI, RSS news, and auto image posting",
+  "description": "What this workflow does\n\nThis workflow automatically generates and publishes Instagram content using AI.\n\nIt:\nGenerates content ideas using AI\nCreates images automatically\nEdits images (resize/format)\nPublishes directly to Instagram\n\nHow it works\n\nTrigger starts the workflow (manual or scheduled)\nAI generates a content idea and prompt\nImage is generated via API\nImage is processed and formatted\nPost is published automatically\n\nSetup\n\nConnect your OpenAI (or AI provider) credentials\nAdd your image generation API key\nConnect your Instagram account\n(Optional) Connect Google Drive for storage\n\nSetup time: 15–20 minutes",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.s3",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

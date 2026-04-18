@@ -1,0 +1,11 @@
+{
+  "id": 12294,
+  "name": "Generate social content pillars, calendars and posts using Google Sheets and OpenAI",
+  "description": "How it works\nThis workflow turns a single planning row in Google Sheets into a fully structured content engine. It generates weighted content pillars, builds a rule-based posting calendar, and then creates publish-ready social posts using AI. The workflow strictly controls format routing, CTA rules, and execution order. All outputs are written back to Google Sheets for easy review and execution.\n\nStep-by-step\nStep 1: Input capture & pillar generation**\n  Google Sheets Trigger – Detects new or updated planning rows.\n  Get row(s) in sheet – Fetches brand, platform, scheduling, and promotion inputs.\n  Message a model – Calculates calendar metrics and generates platform-specific content pillars.\n  Code in JavaScript – Validates AI output and enforces 100% weight distribution.\n  Append row in sheet – Stores finalized content pillars in the pillars sheet.\n\nStep 2: Calendar generation & routing**\n  Message a model7 – Generates a full day-by-day content calendar from the pillars.\n  Code in JavaScript7 – Normalizes calendar data into a sheet-compatible structure.\n  Append row in sheet6 – Saves calendar entries with dates, formats, CTAs, and status.\n  Switch By Format – Routes items based on Video vs Non-Video formats.\n\nStep 3: Post creation & final storage**\n  Loop Over Items – Processes each calendar entry one at a time.\n  Message a model6 – Creates complete hooks, captions, CTAs, and hashtags.\n  Code in JavaScript6 – Formats AI output for final storage.\n  Append row in sheet7 – Stores publish-ready posts in the final sheet.\n  Wait – Controls pacing to avoid API rate limits.\n\nWhy use this?\nEliminates manual content planning and ideation.\nEnforces strategic content mix and CTA discipline.\nProduces platform-ready posts automatically.\nKeeps all planning, calendars, and content in Google Sheets.\nScales content operations without extra overhead.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": 2568,
+  "name": "Upsert huge documents in a vector store with Supabase and Notion",
+  "description": "Purpose\n\nThis workflow adds the capability to build a RAG on living data. In this case Notion is used as a Knowledge Base. Whenever a page is updated, the embeddings get upserted in a Supabase Vector Store.\n\nIt can also be fairly easily adapted to PGVector, Pinecone, or Qdrant by using a custom HTTP request for the latter two.\n\nDemo\n\nHow it works\n\nA trigger checks every minute for changes in the Notion Database. The manual polling approach improves accuracy and prevents changes from being lost between cached polling intervals.\nAfterwards every updated page is processed sequentially\nThe Vector Database is searched using the Notion Page ID stored in the metadata of each embedding. If old entries exist, they are deleted.\nAll blocks of the Notion Database Page are retrieved and combined into a single string\nThe content is embedded and split into chunks if necessary. Metadata, including the Notion Page ID, is added during storage for future reference.\nA simple Question and Answer Chain enables users to ask questions about the embedded content through the integrated chat function\n\nPrerequisites\n\nTo setup a new Vector Store in Supabase, follow this guide\nPrepare a simple Database in Notion with each Database Page containing at least a title and some content in the blocks section. You can of course also connect this to an existing Database of your choice.\n\nSetup\n\nSelect your credentials in the nodes which require those\nIf you are on an n8n cloud plan, switch to the native Notion Trigger by activating it and deactivating the Schedule Trigger along with its subsequent Notion Node\nChoose your Notion Database in the first Node related to Notion\nAdjust the chunk size and overlap in the Token Splitter to your preference\nActivate the workflow\n\nHow to use\n\nPopulate your Notion Database with useful information and use the chat mode of this workflow to ask questions about it. Updates to a Notion Page should quickly reflect in future conversations.",
+  "nodes": [
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.supabase",
+    "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+    "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader"
+  ],
+  "tags": []
+}

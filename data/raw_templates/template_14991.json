@@ -1,0 +1,9 @@
+{
+  "id": 14991,
+  "name": "Filter sitemap URLs and inspect indexing status with Google Search Console",
+  "description": "This workflow provides a data-driven approach to SEO by automating the indexing process. Instead of bulk-submitting every URL, it intelligently filters your sitemap for recent updates and verifies their status via Google Search Console before using your Indexing API quota.\n\nGoal & Purpose\n\nThe primary goal is to maintain a healthy search presence without wasting API resources. It identifies pages that are either new or recently modified but haven't been fully crawled or indexed by Google yet. By targeting only \"Neutral\" status pages, you ensure that Googlebot focuses its attention where it matters most.\n\nPrerequisites\n\nTo use this workflow, you need a Google Cloud Project with the following configured:\n\nAPIs Enabled:** Google Search Console API and Web Search Indexing API.\nCredentials:** A Service Account JSON key added to your n8n credentials.\nVerification:* The Service Account email must be added as an *Owner** in Google Search Console for your domain.\nSitemap:** A standard XML sitemap (e.g., https://example.com/sitemap.xml).\n\nRecommendations\n\nQuota Management:** The Indexing API has a default limit (often 200/day). This workflow helps stay under that limit by being selective.\nDomain Format:** Ensure your siteUrl in the Inspection node matches your GSC property type (Domain vs. URL Prefix).\nCrawling Speed:** Note that while this notifies Google, actual crawl time depends on Google's internal scheduling.\n\nDetailed Guide & Logic: Read the full playbook here",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

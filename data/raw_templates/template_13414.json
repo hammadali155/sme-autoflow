@@ -1,0 +1,13 @@
+{
+  "id": 13414,
+  "name": "Automatically Share Shopify New Products Across All Social Media Platforms",
+  "description": "Who Is This For?\nThis workflow is perfect for e-commerce store owners using Shopify who want to automatically announce new products to their customer base through personalized WhatsApp messages. It's ideal for businesses looking to increase product visibility and drive sales without manual outreach efforts.\n\nWhat This Workflow Does\nThis workflow automatically sends WhatsApp product announcements whenever a new product is added to your Shopify store. It processes product data by extracting images, generating product links, and converting HTML descriptions into clean, bullet-point feature lists using OpenAI. Customer data is pulled from Shopify, formatted, and phone numbers are verified on WhatsApp via the Rapiwa API. Personalized messages with product images, features, and purchase links are sent only to verified numbers. All verification and messaging activity is logged in Google Sheets, clearly tracking which contacts were verified and successfully reached.\n\nFeatures\nShopify Integration** that triggers automatically when new products are created\nImage Processing** to extract and filter valid product images from Shopify\nProduct URL Generation** to create direct links to new products\nAI-Powered Description Conversion** using OpenAI to transform HTML descriptions into concise bullet points\nCustomer Data Retrieval** from Shopify store via API\nWhatsApp Number Verification** using Rapiwa to check if customer numbers are valid WhatsApp accounts\nPersonalized WhatsApp Messaging** with product details, features, and images\nDual-Path Logging** to Google Sheets, tracking both verified (sent) and unverified (not sent) messages\nBatch Processing** to handle multiple customers efficiently\nRate Limiting** with wait steps to avoid API restrictions\n\nRequirements\nShopify Access Token API credentials** for accessing product and customer data\nOpenAI API credentials** for converting HTML descriptions to bullet points\nRapiwa API credentials** for WhatsApp number verification and messaging\nGoogle Sheets OAuth2 credentials** for logging message delivery status\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 11264,
+  "name": "Create and manage ERC-20 tokens with a Telegram bot and 1Shot API wallets",
+  "description": "\nLaunch ERC-20 Tokens with Telegram Bot and 1Shot API Custodial Wallets\n\nFind the full walk-through tutorial video for this workflow on YouTube. \n\nThis Telegram bot template demonstrates some useful patterns for creating crypto-powered multi-user bot applications like: \n\nHow to create custodial wallets tied to specific telegram users. \nHow submit onchain transactions from a specific user's wallet when they interact with your bot.\nStoring transaction logs in n8n data tables\nSettings up inline keyboards for use triggering specific onchain actions.\n\nStarting with this workflow, you can extend it for many different crypto/onchain applications as well as introduce fees to generate revenue in return for performing onchain actions for your users. \n\nNOTE: This is somewhat advanced setup as it requires the use of datatables, you will need to self-host this workflow.\n\nSetup\n\nYou'll need to perform the following steps to get this Telegram bot workflow up and running:\n\nCreate a free 1Shot API account & generate an API Key & Secret. Use the API credentials to authenticate the 1Shot API nodes.\nCreate a new Telegram bot using the @BotFather bot to get an api key. Use the bot API key to authenticate the Telegram nodes.\nCreate a two Data Tables in your n8n account: User Table & Token Table. The User Table should have chatid, wallet and walletid as columns. The Token Table should have wallet, token, name and chatid as columns. These tables are used to the mappings between your bot users and their wallets and tokens. \nImport the 1Shot API Token Factory contract into your 1Shot API account. This smart contract is needed to deploy ERC-20 tokens on behalf of your bot users. \n\nYou can also watch the associated YouTube tutorial for a step-by-step walkthrough of these points.\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

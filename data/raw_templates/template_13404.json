@@ -1,0 +1,12 @@
+{
+  "id": 13404,
+  "name": "Send weekly AI summaries of Google Sheets data via Gmail using OpenAI",
+  "description": "How it works\n\nRuns automatically on a weekly schedule (every Monday at 9am by default).\nReads all rows from a Google Sheets spreadsheet containing your data.\nAggregates the data and sends it to OpenAI to generate a concise summary report.\nFormats the report with a date-stamped subject line.\nEmails the summary to your chosen recipient via Gmail.\nLogs every sent report to a separate spreadsheet for tracking.\n\nTurn your raw spreadsheet data into a professional weekly digest without lifting a finger.\n\nSetup steps\n\nEstimated setup time:** 10 minutes\nAdjust the Schedule Trigger for your preferred day and time.\nConnect your Google Sheets account and set the data spreadsheet ID and sheet name.\nConnect your OpenAI API credentials.\nSet the recipient email address in the Send Report Email node.\nConnect your Gmail account for sending.\nCreate a \"Report Log\" sheet with columns: date, subject, sent_at.\nActivate the workflow.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

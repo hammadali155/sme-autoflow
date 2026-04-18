@@ -1,0 +1,18 @@
+{
+  "id": 3972,
+  "name": "Multilingual WhatsApp Translator with OpenAI Whisper & GPT-4 and HubSpot Integration",
+  "description": "\n🌍 AI WhatsApp Translator + Voice Transcriber with HubSpot Integration\n\nHello! I'm Amanda ❤️, a passionate automation creator and AI enthusiast.  \nWith over 2 years of experience in n8n and Make.com, I design robust, intelligent agents  \nthat make your operations smarter and smoother.\n\nThis translator + transcriber assistant is perfect for multilingual communication via WhatsApp.  \nIt automatically captures voice or text messages, identifies the customer's region and language,  \ntranscribes audio using OpenAI Whisper, and generates friendly, culturally adapted translations  \nwith GPT-4 or GPT-4o. All messages and contacts are saved in your HubSpot CRM—so no lead gets lost.\n\n✅ What this Workflow Does:\n\n🎧 Transcribes audio messages using OpenAI Whisper (accurate + fast).\n🌐 Translates text & voice into the client’s native language or a default one.\n🇧🇷 Adapts tone, slang, emojis, and cultural expressions for natural conversation.\n💼 Saves contact info & history to HubSpot automatically (name, phone, and translation).\n📬 Replies via WhatsApp using Evolution API (also works with chatbots).\n✨ Handles over 80+ countries and phone prefixes to detect preferred languages.\n\n🛠️ How to Use It:\n\nClone the workflow to your n8n instance (cloud or self-hosted).\nConfigure the Webhook URL in your Evolution API or WhatsApp provider.\nSet up credentials for:\n   OpenAI (for transcription and GPT translation)\n   HubSpot (to store leads)\nOptional: Adjust prompt logic and default languages inside the AI Agent node.\nDone! Your AI translator bot is live 💬🌎\n\n🧠 LLMs and Tools Used:\n\nOpenAI GPT-4o / GPT-4 Mini** for translation\nOpenAI Whisper** for transcription\nHubSpot CRM** integration\nEvolution API** for WhatsApp messaging\nDynamic language detection based on phone prefix\n\n💡 Ideal For:\n\nMultinational businesses with global customers\nCustomer support teams with multilingual needs\nAgencies serving clients in Latin America, Europe, or Asia\nTranslating informal messages in real-time\n\n📁 Included:\n\n1x Complete n8n Workflow  \nPreconfigured translation agents  \nHubSpot contact mapper  \nMulti-country language index  \nReady-to-use voice transcription logic\n\n❤️ Support Materials and Templates:\niloveflows.gumroad.com\n\n☁️ Want to use this with n8n Cloud?  \nUse my affiliate link to get started:  \n👉 https://n8n.partnerlinks.io/amanda\n\n🔥 Buy a VPS server with a Super Discount: https://hostinger.com/vps",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.lmChatGroq",
+    "@n8n/n8n-nodes-langchain.textClassifier",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

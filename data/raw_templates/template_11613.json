@@ -1,0 +1,10 @@
+{
+  "id": 11613,
+  "name": "Xano Support Ticket Router (AI + Xano Node Integration)",
+  "description": "This template demonstrates how to combine n8n, OpenAI agents, and the new Xano Node to build an intelligent support-ticket routing system — without writing a single API call.\n\nStart your Xano journey with the downloadable snippet here!\n\nWhen a ticket arrives, the workflow:\n\nReceives the ticket via Webhook\nClassifies the issue using an n8n Agent with an OpenAI model\nSearches Xano to check whether the user already exists\nCreates or updates records using the native Xano Node (no headers or manual HTTP setup)\nTriggers backend logic in Xano, where escalation rules and agent workflows process the ticket\nReturns a structured response to n8n for further routing (Slack, CRM, inbox, etc.)\n\nThis template highlights how Xano can act as your backend intelligence layer while n8n orchestrates everything else — making it easy to automate support operations, apply escalation policies, and unify your data across tools.\n\nUse this as a foundation to build more advanced automation: customer enrichment, billing checks, account risk detection, SLA enforcement, and more.\n\nHappy building! 🚀",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 13026,
+  "name": "Score LinkedIn leads against your ICP with Google Sheets, SourceGeek and Gemini",
+  "description": "How it works\nThis template is using a LinkedIn User Profile in combination with your detailed Ideal Customer Profile (ICP) to create a score, including reasoning and outreach messages.\n\nIt is manually triggered and uses a Google Sheet as an entry point. Inside there are rows with only LinkedIn profile urls in it.\n\nThen the SourceGeek Node is being triggered and the complete profile info is retrieved. \n\nThat info is being sent to an AI Agent where a long description of the Ideal Customer Profile is written down. \n\nThe AI Agent will process all that data and will return with three values\n\nICP rating (between 0 - 100)\nICP reasoning. Where does the score come from\nA 1st, 2nd and 3rd outreach message which you can use later on\n\nAfter that the original Google Sheet row will be updated with the data created by the AI Agent\n\nHow to use\nPopulate a Google Sheet with LinkedIn Profile URLs which potentially can be your customers\nLet the SourceGeek fetch all their data from LinkedIn and enrich it with soft skills and much more\nDescribe in detail your ICP and let the AI Agent determine the score of the profile\nUpdate the initial Google Sheet with the ICP Score and the reasoning how this score came to be\n\nRequirements\nA Google Sheet with LinkedIn profile urls\nThe verified SourceGeek node",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

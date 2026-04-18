@@ -1,0 +1,18 @@
+{
+  "id": 14438,
+  "name": "Govern energy portfolios with GPT-4o, Perplexity, Slack, Gmail and Sheets",
+  "description": "How It Works\nThis workflow automates energy portfolio governance for energy managers, sustainability teams, and policy compliance officers. It eliminates the manual effort of aggregating multi-source energy data, applying forecasting and optimisation logic, and distributing performance outcomes to stakeholders. Three scheduled API feeds, weather data, energy demand, and renewable generation, are combined into a unified dataset. The Energy Governance Agent, backed by shared memory and a governance model, coordinates three specialist agents: a Renewable Forecasting Agent (predictive generation modelling), a Weather Analysis Agent (climate-adjusted demand assessment), and a Policy Compliance Agent (regulatory alignment checking). Five tools support the orchestration: an Energy Calculator, Optimisation Algorithm Tool, External Data API Tool, Sustainability Research Tool, and Structured KPI Output parser. Results are distributed across three outputs, a Slack sustainability alert, a Gmail performance dashboard email, and a Google Sheets KPI store, giving stakeholders immediate, channel-appropriate visibility into energy governance outcomes.\n\nSetup Steps\nImport workflow; configure the Energy Analysis Schedule trigger interval.\nSet API endpoint URLs for Fetch Weather Data, Fetch Energy Demand, and Fetch Renewable Generation nodes.\nAdd AI model credentials to the Agents.\nConnect Slack credentials to the Send Sustainability Alert node.\nLink Gmail credentials to the Email Performance Dashboard node.\nLink Google Sheets credentials; set the sheet ID for the Energy KPIs tab.\n\nPrerequisites\nOpenAI API key (or compatible LLM)\nSlack workspace with bot credentials\nGmail account with OAuth credentials\nGoogle Sheets with Energy KPIs tab pre-created\nUse Cases\nEnergy managers automating renewable generation forecasting against real-time demand data\nCustomisation\nSwap the Optimisation Algorithm Tool parameters to target carbon intensity, cost, or grid stability objectives\nBenefits\nParallel triple-source ingestion ensures governance decisions are based on complete, synchronised energy data\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

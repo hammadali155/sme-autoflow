@@ -1,0 +1,13 @@
+{
+  "id": 11489,
+  "name": "AI-powered review sentiment analysis to Salesforce & Google Sheets with Decodo",
+  "description": "What this workflow does\n\nThis workflow scrapes customer reviews from Trustpilot, analyzes them with AI, and keeps both Salesforce and Google Sheets automatically updated with customer sentiment insights.\n\nIt uses Decodo to reliably extract review content from Trustpilot, processes the text with OpenAI, and orchestrates everything using n8n.\n\n\n👉 Deocodo\n\nHow it works (high level)\n\nReads Trustpilot review URLs and Salesforce Account IDs from Google Sheets  \nScrapes Trustpilot reviews using Decodo  \nUses AI to summarize sentiment, trends, and key positives/negatives  \nGenerates two outputs in parallel\n\nOutputs generated\n\n1. Salesforce Account update\nThe workflow updates an existing Salesforce Account by writing the AI-generated sentiment summary into a custom text field (e.g. recent_trend_summary__c).\n\nThis brings external customer feedback directly into Salesforce, allowing teams to work with real market perception inside the CRM.\n\n2. Google Sheets analytics dataset\nAt the same time, structured review metrics are stored in Google Sheets:\nRatings and sentiment distribution  \nTop positive and negative keywords  \nTrend summaries over time  \n\nThis creates a reusable dataset for dashboards and reporting.\n\nHow to configure it (general)\n\nGoogle Sheets**: add review URLs + Salesforce Account IDs  \nDecodo**: add your API key to scrape Trustpilot reliably  \n   \nOpenAI**: add your API key for AI analysis  \nSalesforce**:\n  Create a custom Text (255) field on Account  \n  Connect Salesforce credentials in n8n  \n  Only existing Accounts are updated  \n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.salesforce",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

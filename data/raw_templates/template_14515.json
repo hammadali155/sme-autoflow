@@ -1,0 +1,10 @@
+{
+  "id": 14515,
+  "name": "Log invoice approval decisions from Slack to Google Sheets",
+  "description": "What This Workflow Does\nListens for button clicks from the Invoice → Slack Approval workflow. When someone clicks Approve, Reject, or Flag on an invoice in Slack, this workflow captures that decision, logs it to Google Sheets, and sends a confirmation notification.\n\nHow It Works\nWebhook Trigger – Receives POST request from Slack when a button is clicked\nParse Payload – Extracts the JSON payload from Slack's request body\nExtract Decision Data – Pulls decision, user info, and invoice details from the message\nRoute by Decision – Branches to Approved, Rejected, or Flagged path\nLog to Sheets – Appends invoice data to the appropriate sheet tab\nNotify via Slack – Sends confirmation DM to the approver\n\nDecision Routes\n✅ Approved → Logs to \"Approved\" sheet → DM confirmation\n❌ Rejected → Logs to \"Rejected\" sheet → DM confirmation\n🚩 Flagged → Logs to \"Flagged\" sheet → DM for manual review\n\nSetup Guide\n\n1. Create Google Sheet\nCreate a new Google Sheet with 3 tabs: Approved, Rejected, Flagged\nAdd these column headers to each tab:\n   Supplier Name\n   Invoice Number\n   Amount\n   Date\nCopy the Sheet ID from the URL\n\n2. Connect the Nodes in n8n\nAdd your Google Sheets OAuth2 credential to all three logging nodes\nUpdate the Document ID in each Google Sheets node to your Sheet ID\nAdd your Slack API credential to all three notification nodes\nUpdate the User ID in the notification nodes (or change to channel)\n\n3. Configure Slack Interactivity\nGo to api.slack.com/apps → your app → Interactivity & Shortcuts\nSet the Request URL to this workflow's webhook URL\nSave Changes\n\n4. Activate & Test\nClick Active in the top-right corner of n8n\nTrigger the Invoice Approval workflow to send a Slack message\nClick a button in Slack\nCheck Google Sheets and Slack for results",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack"
+  ],
+  "tags": []
+}

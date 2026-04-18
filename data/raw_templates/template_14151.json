@@ -1,0 +1,13 @@
+{
+  "id": 14151,
+  "name": "Compare website SEO gaps using Google Sheets, HTML and Gemini AI",
+  "description": "How it works  \nThis workflow automates SEO analysis by comparing your website with a competitor’s site. It reads input URLs from Google Sheets, scrapes structured SEO data from both sites, and expands into important internal pages for deeper insights. The collected data is processed and merged before being analyzed using Google Gemini AI. Finally, it generates a structured SEO gap report and saves it back into Google Sheets while updating the workflow status.\n\nStep-by-step  \n\nTrigger and filter input data**  \n  Manual Trigger – Starts the workflow execution manually.  \n  Google Sheets (Get row(s)) – Fetches website data from the input sheet.  \n  If – Filters only rows where status is NEW.  \n\nPrepare and fetch website data**  \n  Set (Edit Fields) – Maps your website and competitor URLs.  \n  HTTP Request (My Website HTTP) – Fetches your website HTML.  \n  HTTP Request (Competitor) – Fetches competitor website HTML.  \n  HTML (Extract Data) – Extracts SEO elements like title, H1, H2, links, and content.  \n\nExtract and process internal pages**  \n  Code (All Links) – Filters important internal URLs from both websites.  \n  Google Sheets (Insert Links) – Stores extracted links.  \n  Split In Batches – Iterates through each page URL.  \n  HTTP Request + HTML + Code – Scrapes and formats SEO data for each page.  \n\nStore and update structured SEO data**  \n  Google Sheets (Append & Update) – Saves page-level SEO data.  \n  Wait nodes – Controls execution timing and prevents rate limits.  \n\nAnalyze SEO gaps using AI**  \n  Merge – Combines your site and competitor data.  \n  Code – Structures merged dataset.  \n  Google Gemini (Message a model) – Generates SEO gap analysis.  \n  Code (Parse JSON) – Cleans and validates AI output.  \n\nSave report and finalize workflow**  \n  Google Sheets (Append Report) – Stores SEO gap report.  \n  Google Sheets (Update Row) – Marks input row as DONE.  \n\nWhy use this?  \n\nAutomates complete SEO competitor analysis without manual effort  \nIdentifies keyword, content, and technical SEO gaps instantly  \nScales across multiple websites and competitors efficiently  \nProvides AI-driven insights and actionable SEO improvement plans  \nCentralizes all SEO data and reports inside Google Sheets  ",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

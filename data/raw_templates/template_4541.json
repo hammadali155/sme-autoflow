@@ -1,0 +1,14 @@
+{
+  "id": 4541,
+  "name": "Create Song Lyric Documents and Spotify Playlists for Singers with Google Docs",
+  "description": "Setlist Manager\nThis workflow takes a Google spreadsheet called 'Setlist_Manager' with 'Artist' and 'SongTitle' entries and get's Lyrics for each song and creates a playlist for that set of songs.\n\nCreate Spotify Playlist (naming it 'Setlist - [date of today]')\nCreate the Google doc that will store the lyrics found. (naming it 'Setlist - [date of today]')\nGet the rows of songs from 'Setlist_Manager'.\nUse AI to verify the Artist name and song title.\nGet the lyrics to the song.\nAppend the Google Doc with the lyrics.\nSearch for the song in Spotify.\nAdd that song to the Spotify Playlist.\nGo to band practice and be prepared! =)",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.spotify",
+    "n8n-nodes-base.googleDocs",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

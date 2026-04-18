@@ -1,0 +1,11 @@
+{
+  "id": 13480,
+  "name": "Send WhatsApp follow-up when a new lead submits a form with MoltFlow and log to Sheets",
+  "description": "What this template does\n\nInstantly reach new leads on WhatsApp when they submit a form (Typeform, JotForm, Google Forms, or any webhook-enabled form) using MoltFlow (https://molt.waiflow.app). Leads are also logged to Google Sheets for CRM tracking.\n\nHow it works\n\nA form submission triggers this webhook\nContact info is extracted (name, phone, interest)\nA personalized WhatsApp message is sent via MoltFlow\nThe lead is logged to Google Sheets for follow-up tracking\n\nSet up steps\n\nCreate a MoltFlow account (https://molt.waiflow.app) and connect your WhatsApp number\nGenerate an API key in MoltFlow (Sessions page, API Keys tab)\nActivate this workflow in n8n and copy the webhook URL\nConfigure your form tool to POST submissions to this webhook URL\nMap your form field names in the Parse Form Data code node (name, phone, email, interest)\nSet YOUR_SESSION_ID in the Parse Form Data code node\nAdd your MoltFlow API key as an HTTP Header Auth credential (Header Name: X-API-Key)\nOptional: Connect Google Sheets to log leads automatically\n\nPrerequisites\n\nMoltFlow account with an active WhatsApp session\nAny form tool that supports webhooks (Typeform, JotForm, Google Forms, Tally, etc.)\nOptional: Google Sheets for lead tracking",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

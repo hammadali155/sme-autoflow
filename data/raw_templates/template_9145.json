@@ -1,0 +1,14 @@
+{
+  "id": 9145,
+  "name": "Narrative chaining: AI-generated video scene extensions with Veo3",
+  "description": "Structured Setup Guide: Narrative Chaining with N8N + AI\n\n1. Input Setup\nUse a Google Sheet as the control panel.\nFields required:\nVideo URL (starting clip, ends with .mp4)\nNumber of clips to extend (e.g., 2 extra scenes)\nAspect ratio (horizontal, vertical, etc.)\nModel (V3 or V3 Fast)\nNarrative theme (guidance for story flow)\nSpecial requests (scene-by-scene instructions)\nStatus column (e.g., \"For Production\", \"Done\")\n👉 Example scene inputs:\nScene 1: Naruto walks out with ramen is his hands\nScene 2: Joker joins with chips\n2. Workflow in N8N\nStep 1: Fetch Input\nGet rows in sheet → fetch the next row where status = For Production.\nClear sheet 2 → reset the sheet that stores generated scenes.\nEdit fields (Initial Values):\nVideo URL = starting clip\nStep = 1\nComplete = total number of scenes requested\nStep 2: Looping Logic\nLooper Node:\nRuns until step = complete.\nCarries over current video URL → feeds into next generation.\nStep 3: Analyze Current Clip\nSend video URL to File.AI Video Understanding API.\nRequest: Describe last frame + audio + scene details.\nOutput: Detailed video analysis text.\nStep 4: Generate Prompt\nAI Agent creates the next scene prompt using:\nContext from video analysis\nNarrative theme (from sheet)\nScene instructions (from sheet)\nAspect ratio, model preference, etc.\n👉 Output = video prompt for next scene\nStep 5: Extract Last Frame\nCall File.AI Extract Frame API.\nParameters:\nInput video URL\nFrame = last\nOutput = JPG image (last frame of current clip).\nStep 6: Generate New Scene\nUse Key.AI (V3 Fast) for economical video generation.\nPOST request includes:\nPrompt (from AI Agent)\nAspect ratio + model\nImage URL (last frame) → ensures seamless chaining\nWait for generation to complete.\n👉 Output = New clip URL (MP4)\nStep 7: Store & Increment\nLog new clip URL into Sheet 2.\nIncrement Step by +1.\nReplace Video URL with the new clip.\nLoop back if Step &lt; Complete.\n3. Output Section\nOnce all clips are generated:\nGather all scene URLs from Sheet 2.\nUse File.AI Merge Videos API to stitch clips together:\nOriginal clip + all generated scenes.\nSave final MP4 output.\nUpdate Sheet 1 row with:\nFinal video URL\nStatus = Done\n4. Costs\nVideo analysis: ~$0.015 per 8s clip\nFrame extraction: ~0.002¢ (almost free)\nClip merging: negligible (via ffmpeg backend)\nV3 Fast video generation (Key.AI): ~$0.30 per 8s clip",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

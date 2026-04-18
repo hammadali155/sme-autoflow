@@ -1,0 +1,16 @@
+{
+  "id": 12799,
+  "name": "Generate AI SOPs from Google Drive with GPT‑4o, Google Docs and Sheets",
+  "description": "This workflow automatically converts unstructured internal documentation into clear, actionable Standard Operating Procedures (SOPs).\n\nInstead of manually rewriting internal knowledge, teams can upload or update documents and let AI generate consistent, step-by-step SOPs that are easy to follow and scale across the organization.\n\nHow it works\nWhen a new or updated document is detected in Google Drive, the workflow extracts the content and splits it into manageable sections. AI then analyzes the material, identifies implicit steps, and generates a structured SOP with clear actions, responsibilities, and outcomes.\n\nA second AI pass refines clarity and consistency. Completed SOPs are saved to Google Docs, logged in Google Sheets, and shared with stakeholders via Slack or email.\n\nWho it’s for\nOperations teams\nConsulting firms\nAgencies and service businesses\nScaling startups\nInternal enablement teams\n\nRequirements\nGoogle Drive & Docs\nGoogle Sheets\nOpenAI credentials\nSlack or Gmail\n\nBuilt by QuarterSmart\nCreated by Hyrum Hurst, AI Automation Engineer at QuarterSmart, specializing in practical, production-ready AI automation systems.\n\nFor custom SOP automation or enterprise setups:  \nhyrum@quartersmart.com\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.googleDocs",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

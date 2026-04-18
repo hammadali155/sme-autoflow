@@ -1,0 +1,13 @@
+{
+  "id": 13331,
+  "name": "Assess credential risk and route mitigation actions with GPT-4o-mini",
+  "description": "How It Works\nThis workflow automates comprehensive enterprise risk assessment and mitigation planning for organizations managing complex operational, financial, and compliance risks. Designed for risk managers, internal audit teams, and executive leadership, it solves the challenge of continuously evaluating multi-dimensional risks, validating threat severity, and coordinating appropriate mitigation strategies across diverse business functions. The system triggers on-demand or scheduled assessments, generates sample credential data for testing, deploys a Coordination Agent to orchestrate specialized risk evaluations through parallel AI agents (Credential Validation verifies identity risks, Credential Verification confirms data accuracy, Risk Assessment evaluates threat levels), routes findings by severity (critical/high/medium/low), and merges outputs into consolidated reports. By combining multi-agent risk analysis with intelligent prioritization and unified reporting, organizations achieve 360-degree risk visibility, reduce assessment cycles from weeks to hours, ensure consistent evaluation frameworks, and enable proactive mitigation before risks materialize into losses.\n\nSetup Steps\nConnect Manual Trigger for on-demand assessments or configure Schedule Trigger for routine evaluations\nConfigure risk data sources \nAdd AI model API keys to Coordination Agent and all specialized agents\nDefine risk scoring criteria and severity thresholds in agent prompts aligned with company risk appetite\nConfigure routing conditions for each risk level with appropriate handling workflows\nSet up reporting output format and distribution channels for consolidated risk reports\n\nPrerequisites\nEnterprise risk management system access, AI service accounts\nUse Cases\nCybersecurity risk assessments, fraud risk evaluations, third-party vendor risk reviews\nCustomization\nModify agent prompts for industry-specific risk frameworks (NIST, ISO 31000, COSO)\nBenefits\nReduces risk assessment time from weeks to hours, provides 360-degree risk visibility",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

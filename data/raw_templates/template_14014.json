@@ -1,0 +1,14 @@
+{
+  "id": 14014,
+  "name": "Analyze competitor Instagram engagement with Bright Data and GPT-5.4",
+  "description": "Analyze competitor Instagram engagement by scraping profiles with Bright Data and scoring them with GPT-5.4.\n\nThis workflow reads competitor Instagram URLs from a Google Sheet, scrapes their profile data using the Bright Data Instagram Profiles dataset, validates the API response, then sends the data to GPT-5.4 for engagement scoring. Each competitor is scored on follower growth, engagement rate quality, content consistency, and audience authenticity (0-25 each, total 0-100). High-scoring competitors trigger email alerts.\n\nHow it works:\nSchedule trigger runs the workflow daily.\nReads competitor URLs from the 'competitor_accounts' sheet.\nSends each URL to Bright Data's Instagram Profiles API.\nValidates the API response (handles async/error cases).\nGPT-5.4 analyzes profile metrics and scores engagement quality.\nParses the structured JSON response.\nFilters by AI confidence (&gt;= 0.7 threshold).\nRoutes high scorers (engagement_score &gt;= 75) to 'top_performers' with Gmail alert.\nRoutes normal results to 'engagement_analysis'.\nLow confidence results go to 'low_confidence_engagement' for review.\n\nSetup:\nCreate a Google Sheet with a 'competitor_accounts' tab containing columns: competitor_name, url, our_industry.\nAdd output tabs: engagement_analysis, top_performers, low_confidence_engagement.\nConfigure all credentials (Bright Data API, OpenAI, Google Sheets, Gmail).\n\nRequirements:\nBright Data API account (~$0.01-0.03 per profile scrape).\nOpenAI API account (GPT-5.4 costs ~$0.003-0.008 per call).\nGoogle Sheets OAuth2 credentials.\nGmail OAuth2 credentials.\n\nNotes:\nAdd competitors one per row with their full Instagram profile URL.\nThe engagement_score threshold of 75 can be adjusted in the IF node.\nLow confidence results may indicate incomplete profile data from Bright Data.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

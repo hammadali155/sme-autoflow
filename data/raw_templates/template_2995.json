@@ -1,0 +1,11 @@
+{
+  "id": 2995,
+  "name": "Automated AI image tagging and writing the keywords into the image file",
+  "description": "Welcome to my Automated Image Metadata Tagging Workflow!\n\nThis workflow automatically analyzes the image content with the help of AI and writes it directly back into the image file as keywords.\n\nThis workflow has the following sequence:\n\nGoogle Drive trigger (scan for new files added in a specific folder)\nDownload the added image file\nAnalyse the content of the image and extract the file as Base64 code\nMerge Metadata and Base64 Code\nCode Node to write the Keywords into the Metadata (dc:subject)\nConvert to file and update the original file in the Google Drive folder\n\nThe following accesses are required for the workflow:\nGoogle Drive: Documentation\nAI API access (e.g. via OpenAI, Anthropic, Google or Ollama)\n\nYou can contact me via LinkedIn, if you have any questions: https://www.linkedin.com/in/friedemann-schuetz",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 14520,
+  "name": "Generate GitLab release notes from Linear issues with Claude Opus",
+  "description": "📝 Release Note Helper\n\nTriggered by a GitLab MR webhook, this workflow automatically assists your team in writing customer-facing release notes by combining Linear issue data with Claude AI.\n\nApply the rn-release-n8n label to any release note MR in your docs repository to trigger it.\n\nHow it works\n\nVersion detection — reads your release RSS feed to find the last published version, then fetches all matching Linear version labels created since then to determine the version range automatically\nIssue collection — queries Linear for all completed issues in that version range that have Zendesk tickets, Slack links, or custom labels (Customer request, Release note public) attached\nTicket summary — posts a structured list of all relevant issues to the MR as a comment\nAI draft — sends issue details to Claude, which generates customer-facing changelog entries grouped into ### Enhancements and ### Fixes, posted as a second MR comment\nDone label — adds rn-done to the MR when complete to prevent re-runs\n\nSetup\n\nConfigure a GitLab webhook on your docs repo pointing to this workflow's URL (Merge Request events)\nCreate two labels on your GitLab repo: rn-release-n8n (to trigger) and rn-done (auto-applied on completion)\nUpdate the RSS Read node URL to your release RSS feed\nReplace YOUR_PROJECT_ID in all GitLab API nodes with your docs project ID\nReplace YOUR_WORKSPACE in the Code nodes with your Linear workspace slug\nConnect Linear API, GitLab API, and Anthropic API credentials\n\nNotes\n\nVersioning assumes a vX.Y Linear label convention — adapt the Format labels node for your own scheme\nThe AI prompt in Message a model is ready to use but can be customised to match your tone and changelog format\nIssues are filtered to those with Zendesk, Slack attachments, or your custom labels — adjust in Set Params",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.anthropic"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 13042,
+  "name": "Create WordPress posts from Reddit content via Telegram bot and Perplexity",
+  "description": "Create unlimited content from Reddit with just one click.\n\nHow it works :\n\nSchedule Trigger:  Schedule Trigger fires on the selected day/time.\n\nFetching Reddit Posts: The Reddit node fetches new posts from the communities.\n\nArticle Idea Generation: An AI agent converts Reddit post titles into article topics.\n\nSending Article Ideas via Telegram Bot: A list of topics on which articles can be created is sent.\n\nArticle Creation: If an article is approved, AI Agents create a title, SEO optimized content, and a slug for the post.\n\nPost Creation: Post is created with a created title, content, and slug on WordPress.\n\nSetup Steps (25 Minutes) :\n\nSet up the Reddit API and add its credentials to n8n.\nSet up a Telegram bot via Botfather and add credentials to n8n.\nSet up Data Tables with columns specified in workflow notes\nSet up WordPress API and add its credentials to n8n.\nSet up Perplexity API, and its credentials to n8n\n\nRequirements :\n\nWordPress API: Website with WordPress API enabled to create articles\n\nReddit API: A Reddit account with API access\n\nTelegram Bot: A Telegram bot to receive and approve article ideas\n\nPerplexity API: Perplexity API to research information about the article topic\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.reddit",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "n8n-nodes-base.perplexity"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 13822,
+  "name": "Create an autonomous task-handling AI agent with OpenAI and Slack",
+  "description": "This workflow creates a self-improving AI agent inside n8n that can understand natural language tasks, plan steps, use tools (HTTP, code, search, …), reflect on results, and continue until the goal is reached — then deliver the final answer.\n\nHow it works\n\nWebhook or manual trigger receives a task description  \nLLM creates initial plan + first tool call (or finishes immediately)  \nLoop:  \n   • Execute chosen tool  \n   • Send observation back to LLM  \n   • LLM reflects → decides next action or finish  \nWhen finished → format final answer, save result, send Slack notification\n\nSetup steps\n\nConnect OpenAI (or Anthropic/Groq/Gemini) credential  \n(Optional) Connect Slack credential for notifications  \nReplace the placeholder “Other Tools” Code node with real tool nodes (Switch + HTTP Request, Google Sheets, Code node, etc.)  \nTest with simple tasks first:  \n   • “What is the current weather in Ahmedabad?”  \n   • “Calculate 17×42 and explain the steps”  \nAdjust max iterations (via SplitInBatches or custom counter) to prevent infinite loops  \nActivate the workflow and send POST request to webhook with JSON:  \n      {\"task\": \"your task here\"}\n\nRequirements\n\nLLM API access (gpt-4o-mini works well for testing)\nOptional: Slack workspace for alerts\n\nCustomization tips\n\nUpgrade to stronger reasoning models (o1-preview, Claude 3.5/3.7 Sonnet, Gemini 2.0)\nAdd real tools: browser automation, vector DB lookup, file read/write, calendar\nImprove memory: append full history or use external vector store\nAdd cost/safety guardrails (max iterations, forbidden actions)\n\nContact Us\nIf you need help setting up this workflow, want custom modifications, or have questions about integrating specific tools/services:\n🌐 Website: https://www.oneclickitsolution.com/contact-us/\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.openAi"
+  ],
+  "tags": []
+}

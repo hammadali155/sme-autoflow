@@ -1,0 +1,13 @@
+{
+  "id": 11268,
+  "name": "Generate Hollywood-Style Video Ads from Images with GPT-5 Mini and Fal.ai Sora-2",
+  "description": "🎬 Hollywood-Style Ads in Seconds (Fal.ai Sora-2 Version)\n\nTurn a single product image + short text description into a cinematic 8-second ad using Fal.ai’s Sora-2 Image-to-Video model. Perfect for ad agencies, marketing teams, and UGC creators who want to produce high-quality video ads instantly without editors or camera crews.\n\n🧩 Problem It Solves\nProducing ad videos usually requires writers, editors, equipment, and several review cycles.  \nThis workflow replaces that process with a fully automated pipeline that generates studio-quality ads on demand.\n\n🏢 Real Use Cases\n1. Ad Agencies  \nDeliver Hollywood-style ads to clients instantly from a simple image upload.\n\n2. UGC Creators  \nCreate multiple ad variations in minutes instead of spending hours filming.\n\n3. SMB Marketing  \nGenerate product promo videos for websites, social media, and email campaigns.\n\n⚙️ How It Works  \nYour frontend sends image + text to the workflow webhook.  \nImage is resized to 1280×720.  \nGPT-5 Mini writes a cinematic Sora-2 compatible prompt.  \nFal.ai Sora-2 generates a realistic 8-second lifestyle ad.  \nWorkflow polls status and retrieves the final video.  \nSends the video URL back to your frontend.  \nOptional: Sends a Telegram notification.  \n\n🧪 Requirements  \nFal.ai API Key  \nCloudinary Account (optional, for image storage)  \nn8n (latest recommended version)  \nFrontend (Lovable / AI Studio / Bubble / React)\n\n🎨 Template Metadata  \nTemplate Author: Sandeep Patharkar  \nCategory: Content Generation / Video Ads  \nDifficulty: Intermediate  \nSetup Time: 10–12 minutes  \n\n📬 Connect With Me  \nLinkedIn → www.linkedin.com/in/sandeeppatharkar  \nYouTube → https://www.youtube.com/@fasttrackaimastery  \nWebsite → https://fasttrackaimastery.com  \nSkool Community → https://www.skool.com/aic-plus\n",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

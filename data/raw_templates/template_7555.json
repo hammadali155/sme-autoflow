@@ -1,0 +1,13 @@
+{
+  "id": 7555,
+  "name": "Daily Affirmations & Weekly Gratitude Digest with Notion, Email & Telegram",
+  "description": "🌸 Affirmation Sender + Weekly Gratitude Digest v2  \nA gentle, automated wellness ritual for high-impact women who scale with grace.\n\n📌 What it does  \nEvery morning at 7 a.m.* (your timezone) → a *fresh affirmation lands in Email, Telegram, or both.  \nEvery Sunday at 6 p.m.* → a *beautiful recap of your last-7-day gratitude notes is delivered.  \nLogs everything** to a simple Notion hub so you can revisit, review, or share.\n\n✨ Out-of-the-box experience  \n| Channel | Morning Affirmation | Sunday Digest |\n|---------|---------------------|---------------|\n| Email | Styled HTML + tasteful Unsplash hero image | Scroll-ready digest with blush-gold imagery |\n| Telegram | Minimal text + emoji sparkle | Same digest, perfectly mobile-formatted |\n\n🛠️ 30-second setup  \nFork the template in n8n.  \nFill four fields in Set: User Config (email, Telegram chat ID, Notion DB ID, channel).  \nConnect credentials (Email SMTP, Telegram Bot, Notion, optional Slack/Discord).  \nActivate — your future self will thank you.\n\n🧩 Notion schema you’ll create (copy-paste once)\n| Property | Type | Example |\n|----------|------|---------|\n| Name | Title | “I choose grace and ease today.” |\n| Type | Select | Affirmation or Gratitude |\n| Date | Date | 2025-08-19 |\n| Channel | Multi-select | email, telegram |\n| Message | Rich text | Full text or note |\n\n🆕 v2 upgrades  \nTimezone-aware** – respects the workflow’s TZ setting.  \nFiltered queries** – digest only fetches Type = Gratitude from the last 7 days (faster, lighter).  \nRich media* – every email includes an Unsplash banner (keywords you choose, *no API key**).  \nObservability* – global error handler pings Slack or Discord within *5 seconds** if anything breaks.  \n\n✅ No hidden data, no secrets  \nZero hard-coded keys.  \nTest with a sandbox Notion DB first.  \nReady for solo founders, coaches, or community managers who want to gift their members a daily dose of calm.\n\n🚀 One-click install  \nClone → configure → activate.  \nYour gentlest growth system is now on autopilot.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.notion"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 5490,
+  "name": "Create Debug Breakpoints and Logs with Slack Interactive Messages",
+  "description": "How it Works:\nYou can now use the Slack node to create conditional breakpoints! This example shows the loop stop on 4 (of 10) and then you can hit \"continue\" in Slack when you are ready. \n\nYou could extend this with a Form node and inject values you type in on the fly.\n\nSlack was already the best place to debug log n8n, and now it just got better!",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.debugHelper"
+  ],
+  "tags": []
+}

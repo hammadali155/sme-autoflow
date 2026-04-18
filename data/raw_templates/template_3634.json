@@ -1,0 +1,11 @@
+{
+  "id": 3634,
+  "name": "Build your own Google Drive MCP server",
+  "description": "This n8n demonstrates how to build a simple Google Drive MCP server to search and get contents of files from Google Drive.\n\nThis MCP example is based off an official MCP reference implementation which can be found here -https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive\n\nHow it works\nA MCP server trigger is used and connected to 1x Google Drive tool and 1x Custom Workflow tool.\nThe Google Drive tool is set to perform a search on files within our Google Drive folder.\nThe Custom Workflow tool downloads target files found in our drive and converts the binaries to their text representation. Eg. PDFs have only their text contents extracted and returned to the MCP client.\n\nHow to use\nThis Google Drive MCP server allows any compatible MCP client to manage a person or shared Google Drive. Simple select a drive or for better control, specify a folder within the drive to scope the operations to.\nConnect your MCP client by following the n8n guidelines here - https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.mcptrigger/#integrating-with-claude-desktop\nTry the following queries in your MCP client:\n  \"Please help me search for last month's expense reports.\"\n \"What does the company policy document say about cancellations and refunds?\"\n\nRequirements\nGoogle Drive for documents.\nOpenAI for image and audio understanding.\nMCP Client or Agent for usage such as Claude Desktop - https://claude.ai/download\n\nCustomising this workflow\nAdd additional capabilities such as renaming, moving and/or deleting files.\nRemember to set the MCP server to require credentials before going to production and sharing this MCP server with others!",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

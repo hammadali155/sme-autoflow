@@ -1,0 +1,14 @@
+{
+  "id": 7196,
+  "name": "Generate AI Promo Videos for Products with GPT-4o, Fal.ai & Human Supervision",
+  "description": "\n\nGenerate AI video clips to promote products, services or events on social media. Use gotoHuman as an interface to control and supervise each step of the workflow to create content that's actually worth posting.\nHow it works\ngotoHuman will show the workflow steps that need approval or input in its' inbox and notify you via email or Slack.\n\nWe choose from different topics for our post suggested by AI\n\nWe select the image style, a product to show, and review an AI-generated tag line\n\nWe use Fal.ai to generate an image that serves as a reference image for our video clip. And we use Cloudinary to add an overlay for the tag line.\nWe review the image in gotoHuman and can iterate on it by retrying or even changing the prompt.\n\nWe review the video clip that's generated with Fal.ai based on the approved image and can, again, retry or reprompt.\n\nHow to set up\n\nMost importantly, install the gotoHuman node before importing this template!\n(Just add the node to a blank canvas before importing)\nFollow the instructions shown along the workflow and in the incl. video guide. You mainly need to\nset up your credentials for gotoHuman, OpenAI, Fal.ai and Cloudinary\nin gotoHuman, select and create the pre-built review template \"Promo video agent\" or import these IDs:\nZ7V1jyImY1pho9eY039R,0GBaOCWd27tqV562kkCL,E2wlCVPWmk2UnLHVt4uu,DitPdbIapS4rBxBTIYGt,Z2T7nFwkXVFQlD6z50eV\nselect these templates in the gotoHuman nodes\ndo a quick setup for Cloudinary\n\nRequirements\n\nYou need accounts for\ngotoHuman (human supervision)\nOpenAI (ideation)\nFal.ai (image/video generation)\nCloudinary (text overlay)\n\nHow to customize\n\nAdjust/Replace the workflow triggers as needed\nChange the prompt in the topics generation node\nReplace the product image URLs used in the \"gotoHuman - Content\" node\nAdjust the available styles for image generation in the gotoHuman review template and the prompts they link to in the \"Set Initial Image Prompt\" node\nAdjust the prompt used for video generation in the \"Set Initial Video Prompt\" node\nIf you want to use a different service/model for image and video generation, replace the nodes related to Fal.ai.\nAlso, if you do not need a text overlay, remove the Cloudinary nodes.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 13496,
+  "name": "Find new creators and lookalikes using influencers.club and sync to HubSpot",
+  "description": "How it works:\n\nDiscover and filter creators with social platform data and find lookalikes to add to your CRM for influencer marketing platforms or creator outreach.\n\nStep by step workflow to discover new creators with multi social (Instagram, Tiktok, Youtube, Twitter, Onlyfans, Twitch and more) profiles, analytics and metrics using the influencers.club API, find similar ones and create/update records in Hubspot\n\nSet up:\n\nHubspot (can be swapped for any CRM like Salesforce or Google Sheet)\nInfluencers.club API",
+  "nodes": [
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

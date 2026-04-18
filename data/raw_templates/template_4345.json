@@ -1,0 +1,12 @@
+{
+  "id": 4345,
+  "name": "Switch Between Work and Personal Contexts with GPT-4.1 and iPhone Automation",
+  "description": "Purpose\nThe purpose of this automation is to help context switch from office to some side projects or passion gigs so you can be free of distracting thoughts and re-set your perspective.\n\nBenefits\n\nAnyone who works full time and also does something on the side (perhaps a side gig/being a mom/just follow your passion project)\n\nWhat you need\nN8N (lol)\nAny LLM API Key (I used OpenAI 4.1)\nIPhone (automations and shortcuts)\n\nTemplate Setup \nSetup LLM API key.\nImport template file to new workflow.\nOn Iphone create a new shortcut as per video. \nCreate automation steps. \n\nResources\nYoutube",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

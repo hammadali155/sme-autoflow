@@ -1,0 +1,12 @@
+{
+  "id": 2853,
+  "name": "Spotify to YouTube Playlist Synchronization",
+  "description": "Spotify to YouTube Playlist Synchronization\nA workflow that maintains a YouTube playlist in sync with a Spotify playlist, featuring smart video matching and persistent synchronization.\n\nKey Features\nOne-way Sync**: Spotify playlist → YouTube playlist (additions and deletions)\nContinuous Monitoring**: Automatic synchronization (every hour by default, but you can put any time you want)\nSmart Video Matching**: Considers video length and content relevance\nAuto-Recovery**: Automatically handles deleted YouTube videos\nDatabase Backup**: Persistent storage using Supabase\n\nPrerequisites\n\nSupabase project with the following table structure:\nCREATE TABLE IF NOT EXISTS musics (\n    id TEXT PRIMARY KEY,\n    title TEXT NOT NULL,\n    artist TEXT NOT NULL,\n    duration INT8 NOT NULL,\n    youtube_video_id TEXT,\n    to_delete BOOLEAN DEFAULT FALSE\n);\nEmpty YouTube playlist (recommended as duplicates are not handled)\nConfigured credentials for YouTube, Spotify, and Supabase APIs\nProperly set variables in all \"variables\" nodes (variables, variables1, variables2, variables3, variables4 (all the same))\nActivate the workflow !",
+  "nodes": [
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.spotify",
+    "n8n-nodes-base.youTube",
+    "n8n-nodes-base.supabase"
+  ],
+  "tags": []
+}

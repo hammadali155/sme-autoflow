@@ -1,0 +1,12 @@
+{
+  "id": 4923,
+  "name": "Automatic Backup of Workflows to GitHub with Email/Telegram Notifications",
+  "description": "Why?\n\nHave you ever updated your n8n instance, or moved from one instance to the other and lost all your workflows? I suggest NOT DOING THAT! Especially if you have very complex workflows that would take days to recreate.\n\nMake sure you have a backup process in place!\n\nHow it works\n\nGet all workflows from an n8n instance using your n8n API\nFormats the workflows cleanly\nCreates a backup package\nChecks if target GitHub repository exists, if not creates it\nUploads a manifest\nUploads a readme\nUploads your workflows as separate JSON files\nSends a summary to your choice (Telegram or GMAIL)\n\nWhat it does\nBacks up all your workflows\nSplits them out into separate JSON files for each workflow\nSends a notification\n\nWhat it doesn't do\n\nDoes not back up credentials (not smart for security reasons)\nDoes not delete old backups\n\nRequirements\nn8n\nn8n API setup with credentials stored in instance you are running this from\nGitHub user & API (with repository rights) setup (API key in Github, Credentials in n8n)\nFuture Updates\n\nIf I get requests for these features I would build them:\n\nRolling backups (delete further back than 3 days)\nLogic to skip the backup if nothing changed",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

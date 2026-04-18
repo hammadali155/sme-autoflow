@@ -1,0 +1,14 @@
+{
+  "id": 11860,
+  "name": "GPT 4.1-mini Automated Proposal to Payment Lifecycle Management",
+  "description": "How It Works\nThis workflow automates end-to-end contract and invoice management using AI intelligence. It processes proposals through intelligent contract generation, approval workflows, and automated invoicing. OpenAI analyzes proposal content while the system routes approvals intelligently. Upon approval, contracts are generated, invoices created, and notifications sent. The workflow also monitors payment status, generates financial forecasts, and manages follow-up tasks, eliminating manual contract generation delays and approval bottlenecks while ensuring accurate financial record-keeping.\n\nSetup Steps\nConfigure OpenAI API credentials in n8n credentials manager. \nConnect Google Sheets account for invoice and forecast storage. \nSet up Gmail for approval notifications and client communications. \nInput Stripe/payment processor credentials for payment tracking. \nMap proposal form inputs to workflow start node.\n\nPrerequisites\nOpenAI API key, Google Sheets account, Gmail account, Stripe/payment processor access\n\nUse Cases\nMulti-stage approval workflows, SaaS contract management, professional services invoicing\n\nCustomization\nModify approval logic in conditional nodes, replace OpenAI with Anthropic API\n\nBenefits\nReduces contract processing time by 80%, eliminates approval delays, prevents invoicing errors\n \n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

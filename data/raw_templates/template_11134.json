@@ -1,0 +1,10 @@
+{
+  "id": 11134,
+  "name": "Build an Internet Search Chatbot with Firecrawl API",
+  "description": "Internet Search Chat with Firecrawl\n\nHow it works\nA user sends a query via the chat widget and the Chat Trigger captures the message.\nThe chat flow posts the query to the backend webhook (HTTP Request) which forwards it to the search service.\nThe webhook calls Firecrawl to run the web search and returns raw results.\nA formatter converts the raw results into concise Markdown blocks and separators.\nThe chat node sends the formatted search summary back to the user.\nOptional: an admin can manually trigger a credits check to review Firecrawl usage.\n\nSetup\n[ ] Add Firecrawl API credentials in n8n.\n[ ] Update the webhook URL in the \"Define constants\" node to your n8n instance URL.\n[ ] Configure and enable the Chat Trigger (make it public and set initial messages).\n[ ] Ensure the webhook node path matches the constant and is reachable from the chat node.\n[ ] Test the chat by sending a sample query and verify the formatted search results.\n[ ] (Optional) Run the manual \"Check credits\" trigger to monitor Firecrawl account usage.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

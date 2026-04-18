@@ -1,0 +1,9 @@
+{
+  "id": 5025,
+  "name": "XOR Encryption and Decryption with Base64 Encoding for Workflow Data",
+  "description": "This workflow performs basic XOR-based encryption and decryption using a custom password. It is intended to be triggered by another workflow and processes structured input in JSON format.\n\nInput Structure\n\nThe workflow expects a single array of objects with the following fields:\n\naction-type: either \"encrypt\" or \"decrypt\"\nkey: the password used for encryption and decryption\ndata: the content to encrypt or decrypt\n\nExample: Encryption Input\n\n[\n  {\n    \"action-type\": \"encrypt\",\n    \"key\": \"Password\",\n    \"data\": \"Hello, this is a secret message\"\n  }\n]\n\nExample: Decryption Input\n\n[\n  {\n    \"action-type\": \"decrypt\",\n    \"key\": \"Password\",\n    \"data\": \"ChwGAQceF15eE2QXFRcUagxGVgV8TBoNBA4VQVoQZkwVUhImU1FTEg==\"\n  }\n]\n\nOutput\n\nThe output returns an array of results, each containing either the encrypted string (base64 format) or the decrypted plain text.\n\nUse Case\n\nThis workflow is useful for simple internal message encoding, data obfuscation, or testing purposes. It is not recommended for securing sensitive or personal data, as XOR encryption is not cryptographically secure.\n\nThe workflow logic is written in JavaScript using n8n Function nodes, without any external dependencies.\n",
+  "nodes": [
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

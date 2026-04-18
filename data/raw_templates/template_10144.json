@@ -1,0 +1,12 @@
+{
+  "id": 10144,
+  "name": "Detect Holiday Conflicts & Suggest Meeting Reschedules with Google Calendar and Slack",
+  "description": "Who’s it for\n\nRemote and distributed teams that schedule across time zones and want to avoid meetings landing on public holidays—PMs, CS/AM teams, and ops leads who own cross-regional calendars.\n\nWhat it does / How it works\n\nThe workflow checks next week’s Google Calendar events, compares event dates against public holidays for selected country codes, and produces a single Slack digest with any conflicts plus suggested alternative dates. Core steps: Workflow Configuration (Set) → Fetch Public Holidays (via a public holiday API such as Calendarific/Nager.Date) → Get Next Week Calendar Events (Google Calendar) → Detect Holiday Conflicts (compare dates) → Generate Reschedule Suggestions (find nearest business day that isn’t a holiday/weekend) → Format Slack Digest → Post Slack Digest.\n\nHow to set up\n\nOpen Workflow Configuration (Set) and edit: countryCodes, calendarId, slackChannel, nextWeekStart, nextWeekEnd.\n\nConnect your own Google Calendar and Slack credentials in n8n (no hardcoded keys).\n\n(Optional) Adjust the Trigger to run daily or only on Mondays.\n\nRequirements\n\nn8n (Cloud or self-hosted)\n\nGoogle Calendar read access to the target calendar\n\nSlack app with permission to post to the chosen channel\n\nA public-holiday API (no secrets needed for Nager.Date; Calendarific requires an API key)\n\nHow to customize the workflow\n\nTime window: Change nextWeekStart/End to scan a different period.\n\nHoliday sources: Add or swap APIs; merge multiple regions.\n\nSuggestion logic: Tweak the look-ahead window or rules (e.g., skip Fridays).\n\nOutput: Post per-calendar messages, DM owners, or create tentative reschedule events automatically.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

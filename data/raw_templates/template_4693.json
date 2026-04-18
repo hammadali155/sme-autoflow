@@ -1,0 +1,10 @@
+{
+  "id": 4693,
+  "name": "Get Real-Time Security Insights with NixGuard RAG and Wazuh Integration",
+  "description": "Effortlessly integrate NixGuard API into your n8n workflows for real-time security insights using your API key. This connector enables seamless interaction with Nix, providing rapid Retrieval-Augmented Generation (RAG) event knowledge with Wazuh integration - completely free and set up in under 5 minutes!\n\n🚀 Features:\n✅ Query NixGuard's AI-driven security insights via API authentication\n✅ Real-time security event knowledge integration\n✅ Plug-and-play workflow trigger for effortless automation\n✅ Wazuh compatibility for full security visibility\n\n🛠 How to Use:\n1️⃣ Add your API Key to authenticate with NixGuard.\n2️⃣ Integrate with your existing n8n workflows using the workflow trigger (default enabled).\n3️⃣ (Optional) Activate the chat trigger to streamline security queries via chat-based inputs.\n4️⃣ Run the workflow and get instant security intelligence!\n\n📢 Perfect for: Startup CTO's, SOC teams, security engineers, and developers needing real-time security automation within their infrastructure.\n\n🔗 Learn more about NixGuard: thenex.world  \n🔗 Get started with a free security subscription: thenex.world/security/subscribe  \n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

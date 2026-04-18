@@ -1,0 +1,10 @@
+{
+  "id": 4251,
+  "name": "Extract LinkedIn Post Engagement Data with Airtop",
+  "description": "LinkedIn Post Engagement Data Extractor\n\nUse Case\nThis automation is designed to extract key engagement metrics and audience data from a LinkedIn post. It's useful for analyzing the impact of content and identifying engaged users for lead generation, marketing, or research purposes.\n\nWhat It Does\nGiven a LinkedIn post URL and an Airtop profile, this automation extracts:\n\nTotal number of reactions\nTotal number of comments\nTotal number of reposts\nA list of users who reacted or commented, including:\n  Their full name\n  Their job title\n  A link to their LinkedIn profile\n\nInput Parameters\n\n| Name             | Description                                                | Required |\n|------------------|------------------------------------------------------------|----------|\n| airtop_profile   | The name of an Airtop Profile that's logged into LinkedIn | Yes      |\n| linkedin_post_url| The full URL of the LinkedIn post you want to analyze     | Yes      |\n\nHow It Works\n\nThe workflow starts when triggered manually or from another workflow/form.\nIt maps input fields for Airtop profile and post URL.\nAirtop opens a browser session and loads the LinkedIn post.\nAn AI agent is instructed to extract engagement data via prompt-based analysis.\nThe response is parsed and output in a structured format.\n\nOutput Format\n\nThe output will be a structured JSON object with the following fields:\n\n{\n  \"interactors\": [\n    {\n      \"name\": \"Jane Doe\",\n      \"job_title\": \"Marketing Director at ExampleCorp\",\n      \"profile_url\": \"https://linkedin.com/in/janedoe\"\n    }\n    // ... more interactors\n  ],\n  \"reactions_count\": 153,\n  \"comments_count\": 21,\n  \"reposts_count\": 8\n}\n\nRead more about how to extract Linkedin post comments and reactions.",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.airtop"
+  ],
+  "tags": []
+}

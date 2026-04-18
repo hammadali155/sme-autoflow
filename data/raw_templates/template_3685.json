@@ -1,0 +1,11 @@
+{
+  "id": 3685,
+  "name": "Backlink Monitoring Automation with Google Sheets + DataForSEO",
+  "description": "What This Workflow Does\n\nThis n8n workflow reads backlinks from a Google Sheet, sends each one to the DataForSEO On-Page API, and checks:\n\nWhether the backlink is still live on the target page\nWhether it's dofollow or nofollow\nWhether it's missing (i.e., lost)\n\nThe result is then written back to the same Google Sheet under a Status column.\n\nYour result will look like this:\n\nStep-by-Step Setup Instructions\n\nAdd your DataForSEO and Google Sheets credentials in n8n\nMake sure your Google Sheet has these columns: Backlink URL, Landing page, and Status\nClick the Test Workflow button to check a batch of backlinks\n\nWorkflow Breakdown\nTrigger: Manual test start\nRead Data: Pulls backlink URLs and target pages from Google Sheets\nFormat URLs: Extracts domain from URL\nSend POST Request to DataForSEO: Triggers a crawl on the backlink URL\nWait 20 seconds: Allows crawl to finish\nFetch Link Results: Retrieves backlink data from DataForSEO\nValidate Backlink: Checks if the backlink is live, and whether it’s dofollow\nUpdate Google Sheets: Logs the status as Live, Lost, or Lost (Nofollow)",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

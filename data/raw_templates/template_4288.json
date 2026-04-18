@@ -1,0 +1,14 @@
+{
+  "id": 4288,
+  "name": "Convert RSS News to AI Avatar Videos with Heygen & GPT-4o",
+  "description": "\n🎬 Automated News-to-Video Workflow (n8n + Heygen + GPT-4o)\n\n📄 Overview:\n\nThis n8n workflow turns news from an RSS feed (e.g., CNN) into short, AI-generated avatar videos using Heygen. It:\n\nFetches news from an RSS feed.\nLogs headlines to Google Sheets.\nUses GPT-4o or Google Gemini to generate a 30–60 sec script.\nSends the script to Heygen to create an avatar video.\nMonitors and retrieves the final video.\nLogs video metadata (title, link, etc.) to Google Sheets.\n\n🎯 Ideal for content creators, marketers, or media pages repurposing written news into video content at scale.\n\n⚙️ Setup Guide (No Sensitive Info)\n\n🔑 1. Heygen API\n\nPaid Heygen plan required.\nAdd your API key in the Setup Heygen node:\n\n    \"heygen_api_key\": \"your_key_here\"\n  Optional: Set \"avatar_id\" and \"voice_id\" as desired.\n\n💡 2. AI Model: GPT-4o or Gemini\n\nGPT-4o**: Use OpenAI’s node or HTTP request with your API key.\nGemini**: Link your Google Cloud project and connect the Gemini node using OAuth2 credentials.\n\n📥 3. RSS Feed\n\nAdd an RSS node (e.g., CNN).\nExtract title, link, and content.\n\n📊 4. Google Sheets + Drive\n\nConnect via OAuth2:\n\n  \"Google Sheets account 2\"\n  \"Google Drive account 2\"\nReplace sheet IDs in:\n\n  Log news to sheets\n  Log video URL and title to sheets\n\n📹 5. Create Video (Heygen)\n\nSend a POST request to Heygen's API using the generated script, avatar, and voice ID.\n\n⏳ 6. Monitor Status\n\nPoll the status endpoint until video is ready.\nCapture the download link.\n\n🧾 7. Log Final Output\n\nSave video metadata to a Google Sheet for publishing or archiving.\n\nSet up video: Link in Workflow \n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

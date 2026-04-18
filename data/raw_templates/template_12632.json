@@ -1,0 +1,13 @@
+{
+  "id": 12632,
+  "name": "Scrape Google Maps leads with GPT-4 and assign them in Notion via Telegram",
+  "description": "Meet your automated Lead Gen Specialist. This workflow streamlines cold outreach by scraping local businesses, qualifying them with AI, and delivering them to your sales team instantly via an interactive Telegram bot.\n\nIt solves the \"empty pipeline\" problem by fetching fresh leads from Google Maps, checking for duplicates in your Notion CRM, and letting agents \"claim\" leads with a single click.\n\n💡 Why use this?\nAutomated Sourcing:** Stop manual copy-pasting. It fetches verified business data (Phone, Reviews, Website) directly from Google Maps via Outscraper.\nSmart Deduplication:** It checks your Notion database first to ensure you never accidentally pitch the same business twice.\nAI \"Icebreakers\":** GPT-4 analyzes the reviews to find specific pain points (e.g., \"Slow service\" -&gt; \"Pitch QR Menu\"), giving your agents a warm opening line.\nOne-Click Assignment:* Leads are sent to a Telegram group. Agents simply click *\"⚡️ Take Lead\"**, and the system automatically assigns the deal to them in Notion and updates the chat.\n\n⚙️ How it works\nFetch: Takes your query (e.g., \"Sushi in London\") and gets data via Outscraper.\nFilter: Checks if the phone number already exists in your Active Deals database.\nAnalyze: AI reads the reviews and writes a personalized sales argument.\nNotify: Sends a formatted card to the Telegram group.\nAssign (Loop): Listens for the button click, identifies the agent via their Telegram ID, updates the CRM, and locks the lead.\n\n🛠 Setup Steps\nThis workflow works best with the \"AI Sales Coach\" Notion system.\n\nGet the Notion System:\n    Click here to duplicate the Notion Template\n    Add your team to the \"Agents Configuration\" database (map Telegram IDs to Notion Users).\nConnect Databases:\n    In the Notion nodes (Search Duplicate, Create New Lead, Assign Lead), select your duplicated Active Deals database.\n    In the Find Agent node, select your Agents Configuration database.\nConfigure Settings:\n    Open the 📝 CONFIGURATION node.\n    Add your Outscraper API Key.\n    Set your Telegram Chat ID (where leads should be posted).\n    Customize the AI_TONE and MY_SERVICES to fit your product.\nConnect Accounts:\n    Add credentials for Notion, OpenAI, Telegram, and Outscraper.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

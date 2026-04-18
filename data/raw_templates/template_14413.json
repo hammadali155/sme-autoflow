@@ -1,0 +1,15 @@
+{
+  "id": 14413,
+  "name": "Assess blockchain smart contract and tokenomics risk with GPT-4o and Gmail",
+  "description": "How It Works\nThis workflow automates blockchain risk assessment using a multi-agent AI architecture, targeting DeFi developers, blockchain auditors, and Web3 project teams who need rigorous smart contract and tokenomics evaluation before deployment or investment decisions. The core problem it solves is the time-intensive, expertise-heavy process of manually auditing Solidity smart contracts and modelling tokenomics sustainability, tasks prone to oversight when done under launch pressure. A manual trigger reads Solidity files from disk and passes them to the Blockchain Risk Orchestrator Agent, which coordinates two specialist sub-agents: a Smart Contract Auditor Agent (using static analysis and a dedicated auditor model) and a Tokenomics Sustainability Agent (leveraging a Risk Score Calculator and Monte Carlo Simulation Tool). Each agent maintains its own memory and model context. Outputs are parsed into a Structured Risk Report, then prepared for storage and saved to a database. A final Gmail node dispatches the completed risk report to stakeholders, closing the audit loop automatically.\n\nSetup Steps\nConfigure the Read Solidity Files node with the correct disk path to your .sol files.\nAdd LLM API credentials to all Chat Model nodes (Orchestrator, Auditor, Tokenomics).\nSet static analysis parameters in the Static Analysis Tool node.\nDefine risk thresholds and scoring weights in the Risk Score Calculator.\nConfigure Monte Carlo simulation parameters in the simulation tool node.\nPrerequisites\nLLM API key (OpenAI or compatible)\nSolidity .sol files accessible on disk\nStatic analysis tool configuration\nGmail account with OAuth2 credentials\nTarget database or storage destination\nUse Cases\nAudit smart contracts before mainnet deployment to catch critical vulnerabilities.\nCustomisation\nExtend to support multiple Solidity file batches or GitHub repository inputs.\nBenefits\nReduces smart contract audit time from days to minutes.\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

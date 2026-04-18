@@ -1,0 +1,11 @@
+{
+  "id": 5401,
+  "name": "Automate GoDaddy Subdomain Management via Email Requests",
+  "description": "This n8n workflow automates subdomain creation and deletion on GoDaddy using their API, triggered via email requests. This empowers developers to manage subdomains directly without involving DevOps for minor tasks.\n\nGood to know\n\nEnsure GoDaddy API credentials are securely configured to avoid unauthorized access.  \nEmail parsing accuracy depends on the consistency of request formats.\n\nHow it works\n\nDetect new email requests using the Start Workflow (GET Request) node.  \nUse the Extract Data from Email node to parse relevant details (e.g., subdomain name, action type).  \nValidate the action type with the Validate Action Type node to proceed with create (true) or delete (false).  \nIf true, the Create Subdomain node sends a POST request to GoDaddy’s API to create the subdomain.  \nIf false, the Delete Subdomain node sends a DELETE request to remove the subdomain.  \nThe Send Email Response node notifies the requester of the action’s success or failure.\n\nHow to use\n\nImport the workflow into n8n and configure the nodes with your GoDaddy API and email credentials.  \nTest with sample email requests to ensure proper parsing and API calls.\n\nRequirements\n\nGoDaddy API credentials  \nEmail service (e.g., SMTP or API) for notifications  \n\nCustomising this workflow\n\nAdjust the Extract Data from Email node to match your email format or add additional validation steps for security.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

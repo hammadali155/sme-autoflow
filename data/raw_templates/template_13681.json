@@ -1,0 +1,16 @@
+{
+  "id": 13681,
+  "name": "Generate and schedule LinkedIn posts with Google Sheets, OpenAI",
+  "description": "Who is this for?\nThis workflow is designed for content creators, social media managers, digital marketers, and business owners who want to automate their LinkedIn content creation and publishing process. It's especially valuable for those who struggle with consistently creating engaging content or want to maintain a regular posting schedule without manual effort.\n\nWhat this Workflow Does / Key Features\nAutomatically runs every 6 hours to generate and post LinkedIn content\nRetrieves content topics from a Google Sheet that haven't been processed yet\nUses AI to research trending topics and create detailed content frameworks\nGenerates engaging LinkedIn post content based on those topics\nCreates professional images to accompany posts using AI\nDevelops optimized hashtags to improve post visibility\nPosts the complete content package to both LinkedIn profiles and company pages\nUpdates the Google Sheet to track which topics have been processed\n\nRequirements\nGoogle Sheets OAuth2 API credentials for accessing your content spreadsheet\nLinkedIn OAuth2 API credentials for posting to profiles and pages\nOpenAI API credentials for content generation and image creation\nGoogle Gemini (PaLM) API credentials for AI processing\nMistral Cloud API credentials for trend analysis\nA Google Sheet with specific columns: SL, Topic, Status, row_number\n\nWorkflow Components Explained\nSchedule Trigger**: Automatically starts the workflow every 6 hours\nGet row(s) in sheet**: Retrieves topics from your Google Sheet that haven't been processed\nLoop Over Items**: Processes topics one at a time to avoid overwhelming the system\nContent topic generator**: Creates detailed content topics with titles, rationale, and hooks\nAI Agent Tool**: Gathers trending topics from external sources\nContent creator**: Writes the actual LinkedIn post content based on the topic\nOpenAI**: Creates images to accompany the LinkedIn posts\nSEO**: Generates relevant hashtags for the LinkedIn posts\nMerge**: Combines the post content, image, and hashtags into a single package\nLinkedIn page & LinkedIn profile**: Posts the content to both a LinkedIn company page and personal profile\nUpdate row in sheet**: Marks the processed topic as \"checked\" in the Google Sheet\n\nSupport & Help\nFor n8n workflow questions: n8n Community\nFor LinkedIn API issues: LinkedIn Developer Portal\nFor Google Sheets integration: Google Sheets API Documentation\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.linkedIn",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

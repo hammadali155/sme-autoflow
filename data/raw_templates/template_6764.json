@@ -1,0 +1,13 @@
+{
+  "id": 6764,
+  "name": "Automatic LinkedIn Engagement with AI Comments using GPT-4o and Phantombuster",
+  "description": "Who’s it for  \nB2B marketers, recruiters, and personal-brand builders who want to spark\nconversations on LinkedIn by automatically posting short, relevant comments on\nfresh industry content—while staying under daily limits.\n\nHow it works / What it does  \nSchedule Trigger fires every hour.  \nSelect Cookie picks a rotating LinkedIn session-cookie (time-slice logic).  \nGenerate Random Search Term (GPT-4o) outputs a realistic AI/BPA keyword.  \nLinkedIn Search Agent (Phantombuster) scrapes recent posts.  \nGet Random Post chooses one post and passes its text to Create Comment\n   (GPT-4o) which returns a ≤150-character reply in the chosen language.  \nBuilds linkedin_posts_to_comment.csv, uploads to SharePoint, and launches\n   the Auto-comment Agent to post the reply.  \nPost URL is logged to linkedin_posts_already_commented.csv to avoid\n   duplicates.  \nWait nodes throttle launches to ~120 comments/day.\n\nHow to set up  \nAdd credentials: Phantombuster API, SharePoint OAuth2, OpenAI API key.  \nIn SharePoint › “Phantombuster” folder create:  \n   • linkedin_session_cookies.txt – one cookie per line.  \n   • linkedin_posts_already_commented.csv with header postUrl.  \nEdit Set ENV Variables to set default language, comment prompt,\n   company ID, etc.  \nAdjust schedule or comments-per-launch as needed.  \nActivate the workflow; it will run hourly and comment on one new post each\n   launch.\n\nRequirements  \nn8n 1.33 +  \nPhantombuster Growth plan (API access)  \nOpenAI account \nMicrosoft 365 SharePoint tenant\n\nHow to customize  \nChange tone/length: edit the prompt in Create Comment.  \nComment more often: raise numberOfLinesPerLaunch and schedule frequency.  \nUse Google Drive/Dropbox instead of SharePoint by swapping storage nodes.",
+  "nodes": [
+    "n8n-nodes-base.phantombuster",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "n8n-nodes-base.microsoftSharePoint"
+  ],
+  "tags": []
+}

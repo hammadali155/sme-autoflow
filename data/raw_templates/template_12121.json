@@ -1,0 +1,13 @@
+{
+  "id": 12121,
+  "name": "Generate recipe variations from ingredients using Google Gemini and Google Sheets",
+  "description": "Description: Don't just get a recipe. Get a Strategy. (Speed / Healthy / Creative) 🍳🤖\n\nThis workflow solves the \"What should I eat?\" problem by using Google Gemini to generate 3 distinct recipe variations simultaneously based on your fridge leftovers. It demonstrates advanced n8n concepts like Array Processing and Data Aggregation.\n\nKey Features:\n\nArray Processing: Demonstrates how to handle JSON lists (Gemini outputs an array -&gt; n8n splits it -&gt; API calls run for each item).\n\nAggregation: Shows how to combine processed items back into a single summary email.\n\nVisual Enrichment: Automatically searches for recipe images using Google Custom Search.\n\nHow it works:\n\nInput: Enter ingredients via the Form Trigger.\n\nGenerate: Gemini creates 3 JSON objects: \"Speed (5min)\", \"Healthy\", and \"Creative\".\n\nProcess: The workflow iterates through the 3 recipes, searching for images and logging data to Google Sheets.\n\nAggregate: The results are combined into one HTML comparison table.\n\nDeliver: You receive an email with 3 options to choose from.\n\nSetup Requirements:\n\nGoogle Sheets: Create a sheet named Recipes with headers: date, ingredients, style, recipe_name, recipe_text, image_url.\n\nCredentials: Google Gemini API, Google Custom Search (API Key & Engine ID), Gmail, Google Sheets.\n\nConfiguration: Enter your IDs in the \"1. Configuration\" node.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

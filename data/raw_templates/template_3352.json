@@ -1,0 +1,11 @@
+{
+  "id": 3352,
+  "name": "Health Check Websites with Google Sheets & Telegram Alerts",
+  "description": "What does this template do ? \n\nThis workflow performs scheduled health checks on a list of URLs stored in a Google Sheet. Every X minutes, it retrieves the URLs, sends HTTP requests to check their availability, and notifies a Telegram chat if any request fails.\n\nYou can easily replace Telegram with any other notification service supported by n8n, such as Slack, Discord, Email, or Microsoft Teams.\n\nUse Case\nIdeal for monitoring internal or external services, ensuring uptime and responsiveness. Integrate with your preferred messaging platform for real-time failure notifications—without setting up complex infrastructure.\n\nWhat the Workflow Does\n⏰ Triggers at regular intervals using Schedule Trigger  \n📄 Reads URLs from a Google Sheet  \n🌐 Sends HTTP requests to check URL health  \n🚨 Sends failure alerts (including error code and URL) to Telegram (or any service of your choice)  \n\nApps & Services Used\nGoogle Sheets  \nTelegram (or alternative notification service)  \nHTTP Request  \n\nPre-requisites\nTelegram bot and chat ID (if using Telegram)  \nConnected Google Sheet with a URLS column  (template)\n\nCustomization Tips\nAdjust the schedule interval in the trigger node  \nReplace Telegram with Slack, Email, Discord, or any other notification node  \nCustomize alert messages with more context or formatting  \nAdd filters, retries, or logging as needed  ",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram"
+  ],
+  "tags": []
+}

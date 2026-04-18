@@ -1,0 +1,12 @@
+{
+  "id": 2206,
+  "name": "Translate Telegram audio messages with AI (55 supported languages)",
+  "description": "Use case\n\nThis workflow enables a Telegram bot that can:\n\nAccept speech input in one of 55 supported languages\nAutomatically detect the language spoken and translate the speech to another language \nResponds back with the translated speech output.\n\nThis allows users to communicate across language barriers by simply speaking to the bot, which will handle the translation seamlessly.\n\nHow does it work?\n\nTranslation\nIn the translation step the workflow converts the user's speech input to text and detects the language of the input text. \n\nIf it's English, it will translate to French. If it's French, it will translate to English.\n\nTo change the default translation languages, you can update the prompt in the AI node.\n\nOutput\nIn the output step, we provide the translated text output back to the user and speech output is generated in the translated language.\n\nSetup steps\nObtain Telegram API Token\nStart a chat with the BotFather.\nEnter /newbot and reply with your new bot's display name and username.\nCopy the bot token and use it in the Telegram node credentials in n8n.\n\nUpdate the Settings node to customize the desired languages\n\nActivate the flow \n\nFull list of supported languages\nAll supported languages: \n\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

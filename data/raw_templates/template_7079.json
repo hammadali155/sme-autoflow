@@ -1,0 +1,12 @@
+{
+  "id": 7079,
+  "name": "CYBERPULSE AI GRC: Automate Compliance Audit Documentation",
+  "description": "Description\nAutomatically packages audit-ready evidence files matched to control IDs from ISO 42001 or other frameworks.\nFetches logs from Google Sheets, finds corresponding files in Google Drive, compresses them into a ZIP archive, and sends via email — no manual formatting required.\n\nWho’s It For:\n\nCompliance teams preparing audit documentation\n\nGRC consultants managing multiple clients\n\nInternal auditors requiring traceable evidence\n\nHow It Works:\n\nTrigger manually or on schedule (e.g., daily)\n\nReads audit logs from Google Sheets\n\nSearches Google Drive for files matching control_id\n\nDownloads matched files\n\nZips them into an archive\n\nSends the archive via email (Gmail or SMTP)\n\nRequirements:\n\nGmail or SMTP node for email delivery\n\nGoogle Sheets connected (OAuth2)\n\nGoogle Drive connected (OAuth2)\n\nGoogle Sheet Requirements:\n\nColumns: control_id, description, evidence_status, last_updated\n\nOne row per control ID or log entry\n\nHeaders must be in the first row\n\nLog sheet must be shared with your service account or n8n-connected user\n\nFile Templates:\n\nAudit_AutoPack_Sheet_Template.xlsx\n\nEvidence files in Google Drive named using control ID (e.g., ISO42001-5.1.pdf)\n\nCustomization Tips:\n\nAdjust ZIP archive name in the “Zip Files” node\n\nCustomize email subject, body, and recipient\n\nUse a different Drive folder per client or audit phase\n\nEthics & Compliance:\n\nEnsures audit trail and evidence traceability\n\nPrevents unauthorized edits or file mismatches\n\nSetup Instructions\n\nCopy the provided Google Sheet template (linked in File Templates).\n\nFill in your audit logs (columns: control_id, description, status, last_updated).\n\nConnect Google Sheets node using OAuth credentials.\n\nIn the Gmail node:\n\nSet recipient email (e.g., your_email@example.com)\n\nChoose “Send binary data” and attach ZIP\n\nTrigger via Cron node (e.g., daily) or manually\n\n(Optional) Connect Drive or S3 node to store a backup copy\n\nSupports:\n\nISO 42001 AI Governance\n\nPCI DSS v4.0\n\nNIST CSF / SOCI Act\n\nACSC Essential Eight\n\n\nhttps://cyberpulsesolutions.com",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.compression"
+  ],
+  "tags": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": 3718,
+  "name": "Check Which AI Models Are Used in Your Workflows",
+  "description": "How it works\n\nFetch all workflows from your n8n instance.\nFilter workflows that contain nodes with a modelId setting.\nExtract the node names, model IDs, model names, workflow names, and workflow URLs.\nSave the extracted information into a connected Google Sheet.\n\nSet up steps\n\nConnect your n8n API credentials.\nConnect your Google Sheets account.\nReplace \"Your n8n domain\" with your actual domain URL.\nUse this Google Sheet template to create a new sheet for results.\nSetup typically takes 5 minutes.\nBe cautious: if you have over 100 workflows, performance may be impacted.\n\nNotes\n\nSticky notes inside the workflow provide extra guidance.\nThis workflow clears old sheet data before writing new results.\nMake sure your n8n instance allows API access.\n\nResult Example\n\n\nUpdate:\nIt didn't detect the AI model in tool originally. Now it's fixed!\n\nUpdate 20250429:\nSupport 1.91.0 with open node directly!\nOptimize the url with node id.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets"
+  ],
+  "tags": []
+}

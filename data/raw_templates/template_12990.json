@@ -1,0 +1,15 @@
+{
+  "id": 12990,
+  "name": "Evaluate automotive component compliance with OpenAI GPT-4.1 and regulatory APIs",
+  "description": "How It Works\nThis workflow automates automotive regulatory compliance evaluation by intelligently routing assessments through parallel evaluation paths based on component type. Designed for automotive compliance officers, quality assurance teams, and regulatory affairs managers, it solves the complex challenge of ensuring vehicle components meet diverse regulatory standards across safety, emissions, and performance requirements. The system receives compliance evaluation requests via webhook, determines whether components require split assessment or integrated regulatory database checks, then processes each path using OpenAI-powered compliance agents with specialized tools for performance simulation and structured output parsing. Results are aggregated, risk scores calculated using business rules, enriched with compliance metadata, and logged to regulatory databases while responding to the originating system with actionable compliance status and required remediation actions.\n\nSetup Steps\nConfigure webhook endpoint URL for compliance evaluation system integration\nSet up OpenAI API credentials for Automotive Compliance Agent access\nConfigure Check Evaluation Type node with component classification rules\nSet up Fetch Regulatory Database node with regulatory standards API credentials\nUpdate Performance Simulation Tool with automotive testing parameters\nConfigure Calculator node with compliance scoring algorithms\nCustomize Structured Output Parser for regulatory reporting format requirements\n\nPrerequisites\nActive OpenAI API account, automotive compliance evaluation system with webhook capability\nUse Cases\nPre-production component compliance validation, supplier part certification\nCustomization\nModify compliance agent prompts for region-specific regulations, adjust risk scoring thresholds\nBenefits\nAccelerates compliance evaluation by 70%, ensures systematic multi-regulation assessment",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolCode"
+  ],
+  "tags": []
+}

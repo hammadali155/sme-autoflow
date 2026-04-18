@@ -1,0 +1,12 @@
+{
+  "id": 13062,
+  "name": "Send candidate outcome emails and SMS and notify referrers with Airtable",
+  "description": "How it works\n\nThis workflow automates post-event and post-course communications for candidates, while also notifying referring partners at the correct milestones.\n\nThe workflow is triggered when Airtable updates timestamp fields related to Info Event Outcome or Course Outcome. Airtable controls when the workflow runs, and n8n controls what happens next. This separation avoids race conditions and keeps the system reliable.\n\nAfter triggering, the workflow normalizes record data and determines exactly one action path using a centralized Code node. Based on the outcome, it sends the correct candidate email and SMS, and optionally notifies the referring person. Each message is sent only once using checkbox “sent” flags stored in Airtable.\n\nSetup steps\n\nConnect Airtable and select the table containing candidate records.\n\nEnsure Airtable includes timestamp fields for Info Event Outcome and Course Outcome updates.\n\nEnsure checkbox fields exist to track which messages have already been sent.\n\nConnect your email provider (Brevo) and SMS provider.\n\nCustomize message content inside the Email and SMS nodes if needed.\n\nInitial setup typically takes 15–20 minutes.\n\nWhen to use this template\n\nYou need reliable post-event and post-course messaging\n\nYou want to notify referring partners automatically\n\nYou must prevent duplicate emails or SMS",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.sendInBlue",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

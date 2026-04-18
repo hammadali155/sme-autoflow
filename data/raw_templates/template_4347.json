@@ -1,0 +1,9 @@
+{
+  "id": 4347,
+  "name": "Validate Auth0 JWT Tokens using JWKS or Signing Cert",
+  "description": "&gt; Note: This template requires a  self-hosted community edition of n8n. Does not work on cloud.\n\nTry It Out\nThis n8n template shows how to validate API requests with Auth0 Authorization tokens.\n\nAuth0 doesn't work with the standard JWT auth option because:\n1) Auth0 tokens use the RS256 algorithm.\n2) RS256 JWT credentials in n8n require the user to use private and public keys and not secret phrase.\n3) Auth0 does not give you access to your Auth0 instance private keys.\n\n\nThe solution is to handle JWT validation after the webhook is received using the code node.\n\nHow it works\nThere are 2 approaches to validate Auth0 tokens: using your application's JWKS file or using your signing cert.\nBoth solutions uses the code node to access nodeJS libraries to verify the token.\nJWKS**: the JWK-RSA library is used to validate the application's JWKS URI hosted on Auth0\nSigning Cert**: the application's signing cert is imported into the workflow and used to verify token.\nIn both cases, when the token is found to be invalid, an error is thrown. However, as we can use error outputs for the code node, the error does not stop the workflow and instead is redirected to a 401 unauthorized webhook response.\nWhen token is validated, the webhook response is forwarded on the success branch and the token decoded payload is attached.\n\nHow to use\nFollow the instructions as stated in each scenario's sticky notes.\nModify the Auth0 details with that of your application and Auth0 instance.\n\nRequirements\nSelf-hosted community edition of n8n\nAbility to install npm packages\nAuth0 application and some way to get either the JWK url or signing cert.",
+  "nodes": [
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 3296,
+  "name": "Automatic Shopify Order Fulfillment Process",
+  "description": "This workflow automates the Mark as Fulfilled action in Shopify for each order, ensuring a seamless fulfillment process without manual intervention.\n\nHow It Works\nThis workflow retrieves all unfulfilled orders and processes their fulfillment automatically. Since Shopify requires a Fulfillment Order ID (not Order ID) to trigger fulfillment, the workflow follows these steps:\n\n1️⃣ Get all unfulfilled orders using the Shopify node.\n2️⃣ Retrieve the Fulfillment Order ID using the \"List Fulfillment Orders\" action.\n3️⃣ Create a fulfillment request using \"Mark fulfillment order as fulfilled.\"\n4️⃣ Handle edge cases, such as partially fulfilled orders or API errors.\n\nThis ensures that every valid order is marked as fulfilled efficiently.\n🔗 Ongoing discussions on this topic: Relevant Shopify API Discussion\n\nStep-by-step\nThe workflow can be run as requested or on schedule\n\nYou can adjust these parameters within the Shopify and filter nodes:\n\nShopify Admin URL – A Global node to customize the Shopify store URL.\n To find your Shopify store ID, login into your Shopify admin, then look at the URL in your browser's address bar, the subdomain portion (e.g., example_store_id.myshopify.com) is your store ID (in this case: example_store_id)\n\nOrder Filtering – Ensures only valid orders are fulfilled, particularly useful if:\n\nYou sell digital downloads or gift cards exclusively.\nYou use third-party fulfillment services for all products.\n\nCredentials\nTo run this workflow, you'll need:\n\nShopify API Key – Required for authentication.\n\nWho Is This For?\nShopify store owners looking to automate their fulfillment process.\n\nMerchants selling digital or personalized products who need instant fulfillment.\n\nExplore More Templates  \n👉 Check out my other n8n templates\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.shopify"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 14256,
+  "name": "Generate UGC product videos from Google Sheets with DALL·E, GPT-4 and Sora",
+  "description": "This n8n template demonstrates how to fully automate the creation of UGC-style product videos using AI, starting from a simple Google Sheet.\n\nIt transforms product data into AI-generated images, cinematic video scripts, and final videos, then uploads everything to Google Drive and updates your sheet automatically. \n\n💡 Use cases\nGenerate UGC ads at scale for e-commerce products\nCreate TikTok / Reels content automatically\nBuild content pipelines for agencies or creators\nRapidly test different product angles, audiences, and messaging\nAutomate creative production from structured data (Google Sheets)\n\nGood to know\n\nThis workflow uses multiple AI services (image + video), so cost depends on usage:\nImage generation (DALL·E)\nVideo generation (Sora)\n\nVideo generation is asynchronous and may take several minutes per item\nSome AI models (like Sora) may be region-restricted or limited access\nGenerated image URLs may expire, so storing them (as done here) is important\n\nHow it works\nReads product data from Google Sheets and selects rows marked \"Pending\".\nCreates a prompt and generates a product image.\nAnalyzes the image and turns it into a video script.\nSends the script to Sora and waits until the video is ready.\nUploads the video to Google Drive and updates the sheet.\nLogs errors and marks the row as \"Error\".\n\nHow to use\n\nAdd products to Google Sheets with name, description, audience, and set status to \"Pending\".\nRun the workflow or let the schedule trigger process items automatically.\nThe system generates image → script → video, uploads them, and updates your sheet.\n\nRequirements\n\nRequires OpenAI, Google Sheets, and Google Drive accounts.\nRequires an n8n instance with credentials configured.\n\nCustomizing this workflow\n\nReplace the schedule trigger with a webhook or form for real-time use.\nGenerate multiple videos per product.\nSend outputs to platforms like TikTok, Meta Ads, or CMS tools.\nAdd voiceovers, captions, or permanent asset storage.\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

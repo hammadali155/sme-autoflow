@@ -1,0 +1,10 @@
+{
+  "id": 3836,
+  "name": "Google Autocomplete Keyword Scraper",
+  "description": "Who is this template for?\n\nThis workflow template is built for SEO specialists and digital marketers looking to uncover keyword opportunities effortlessly.\n\nIt uses Google's autocomplete magic to help you spot what's trending.\n\nHow it works\n\nJust give it a keyword.\n\nThe workflow then queries Google and collects all autocomplete suggestions by appending every letter from A to Z to your keyword.\n\nOutput example with the keyword \"n8n\" :\n\n\n\nYou can sort these keywords and give them to an LLM to produce entity-enriched text.\n\nSetup instructions\n\nIt works right out of the box. 🛠️\n\nHowever, you may want to tweak the output format to better fit your use case.\n\nExporting the Keywords\n\nYou can easily add a node to export the keywords in various ways:\n\nvia a webhook\nby email\nas a file (e.g., saved to Google Drive)\ndirectly to a website\n\nAdapting the Language\n\nAutocomplete results depend on the selected language.\n\nYou can change the &hl=en parameter in the Google Autocomplete node.  \n\nReplace the \"en\" part with the language code of your choice.\n\nExamples:  \n&hl=fr → French  \n&hl=es → Spanish  \n&hl=de → German",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

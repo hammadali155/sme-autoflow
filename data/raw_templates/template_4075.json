@@ -1,0 +1,19 @@
+{
+  "id": 4075,
+  "name": "Automated Tweet Generator & Publisher with GPT-4, Discord, and Google Sheets",
+  "description": "AI Twitter Content Machine – Write, Refine & Publish Tweets on Autopilot\n\nThis workflow is perfect for creators, solopreneurs, and personal brands who want to consistently publish bold, high-performing content on X (Twitter) — without writing a single line themselves. After a one-time setup, it automatically generates tweet ideas, writes in your voice, evaluates post quality, avoids duplicates, and publishes directly to Twitter. All approvals and rewrites are handled in a conversational loop powered by OpenAI, Discord, and Google Sheets.\n\nWhether you’re building a personal brand or growing your startup audience, this tool will help you stay active, edgy, and relevant — with zero friction.\n\nHow it works\nDistill what your flow does in a few high-level steps.\nLoads your brand brief from a sub-workflow.\nGenerates a tweet idea aligned with your tone.\nChecks Google Sheets to ensure the idea hasn’t been used.\nWrites the post.\nEvaluates it using a feedback sub-workflow — if the quality score is below 0.7, it rewrites the post.\nRefines tone and voice using a Rewriter Agent that mimics your past content (from a Google Sheet).\nSends the final post to a Discord channel for manual approval.\nOn approval, posts directly to Twitter (X) and logs it to Google Sheets (History and Examples tabs).\n\nSet up steps\nGive users an idea of how long setup will take. Don’t describe every detail.\nKeep detailed descriptions in sticky notes inside your workflow.\n\nKey benefits\nNo burnout, no block – Stop spending energy thinking what to tweet. AI handles everything.\nStyle-matching – Posts sound like you, not a generic robot. Based on your real writing.\nFast & scalable – Publish once or five times a day — it’s up to you.\nAvoid duplicates – Each idea is checked against your post history.\nHuman-in-the-loop – You approve final posts via Discord. No rogue tweets.\n\nIntegrations required\nn8n\nOpenAI API\nGoogle Sheets\nTwitter (OAuth2)\nDiscord (for approval)\nNotion (optional for brand brief storage)\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.notion",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

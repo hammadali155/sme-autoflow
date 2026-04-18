@@ -1,0 +1,13 @@
+{
+  "id": 12748,
+  "name": "Send 24-hour Hacker News trends to Telegram with OpenRouter AI translation",
+  "description": "Stay ahead of the curve with this smart Hacker News monitor. Unlike simple RSS feeds, this workflow uses a custom \"Gravity Score\" algorithm to identify rising trends and filter out noise, pushing a clean, summarized digest to your Telegram.\n\n✨ Key Features\n🧠 Smart Algorithms:\n\n\tGravity Score: Calculates popularity based on points, comments, and time (velocity), ensuring you see trending stories, not just old ones.\n\n\tNoise Filtering: Automatically discards \"infancy\" posts (new posts with zero engagement) to keep your feed high-quality.\n\n🤖 Optional AI Translation: Includes an AI Agent (via OpenRouter/LLM) to translate titles and summaries into your local language (e.g., Chinese, Spanish, French).\n\n&gt; Don't need translation? Simply delete the Translate node and connect the Filter node directly to the Combine message templates node.\n\n📱 Beautiful Telegram Format: Delivers a clean HTML-formatted digest with clickable links, stats (Points/Comments), and story previews.\n\n⚙️ How It Works\nSchedule: Runs every 4 hours (configurable) to fetch data from the past 24 hours via the Algolia API.\n\nAnalyze: Calculates the velocity score for each post and filters out low-quality entries.\n\nTranslate (Optional): Uses an LLM to translate the content. You can customize the target language in the AI Agent's system prompt.\n\nFormat & Send: Combines the data into a structured message and pushes it to your Telegram Chat/Channel.\n\n📝 Setup Instructions\nTelegram Credentials:\n\nCreate a bot via @BotFather.\n\nAdd the Bot Token to the Telegram node credentials.\n\nGet Chat ID.\n\nAI Configuration (Optional):\n\nConfigure your LLM credentials (e.g., OpenRouter, OpenAI).\n\nIn the \"Translate\" (AI Agent) node, edit the System Prompt to change the target language (Default is set to translate to Chinese).\n\n👀 Output Example\n🚨 Hacker News 24H Trending Alert\n📉 Top stories captured: 5\n\n🔥 Ask HN: How can we solve the loneliness epidemic?\n📈 16.39 | 💬 796 | ⭐️ 482\n🕒 Posted 12.7 hours ago\n&gt; Countless voiceless people sit alone every day...\n\n🔥 Show HN: Gambit, an open-source agent harness\n📈 2.20 | 💬 11 | ⭐️ 58\n🕒 Posted 5.3 hours ago\n&gt; Wanted to show our open source agent harness...\n`",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

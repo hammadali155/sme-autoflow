@@ -1,0 +1,12 @@
+{
+  "id": 15034,
+  "name": "Create AI coloring book pages from Google Sheets and save to Google Drive with Stable Diffusion",
+  "description": "This workflow automatically generates printable coloring pages from themes stored in Google Sheets.\n\nIt reads configuration data such as theme, style, and keywords, creates prompts, generates multiple image variations using AI, and saves the results to Google Drive.\n\nFinally, it logs metadata to Google Sheets for easy tracking and management.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

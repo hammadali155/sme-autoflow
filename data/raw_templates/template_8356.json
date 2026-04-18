@@ -1,0 +1,18 @@
+{
+  "id": 8356,
+  "name": "Generate SEO-optimized WordPress blogs with Gemini, Tavily & human review",
+  "description": "Effortlessly generate, review, and publish SEO-optimized blog posts to WordPress using AI and automation.\n\nHow It Works\nAI Topic Generation: Gemini suggests trending blog topics matching your agency's services.\n\nContent Research: Tavily fetches recent relevant articles for each generated topic.\n\nHuman Review: Choose the preferred article for publishing through a Telegram notification.\n\nAI Rewriting: Gemini rewrites the selected article into a polished, SEO-friendly post.\n\nImage Generation & Publishing: The workflow creates a featured image with Gemini or OpenAI, then publishes the post (with dynamic categories and images) to WordPress.\n\nAudit Trail: Every published post is logged to Google Sheets, and final details are sent to Telegram.\n\nSet Up Steps\nEstimated setup time: 15–30 minutes (excluding API approval/wait times).\n\nConnect your WordPress, Gemini (Google), Tavily, Google Sheets, and Telegram accounts.\n\nConfigure your preferred posting schedule in the “Schedule Trigger.”\n\nAdjust prompts or messages to fit your agency’s niche or editorial voice if needed.\n\nNote:\nDetailed customizations and advanced configuration tips are included in the sticky notes within the workflow.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

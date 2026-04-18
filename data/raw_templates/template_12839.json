@@ -1,0 +1,16 @@
+{
+  "id": 12839,
+  "name": "Draft personalized Outlook support email replies with Supabase RAG and OpenAI",
+  "description": "\nDescription\nThis workflow automates the first line of customer support by intelligently drafting email replies. It bridges the gap between your CRM (Supabase), your technical documentation (Vector Store), and your inbox (Outlook). By analyzing the sender's identity and the technical content of the query, it ensures that every draft reply is personalized, accurate, and follows strict business rules.\n\nHow It Works\nTrigger: Monitors a Microsoft Outlook inbox for new incoming messages.\nContact Enrichment: Queries a Supabase contacts table using the sender's email to retrieve their name, organization, and department.\nContext Construction: A Code node prepares a \"Chat Input\" that includes the email body, sender metadata, and specific brand \"Business Rules.\"\nAI Intelligence (RAG):\n    An AI Agent (GPT-4o) analyzes the request.\n    If technical details are required, the Agent uses a Supabase Vector Store tool to retrieve semantic matches from your product manuals.\nDraft Creation: The AI generates an HTML-formatted reply which is saved as a Draft in Outlook for manual review.\nAudit Trail: Logs the intent, urgency, and outcome into a Google Sheet for performance tracking.\n\nRequirements\nMicrosoft Outlook:** Business/Office 365 account.\nSupabase:** * A table for contact lookups.\n    A vector-enabled database containing document embeddings.\nOpenAI API:** For the GPT-4o model and embeddings.\nGoogle Sheets:** To maintain an execution summary log.\n\nSetup Instructions\nImport: Paste the workflow JSON into your n8n canvas.\nCredentials: Set up and select credentials for Outlook, OpenAI, Supabase, and Google Sheets.\nPlaceholder Updates:\n    Fetch Contact Info: Set the table name to your specific CRM table.\n    Vector Store: Update the table name and query function to match your Supabase Vector Store setup.\n    Log to Google Sheets: Replace the Document ID and Sheet Name with your specific spreadsheet details.\nPersona Tuning: Open the AI Support Agent node and the Build AI Prompt code node to replace the [YOUR_COMPANY] and [YOUR_NAME] placeholders with your actual brand identity.\n\nCustomization Ideas\nUrgency Routing:** Add an If node after the Agent to send a Slack or Teams notification if the AI detects the urgency is \"high.\"\nAttachments:** Modify the Outlook node to include specific PDF brochures based on the primary_product_codes identified by the AI.\nHuman-in-the-loop:** Use n8n \"Wait for Webhook\" or \"Manual Approval\" nodes if you want to approve the draft within the n8n UI before it hits the Outlook drafts folder.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.microsoftOutlook",
+    "n8n-nodes-base.supabase",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.vectorStoreSupabase"
+  ],
+  "tags": []
+}

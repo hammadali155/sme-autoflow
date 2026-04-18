@@ -1,0 +1,12 @@
+{
+  "id": 13381,
+  "name": "Generate AI SEO blog posts with human review using SE Ranking and Claude",
+  "description": "\nGenerate AI blog posts with human review using SE Ranking and Claude\n\nWho is this for\nContent teams scaling blog production with AI\nSEO agencies creating client content at scale\nMarketing teams with editorial calendars\n\nWhat this workflow does\nFind high-opportunity keywords, generate AI content briefs and draft articles, then send everything to a human reviewer before anything gets published.\n\nWhat you'll get\nKeyword opportunities scored by volume, difficulty, and ranking potential\nAI-generated content briefs with outlines and related keywords\nFull draft articles written by Claude based on the briefs\n\n\nEmail-based human review with one-click approve/reject\n\nEverything tracked in Google Sheets\n\nHow it works\nPulls keyword opportunities for your domain from SE Ranking\nScores and filters the best targets by volume and difficulty\nGrabs related keywords and \"People Also Ask\" questions\nAI creates a detailed content brief for each keyword\nAI writes a full draft article based on the brief\nSends a review email with approve/reject buttons\nUpdates Google Sheets with the decision\nApproved articles are split and ready for publishing\n\nRequirements\nSelf-hosted n8n instance\nSE Ranking community node v1.3.5+ (Install from npm)\nSE Ranking API token (Get one here)\nAnthropic API key (for Claude)\nSMTP credentials for review emails\nGoogle Sheets account (optional)\n\nSetup\nInstall the SE Ranking community node\nAdd your SE Ranking, Anthropic, and SMTP credentials\nUpdate the Configuration node with your domain, brand, and reviewer email\nConnect Google Sheets for tracking (optional)\n\nCustomization\nChange min_volume and max_difficulty to adjust keyword targeting\nEdit articles_per_run to generate more or fewer articles per batch\nSwap Claude models in the AI nodes for different quality/cost tradeoffs",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.anthropic"
+  ],
+  "tags": []
+}

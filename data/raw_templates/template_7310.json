@@ -1,0 +1,13 @@
+{
+  "id": 7310,
+  "name": "Scrape Blog Articles into AI-Generated LinkedIn Posts with GPT-4o & Human Review",
+  "description": "\nAuto-detect news from n8n and turn into a human-approved LinkedIn post.\ngotoHuman is used to keep a human in the loop. There you can manually edit the AI draft of the post or request to regenerate it.\n\nHow it works\nThe workflow is triggered each day to fetch the latest version of https://blog.n8n.io.\nIt then fetches each article, checks if it was published in the last 24 hours and uses an LLM to summarize it.\nAn LLM then drafts a related LinkedIn post which is sent to gotoHuman for approval. In gotoHuman, the reviewer can manually edit it or ask to regenerate it with the option to even edit the prompt (Retries loop back to the AI Draft LinkedIn Post node)\n\n\nApproved Posts are automatically published to LinkedIn\n\nHow to set up\n\nMost importantly, install the gotoHuman node before importing this template!\n(Just add the node to a blank canvas before importing)\nSet up your credentials for gotoHuman, OpenAI, and LinkedIn\nIn gotoHuman, select and create the pre-built review template \"Blog scraper agent\" or import the ID: sMxevC9tSAgdfWsr6XIW\nSelect this template in the gotoHuman node\n\nRequirements\n\nYou need accounts for\ngotoHuman (human supervision)\nOpenAI (summary, draft)\nLinkedIn\n\nHow to customize\n\nChange the blog URL to monitor. Adapt to its' HTML structure\nProvide the AI Draft LinkedIn Post with examples of previous posts so it picks up your writing style (consider adding gotoHuman's dataset of approved examples)\nUse the workflow to target other publications, like your newsletter, blog or other socials",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

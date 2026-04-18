@@ -1,0 +1,13 @@
+{
+  "id": 11402,
+  "name": "Audit web pages for SEO issues with Decodo, GPT-4 and Google Sheets",
+  "description": "What this workflow does\n\nThis workflow automatically audits web pages for SEO issues and generates an executive-friendly SEO report using AI.\n\nIt is designed for marketers, founders, and SEO teams who want fast, actionable insights without manually reviewing HTML, meta tags, or SERP data.\n\nThe workflow:\n\nReads URLs from Google Sheets\n\n\n\n\nScrapes page content using Decodo (reliable scraping, even on protected sites)\n\nExtracts key SEO elements (title, meta description, canonical, H1/H2, visible text)\n\nUses an AI Agent to analyze the page and generate:\n\nOverall SEO status\n\nTop issues\n\nQuick wins\n\nTitle & meta description recommendations\n\nSaves results to Google Sheets\n\nSends a formatted HTML executive report by email (Gmail)\n\nWho this workflow is for\n\nThis template is ideal for:\n\nSEO consultants and agencies\n\nSaaS marketing teams\n\nFounders monitoring their landing pages\n\nContent teams doing SEO quality control\n\nIt focuses on on-page SEO fundamentals, not backlink analysis or technical crawling.\n\nSetup (step by step)\n\n1. Google Sheets\n\nCreate an input sheet with one URL per row\n\nCreate an output sheet to store SEO results\n\n2. Decodo\n\nAdd your Decodo API credentials\n\nThe URL is automatically taken from the input sheet\n👉 Decodo – Web Scraper for n8n\n\n3. AI Agent\n\nConnect your LLM credentials (OpenAI, Gemini, etc.)\n\nThe prompt is already optimized for non-technical SEO summaries\n\n4. Gmail\n\nConnect your Gmail account\n\nSet the recipient email address\n\nEmails are sent in clean HTML format\n\nNotes & disclaimer\n\nThis is a community template\n\nResults depend on page accessibility and content structure\n\nIt focuses on on-page SEO, not backlinks or rankings",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

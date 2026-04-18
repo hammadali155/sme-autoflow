@@ -1,0 +1,12 @@
+{
+  "id": 13274,
+  "name": "Send post-purchase email sequences with Postgres, Gmail and OpenAI",
+  "description": "How it works  \nThis workflow automates customer communication after an order is placed. It detects new orders, sends a confirmation email, waits until delivery is completed, and then follows up with AI-generated product tips. Finally, it sends AI-powered upsell recommendations after a defined delay. The workflow runs on a schedule and requires no manual handling.\n\nStep-by-step  \nStep 1 — Order detection and confirmation**  \n  Schedule Trigger – Runs at a fixed interval to check for new orders.  \n  Postgres – Execute a SQL query – Fetches recently created orders from the database.  \n  Gmail – Send message – Sends an order confirmation email to the customer.  \n\nStep 2 — Delivery status monitoring**  \n  Wait – Pauses the workflow until the expected delivery window.  \n  Postgres – Select rows – Checks the delivery status of the order.  \n  If – Verifies whether the product is marked as delivered.  \n  Wait – Delays one day and repeats the check if delivery is not completed.  \n\nStep 3 — Product usage tips (AI)**  \n  OpenAI – Message a model – Generates short and practical usage tips for the product.  \n  Code – Formats the AI output into clean HTML bullet points.  \n  Gmail – Send message – Emails the usage tips to the customer.  \n\nStep 4 — Upsell recommendations (AI)**  \n  Wait – Delays for two weeks after tips are sent.  \n  OpenAI – Message a model – Creates complementary product recommendations.  \n  Code – Formats the recommendations for email delivery.  \n  Gmail – Send message – Sends the upsell email to the customer.  \n\nWhy use this?  \nEnsures timely and relevant customer communication  \nPrevents sending tips before the product is delivered  \nImproves onboarding with AI-generated usage guidance  \nIncreases repeat purchases through smart upsell emails  \nFully automated using database, email, and AI integrations  \n",
+  "nodes": [
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

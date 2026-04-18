@@ -1,0 +1,14 @@
+{
+  "id": 12739,
+  "name": "Create consulting client onboarding tasks with GPT-4, Google Sheets and Slack",
+  "description": "Who this workflow is for\nConsulting firms in strategy, management, or IT who want to automate client onboarding and internal task assignment.\n\nWhat this workflow does\nAutomatically creates onboarding tasks and checklists using AI, routes them to the right consultant, logs client info in Google Sheets, and sends client welcome emails. Internal teams get Slack notifications, and kickoff meetings can be scheduled automatically.\n\nHow the workflow works\nNew client intake triggers workflow\nAI generates onboarding checklist\nTasks routed based on project type\nClient info logged in Google Sheets\nSlack notifications sent to consultants\nOptional PDF of onboarding sent to client\nEmail confirmation delivered to client\nOptional CRM integration\n\nSetup Instructions\nConnect Webhook/Form for intake\nConnect Google Sheets\nConnect OpenAI\nConnect Slack and email\nConfigure optional CRM integration\n\nAuthor: Hyrum Hurst, AI Automation Engineer  \nCompany: QuarterSmart  \nContact: hyrum@quartersmart.com\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleCalendar",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

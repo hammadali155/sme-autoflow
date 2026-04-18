@@ -1,0 +1,10 @@
+{
+  "id": 4213,
+  "name": "Automatic Media Download from WhatsApp Business Messages with HTTP Storage",
+  "description": "This workflow listens for incoming WhatsApp messages that contain media (e.g., images) and automatically downloads the media file using WhatsApp's private media URL.\n\nThe trigger node activates when a WhatsApp message with media is received.\nThe media ID is extracted from the message payload.\nA private media URL is retrieved using the media ID.\nThe media file is downloaded using an authenticated HTTP request.\n\n\nIdeal for:\nArchiving WhatsApp media to external systems.\nTriggering further automations based on received media.\nIntegrating with cloud storage like Google Drive, Dropbox, or Amazon S3.\n\n\nSet up steps\nConnect your WhatsApp Business API account.\nAdd HTTP credentials for downloading media via private URL.\nSet up the webhook in your WhatsApp Business account.\nExtend the workflow as needed for your use case (e.g., file storage, alerts).",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.whatsApp"
+  ],
+  "tags": []
+}

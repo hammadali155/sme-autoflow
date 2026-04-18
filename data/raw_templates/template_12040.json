@@ -1,0 +1,13 @@
+{
+  "id": 12040,
+  "name": "Launch job vacancies from ATS to Google Calendar, ClickUp and LinkedIn with GPT-4o",
+  "description": "Overview: Automated Vacancy Launch & AI Marketing\n\nThis workflow streamlines the entire job opening process by connecting your ATS to your operational and marketing tools. It not only manages deadlines but also automates the promotion of the vacancy.\n\nKey Features:\nSchedule: Creates SLA and Expiration events in Google Calendar based on ATS dates.\nTrack: Creates a central task in ClickUp to manage the selection process.\nContent Generation: Uses GPT-4o to analyze the job description and write a compelling marketing post.\nPublish: Automatically posts the job to LinkedIn and logs the action back in the ClickUp task.\n\nSetup Instructions\nWebhook: Configure your Recrutei ATS (or similar) to trigger this workflow.\nGoogle Calendar: Select the calendar for deadline tracking.\nClickUp: Map the Team, Space, and List where vacancy tasks should be created.\nOpenAI: Ensure you have a valid API Key.\nLinkedIn: Connect your profile or company page.",
+  "nodes": [
+    "n8n-nodes-base.clickUp",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

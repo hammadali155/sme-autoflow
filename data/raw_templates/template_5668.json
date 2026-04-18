@@ -1,0 +1,10 @@
+{
+  "id": 5668,
+  "name": "Track Top YouTube Videos by View Count with Google Sheets",
+  "description": "Workflow Setup Guide\n\nThis workflow collects the most-viewed videos from specified YouTube channels and saves the data to a Google Sheet. Follow these steps to set it up:\n\n1. Credentials Setup\n\nGoogle Sheets:** You need to have a Google Sheets credential configured in your n8n instance. If you don't have one, go to the 'Credentials' section in n8n and add a new credential for Google Sheets.\nYouTube API Key:** You need a YouTube Data API v3 key.\n    Go to the Google Cloud Console.\n    Create a new project or select an existing one.\n    Go to 'APIs & Services' &gt; 'Library' and enable the YouTube Data API v3.\n    Go to 'APIs & Services' &gt; 'Credentials', click 'Create Credentials', and choose 'API key'.\n    Copy the generated API key.\n\n2. Google Sheet Setup\n\nYou will need one Google Sheet with two separate sheets (tabs) inside it.\n\nInput Sheet\nUse Template\nThis sheet provides the list of YouTube channels to process.\nRequired Columns:** Create a sheet with the following two columns:\n    ChannelID: The ID of the YouTube channel (e.g., T7M3PpjBZzw).\n    video_num_to_get: The number of top videos to retrieve for that channel (e.g., 5).\n\nOutput Sheet\nThis sheet is where the results will be saved.\nRequired Columns:** The workflow will automatically append data to the following columns. You can create them beforehand or let the workflow do it.\n    channelName\n    title\n    videoId\n    videoLink\n\n3. Node Configuration\n\nRead Channel Info from Sheet:**\n    Select your Google Sheets credential.\n    Enter your Spreadsheet ID.\n    Enter the name of your Input Sheet.\nFetch Most-Viewed Videos via YouTube API:**\n    Replace YOUR_YOUTUBE_API_KEY with the API key you generated in Step 1.\nAppend Video Details to Sheet:**\n    Select your Google Sheets credential.\n    Enter your Spreadsheet ID (the same one as before).\n    Enter the name of your Output Sheet.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

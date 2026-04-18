@@ -1,0 +1,13 @@
+{
+  "id": 11993,
+  "name": "Create an Intelligent Facebook Messenger Chatbot with GPT-4o-mini & Message Memory",
+  "description": "Who is this for?\n\n  Businesses and developers who want to automate customer support or engagement on Facebook Messenger using AI-powered responses.\n\nWhat does it do?\n\n  Creates an intelligent Facebook Messenger chatbot that:\n  Responds to messages using OpenAI (gpt-4o-mini)\n  Batches rapid-fire messages into a single AI request\n  Maintains conversation history (50 messages per user)\n  Shows professional UX feedback (seen indicators, typing bubbles)\n\nHow it works\n\n  Webhook Verification - Handles Facebook's GET verification request\n  Message Reception - Receives incoming messages via POST webhook\n  Message Batching - Waits 3 seconds to collect multiple quick messages\n  AI Processing - Sends combined message to OpenAI with conversation context\n  Response Delivery - Formats and sends the AI response back to Messenger\n\nSetup\n\n  Configure Facebook Graph API credential with your Page Access Token\n  Configure OpenAI API credential with your API key\n  Set your verify token in the \"Is Token Valid?\" node\n  Register the webhook URL in Facebook Developer Console\n\nKey Features\n\n  Message Batching: Combines \"Hey\" + \"Can you help\" + \"with my order?\" into one request\n  Conversation Memory: Remembers context from previous messages\n  Echo Filtering: Prevents responding to your own messages\n  Response Formatting: Cleans markdown for Messenger's 2000-char limit\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}

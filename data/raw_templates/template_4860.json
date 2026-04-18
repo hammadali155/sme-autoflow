@@ -1,0 +1,14 @@
+{
+  "id": 4860,
+  "name": "Invoice Verification and Validation with Gmail, Drive, Sheets and OCR AI",
+  "description": "📝 Description (Full, User-Centric & Sales-Driven):\n\nTired of manually verifying purchase order invoices every single day? This plug-and-play n8n automation template saves your accounts team hours of work by automatically downloading, storing, extracting, and validating invoice data against your master item sheet — all without human intervention.\n\nPerfect for SMEs, startups, procurement teams, and accounts departments, this automation handles PO invoice verification from email to final validation with 99% accuracy.\n\n🚀 What This Automation Does End-to-End:\n\n📥 Invoice Retrieval & Organization:\n\nRuns Monday to Saturday, 8 hours/day\nReads invoices from specific vendor email(s) (e.g., abc@company.com)\nExtracts the invoice date from the email subject\nAutomatically creates month & day-wise folders in Google Drive\nUploads each invoice PDF into its respective folder\n\n🔍 AI + OCR Data Extraction & Validation:\n\nUses OCR to extract item data (name, quantity, rate, HSN, etc.) from each invoice PDF\nConverts messy PDF data into clean structured format using AI Agent Model\nStores the data into a dedicated Google Sheet: \"Store Invoice Data\"\n\n✅ Invoice vs. Master Data Validation:\n\nAutomatically fetches a second Google Sheet: \"Store Master Data\"\nCompares each invoice item line-by-line with the master sheet:\n\n  Checks for Item Code, Name, Price mismatches\n  Calculates price differences and total loss/gain per invoice\n  Marks each line as Matched / Mismatched with notes\n\n📬 Final Reporting:\n\nSends an automated summary email once all invoices are processed\nAlerts if any mismatches found, allowing for early intervention\n\n📂 Example Output:\n\nCheck how data is validated in real time:\n\n🔗 Store Invoice Data Sheet\n🔗 Store Master Data Sheet\n\n👥 Who Is This For?\n\nAccounts & Finance Teams\nProcurement Departments\nGrowing Startups with Vendors\nERP/Automation Enthusiasts\nAnyone tired of manually checking vendor bills\n\n📦 What You’ll Get:\n\nReady-to-import n8n workflow (JSON)\nSetup Guide (PDF or Notion link)\nSample Google Sheet template\nEmail + Google Drive + OCR setup guide\nAI Agent configuration tips\nBONUS: Customization support (optional)\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

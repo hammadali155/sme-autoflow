@@ -1,0 +1,10 @@
+{
+  "id": 3895,
+  "name": "📢 Multi-Platform Video Publisher – YouTube, Instagram & TikTok",
+  "description": "\nHi! I'm Amanda ❤️\nI build intelligent automation flows with n8n and Make. This one is for all content creators, marketing teams, and agencies who want to publish once and post everywhere.\n\nWith this workflow, you can upload a single video to YouTube, Instagram Reels, and TikTok — simultaneously and automatically.\n\n✅ What the workflow does\n\nDownloads a video from a provided URL  \nUploads the video to your YouTube channel with title and description  \nPublishes it as a Reel on Instagram via the Meta Graph API  \nSends the same video to TikTok using their official API  \nSupports credential input via Set node (tokens, titles, descriptions)\n\n⚙️ Nodes & Tech Used\n\nHTTP Request – Download video and handle uploads to Instagram & TikTok  \nYouTube node – Official n8n integration for video upload  \nSet node – For handling user inputs (tokens, titles, video URLs)  \nSwitch, Wait, Merge – Logic to control publishing status  \nManual or webhook start available\n\n🛠️ Setup Instructions\n\nOpen the workflow in your n8n (Cloud or self-hosted) instance  \nEdit the Set node called Credentials and fill in:\n   Token Instagram  \n   Token Tiktok  \n   YouTube title, description, and video URL  \n   Instagram account ID  \nConnect your YouTube OAuth credentials in the YouTube node  \nOptionally, trigger via webhook to automate from other apps (Typebot, CRM, Drive)  \nHit \"Execute Workflow\" or schedule via cron\n\n👥 Who this is for\n\nContent creators who want to post everywhere at once  \nAgencies managing video distribution across platforms  \nSocial media managers and freelancers  \nAnyone wanting a one-click multi-platform publishing workflow\n\n🌐 Explore more workflows\n\n❤️ Buy workflows: https://iloveflows.com  \n☁️ Try n8n Cloud: https://n8n.partnerlinks.io/amanda",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.youTube"
+  ],
+  "tags": []
+}

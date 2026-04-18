@@ -1,0 +1,15 @@
+{
+  "id": 13410,
+  "name": "Search hardware inventory with Supabase vector RAG and Google Gemini",
+  "description": "Advanced AI Inventory Agent: Supabase Vector RAG & Gemini\n\nThis workflow upgrades your AI agent from simple sheet reading to high-performance Vector RAG. It allows your assistant to search through thousands of items with lightning speed and high accuracy.\n\nPurpose:\n\nTo provide a scalable, professional-grade retrieval system for hardware inventory. It uses \"semantic search\" to find products even when the user makes typos or uses different terminology.\n\nSetup Instructions:\n\nSupabase: Run the provided SQL to create the documents table and the match_documents function.\nCredentials: Connect your Supabase (Service Role Key) and Google Gemini API credentials.\nSync Workflow: Run the \"Path A\" workflow to index your Google Sheets data into the vector database.\nChat Workflow: Use the \"Path B\" workflow as your production chat interface.\nPrompt: Customize the System Prompt to define your brand's specific tone and sales rules.\n\n\nIdeal for: Large product catalogs (100+ items), technical hardware inventories, and high-traffic customer support bots.\n\nTo learn more about how to build and optimize this workflow, read the full blog post here.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

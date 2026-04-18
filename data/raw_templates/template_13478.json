@@ -1,0 +1,10 @@
+{
+  "id": 13478,
+  "name": "Send Shopify order confirmations via WhatsApp using MoltFlow",
+  "description": "What this template does\n\nSends instant WhatsApp order confirmation messages to customers when they place an order on your Shopify store, powered by MoltFlow (https://molt.waiflow.app).\n\nHow it works\n\nShopify webhook fires on new order creation\nParse order data — extracts customer name, phone, order number, items, and total\nCheck phone — skips orders without a phone number\nSend WhatsApp confirmation — delivers a personalized message via MoltFlow API\nLog result — records success or skip for tracking\n\nSet up steps\n\nCreate a MoltFlow account (https://molt.waiflow.app) and connect your WhatsApp number\nGenerate an API key in MoltFlow (Sessions page, API Keys tab)\nActivate this workflow in n8n and copy the webhook URL\nIn Shopify Admin, go to Settings, Notifications, Webhooks and add the n8n URL for Order creation\nSet YOUR_SESSION_ID in the Format Order Message code node\nAdd your MoltFlow API key as an HTTP Header Auth credential (Header Name: X-API-Key)\n\nPrerequisites\n\nMoltFlow account with an active WhatsApp session\nShopify store with webhook access\nCustomer phone numbers must include country code",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

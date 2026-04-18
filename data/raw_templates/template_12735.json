@@ -1,0 +1,13 @@
+{
+  "id": 12735,
+  "name": "Forecast and report multi-channel tax liabilities with OpenAI, Gmail, Sheets and Airtable",
+  "description": "How It Works\nThis workflow automates tax compliance by aggregating multi-channel revenue data, calculating jurisdiction-specific tax obligations, detecting anomalies, and generating submission-ready reports for tax authorities. Designed for finance teams, tax professionals, and e-commerce operations, it solves the challenge of manually reconciling transactions across multiple sales channels, applying complex tax rules, and preparing compliant filings under tight deadlines. The system triggers monthly or on-demand, fetching revenue data from e-commerce platforms, payment processors, and accounting systems. Transaction records flow through validation layers that merge historical context, classify revenue streams, and calculate tax obligations using jurisdiction-specific rules engines. AI models detect anomalies in tax calculations, identify unusual deduction patterns, and flag potential audit risks. The workflow routes revenue data by tax jurisdiction, applies progressive tax brackets, and generates formatted reports matching authority specifications. Critical anomalies trigger immediate alerts to tax teams via Gmail, while finalized reports store in Google Sheets and Airtable for audit trails. This eliminates 80% of manual tax preparation work, ensures multi-jurisdiction compliance, and reduces filing errors.\n\nSetup Steps\nConfigure e-commerce API credentials for transaction access\nSet up payment processor integrations (Stripe, PayPal) for revenue reconciliation\nAdd accounting system credentials (QuickBooks, Xero) for financial data\nConfigure OpenAI API key for anomaly detection and tax analysis\nSet Gmail OAuth credentials for tax team alert notifications\nLink Google Sheets for report storage and audit trail documentation\nConnect Airtable workspace for structured tax record management\n\nPrerequisites\nActive e-commerce platform accounts with API access. Payment processor credentials.\nUse Cases\nAutomated monthly sales tax calculations for multi-state e-commerce. \nCustomization\nModify tax calculation rules for specific jurisdiction requirements. \nBenefits\nReduces tax preparation time by 80% through end-to-end automation. ",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

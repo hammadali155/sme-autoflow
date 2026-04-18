@@ -1,0 +1,10 @@
+{
+  "id": 12085,
+  "name": "Monitor backlink profile with SE Ranking and export to Google Sheets",
+  "description": "\nWho is this for\nSEO pros tracking client link building progress\nWebsite owners watching their backlink growth\nDigital marketers analyzing domain authority trends\n\nWhat this workflow does\nCheck your backlink profile to see which sites are linking to you, track new links you've gained, spot links you've lost, and export everything to Google Sheets.\n\nWhat you'll get\nTotal backlinks and referring domains snapshot\nNew backlinks you gained in the last 30 days\nLost backlinks from the last 30 days (with reasons why)\nYour top referring domains ranked by authority\nAnchor text analysis showing how sites link to you\nDomain authority scores and trust metrics\nDaily trends showing link gains and losses\nHistorical growth data over the last 60 days\n\nHow it works\nPulls your overall backlink profile stats\nChecks for new backlinks from the last month\nIdentifies which backlinks you lost recently\nLists your top referring domains by authority\nAnalyzes the anchor text people use to link to you\nGets your domain authority and trust scores\nShows daily gains and losses over 30 days\nGrabs historical data to see growth over 60 days\nOrganizes everything into clear sections in a spreadsheet\n\nRequirements\nSelf-hosted n8n instance\nSE Ranking community node installed\nSE Ranking API token (Get one here)\nGoogle Sheets account (optional)\n\nSetup\nInstall the SE Ranking community node\nAdd your SE Ranking API credentials\nReplace example.com with your domain in all SE Ranking nodes\nConnect Google Sheets if you want to export data (optional)\n\nCustomization\nChange the time periods (currently 30 or 60 days) by editing dateFrom and dateTo\nGet more or fewer results by adjusting the limit settings\nSort by different metrics by changing order_by (like first_seen or backlinks)\nAdd a Schedule Trigger to run this automatically every week",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

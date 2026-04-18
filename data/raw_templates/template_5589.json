@@ -1,0 +1,21 @@
+{
+  "id": 5589,
+  "name": "Create a Multi-Modal Telegram Support Bot with GPT-4 and Supabase RAG",
+  "description": "🧠 What It Does\nThis n8n workflow turns your Telegram bot into a smart, multi-modal AI assistant that accepts text, documents, images, and audio messages, interprets them using OpenAI models, and responds instantly with context-aware answers.\nIt integrates a Supabase vector database to store document embeddings and retrieve relevant information before sending a prompt to OpenAI — enabling a full RAG experience\n\n💡 Why This Workflow?\nMost support bots can only handle basic text input. This workflow:\nSupports multiple input formats (voice, documents, images, text)\nDynamically extracts and processes data from uploaded files\nImplements RAG by combining user input with relevant memory or vector-based context\nDelivers more accurate, relevant, and human-like AI responses.\n\n👤 Who It's For\n\nBusinesses looking to automate support using Telegram\nFreelancers or solopreneurs offering AI Chatbots for businesses.\nCreators building AI-powered bots for real use cases as it's great for Customer support knowledge, Legal or Policy document, long FAQs, Project documentation, and Product information retrieval.\nDevs or analysts exploring AI + multi-format input + vector memory.\n\n⚙️ How It Works\n🗂️ Knowledge Base Setup\nRun the “Add to Supabase Vector DB” workflow manually to upload a document from your google drive and embed it into your vector database. This powers the Telegram chatbot’s ability to answer questions using your content. \n🔁 Telegram Message Routing\nTelegram Trigger captures the user message (Text, Image, Voice, Document)\nMessage Router routes input by type using a Switch node\nEach type is handled separately:\n     Voice → Translate recording to text (.ogg, .mp3)\n     Image → Analyze image to text.\n     Text → Sent directly to AI Agent (.txt).\n     Document → Parsed (e.g. .docx to .txt) accordingly.\n\n📎 Document Type Routing\n\n       Before routing documents by type, the Supported  Document File Types node first checks if the file extension is allowed. If not supported, it exits early with an error message — preventing unnecessary processing.\nSupported documents are then routed using the Document Router node, and converted to text for further processing.\n\nSupported Document File Types\n       .jpg   .jpeg   .png   .webp   .pdf   .doc   .docx   .xls   .xlsx   .json   .xml.\n\nThe text content is combined with stored memory and embedded knowledge using a RAG approach, enabling the AI to respond based on real uploaded data.\n🧠 RAG via Supabase\n   Uploaded documents are vectorized using OpenAI Embeddings. Embeddings are stored in Supabase with metadata. On new questions, the chatbot:\n   Extracts question intent\n   Queries Supabase for semantically similar chunks\n   Ranks retrieved chunks to find the most relevant match.\n   Injects them into the prompt for OpenAI. \n   OpenAI generates a grounded response based on actual document content.\n\nResponse is sent to the Telegram user with content awareness.\n\n🛠 How to Set It Up\n\nOpen n8n or your local/self-hosted instance.\nImport the `.json\n` workflow file.\nSet up these credentials:\n   Google drive API Key\n   Telegram API (Bot Token) Guide\n   OpenAI API\n   Supabase API Key + Environment\n   ConvertAPI API Key\n   Postgres API Key\n   Cohere API Key\n   Add a prompt suited to your business. Add a custom AI agent prompt that reflects your business domain, tone, and purpose. This is very important. Without it, your agent won't know how best to respond.\nActivate the workflow.\nStart testing by sending a message or document to your Telegram bot.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+    "@n8n/n8n-nodes-langchain.rerankerCohere"
+  ],
+  "tags": []
+}

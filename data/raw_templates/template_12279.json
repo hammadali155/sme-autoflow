@@ -1,0 +1,14 @@
+{
+  "id": 12279,
+  "name": "Score telematics driving risk with Claude and adjust insurance premiums via HTTP, Gmail, and Slack",
+  "description": "How It Works\nThis workflow automates insurance premium adjustments by analyzing telematics data with AI-driven risk assessment and syncing changes across underwriting systems. Designed for carriers, actuaries, and underwriting teams managing usage-based insurance programs, it eliminates manual review of driving patterns, speed, braking, and mileage while ensuring compliance. Scheduled execution fetches telematics data via HTTP from vehicles or mobile apps. Anthropic Claude analyzes behavior with structured output parsing, generating risk scores from acceleration, harsh braking, speeding, and time-of-day driving. Calculator node applies scores to premiums, and HTTP node updates policy systems. High-risk cases trigger Gmail alerts to underwriting managers and Slack notifications to claims teams. Final HTTP sync ensures compliance across all systems.\n\nSetup Steps\nConfigure Schedule node for desired analysis frequency \nSet up HTTP node with telematics platform API  \nAdd Anthropic API key to Chat Model node for behavioral risk analysis\nConnect policy management system API credentials in HTTP nodes \nIntegrate Gmail and Slack with underwriting team addresses  \n\nPrerequisites\nAnthropic API key, telematics data platform API access\n\nUse Cases\nAuto insurance carriers implementing usage-based insurance programs\n\nCustomization\nModify AI prompts to incorporate additional risk factors like weather conditions\n\nBenefits\nReduces premium calculation time from days to minutes\n\n\n \n\n\n\n\n\n \n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

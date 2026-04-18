@@ -1,0 +1,10 @@
+{
+  "id": 2979,
+  "name": "Bulk File Upload to Google Drive with Folder Management",
+  "description": "🗂️ Bulk File Upload to Google Drive with Folder Management\n\nHow it works\nUser submits files and target folder name via form\nWorkflow checks if folder exists in Drive\nCreates folder if needed or uses existing one\nProcesses and uploads all files maintaining structure\n\nSet up steps (Est. 10-15 mins)\nSet up Google Drive credentials in n8n\nReplace parent folder ID in search query with your Drive folder ID\nConfigure form node with:\n   Multiple file upload field\n   Folder name text field\nTest workflow with sample files\n\n💡 Detailed configuration steps and patterns are documented in sticky notes within the workflow.\n\nPerfect for:\nBulk file organization\nAutomated Drive folder management\nFile upload automation\nMaintaining consistent file structures\n",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

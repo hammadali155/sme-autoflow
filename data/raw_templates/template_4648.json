@@ -1,0 +1,12 @@
+{
+  "id": 4648,
+  "name": "Auto-Create Geotab Zone for New Salesforce Work Order",
+  "description": "📝 DESCRIPTION OF THE WORKFLOW\n\nThis workflow connects Salesforce and Geotab to streamline fleet tracking for field service jobs (Work Orders). When a new Work Order is created in Salesforce (with a 'New' status and valid coordinates), it creates a circular geofence zone in Geotab and updates the Work Order with the zone ID. If geolocation is missing, an alert email is sent to dedicated email.\n\nThe workflow uses a Salesforce Outbound Message to trigger an n8n webhook. It includes robust credential handling and optional logic to skip or notify on bad data.\n\nUse Cases:\n\nAutomating vehicle geofence setup for service visits\nEnhancing CRM-to-fleet system synchronisation\nEnforcing work orders data quality via alerts\n\nIntegrations Used:\n\nSalesforce\nGeotab API\nMicrosoft Outlook (or any SMTP-compatible service)\n\nTags:\ngeotab, salesforce, fleet management, gps tracking, field service, crm, automation, webhook, integration\n\nADDITIONAL RESOURCES\n🔗 Salesforce\n\nSalesforce Login\n\\[Salesforce Setup (Admin Console)]\\(https://login.salesforce.com/ → click “Setup” gear icon)\nOutbound Messages Documentation\nSalesforce Developer Documentation\nSalesforce Workbench (API Testing Tool)\n\n🔗 Geotab\n\nGeotab Login (MyGeotab)\nGeotab Developer Portal\nGeotab API Explorer\nGeotab SDK (JavaScript Samples)\nGeotab Support Centre\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.salesforce",
+    "n8n-nodes-base.microsoftOutlook",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 7793,
+  "name": "Generate AI Music with the ElevenLabs API and upload to Google Drive",
+  "description": "This generate unique AI-powered music tracks using the ElevenLabs Music API. \n\nEnter a text description of the music you envision, and the workflow will compose it, save the MP3 file to your Google Drive, and instantly provide a link to listen to your creation. \n\nIt is a powerful tool for quickly producing background music, soundscapes, or musical ideas without any complex software.\n\nWho's it for\n\nThis template is ideal for:\nContent Creators: Generate royalty-free background music for videos, podcasts, and streams on the fly.\nMusicians & Producers: Quickly brainstorm musical themes and ideas from a simple text prompt.\nDevelopers & Hobbyists: Integrate AI music generation into projects or simply experiment with the capabilities of the ElevenLabs API.\n\nHow to set up\n\nConfigure API Key:\n   Sign up for an ElevenLabs account and get your API key.\n   In the \"API Key\" node, replace the placeholder value with your actual ElevenLabs API key.\nConnect Google Drive:\n   Select the \"Upload mp3\" node.\n   Create new credentials to connect your Google Drive account.\nActivate the Workflow:\n   Save and activate the workflow.\n   Use the Form Trigger's production URL to access the AI Music Generator web form.\n\nRequirements\n\nAn active n8n instance.\nAn ElevenLabs account for the API key.\nA Google Drive account.\n\nHow to customize this workflow\n\nChange Storage: Replace the Google Drive node with another storage service node like Dropbox, AWS S3, or an FTP server to save your music elsewhere.\nModify Music Quality: In the \"elevenlabs_api\" node, you can change the output_format in the body to adjust the MP3 quality. Refer to the ElevenLabs API documentation for available options.\nCustomize Confirmation Page: Edit the \"prepare reponse\" node to change the design and text of the final page shown to the user.\n\n\n\n\n\n.\n\nPhil | Inforeole | Linkedin\n\n🇫🇷 Contactez nous pour automatiser vos processus",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

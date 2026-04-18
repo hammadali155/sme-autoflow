@@ -1,0 +1,11 @@
+{
+  "id": 12904,
+  "name": "Detect WooCommerce order delays with Gmail and Slack alerts in real time",
+  "description": "Real-Time WooCommerce Order Delay Detection with Email & Slack Alerts\n\nThis n8n workflow listens to real-time WooCommerce order events and automatically detects delivery delays based on the estimated delivery date. When a delay is identified, it proactively notifies the customer via email and alerts internal teams through Slack, ensuring transparency and faster response to fulfillment issues.\n\nQuick Start – Get This Running Fast\n\nImport the workflow JSON into n8n.\nConnect WooCommerce credentials.\nConfigure Gmail and Slack credentials.\nActivate the workflow.\nStart receiving automatic delay alerts in real time.\n\nWhat It Does\n\nThis workflow proactively monitors WooCommerce orders for delivery delays. It is triggered whenever a new order is created or updated.\n\nThe workflow validates order status, checks the estimated delivery date, calculates delay duration and sends notifications if a delay is detected.\n\nWho’s It For\n\nWooCommerce Store Owners  \nE-commerce Operations Teams  \nCustomer Support Teams  \nFulfillment & Logistics Teams  \n\nRequirements\n\nWooCommerce store with REST API access  \nGmail account (OAuth enabled)  \nSlack workspace  \nn8n instance (Cloud or Self-hosted)  \n\nWorkflow Steps\n\nWooCommerce Trigger  \nNormalize Order Data  \nValidate Order Status  \nFetch Estimated Delivery Date  \nCalculate Delay  \nSend Email Notification  \nSend Slack Alert  \n\nCustomization\n\nModify delay threshold  \nCustomize email and Slack message formats  \nAdd escalation logic  \n\nOptional Enhancements\n\nSMS / WhatsApp alerts  \nSupport ticket creation  \nAnalytics dashboards  \n\nTroubleshooting\n\n| Issue | Solution |\n|------|----------|\n| No alerts | Verify credentials |\n| Wrong delay | Check date format |\n| Workflow stops | Ensure ETA exists |\n\nSupport\n\nFor advanced automation or customization support, contact WeblineIndia.",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

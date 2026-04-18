@@ -1,0 +1,13 @@
+{
+  "id": 4858,
+  "name": "WhatsApp Dietitian AI Chatbot Workflow",
+  "description": "WhatsApp Dietitian AI Chatbot Workflow\n\nTransform your WhatsApp into a professional nutrition consultant with this comprehensive AI-powered dietitian assistant. Built using n8n automation and Google Gemini AI, this workflow provides instant, intelligent nutrition advice to your clients 24/7.\n\n🍽️ What It Does\n\nMeal Analysis: Users can send photos of their meals with captions like \"analyze this meal\" and receive detailed nutritional breakdowns including calories, macronutrients, and personalized recommendations.\n\nNutrition Guidance: Answers questions about general nutrition, dietary restrictions, meal planning, and healthy eating habits with evidence-based information.\n\nMeal Recommendations: Suggests customized meals based on specific criteria like calorie targets, dietary preferences (vegan, keto, etc.), or available ingredients.\n\n🚀 Key Features\n\nDual Input Processing**: Handles both text questions and image analysis seamlessly\nProfessional AI Responses**: Uses Google Gemini 2.0 Flash for accurate, contextual nutrition advice\nWhatsApp Optimized**: Responses formatted specifically for mobile messaging with emojis and clear structure\nSmart Routing**: Automatically detects message type (text vs image) and processes accordingly\nStructured Output**: Consistent, professional formatting for all responses\nScope Management**: Stays within nutrition expertise and includes appropriate medical disclaimers\n\n🛠️ Technical Stack\n\nPlatform**: n8n workflow automation\nAI Model**: Google Gemini 2.0 Flash\nIntegration**: WhatsApp Business API\nMessage Types**: Text messages, images with captions\nOutput**: Structured, conversational responses\n\n📱 Perfect For\n\nNutritionists and dietitians offering remote consultations\nHealth coaches providing 24/7 client support\nFitness professionals adding nutrition guidance\nWellness businesses expanding their service offerings\nAnyone wanting to monetize nutrition expertise\n\n🎯 Ready to Deploy\n\nThis workflow comes with comprehensive documentation, clear setup instructions, and professional prompt engineering. Simply configure your WhatsApp Business API and Google Gemini credentials to start serving clients immediately.\n\nTransform your nutrition expertise into an automated, scalable WhatsApp service that works around the clock!",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.whatsApp",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

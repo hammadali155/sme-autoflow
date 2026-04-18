@@ -1,0 +1,14 @@
+{
+  "id": 14129,
+  "name": "Analyze GitLab CI job failures with GPT-5.3 and send reports to Slack",
+  "description": "Overview\nThis workflow helps automatically analyze the causes of build failures in Gitlab CI and propose solutions without involving DevOps engineers.\nSee detailed setup guide\n\nHow it work\nChecks whether a job crashed.\nGets logs of the crashed job and a description of the pipeline.\nThe agent analyzes this data according to its system prompt.\nDuring the process, the agent can retrieve additional data from Gitlab and check the availability of endpoints.\nA report on the causes and solutions is sent to the selected Slack channel\nWorks good with Openai, Anthropic, Google last models \n\nHow to use\nGenerate webhook credentials and use it in Gitlab\nAdd your own Rules and recommendations to system prompt\nRun MCP servers\nChoose Slack channel",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.mcpClientTool"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 4067,
+  "name": "Automated Email Assistant for Suppliers using OpenAI and Google Sheets",
+  "description": "Automated Email Assistant for Busy Professionals\n\nThis assistant is designed for people who don't have time to write and send emails to suppliers. With just one request, it drafts and sends clear, professional messages automatically.\n\nHow It Works\nThe user makes a request (e.g., “Send an email to my fruit supplier asking for a quote on 1 crate of mangoes.”).\n\nWorkflow:\n\nThe AI agent searches for the supplier in a Google Sheets database.\n\nIt automatically drafts the email using OpenAI (with the tone and style you define).\n \nIt sends the email using your Gmail account connected through n8n.\nThis assistant uses:\n\nGoogle Sheets to manage your suppliers (name and email).\n\nOpenAI to generate clear, natural messages.\n  \nMCP (client-server logic) to handle request processing.\n  \nGmail as the sending channel for automated emails.\nSetup Instructions\n\nCreate a Google Sheets document with the supplier name and email, like this:\n\n|Supplier name|Email|\n|-|-|\n|Proveedor de frutas Alvarez|fruteriaalvarez@alvarez.com|\n \nConnect your Google Sheets and Gmail accounts within n8n.\n \nAdd your OpenAI API key.\n\nTest the automation by chatting with the integrated assistant.\nIt will generate and send the email automatically to the indicated supplier.\n\nRequirements\nOpenAI API key to generate email content.\nGmail account connected via OAuth2.\nGoogle Sheets document with your supplier database.\nn8n instance (cloud or self-hosted).\n\nCustomization\n\nAdjust the OpenAI prompt to make the email tone more formal, casual, or technical.\n\nAdd custom fields to your supplier sheet (location, notes, special conditions).\n\nReplace Google Sheets with a real database like Supabase or PostgreSQL for greater scalability.\n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolThink",
+    "@n8n/n8n-nodes-langchain.mcpClientTool"
+  ],
+  "tags": []
+}

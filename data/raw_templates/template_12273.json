@@ -1,0 +1,16 @@
+{
+  "id": 12273,
+  "name": "Analyze real estate submarket opportunities with GPT-4, MLS, Gmail and Slack",
+  "description": "How It Works\nThis workflow automates end-to-end real estate investment analysis by aggregating data from multiple sources and applying AI-driven evaluation. It is designed for real estate investors, analysts, and portfolio managers seeking data-backed decisions without manual research overhead. The solution addresses the time-consuming challenge of collecting and analyzing fragmented real estate data—such as MLS listings, public records, demographic trends, and macroeconomic indicators—and transforms it into actionable insights using AI. Data is collected in parallel across four streams: MLS property data, public records, demographic information, and macroeconomic signals. These streams are consolidated into a unified dataset and processed by OpenAI GPT-4, using calculator tools and structured output parsing for quantitative analysis.\nSetup Steps\nConfigure HTTP nodes with your MLS API, public records service \nAdd OpenAI API key in Chat Model node credentials\nConnect Gmail account for acquisition team notifications\nIntegrate Slack workspace and specify investor notification channel\nSet schedule trigger frequency in Schedule node for desired analysis cadence\n\nPrerequisites\nOpenAI API key, MLS data service access, public records API credentials\n\nUse Cases\nReal estate investment firms screening multiple markets simultaneously\n\nCustomization\nModify AI prompts to adjust investment criteria priorities, add custom financial metrics \n\nBenefits\nReduces investment analysis time from hours to minutes, eliminates manual data aggregation errors\n\n\n \n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 10605,
+  "name": "Summarize Google Play Store Reviews with GPT-4-mini, Pinecone & Slack Alerts",
+  "description": "This workflow automatically fetches reviews for one or more Google Play Store apps, summarizes the feedback using OpenAI, stores and manages review data with Pinecone, and posts the summary to a Slack channel. It is designed for product teams, community managers, or anyone who wants to keep track of app sentiment and review trends without manually reading each review.\n\nFeatures:\n\nFetches daily reviews for specified Google Play Store app bundle IDs using a Google Service Account.\nStores reviews in a Pinecone vector database for efficient retrieval and summarization.\nUses OpenAI to generate a summary, including:\n  Positive and negative review highlights\n  Star rating breakdown and average rating\n  Total number of reviews processed\nPosts the summary to a Slack channel of your choice.\nSupports both daily and weekly triggers.\nAutomatically clears old reviews from the vector store weekly to keep data fresh.\n\nSetup Instructions:\n\nAdd your Google Play app bundle IDs in the “Set the bundle ids” node.\nConfigure your Google Service Account, Pinecone, OpenAI, and Slack credentials.\nSet your preferred Slack channel in the “Send to Slack channel” node.\nEnable the workflow and customize the schedule as needed.\n\nUse Cases:\n\nMonitor app sentiment and user feedback trends.\nShare review insights with your team in Slack.\nAutomate reporting for product or support teams.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader"
+  ],
+  "tags": []
+}

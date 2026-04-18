@@ -1,0 +1,13 @@
+{
+  "id": 13373,
+  "name": "Run a multi-agent SEO domain audit with SE Ranking and Claude",
+  "description": "\nRun a multi-agent SEO domain audit with SE Ranking and Claude\n\nWho is this for\nSEO agencies running competitor analysis for clients\nContent teams planning editorial strategies\nMarketing teams tracking competitive performance\n\nWhat this workflow does\nEnter any domain and get a full SEO strategy report. Five AI agents analyze your technical health, backlinks, keywords, AI visibility, and competitors — then a Strategy Director builds a prioritized 90-day action plan.\n\nWhat you'll get\nDomain performance baseline (keywords, traffic, traffic value)\nTechnical SEO audit with health score and Core Web Vitals\nBacklink profile with anchor text analysis\nTop competitors discovered by keyword overlap\nAI visibility across ChatGPT, Perplexity, Gemini, and AI Overviews\nPrioritized 90-day action plan from the Strategy Director\n\n\nFull report in Google Drive + metrics in Google Sheets\n\nHow it works\nYou enter a domain, business description, and target market via a form\n\nPulls domain overview, keywords, competitors, backlinks, and audit data in parallel\nChecks AI search visibility across 4 engines\nFour specialist agents analyze the data (Technical SEO, Links, Keywords, AI Visibility)\nA Strategy Director agent reviews everything and builds a unified plan\n\nSaves the report to Google Drive and metrics to Google Sheets\n\nRequirements\nSE Ranking community node v1.3.5+ (Install from npm)\nSE Ranking API token (Get one here)\nAnthropic API key (for Claude)\nGoogle Drive + Sheets accounts (optional)\n\nSetup\nInstall the SE Ranking community node v1.3.5+\nAdd your SE Ranking and Anthropic API credentials\nConnect Google Drive and Google Sheets (optional)\nOpen the form, enter a domain, and run it\n\nCustomization\nChange the target market dropdown to add more countries\nSwap Claude models for different cost/speed tradeoffs\nAdd a Slack notification node at the end for team alerts",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic"
+  ],
+  "tags": []
+}

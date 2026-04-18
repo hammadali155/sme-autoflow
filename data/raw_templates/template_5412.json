@@ -1,0 +1,13 @@
+{
+  "id": 5412,
+  "name": "Summarize YouTube Videos with Transcription, DeepSeek AI and Google Sheets",
+  "description": "Tired of manually watching long YouTube videos just to extract the main points?\n\nWith our YouTube Transcript & Summary Automation, you can instantly turn any video into an actionable, AI-generated summary — all from a simple Google Sheet.\n\nWhat this automation does:\nReads video URLs from Google Sheets (just add your links!)\n\nGenerates accurate transcripts using Supadata.ai — with 100 free uses/month\n\nCreates a smart summary using DeepSeek AI:\n\n🔹 Short summary of the video\n\n🔹 Key points\n\n🔹 Main topics\n\nYoutube tutorial:\nhttps://www.youtube.com/watch?v=uj7KaFSh95Y\n\n\nAutomatically updates your Google Sheet with the transcript and the AI-generated summary\n\nHow to set it up:\nCreate a simple Google Sheet with these columns:\n\nUrl – link to the YouTube video\n\nStatus – set to pending to trigger the automation, updated to done after completion\n\nTranscript – filled automatically\n\nSummary – filled automatically\n\nOnce your sheet is ready, the automation takes care of the rest — no technical skills needed.\n\nWhy you'll love it:\nThis is the perfect tool for content creators, researchers, marketers, and educators who want to save time, extract insights faster, and never miss key ideas from long videos.\n\nWant something custom?\nGot feedback or want to build your own custom automation or workflow?\nWe’d love to hear from you! Reach out to us at jacobmarketingservice@gmail.com — let’s bring your idea to life.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatDeepSeek"
+  ],
+  "tags": []
+}

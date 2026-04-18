@@ -1,0 +1,14 @@
+{
+  "id": 11771,
+  "name": "Book beauty appointments and answer FAQs with GPT-4, Google Calendar, Gmail, and Instagram",
+  "description": "📝 Description\n\nInstagram AI Beauty Assistant with Booking & Calendar Automation\n\n💄 Smart Instagram AI Assistant for Beauty & Cosmetics Brands\n\nHelp customers instantly on Instagram using a smart AI assistant designed specifically for beauty, skincare, makeup, and nail businesses.\nThis workflow answers product questions using FAQs only, handles voice messages, and schedules consultation bookings with timezone-safe Google Calendar reservations and automatic confirmation emails.\n\nPerfect for salons, cosmetic brands, clinics, and Instagram-first businesses.\n\n⚙️ How it works\n\nCustomers send messages or voice notes via Instagram DM\n\nThe AI detects whether the message is:\n\nA product or policy question\n\nA voice message (which gets transcribed)\n\nA request to book a consultation or meeting\n\nProduct questions are answered only using your FAQs (no hallucinations)\n\nBooking requests:\n\nGet grounded using the current date and time\n\nCheck available slots before booking\n\nCollect customer details (name, phone, email, topic)\n\nConfirmed bookings are created in Google Calendar with rich event summaries\n\nA confirmation email is sent automatically to the customer\n\n🧰 Setup steps\n\nConnect your Instagram webhook or messaging API\n\nConnect your OpenAI account (chat + voice transcription)\n\nConnect Google Calendar for reservations\n\nConnect Gmail for confirmation emails\n\nCustomize your FAQs and availability rules\n\nSet your business timezone\n\nThat’s it — your Instagram assistant is ready to work 24/7 ✨\n\n🔄 Customization tips\n\nUpdate FAQs anytime without retraining the AI\n\nAdjust tone and branding in the system message\n\nCustomize calendar summaries and email templates\n\nAdd rescheduling, cancellation, or reminders\n\nClone the workflow for multiple beauty brands or clients\n\n🤝 Need Help Setting It Up or Customizing It?\n\nIf you’d like help connecting Instagram, setting up Google Calendar and Gmail, or customizing this AI assistant for your business or for clients…\n\n📩 I offer setup and customization services including:\n\nInstagram DM automation setup\n\nGoogle Calendar & Gmail configuration\n\nTimezone-safe booking logic\n\nFAQ structuring and prompt tuning\n\nBranding and tone customization\n\nError handling and escalation logic\n\nYou can reach me here:\n\nEmail: tharwat.elsayed2000@gmail.com\n\nWhatsApp: +20 106 180 3236",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 12113,
+  "name": "Invoice Management System with Gmail Reminders, Google Sheets, and Slack Escalations",
+  "description": "Who is this for?\n\nThis template is designed for freelancers, small businesses, and finance teams who need automated invoice management with intelligent payment follow-ups. Perfect for service providers, agencies, or any business that needs to track receivables and reduce late payments.\n\nWhat this workflow does\n\nThis workflow provides complete invoice lifecycle management with two main flows:\n\nInvoice Generation Flow:\nReceives order data via webhook with line items\nSplits line items using Split Out node for individual processing\nCalculates subtotals, tax, and totals\nAggregates results and saves to Google Sheets\nSends professional invoice email with payment link\n\nPayment Reminder Flow:\nRuns daily via Schedule Trigger to check for overdue invoices\nLoops through unpaid invoices using Split In Batches\nRoutes to appropriate reminder level using Switch node (5 levels)\nSends escalating reminders: friendly → second notice → urgent → final → collections\nNotifies internal team via Slack for collections handoff\n\nSetup\n\nCreate a Google Sheet with columns: Invoice ID, Client, Email, Subtotal, Tax, Total, Due Date, Status, Created, Last Reminder\nConnect Google Sheets and Gmail credentials\nConfigure Slack for collections escalation notifications\nSet up the webhook URL in your order management system\n\nRequirements\n\nGoogle Sheets (invoice database)\nGmail account (invoice and reminder emails)\nSlack workspace (collections notifications)\n\nHow to customize\n\nAdjust overdue day thresholds in the Code node\nAdd SMS reminders via Twilio for urgent notices\nModify email templates for your brand\nConnect to accounting software for automatic reconciliation\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

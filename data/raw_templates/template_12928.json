@@ -1,0 +1,15 @@
+{
+  "id": 12928,
+  "name": "Generate DraftKings DFS lineups with GPT-4o, Google Sheets, email and Slack alerts",
+  "description": "Who’s it For\nThis template is perfect for daily fantasy sports (DFS) enthusiasts, sports analysts, and content creators who want automated, AI-optimized lineups for DraftKings contests. Works for multiple sports including NFL, NBA, MLB, NHL, and esports like LOL and CS.\n\nHow It Works / What It Does\nThe workflow uses the DraftKings API Actor to scrape real-time contest and player data. It calculates player value based on projected points and salary, and then uses AI to generate optimized DFS lineups. Generated lineups are logged to Google Sheets, emailed to subscribers with AI-personalized messaging, and internal teams are notified via Slack. Filters allow skipping contests that are too expensive, almost full, or starting too soon.\n\nHow to Set Up\nConfigure DraftKings API Actor: select sport, maxContests, includePlayerData.\nGoogle Sheets: enter Sheet ID and worksheet for logging lineups.\nEmail Node: configure SMTP or SendGrid for sending subscriber emails.\nSlack Node: enter channel for team notifications.\nAdjust workflow schedule for daily or pre-game runs.\nOptional: modify contest filters (entry fee, prize pool, start time).\n\nRequirements\nDraftKings API Actor access via Apify\nn8n instance with nodes: DraftKings API Actor, Set, Function, IF, OpenAI, SplitInBatches, Google Sheets, Email, Slack\nGoogle Sheets account\nSlack workspace\nSMTP/Email service for notifications\n\nHow to Customize the Workflow\nAdjust sports, contest limits, or player data inclusion.\nChange AI prompts in the OpenAI node to adjust lineup strategy.\nModify email templates for personalized messaging.\nAdd historical tracking logic for performance analysis.\nMulti-sport branching can be expanded for other leagues.\n\nWhy This Template is Valuable\nSaves DFS players hours of research and lineup building.\nProvides actionable AI-optimized lineups daily.\nTracks contests and player trends over time.\nIntegrates notifications to both internal team and subscribers.\nBranded for QuarterSmart by Hyrum Hurst: reliable, plug-and-play, high-value DFS automation.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

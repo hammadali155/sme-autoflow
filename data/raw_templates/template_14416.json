@@ -1,0 +1,12 @@
+{
+  "id": 14416,
+  "name": "Monitor SQL data quality and send email reports with Google Sheets logging",
+  "description": "This workflow automatically monitors and reports data quality for any SQL table using configurable checks and thresholds. It evaluates key metrics—including null values, duplicate records, row count anomalies, and outliers—and assigns a clear PASS, WARN, or FAIL status.\n\nDesigned for efficiency, the workflow dynamically injects table and column names from a central Config node, so you don’t need to edit SQL queries manually. All checks run in parallel, and results are consolidated into a structured HTML report with clear status indicators.\n\nThe report is automatically sent via email and logged into Google Sheets for historical tracking, auditing, and trend analysis.\n\n⚙️ Setup\nUpdate the Config node with your table name, column names, thresholds, and email recipient.\nConnect your database credentials (Postgres/MySQL) in all query nodes.\nSet up Gmail or SMTP credentials in the email node.\nConnect your Google Sheets account and ensure required columns exist.\nActivate the workflow (runs daily by default, can be customized).\n\nThis workflow is ideal for data analysts and analytics engineers who want a lightweight, automated solution to proactively monitor data quality without exporting large datasets or building complex pipelines.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

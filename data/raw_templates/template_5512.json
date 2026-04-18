@@ -1,0 +1,10 @@
+{
+  "id": 5512,
+  "name": "Send Daily Currency Exchange Rate Updates via CurrencyFreaks API and Gmail",
+  "description": "Daily Currency Update Workflow (n8n)\n\nTrigger: ScheduleTrigger node (configurable interval)\nSet Variables: API Key, Preferred Currencies (PKR, GBP, EUR, USD, BDT, INR)\nHTTP Request: Fetch latest exchange rates from CurrencyFreaks API\nSet Recipient Email\nSet Email Subject\nSend Email: HTML formatted via Gmail OAuth2 with dynamic rate data (date, base currency, rates)\nFlow: ScheduleTrigger → Set API Key & Currencies → HTTP Request → Set Recipient → Set Subject → Gmail Send\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

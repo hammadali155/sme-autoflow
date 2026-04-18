@@ -1,0 +1,13 @@
+{
+  "id": 12891,
+  "name": "Route AI-powered customer support via email and Slack with PostgreSQL and Google Sheets",
+  "description": "Automate intelligent customer support responses with AI and Slack\n\nHow it works\nReceive request via webhook with customer question\nAnalyze sentiment and detect urgency using JavaScript\nSend urgent alerts to Slack for critical cases\nSearch knowledge base and fetch conversation history from PostgreSQL\nGenerate AI response with context-aware prompts\nRoute intelligently: Auto-respond via email OR escalate to Slack\nLog everything to Google Sheets and PostgreSQL for analytics\n\nSetup steps\nSlack webhooks: Replace YOUR_URGENT_WEBHOOK and YOUR_ESCALATION_WEBHOOK with your webhook URLs\nGoogle Sheets: Replace YOUR_SPREADSHEET_ID with your spreadsheet ID and authenticate\nEmail: Configure SMTP/Gmail credentials in the email node\nPostgreSQL (optional): Create support_conversations table or disable DB nodes\nProduction: Replace mock AI nodes with OpenAI/Anthropic API nodes\n\nKey features\nMulti-language support (Japanese & English)\nSentiment analysis with urgency detection\nSmart escalation routing\nReal-time Slack notifications\nComprehensive analytics logging",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

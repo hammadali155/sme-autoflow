@@ -1,0 +1,15 @@
+{
+  "id": 13218,
+  "name": "Manage Streak CRM via WhatsApp using GPT‑4.1 and Gemini",
+  "description": "How it works\nThis AI agent manages your Streak CRM via WhatsApp. Send messages to create contacts, add boxes to pipelines, update stages, link contacts to boxes, and retrieve information, add and get tasks all through natural conversation.\n\nSetup steps\n\nConnect your Streak API credentials (Basic Auth)\nConfigure WhatsApp Business integration\nAdd your Streak pipeline keys to the workflow\nTest with a simple command like \"create contact John Doe\"\n\nCustomization tips\n\nAdd custom Streak fields to the AI's tool descriptions\nModify pipeline stages to match your workflow\nAdjust AI prompts to recognize your team's terminology\nEnable additional Streak operations (comments, tasks, files)\n\nThe agent worked perfectly when you give it access to streak API documentation, to attain even more complex tasks",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.whatsApp",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 12080,
+  "name": "Run A/B-tested email campaigns using Gmail, Google Sheets, and Slack",
+  "description": "\nRun professional email campaigns with A/B testing, Google Sheets tracking, and Slack analytics.\nFEATURES:\n\nA/B testing with automatic 50/50 split\nEmail validation and deduplication\nBatch processing with anti-spam delays\nProfessional HTML email templates\nComplete campaign tracking and logging\nReal-time Slack notifications\n\nWORKFLOW:\n\nTrigger campaign (manual, scheduled Monday 9AM, or webhook)\nRead and validate contacts from Google Sheets\nAssign A/B variants automatically\nSend personalized HTML emails via Gmail\nLog results and update contact status\nSlack notifications on start/completion/errors\n\nSETUP:\n\nCreate Google Sheet with 4 tabs:\n\nContacts: name, email, segment, sent, unsubscribed, sent_date, campaign, variant, error_msg\nCampaigns: Campaign ID, Name, Start Date, Total Contacts, Valid, Invalid, Already Sent, Unsubscribed, Variant A, Variant B, Status, End Date, Duration\nSend Log: Timestamp, Campaign ID, Email, Name, Variant, Subject, Status\nMetrics: Campaign ID, Opens, Clicks, Unsubscribes\n\n\nReplace YOUR_DOCUMENT_ID in all Sheets nodes\nConnect Gmail credentials\nConnect Slack (#marketing, #errors channels)\n\nCUSTOMIZABLE:\n\nCompany name, colors, logo in Configure Campaign node\nEmail content and design in Prepare Email node\nA/B test subjects\nBatch size and delays\n\nIDEAL FOR:\nNewsletters, product launches, marketing campaigns, announcements, and any bulk email needs.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

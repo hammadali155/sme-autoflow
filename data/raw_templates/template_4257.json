@@ -1,0 +1,9 @@
+{
+  "id": 4257,
+  "name": "Find and Verify Linkedin Profile with Airtop",
+  "description": "Automating LinkedIn Profile Discovery with Verification\n\nUse Case\n\nAccurately identifying and verifying a person’s LinkedIn profile is essential for prospecting, recruiting, or contact enrichment. This automation ensures high accuracy by combining search logic with optional profile validation.\n\nWhat This Automation Does\n\nThis automation locates and verifies a LinkedIn profile using the following inputs:\n\nPerson_info**: Any identifying information about the person (e.g., name, company, email).\nAirtop_profile**: Your Airtop Profile authenticated on LinkedIn, used for verifying the profile.\n\nHow It Works\n\nExtracts a likely LinkedIn URL by performing a Google search using the provided person info.\nValidates the result (if Airtop Profile is provided):\n   Visits the LinkedIn profile.\n   Verifies match by checking the content (e.g., experience, role) against the person info.\nReturns a verified LinkedIn profile URL or \"NA\" if not found or not valid.\n\nSetup Requirements\n\nAirtop API Key\nOptional but recommended: an Airtop Profile authenticated on LinkedIn.\n\nNext Steps\n\nCombine with Email Lookup**: Use email-to-profile tools upstream to gather inputs.\nCRM Integration**: Automatically append LinkedIn profiles to contact records.\nAutomate Outreach**: Use the verified URLs for personalized LinkedIn engagement workflows.\n\nRead more about how find and verify Linkedin profiles\n",
+  "nodes": [
+    "n8n-nodes-base.airtop"
+  ],
+  "tags": []
+}

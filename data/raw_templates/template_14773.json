@@ -1,0 +1,11 @@
+{
+  "id": 14773,
+  "name": "Track and schedule Notion tasks using Google Sheets and Calendar",
+  "description": "How it works  \nThis workflow monitors a Notion database for new or updated tasks and checks if the scheduled time is available in Google Calendar. It logs every task into Google Sheets for tracking and auditing. Based on availability, it either creates a calendar event or sends a conflict notification email. The workflow also updates the task status in Sheets to reflect success or failure.\n\nStep-by-step  \n\nTrigger task updates from Notion**  \n  Get Task – Watches for new or updated tasks in the Notion database.  \n  Check Availability – Queries Google Calendar to check if the selected time slot is free.  \n\nLog data and evaluate availability**  \n  Record – Stores task details in Google Sheets for tracking.  \n  If – Checks whether the time slot is available based on calendar results.  \n\nCreate calendar event if available**  \n  Create an event – Adds the task as an event in Google Calendar.  \n  Update Status – Marks the task as successfully scheduled in Google Sheets.  \n\nHandle scheduling conflicts**  \n  Send Error – Sends an email notification about the calendar conflict.  \n  Update Status1 – Updates the task status as failed or unavailable in Google Sheets.  \n\nWhy use this?  \n\nPrevents double-booking by checking calendar availability automatically  \nKeeps a centralized log of all tasks and their scheduling status  \nSends instant alerts when scheduling conflicts occur  \nReduces manual effort in managing tasks across tools  \nImproves visibility and reliability of task scheduling workflows  ",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

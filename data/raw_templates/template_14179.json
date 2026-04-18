@@ -1,0 +1,11 @@
+{
+  "id": 14179,
+  "name": "Enrich people skip-trace results from n8n forms with ScraperCity into Notion",
+  "description": "Who is this for\n\nThis workflow is built for real estate investors, private investigators, recruiters, and sales teams who need to skip trace individuals -- finding contact details, addresses, and phone numbers from a name, email, or phone number -- and store the enriched records automatically in Notion.\n\nHow it works\n\nA user fills out an n8n form with one or more search inputs (name, email, or phone number). The workflow submits that data to the ScraperCity People Finder API, which begins an async enrichment job. The workflow then polls the job status every 60 seconds until it completes. Once the scrape succeeds, the results are downloaded, parsed, deduplicated, and each enriched person record is written as a new page in a Notion database.\n\nHow to set up\n\nCreate a ScraperCity account at scrapercity.com and copy your API key.\nIn n8n, create an HTTP Header Auth credential named \"ScraperCity API Key\" with the key Authorization and value Bearer YOUR_KEY.\nCreate a Notion integration and share your target database with it. Create a Notion credential in n8n.\nOpen the Configure Search Defaults node and set your preferred max_results value.\nOpen the Save Person Record to Notion node and set your Notion Database ID.\n\nRequirements\n\nScraperCity account (scrapercity.com) with People Finder access\nn8n instance (cloud or self-hosted)\nNotion workspace with a database for storing people records\n\nHow to customize the workflow\n\nChange the form fields to accept bulk CSV input instead of a single name.\nAdd a Filter node after parsing to only save records that include a valid phone number.\nRoute results to Google Sheets or HubSpot instead of Notion by swapping the final node.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

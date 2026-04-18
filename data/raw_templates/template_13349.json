@@ -1,0 +1,11 @@
+{
+  "id": 13349,
+  "name": "Detect account and contact growth signals with Lusha bulk enrichment",
+  "description": "How it works\nA daily schedule pulls your target accounts from HubSpot\nAll companies are bulk-enriched with Lusha in a single API call\nA code node detects growth signals: headcount increase, revenue growth, and funding activity\nFor accounts showing signals, Lusha searches for key contacts and alerts your sales team via Slack\n\nSet up steps\nInstall the Lusha community node\nAdd your Lusha API, HubSpot, and Slack credentials\nDefine your target account list or ICP filters in HubSpot\nSet the Slack channel for signal alerts and activate",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

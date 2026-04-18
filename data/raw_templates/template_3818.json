@@ -1,0 +1,10 @@
+{
+  "id": 3818,
+  "name": "Sync New Shopify Customers to Odoo Contacts",
+  "description": "This workflow functions by integrating Shopify customers into Odoo customers.\n\nTrigger: Shopify – New Customer Created\n   The workflow starts when a new customer is added in Shopify.\n\nAction: Odoo – Search Contact by Email\n   It checks in Odoo to see if a contact already exists with the same email address as the Shopify customer.\n\nCondition: Email Match Check\n    If a contact with the same email is found, the workflow ends (no duplicate contact is created).\n    If no match is found, the workflow proceeds to the next step.\n\nAction: Odoo – Create New Contact\n   A new contact is created in Odoo using the customer's:\n    Full name\n    Email address\n    Phone number\n    Full Address (whichever is available)",
+  "nodes": [
+    "n8n-nodes-base.odoo",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

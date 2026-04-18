@@ -1,0 +1,11 @@
+{
+  "id": 13504,
+  "name": "Process WhatsApp PDFs with AWS Textract OCR via S3",
+  "description": "This n8n template demonstrates how to automatically extract text content from PDF documents received via WhatsApp messages using OCR.\n\nIt is designed for use cases where users submit documents through WhatsApp and the document content needs to be digitized for further processing — such as document analysis, AI-powered workflows, compliance checks, or data ingestion.\n\nGood to know\nThis workflow processes PDF documents only.\nOCR is handled using AWS Textract, which supports both scanned and digital PDFs.\nAWS Textract pricing depends on the number of pages processed. Refer to AWS Textract Pricing for up-to-date costs.\nAn AWS S3 bucket is required as an intermediate storage layer for the PDF files.\nProcessing time may vary depending on PDF size and number of pages.\n\nHow it works\nThe workflow is triggered when an incoming WhatsApp message containing a PDF document is received.\nThe PDF file is downloaded from WhatsApp’s media endpoint using an HTTP Request node.\nThe downloaded PDF is uploaded to an AWS S3 bucket to make it accessible for OCR processing.\nAWS Textract is invoked to analyze the PDF stored in S3 and extract all readable text content.\nThe Textract response is parsed and consolidated into a clean, ordered text output representing the PDF’s content.\n\nHow to use\nThe workflow can be triggered using a webhook connected to WhatsApp Cloud API or any compatible WhatsApp integration.\nEnsure your AWS credentials have permission to upload to S3 and invoke Textract.\nOnce active, simply send a PDF document via WhatsApp to start the extraction process automatically.\n\nRequirements\nWhatsApp integration (e.g. WhatsApp Cloud API or provider webhook)\nAWS account with:\n  S3 bucket access\n  Textract permissions\nn8n instance with HTTP Request and AWS nodes configured\n\nCustomising this workflow\nStore extracted text in a database or document store.\nPass the extracted content to an AI model for summarization, classification, or validation.\nSplit output by pages or sections.\nAdd file type validation or size limits.\nExtend the workflow to support additional document formats.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.awsS3",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

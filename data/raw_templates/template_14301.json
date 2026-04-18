@@ -1,0 +1,11 @@
+{
+  "id": 14301,
+  "name": "Modify Liveblocks storage with JSON Patch and Anthropic Claude",
+  "description": "Modify Liveblocks Storage with JSON Patch\n\nThis example uses Liveblocks Storage, a sync engine created by Liveblocks that allows you to create collaborative applications like Figma, Pitch, and Spline. When we fetch the Storage value for a room, we're fetching the state of the multiplayer document which users are collaborating on.   \n\nIn this workflow example, our document holds a list of shapes, like a drawing tool. Here's a rectangle, for example:\n\n{\n  \"id\": \"rect-1\",\n  \"type\": \"rectangle\",\n  \"x\": 100,\n  \"y\": 150,\n  \"width\": 200,\n  \"height\": 100,\n  \"color\": \"#ff0000\"\n}\n\nPicture this hooked up to a design tool like Figma, with the user asking AI to edit their document.\n\nIn these nodes, to generates a JSON Patch operation from the user's request (\"Add a blue circle, and make the square orange\") and applies it to the collaborative document. \n\nAs soon as the JSON Patch operation has run, each user's design tool in their web browser will update with the changes in real time.\n\nAdditionally, we're setting presence in the room, which means that the AI will appear in the document's live avatar stacks while it works, before disappearing shortly after.",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

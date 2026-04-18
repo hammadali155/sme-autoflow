@@ -1,0 +1,10 @@
+{
+  "id": 3822,
+  "name": "Auto-Post Breaking News Content Using Perplexity AI to X (Twitter)",
+  "description": "Stay ahead of the curve and keep your followers informed—automatically.  \nThis n8n workflow uses Perplexity AI to generate insightful answers to scheduled queries, then auto-posts the responses directly to X (Twitter).\n\n⚙️ What this workflow does\n\nScheduled Trigger – Runs at set times (daily, hourly, etc.).\nsearchQuery – Define what kind of trending or relevant insight you want (e.g. “latest AI trends”).\nset API Key – Securely insert your Perplexity API key.\nPerplexity API Call – Fetches a short, insightful response to your query.\nPost to X – Automatically publishes the result as a tweet.\n\n🧩 Requirements\n\nAn n8n account (self-hosted or cloud)\nA Perplexity API key\nA connected X (Twitter) account via n8n’s credentials\n\n✅ Setup Steps\n\nAdd this workflow into your n8n account.\nEdit the searchQuery node with a topic (e.g. “What’s new in ecommerce automation?”).\nPaste your Perplexity API key into the set API key node.\nConnect your X (Twitter) account in the final node.\nAdjust the schedule timing to suit your content frequency.\n\n💡 Ideas to Improve\n\n💬 Add a formatting step to shorten or hashtag the response.\n📊 Pull multiple trending questions and auto-schedule posts.\n🔁 Loop responses to queue a full week of content.\n🌐 Translate content before posting to reach a global audience.\n\n🆘 Need help?\n\nFeel free to contact us at 1 Node.\nGet instant access to a library of free resources we created.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.twitter"
+  ],
+  "tags": []
+}

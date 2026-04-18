@@ -1,0 +1,19 @@
+{
+  "id": 2658,
+  "name": "API Schema Extractor",
+  "description": "This workflow automates the process of discovering and extracting APIs from various services, followed by generating custom schemas. It works in three distinct stages: research, extraction, and schema generation, with each stage tracking progress in a Google Sheet.\n\n🙏 Jim Le deserves major kudos for helping to build this sophisticated three-stage workflow that cleverly automates API documentation processing using a smart combination of web scraping, vector search, and LLM technologies.\n\nHow it works\nStage 1 - Research:\nFetches pending services from a Google Sheet\nUses Google search to find API documentation\nEmploys Apify for web scraping to filter relevant pages\nStores webpage contents and metadata in Qdrant (vector database)\nUpdates progress status in Google Sheet (pending, ok, or error)\n\nStage 2 - Extraction:\nProcesses services that completed research successfully\nQueries vector store to identify products and offerings\nFurther queries for relevant API documentation\nUses Gemini (LLM) to extract API operations\nRecords extracted operations in Google Sheet\nUpdates progress status (pending, ok, or error)\n\nStage 3 - Generation:\nTakes services with successful extraction\nRetrieves all API operations from the database\nCombines and groups operations into a custom schema\nUploads final schema to Google Drive\nUpdates final status in sheet with file location\n\nIdeal for:\nDevelopment teams needing to catalog multiple APIs\nAPI documentation initiatives\nCreating standardized API schema collections\nAutomating API discovery and documentation\n\nAccounts required:\nGoogle account (for Sheets and Drive access)\nApify account (for web scraping)\nQdrant database\nGemini API access\n\nSet up instructions:\nPrepare your Google Sheets document with the services information. Here's an example of a Google Sheet – you can copy it and change or remove the values under the columns. Also, make sure to update Google Sheets nodes with the correct Google Sheet ID. \nConfigure Google Sheets OAuth2 credentials, required third-party services (Apify, Qdrant) and Gemini.\nEnsure proper permissions for Google Drive access.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+    "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.textClassifier",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

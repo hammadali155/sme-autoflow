@@ -1,0 +1,13 @@
+{
+  "id": 5475,
+  "name": "Automate Email Management with OpenAI Classification, Gmail Drafts & Slack Alerts",
+  "description": "What it does\nThis workflow automatically processes incoming emails with intelligent AI classification, creating draft responses and sending Slack notifications based on email content.\n\nHow it works\nMonitors emails with the 'AI-Agent' label\nAI classification into categories: Inquiry, Support, Newsletter, Action Item\nAdds appropriate labels to emails automatically\nCreates draft replies for Support and Inquiry emails\nSends Slack notifications for Action Items and Newsletter summaries\n\nSetup Requirements\nGmail OAuth2 credentials configured\nOpenAI API credentials (or other AI provider)\nSlack OAuth2 credentials (if notifications desired)\nGmail labels created (see setup instructions below)\n\nHow to customize\nModify classification categories in the AI Agent\nAdjust label mappings in the Parse Classification node\nCustomize draft response templates\nConfigure different Slack channels for different email types",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

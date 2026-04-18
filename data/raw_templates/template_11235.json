@@ -1,0 +1,13 @@
+{
+  "id": 11235,
+  "name": "Learn How to use Binary Data in n8n (Video Included)",
+  "description": "This template and YouTube video goes over 8 different examples of how we can utilize Binary data within n8n.\n\nWe start with brining in Binary data with Google Drive, FTP, or Form submission.\n\nAfter we jump into how to extract Binary Data, Analyze an image, convert files, and use base64.\n\nThis lesson also covers the recent update with grabbing binary data in later nodes.\n\nYouTube video: https://youtu.be/0Vefm8vXFxE",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.ftp",
+    "n8n-nodes-base.mistralAi",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

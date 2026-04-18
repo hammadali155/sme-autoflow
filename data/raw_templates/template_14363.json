@@ -1,0 +1,13 @@
+{
+  "id": 14363,
+  "name": "Streamline lead intake and AI routing using Typeform, OpenAI & Gmail",
+  "description": "How it works  \nThis workflow captures new form submissions, cleans the data, and stores it securely before applying AI-based lead qualification. It analyzes each message to assign category, score, and priority. Based on this classification, leads are routed to the appropriate response path. The system ensures every lead is saved first, then enriched and responded to automatically.\n\nStep-by-step  \n\nCapture and clean lead data**  \n  Typeform Trigger – Listens for new submissions in real time.  \n  Sanitize Lead Data – Cleans names, formats emails, and extracts domain.  \n\nStore lead in database**  \n  Create a record – Saves lead details in Airtable with status “New”.  \n\nAnalyze and enrich with AI**  \n  AI Lead Analyzer – Uses OpenAI to classify, score, and prioritize leads.  \n  Merge – Combines original lead data with AI-generated insights.  \n\nRoute and respond automatically**  \n  Route by Category – Directs leads based on AI classification.  \n  Send a message – Sends tailored email for sales inquiries.  \n  Send a message1 – Sends confirmation email for support requests.  \n  Send a message2 – Sends response for partnership inquiries.  \n  Send a message3 – Sends fallback response for other categories.  \n  Send a message4 – Sends Discord alert for high-priority leads.  \n\nWhy use this?  \n\nEnsures no lead is lost by storing data before processing  \nAutomatically prioritizes high-value opportunities using AI  \nReduces manual lead qualification and response time  \nProvides personalized responses based on intent  \nEnables real-time team alerts for important leads  \n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

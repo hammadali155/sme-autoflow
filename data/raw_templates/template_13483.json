@@ -1,0 +1,10 @@
+{
+  "id": 13483,
+  "name": "Notify customers on WhatsApp when Stripe payment succeeds with MoltFlow",
+  "description": "How it works\n\nStripe fires a checkout.session.completed webhook when a payment succeeds\nCustomer name, phone, email, and payment amount are extracted\nIf the customer has a phone number, a WhatsApp receipt is sent via MoltFlow\nPayments without phone numbers are logged and skipped\n\nSet up steps (~5 min)\n\nCreate a MoltFlow account at molt.waiflow.app and connect your WhatsApp\nGenerate an API key in MoltFlow (Sessions page &gt; API Keys tab)\nActivate this workflow and copy the webhook URL\nIn Stripe Dashboard &gt; Developers &gt; Webhooks, add the n8n URL for checkout.session.completed\nSet YOUR_SESSION_ID in the Format Receipt code node\nAdd your MoltFlow API Key as Header Auth credential (header name: X-API-Key)\n\nPrerequisites\n\nMoltFlow account with active WhatsApp session\nStripe account with webhook access\nCustomer phone numbers collected during checkout (Stripe customer_details.phone)",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

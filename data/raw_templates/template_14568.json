@@ -1,0 +1,11 @@
+{
+  "id": 14568,
+  "name": "Validate addresses and generate Street View images with Google Maps and Drive",
+  "description": "This workflow allows users to validate an address and generate a Street View image using Google Maps APIs.\n\nIt starts with a simple form where the user enters an address. The workflow validates the input using the Geocoding API, extracts the coordinates, and then requests a Street View image for that location. If the image is available, it is stored in Google Drive and presented through a dynamic HTML response page.\n\nThe workflow also includes error handling to manage invalid addresses or locations where Street View is not available, ensuring a reliable and user-friendly experience.\n\nHow it works\n\nA Form Trigger collects the address input from the user  \nThe address is validated using the Google Geocoding API  \nLatitude and longitude are extracted from the response  \nThe workflow requests a Street View image using the coordinates  \nThe image availability is validated  \nThe image is uploaded to Google Drive  \nA response page is generated (success or error)\n\nSetup steps\n\nCreate a Google Maps API key (Geocoding + Street View enabled)  \nAdd your API key in the workflow (or use environment variables)  \nConnect your Google Drive credentials  \nAdjust image parameters if needed (size, resolution, etc.)  \nActivate the workflow and test using the form  \n\nAfter setup, users can input any address and receive a validated result with a corresponding Street View image or a clear error message if the request cannot be fulfilled.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

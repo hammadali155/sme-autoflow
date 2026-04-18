@@ -1,0 +1,9 @@
+{
+  "id": 4261,
+  "name": "Extract Linkedin Company data with Airtop",
+  "description": "\nAutomating LinkedIn Company Data Extraction\n\nUse Case\n\nThis automation extracts detailed company insights from a LinkedIn company page, including identity, scale, classification, and funding data. Ideal for investors, sales teams, and market researchers.\n\nWhat This Automation Does\n\nThis automation accepts the following inputs:\n\nCompany's LinkedIn URL**: The public LinkedIn page URL of the company.\nAirtop Profile (connected to LinkedIn)**: Your Airtop Profile authenticated on LinkedIn.\n\nIt then extracts and returns structured data with:\n\n1. Company Identity\nFull name\nTagline\nHeadquarters location (city, state, country)\nAbout section\nWebsite\n\n2. Company Scale\nCurrent employee count\nEmployee size bracket: [0-9], [10-150], [150+]\n\n3. Business Classification\nIs the company an automation agency? (true/false)\nAI implementation level: Low / Medium / High\nTechnical sophistication: Basic / Intermediate / Advanced / Expert\n\n4. Funding Profile\nMost recent funding round\nTotal amount raised\nKey investors\nLast funding update date\n\nHow It Works\n\nCreates an Airtop session using the provided profile.\nNavigates to the company LinkedIn page.\nExecutes an Airtop query to extract data.\nOutputs the result in a standardized JSON schema.\n\nSetup Requirements\n\nAirtop API Key\nA LinkedIn-authenticated Airtop Profile\n\nNext Steps\n\nFeed into CRM**: Enrich your accounts with detailed LinkedIn data.\nPrioritize Leads**: Use classification and funding data to prioritize outreach.\nCombine with People Data**: Integrate with individual-level enrichment for full context.\n\nRead more about how to extract company data from Linkedin with Airtop and n8n",
+  "nodes": [
+    "n8n-nodes-base.airtop"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 10918,
+  "name": "Fetch daily job postings from JSearch to Google Sheets and Telegram",
+  "description": "This workflow automatically fetches job postings from the JSearch API once per day, filters out duplicates, and saves only new jobs to a Google Sheet. It also sends a Telegram summary with the number of newly added jobs.\n\nWhat this workflow does\n• Builds a custom job search query  \n• Fetches job listings from JSearch  \n• Loads existing job IDs from Google Sheets  \n• Removes already-saved jobs  \n• Writes only new jobs into the sheet  \n• Sends a Telegram summary with job count  \n\nWhy it's useful\n• Hands-free daily job monitoring  \n• No duplicates — clean data tracking  \n• Uses rate-limit-safe writing  \n• Easy to customize search keywords  \n• Works entirely with no-code steps  \n\nRequirements\n• RapidAPI (JSearch) account  \n• Google Sheets account  \n• Telegram Bot token  \n\nIdeal For\n• Job researchers  \n• Recruitment automations  \n• Personal job-search tracking  \n• Data collection workflows\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

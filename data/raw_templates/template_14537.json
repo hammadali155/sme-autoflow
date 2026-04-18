@@ -1,0 +1,11 @@
+{
+  "id": 14537,
+  "name": "Extract brand identity markers from web pages using Google Gemini",
+  "description": "Web Page to Brand Identity Markers\nThis n8n template retrieves verbal brand identity markers from any web site.\n\nCustomer Perception Review\nHow does a customer coming to your web site perceive your content? Use this to check against the key messages you want the customer to understand after visiting your web site.\n\nBrand Identity Extraction\nMarketing Agencies need to understand for each customers their specific tone and communication style to replicate it for updates and new content.\n\nHow it works\nExecute the workflow and enter any web site address\nThe HTTP node retrieves the web page\nThe core logic is the Gemini AI prompt to review the web page content and respond with a pre-defined JSON data structure containing the verbal brand identity markers\nThe JSON structure returned from the AI node is parsed and displayed on a web page. \n\nHow to customize\nInject your own processing logic after the \"Extract AI Response\" node\nYou can directly access the JSON fields returned. For an example see how the HTML node creates the web page with the JSON data.\n\nRequirements\nGemini account for LLM\n\nNeed Help?\nJoin the Discord or ask in the Forum!\n\nFor support reach out to the creator at blakewise.com\n\nHappy Hacking!\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

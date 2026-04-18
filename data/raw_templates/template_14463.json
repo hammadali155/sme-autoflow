@@ -1,0 +1,18 @@
+{
+  "id": 14463,
+  "name": "Automate ESG carbon monitoring and strategy execution with GPT-4o, Slack and Sheets",
+  "description": "How It Works\nThis workflow automates end-to-end carbon emissions monitoring, strategy optimisation, and ESG reporting using a multi-agent AI supervisor architecture in n8n. Designed for sustainability managers, ESG teams, and operations leads, it eliminates the manual effort of tracking emissions, evaluating reduction strategies, and producing compliance reports. Data enters via scheduled pulls and real-time webhooks, then merges into a unified feed processed by a Carbon Supervisor Agent. Sub-agents handle monitoring, optimisation, policy enforcement, and ESG reporting. Approved strategies are auto-executed or routed for human sign-off. Outputs are consolidated and pushed to Slack, Google Sheets, and email, keeping all stakeholders informed. The workflow closes the loop from raw sensor data to actionable ESG dashboards with minimal human intervention.\nSetup Steps\nConnect scheduled trigger and webhook nodes to your emissions data sources.\nAdd credentials for Slack (bot token), Gmail (OAuth2), and Google Sheets (service account).\nConfigure the Carbon Supervisor Agent with your preferred LLM (OpenAI or compatible).\nSet approval thresholds in the Check Approval Required node.\nMap Google Sheets document ID for ESG report and KPI dashboard nodes.\n\nPrerequisites\nOpenAI or compatible LLM API key\nSlack bot token\nGmail OAuth2 credentials\nGoogle Sheets service account\nUse Cases\nCorporate sustainability teams automating monthly ESG reporting\nCustomisation\nSwap LLM models per agent for cost or accuracy trade-offs\nBenefits\nEliminates manual emissions data aggregation and report generation\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.slack",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

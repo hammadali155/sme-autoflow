@@ -1,0 +1,14 @@
+{
+  "id": 13872,
+  "name": "Analyze Shopify orders with Gemini AI and send weekly Slack insights",
+  "description": "Who is this for\n\nE-commerce store owners and sales managers who want AI-powered insights from their Shopify data without manually crunching numbers every week.\n\nWhat it does\n\nThis workflow automatically analyzes your Shopify sales performance every Monday morning and delivers intelligent insights via Slack and email. It pulls the last 7 days of orders, calculates key metrics (revenue, order count, average order value), and sends the data to Gemini AI for trend analysis and actionable recommendations.\n\nThe AI identifies patterns in your sales data and provides specific suggestions for improving performance. All metrics are logged to Google Sheets for historical tracking, and the team receives instant alerts when revenue drops more than 20% compared to the previous week.\n\nHow to set up\n\nConnect your Shopify store with order read permissions\nAdd your Gemini API key for AI analysis\nSet up Slack integration and choose your target channels (#sales and #alerts)\nConfigure Gmail credentials for stakeholder email reports\nCreate a Google Sheets document with a \"Weekly Metrics\" tab for data tracking\nUpdate the email recipients and spreadsheet ID in the respective nodes\n\nRequirements\n\nShopify store with API access\nGoogle Gemini API key\nSlack workspace\nGmail account\nGoogle Sheets access\n\nHow to customize\n\nAdjust the revenue drop threshold in the IF node (default: 20%), modify the schedule frequency, customize Gemini prompts for different analysis types, or add additional Slack channels for department-specific reports.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.shopify",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

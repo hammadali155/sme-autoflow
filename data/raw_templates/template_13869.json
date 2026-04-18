@@ -1,0 +1,15 @@
+{
+  "id": 13869,
+  "name": "Generate research proposals with GPT-4o, web search, and quality control agents",
+  "description": "How It Works\nThis workflow automates academic and professional research proposal generation using a multi-agent AI pipeline. It targets researchers, academics, grant writers, and R&D teams who need structured, high-quality proposals efficiently. The core problem it solves: manually drafting proposals is time-consuming, inconsistent, and prone to missing key elements like ethics, impact, and funding alignment. A Supervisor Agent orchestrates three specialist sub-agents, Research Content, Strategic Planning, and Ethics/Impact, each powered by dedicated AI models. A Funding Agency Research Tool and Web Search Tool supply real-time context. The generated proposal is parsed, then evaluated by a Quality Control Agent. Proposals meeting the quality threshold are formatted and stored; those falling short are flagged for human revision, ensuring only polished outputs reach storage.\n\nSetup Steps\nAdd OpenAI (or compatible) API credentials to all AI model nodes.\nConfigure Supervisor, Research Content, Strategic Planning, and QC Agent system prompts.\nSet up Funding Agency Research Tool with target agency endpoints or search parameters.\nConnect Web Search Tool credentials (e.g., SerpAPI or Tavily).\nConfigure storage node (Google Sheets/database) with target schema.\nSet quality score threshold in the Check Quality Score node.\nPrerequisites\nWeb search API key (SerpAPI/Tavily)\nGoogle Sheets or database credentials\nUse Cases\nGrant proposal drafting for research institutions\nCustomisation\nSwap AI models per agent for cost/performance balance\nBenefits\nCuts proposal drafting time by 70–80%\n",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

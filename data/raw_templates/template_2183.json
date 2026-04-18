@@ -1,0 +1,16 @@
+{
+  "id": 2183,
+  "name": "AI Crew to Automate Fundamental Stock Analysis - Q&A Workflow  ",
+  "description": "How it works:\n\nUsing a Crew of AI agents (Senior Researcher, Visionary, and Senior Editor), this crew will automatically determine the right questions to ask to produce a detailed fundamental stock analysis.\n\nThis application has two components: a front-end and a Stock Q&A engine.  \n\nThe front end is the team of agents automatically figuring out the questions to ask, and the back-end part is the ability to answer those questions with the SEC 10K data.\n\nThis template implements the Stock Q&A engine.\n\nFor the front-end of the application, you can choose one of two options:\nusing CrewAI with the Replit environment (code approach)\nfully visual approach with n8n template (AI-powered automated stock analysis)\n\nSetup steps:\nUse first workflow in template to upsert a company annual report PDF (such as from SEC 10K filling) \nGet URL for Webhook in second workflow template\n\nCrewAI front-end: Youtube overview video\nFork this AI Agent environment Crew Agent Environment\nSet the webhook URL into N8N_WEBHOOK_URL variable\nSet OpenAI_API_KEY variable",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+    "@n8n/n8n-nodes-langchain.documentBinaryInputLoader",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 4805,
+  "name": "Automate Time Tracking Enforcement & Cleanup for Awork Tasks",
+  "description": "This workflow offers several additional features for time tracking with Awork:\n\nCheck whether time has been tracked when closing a task. If not, the task is reopened and the user is notified. This can be restricted to specific tasks using tags.\nEnforce a minimum time entry for tasks to comply with \"at least 15-minute intervals are billed\" policies. This can also be limited to specific tasks by using tags.\nClean up time entries to match billing intervals.\nAdd a start time to time entries if it is missing.\n\nThis workflow does not use the Awork community nodes package, as the package does not support all required API calls and is therefore not used here. If you prefer to use that package, you can find more information at awork integration guide and replace the HTTP nodes with the corresponding community nodes where applicable.\n\nHow it works\nTriggered via Awork Webhook call on status change of tasks and new time entries\n\nSet up steps\nAdd webhook call to Awork (please see in-workflow notes regarding webhook configuration)\nConfigure Awork API credentials\nSet up workflow configuration via setup node, e.g. user notification text, tags, enabled features etc.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

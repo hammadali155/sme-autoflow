@@ -1,0 +1,9 @@
+{
+  "id": 2591,
+  "name": "Send Emails via Gmail from Obsidian",
+  "description": "How it Works\nThis n8n template makes it possible to send emails directly from your Obsidian notes. \nIt leverages the power of the Obsidian Post Webhook plugin, allowing seamless integration between your notes and the email workflow. \n\nWhat it does:\nReceives note content and metadata from Obsidian via a Webhook.\nParses YAML frontmatter to define email recipients, subject, and more.\nAutomatically processes attachments, encoding them into an email-friendly format.\nSends emails via Gmail and confirms the status back to Obsidian.\nIncludes a testing feature to verify everything works before going live.\n\nSet-up Steps\nWebhook Configuration: Set your n8n POST Webhook URL in the Obsidian Obsidian Post Webhook plugin settings.\nEmail Integration: Submit the Gmail credentials in n8n email nodes.\nTest the Workflow: Run a test from Obsidian to ensure the template functions correctly.\nActivate and Enjoy: Start sending customized emails with attachments from your notes in no time!",
+  "nodes": [
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

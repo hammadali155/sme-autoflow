@@ -1,0 +1,12 @@
+{
+  "id": 13853,
+  "name": "Production AI Playbook: Deterministic Steps & AI Steps (4 of 5)",
+  "description": "Protect your workflows with n8n's native Guardrails node, placed before and after your AI step. The input guardrails catch jailbreak attempts and PII before they reach your model. The output guardrails scan AI responses for NSFW content and secret keys before they reach your users.\n\nWhat you'll do\nSend clean input and watch it pass through both input and output guardrails successfully.\nSend a prompt injection attempt and see the input guardrails block it with jailbreak detection.\nSend a message containing PII and see it get flagged before reaching the AI.\nSee how flagged outputs fall back to a safe templated response.\n\nWhat you'll learn\nHow to use n8n's Guardrails node for input and output validation\nHow jailbreak detection catches prompt injection attempts using an LLM-based check\nHow PII detection identifies personal data (SSNs, credit card numbers, emails, and more)\nHow to build fallback paths that return safe responses when guardrails trigger\n\nWhy it matters\nGuardrails are the seatbelts of your AI workflow. You hope you don't need them, but when a user sends a prompt injection attempt or the AI leaks sensitive data, you'll be glad they're there. This template uses n8n's dedicated Guardrails node to make safety checks a first-class part of your workflow without writing custom validation code.\n\nThis template is a learning companion to the Production AI Playbook, a series that explores strategies, shares best practices, and provides practical examples for building reliable AI systems in n8n.  \n\nhttps://go.n8n.io/PAP-D&A-Blog",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.guardrails"
+  ],
+  "tags": []
+}

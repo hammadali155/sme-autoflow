@@ -1,0 +1,13 @@
+{
+  "id": 14992,
+  "name": "Create fillable document templates from PDF or DOCX with GPT-4o and Google Drive",
+  "description": "📄Template Creator\n\nHow it works\nThis workflow accepts any uploaded document (PDF or DOCX) via webhook and automatically converts it into a reusable fill-in-the-blank template.\n\nStep 1 — Identify: GPT-4o first reads the document and determines the document type (e.g., Employment Contract, Invoice, NDA, Lease Agreement, Project Proposal) and the specific variable fields that type of document typically contains.\n\nStep 2 — Templatize: A second AI pass uses the identified document type and field list to replace all variable content with clearly labeled [BRACKET] placeholders while preserving all static boilerplate and structure verbatim.\n\nStep 3 — Deliver: The cleaned template is rendered to PDF via Gotenberg, uploaded to Google Drive, made publicly accessible, and a JSON response with file URLs is returned to the caller.\n\nSetup\nConfigure the Webhook path if needed (default: general-template-creator)\nSet your OpenAI credential on both LLM nodes\nSet your Google Drive credential and confirm the target folder ID in the Upload node\nConfirm the Gotenberg URL matches your self-hosted instance\nInstall the community node n8n-nodes-word2text (see ⚠️ warning sticky)\n\nCustomization\nSwap GPT-4o for GPT-4.1 or GPT-4.1-mini on the Identify node to reduce cost on the lighter classification task\nAdd a Switch node after identification to route different document types to type-specific prompts\nModify the Drive folder ID to sort templates into subfolders by document type\n\nDocument accepts input from a form such as the one found here:\nSample Form\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

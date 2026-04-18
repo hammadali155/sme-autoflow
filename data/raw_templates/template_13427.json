@@ -1,0 +1,13 @@
+{
+  "id": 13427,
+  "name": "Validate emissions data and generate carbon compliance reports with GPT-4o and Google Sheets",
+  "description": "How It Works\nThis workflow automates emissions data validation and compliance reporting for environmental managers, sustainability officers, and compliance teams across manufacturing, energy, and transportation sectors. Manual verification of emissions data against multiple regulatory frameworks such as GHG Protocol, EPA standards, is time-consuming and error-prone, risking missed deadlines and penalties. On a set schedule, the system ingests synthetic emissions data and deploys specialist AI agents in parallel: one verifies data accuracy, another reviews accounting methodology, and a third assesses regulatory compliance. An orchestrator consolidates all findings and routes outcomes intelligently, while non-compliant results trigger exception handling and corrective action workflows. Teams gain audit-ready records, consistent framework alignment, and timely reporting without manual bottlenecks.\n\nSetup Steps\nConfigure API credentials with Llama-3.1-70B-Instruct model access\nSet up schedule trigger for monthly/quarterly reporting cycles\nConnect Google Sheets for compliant report storage with appropriate folder permissions\nConfigure compliance routing logic based on validation outcomes\nCustomize AI agent prompts for specific regulatory frameworks and industry requirements\n\nPrerequisites\nNVIDIA NIM API key and Google Sheets access with write permissions.\n\nUse Cases\nAutomates monthly GHG reporting and EPA compliance submissions\n\nCustomization\nExtend with region-specific regulations and integrate live emissions monitoring systems\n\nBenefits\nCuts report preparation time by 80% and eliminates manual calculation errors",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

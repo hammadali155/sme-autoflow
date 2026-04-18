@@ -1,0 +1,13 @@
+{
+  "id": 4235,
+  "name": "Monitor and Track brand Sentiment on Facebook Groups with Bright data",
+  "description": "\nWorkflow documentation updated on  21 May 2025\n \nThis workflow keeps track of your brand mentions across different Facebook groups and provides an analysis of  the posts as positive, negative or neutral and updates this to Googe sheets for further analysis\n\nThis is useful and relevants for brands looking to keep track of what people are saying about their brands and guage the customer satisfaction or disatisfaction based on what they are talking about\n\nWho is this template for?\nThis workflow is for you if You\n\nNeed to keep track of your brand sentiments across different niche facebook groups \nOwn a saas and want to monitor it across different local facebook Groups  \nAre looking to do some competitor research to understand what others dont like about their products\nAre testing the market on different market offerings and products to get best results\nAre looking for sources other that review sites for product, software or service reviews\nNeed to keep track of your brand sentiments across different niche facebook groups\nAre starting on market research and would like to get insights from differnt facebook groups on app usage, strngths weaknesses, features etc\n\nHow it works\nYou will set the desired schedule by which to monitor the groups\nThis gets the brand names and facebook Groups to monitor.\n\nSetup Steps\nBefore you begin\nYou will need access to a Bright Data API to run this workflows\nMake a copy of the sheet below and add the urls for the facebook groups to scrap and the brand names you wish to monitor.\n\n\nImport the workflow json to your canvas\nMake a copy of this Google sheet to get started easily\nSet your APi key in the Map out the Google sheet to your tables\nYou can use/update the current AI models to differnt models eg Gemini or anthropic\nRun the workflow\n\nSetup B\nBright Data provides an option to receive the results on an external webhook via a POST call. This can be collected via the \n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.sentimentAnalysis",
+    "@n8n/n8n-nodes-langchain.informationExtractor",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

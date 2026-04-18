@@ -1,0 +1,14 @@
+{
+  "id": 12988,
+  "name": "Analyze global supply chain sustainability and risk with GPT-4o and email alerts",
+  "description": "How It Works\nThis workflow automates supply chain monitoring and risk management by deploying multiple specialized AI agents to analyze different supply chain dimensions simultaneously. Designed for supply chain managers, procurement teams, and logistics coordinators, it solves the critical challenge of real-time supply chain visibility and proactive risk mitigation across complex global networks. The system triggers on schedule, fetches current supply chain data, then deploys four specialized AI agents—Enterprise Executor for strategic coordination, Provider Generator for supplier assessment, Circular Economy analyzer for sustainability metrics, and Logistics Optimizer for distribution efficiency. Each agent leverages OpenAI models with dedicated tools for calculations and data parsing. Results are merged, analyzed for risk levels (critical, high, normal), and routed to appropriate stakeholders via email with risk-specific formatting and urgency levels.\n\nSetup Steps\nConfigure Schedule Trigger with desired monitoring frequency \nSet up OpenAI API credentials for all four AI agent nodes\nConfigure Fetch Supply Chain Data node with your ERP/SCM system API endpoint\nCustomize Enterprise Executor Agent tools with your strategic KPIs\nUpdate Provider Generator Agent with supplier evaluation criteria\nConfigure Circular Economy Agent with sustainability metrics and targets\nPrerequisites\nActive OpenAI API account with sufficient credits, supply chain management system with API access\nUse Cases\nDaily supply chain health monitoring, supplier risk assessment, inventory shortage prediction\nCustomization\nModify agent prompts for industry-specific analysis, adjust risk scoring algorithms\nBenefits\nProvides 360-degree supply chain visibility, enables proactive risk mitigation",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCode"
+  ],
+  "tags": []
+}

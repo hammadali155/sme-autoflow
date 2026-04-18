@@ -1,0 +1,13 @@
+{
+  "id": 12256,
+  "name": "Review and approve employee expenses with forms, OpenAI and Google Workspace",
+  "description": "How it works\nThis workflow automates employee expense reimbursements from submission to final resolution. Expenses are captured via a form, reviewed by an AI agent for justification, and routed to managers for approval or clarification. Approved expenses notify employees instantly, while rejected or unclear cases automatically schedule a follow-up discussion. All actions are logged to keep finance records clean and auditable.\n\nStep-by-step\nStep 1: Capture, summarize, and request approval**\n  On Expense Form Submission – Captures structured expense details submitted by employees.\n  Append row in sheet – Stores each expense entry in Google Sheets for tracking.\n  AI Agent – Reviews the expense description and validates whether the full amount is justified.\n    OpenAI Chat Model – Powers the AI reasoning used to analyze the expense.\n    Output Parser – Converts the AI response into a structured decision format.\n  If – Routes the flow based on whether the expense is appropriate or not.\n\nStep 2: Manager reviews and responds**\n  Send Email to Manager for Approval – Sends an approval email when the expense is justified.\n  Send Email to Manager for Approval1 – Sends a clarification-required email when justification is unclear.\n  If1 – Checks the manager’s approve or reject response from the email.\n\nStep 3: Notify employee or schedule discussion**\n  Send a message – Notifies the employee when the expense is approved.\n  Booking Agent – Automatically finds the next available business-day time slot if the expense is rejected.\n    OpenAI – Interprets availability rules and slot selection logic.\n    Get Events – Fetches existing calendar events for the selected day.\n    Check Availability – Identifies free time slots within working hours.\n    Output Parser1 – Structures the selected meeting time.\n  Send a message2 – Emails the employee with discussion details when clarification is required.\n\nWhy use this?\nEnforce consistent expense validation before manager review.\nReduce manual back-and-forth between employees, managers, and finance.\nKeep a centralized, auditable record of all expense submissions.\nSpeed up reimbursements with automated approvals and notifications.\nHandle rejected expenses professionally with automatic discussion scheduling.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

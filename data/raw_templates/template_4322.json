@@ -1,0 +1,12 @@
+{
+  "id": 4322,
+  "name": "Classify Lead Sentiment with Google Gemini and Send WhatsApp Responses via Typeform & Supabase",
+  "description": "\nAutomatically classify incoming leads based on the sentiment of their message using Google Gemini, store them in Supabase by category, and send tailored WhatsApp messages via the official WhatsApp Cloud API.\n\n✅ Use Case:\nThis workflow is ideal for sales, onboarding, and customer support teams who want to:\n\nUnderstand the tone and urgency of each lead\n\nPrioritize hot leads instantly\n\nSend smart, automatic WhatsApp replies based on user sentiment\n\n🧠 How it works:\nCapture lead via a Typeform webhook\n\nClean and structure the data (name, email, message, etc.)\n\nRun sentiment analysis using Google Gemini to classify the message as:\n\nPositive → Hot Lead\n\nNeutral → Warm Lead\n\nNegative → Cold Lead\n\nStore lead data in Supabase under the corresponding category\n\nMerge data to unify flow paths\n\nSend WhatsApp message using the official WhatsApp Cloud API, with a custom reply for each sentiment result\n\n🔧 Tools used:\nTypeform (incoming data)\n\nGoogle Gemini (AI-based sentiment classification)\n\nSupabase (database)\n\nWhatsApp Cloud API (response automation)\n\n🏷 Tags:\nAI, Sentiment Analysis, Lead Qualification, Supabase, WhatsApp, Gemini, Typeform, CRM, Automation, Customer Engagement\n\n",
+  "nodes": [
+    "n8n-nodes-base.supabase",
+    "n8n-nodes-base.whatsApp",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.sentimentAnalysis"
+  ],
+  "tags": []
+}

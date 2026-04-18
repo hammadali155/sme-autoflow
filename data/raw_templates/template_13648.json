@@ -1,0 +1,11 @@
+{
+  "id": 13648,
+  "name": "Generate social media posts with GPT-4 for LinkedIn, X, and Facebook",
+  "description": "Automatically generates engaging marketing posts using OpenAI and publishes them across LinkedIn, Twitter (X), and Facebook. Creates platform-optimized content with hashtags, emojis, and proper formatting.\n\nHow it works\n\nTrigger — Runs daily at 10 AM or manual trigger for on-demand content\nGenerate — Creates tailored marketing content using OpenAI GPT-4 based on topic/theme\nOptimize — Customizes content for each platform (character limits, hashtags, tone)\nReview — Optional human approval gate before publishing\nPublish — Auto-posts to LinkedIn, Twitter, and Facebook simultaneously\nTrack — Logs all posts to database for analytics and content history\nNotify — Sends confirmation to Slack with links to published posts\n\nSetup steps\n\nOpenAI API — Add your OpenAI API key in credentials\nSocial Media APIs — Configure LinkedIn, Twitter (X), and Facebook credentials\nPostgreSQL — Create social_posts table to store post history\nSlack — Add webhook URL for notifications\nContent Topics — Customize the topic list in the initial node\nApproval (Optional) — Enable/disable manual review gate\nTest — Run manually first, then activate for daily automation\n\nWhat It Does:\n\nRandomly selects content topics and types for variety\nGenerates engaging posts using OpenAI\nOptimizes content for each platform (character limits, hashtags, tone)\nPublishes simultaneously to all three platforms\nStores complete records in database\nSends confirmation notifications to Slack\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

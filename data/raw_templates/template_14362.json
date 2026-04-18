@@ -1,0 +1,14 @@
+{
+  "id": 14362,
+  "name": "Capture, score and route Gmail leads with Groq Llama 3.3, Supabase and Slack",
+  "description": "How it works  \nThis workflow captures incoming leads from Gmail, validates and stores them in Supabase, then uses AI to score and classify each lead. Based on the classification, leads are automatically routed to the appropriate Slack channel. It runs continuously with a wait cycle to process new and updated leads. The result is a fully automated lead qualification and routing system.\n\nStep-by-step  \n\nLead capture and validation**  \n  Gmail Trigger – Monitors inbox for new lead emails.  \n  Get a message – Retrieves full email content.  \n  Normalize Incoming Lead Data – Extracts name, message, email, and source.  \n  Validate Lead Data – Ensures required fields are present.  \n\nLead storage and notification**  \n  Notify New Lead (Slack) – Sends alert to Slack channel.  \n  Store Lead in Database – Saves lead data in Supabase.  \n\nAI lead scoring pipeline**  \n  Wait – Delays execution before next cycle.  \n  Fetch Unscored Leads – Retrieves leads with score = 0.  \n  AI Lead Scoring Engine – Generates score and summary.  \n    LLM (Scoring) – Provides AI model for scoring.  \n    Structured Output Parser – Formats AI response.  \n  Map AI Score Output – Prepares score data fields.  \n  Update Lead Score – Updates score and status in database.  \n\n\nLead qualification and classification**  \n  Fetch Scored Leads – Gets leads ready for routing.  \n  Check Message Exists – Filters valid messages.  \n  AI Lead Classification Engine – Categorizes lead type.  \n    LLM (Classification) – Provides classification logic.  \n\nSmart routing and notifications**  \n  Route Lead by Category – Splits leads by category.  \n  Send to Sales Channel – Sends sales leads to Slack.  \n  Send to Support Channel – Sends support leads.  \n  Send to Billing Channel – Sends billing-related leads.  \n  End – Stops workflow for unmatched cases.  \n\nWhy use this?  \nAutomatically prioritizes high-quality leads using AI scoring  \nEliminates manual lead sorting and routing effort  \nEnsures faster response by notifying the right team instantly  \nCentralizes lead data in a structured database  \nScales easily for high-volume inbound lead processing  ",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.supabase",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGroq"
+  ],
+  "tags": []
+}

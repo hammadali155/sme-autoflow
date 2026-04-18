@@ -1,0 +1,10 @@
+{
+  "id": 11941,
+  "name": "Automated Employee Offboarding: Lock Redmine & GitLab Accounts using Odoo 18",
+  "description": "📌 Who is This For?\nIT Ops, HR, and Security teams automating employee offboarding. Zero manual work: Disable access to Redmine, GitLab, and more- right after their last day. Boost security, cut risks, and stay compliant.\n\n📌 The Problem It Solves\nOffboarding is messy and slow:\n\nHR flags ending contracts.\nIT hunts down accounts manually (Redmine, GitLab, etc.).\nMisses happen, risks linger.\n\nThis n8n workflow queries Odoo 18 daily, spots offboardees, and locks accounts automatically.\n\n📌 What It Does\n\nTriggers** daily (e.g., 5 PM weekdays).\nQueries** Odoo 18 for employees ending today.\nFilters** active users needing offboarding.\nChecks & Locks** Redmine accounts via API.\nChecks & Revokes** GitLab access via API.\nNotifies** via Slack/Teams/email with summary.\nHandles Errors**: Retries failures, logs issues.\n\n📌 Quick setup\n\nOdoo 18 API (read employee end dates/last shifts).\nRedmine Admin API key.\nGitLab Admin token (for locking users).\nSlack/Teams webhook or SMTP for alerts.\nCron schedule (e.g., daily 5 PM weekdays, skip weekends).\n\n📌 Customize It\n\nAdd Systems**: Jira, Confluence, LDAP—easy toggles.\nNotification**: Full reports or alerts-only.\nError Rules**: Retries, escalations.\nAudit Logs**: Save to DB, S3, Sheets, or dashboard.\n\n📌 Results\n\n100% automated: Accounts locked on exit day. No orphans, no workload, full compliance.\n\n📌 Workflow in Action\n\nSchedule trigger fires.\nPull Odoo offboardees.\nAPI checks & disables Redmine/GitLab.\nLogs + summary notification.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

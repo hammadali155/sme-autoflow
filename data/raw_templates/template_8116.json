@@ -1,0 +1,13 @@
+{
+  "id": 8116,
+  "name": "Automate Meeting Notes Summaries with Gemini AI & Slack Notifications",
+  "description": "📝 Meeting Notes Summarizer & Slack Notifier\n\nEasily keep your team aligned by summarizing meeting notes, extracting action items, and delivering them directly to Slack.\n\n🚀 What This Workflow Does\n⏰ Triggers on a schedule to fetch meeting data from your note-taking tool  \n📄 Retrieves meeting summaries and action items using the MeetGeek API  \n🤖 Uses Google Gemini AI to generate concise summaries and action points  \n🎨 Restructures the output into Slack Block Kit format  \n📢 Sends daily Slack notifications with clear summaries and actionable tasks  \n\n👥 Who Is This For?\n👩‍💼 Teams that want automated daily meeting briefs  \n📌 Project managers who need action items clearly assigned  \n🌍 Remote or hybrid teams using Slack as their main communication hub  \n⏳ Anyone looking to reduce the time spent reviewing long meeting notes  \n\n🛠️ Technical Requirements\n🔑 API key & credentials for your meeting note-taking app  \n🤝 Google Gemini AI credentials  \n💬 Slack workspace with proper OAuth setup  \n\n⚡ Set Up the Workflow with Ease\n🗂️ Configure your meeting note API in the “Get Meetings List” and “Summary” nodes.  \n🤖 Add Gemini AI credentials for generating summaries.  \n🔗 Connect your Slack channel for notifications.  \n✅ Activate the workflow so that your team will start receiving daily meeting insights automatically.  \n\n🎨 Want to Customize It Further?\n🔄 Change the trigger schedule (daily, weekly, or after each meeting).  \n🎭 Modify the Slack Block Kit layout for different formatting styles.  \n📧 Add extra integrations like email, Notion, or Google Docs to save notes.  \n✍️ Adjust the AI prompt for different summary styles (short/long, formal/casual, etc.).  \n🔍 Filter meetings by specific teams, projects, or keywords.  \n🌐 Customize the API URL in the HTTP Request node to connect with other note-taking tools or different API endpoints.  \n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

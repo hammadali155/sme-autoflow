@@ -1,0 +1,24 @@
+{
+  "id": 4008,
+  "name": "AI-Powered Auto-Generate Exam Questions and Answers from Google Docs with Gemini",
+  "description": "This workflow automates the creation of exam questions (both open-ended and multiple-choice) from educational content stored in Google Docs, using AI-powered analysis and vector database retrieval\n\nThis workflow saves educators hours of manual work while ensuring high-quality, curriculum-aligned assessments. Let me know if you'd like help adapting it for specific subjects!\n\nUse Cases  \nEducators**: Rapidly generate quizzes, midterms, or flashcards.  \nE-learning platforms**: Automate question banks for courses.  \nCorporate training**: Create assessments for employee onboarding.  \n\nTechnical Requirements:  \nAPIs**: Google Gemini, OpenAI, Qdrant, Google Workspace.  \nn8n Nodes**: LangChain, Google Sheets/Docs, HTTP requests, code blocks.  \n\nThis workflow combines AI efficiency with human-curated quality, making it a powerful tool for modern education and training.  \n\nAdvantages of This Workflow\n\n✅ Fully Automated Exam Generation: From document to fully formatted quiz content with no manual intervention.\n✅ Supports Comprehension and Critical Thinking: Questions are designed to go beyond factual recall, including inference and application.\n✅ Uses AI and RAG for Accuracy: Ensures that answers are grounded in the document content, reducing hallucination.\n✅ Seamless Google Integration: Pulls content from Google Docs and writes outputs to Google Sheets.\n✅ Scalable for Any Subject: Works with any article or content domain as input.\n✅ Modular and Customizable: Can be easily adapted to generate different question types or to use other LLMs or storage systems.\n\nHow It Works  \nDocument Ingestion:  \n   The workflow starts by fetching an educational document (e.g., textbook chapter, lecture notes) from Google Docs.  \n   Converts the document to Markdown for structured processing.  \n\nAI Processing:  \n   Splits text into chunks and generates vector embeddings (via OpenAI) for semantic analysis.  \n   Stores embeddings in Qdrant (vector database) for retrieval.  \n\nQuestion Generation:  \n   Open-ended questions: Google Gemini AI creates 10 critical-thinking questions.  \n   Multiple-choice questions: Generates 10 MCQs (1 correct + 3 plausible distractors) using RAG to validate answers against the vector DB.  \n\nAnswer Validation:  \n   For open questions: Retrieves context-aware answers from the vector store.  \n   For MCQs: Ensures distractors are incorrect but believable via AI cross-checking.  \n\nOutput:  \n   Saves questions/answers to Google Sheets in two tabs:  \n     Open questions: Question + AI-generated answer.  \n     Closed questions: MCQ + options + correct answer.  \n\nSet Up Steps  \nPrerequisites:  \n   APIs/Accounts:  \n     Google Workspace (Docs + Sheets).  \n     OpenAI (for embeddings).  \n     Google Gemini (for question generation).  \n     Qdrant (vector DB – self-hosted or cloud).  \n   n8n Nodes: Ensure LangChain, Google Sheets/Docs, and HTTP request nodes are installed.  \n\nConfigure Connections:  \n   Link credentials for:  \n     Google Docs/Sheets (OAuth2).  \n     OpenAI (API key).  \n     Google Gemini (API key).  \n     Qdrant (URL + API key).  \n\nCustomize Input:  \n   Replace the default Google Doc ID in the \"Get Doc\" node with your source document.  \n   Adjust chunk size/overlap (Token Splitter node) for optimal text processing.  \n\nTweak Question Generation:  \n   Modify prompts in:  \n     \"Open questions\" node: Adjust criteria (e.g., difficulty, question types).  \n     \"Closed questions\" node: Edit MCQ formatting rules.  \n\nOutput Settings:  \n   Update the Google Sheet ID in \"Write open\" and \"Write closed\" nodes.  \n   Map columns in Google Sheets to match question/answer formats.  \n\nRun & Automate:  \n   Trigger manually (\"Test workflow\") or schedule periodic runs (e.g., for updated content).  \n\nNeed help customizing?  \nContact me for consulting and support or add me on Linkedin. ",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDocs",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserItemList",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+    "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

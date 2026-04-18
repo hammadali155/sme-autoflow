@@ -1,0 +1,14 @@
+{
+  "id": 5069,
+  "name": "LinkedIn Profile Scraper & Personalized Outreach using PhantomBuster + GPT-4",
+  "description": "Description\n\nThis plug-and-play n8n workflow template helps you automate LinkedIn profile data extraction and transform it into structured, enriched outputs using PhantomBuster and GPT-4. Perfect for lead generation, recruiting, or growth marketing teams, this pipeline handles scraping, structuring, and messaging—all in one flow.\n\nRequirements\n\nPhantomBuster Setup\nCreate a PhantomBuster account.\nUse the LinkedIn Profile Scraper Phantom (or your custom one).\nGet your API Key and Agent ID from PhantomBuster dashboard.\nConfigure your LinkedIn Phantom with an active LinkedIn session cookie (available from your browser’s developer tools).\n\nOpenAI or Azure OpenAI\n\nProvide your GPT-4 / GPT-4o API Key.\nYou can use OpenAI or Azure's hosted model.\n\n(Optional) Google Sheets\n\nUse Sheets for batch profile inputs or output logging.\n\nWhat This Template Does\n\nStep-by-Step Flow:\n\n🔁 Manual Trigger / Google Sheets input – Accepts LinkedIn profile URLs.\n\n🚀 Launch PhantomBuster Agent – Starts the scraping job with provided LinkedIn URLs.\n\n⏳ Wait Node (45 sec) – Allows PhantomBuster to finish execution.\n\n📥 Download Scraped Output – Fetches the download URL for JSON/CSV from the container.\n\n📂 Temp File Management – Deletes temp URLs or intermediate data as needed.\n\nAI Parser (GPT-4) – Parses and extracts:\n\nName\nHeadline\nCompany\nDesignation\nIndustry\nLocation\nRecent roles\n\n(Optional) Create personalized outreach messages using structured output.\n\nOutput Structured JSON or CSV – Send to CRM, Google Sheets, Airtable, etc.\n\nBest For\n\n📈 Sales/BDRs building high-quality prospect lists\n\n🧑‍💼 Recruiters extracting enriched candidate info\n\n💼 Founders & Marketers creating targeted lead magnets\n\n🧩 Tool builders building products using LinkedIn profile data",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi"
+  ],
+  "tags": []
+}

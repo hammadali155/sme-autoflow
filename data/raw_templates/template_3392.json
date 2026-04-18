@@ -1,0 +1,9 @@
+{
+  "id": 3392,
+  "name": "Create and Join Call Sessions with Plivo and UltraVox AI Voice Assistant",
+  "description": "This workflow template creates an audio stream session on UltraVox compatible with Plivo and sends it to Plivo.\n\nHow It Works : \nPlivo initiates a call and requests the Answer URL.\n\nThe workflow responds with Plivo XML to join the session.\n\nNote:\nEnsure you update the UltraVox API Key in the credentials.\nUpdate System Prompt based on your requirements.\n\n Check Youtube Video\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

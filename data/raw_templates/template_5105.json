@@ -1,0 +1,11 @@
+{
+  "id": 5105,
+  "name": "Automatically Post Latest Reddit Content to Discord with Image Extraction",
+  "description": "Reddit Poster to Discord\nThis workflow checks Reddit every 15 minutes for new posts and sends selected posts to a Discord channel via webhook.\n\nFlow Overview:\nSchedule Trigger\nRuns every 15 minutes.\n\nFetch Latest Posts\nRetrieves up to 3 new posts from any subreddit.\n\nFilter Posts\nSkips moderator or announcement posts based on author ID.\n\nFetch Full Post Data\nGets full details for the remaining post.\n\nExtract Image URL\nParses the post to extract a direct image link.\n\nSend to Discord\nSends the post title, image, and link to a Discord webhook.\n\nSetup Notes:\nCreate a Reddit app and connect credentials in n8n.\n\nAdd your subreddit name to both Reddit nodes.\n\nConnect a Discord webhook for posting.",
+  "nodes": [
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.reddit",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

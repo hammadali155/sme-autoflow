@@ -1,0 +1,13 @@
+{
+  "id": 12276,
+  "name": "Verify document authenticity with Claude and record proofs on blockchain",
+  "description": "How It Works\nThis workflow automates document authenticity verification by combining AI-based content analysis with immutable blockchain records. It is built for compliance teams, legal departments, supply chain managers, and regulators who need tamper-proof validation and auditable proof. The solution addresses the challenge of detecting forged or altered documents while producing verifiable evidence that meets legal and regulatory standards. Documents are submitted via webhook and processed through PDF content extraction. Anthropic’s Claude analyzes the content for authenticity signals such as inconsistencies, anomalies, and formatting issues, returning structured authenticity scores. Verified documents trigger blockchain record creation and publication to a distributed ledger, with cryptographic proofs shared automatically with carriers and regulators through HTTP APIs. \n\nSetup Steps\n\nConfigure webhook endpoint URL for document submission  \nAdd Anthropic API key to Chat Model node for AI \nSet up blockchain network credentials in HTTP nodes for record preparation\nConnect Gmail account and specify compliance team email addresses  \nCustomize authenticity thresholds \n\nPrerequisites\nAnthropic API key, blockchain network access and credentials \n\nUse Cases\nSupply chain documentation verification for import/export compliance \n\nCustomization\nAdjust AI prompts for industry-specific authenticity criteria \n\nBenefits\nEliminates manual document review time while improving fraud detection accuracy \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

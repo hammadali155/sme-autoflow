@@ -1,0 +1,10 @@
+{
+  "id": 3650,
+  "name": "Auto-reply to FAQs on WhatsApp using Postgres (Module \"FAQ\")",
+  "description": "Who is this for?\n\nThis workflow is designed for businesses or individuals who want to automate responses to frequently asked questions via WhatsApp, while managing their question-and-answer database using Postgres.\n\nWhat problem is this workflow solving?\n\nThis workflow addresses the challenge of efficiently managing and automating responses to customer inquiries. It helps reduce manual effort and ensures quick access to information, while providing an option for customers to request live assistance when needed.\n\nWhat this workflow does\n\nIt allows you to store questions and answers in a Postgres database.\nA link to a bot is shared with customers, enabling them to read the available questions and answers.\nIf a customer does not find an answer to their query, they can request a consultation with a manager.\n\nSetup\n\nCreate tables in Postgres DB  \n   Replace \"n8n\" in the provided SQL script with the name of your schema in the database.\n   Run the SQL script in your database to set up the necessary tables. (The script is available in the workflow.)\n\nAdd Credentials  \n   Set up the WhatsApp integration (OAuth and Account credentials).\n   Connect the Postgres database by adding the necessary credentials.\n\nHow to customize this workflow to your needs\n\nModify the Postgres schema name in the SQL script to match your database configuration.\nUpdate the questions and answers in the database to suit the information you want to provide via the bot.\nCustomize the WhatsApp integration settings to match your account credentials and API details.",
+  "nodes": [
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.whatsApp"
+  ],
+  "tags": []
+}

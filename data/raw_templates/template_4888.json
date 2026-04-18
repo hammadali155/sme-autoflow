@@ -1,0 +1,19 @@
+{
+  "id": 4888,
+  "name": "Voice-Powered Marketing Assistant with ElevenLabs, OpenAI & Content Generation",
+  "description": "🧠 Gwen – The AI Voice Marketing Agent\nGwen is your intelligent voice-powered marketing assistant built in n8n. She combines the power of OpenAI, ElevenLabs, and automation workflows to handle content creation, image generation, and voice delivery — all from a single agent interface.\n\nThis template shows a graphical illustration of how Gwen will work with subworkflows. These subworkflows are modular placeholders and need to be linked into Gwen for full deployment.\n\n✨ What Gwen Can Do\n📝 Generate Voice-Optimized Blog Posts\nTailored for your target audience with engaging intros, real-time research, and polished structure.\n🖼️ Create AI-Generated Visuals\nFrom simple concepts to detailed image prompts and Google Drive uploads.\n🧑‍🎨 Edit Images On Demand\nModify past images with a few words — powered by OpenAI's image editing API.\n🔍 Search Image Database\nQuickly find past content using title or intent.\n🧠 Think Tool\nGwen uses this to clarify uncertain tasks or analyze complex requests.\n🔊 Deliver Results in Natural Voice\nWith ElevenLabs, Gwen transforms all responses into human-like audio, perfect for marketing, social content, or voice interfaces.\n🛠️ Setup Instructions\nEstimated Time: 15–30 mins\n\n✅ Step 1: Subworkflows\n\nImport These Workflows\nBlog Post, Create Image, Edit Image, Search Images\nConnect Them to Gwen\nAssign as tools inside the Gwen agent node (Langchain AI Agent in n8n).\n🎙️ Step 2: Enable ElevenLabs Voice Agent\n\nSign up or log in: https://try.elevenlabs.io\nCopy your API key\nIn the ElevenLabs interface, create a new tool:\nMethod: POST\nURL: https://your-n8n-domain/webhook/042cc868-28b7-42a2-ab65-bc2944fc5a54\nUnder Body Parameters, add:\nprompt → value type: LLM Prompt\nsessionId → value type: Dynamic variable, name: system__conversation_id\nSave and connect this tool to your ElevenLabs agent\nRun a test and check n8n execution logs to confirm Gwen’s voice integration is active\n🔐 Step 3: Credentials to Set\n\nOpenAI – For text and image generation\nElevenLabs – For voice output\nTavily – For real-time research in blog generation\nTelegram – For sending content to users\nGoogle Sheets – To log all outputs like blogs and images\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.toolHttpRequest",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

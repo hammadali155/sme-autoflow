@@ -1,0 +1,11 @@
+{
+  "id": 14981,
+  "name": "Process website contact form submissions with SharePoint and Gmail",
+  "description": "How it works\nThis workflow fires whenever a visitor submits a contact form on your website.\n\nWebhook receives the POST payload (Name, Email, Phone, Message, Date, Time) from your website form.\nLog Submission to SharePoint writes each field into a SharePoint list for permanent record-keeping.\nBuild Branded Email HTML — Code node constructs a fully branded HTML notification email (customize colors and logo to match your brand).\nSend Email Notification delivers the notification via Gmail to your designated recipient address, with Reply-To automatically set to the submitter's email so you can respond in one click.",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.microsoftSharePoint"
+  ],
+  "tags": []
+}

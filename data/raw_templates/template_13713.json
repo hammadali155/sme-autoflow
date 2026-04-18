@@ -1,0 +1,15 @@
+{
+  "id": 13713,
+  "name": "Generate AI research papers with Claude, arXiv, Google Scholar and DOCX export",
+  "description": "How It Works\nThis workflow streamlines academic paper development through a multi-agent AI architecture that collects references, drafts individual sections autonomously, compiles the manuscript, and exports a professionally formatted DOCX file. Tailored for researchers, faculty members, and postgraduate students, it reduces the effort required to plan, write, and format scholarly articles from the ground up. Upon receiving a paper title and abstract, the system initiates web-based literature retrieval and reference extraction, handled by a Research Agent leveraging tools such as Google Scholar. A central Orchestration Agent then coordinates six dedicated writing agents, covering the Introduction, Related Work, Methodology, Results, Discussion, and Conclusion. The generated sections are consolidated with an automatically formatted bibliography, converted into a DOCX document via a document automation script, and prepared for download.\n\nSetup Steps\nConfigure Research Paper Input node with topic, keywords, and paper parameters.\nAdd Anthropic (Claude) API credentials to all Claude Model nodes.\nSet up Google Scholar Search Tool credentials or API key for literature retrieval.\nConnect Google Docs Script node with service account for DOCX generation.\nConfigure workflow output path for DOCX file download or Drive storage.\nPrerequisites\nGoogle Scholar API or search tool access\nGoogle Docs Script or DOCX generation service\nUse Cases\nAutomated first-draft generation for academic journal submissions\nCustomization\nSwap Claude for OpenAI GPT-4 or NVIDIA NIM across writing agents\nBenefits\nGenerates complete, structured research papers fully automatically",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": 13345,
+  "name": "Bulk enrich CSV contact lists with Lusha",
+  "description": "How it works\nReads a CSV file and splits contacts into batches of 100\nEach batch is sent to Lusha's bulk enrichment API in a single call\nEnriched results (phone, email, title, company data) are formatted and exported as a new CSV\n\nSet up steps\nInstall the Lusha community node\nAdd your Lusha API credentials\nPlace your CSV file with an email column in the configured path\nRun the workflow manually — the enriched CSV is saved to the output path",
+  "nodes": [
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

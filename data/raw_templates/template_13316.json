@@ -1,0 +1,15 @@
+{
+  "id": 13316,
+  "name": "Evaluate supply chain risk and orchestrate contingencies with Claude, Google Sheets, Gmail and Slack",
+  "description": "How It Works\nThis workflow automates enterprise risk management by intelligently routing risks across three severity tiers. Built for compliance teams and risk managers, it eliminates manual evaluation bottlenecks and inconsistent escalation. The system retrieves risk data from spreadsheets, calculates severity indicators, then routes items through specialized AI agents—critical risks trigger coordinated multi-agent assessment with Gmail and Slack alerts, medium risks undergo standard AI evaluation, while low risks receive automated acknowledgment. Each severity level follows distinct processing paths ensuring appropriate review depth, stakeholder notification, and audit documentation.\n\nSetup Steps\nConnect Google Sheets with risk data\nConfigure Anthropic API credentials for Claude Model nodes \nSet up Gmail authentication for notification delivery\nConnect Slack workspace and specify channel IDs for critical/low risk alerts\nCustomize risk thresholds \nUpdate parser regex patterns in Code nodes matching assessment output format\n\nPrerequisites\nActive accounts: Google Sheets, Anthropic Claude API, Gmail, Slack.\nUse Cases\nEnterprise compliance monitoring, operational risk management\nCustomization\nModify scoring formulas, adjust severity thresholds, add custom AI criteria\nBenefits\nEliminates manual triage, ensures consistent standards, accelerates critical response",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

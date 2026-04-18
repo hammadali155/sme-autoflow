@@ -1,0 +1,16 @@
+{
+  "id": 12372,
+  "name": "Create active learning notes from YouTube videos with Gemini and Notion",
+  "description": "What this workflow does\n\nTransform YouTube videos into structured Active Learning study sheets using AI. \n\nThis workflow extracts video metadata, transcribes audio with Google Gemini, applies the ICAP Framework (Interactive, Constructive, Active, Passive) for deep learning, and generates micro-goals, Cornell notes, Feynman explanations, and practice tasks—all automatically formatted in Notion.\n\nPerfect for students, educators, and lifelong learners who want to maximize retention from video content.\n\nHow it works\n\nSubmit YouTube URL - User enters video URL via form\nExtract metadata - Retrieves title, channel, publish date, and thumbnail\nDownload & transcribe - Gets audio via RapidAPI and transcribes with Google Gemini\nAI analysis - Applies Active Learning framework to generate structured study content\nCreate Notion page - Builds formatted page with all learning materials\n\nSetup requirements\n\nCredentials needed:\nYouTube Data API (OAuth2)\nGoogle Gemini API key\nRapidAPI key (YouTube Downloader API)\nNotion API integration\n\nBefore running:\nDuplicate the Notion database template (link in workflow sticky note)\nShare database with your Notion integration\nConfigure credentials in n8n\nAdd your RapidAPI key in the HTTP node\nAdd your Notion Database ID in the Build Page Structure node\n\nAll configuration points are clearly marked with sticky notes in the workflow.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.youTube",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

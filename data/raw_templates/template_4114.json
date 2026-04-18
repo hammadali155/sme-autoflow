@@ -1,0 +1,13 @@
+{
+  "id": 4114,
+  "name": "Create AI-Powered WhatsApp Quiz Bot with GPT-4o-mini and Supabase Storage",
+  "description": "Quiz Assistant via WhatsApp with Supabase and OpenAI\n\nCreate a quiz assistant that helps users study a topic of their choice through WhatsApp. Using Supabase and OpenAI, this workflow captures missing user data, stores it, and delivers dynamic quizzes tailored to each topic.\n\nMain Use Cases\n\nGuide users through personalized study sessions\nCollect and store user preferences (name + topic)\nAutomate quiz creation with AI\nDeliver interactive content via WhatsApp\n\nHow It Works\n\nThis workflow is composed of three main paths:\n\n1. User Info Collection\n\nTriggered by an incoming WhatsApp message\nRetrieves existing user data from Supabase\nChecks if the name and topic are already defined\nIf not, sends WhatsApp prompts to collect missing info\nUpdates Supabase with new entries\n\n2. AI Quiz Generation\n\nOnce name and topic are confirmed, the Merge node consolidates all inputs\nData is sent to the AI Agent (OpenAI Chat + Memory)\nThe agent generates a quiz based on the selected topic\n\n3. Response Delivery\n\nThe quiz is sent back to the user via WhatsApp\nFlow ends, ready to restart with the next interaction",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.supabase",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}

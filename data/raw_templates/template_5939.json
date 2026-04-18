@@ -1,0 +1,9 @@
+{
+  "id": 5939,
+  "name": "Monitor n8n Workflow Errors with Telegram Alerts (Multi-language Setup)",
+  "description": "How it works\n\nAutomatically sends Telegram notifications when any n8n workflow fails. Includes workflow name, error message, and execution ID in the alert.\n\nSetup\n\nComplete setup instructions included in the workflow's sticky note in 5 languages:\n🇬🇧 English\n🇪🇸 Español  \n🇩🇪 Deutsch\n🇫🇷 Français\n🇷🇺 Русский\n\nFeatures\n\nMonitors all workflows 24/7\nInstant Telegram notifications\nZero configuration needed\nJust add your bot token and chat ID\n\nImportant\n\n⚠️ Keep this workflow active 24/7 to capture all errors.",
+  "nodes": [
+    "n8n-nodes-base.telegram"
+  ],
+  "tags": []
+}

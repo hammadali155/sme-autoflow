@@ -1,0 +1,10 @@
+{
+  "id": 13300,
+  "name": "Selectively import workflows from GitHub, including nested folders",
+  "description": "This template lets you selectively import n8n workflows from a GitHub repository, even when your repository uses deeply nested folder structures.\n\nUnlike most import workflows, this template does not load everything automatically. Instead, it:\n\t•\tTraverses all nested folders in your repository\n\t•\tCollects every workflow JSON file found\n\t•\tDynamically generates a selection form\n\t•\tAllows you to choose exactly which workflows to load\n\t•\tCleans incompatible fields for n8n API compatibility\n\t•\tCreates workflows directly in your instance\n\nThis makes it ideal for users who:\n\t•\tWork across multiple n8n instances\n\t•\tStore workflows in structured GitHub directories (e.g. YYYY/MM/)\n\t•\tWant precise control over which workflows are restored\n\t•\tManage staging, production, or client environments\n\nIf you maintain workflows in GitHub and need controlled, selective imports, especially across structured folder hierarchies, this template is built for that use case.",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

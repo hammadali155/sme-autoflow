@@ -1,0 +1,11 @@
+{
+  "id": 4217,
+  "name": "Create OpenAI-Compatible API Using GitHub Models for Free AI Access",
+  "description": "This n8n template shows you how to connect Github's Free Models to your existing n8n AI workflows.\n\nWhilst it is possible to use HTTP nodes to access Github Models, The aim of this template is to use it with existing n8n LLM nodes - saves the trouble of refactoring!\n\nPlease note, Github states their model APIs are not intended for production usage! If you need higher rate limits, you'll need to use a paid service.\n\nHow it works\nThe approach builds a custom OpenAI compatible API around the Github Models API - all done in n8n!\nFirst, we attach an OpenAI subnode to our LLM node and configure a new OpenAI credential.\nWithin this new OpenAI credential, we change the \"Base URL\" to point at a n8n webhook we've prepared as part of this template.\nNext, we create 2 webhooks which the LLM node will now attempt to connect with: \"models\" and \"chat completion\".\nThe \"models\" webhook simply calls the Github Model's \"list all models\" endpoint and remaps the response to be compatible with our LLM node.\nThe \"Chat Completion\" webhook does a similar task with Github's Chat Completion endpoint.\n\nHow to use\nOnce connected, just open chat and ask away!\nAny LLM or AI agent node connected with this custom LLM subnode will send requests to the Github Models API. Allowing your to try out a range of SOTA models for free.\n\nRequirements\nGithub account and credentials for access to Models. If you've used the Github node previously, you can reuse this credential for this template.\n\nCustomising this workflow\nThis template is just an example. Use the custom OpenAI credential for your other workflows to test Github models.\n\nReferences\nhttps://docs.github.com/en/github-models/prototyping-with-ai-models\nhttps://docs.github.com/en/github-models\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

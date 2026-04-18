@@ -1,0 +1,12 @@
+{
+  "id": 11813,
+  "name": "Daily RSS Feed Summarizer with Gemini AI to Slack with X Sharing Option",
+  "description": "How it works\n\nThis workflow fetches RSS feeds daily and sends a notification to Slack if new topics are found.\n\nSince standard RSS snippets are often insufficient, the AI visits the source links to summarize the full articles and sends the summaries to Slack.\nYou can then share interesting topics directly to X from Slack using the button.\n\nHow to use\n\nOpen the Gemini Chat Model node (attached to the AI Agent) and set up the Credential.\n  You can obtain an API key from Google AI Studio.\nOpen the Slack node and set up the Credential to allow sending messages.\n  You can create a new Slack App here.\nFinally, open the Config node and update the rssUrls parameter with the RSS feed URLs you want to follow.\n\nCustomizing this workflow\n\nYou can adjust the number of topics fetched per RSS feed by modifying the takeCount parameter in the Config node.",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

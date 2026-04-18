@@ -1,0 +1,14 @@
+{
+  "id": 14622,
+  "name": "Classify and route cold email replies using Claude and Instantly.ai",
+  "description": "Overview :\n\nAutomatically reads every reply to your cold email campaigns in Instantly.ai, uses Claude AI to understand the intent, and takes the right action . No need ofmanual inbox checking needed.\n\nHow it works :\n\nA lead replies to your cold email in Instantly.ai , this workflow starts automatically.\nClaude AI reads the reply and labels it: Interested, Not Now, Unsubscribe, or Referral.\nEach label triggers a different action calendar email, 30-day follow-up, opt-out removal, or referral ask.\nEvery reply gets logged to a Google Sheet automatically.\n\nSetup steps :\n\nInstantly webhook — In Instantly → Settings → Webhooks, add a new webhook. Paste the URL from the Receive Instantly Reply node and set the trigger to Reply Received.\nClaude AI — Click the Claude Haiku node, add your Anthropic API key from console.anthropic.com. Costs less than $0.01 per reply.\nGoogle Sheets — Create a sheet with these column headers: Timestamp | First Name | Last Name | Email | Company | Reply | Classification | Campaign. Connect your Google account in all four Log to Sheets nodes.\nGmail — Connect your Gmail in Send Calendar Link and Send Referral Reply. Replace {{CALENDAR_LINK}} with your booking link.\nSlack (optional) — Connect Slack in Notify Slack - Hot Lead and pick a channel. Don’t use Slack? Right-click the node → Disable.\nInstantly re-sequence — In Re-add to Instantly Sequence, add your Instantly API key and replace {{SEQUENCE_ID}} with your follow-up sequence ID.\nActivate the workflow and send a test reply to confirm everything works.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic"
+  ],
+  "tags": []
+}

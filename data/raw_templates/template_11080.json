@@ -1,0 +1,15 @@
+{
+  "id": 11080,
+  "name": "Track Daily Brand Mentions from Hacker News to Slack with GPT-4o-mini Sentiment Analysis",
+  "description": "📊 Description\nMonitor daily brand visibility and reputation with an automated AI-powered mention tracker. 🔍🤖 This workflow checks Hacker News every morning for new stories matching your brand keyword, classifies each mention’s sentiment and urgency using GPT-4o-mini, and delivers a clean daily summary to Slack. If no mentions are found, the workflow sends a simple “no mentions today” update instead—ensuring your team is always informed without manual monitoring. Perfect for reputation tracking, competitive intelligence, and early warning alerts. 📈💬\n\n🔁 What This Template Does\n1️⃣ Triggers every morning at 09:00 to begin the analysis. ⏰\n 2️⃣ Loads brand name + keyword filters from configuration. 🏷️\n 3️⃣ Fetches relevant mentions from Hacker News using the Algolia API. 🌐\n 4️⃣ Normalizes raw API data into clean fields (title, URL, snippet, author, points). 📄\n 5️⃣ Classifies each mention’s sentiment, stance, topic, and urgency using GPT-4o-mini. 🤖\n 6️⃣ Builds a ranked daily summary including top 10 mentions and sentiment totals. 📊\n 7️⃣ Sends the report to Slack, formatted cleanly and ready for team consumption. 💬\n 8️⃣ If no mentions exist, sends a simple “no new mentions today” message. 🚫\n 9️⃣ Includes an error handler that notifies Slack of any workflow failures. ⚠️\n\n⭐ Key Benefits\n✅ Automatically tracks brand presence without manual searching\n ✅ AI-powered sentiment & urgency analysis for deeper insights\n ✅ Clean Slack summaries keep teams aligned and aware\n ✅ Early detection of negative or high-urgency mentions\n ✅ Zero manual monitoring — runs fully on schedule\n ✅ Suitable for brand monitoring, PR, marketing, and leadership teams\n\n🧩 Features\nDaily schedule trigger\nHacker News API (Algolia) integration\nStructured data normalization\nGPT-4o-mini classification (sentiment, stance, topic, urgency)\nSlack notifications (detailed report or no-mention message)\nError-handling pipeline with Slack alerts\nFully configurable brand keywords\n\n🔐 Requirements\nSlack API credentials\nOpenAI API key (GPT-4o-mini)\nNo authentication required for Hacker News API\nn8n with LangChain nodes enabled\n\n🎯 Target Audience\nBrand monitoring & PR teams\nAI companies tracking public sentiment\nFounders monitoring mentions of their product\nMarketing teams watching trends & community feedback\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

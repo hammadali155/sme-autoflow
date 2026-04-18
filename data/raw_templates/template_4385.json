@@ -1,0 +1,15 @@
+{
+  "id": 4385,
+  "name": "AI-Powered Calendar & Meeting Digest with Gmail and GPT-4o/Claude - Daily Brief",
+  "description": "🛠 How It Works\n\nThe Daily Calendar Brief is an automated n8n workflow designed to prep you each morning with a rich, executive-style email summary of your day. It pulls data from your calendar, email, and external contact sources to deliver a contextualized, prioritized briefing.\n\nDaily Trigger\n\nRuns every weekday morning at 7:00 AM using a schedule node.\n\nCalendar Parsing\n\nGrabs all Google Calendar events for the day and extracts details like:\n\t•\tEvent title, time, and duration\n\t•\tFull attendee list\n\t•\tMeeting description\n\nAttendee Intelligence\n\nFilters for external attendees and:\n\t•\tScrapes recent email threads with them\n\t•\tUses Hunter and LinkedIn to enrich attendee info with roles, bios, locations, and recent activity\n\nBrief Assembly\n\nCombines:\n\t•\tEvent metadata\n\t•\tAttendee research\n\t•\tRecent conversations\n\n\nEmail Delivery\n\nRenders the Markdown as HTML and sends a polished email to your inbox with:\n\t•\tMeeting timeline & attendees\n\t•\tKey takeaways & extra context\n\t•\tConflicts & FYIs\n\nSetup Steps\n\nPrerequisites\n\t•\tn8n instance (self-hosted or cloud)\n\t•\tGoogle Calendar and Gmail OAuth credentials\n\t•\tOpenRouter key (for GPT-4o or Claude 3.7)\n\nConfiguration\n\tAuthorize Credentials\n\t•\tConnect Google Calendar and Gmail nodes with OAuth2\n\t•\tSet up OpenRouter credentials for AI processing\n\tSet Your Email\nUpdate the Send Email node with your preferred destination address (default is you@yourcompany.com).\n\tSet Your Domain Filter\nIn the “Identify External Attendees” node, adjust the filter value yourcompany.com to your actual domain.\n\tCustomize Prompts (Optional)\nYou can fine-tune tone, formatting, or limits in the two language model nodes:\n\t•\tResearch and Develop Brief (attendee context + email summary)\n\t•\tSummarize Schedule (overall Markdown brief formatting)\n\tActivate Workflow\n\nEnable the workflow and test it manually once to validate your setup. Confirm that the email lands correctly.",
+  "nodes": [
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

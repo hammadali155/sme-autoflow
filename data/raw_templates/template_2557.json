@@ -1,0 +1,22 @@
+{
+  "id": 2557,
+  "name": "Hacker News to Video Content",
+  "description": "Hacker News to Video Content\n\nOverview\nThis workflow converts trending articles from Hacker News into engaging video content. It integrates AI-based tools to analyze, summarize, and generate multimedia content, making it ideal for content creators, educators, and marketers.\n\nFeatures\nArticle Retrieval:\n   Pulls trending articles from Hacker News.\n   Limits the number of articles to process (configurable).\n\nContent Analysis:\n   Uses OpenAI's GPT model to:\n     Summarize articles.\n     Assess their relevance to specific topics like automation or AI.\n     Extract key image URLs.\n\nImage and Video Generation:\n   Leonardo.ai: Creates stunning AI-generated images based on extracted prompts.\n   RunwayML: Converts images into high-quality videos.\n\nStructured Content Creation:\n   Parses content into structured formats for easy reuse.\n   Generates newsletter-friendly blurbs and social media-ready captions.\n\nCloud Integration:\n   Uploads generated assets to:\n     Dropbox\n     Google Drive\n     Microsoft OneDrive\n     MinIO\n\nSocial Media Posting (Optional):\n   Supports posting to YouTube, X (Twitter), LinkedIn, and Instagram.\n\nWorkflow Steps\n\n1. Trigger\nInitiated manually via the \"Test Workflow\" button.\n\n2. Fetch Articles\nRetrieves articles from Hacker News.\nLimits the results to avoid processing overload.\n\n3. Content Filtering\nEvaluates if articles are related to AI/Automation using OpenAI's language model.\n\n4. Image and Video Generation\nGenerates:\n  AI-driven image prompts via Leonardo.ai.\n  Videos using RunwayML.\n\n5. Asset Management\nSaves the output to cloud storage services or uploads directly to social media platforms.\n\nPrerequisites\n\nAPI Keys**:\n  Hacker News\n  OpenAI\n  Leonardo.ai\n  RunwayML\n  Creatomate\n\nn8n Installation**:\n  Ensure n8n is installed and configured locally or on a server.\n\nCredentials**:\n  Set up credentials in n8n for all external services used in the workflow.\n\nCustomization\nReplace Hacker News with any other data source node if needed.\nConfigure the \"Article Analysis\" node for different topics.\nAdjust the cloud storage services or add custom storage options.\n\nUsage\nImport this workflow into your n8n instance.\nConfigure your API credentials.\nTrigger the workflow manually or schedule it as needed.\nCheck the outputs in your preferred cloud storage or social media platform.\n\nNotes\nExtend this workflow further by automating social media posting or newsletter integration.\nFor any questions, refer to the official documentation or reach out to the creator.\n\nAbout the Creator\nThis workflow was built by AlexK1919, an AI-native workflow automation architect. Check out the overview video for a quick demo.\n\nTools Used\nLeonardo.ai**\nRunwayML**\nCreatomate**\nHacker News API**\nOpenAI GPT**\n\nFeel free to adapt and extend this workflow to meet your specific needs! 🎉\n",
+  "nodes": [
+    "n8n-nodes-base.dropbox",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.microsoftOneDrive",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.hackerNews",
+    "n8n-nodes-base.youTube",
+    "n8n-nodes-base.s3",
+    "n8n-nodes-base.linkedIn",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.toolHttpRequest"
+  ],
+  "tags": []
+}

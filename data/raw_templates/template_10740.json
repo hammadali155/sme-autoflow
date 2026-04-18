@@ -1,0 +1,11 @@
+{
+  "id": 10740,
+  "name": "Automate External Attack Surface Mapping with Shodan API and DNS Lookups",
+  "description": "The Bug Bounty Target Recon n8n workflow is a powerful automation tool for security professionals and ethical hackers.\n\nIt efficiently automates the time-consuming process of external attack surface mapping.\n\nBy taking a domain, the workflow performs DNS Lookups to identify all associated IP addresses, and then utilizes the Shodan API to query:\n\nDetailed service banners\nOpen ports\nTechnologies\nKnown vulnerabilities\n\nThis system delivers crucial, organized OSINT data, saving the user hours of manual scripting and reconnaissance, and providing a clear, actionable map of a target's exposed infrastructure.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

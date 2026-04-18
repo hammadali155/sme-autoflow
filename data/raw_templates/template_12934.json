@@ -1,0 +1,11 @@
+{
+  "id": 12934,
+  "name": "Summarize YouTube videos in Slack using AssemblyAI transcription and OpenAI",
+  "description": "🧠 How it works\nThis workflow lets users generate structured summaries from YouTube videos directly inside Slack using n8n, AssemblyAI, and OpenAI.\n\nWhen a user submits a YouTube link via a Slack slash command, the workflow extracts the video ID and validates the video duration. Videos longer than the supported limit are stopped early with a clear message sent back to Slack.\n\nFor valid videos, the workflow downloads the video audio as an MP3 file and sends it to AssemblyAI for transcription. Once the transcription is complete, the transcript is passed to an AI model to generate a structured summary.\n\nThe final result includes a concise TL;DR, key takeaways, and notable quotes, which are formatted and posted back to Slack asynchronously using the original response URL.\n\n⚙️ Features\n\t•\tTriggers from a Slack slash command with a YouTube link\n\t•\tValidates video length before processing (maximum 10 minutes)\n\t•\tDownloads YouTube audio as MP3 using RapidAPI\n\t•\tTranscribes audio using AssemblyAI\n\t•\tGenerates structured summaries (TL;DR, key takeaways, notable quotes)\n\t•\tPosts the summarized result back to Slack asynchronously\n\n💡 Use cases & expected outcomes\n\t•\tEducational YouTube videos → Receive a clear summary instead of watching the full video\n\t•\tLong-form talks or interviews → Quickly get key points and memorable quotes\n\t•\tResearch and learning → Extract insights from videos without manual note-taking\n\t•\tContent discovery → Decide whether a video is worth watching based on its summary\n\nIn all cases, users receive a clear, structured summary of a YouTube video directly in Slack.\n\n💡 Perfect for\n\t•\tTeams sharing YouTube links and wanting quick context\n\t•\tResearchers and learners reviewing long video content\n\t•\tContent creators analyzing videos efficiently\n\t\n\n🧩 Notes\n\t•\tPlease note that this workflow generates summaries, not full transcripts",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

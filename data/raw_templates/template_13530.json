@@ -1,0 +1,12 @@
+{
+  "id": 13530,
+  "name": "Verify email content against Google Sheets and Gmail logs",
+  "description": "How it works\n\n Input: Google Sheets provides “Expected Content” rows (one per block/section).\nHTML Parse:** A JS/HTML step extracts Actual Content from the email’s HTML (from Gmail or any provided HTML source).\nMerge:** Expected and Actual items are merged into aligned pairs for comparison.\nCompare:** A JS node compares strings and produces a Result (Pass/Fail). (This flow intentionally stops at the result and does not compute a mismatch reason.)\nLog:** The workflow writes back “Actual Content” + “Result” to Google Sheets for reporting.\n\nSetup steps\n\nGoogle Sheets**\nCreate a sheet with columns: SectionId, ExpectedContent, ActualContent, Result.\nPopulate SectionId + ExpectedContent for each content block you want to verify.\nEmail HTML source**\nUse a Gmail node to pull message HTML or use HTTP Request/Read Binary File + HTML/JS to supply the HTML.\nExtraction logic (JS/HTML)**\nImplement selectors/XPaths/DOM parsing for each SectionId to extract Actual Content.\nNormalize whitespace and trim HTML entities for a fair comparison.\nMerge & Compare**\nMerge on SectionId to align Expected ↔ Actual.\nIn the Code (JS) node, compare strings and set Result to Pass if equal (or meets your rule), otherwise Fail.\nWrite back**\nUse Google Sheets to update ActualContent and Result for each row.\n\nRequirements\n\nn8n with access to: Google Sheets, Code/HTML, and (optionally) Gmail nodes.\nA Google Sheets document with at least these columns:\n\nSectionId (or Key)\nExpectedContent\nActualContent (output)\nResult (output: Pass/Fail)\n\n\nAccess to the email HTML (Gmail node, HTTP fetch, or paste‑in).\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

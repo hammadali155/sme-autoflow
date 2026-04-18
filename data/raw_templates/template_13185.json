@@ -1,0 +1,12 @@
+{
+  "id": 13185,
+  "name": "Scrape LinkedIn comments and score lead intent using ConnectSafely, Azure OpenAI, and Google Sheets",
+  "description": "📊 Description\nAutomate LinkedIn lead discovery by identifying high-intent prospects directly from post comments using ConnectSafely and AI 🤖. This workflow searches LinkedIn posts related to common sales pain points, extracts all comments safely, and evaluates each commenter’s buying intent using AI. The scored leads are automatically stored in Google Sheets for easy follow-up and prioritization 📈. Perfect for sales, growth, and RevOps teams looking to turn conversations into qualified opportunities.\n\n🔍 What This Template Does\n🔎 Searches LinkedIn posts via SerpAPI using predefined pain-point keywords\n🔗 Filters and validates relevant LinkedIn post URLs\n🛡️ Fetches all post comments using ConnectSafely (safe, compliant LinkedIn access)\n📄 Flattens comments into individual lead records\n🤖 Uses AI to analyze each comment and score buying intent (0–100)\n📊 Saves enriched lead data into Google Sheets automatically\n\n✅ Key Benefits\n✅ Discover warm LinkedIn leads from real conversations\n✅ Uses ConnectSafely for reliable and compliant comment extraction\n✅ AI-powered intent scoring removes manual lead qualification\n✅ Automatically prioritizes high-intent prospects\n✅ Centralized lead tracking in Google Sheets\n✅ Zero manual scraping or copy-pasting\n\n⚙️ Features\nLinkedIn post discovery via SerpAPI\nComment scraping powered by ConnectSafely\nAI intent detection using Azure OpenAI (GPT-4o-mini)\nIntent labels: No-Intent → High-Intent\nGoogle Sheets integration for lead storage\nModular, customizable n8n workflow\n\n🔐 Requirements\nSerpAPI account\nConnectSafely LinkedIn API credentials\nAzure OpenAI account (GPT-4o-mini deployment)\nGoogle Sheets OAuth credentials\nn8n instance (self-hosted or cloud)\n\n🎯 Target Audience\nB2B sales teams & SDRs\nGrowth marketers & lead generation agencies\nRevOps & automation specialists\nFounders using LinkedIn for outbound prospecting\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi"
+  ],
+  "tags": []
+}

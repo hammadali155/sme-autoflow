@@ -1,0 +1,11 @@
+{
+  "id": 13566,
+  "name": "Validate email font families from Gmail with Google Sheets",
+  "description": "How it works\n\nLoad Expected Content + Expected Font Family from Google Sheets.\nParse the email HTML to locate the matching content block.\nUse a JavaScript/HTML extraction node to read the actual font-family applied to that content.\nMerge expected and actual values.\nCompare Expected Font vs Actual Font to produce a Result (Match / Mismatch).\nLog Actual Font + Result back into Google Sheets as part of the QA output.\n\nSetup steps\nGoogle Sheets**\nCreate a sheet with columns:SectionId, Content, ExpectedFontFamily, ActualFontFamily, Result. Populate SectionId + ExpectedContent for each content block you want to verify.\nEmail HTML Source**\nUse a Gmail node to pull message HTML or use HTTP Request/Read Binary File + HTML/JS to supply the HTML.\nExtraction Logic (JS/HTML)**\nUse HTML parsing or a JS Function node to locate the HTML element containing the content string. From the matched element, extract the computed font-family. Clean, normalize, and standardize font names for accurate comparison. Return the extracted value as ActualFontFamily.\nMerge & Compare**\nMerge the Google Sheets expected records with the extracted actual font data using SectionId as the key. In the Code (JS) node, compare ExpectedFontFamily vs ActualFontFamily and set Result to Match if equal (or meets your rule), otherwise Mismatch.\nWrite back**\nUse Google Sheets to update ActualFontFamily and Result for each row.\nRequirements\nn8n with access to: Google Sheets, Code/HTML, and (optionally) Gmail nodes.\nA Google Sheets document with at least these columns:\n\nSectionId (or Key)\nContent\nExpectedFontFamily\nActualFontFamily (output)\nResult (output: Match / Mismatch)\n\n\n\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

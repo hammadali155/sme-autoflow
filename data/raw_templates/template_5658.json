@@ -1,0 +1,12 @@
+{
+  "id": 5658,
+  "name": "Call Center Analytics with Dual-AI Verification using DeepSeek Models",
+  "description": "The workflow is well-designed for CRM analysis with a robust quality control mechanism. The dual-AI approach ensures reliable results, while the webhook integration makes it production-ready for real-time CRM data processing.\n\n\nDual-AI Architecture: Uses DeepSeek Reasoner for analysis and DeepSeek Chat for verification.\n\nFlexible Input: Supports both manual testing and production webhook integration.\n\nQuality Assurance: Built-in verification system to ensure report accuracy.\nComprehensive Analysis: Covers lead conversion, upsell metrics, agent ranking, and more.\nProfessional Output: Generates structured markdown reports with actionable insights",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatDeepSeek"
+  ],
+  "tags": []
+}

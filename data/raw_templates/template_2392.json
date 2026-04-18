@@ -1,0 +1,17 @@
+{
+  "id": 2392,
+  "name": "Telegram chat with PDF",
+  "description": "What this template does\nThis template serves as a Chatbot that enables you to ask questions about the content of a PDF directly in Telegream.\n\nIt checks incoming Telegram messages if they contain a document. If they do, it stores the PDF in a Pinecone Vector store. If there's no document, it will search the Vector Store for information and try to answer your question.\n\nSetup\nOpen the Telegram app and search for the BotFather user (@BotFather) \nStart a chat with the BotFather \nType /newbot to create a new bot \nFollow the prompts to name your bot and get a unique API token \nSave your access token and username\nOnce you set your bot, you can send the pdf, and then ask questions about the content.\n\nHow to adjust it to your needs\nYou can exchange the Groq chat model with any model that you like\nExchange Pinecone with any other vector store tool you like (e.g. Supabase, Postgres or QDrant)\n\n#Telegram, #Pinecone, #Openai, #GroQ",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.lmChatGroq"
+  ],
+  "tags": []
+}

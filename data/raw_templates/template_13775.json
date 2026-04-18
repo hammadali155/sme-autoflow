@@ -1,0 +1,9 @@
+{
+  "id": 13775,
+  "name": "Index your website using IndexNow and your XML sitemap",
+  "description": "Index your site using IndexNow and XML sitemap\n\nStop waiting for search engines to discover your content updates. This workflow automates the process of notifying search engines (Bing, Yandex, etc.) about new or updated pages using the IndexNow protocol.\n\nBy parsing your XML sitemap and filtering for pages modified within a specific timeframe (e.g., the last week), it ensures your crawl budget is used efficiently and your latest content appears in search results almost instantly.\n\nHow to configure:\n\nHost your key: Generate an IndexNow key and upload the .txt file to your website's root directory.\nSetup Configuration node:\n   Enter your sitemap_url (e.g., https://yoursite.com/sitemap.xml).\n   Enter your indexnow_key.\n   Set the modified_after variable to define your lookback window (e.g., -7d or a specific ISO date).\nSchedule: Adjust the Schedule Trigger to your preferred frequency (default is daily).\nActivate: Once configured, turn the workflow on to start proactive indexing.\n\n\nFor a deep dive into how this workflow works and why it's a game-changer for your SEO strategy, check out our full guide on n8nplaybook.com.\nRead the full Playbook Article here",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 13883,
+  "name": "Skip trace people with ScraperCity and save contact details to Google Sheets",
+  "description": "Who is this for\n\nThis workflow is for skip tracers, real estate investors, debt collectors, and data brokers who need to find current contact details -- phone numbers, email addresses, and physical addresses -- for a list of people using only names, phone numbers, or email addresses as inputs.\n\nHow it works\n\nA configuration node lets you define up to five people to search (by name, phone, or email).\nThe workflow submits a skip trace job to the ScraperCity People Finder API and captures the returned run ID.\nA polling loop checks job status every 60 seconds until the scrape is marked SUCCEEDED (scrapes typically take 10--60 minutes).\nOnce complete, the results CSV is downloaded, parsed, and deduplicated.\nClean contact records are written row-by-row into a Google Sheet.\n\nHow to set up\n\nCreate a ScraperCity account at app.scrapercity.com and copy your API key.\nIn n8n, create a Header Auth credential named ScraperCity API Key with the header name Authorization and value Bearer YOUR_KEY.\nConnect your Google Sheets OAuth2 credential.\nOpen the Configure Search Inputs node and replace the sample names/phones/emails.\nSet your Google Sheet ID and sheet name in the Write Results to Google Sheets node.\nClick Execute workflow.\n\nRequirements\n\nScraperCity account (app.scrapercity.com)\nGoogle Sheets OAuth2 credential in n8n\n\nHow to customize the workflow\n\nSwap the manual trigger for a Schedule trigger to run nightly.\nFeed inputs from a Google Sheet instead of the Set node to process large lists.\nAdd a Filter node after parsing to keep only records that have a verified phone number.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

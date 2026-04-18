@@ -1,0 +1,17 @@
+{
+  "id": 4246,
+  "name": "Get Colombian Peso to USD Exchange Rate with Telegram Bot and AI Date Recognition",
+  "description": "📌 Request TRM (Colombian Peso to US Dollar exchange rate)\n\n🎯 Objective\n\nRetrieve the TRM (Colombian Peso to US Dollar exchange rate) for a specific date provided by the user via Telegram.\n\n🔄 Summary Flow\n\n📨 Telegram Message  \n   The user sends a text or audio message  to the Telegram Bot.\n\n🧠 Date Extraction  \n   AI (OpenAI) is used to identify the date in YYYY-MM-DD format.\n\n📅 Validation  \n   If the date is in the future, the user is notified that it is not valid.\n\n📡 TRM Query  \n   The bot queries the open data API from the Colombian government.\n\n📥 Result  \n   ✅ If TRM data exists for that date → The bot replies to the user.  \n   ❌ If not → It searches up to 10 previous days for available data.\n\n📤 Final Response  \n   The most recent available value is sent, or a message indicating no information is available.\n\n🔗 Data Source\n\ndatos.gov.co – TRM",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

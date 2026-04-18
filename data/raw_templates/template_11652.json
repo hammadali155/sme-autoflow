@@ -1,0 +1,20 @@
+{
+  "id": 11652,
+  "name": "News collection & multi-platform publishing with GPT, DALL-E, & social media API",
+  "description": "Who it's for\nThis n8n workflow automatically generates AI-powered content about local news and publishes it across multiple social media platforms. The workflow runs on a schedule, fetches the latest news about a specific topic, creates relevant images with watermarks, and posts the content to various platforms including WordPress, Facebook, Telegram, LinkedIn, and Discord.\n\nFeatures\nScheduled Content Generation**: Triggers every 4 hours to create fresh content\nAI-Powered News Collection**: Uses LangChain agent with OpenAI and SerpAPI to find the latest news about a specific topic (Sirajganj district)\nImage Generation**: Creates AI images based on the news content using OpenAI's image generation capabilities\nWatermarking**: Automatically adds branded watermarks to all generated images\nMulti-Platform Publishing**: Posts content and images to:\n  WordPress (with featured images)\n  Facebook\n  Telegram\n  LinkedIn (both profile and company pages)\n  Discord\nNotification System**: Sends confirmation messages via WhatsApp (Rapiwa), Telegram, and Gmail after successful posting\nContent Validation**: Checks if news was found before proceeding with image generation and posting\n\nRequirements\nOpenAI API credentials** for content generation and image creation\nSerpAPI credentials** for news search\nWordPress API credentials** for posting articles and media\nFacebook Graph API credentials** for page posting\nTelegram Bot API credentials** for channel posting\nLinkedIn OAuth2 API credentials** for profile and company page posting\nDiscord Bot API credentials** for channel posting\nRapiwa API credentials** for WhatsApp notifications\nGmail OAuth2 credentials** for email notifications\n\nConfigure Credentials\nOpenAI API**: Set up credentials with access to GPT-4 and DALL-E models\nWordPress API**: Configure access to your WordPress site\nSocial Media APIs**: Set up credentials for Facebook, Telegram, LinkedIn, and Discord\nNotification Services**: Configure Rapiwa for WhatsApp and Gmail for email\n\nImportant Notes\nTopic Configuration**: The workflow is currently set to fetch news about \"Sirajganj district\", but this can be modified in the \"Add tropic\" node\nImage Watermarking**: All images are watermarked with \"Sirajganj APP\" and Playstore information\nContent Validation**: The workflow includes a check to ensure news content exists before proceeding with image generation\nPlatform-Specific Formatting**: Each platform receives appropriately formatted content and image dimensions\nNotification System**: After successful posting to all platforms, confirmation messages are sent via multiple channels\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen\n",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.linkedIn",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

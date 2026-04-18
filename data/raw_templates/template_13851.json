@@ -1,0 +1,12 @@
+{
+  "id": 13851,
+  "name": "Production AI Playbook: Deterministic Steps & AI Steps (2 of 5) ",
+  "description": "Validate AI-generated outputs before your workflow acts on them. This template sends a support ticket through AI classification, parses the JSON response, and checks that categories, urgency levels, and confidence scores are all within valid ranges.\n\nWhat you'll do\nSend a support ticket to the AI for classification.\nWatch the Code node parse and validate the AI's JSON response against a defined schema.\nSee how valid outputs continue through the workflow while invalid ones get flagged.\n\nWhat you'll learn\nHow to structure AI prompts to return valid JSON\nHow Code nodes parse and validate AI output against expected schemas\nHow to check confidence scores, valid categories, and urgency levels programmatically\nHow to build retry and fallback paths for malformed AI responses\n\nWhy it matters\nAI models don't always return what you expect. A confidence score of \"high\" instead of 0.95, a missing category field, or a malformed JSON response can silently break downstream steps. This template catches those failures before they propagate.\n\nThis template is a learning companion to the Production AI Playbook, a series that explores strategies, shares best practices, and provides practical examples for building reliable AI systems in n8n.  \n\nhttps://go.n8n.io/PAP-D&A-Blog",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

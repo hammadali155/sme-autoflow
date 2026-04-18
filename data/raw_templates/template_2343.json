@@ -1,0 +1,10 @@
+{
+  "id": 2343,
+  "name": "Introduction to the HTTP Tool",
+  "description": "This n8n template showcases the new HTTP tool released in version 1.47.0.\n\nOverall, the tool helps simplify AI Agent workflows where custom sub-workflows were performing the same simple http requests.\n\nComparisons\n\n1. AI agent that can scrape webpages\nRemake of https://n8n.io/workflows/2006-ai-agent-that-can-scrape-webpages/\n\nChanges:\nReplaces Execute Workflow Tool and Subworkflow\nReplaces Response Formatting\n\n2. Allow your AI to call an API to fetch data\nRemake of https://n8n.io/workflows/2094-allow-your-ai-to-call-an-api-to-fetch-data/\n\nChanges:\nReplaces Execute Workflow Tool and Subworkflow\nReplaces Manual Query Params Definitions\nReplaces Response Formatting",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

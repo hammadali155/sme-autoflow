@@ -1,0 +1,12 @@
+{
+  "id": 14011,
+  "name": "Analyze ad performance from Meta, Google and Microsoft using Groq Llama 3.3 and Gmail",
+  "description": "How it works\nThis workflow automatically generates a detailed AI-powered \ncampaign performance report across Meta, Google and Microsoft \nAds and emails it to your team every month.\n\nIt reads campaign data from three tabs in a Google Sheet \n(Google, Meta, Microsoft), merges all rows, and passes them \nto a Code node that calculates KPIs and builds a structured \nprompt. Groq AI (Llama 3.3 70B) then analyzes the data and \ngenerates expert insights. A second Code node combines the \nKPIs and AI analysis into a full HTML email with platform \ntables, charts, benchmarks and recommendations — sent \nautomatically via Gmail.\n\nSetup steps\nCreate a Google Sheet with 3 tabs: Google, Meta, Microsoft\nPaste your monthly ad exports into the matching tab\nConnect your Google account in the 3 Sheets nodes and \n   select the correct tab in each\nAdd your Groq API key in the HTTP Request node header\nConnect your Gmail account in the Send node and set your \n   recipient email\nActivate — the workflow runs automatically on schedule",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 14212,
+  "name": "Scan business cards from LINE with Gemini to Sheets, Slack, and Gmail",
+  "description": "Who is this for\n\nThis workflow is designed for sales professionals, account managers, and small business owners in Japan who frequently exchange business cards. Instead of manually entering contact details, you can instantly capture and store them by sending a photo to LINE.\n\nWhat this workflow does\n\nWhen a user sends a business card photo via LINE, the workflow uses Google Gemini Vision to extract key contact details — name, company, title, email, phone, and address — and saves them as a new row in Google Sheets. The team is notified in Slack, and a thank-you email is automatically sent to the new contact via Gmail. Finally, a confirmation message is sent back to the user on LINE.\n\nHow to set up\n\nConnect your LINE Messaging API credentials in n8n\nSet your LINE channel webhook URL in the LINE Developer Console\nAdd your Google Gemini API key (free tier available)\nShare your target Google Sheet with the service account email\nConnect your Slack workspace and set the target channel\nConnect your Gmail account\n\nRequirements\n\nLINE Messaging API account (free)\nGoogle Gemini API key (free tier)\nGoogle Sheets (any Google account)\nSlack workspace\nGmail account\n\nHow to customize\n\nChange the Gemini prompt in the \"Extract card data\" node to capture additional fields. Modify the Slack message format or Gmail template to match your team's tone.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

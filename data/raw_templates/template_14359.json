@@ -1,0 +1,12 @@
+{
+  "id": 14359,
+  "name": "Send women’s safety emergency alerts with GPT-4o-mini, Telegram and Google Sheets",
+  "description": "##📘 Description\n This workflow acts as a real-time emergency alert system designed for personal safety scenarios. It receives distress signals via webhook, enriches the data with a live Google Maps link and timestamp, generates a clear AI-formatted alert message, instantly notifies a Telegram group, and logs the incident in Google Sheets for tracking and audit. \n\n⚙️ Step-by-Step Flow\n\n1) Emergency Webhook (Trigger)\n\n2) Receives a POST request containing: \nName \nPhone number \nLatitude & Longitude\nActs as the entry point for emergency alerts. \n\n3) Generate Maps Link (Function Node)\nConverts latitude & longitude into a Google Maps URL \nEnsures responders can access live location instantly \n\n4) Create Emergency Message (Function Node)\nAdds timestamp (IST) \nStructures raw alert data \nPrepares base emergency message context \n\n5) AI Agent (OpenAI GPT-4o-mini)\nFormats the alert into a clean, urgent, human-readable message \nEnsures clarity, visibility, and consistency \nAdds emojis and structured layout for quick comprehension \n\n6) Telegram Group Alert (Telegram Node)\nSends real-time emergency notification to a predefined group \nEnsures immediate visibility for responders \n\n7) Log to Google Sheets (Google Sheets Node)\nStores alert data for records \nFields logged: name, phone, maps link, message, timestamp \nCreates audit trail for safety tracking \n\n🧩 Prerequisites\n\n • Telegram Bot credentials + chat ID\n • OpenAI API (GPT-4o-mini)\n • Google Sheets OAuth connection\n • Webhook endpoint exposed publicly\n\n💡 Key Benefits\n\n ✔ Instant emergency alert delivery\n ✔ Live location sharing via Google Maps\n ✔ AI-enhanced message clarity (no ambiguity)\n ✔ Real-time group notification for faster response\n ✔ Persistent logging for audit and follow-up\n\n👥 Perfect For\n\n Women safety applications\n SOS mobile apps or panic button systems\n Security teams and emergency response workflows\n Community safety networks and alert systems\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

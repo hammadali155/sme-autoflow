@@ -1,0 +1,16 @@
+{
+  "id": 4801,
+  "name": "Digest new YouTube videos to Slack with Google Sheets, RapidAPI & GPT-4o-mini",
+  "description": "Who is this for?\n\nMarketing, content, and enablement teams that need a quick, human-readable summary of every new video published by the YouTube channels they care about—without leaving Slack.\n\nWhat problem does this workflow solve?\n\nManually checking multiple channels, skimming long videos, and pasting the highlights into Slack wastes time. This template automates the whole loop: detect a fresh upload from your selected channels → pull subtitles → distill the key take-aways with GPT-4o-mini → drop a neatly-formatted digest in Slack.\n\nWhat this workflow does\n\nSchedule Trigger fires every 10 min, then grabs a list of YouTube RSS feeds from a Google Sheet.\nHTTP + XML fetch & parse each feed; only brand-new videos continue.\nYouTube API fetches title/description, RapidAPI grabs English subtitles.\nCode nodes build an AI payload; OpenAI returns a JSON summary + article.\nA formatter turns that JSON into Slack Block Kit, and Slack posts it.\nProcessed links are appended back to the “Video Links” sheet to prevent dupes.\n\nSetup\n\nMake a copy of this Google Sheet and connect a Google Sheets OAuth2 credential with edit rights.\nSlack App: create → add chat:write, channels:read, app_mention; enable Event Subscriptions; install and store the Bot OAuth token in an n8n Slack credential.\nRapidAPI key for https://yt-api.p.rapidapi.com/subtitles (300 free calls/mo) → save as HTTP Header Auth.\nOpenAI key → save in an OpenAI credential.\nAdd your RSS feed URLs to the “RSS Feed URLs” tab; press Execute Workflow.\n\nHow to customise\n\nAdjust the schedule interval or freshness window in “If newly published”.\nSwap the OpenAI model or prompt for shorter/longer digests.\nPoint the Slack node at a different channel or DM.\nExtend the AI payload to include thumbnails or engagement stats.\n\nUse-case ideas\n\nProduct marketing**: Instantly brief sales & CS teams when a competitor uploads a feature demo.\nInternal learning hub**: Auto-summarise conference talks and share bullet-point notes with engineers.\nSocial media managers**: Get ready-to-post captions and key moments for re-purposing across platforms.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.youTube",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

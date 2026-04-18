@@ -1,0 +1,16 @@
+{
+  "id": 12364,
+  "name": "Create WordPress posts and Telegram updates from links with BrowserAct and Gemini",
+  "description": "Auto-generate Wordpress posts and social media updates from links With BrowserAct\n\nThis workflow acts as an intelligent content engine. Simply send a link to your Telegram bot (e.g., a product page or news article), and it will automatically scrape the content, rewrite it into a high-quality blog post using AI, generate custom artwork, and publish it to WordPress while simultaneously creating an engaging Telegram update.\n\nTarget Audience\nContent marketers, bloggers, and social media managers looking to repurpose content at scale.\n\nHow it works\nAnalyze Input: The workflow receives a message via Telegram. An AI Agent classifies it to determine if it's a request to process a link or just a chat.\nScrape & Clean: If a link is detected, BrowserAct scrapes the target page. An AI \"Content Editor\" then cleans the text and structures it into a blog format.\nVisual Creativity: A separate AI Agent analyzes the original images from the article to understand the style, then generates a unique, artistic image prompt.\nGenerate Assets:\n    Text: An AI writes the full blog post (HTML formatted for WordPress) and a punchy Telegram caption.\n    Image: Google Gemini generates a new header image based on the artistic prompt.\nPublish:\n    WordPress: The workflow uploads the generated image and publishes the new article.\n    Telegram: It sends the generated image and the engaging caption back to your chat.\n\nHow to set up\nConfigure Credentials: Connect your Telegram, WordPress, BrowserAct, Google Gemini, and OpenRouter accounts in n8n.\nPrepare BrowserAct: Ensure the Telegram and WordPress Post Architect template is saved in your BrowserAct account.\nConfigure Telegram: Ensure your bot is created via BotFather and the API token is added to the Telegram credentials.\nActivate: Turn on the workflow.\nTest: Send an article link to your bot to see it transform into a new post.\n\nRequirements\nBrowserAct* account with the *Telegram and WordPress Post Architect** template.\nWordPress** account (Application Password).\nTelegram** account (Bot Token).\nGoogle Gemini* & *OpenRouter** accounts.\n\nHow to customize the workflow\nChange Image Style: Modify the system prompt in the Image Prompt agent to enforce a specific art style (e.g., \"Minimalist Line Art\" or \"Cyberpunk\").\nAdd SEO: Update the Generate Web Structure agent to automatically include SEO keywords or meta descriptions in the JSON output.\nMulti-Platform: Add a Twitter or LinkedIn node at the end to cross-post the Telegram update to other social networks.\n\nNeed Help?\nHow to Find Your BrowserAct API Key & Workflow ID\nHow to Connect n8n to BrowserAct\nHow to Use & Customize BrowserAct Templates",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.wordpress",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

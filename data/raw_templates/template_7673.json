@@ -1,0 +1,11 @@
+{
+  "id": 7673,
+  "name": "Daily Trello Task Tracker with Google Sheets History Log",
+  "description": "\nThis workflow pulls all tasks from your Trello board every day and logs them into a Google Sheet.  \nUse it to track project progress, due dates, and keep a daily snapshot of your board’s status.\n\n⚙️ Setup Instructions\n\n1️⃣ Connect Trello (Developer API)\nGet your API key: Trello App Key  \nOn the same page, generate a Token (click Token)  \nIn n8n → Credentials → New → Trello API, paste your API Key + Token, then save.  \nOpen each Trello node (Get Board, Get Lists, Get Cards) and select your Trello credential.  \n\n🧠 How It Works\nSchedule Trigger**: Runs daily (can be customized).  \nGet Board → Get Lists → Get Cards**: Pulls every task, its list, due date, and description.  \nMap Fields**: Normalizes the data (board name, list name, task name, description, due date, URL).  \nToday's Date Node**: Adds a timestamp column so each run is logged.  \nGoogle Sheets (Append): Appends all task rows into a sheet → creating a **daily history log.\n\n📬 Contact\nNeed help customizing this (e.g., filtering by list, or sending reports by email/Slack)?  \n\n📧 rbreen@ynteractive.com  \n🔗 Robert Breen  \n🌐 ynteractive.com\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.trello",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": 12502,
+  "name": "Analyze failed workflows with Claude via OpenRouter and log to Sheets with Slack, Email, Discord alerts",
+  "description": "Who is this for\n\nThis workflow is designed for n8n users who manage multiple production workflows and want to:\nReceive intelligent, actionable error alerts instead of raw stack traces\nUnderstand root causes without manually debugging every failure\nPrevent alert fatigue from repeated similar errors\nMaintain a searchable log of all workflow errors\n\nIt's ideal for animal advocacy organizations, campaign coordinators, and activists running mission-critical automation workflows for outreach, volunteer coordination, or campaign monitoring.\n\nWhat it does\n\nWhen any workflow in your n8n instance fails, this agent automatically:\nCaptures the error details including workflow name, failed node, error message, and stack trace\nUses AI (via OpenRouter/Claude) to analyze the error and suggest root causes and fixes\nGenerates a unique error signature for deduplication\nLogs the error with AI analysis to Google Sheets for historical tracking\nChecks for recent duplicate errors to prevent alert fatigue\nSends enriched notifications through your choice of Slack, Discord, Email, or Webhook\n\nThe AI analysis includes root cause identification, error chain tracing, specific fix recommendations, and a confidence score indicating how certain the analysis is.\n\nHow to set up\n\nImport the workflow into your n8n instance\nConfigure credentials for:\n   OpenRouter API for AI analysis\n   Google Sheets for error logging\n   Notification channels you want to use (Slack, Discord, Gmail, or Webhook URL)\nCreate a Google Sheet with columns matching the log fields\nUpdate the receiver email addresses in the \"Normalize Error Payload\" node\nEnable the workflow\nSet this workflow as the error handler for other workflows you want to monitor\n\nRequirements\n\nOpenRouter API key (for AI-powered error analysis)\nGoogle Sheets OAuth2 credentials\nAt least one notification channel configured (Slack, Discord, Gmail, or custom webhook)\nn8n instance with Error Trigger capability\n\nHow to customize\n\nChange the AI model**: Edit the OpenRouter Chat Model node to use a different LLM\nAdjust alert fatigue settings**: Modify the lookback count and time window in the \"Check Alert Fatigue\" code node\nSwitch logging backend**: Replace the Google Sheets node with PostgreSQL, Notion, or any other storage\nAdd notification channels**: The workflow sends to multiple channels in parallel - add or remove as needed\nCustomize email recipients**: Update the receiver emails array in the normalize payload node\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

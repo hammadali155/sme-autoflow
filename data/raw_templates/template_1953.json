@@ -1,0 +1,12 @@
+{
+  "id": 1953,
+  "name": "Suggest meeting slots using AI",
+  "description": "The purpose of this n8n workflow is to automate the process of identifying incoming Gmail emails that are requesting an appointment, evaluating their content, checking calendar availability, and then composing and sending a response email.\n\nNote that to use this template, you need to be on n8n version 1.19.4 or later.",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.textClassifier"
+  ],
+  "tags": []
+}

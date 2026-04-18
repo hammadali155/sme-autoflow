@@ -1,0 +1,11 @@
+{
+  "id": 13332,
+  "name": "Track new ranked keywords in Google Sheets with DataForSEO and Slack alerts",
+  "description": "\n\nOnce a week, this workflow automatically scans Google for newly ranked keywords for your domains using the DataForSEO API. It pulls the latest data for every target you track, stores a fresh snapshot in Google Sheets, and compares it to the previous run. Any newly ranked keywords are automatically added to a dedicated Google Sheet, creating an easy-to-review log. Lastly, the workflow sends a short summary to Slack, so your team can quickly see what’s changed without manual checks. \n\nWho’s it for\nSEO specialists and marketers who want to automatically track newly ranked keywords for their target domains and get quick weekly updates without doing manual Google checks.\n\nWhat it does\nThis workflow automatically fetches new keywords your domains started ranking for on Google using DataForSEO Labs API, saves them into Google Sheets, and sends you a Slack summary so you can quickly see what’s changed.\n\nHow it works\nTriggers on your chosen schedule (default: once a week).\nReads your keywords and target domains from Google Sheets.\nExtracts fresh ranking data from Google via DataForSEO API.\nCompares the results with the previous run.\nAdds newly ranked keywords into a dedicated Google Sheet.\nSends a weekly summary message to Slack.\n\nRequirements\nDataForSEO account\nA spreadsheet in Google Sheets with your keywords that matches the required column structure (as in the example).\nA spreadsheet in Google Sheets with your target domains that matches the required column structure (as in the example).\nSlack account\nCustomization\nYou can easily customize the workflow by changing the schedule, exporting results to dashboards and other tools (such as Looker Studio and BigQuery) instead of Google Sheets, and modifying the Slack message text.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

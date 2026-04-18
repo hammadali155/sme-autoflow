@@ -1,0 +1,16 @@
+{
+  "id": 2870,
+  "name": "Ask AI about your Meta Ads - ask questions about your Facebook Ads insights",
+  "description": "Chat with an AI and ask questions about your Meta Ads metrics.\n\nGet key metrics like impressions, spend, reach, conversions, CTR, CPC… you name it.\n\nWho is this template for?\n\nMarketing professionals who want an AI assistant to analyze their Meta Ads data.\n\nYou can also replace the Telegram node with another chat app, like WhatsApp, Slack, or Discord.\n\nWhich languages are supported?\n\nAny of the 85+ languages supported by OpenAI.\n\nHow to set up\n\nInstructions are included within the workflow itself.\n\nCheck out my other templates\n👉 https://n8n.io/creators/solomon/",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.memoryManager",
+    "@n8n/n8n-nodes-langchain.toolHttpRequest"
+  ],
+  "tags": []
+}

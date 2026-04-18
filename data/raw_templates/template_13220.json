@@ -1,0 +1,20 @@
+{
+  "id": 13220,
+  "name": "Handle WhatsApp sales queries with GPT-4, Supabase, and a product catalog",
+  "description": "How it works\nAn AI-powered sales agent on WhatsApp that handles product inquiries using your Supabase knowledge base and n8n catalog. Customers can send text, voice notes, or images to ask about products, pricing, and specs. The agent responds with detailed answers, product images, and FAQs, creating a complete self-service sales experience.\n(I primarily designed this for furniture business, consider tailoring it)\nSetup steps\n\nConnect Supabase credentials for your knowledge base and FAQs\nConfigure n8n tables with your product catalog (prices, descriptions, image links)\nSet up WhatsApp Business API integration\nAdd your product categories and common queries to the AI context\nTest with sample product questions and image uploads\n\nCustomization tips\n\nStructure your catalog tables with clear columns (SKU, price, description, image_url)\nAdd industry-specific terminology to the AI prompt\nCreate templated responses for common FAQs to ensure consistency\nEnable voice-to-text transcription for better voice note handling\nAdd product recommendation logic based on customer queries\nSet up image recognition for customers sending product photos to identify items",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.whatsApp",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

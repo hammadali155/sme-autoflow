@@ -1,0 +1,11 @@
+{
+  "id": 1963,
+  "name": "AI: Conversational agent with custom tool written in JavaScript ",
+  "description": "This workflow implements a custom tool via JavaScript code which returns a random color to users and excludes the given colors.\n\nNote that to use this template, you need to be on n8n version 1.19.4 or later.",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolCode"
+  ],
+  "tags": []
+}

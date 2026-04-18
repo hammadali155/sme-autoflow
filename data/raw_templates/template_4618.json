@@ -1,0 +1,11 @@
+{
+  "id": 4618,
+  "name": "Website Lead Capture with Apollo.io Enrichment, HubSpot Storage & Gmail Notifications",
+  "description": "What problem does this workflow solve?\nCapture leads from your website, enrich them via Apollo, store them in HubSpot, send a personalized thank-you email, and notify your team—all automatically.\n\nWhat does this workflow do?\nCapture leads from website forms automatically.\nSend a personalized thank-you email to each new lead.\nEnrich lead data using Apollo for deeper insights.\nCreate or update a contact/lead in HubSpot CRM.\nNotify the internal team via email about the new lead.\n\nSetup\n\nGmail Setup\nCreate Gmail Credentials by creating a project in Google Cloud Console.\n\nHubspot Setup\nCreate Hubspot Credentials with App Token.\n\nHow it Works:\nThis workflow automates your lead capture, enrichment, and follow-up process to ensure no opportunity is missed. Here's how it works:\n\n1. Website Form Submission\nA visitor submits a lead form on your website. Lead details like name, email, company, and message are captured instantly.\n\n2. Personalized Thank-You Email\nA customized thank-you email is automatically sent to the lead, building trust and confirming receipt of their inquiry.\n\n3. Apollo Lead Enrichment\nThe captured data is enriched using Apollo to fetch additional information like job title, LinkedIn profile, and other details. This helps you better understand and qualify your leads.\n\n4. Create Lead in HubSpot\nThe enriched lead information is pushed into HubSpot as a new contact or lead. Duplicate checks ensure that there are no repeat entries.\n\n5. Internal Notification\nAn email notification with enriched lead details is sent to your team. Your team can follow up immediately with a complete profile.\n\nWho can use it?\nThis workflow can be used by any website owner with a \"Get In Touch\" or \"Contact Us\" button.\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

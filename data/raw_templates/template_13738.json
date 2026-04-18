@@ -1,0 +1,17 @@
+{
+  "id": 13738,
+  "name": "Route event sales leads with Gmail, Google Gemini, Sheets and Salesforce",
+  "description": "Email Sentiment Router for Event Sales Leads\n\nWho is this for?\nEvent organizers, conference managers, and sales teams drowning in sponsor/exhibitor/partner emails who need zero-drop leads + real-time pipeline analytics.\n\nKey nodes: \nGmail Trigger - Google Gemini (2x) - Data Table - Google Sheets - Send Email - Slack\nCategory: Sales / AI / Event Management\nLevel: Advanced\nCredits: Milo Bravo (BRaiA Labs)\n\nWhat problem is this workflow solving?\n\nEmail overload kills event revenue:\n\n200+ weekly sponsor/partner emails go unread\n\nNo sentiment/intent analysis = missed hot leads\n\nManual routing wastes 10+ hours/week\n\nZero visibility into pipeline trends\n\nThis workflow auto-classifies, routes, and analyzes every inbound lead.\n\nWhat this workflow does?\n\nGmail Trigger monitors event inbox for new emails\n\nGemini #1 scores sentiment (Positive/Neutral/Negative)\n\nGemini #2 extracts topic, intent, urgency, org, budget signals\n\nLogs to email_analytics Data Table + Google Sheets\n\nRoutes intelligently:\n\nPositive → Hot Lead email + Slack #hot-leads (2h SLA)\n\nNeutral → Nurture email + Slack #follow-ups (24-48h)\n\nNegative → Insights + Slack #insights\n\nLooker Studio dashboard auto-updates from Sheets\n\nSetup (5 minutes):\n\nGmail OAuth2 (event inbox)\n\nGoogle Gemini API key\n\nSlack OAuth2 + channels (#hot-leads, #follow-ups, #insights)\n\nCreate email_analytics Data Table → paste Table ID\n\nUpdate recipient emails (placeholders in Send Email nodes)\n\nTest with Evaluation Dataset before live\n\nHow to customize:\n\nAdd keywords for your niche (conferences, webinars, trade shows)\n\nAdjust sentiment thresholds or routing rules\n\nSwap Slack → Teams/CRM (HubSpot/Salesforce)\n\nScale: Multi-inbox + team routing\n\nROI:\n\n100% lead capture (zero drops)\n\n5x faster response (2h → 2min)\n\n20% conversion lift from sentiment prioritization\n\nPipeline dashboard = data-driven sales strategy\n\nNeed help customizing?: \nContact me for consulting and support: LinkedIn / Message\n\nKeywords:\nevent sales leads, email sentiment analysis, Gmail AI routing, Google Gemini sales automation, conference sponsor leads, event pipeline analytics, sales lead qualification, sales dashboard",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.salesforce",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.sentimentAnalysis",
+    "@n8n/n8n-nodes-langchain.informationExtractor",
+    "n8n-nodes-base.evaluation"
+  ],
+  "tags": []
+}

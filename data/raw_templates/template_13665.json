@@ -1,0 +1,10 @@
+{
+  "id": 13665,
+  "name": "Monitor [PROD] workflows in real time with the n8n Public API dashboard",
+  "description": "A real-time monitoring dashboard for your n8n production workflows, accessible directly from the browser via webhook.\n\nTag any workflow with [PROD] and it will automatically appear on the dashboard showing:\n\n→ Healthy vs error workflows\n→ Success rate per workflow\n→ Total errors and successes\n→ Last error timestamp\n→ 7-day error history chart\n\nThe dashboard auto-refreshes every 30 seconds. No external tools required — it uses only the n8n Public API.\n\nHow it works\n\nWhen the webhook is triggered, the workflow:\nFetches all workflows tagged [PROD] via the n8n API\nRetrieves the last 50 executions (success + error) for each workflow\nCalculates metrics and renders a dark-themed HTML dashboard\nReturns the dashboard directly in the browser\n\nRequirements\n\nn8n self-hosted (any version with Public API enabled)\nn8n API credential configured\nAt least one workflow tagged [PROD]\n\nSetup\n\nEnable the n8n Public API under Settings → API\nCreate an n8n API credential with your API key\nOpen the Config node and set your n8n base URL\nConnect the credential to all HTTP Request nodes\nActivate the workflow and open the webhook URL in your browser\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

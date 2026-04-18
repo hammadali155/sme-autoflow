@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Insert Excel data to Postgres",
+  "description": "Read XLS from file\nConvert it to JSON\nInsert it in Postgres",
+  "nodes": [
+    "n8n-nodes-base.postgres"
+  ],
+  "tags": []
+}

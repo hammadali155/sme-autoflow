@@ -1,0 +1,13 @@
+{
+  "id": 14292,
+  "name": "Triage and escalate tenant complaints from Gmail or forms to Slack with Claude AI",
+  "description": "\nHow it works\nComplaints arrive via Gmail or a web form webhook\nClaude AI classifies each complaint: fault category, priority (P1/P2/P3), tenant tone, and drafts an acknowledgement email\nThe right technician is looked up in Airtable by fault category\nA work order is created and the tenant receives an ACK email with their ticket reference and SLA commitment\nThe FM team is notified in Slack with ticket summary\nAn hourly schedule checks open tickets — any past their SLA deadline trigger an urgent escalation to FM management\n\nHow to set up\nConnect Gmail to the Gmail Trigger and Send ACK email nodes\nCreate your Airtable base with a Complaints table and a Technician table (one row per fault category)\nConnect Airtable, Anthropic, and Slack in their respective nodes\nIf using a web form, point it to the Webhook URL",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.anthropic"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 7454,
+  "name": "Monitor Competitors & Generate Content Ideas with GPT4 & Gemini to Google Sheets",
+  "description": "Who’s it for\nWomen creators, homemakers-turned-entrepreneurs, and feminine lifestyle brands who want a graceful, low-lift way to keep an eye on competitor content and spark weekly ideas.\n\nWhat it does\nOn a weekly schedule, this workflow crawls your competitor URLs with Firecrawl (HTTP Request), summarizes each page with OpenAI, brainstorms carousel/pin ideas with Gemini, appends results to Google Sheets (Date, URL, Title, Summary, Ideas), and sends you a single email digest (optional Telegram alert). It includes basic error notifications and a setup-friendly config node.\n\nRequirements\nHTTP credentials** for Firecrawl, OpenAI, and Gemini (no keys in nodes)\nGoogle Sheets** OAuth credential\nA Sheets document with a target sheet/range (e.g., Digest!A:F)\n(Optional) Telegram bot + chat ID\n\nHow to set up\nOpen Set: Configuration (edit me) and fill:\n   competitorUrls (one per line), sheetsSpreadsheetId, sheetsRange,\n     ownerEmail, emailTo, geminiModel, openaiModel\nAttach credentials to the HTTP and Sheets nodes.\nTest by switching Cron to Every minute, then revert to weekly.\n\nHow it works\nCron → Firecrawl (per URL) → Normalize → OpenAI (summary) + Gemini (ideas) → Merge → Compile Row → Google Sheets append → Build one digest → Email (+ optional Telegram).\n\nHow to customize\nAdd/remove competitors or change the weekly send time.\nTweak the OpenAI/Gemini prompts for your brand voice.\nExpand columns in Sheets (e.g., category, tone, CTA).\nSwap email/Telegram for Slack/Notion, or add persistent logs.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

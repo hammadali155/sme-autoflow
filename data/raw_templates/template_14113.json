@@ -1,0 +1,12 @@
+{
+  "id": 14113,
+  "name": "Rerank PM priorities every 2 hours using OpenAI, Notion, and Slack",
+  "description": "Description\nAI-powered priority re-evaluation every 2 hours. Analyzes new signals, meeting decisions, emails, and blockers, then runs 3 AI passes (Impact, Urgency, Final Ranking) to suggest re-ranking. Only updates when the ranking actually changes.\n\nContext\nRuns every 2 hours during work days (8:00–18:00). Pulls 5 data sources in parallel: open priorities, recent high-impact signals, today’s meeting decisions, urgent emails, and overdue/blocked actions.\nA Priority Context Matrix links each priority to relevant new information. Three sequential AI passes score Impact, Urgency, and produce a Final Ranking with rationale. CompareDatasets detects changes vs current ranking. Only if the ranking changed, Notion is batch-updated and Slack shows before/after.\n\nWho is this for?\n•\tPMs managing dynamic priority stacks\n•\tProduct leaders who need real-time priority alignment\n•\tTeams where priorities shift frequently due to customer signals\nRequirements\n•\tNotion account with PM Daily databases\n•\tOpenAI API key\n•\tSlack Bot token\n\nHow it works\nTrigger  Runs every 2 hours, Monday–Friday, 8:00–18:00.\nContext Collection  5 parallel pulls: open priorities, signals, meetings, emails, blocked actions.\nPriority Matrix  Links each priority to relevant signals, emails, and decisions. Deduplicates and normalizes.\n3-Pass AI Scoring  Pass 1: Impact. Pass 2: Urgency. Pass 3: Final Ranking with rationale.\nChange Detection  Compares new vs current ranking. If changed: batch-updates Notion and posts before/after to Slack.\nWhat you get\nContinuous priority re-evaluation every 2 hours\n3-pass AI scoring (Impact, Urgency, Final)\nChange detection — only updates when needed\nBefore/after ranking comparison on Slack\n40+ node workflow with CompareDatasets intelligence\n\nAbout me :\nI’m Yassin a Product Manager  Scaling tech products with data-driven project management.\n📬 Feel free to connect with me on Linkedin",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

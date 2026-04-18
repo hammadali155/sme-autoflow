@@ -1,0 +1,11 @@
+{
+  "id": 12315,
+  "name": "Send Stripe expired charge recovery reminders with OpenAI",
+  "description": "Stripe Invoice Reminder Workflow\n\nWho’s this for\nBusinesses using Stripe subscriptions or one-time payments who want to automatically follow up with customers after a failed payment.\n\nWhat this workflow does\nDetects expired or failed charges in Stripe\nDrafts AI-generated payment reminders for customers\nCreates a new Stripe invoice for the failed payment\nOptionally sends reminders via Email or Slack\n\nHow it works\nStripe trigger listens for expired charges\nSet node normalizes customer and payment information\nOpenAI node drafts a friendly payment reminder\nStripe node creates a new invoice\nOptional Email/Slack node sends the reminder\n\nHow to set up\nConnect Stripe account and enable 'charge.expired' events\nConnect OpenAI API credentials\nConfigure Email or Slack notifications if desired\nOptional: Customize AI prompt for company tone\n\nRequirements\nn8n account with Stripe integration\nOpenAI API key\nOptional Email/Slack integration\n\nHow to customize\nChange AI prompt to fit brand voice\nInclude dynamic invoice details or subscription links\nAdd internal alerts for accounting teams\nModify email templates or Slack messages\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.stripe",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

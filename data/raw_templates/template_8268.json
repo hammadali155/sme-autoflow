@@ -1,0 +1,11 @@
+{
+  "id": 8268,
+  "name": "Expense Logging with Telegram and Google Sheets",
+  "description": "\nWeekly Summaries and Budget Alerts\nWho’s it for\nThis workflow is perfect for individuals who want a simple expense tracker without needing a full app. If you already use Telegram daily, this makes it effortless to log purchases, track spending, and stay accountable to your budget.\n\nHow it works / What it does\nSend an expense in Telegram using the format /spent 5 lunch.\nn8n parses the message and appends the entry to Google Sheets.\nEvery Sunday at 11:00, the workflow sends a weekly expense summary to Telegram.\nIf you exceed your weekly budget (default €100), you’ll instantly get a budget warning alert.\nOptionally, the sheet can be cleared weekly to start fresh.\n\nHow to set up\nCreate a Telegram bot with BotFather, copy the token, and get your Chat ID via getUpdates.\nMake a copy of the provided Google Sheets template and connect your Google credentials in n8n.\nReplace &lt;YOUR_CHAT_ID&gt; and &lt;YOUR_SHEET_ID&gt; placeholders in the workflow.\nAdjust the budget threshold in the “Check Weekly Budget” node if needed.\nActivate the workflow and test with a sample expense.\nRequirements\nWhat to do\nA Telegram bot (free, via BotFather).\nGoogle Sheets with n8n OAuth2 credentials.\nAn n8n instance (self-hosted or cloud).\nHow to customize the workflow\nChange the budget threshold in the Code node.\nUpdate the summary schedule in the Schedule Trigger node.\nExpand the Google Sheet with more categories or details.\nPersonalize the Telegram messages to fit your style.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

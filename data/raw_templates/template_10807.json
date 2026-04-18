@@ -1,0 +1,16 @@
+{
+  "id": 10807,
+  "name": "Post AI videos to YouTube with Fal AI Veo3.1, Google Sheets, and YouTube API",
+  "description": "What It Is\n\nAn automated workflow for creating Veo3.1 videos and posting them to YouTube.\n\nThe workflow consists of three main phases:\n\nCreate Veo3.1 Video\nWait for Video Processing\nPost on YouTube\n\nCreate Veo3.1 Video\n\nThis phase handles initial video creation based on user input.\n\nType Prompt\n\nA form trigger collects the user’s inputs:\n\nPrompt:** A simple scenario for the video.\nAspect Ratio:** e.g., 16:9, 9:16, 1:1\nVideography (AI Refinement):**\n  An LLM refines the user’s prompt into a detailed \"script-to-screen\" format suitable for video generation.\n\nMake FAL.AI Request\n\nSends the refined prompt to the Fal.ai Veo 3.1 model via HTTP request.\nVideo duration is fixed at 8 seconds.\n\nStore Data\n\nStores video request details in a Google Sheet, including:\n\nRequest date\nRefined prompt\nFal.ai request URL\n\nWait for Video Processing\n\nThe workflow pauses for 5 minutes.\nVeo videos typically require 3–5 minutes to finish processing.\n\nPost on YouTube\n\nThis phase generates YouTube-optimized metadata and uploads the final video.\n\nYT Video SEO\n\nAn LLM (acting as a YouTube SEO + viral strategist) generates:\n\nVideo Title:** Under 6 words\nVideo Description:** Detailed and optimized\nVideo Tags:** Relevant tags for discoverability\n\nIt follows virality best practices and YouTube’s tag rules.\n\nStructured Output\n\nParses structured JSON returned by the AI agent.\n\nGet Keywords\n\nExtracts and formats tags into a comma-separated list suitable for YouTube.\n\nFetch Video Credentials\n\nRetrieves the final video URL and metadata from Fal.ai.\n\nDownload Video\n\nDownloads the generated video file.\n\nPost on YouTube\n\nUploads the video with the generated title, description, tags, and category.\n\nSetup\n\nTo run this workflow, configure the following credentials in n8n:\n\nOpenRouter\n\nGenerate an API key from your OpenRouter account.\n\nGoogle Sheets\n\nUses OAuth 2.0\nAuthenticate with your Google account.\n\nYouTube Data API\n\nConfigure credentials that allow n8n to post videos to YouTube.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.youTube",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

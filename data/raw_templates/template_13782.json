@@ -1,0 +1,15 @@
+{
+  "id": 13782,
+  "name": "Generate LinkedIn posts using Google Gemini, MongoDB Atlas, Google Drive and Sheets",
+  "description": "🚀 How the System Works\n\nThis automation operates in three distinct phases: Ingestion, Storage, and Generation.\n\n| Phase | Component | What Happens |\n| --- | --- | --- |\n| 1. The Trigger | Google Drive | Every time you update your rag_posts.csv in your Drive folder, the system wakes up. |\n| 2. The Brain | Gemini Embeddings | It turns your text into \"Vectors\" (numbers) so the AI understands the meaning of your writing style, not just the words. |\n| 3. The Vault | MongoDB Atlas | Your posts are stored in a vector database, acting as a \"Style Library\" the AI can browse instantly. |\n| 4. The Writer | AI Agents | When you ask for a post, the AI searches your vault, finds the best matches, and mimics the formatting exactly. |\n\n🛠️ Step-by-Step Setup Guide\n\n1. Prepare Your Data Source\n\nCreate a Google Drive Folder and note its ID (the long string of characters in the URL).\nCreate a CSV file named rag_posts.csv.\nColumns needed:** Post Text, Hook Type, Engagement, Category.\nUpload it to that folder.\n\n2. Configure MongoDB Atlas (The Vector Store)\n\nSign up for a free MongoDB Atlas account.\nCreate a Cluster and a Database named n8n_rag_data.\nCrucial Step:* Create an *Atlas Vector Search Index** on your collection.\nName the index data_index.\n\n3. Google Gemini API\n\nGo to the Google AI Studio.\nGenerate an API Key. This will power both the \"Embeddings\" (understanding the text) and the \"Chat\" (writing the post).\n\n4. Connect the n8n Nodes\n\nGoogle Drive Trigger:** Paste your Folder ID and select fileUpdated.\nMongoDB Nodes:** Enter your Connection String (SRV) and credentials.\nGemini Nodes:** Paste your API Key into the Credentials section.\nGoogle Sheets Tool:** Link your specific spreadsheet ID so the \"Knowledge Base Agent 1\" can read specific rows.\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.vectorStoreMongoDBAtlas"
+  ],
+  "tags": []
+}

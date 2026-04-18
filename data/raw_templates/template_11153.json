@@ -1,0 +1,14 @@
+{
+  "id": 11153,
+  "name": "Create Weather-Aware Morning Alarms with Spotify, Gemini AI and OpenMeteo",
+  "description": "Description: More than an alarm. A smart morning experience that adapts to the weather. 🎸☔️☀️\n\nThis workflow demonstrates how to upgrade a simple automation into a smart, context-aware system. By integrating OpenMeteo (Weather API), Google Gemini (AI), and Spotify, it creates a personalized DJ experience for your morning.\n\nWhy is this \"Advanced\"?\n\nContext Awareness: It doesn't just play music; it checks the weather (via OpenMeteo API) to understand the user's environment.\n\nAI Persona: Gemini acts as a live DJ, generating commentary that connects the specific Led Zeppelin track to the current weather conditions (e.g., \"It's rainy, perfect for 'The Rain Song'\").\n\nData Logging: It logs every wake-up session (Song, Time, Weather) to Google Sheets, creating a personal music history database.\n\nRobust Error Handling: Includes logic to detect offline speakers and send fallback alerts.\n\nHow it works:\n\nCheck Context: Fetches real-time weather data for your location and checks your Spotify speaker status.\n\nSelect Music: Picks a random track from Led Zeppelin's top hits.\n\nGenerate: Gemini generates a unique \"Good Morning\" script combining the song title and the weather.\n\nAction: Plays the music, logs the data to Google Sheets, and emails you the AI's greeting with album art.\n\nSetup Requirements:\n\nSpotify Premium\n\nGoogle Gemini API Key\n\nGoogle Sheets: Create a sheet named History with headers: date, time, weather, temperature, song, artist.\n\nGmail",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.spotify",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

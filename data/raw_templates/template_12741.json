@@ -1,0 +1,16 @@
+{
+  "id": 12741,
+  "name": "Send Stripe invoice reminders with GPT-4.1-mini, Google Sheets and Slack",
+  "description": "Who this workflow is for\nAccounting and bookkeeping firms needing automated invoice creation and payment reminders.\n\nWhat this workflow does\nAI generates personalized emails for overdue invoices, logs invoice info in Google Sheets, notifies accountants via Slack, creates PDF invoices, and schedules follow-ups.\n\nHow the workflow works\nInvoice creation triggers workflow\nAI drafts personalized email\nRoutes based on payment status\nLogs invoice info in Google Sheets\nSends Slack notifications to accountant\nSends email to client\nGenerates PDF invoice\nSchedules follow-up events\nOptional CRM/accounting tool integration\n\nAuthor: Hyrum Hurst, AI Automation Engineer  \nCompany: QuarterSmart  \nContact: hyrum@quartersmart.com\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleCalendar",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 2538,
+  "name": "Demo Workflow - How to use workflowStaticData()",
+  "description": "This workflow demonstrates how to use the workflowStaticData() function to set any type of variable that will persist within workflow executions. \n\nhttps://docs.n8n.io/code/cookbook/builtin/get-workflow-static-data/\n\nThis can be useful for example when working with access tokens that expire after a certain time period. Using staticData we can keep a record of that access token and the expiry time and build our workflow logic around it. \n\nImportant\n\nStatic Data only persists across production executions, i.e. triggered by Webhooks or Schedule Triggers (not manual executions!)\nFor this the workflow will have to be activated. \n\nSetup\n\nconfigure HTTP Request node to fetch access token from your API (optional)\nactivate workflow\ntest the workflow with the webhook production link\nyou can check the population of the static data in the single executions\n\nFeedback\n\nIf you found this useful or want to report some missing information - I'd be happy to hear from you at ria@n8n.io\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

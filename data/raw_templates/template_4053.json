@@ -1,0 +1,11 @@
+{
+  "id": 4053,
+  "name": "Sort Gmail Emails with GPT-4o into Action Required and No Action Labels",
+  "description": "🧾 Description:\n\nThis automation uses GPT-4o to scan unread Gmail emails and intelligently classify them as:\n\n    Action → Requires your attention (reply, review, schedule, or respond)\n\n    No Action → Informational or promotional; no action needed\n\nThe result? You eliminate inbox noise and gain a clear daily routine: only check what's in Action Required.\n⚙️ How It Works:\n\n    Trigger: Runs on a customizable schedule\n\n    Fetch Emails: Pulls unread messages from Gmail\n\n    Classify via GPT-4o: Determines if each email needs action or not\n\n    Sort Emails:\n\n        Labels actionable emails as Action Required\n\n        Labels non-actionable ones as No Action\n\n        Removes the Inbox label to clean your primary inbox view\n\n        ✅ Emails stay in your account—just better organized\n\n🚀 How to Use:\n\n    Import the workflow into your n8n instance\n\n    Set up Gmail and OpenAI credentials\n\n    Create Gmail labels:\n\n        Action Required\n\n        No Action\n\n    Activate the workflow\n\n    Start your day by checking only the Action Required label\n\n📦 Requirements:\n\n    n8n (self-hosted or cloud)\n\n    Gmail OAuth2 account\n\n    OpenAI API key (GPT-4o or GPT-4o-mini)\n\n    Gmail labels: Action Required, No Action\n\n💡 Why It Matters:\n\nStop manually filtering emails.\nThis workflow helps you focus only on what matters while keeping everything else out of your way—without deleting or archiving anything.",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.textClassifier"
+  ],
+  "tags": []
+}

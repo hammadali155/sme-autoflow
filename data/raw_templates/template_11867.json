@@ -1,0 +1,10 @@
+{
+  "id": 11867,
+  "name": "Extract transcripts from external YouTube Videos using YouTube Transcript API",
+  "description": "🚀 Try It Out!\n\nYouTube Transcript API Extractor (Any Public Video)\nExtracts a clean transcript from a videoId using youtube-transcript.io.\n\n🎯 Use Cases\nAI summaries, sentiment analysis, keyword extraction\nInternal indexing/SEO\nContent pipelines (blog/newsletter)\nBatch transcript processing\n\n🔄 How It Works (5 Steps)\n📥 Input: youtubeVideoId, apiToken\n🌐 API: POST to youtube-transcript.io\n🧩 Parse: Normalizes the response format\n🧹 Clean: Normalizes text and whitespace\n✅ Output: Transcript + metrics (wordCount/charCount)\n\n🚀 How to Use\nPayload:  \n{\"youtubeVideoId\":\"xObjAdhDxBE\", \"apiToken\": \"xxxxxxxxxx\"}\n\n\n⚙️ Setup:\nThis sub-workflow is intended to be called from another workflow (Execute Workflow Trigger)\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

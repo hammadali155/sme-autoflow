@@ -22,7 +22,7 @@ import requests
 # ---------------------------------------------------------------------------
 API_URL: str = "https://api.n8n.io/api/templates/search"
 START_PAGE: int = 1
-END_PAGE: int = 20
+END_PAGE: int = 100
 ROWS_PER_PAGE: int = 50
 MAX_RETRIES: int = 3
 RETRY_DELAY_SECONDS: float = 2.0      # base delay; doubles on each retry

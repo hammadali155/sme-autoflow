@@ -1,0 +1,11 @@
+{
+  "id": 5899,
+  "name": "Automatic Typebot Flows Two-Way Sync with GitHub using Typebot API",
+  "description": "Remixed Backup your workflows to GitHub from Solomon's work. Check out his templates.\n\nHow it works\nThis workflow will backup your typebots to GitHub. It uses the Typebot API to export all typebots.\n\nIt then loops over the data, checks in GitHub to see if a file exists that uses the credential's ID. Once checked it will:\n\nupdate the file on GitHub if it exists;\ncreate a new file if it doesn't exist;\nignore if it's the same.\n\nIn addition, it also checks if any flow have been deleted from typebot workspace. If a flow no longer exists in workspace, the corresponding file will be removed from the repository to keep everything in sync.\n\nWho is this for?\nPeople wanting to backup their typebots(flows) outside the server for safety purposes or to migrate to another server.",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 12037,
+  "name": "Automate Contract Analysis & Negotiation with GPT-4 & Financial Impact Assessment",
+  "description": "How It Works\nThis workflow automates daily contract monitoring, analysis, and negotiation by retrieving contract data, applying AI-driven legal analysis, identifying potential issues and risks, coordinating multi-agent negotiation workflows, and updating strategic plans. It continuously monitors contracts, performs GPT-4–based contract analysis with detailed risk identification, and flags problematic clauses and unfavorable terms. The system routes identified items to a negotiation agent for structured strategic discussion, applies financial impact analysis to evaluate deal implications, determines negotiation outcomes, logs decisions and results, and updates CAPEX and OPEX planning systems accordingly. Designed for legal departments, procurement teams, corporate counsel, and contract management offices, it supports automated contract risk assessment, informed negotiations, and data-driven strategic planning.\n\nSetup Steps\nConfigure contract data source and set up daily monitoring schedule.\nConnect OpenAI GPT-4 API  \nSet up negotiation agent credentials and financial modeling system connections.\nDefine contract risk thresholds \n\nPrerequisites\nContract management system or data source; OpenAI API key; negotiation agent access \n\nUse Cases\nCorporate legal departments automating contract risk assessment across portfolios \n\nCustomization\nAdjust contract analysis criteria and risk thresholds \n\nBenefits\nEliminates manual contract review, identifies hidden risks automatically ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

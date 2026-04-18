@@ -1,0 +1,12 @@
+{
+  "id": 4665,
+  "name": "Automate Service Ticket Triage with GPT-4o & Taiga",
+  "description": "Usecase: When a new service ticket is created in Taiga, it's often unclear whether it contains sufficient details to begin work. This workflow automates the triage process by:\n\nUsing an AI model to extract key information from the ticket description.\nAutomatically assigning values for:\n   Type (Bug, Enhancement, Onboarding, Question)\n   Severity (Wishlist, Minor, Normal, Important, Critical)\n   Priority (Low, Normal, High)\n   Status (New, Needs More Info, etc.)\nDetecting missing critical data and blocking the ticket if incomplete.\n\nSetup instructions here:\nhttps://github.com/emooney/Service_Ticket_Triage_Helper\n",
+  "nodes": [
+    "n8n-nodes-base.taiga",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

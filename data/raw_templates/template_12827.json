@@ -1,0 +1,18 @@
+{
+  "id": 12827,
+  "name": "Automate systematic literature reviews with Google Drive, GPT-4, Gemini, Qdrant and Airtable",
+  "description": "How it works\nAutomates systematic literature review by downloading papers from Google Drive, extracting text, and evaluating them against strict inclusion/exclusion criteria using LLM agents\n\nRoutes included papers to Qdrant vector stores with Gemini embeddings for semantic search, and excluded papers to a separate folder\n\nLogs all decisions to Airtable with PRISMA-compliant justification for complete audit trails\n\nSet up steps\nConnect Google Drive credentials to access your paper folder\n\nConfigure Airtable base and table for decision logging\n\nAdd OpenAI (GPT-4) and Google Gemini API credentials for LLM evaluation and embeddings\n\nSet up Qdrant instances for vector storage (supports up to 3 collections)\n\nKeep detailed descriptions of your inclusion/exclusion criteria in the sticky notes inside your workflow\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+    "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

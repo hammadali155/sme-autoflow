@@ -1,0 +1,14 @@
+{
+  "id": 2688,
+  "name": "Hacker News Throwback Machine - See What Was Hot on This Day, Every Year!",
+  "description": "This is a simple workflow that grabs HackerNews front-page headlines from today's date across every year since 2007 and uses a little AI magic (Google Gemini) to sort 'em into themes, sends a neat Markdown summary on Telegram.\n\nHow it works\n\nRuns daily, grabs Hacker News front page for this day across every year since 2007.\nPulls headlines & dates.\nUses Google Gemini to sort headlines into topics & spot trends.\nSends a Markdown summary to Telegram.\n\nSet up steps\n\nClone the workflow.\nAdd your Google Gemini API key.\nAdd your Telegram bot token and chat ID.\n\n**Built on Day-01 as part of the #100DaysOfAgenticAi\nFork it, tweak it, have fun!**\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

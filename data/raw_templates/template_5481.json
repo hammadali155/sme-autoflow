@@ -1,0 +1,11 @@
+{
+  "id": 5481,
+  "name": "Automate Interview Scheduling and Data Cleanup with Cal.com and Google Sheets",
+  "description": "Workflow Description*\nAutomate your candidate interview pipeline with precision.\nThis powerful integration pulls booking data from Cal.com, extracts interview details (name, email, date & time), and syncs them directly into your Google Sheets tracker. It matches applicants using email, formats the date in the Asia/Riyadh timezone, and appends only relevant entries.\n\nBut it doesn’t stop there — it cleans your sheet automatically by removing unmatched or empty records, ensuring your data stays clean, reliable, and ready for HR decisions.\n\n What it does:\n Fetches interview bookings from Cal.com\n\n Converts time to readable format (e.g. 30 June, 09:00 AM)\n\n Matches booking emails with existing applicant records\n\n Auto-updates interview date in your sheet\n\n Detects and deletes irrelevant or blank entries\n\n Use Cases:\nResume screening workflows that require automated interview sync\n\nHR dashboards needing real-time calendar updates\n\nApplicant pipelines where only valid interviews should remain\n\nIdeal for:\nRecruiters • HR teams • Automation architects • Remote hiring pipelines\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": 14057,
+  "name": "Query your PostgreSQL data in plain English with GPT-4o-mini",
+  "description": "AI SQL Analytics Agent\n\nChat With Any PostgreSQL Database Using Natural Language\n\n\n\nThis template turns your PostgreSQL database into an AI-powered analytics assistant.\n\nInstead of exporting data or uploading huge CSV files to an LLM, this workflow lets AI query your database directly using SQL, returning clean insights instantly.\n\nJust type your table name once and start asking questions in plain English.\n\nNo SQL required.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat"
+  ],
+  "tags": []
+}

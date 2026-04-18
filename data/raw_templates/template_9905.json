@@ -1,0 +1,14 @@
+{
+  "id": 9905,
+  "name": "Automate Invoice Processing with Gmail, OCR.space, Slack & Xero",
+  "description": " How It Works\n\nTrigger: Watches for new emails in Gmail with PDF/image attachments.  \nOCR: Sends the attachment to OCR.space API (https://ocr.space/OCRAPI) to extract invoice text.  \nParsing: Extracts key fields:  \n   Vendor  \n   Invoice number  \n   Amount  \n   Currency  \n   Invoice date  \n   Due date  \n   Description  \nValidation Logic:  \n   Checks if amount is valid  \n   Ensures vendor and invoice number are present  \n   Flags high-value invoices (e.g., over $10,000)  \nRouting:  \n   If invalid: \n   Sends a Slack message highlighting issues\n   Labels email as Rejected  \n   If valid:  \n     Logs the invoice into Google Sheets  \n     Sends a Slack message to the finance team for approval  \n     After approval, creates a draft invoice in Xero  \n     Labels the email as Processed in Gmail  \nSet up steps\n\n•\tEstimated setup time: 45-60 mins\n•\tYou’ll need connected credentials for Gmail, Slack, Google Sheets, and Xero\n•\tReplace the default API key for OCR.space with your own (in the HTTP Request node)\n•\tUpdate Slack channel IDs and label IDs to match your workspace\n•\tAdjust invoice validation rules as needed (e.g. currency, red flag conditions)\n\nAll detailed explanations and field mappings are provided in sticky notes within the workflow.\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.xero",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 12198,
+  "name": "Monitor IoT sustainability compliance and ESG reports with OpenAI, Airtable, Slack and Gmail",
+  "description": "How It Works\n\nThis workflow automates IoT device compliance monitoring and anomaly detection for industrial operations. Designed for facility managers, quality assurance teams, and regulatory compliance officers, it solves the challenge of continuously monitoring sensor networks while ensuring regulatory adherence and detecting operational issues in real-time.The system runs every 15 minutes, fetching IoT sensor data and structuring it for analysis. Dual AI agents evaluate compliance against regulatory standards and detect operational anomalies. Issues trigger immediate email and Slack alerts for rapid response. Daily data aggregates into comprehensive ESG reports with AI-generated insights, automatically emailed to stakeholders for transparency and audit trails.\n\nSetup Steps\nConfigure AirTable credentials and set 15-minute schedule interval\nAdd OpenAI API keys for compliance and anomaly detection agents, configure regulatory thresholds\nSet Gmail/Slack credentials for alerts and ESG report distribution\n\nPrerequisites\nIoT sensor platform API access, OpenAI API key, Gmail/Slack accounts\n\nUse Cases\nManufacturing quality control, environmental compliance monitoring\n\nCustomization\nModify sensor polling frequency, adjust compliance rules, customize anomaly thresholds\n\nBenefits\nContinuous compliance assurance, instant anomaly detection",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

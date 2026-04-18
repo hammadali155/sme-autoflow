@@ -1,0 +1,17 @@
+{
+  "id": 13767,
+  "name": "Automated NASA Image & Content Publisher for WordPress and Multi-Social Media",
+  "description": "Who Is This For?\nThis workflow is perfect for content creators, digital marketers, and social media managers who want to automatically syndicate their content across multiple platforms. It's ideal for businesses, bloggers, and media outlets looking to maintain a consistent presence across WordPress, Facebook, Instagram, Telegram, and LinkedIn without manual posting efforts.\n\nWhat This Workflow Does\nThis workflow automates content distribution by monitoring RSS feeds and NASA's Picture of the Day API. It downloads images, applies branded watermarks with custom text and borders, resizes them for optimal display, and publishes the content with captions to multiple social platforms simultaneously. The workflow creates WordPress posts with featured images, shares to Facebook pages, posts to Instagram business accounts, sends to Telegram channels, and publishes to both LinkedIn profiles and company pages.\n\nKey Features\nMonitors RSS feeds and NASA API for new content\nDownloads and processes images automatically\nAdds branded watermarks with custom text, borders, and colors\nResizes images to optimal dimensions (1080x1080)\nCreates WordPress posts with featured images and metadata\nPosts to Facebook pages with image and caption\nPublishes to Instagram business accounts\nSends content to Telegram channels\nPosts to both LinkedIn profiles and company pages\nMaintains consistent branding across all platforms\nHandles multiple content sources in parallel\n\nRequirements\nRSS Feed URLs** (content sources to monitor)\nWordPress API Credentials** (for creating posts and uploading media)\nFacebook Graph API Access** (for page and Instagram posting)\nTelegram Bot API Token** (for channel posting)\nLinkedIn OAuth2 Credentials** (for profile and page posting)\nImage Processing Tools** (built into n8n)\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.nasa",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

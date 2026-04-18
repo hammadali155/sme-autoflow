@@ -1,0 +1,11 @@
+{
+  "id": 14356,
+  "name": "Send SaaS trial follow-up emails with MongoDB and Gmail",
+  "description": "How it works  \nThis workflow runs on a daily schedule to monitor users currently on a trial plan. It fetches user data from MongoDB, calculates their trial stage, and assigns a trigger label such as Day 3, Day 7, Day 13, or Last Day. Based on this stage, the workflow sends a targeted email using Gmail. This ensures consistent engagement and improves trial-to-paid conversion without manual effort.\n\nStep-by-step  \n\nFetch and filter trial users**  \n  Schedule Trigger – Runs the workflow daily at a fixed time.  \n  Find documents – Retrieves users with an active trial plan from MongoDB.  \n  Code in JavaScript – Calculates trial progress and assigns a trigger type (day_3, day_7, day_13, last_day).  \n\nSend stage-based emails**  \n  Loop Over Items – Iterates through each filtered user.  \n  Switch – Routes users based on their trigger type.  \n  Send day 3 email – Sends onboarding encouragement email.  \n  Send day 7 mail – Sends mid-trial engagement email.  \n  Send day 13 mail – Sends near-expiry reminder email.  \n  Send Last day email – Sends final urgency email before trial ends.  \n  Merge – Combines all branches and continues looping for remaining users.  \n\nWhy use this?  \n\nAutomates user engagement throughout the trial lifecycle  \nImproves activation and feature adoption with timely nudges  \nIncreases conversion rates with strategic email timing  \nEliminates manual tracking of trial users  \nScales easily for large SaaS user bases  ",
+  "nodes": [
+    "n8n-nodes-base.mongoDb",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

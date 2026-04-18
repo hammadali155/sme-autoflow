@@ -1,0 +1,13 @@
+{
+  "id": 13732,
+  "name": "Run email outreach campaigns from Telegram with Gmail and Google Sheets",
+  "description": "Automated Email Outreach: Telegram → Gmail → Sheets Dashboard\n\nWho is this for?\nSolo founders, sales teams, and event organizers who need email outreach without expensive tools but want full control from Telegram.\n\nWhat problem is this workflow solving?\nEmail campaigns are painful:\nExpensive tools ($50+/month)\nNo mobile control\nManual tracking\nUnsubscribe nightmares\n\nThis workflow gives you Zapier-level outreach for free from Telegram → Gmail → Sheets.\n\nWhat this workflow does\n\nTelegram Control /outreach command launches campaigns  \nSmart Sending Gmail + random delays (anti-spam)  \nReal-time Tracking Open pixels + unsubscribe webhooks  \nSheets Dashboard Leads, logs, stats in one place  \nCompliance Auto-unsubscribe + opt-out tracking  \n\nFull flow:\nTelegram Bot → Parse Command → Sheets Leads → Gmail Send → Pixel/Unsub Track → Update Dashboard\n\nSetup (7 minutes)\n\nTelegram: Create bot → Get token → Update chatId\nGmail: OAuth2 credential (any account)\nGoogle Sheets: Create sheet with tabs:\nDashboard (stats)\nLeads (email, name, status)\nLogs (sends, opens, unsubs)\nConfig: Update Sheet ID + webhook URLs\nTest: /outreach cap:2 → Verify sends\n\ntext\n\nTelegram commands:\n/outreach sender:you@domain.com subject:\"Event Invite\" body:\"Hi {{name}}...\" cap:50\n/status → Campaign stats\n/stop → Pause sends\n\nHow to customize to your needs\n\nCampaign Types:\nEvent invites → {{name}} for {{event}}\nSales outreach → {{company}} pricing inquiry\nNewsletter → {{name}} weekly update\n\ntext\n\nScale Up:\nMultiple senders (Gmail aliases)\nA/B testing (subject lines)\nSegmentation (lead status)\nCRM sync (HubSpot/Airtable)\n\nAnti-spam:\nRandom delays (30s-2m)\nHTML tracking pixel\nAuto-unsubscribe\nSend caps\nBounce handling\n\nROI:\n\n$0/month (vs Zapier $50+, Mailchimp $20+)\nTelegram control (no desktop needed)\n5min campaigns (vs hours setup)\nReal-time dashboard (opens, unsubs, sends)\nGDPR compliant (auto-unsub)\n\nProven: Used for 5k+ event invites, 28% open rate.\n\nNeed help customizing?: \nContact me for consulting and support: LinkedIn / Message \n\nKeywords: n8n email outreach, telegram automation, gmail campaigns, google sheets dashboard, no-code email marketing, sales outreach automation, event invite workflow.\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

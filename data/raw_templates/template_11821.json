@@ -1,0 +1,13 @@
+{
+  "id": 11821,
+  "name": "Automate Event Registration and QR Check-ins with Google Sheets, Gmail, and Slack",
+  "description": "Who is this for?\nThis template is ideal for event organizers, conference managers, and community teams who need an automated participant management system. Perfect for workshops, conferences, meetups, or any event requiring registration and check-in tracking.\nWhat this workflow does\nThis workflow provides end-to-end event management with two main flows:\nRegistration Flow:\n⦁\tReceives participant registration via webhook\n⦁\tGenerates unique ticket ID and stores in Google Sheets\n⦁\tCreates QR code using the QR Code node\n⦁\tSends confirmation email with QR code attached\nCheck-in Flow:\n⦁\tScans and decodes QR code at venue entrance\n⦁\tValidates ticket against participant database\n⦁\tBlocks duplicate check-ins with clear error messages\n⦁\tSends Slack notification for VIP arrivals\n⦁\tReturns real-time attendance statistics\nSetup\nCreate a Google Sheet with columns: Ticket ID, Event ID, Name, Email, Ticket Type, Registered At, Checked In, Check-in Time\nConnect your Google Sheets and Gmail credentials\nConfigure Slack for VIP notifications\nSet up the webhook URLs in your registration form\nRequirements\n⦁\tGoogle Sheets (participant database)\n⦁\tGmail account (confirmation emails)\n⦁\tSlack workspace (VIP notifications)\nHow to customize\n⦁\tAdd capacity limits by checking row count before registration\n⦁\tModify QR code size and format in the QR Code node\n⦁\tAdd additional ticket types beyond VIP/standard\n⦁\tIntegrate with payment systems for paid events\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

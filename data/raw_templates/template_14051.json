@@ -1,0 +1,13 @@
+{
+  "id": 14051,
+  "name": "Query expenses on Telegram with GPT-4.1 and Google Sheets",
+  "description": "💬 Chat with Your Finances on Telegram\n\nAsk questions like “How much did I spend on food last month?” and get instant answers from your financial data — directly in Telegram.\n\n\nThis workflow connects your Google Sheets expense log to an AI-powered query engine that understands natural language, resolves ambiguous categories and person names, and sends back a clean formatted summary in Telegram.\n\nNo spreadsheets. No dashboards.  \nJust chat with your financial data.\n\n⚡ How it works\n\nSimply send a message like:\n\nHow much did we spend on groceries last month?\nShow me a breakdown by category for this week.\n\nThe workflow automatically:\n\nParses your intent using GPT-4.1-nano  \nResolves categories and person names via mapping tables  \nFilters and aggregates expense data from Google Sheets  \nReturns a formatted summary directly in Telegram\n\nIf a category or person is unknown, the workflow uses AI to suggest the closest match and asks the user to confirm via Telegram inline buttons.\n\nConfirmed aliases are saved automatically, making the system self-learning over time.\n\n✨ Key Features\n\nNatural language queries** in English and German  \nAI intent parsing** with GPT-4.1-nano (time range, person, category, filters)  \nSelf-learning entity resolution** for categories and names  \nInteractive disambiguation** via Telegram inline buttons  \nRelative date support** (this week, last month, this year)  \nGroup-by breakdowns** by category or person  \nShared expense filtering** via common_only flag  \nMulti-user support** via Chat ID allowlist\n\n📋 Requirements\n\nTo run this workflow you need:\n\nTelegram Bot** (created via @BotFather)\nOpenAI API key**\nFour Google Sheets**\n\nRequired sheets:\n\nexpenses\nexpense_categories\ncategories_mapping\nperson_mapping\n\n⏱ Setup Time\n\nApprox. 15 minutes\n\nAll required configuration steps are documented directly inside the workflow using \"Action Required\" notes in each workflow layer.\n\nExamples\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

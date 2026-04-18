@@ -1,0 +1,10 @@
+{
+  "id": 5169,
+  "name": "Extract Product Info from Website Screenshots with Dumpling AI + Sheets",
+  "description": "What this workflow does\n\nThis workflow extracts product details—like name, price, discount, and rating—  \nfrom website screenshots using Dumpling AI. It starts when a new product page  \nURL is added to a Google Sheet, captures a screenshot of that page, extracts  \nvisible product info from the image, and writes the results back into the sheet.\n\nWhat problem is this workflow solving?\n\nMany product pages block traditional scraping tools or use unstructured layouts.  \nThis workflow bypasses HTML limitations by using visual AI extraction, making  \nit reliable even when content is embedded in images or hard to parse with code.\n\nWho is this for?\n\nThis is ideal for eCommerce researchers, pricing analysts, marketers, or anyone  \nbuilding a product database from websites without needing to code or maintain  \ncomplex scrapers.\n\nSetup\n\nCreate a Google Sheet with a column named \"Site\" (or update the trigger).  \nAdd your product page URLs in this column—one per row.  \nConnect your Google Sheets and Dumpling AI credentials in n8n.  \nEnsure your Dumpling AI account has API access for screenshots and extraction.\n\nHow to customize the workflow\n\nPrompt adjustment**:  \n  In the “Extract Text from Screenshot” node, you can modify the prompt to  \n  extract other information like brand name, delivery time, or availability.\n\nAdd more fields**:  \n  After the extraction, edit the “Format Extracted Data” node to map additional  \n  fields from the response to your Google Sheet columns.\n\nChange output destination**:  \n  You can easily replace the Google Sheets module with Airtable, Notion, or  \n  another app if preferred.\n\n&gt; ⚠️ This works best when the product data is clearly visible in the screenshot.  \n&gt; It won’t extract info that’s hidden behind popups or loaded via user interaction.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 14782,
+  "name": "Build a local RAG chatbot with Ollama, Qwen, BGE-M3 and Postgres PGVector",
+  "description": "Build a fully local RAG chatbot using Ollama that works without tool calling — ideal for smaller open-source models like Qwen that don't support native function calls. This template lets you run a private, self-hosted AI assistant with retrieval-augmented generation using only your own hardware.\n\nHow it works\n\nA Webhook receives the user's chat message\nA small classifier LLM (Qwen 7B) analyzes the input and decides: is this small talk, or a real question that needs the knowledge base?\nFor small talk, a dedicated AI agent responds conversationally with chat memory\nFor real questions, the classifier generates focused sub-queries, which are sent through a loop-based RAG pipeline:\n   Each sub-query is embedded using BGE-M3 and matched against a Postgres PGVector store\n   Results are filtered by a relevance score threshold (&gt;0.4)\n   Chunks are aggregated and deduplicated across all sub-queries\nAn Answer Generator agent (Qwen 14B) produces a sourced answer using a strict 3-step format: short answer → sources → follow-up question\nBoth paths use Postgres-backed chat memory for multi-turn conversations\nA post-processing step removes &lt;think&gt; tags that some reasoning models produce\n\nSet up steps\n\nInstall Ollama and pull the required models:\n   ollama pull qwen2.5:7b (classifier + small talk)\n   ollama pull qwen3:14b (answer generation)\n   ollama pull bge-m3 (embeddings)\nSet up PostgreSQL with the pgvector extension enabled\nCreate your vector store — ingest your documents into the PGVector store using BGE-M3 embeddings (you can use n8n's built-in document loaders for this)\nConfigure credentials in n8n:\n   Ollama connection (default: http://localhost:11434)\n   PostgreSQL connection for both chat memory and vector store\nCustomize the webhook path and connect it to your frontend or API client\nOptional: Adjust the relevance score threshold, swap models for larger/smaller ones, or modify the system prompts to match your use case\n",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOllama",
+    "@n8n/n8n-nodes-langchain.embeddingsOllama",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+    "@n8n/n8n-nodes-langchain.vectorStorePGVector"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 2026,
+  "name": "AI chat with any data source (using the n8n workflow tool)",
+  "description": "This AI agent can access data provided by another n8n workflow. Since that workflow can be used to retrieve any data from any service, this template can be used give an agent access to any data.\n\nNote that to use this template, you need to be on n8n version 1.19.4 or later.",
+  "nodes": [
+    "n8n-nodes-base.hackerNews",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

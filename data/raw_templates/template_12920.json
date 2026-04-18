@@ -1,0 +1,15 @@
+{
+  "id": 12920,
+  "name": "Generate scheduled B2B leads from Google Maps with Lemlist, Claude, and Pitchlane",
+  "description": "How it works\n\nRuns on schedule (Monday-Friday at 9 AM) to automate lead generation\n\nSearches for companies on Google Maps by location and category\n\nExtracts owner information from company websites and impressum pages\n\nEnriches leads with email addresses and LinkedIn profiles using Lemlist\n\nGenerates personalized compliment messages using Claude AI\n\nCreates custom video messages with Pitchlane\n\nUploads qualified leads to your CRM for follow-up\n\nSet up steps\n\nConfigure Google Maps search parameters (location, category, search terms)\n\nAdd Serper API credentials for Google Maps search\n\nConnect Lemlist for lead enrichment and upload\n\nConfigure Pitchlane API credentials for video creation\n\nSet up Google Docs for documentation and notes\n\nConnect Claude AI for personalized message generation\n\nAdjust the schedule trigger time if you want a different time than 9 AM\n\nKeep detailed workflow notes in the sticky notes inside your workflow\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.lemlist",
+    "n8n-nodes-base.googleDocs",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.googleGemini",
+    "@n8n/n8n-nodes-langchain.anthropic"
+  ],
+  "tags": []
+}

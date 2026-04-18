@@ -1,0 +1,14 @@
+{
+  "id": 10383,
+  "name": "Send GPT-4 Telegram polls to multiple groups with Google Sheets analytics",
+  "description": "An enterprise-grade n8n workflow that leverages OpenAI GPT-4 to generate contextually relevant poll questions and automatically distributes them across multiple Telegram groups and channels. Includes comprehensive analytics tracking, smart error handling, real-time admin notifications, and priority-based topic scheduling.\n\nPerfect for community managers, HR teams, educators, marketing departments, and organizations running multiple Telegram communities who want to maintain consistent engagement without manual effort.\n\nHow it works\n\nSchedule Trigger - Fires on a configurable cron (default: 9 AM & 5 PM weekdays)\nLoad Topic Queue - Reads priority-ranked topics from Google Sheets topic registry\nSelect Best Topic - Picks the highest-priority, freshest topic with 24-hour dedup guard\nGPT-4 Poll Generation - Creates engaging, on-brand poll questions with emoji options\nValidate Poll - Enforces Telegram API limits and content safety before sending\nMulti-Group Deploy - Distributes poll + context message to every enabled Telegram group\nAnalytics Logging - Writes per-poll deployment stats to Google Sheets\nAdmin Telegram Alert - Sends real-time deploy summary to admin chat\nTopic Queue Update - Marks topic used, updates next-scheduled date\n\nGoogle Sheets Setup\nSheet 1 — Topic Queue: topic | category | priority | language | tone | targetAudience | lastUsed | usageCount | enabled\nSheet 2 — Group Registry: groupId | groupName | groupType | language | enabled\nSheet 3 — Analytics Log: pollId | topic | question | totalGroups | successfulGroups | successRate | completedAt\n\nCredentials Needed\nOpenAI API** — GPT-4o poll generation\nTelegram Bot API** — Sending polls and messages\nGoogle Sheets** — Topic queue, group registry, analytics\nSMTP** — Error alert emails\n\nKey Features\nPriority-based topic scheduling with staleness detection\nTelegram API constraint enforcement (255 char question, 100 char options)\nPer-group error isolation — one failed group never blocks others\nReal-time admin Telegram notification with success/fail breakdown\nFull SOC-ready audit log for every poll deployment\n\n\nExplore More Automation:\nContact us to design AI-powered lead nurturing, content engagement, and multi-platform reply workflows tailored to your growth strategy.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

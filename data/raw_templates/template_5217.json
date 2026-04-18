@@ -1,0 +1,13 @@
+{
+  "id": 5217,
+  "name": "Real-Time Bitcoin Price Alerts with Bright Data & n8n",
+  "description": "Description\n\nThis workflow monitors Bitcoin prices across multiple exchanges and sends you alerts when significant price drops occur. It helps crypto traders and investors identify buying opportunities without constantly watching the markets.\n\nOverview\n\nThis workflow monitors Bitcoin prices across multiple exchanges and sends you alerts when significant price drops occur. It uses Bright Data to scrape real-time price data and can be configured to notify you through various channels.\n\nTools Used\n\nn8n:** The automation platform that orchestrates the workflow.\nBright Data:** For scraping cryptocurrency exchange data without getting blocked.\nNotification Services:** Email, SMS, Telegram, or other messaging platforms.\n\nHow to Install\n\nImport the Workflow: Download the .json file and import it into your n8n instance.\nConfigure Bright Data: Add your Bright Data credentials to the Bright Data node.\nSet Up Notifications: Configure your preferred notification method.\nCustomize: Set your price thresholds, monitoring frequency, and which exchanges to track.\n\nUse Cases\n\nCrypto Traders:** Get notified of buying opportunities during price dips.\nInvestors:** Monitor your crypto investments and make informed decisions.\nFinancial Analysts:** Track Bitcoin price movements for market analysis.\n\nConnect with Me\n\nWebsite:** https://www.nofluff.online\nYouTube:** https://www.youtube.com/@YaronBeen/videos\nLinkedIn:** https://www.linkedin.com/in/yaronbeen/\nGet Bright Data:** https://get.brightdata.com/1tndi4600b25 (Using this link supports my free workflows with a small commission)\n\n#n8n #automation #bitcoin #cryptocurrency #brightdata #pricealerts #cryptotrading #bitcoinalerts #cryptoalerts #cryptomonitoring #n8nworkflow #workflow #nocode #cryptoinvesting #bitcoinprice #cryptomarket #tradingalerts #cryptotools #bitcointrading #pricemonitoring #cryptoautomation #bitcoininvestment #cryptotracker #marketalerts #tradingopportunities #cryptoprices\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

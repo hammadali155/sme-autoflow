@@ -1,0 +1,12 @@
+{
+  "id": 12100,
+  "name": "Compare LLM Token Costs Across 350+ Models with OpenRouter",
+  "description": "This n8n template lets you run prompts against 350+ LLM models and see exactly what each request costs with real-time pricing from OpenRouter\n\n  Use cases are many: Compare costs across different models, plan your AI budget, optimize prompts for cost efficiency, or track expenses for client billing!\n\nGood to know\n\n  OpenRouter charges a platform fee on top of model costs. See OpenRouter Pricing for details.\n  You need an OpenRouter account with API credits. Free signup available with some free models included.\n  Pricing data is fetched live from OpenRouter's API, so costs are always up-to-date.\n\nHow it works\n\n  All available models are fetched from OpenRouter's API when you start.\n  You select a model and enter your prompt via the form (or just use the chat).\n  The prompt is sent to OpenRouter and the response is captured.\n  Token usage (input/output) is extracted from the response using a LangChain Code node.\n  Real-time pricing for your selected model is fetched from OpenRouter.\n  The exact cost is calculated and displayed alongside your AI response.\n\nHow to use\n\n  Chat interface: Quick testing - just type a prompt and get the response with costs.\n  Form interface: Select from all available models via dropdown, enter your prompt, and get a detailed cost breakdown.\n  Click \"Show Details\" on the result form to see the full breakdown (input tokens, output tokens, cost per type).\n\nRequirements\n\n  OpenRouter account with API key (Get one here)\n\nCustomising this workflow\n\n  Add a database node to log all requests and costs over time\n  Connect to Google Sheets for cost tracking and reporting\n  Extend with LLM-as-Judge evaluation to also check response quality",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.code",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 5588,
+  "name": "Multi-Tool Research Agent for Animal Advocacy with OpenRouter, Serper & Open Paws DB",
+  "description": "This general-purpose sub-agent combines multiple research and automation tools to support high-impact decision-making for animal advocacy workflows. It’s designed to act as a reusable, modular unit within larger multi-agent systems—handling search, scraping, scoring, and domain-specific semantic lookup.\n\nIt powers many of the advanced workflows released by Open Paws and serves as a versatile backend utility agent.\n\n🛠️ What It Does\n\nPerforms real-time Google Search using Serper  \nScrapes and extracts page content using Jina AI and Scraping Dog  \nConducts semantic search over the Open Paws knowledge base  \nGenerates OpenAI embeddings for similarity search and analysis  \nRoutes search and content analysis through OpenRouter LLMs  \nConnects with downstream tools like the Text Scoring Sub-Workflow to evaluate message performance\n\n&gt; 🧩 This agent is typically used as a sub-workflow in larger automations where agents need access to external tools or advocacy-specific knowledge.\n\n🧠 Domain Focus: Animal Advocacy\n\nThe agent is pre-configured to interface with the Open Paws database—an open-source, animal advocacy-specific knowledge graph—and is optimized for content and research tasks relevant to farmed animal issues, corporate campaigns, and activist communication.\n\n🔗 Integrated Tools and APIs\n\n| Tool          | Purpose                                 |\n|---------------|------------------------------------------|\n| Serper API        | Real-time Google Search queries             |\n| Jina AI           | Web scraping and content extraction         |\n| Scraping Dog      | Social media scraping where Jina is blocked |\n| OpenAI API        | Embedding generation for semantic search    |\n| OpenRouter        | Proxy to multiple LLMs (e.g., GPT-4, Claude)|\n| Open Paws DB      | Advocacy-specific semantic knowledge base   |\n\n📦 Use Cases\n\nCreate and evaluate online content (e.g. social media, emails, petitions) for predicted performance and advocacy alignment  \nAct as a research and reasoning agent within multi-agent workflows  \nAutomate web and social media research for real-time campaign support  \nSurface relevant facts or arguments from an advocacy-specific knowledge base  \nAssist communications teams with message testing and content ideation  \nMonitor search results and scrape pages to inform rapid response messaging  \n\n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.toolHttpRequest",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

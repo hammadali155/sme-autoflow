@@ -1,0 +1,11 @@
+{
+  "id": 4771,
+  "name": "Turn Monoprix Delivery Emails into Calendar Events using ChatGPT and Google Calendar",
+  "description": "Intro:\nThe purpose of this workflow is to simply convert you planned Grocery delivery  confirmation email to a Google Calendar event in your family calendar. While based on a Monoprix.fr email format, it is applicable/adaptable to almost anything else. \n\nHow it works:\nIt is triggered by reception of the confirmation email on your Gmail. The workflow then extracts relevant data using ChatGPT, formats it, and creates a Google Calendar event. \n\nSteps to use it:\nImport template in your n8n\nUpdate credentials for Gmail, Google Calendar, and ChatGPT\nTest workflow based on confirmation email received\nActivate workflow",
+  "nodes": [
+    "n8n-nodes-base.googleCalendar",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

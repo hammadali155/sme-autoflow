@@ -1,0 +1,16 @@
+{
+  "id": 13322,
+  "name": "Detect and route gameplay security anomalies with GPT-4o, Slack and Sheets",
+  "description": "How It Works\nThis workflow automates cybersecurity incident detection and response for security operations centers (SOCs) managing constant threat landscapes. Designed for security analysts, IT operations teams, and CISOs, it solves the challenge of manually triaging security alerts, validating threats, and coordinating response actions across multiple systems and stakeholders. The system schedules continuous security monitoring, generates simulated anomaly data for testing, validates behaviors through AI agents (Behavior Validator confirms threat patterns, Governance Agent assesses severity), routes incidents by criticality (low/critical), and orchestrates responses: critical threats trigger automated human reviews, escalation workflows, and Slack alerts; low-priority items receive automated remediation with Google Sheets logging. By combining AI-powered threat analysis with intelligent routing and multi-channel response coordination, organizations reduce incident response time by 80%, minimize false positives, ensure consistent threat handling, and enable security teams to focus on strategic defense rather than alert fatigue.\n\nSetup Steps\nConnect Schedule Trigger for continuous monitoring \nConfigure SIEM/security data sources \nAdd OpenAI API keys to Behavior Validator and Governance Agent nodes\nDefine severity thresholds and threat patterns in agent prompts\nLink Slack webhooks for critical incident alerts and escalation channels\nConnect Google Sheets API for incident logging and compliance tracking\n\nPrerequisites\nSIEM or security monitoring platform access, OpenAI API account\nUse Cases\nIntrusion detection response, malware outbreak containment\nCustomization\nModify AI prompts for organization-specific threat models, adjust severity scoring algorithms\nBenefits\nReduces incident response time by 80%, minimizes false positive alert fatigue",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCode"
+  ],
+  "tags": []
+}

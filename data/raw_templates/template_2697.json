@@ -1,0 +1,13 @@
+{
+  "id": 2697,
+  "name": "Learn Anything from HN - Get Top Resource Recommendations from Hacker News",
+  "description": "Learning something new? Endlessly searching to find the best resources? This workflow finds top community-recommended learning resources on any topic from Hacker News, delivered to your inbox.\n\nHow it works\nUser submits a topic they want to learn via a simple form.\nThe workflow searches for relevant \"Ask HN\" posts on Hacker News and extracts top-level comments.\nAn LLM analyzes the comments and identifies the best learning resources.\nA personalized email is sent to the user with a Markdown formatted list of top recommendations, categorized by resource type (e.g., book, course, article) and difficulty level.\n\nSet up steps\n\nAdd your Google Gemini API credentials. You'll need to create a project and enable the Generative Language API.\nAdd your SMTP credentials for sending emails.\nCustomize the Form and email subject (optional)\nActivate the workflow\n\nScreenshots for Workflow, Form and Email\n\n\n\nBuilt on Day-03 as part of the #100DaysOfAgenticAi\nFork it, tweak it, have fun!",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.hackerNews",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

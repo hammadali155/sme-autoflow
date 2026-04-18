@@ -1,0 +1,11 @@
+{
+  "id": 13342,
+  "name": "Enrich new form leads with Lusha, HubSpot, and Slack alerts",
+  "description": "How it works\nA webhook receives form submissions with an email address\nThe email is validated and checked against HubSpot for duplicates\nLusha enriches the lead with phone number, job title, seniority, and company data\nEnriched data is merged with form fields and upserted into HubSpot CRM\nAn SDR is alerted on Slack and the webhook returns a JSON response\n\nSet up steps\nInstall the Lusha community node (@lusha-org/n8n-nodes-lusha)\nAdd your Lusha API, HubSpot OAuth2, and Slack credentials\nPoint your form's action URL to the webhook endpoint\nConfigure the Slack channel for SDR alerts",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

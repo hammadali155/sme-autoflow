@@ -1,0 +1,10 @@
+{
+  "id": 12642,
+  "name": "Extract ICP-targeted LinkedIn leads from post comments using Apify",
+  "description": "This workflow automates the process of extracting and qualifying leads from LinkedIn post comments based on your Ideal Customer Profile (ICP) criteria. It turns LinkedIn engagement into a structured, downloadable list of qualified leads—without manual review.\n\nWho’s this for\n\nSales and business development teams generating outbound lead lists\nMarketing teams running LinkedIn engagement campaigns\nRecruiters sourcing candidates with specific job titles\nOperators who want to convert LinkedIn comments into actionable data\n\nWhat problem does this solve\n\nManually reviewing LinkedIn post comments to identify relevant prospects is slow, repetitive, and error-prone. This workflow automates the entire process—from scraping comments to enriching profiles and filtering by ICP—saving hours of manual work and ensuring consistent results.\n\nWhat this workflow does\n\nCollects a LinkedIn post URL and ICP criteria via a form\nScrapes post comments using Apify (supports up to 1,000 comments)\nDeduplicates commenters and enriches profiles with LinkedIn data\nFilters profiles by selected job titles and countries\nExports matched leads as a downloadable CSV file\n\nHow to set up\n\nCreate an Apify account and generate an API key\nAdd your Apify credentials in n8n (Settings → Credentials → Apify API)\nExecute the workflow and submit a LinkedIn post URL and ICP criteria\n\nRequirements\n\nApify account with API access - Apify offers a free tier with $5 in monthly credits, which is enough to test this workflow on smaller LinkedIn posts\n\nHow to customize the workflow\n\nUpdate job titles and target countries in the Form Trigger\nIncrease pagination limits to support larger posts\nReplace CSV export with a CRM, Google Sheets, or database integration\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

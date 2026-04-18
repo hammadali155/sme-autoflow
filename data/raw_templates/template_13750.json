@@ -1,0 +1,12 @@
+{
+  "id": 13750,
+  "name": "Analyze invoices from Google Drive with AI and store data in Google Sheets",
+  "description": "Who this template is for\n\nThis workflow is designed for teams and businesses that receive invoices in Google Drive and want to automatically extract structured financial data without manual processing. It is ideal for finance teams, operators, and founders who want a simple way to turn invoices into usable data.\n\nNo accounting software is required, and the workflow works with common invoice formats such as PDFs and images.\n\nWhat this workflow does\n\nThis workflow monitors a Google Drive folder for newly uploaded invoices. When a file is detected, it uses AI to extract key invoice information such as issuer, date, total amount, taxes, currency, and description.\n\nThe extracted data is automatically cleaned, structured, and stored in Google Sheets, creating a centralized and searchable invoice database.\n\nHow it works\n\nThe workflow starts when a new file is added to a Google Drive folder\nEach file is processed individually and classified based on its type (PDF or image)\nThe file is then downloaded and analyzed using an AI model optimized for document or image understanding\nKey invoice fields such as issuer, date, total amount, taxes, currency, and description are extracted and normalized into structured fields\nThe AI output is appended to a Google Sheets table — a short wait step ensures reliable sequential writes when multiple invoices are processed at the same time\n\nHow to set up\n\nSelect the Google Drive folder where invoices will be uploaded\nConnect your OpenAI credentials for document and image analysis\nChoose the Google Sheets file that will store the extracted invoice data\nActivate the workflow and upload an invoice to test it\n\nRequirements\n\nGoogle Drive account\nGoogle Sheets account\nOpenAI API credentials\nn8n instance (cloud or self-hosted)\n\nHow to customize the workflow\n\nYou can adjust the fields extracted from invoices, add validation rules, connect the data to accounting tools, or extend the workflow with reporting and notification steps.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

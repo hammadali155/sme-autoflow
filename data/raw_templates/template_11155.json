@@ -1,0 +1,14 @@
+{
+  "id": 11155,
+  "name": "Subsidy Hunter: GPT-4o Analysis & Scoring with Google News & Chatwork Alerts",
+  "description": "Description: Automate your grant research with an AI Agent that reads, analyzes, and scores opportunities. 🏛️🤖\n\nThis advanced workflow transforms the tedious task of finding business subsidies into an automated intelligence stream. Unlike simple keyword scrapers, it uses an OpenAI Agent (GPT-4o) to read full articles, extract key details (deadlines, budgets), and evaluate their importance for SMEs on a 1-10 scale.\n\nKey Features:\n\nIntelligent Scoring: The AI assigns an \"Importance Score\" and \"Urgency\" level to each subsidy, filtering out noise.\n\nStructured Data Extraction: Converts unstructured news text into clean JSON (Deadlines, Requirements, Agencies).\n\nSmart Alerts: High-scoring subsidies (Score 7+) trigger a priority alert (🚨) sent directly to Chatwork.\n\nState Management: Uses Google Sheets to track history and prevent duplicate notifications.\n\nOrganized Layout: Nodes are clearly grouped into sections (Setup, Aggregation, Analysis, Logic) for easy customization.\n\nHow it works:\n\nAggregate: Collects the latest articles from Google News, J-Net21, and Mirasapo Plus RSS feeds.\n\nAnalyze: The AI Agent reads the content to extract fields like applicationDeadline and targetRecipients, while calculating an importance score.\n\nDeduplicate: Checks the URL against a Google Sheet database to ensure only new information is processed.\n\nFilter & Tag: High-value items are automatically tagged as \"High Priority\".\n\nNotify: Saves data to Google Sheets and sends a formatted message to Chatwork.\n\nSetup Requirements:\n\nGoogle Sheets: Create a sheet named Subsidies with the following headers in the first row: subsidyName, targetRecipients, applicationDeadline, budgetAmount, urgency, importanceScore, priorityTag, sourceUrl\n\nCredentials:\n\nOpenAI: API Key (GPT-4o recommended).\n\nChatwork: API Token.\n\nGoogle Sheets: OAuth2 connection.\n\nConfiguration: Open the \"Sticky Note Setup\" section (first node) and enter your Chatwork Room ID, Chatwork API Token, and Google Spreadsheet ID.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

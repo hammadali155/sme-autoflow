@@ -1,0 +1,14 @@
+{
+  "id": 5386,
+  "name": "Generate Weekly Meta Ads Report with GPT-4 Insights and Slack Delivery",
+  "description": "What this workflow does\nRuns automatically every Monday morning at 8 AM\nCollects your Meta Ads data from the last 7 days for a given account (date range is configurable)\nFormats the data, aggregating it at the campaign, ad set, and ad levels\nGenerates AI-driven analysis and insights on your results, providing actionable recommendations\nRenders the report as a visually appealing PDF with charts and tables\nSends the report via Slack (you can also add email or WhatsApp)\n\nA sample for the first page of the report:\n\nSetup Guide\nCreate an account of pdf noodle and use the pre-made Meta Ads template.\nConnect Meta Ads, OpenAI and Slack to n8n\nSet your Ad Account Id and date range (choose from 'last_7d', 'last_14d', 'last30d')\n(opcional) Customize the scheduling date and time\n\nRequirements\nMeta Ads (via Facebook Graph API): Documentation\npdf noodle access: Integration guide\nAI API access (e.g. via OpenAI, Anthropic, Google or Ollama)\nSlack acces (via OAuth2): Documentation\n\n\nFeel free to contact me via Linkedin, if you have any questions! 👋🏻",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

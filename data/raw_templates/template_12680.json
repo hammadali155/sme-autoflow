@@ -1,0 +1,15 @@
+{
+  "id": 12680,
+  "name": "Track receipt expenses via LINE with OpenAI GPT-4o-mini and Google Sheets",
+  "description": "Manage expenses with AI insights through LINE\n\n👥 Who’s it for\nThis workflow is designed for small business owners, freelancers, and finance teams who want to eliminate manual data entry for expense tracking. It is ideal for users who want not just a record of their spending, but real-time AI-driven financial insights to help manage their cash flow.\n\n🚀 How it works\nThis template acts as an autonomous finance assistant that connects LINE, Google Workspace, and OpenAI.\nData Capture**: Receives receipt images directly through the LINE Messaging API.\nAI Analysis**: Uses OpenAI (GPT-4o-mini) to perform OCR and extract Date, Store Name, Amount, and Category with high precision.\nDuplicate Prevention**: Automatically searches your Google Sheet to verify if the receipt has already been registered (based on Date and Amount) to prevent double-counting.\nCloud Storage**: Renames and saves the receipt image to Google Drive for tax compliance and easy retrieval.\nAutomated Ledger**: Appends the structured data into a Google Sheets master file.\nFinancial Insights**: Calculates the current month's total spending, compares it to previous data, and generates sharp management advice via AI to help you stay on budget.\n\n⚙️ Setup steps\nPrepare Google Sheet: Create a sheet with headers: Date, Amount, Store, and Category.\nPrepare Google Drive: Create a folder for receipt storage and copy its Folder ID.\nConfigure Credentials: Set up your credentials in n8n for OpenAI (API Key), Google Workspace (OAuth2), and LINE Messaging API (Channel Access Token).\nUpdate Node Settings: \n   In the \"Google Sheets\" nodes, select your specific spreadsheet.\n   In the \"Google Drive\" node, paste your Folder ID.\n   In the \"LINE\" HTTP nodes, ensure your Authorization header is set to Bearer YOUR_TOKEN.\nActivate: Set your n8n Webhook URL in the LINE Developers Console and toggle the workflow to \"Active.\"\n\n📦 Requirements\nn8n version 1.0 or later\nOpenAI API Key (GPT-4o / GPT-4o-mini)\nGoogle Workspace Account (Drive, Sheets)\nLINE Developers Account (Messaging API)\n\n🎨 How to customize\nRefine AI Advice**: Edit the System Message in the AI Agent node to change the tone of the advice (e.g., from \"Strict Accountant\" to \"Friendly Growth Hacker\").\nSwitch Channels**: Replace the final LINE node with Slack or Discord nodes if your team uses those platforms.\nBudget Alerts**: Add a Filter node to trigger special notifications if monthly spending exceeds a certain threshold.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 10899,
+  "name": "Order Processing with Google Sheets and Slack: Inventory Checks and Alerts",
+  "description": "Overview\nA cornerstone of your Order Management System, this workflow ensures seamless inventory control through fully automated stock checks, leading to a direct reduction in operational costs. It provides real-time alerts to the responsible personnel, enabling proactive issue detection and resolution to eliminate the financial damages associated with unexpected stock-outs.\n\nHow it works\nOrder Webhook\nReceives orders from external sources (e.g., website, form, or app) via API.\n\nCheck Order Request\nChecks the validity of the order (e.g., complete product, valid customer details)\n\nCheck Inventory\nRetrieve inventory information and compare it with the order request.\n\nNotifications\nGenerate a notification to Slack for the manager indicating a successful order or an out-of-stock situation.\n\nLogging\nLog the process details to a Google Sheet for tracking.\n\nSet up steps\n\nWebhook \nCreate a JSON request with the following format to call the Webhook Url\n\n{\n  \"id\": \"ORDER1001\",\n  \"customer\": {\n    \"name\": \"Customer\",\n    \"email\": \"customer@example.com\"\n  },\n  \"items\": [\n    {\n      \"sku\": \"SKU001\",\n      \"quantity\": 2,\n      \"name\": \"Product A\",\n      \"price\": 5000\n    },\n    {\n      \"sku\": \"SKU002\",\n      \"quantity\": 2,\n      \"name\": \"Product C\",\n      \"price\": 10000\n    }\n  ],\n  \"total\": 30000\n}\n\nDefine the greater than or less than conditions on the inventory level to enter the corresponding branches.\n\nGoogle Sheet \nClone the file to your Google Drive. (WMS Data Demo)\nReplace your credentials and connect.\nAccess permission must be granted to n8n.\n\nSlack \nReplace your credentials and connect.\nA channel named \"warehouse\" needs to be prepared to receive notifications (if using a different name, you must update the Slack node).",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack"
+  ],
+  "tags": []
+}

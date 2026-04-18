@@ -1,0 +1,10 @@
+{
+  "id": 13828,
+  "name": "Create manager tasks from Keephub form submissions with OpenAI GPT-4.1",
+  "description": "Who is this for\n\nOrganizations using Keephub for form management and task tracking. Perfect for HR teams handling employee requests (leave, equipment, onboarding), retail managers reviewing store submissions, or any workflow where form responses need manager follow-up.\n\nWhat it does\n\nTransforms form submissions into intelligent, contextual tasks for managers—automatically.\n\nWhen an employee submits a form, AI analyzes the data and generates a custom follow-up task with relevant fields, assigned directly to their supervisor.\n\nZero manual configuration per form.\n\n📋 How it works\n\nCapture — Webhook receives new form submission from Keephub\nIdentify — Fetches submitter profile and resolves their manager (parent org node)\nAnalyze — AI reads form data + schema and designs contextual task\nValidate — Checks AI output for required fields and malformed data\nCreate — Posts task to Keephub with proper targeting, dates, and permissions\nLink — Includes URL back to original submission for manager reference\n\nHow to set up\n\n📦 Prerequisites:\n\nn8n-nodes-keephub verified node (v1.5+) installed\nKeephub account with API access (Login + Bearer tokens)\nOpenAI API key (GPT-4.1 recommended)\nKnowledge of Keephub orgchart relations and groups\n\nSetup steps:\n\nInstall n8n-nodes-keephub from Community Nodes in n8n settings\nCreate Keephub Login credential → connect to 4 blue nodes (Get Submitter, Get Parent Node, Get Root Node, Get Form Schema)\nCreate Keephub Bearer credential → connect to \"Create Task\" node\nCreate OpenAI credential → connect to \"Design Task with AI\" node\nOpen ⚙️ Config node → set groupId to target specific user groups (find in Keephub admin)\nActivate workflow and copy webhook URL\nConfigure webhook in Keephub form settings\nTest with a form submission and n8n Webhook trigger",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

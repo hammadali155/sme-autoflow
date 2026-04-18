@@ -1,0 +1,11 @@
+{
+  "id": 13524,
+  "name": "Qualify Idealista leads via WhatsApp with Superchat and GPT-4o",
+  "description": "Who's it for\nThis template is built for real estate agencies and agents in Spain, Italy, and Portugal who receive property inquiries through Idealista and want to respond to leads faster using automation and AI.\n\nHow it works\nThe workflow monitors your inbox for new emails and filters for messages from Idealista. When a match is found, an AI agent extracts key lead details like name, phone number, and property reference from the unstructured email. A WhatsApp template message is then automatically sent to the lead via Superchat, initiating the qualification process within seconds of the inquiry.\n\nSet up steps\nSetup takes around 10–15 minutes. Connect your email account, link your WhatsApp Business through Superchat, and approve your WhatsApp template. Detailed step-by-step instructions are included in the sticky notes inside the workflow.\n\nRequirements\nAn email account connected to n8n (Gmail, Outlook, or IMAP)\nA WhatsApp account connected to Superchat\nAn approved WhatsApp template message\nAn OpenAI API key or other LLM provider\n\nHow to customize\nCreate a WhatsApp template that matches your agency's tone and branding to personalize the lead's first impression.",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 13854,
+  "name": "Enrich leads from Google Sheets with ScraperCity emails, phones, and validation",
+  "description": "Who is this for\n\nThis template is for B2B sales teams, SDRs, growth marketers, and founders who maintain a spreadsheet of prospects and need verified contact details -- emails and mobile numbers -- without manual research.\n\nHow it works\n\nReads a list of contacts (first name, last name, company domain) from a Google Sheet.\nFormats the contacts and submits them to the ScraperCity Email Finder API to discover business email addresses.\nPolls until the email-finder job completes, then downloads and parses the results.\nSubmits the found emails to the ScraperCity Mobile Finder API to look up phone numbers.\nPolls until the mobile-finder job completes, then downloads and parses results.\nSubmits all found emails to the ScraperCity Email Validator API for deliverability and catch-all checks.\nPolls until validation completes, merges all enriched data together, and writes the final enriched rows back to a Google Sheet.\n\nHow to set up\n\nAdd your ScraperCity API key as an HTTP Header Auth credential named \"ScraperCity API Key\".\nSet your input Google Sheets document ID and sheet name in the \"Configure Workflow\" node.\nSet your output Google Sheets document ID and sheet name in the same node.\nClick \"Execute workflow\" to run.\n\nRequirements\n\nScraperCity account with Email Finder, Mobile Finder, and Email Validator products enabled.\nGoogle Sheets OAuth2 credential connected to n8n.\nInput sheet with columns: first_name, last_name, domain.\n\nHow to customize the workflow\n\nSwap Google Sheets for Airtable or a webhook trigger.\nAdd a Filter node after validation to keep only emails with status \"valid\".\nExtend the output Set node to include additional fields from either API response.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

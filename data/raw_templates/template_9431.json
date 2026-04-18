@@ -1,0 +1,14 @@
+{
+  "id": 9431,
+  "name": "Automate Lead Qualification & Personalized Outreach with Jotform, GPT & Gmail",
+  "description": "Automatically qualify inbound demo requests, scrape prospect websites, and send AI-personalized outreach emails—all on autopilot.\n\nWhat This Workflow Does\n\nThis end-to-end lead automation workflow helps SaaS companies qualify and nurture inbound leads with zero manual work until human approval.\n\nKey Features\n\n✅ Smart Email Filtering - Automatically flags personal emails (Gmail, Yahoo, etc.) and routes them to a polite regret message  \n✅ Website Intelligence - Scrapes prospect websites and extracts business context  \n✅ AI Analysis - Uses OpenAI to score ICP fit, identify pain points, and find personalization opportunities  \n✅ Personalized Outreach - AI drafts custom emails referencing specific details from their website  \n✅ Human-in-the-Loop - Approval gate before sending to ensure quality control  \n✅ Professional Branding - Even rejected leads get a thoughtful response\n\nPerfect For\n\nB2B SaaS companies with inbound lead forms\nSales teams drowning in demo requests\nBusinesses wanting to personalize at scale\nAnyone needing intelligent lead qualification\n\nWhat You'll Need\n\nJotform account (or any form tool with webhooks)\nCreate your form for free on Jotform using this link\nOpenAI API key\nGmail account (or any email service)\nn8n instance (cloud or self-hosted)\n\nWorkflow Sections\n\n📧 Lead Intake & Qualification - Capture form submissions and filter personal emails\n🕷️ Website Scraping - Extract company information from their domain\n❌ Regret Flow - Send polite rejection to unqualified leads\n🤖 AI Analysis - Analyze prospects and draft personalized emails\n📨 Approved Outreach - Human review + send welcome email\n\nCustomization Tips:\n\nUpdate the AI prompt with your company's ICP and value proposition\nModify the personal email provider list based on your market\nAdjust the regret email template to match your brand voice\nAdd Slack notifications for high-value leads\nConnect your CRM to log all activities\n\nTime Saved: ~15-20 minutes per lead  \nLead Response: Under 5 minutes (vs hours/days manually)\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

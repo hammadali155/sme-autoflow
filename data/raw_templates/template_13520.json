@@ -1,0 +1,15 @@
+{
+  "id": 13520,
+  "name": "Automate patient intake and AI risk triage with Azure OpenAI, Google, and Slack",
+  "description": "📊 Description\nAutomate patient pre-arrival intake, AI risk assessment, and real-time doctor alerts in one seamless healthcare workflow. ⏰📧 This automation sends scheduled intake reminders before appointments, analyzes submitted patient data using AI, and flags high-risk cases instantly via Slack. Powered by Azure OpenAI, it evaluates symptoms, allergies, and medical history to generate structured risk levels and doctor preparation notes. Reduce manual triage work, improve patient safety, and ensure physicians are fully prepared before every visit. 🤖🚨\n\n🔄 What This Template Does\n⏰ Runs hourly to fetch upcoming appointments from Google Calendar.\n📧 Sends pre-arrival intake emails to patients via Gmail.\n📊 Monitors new intake form submissions in Google Sheets.\n🤖 Analyzes symptoms and medical history using Azure OpenAI (GPT-4o-mini).\n🧹 Parses and normalizes structured AI output for consistency.\n📝 Stores risk level and doctor notes back into Google Sheets.\n🚨 Sends instant Slack alerts if a patient is classified as High risk.\n\n✅ Key Benefits\n✅ Automates pre-visit intake collection with zero manual follow-up\n✅ Uses AI-powered risk triage to support clinical decision-making\n✅ Flags high-risk or urgent cases instantly\n✅ Reduces front-desk workload and manual screening time\n✅ Improves patient safety through structured early assessment\n✅ Ensures doctors are prepared before appointments begin\n\n⚙️ Features\nGoogle Calendar hourly appointment trigger\nGmail automated intake reminder emails\nGoogle Sheets real-time form monitoring\nAzure OpenAI GPT-4o-mini risk assessment engine\nStructured JSON AI output with confidence scoring\nAutomatic data normalization and formatting\nConditional risk triage logic (Low / Medium / High / Emergency)\nSlack instant doctor notifications for critical cases\n\n🔐 Requirements\nGoogle Calendar OAuth2 credentials\nGmail OAuth2 credentials\nGoogle Sheets OAuth2 credentials\nAzure OpenAI API credentials (GPT-4o-mini deployment)\nSlack OAuth2 credentials\n\n🎯 Target Audience\nPrivate clinics and healthcare providers\nTelemedicine platforms\nMedical practices handling high patient volume\nHealthcare automation consultants and digital health startups\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi"
+  ],
+  "tags": []
+}

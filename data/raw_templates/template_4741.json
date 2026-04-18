@@ -1,0 +1,12 @@
+{
+  "id": 4741,
+  "name": "Get Binance Spot Market Financial Analysis via Telegram with GPT-4o",
+  "description": "This workflow powers the Binance Spot Market Quant AI Agent, acting as the Financial Market Analyst. It fuses real-time market structure data (price, volume, kline) with multiple timeframe technical indicators (15m, 1h, 4h, 1d) and returns a structured trading outlook—perfect for intraday and swing traders who want actionable analysis in Telegram.\n\n🔗 Requires the following sub-workflows to function:\n• Binance SM 15min Indicators Tool\n• Binance SM 1hour Indicators Tool\n• Binance SM 4hour Indicators Tool\n• Binance SM 1day Indicators Tool\n• Binance SM Price/24hStats/Kline Tool\n\n⚙️ How It Works\n\nTriggered via webhook (typically by the Quant AI Agent).\nExtracts user symbol + timeframe from input (e.g., \"DOGE outlook today\").\nCalls all linked sub-workflows to retrieve indicators + live price data.\nMerges the data and formats a clean trading report using GPT-4o-mini.\nReturns HTML-formatted message suitable for Telegram delivery.\n\n📥 Sample Input\n\n{\n  \"message\": \"SOLUSDT\",\n  \"sessionId\": \"654321123\"\n}\n\n✅ Telegram Output Format\n\n📊 SOLUSDT Market Snapshot\n\n💰 Price: $156.75  \n📉 24h Stats: High $160.10 | Low $149.00 | Volume: 1.1M SOL\n\n🧪 4h Indicators:\n• RSI: 58.2 (Neutral-Bullish)  \n• MACD: Crossover Up  \n• BB: Squeezing Near Upper Band  \n• ADX: 25.7 (Rising Trend)\n\n📈 Resistance: $163  \n📉 Support: $148\n\n🔍 Use Cases\n\n| Scenario                        | Outcome                                                   |\n| ------------------------------- | --------------------------------------------------------- |\n| User asks for “BTC outlook”     | Returns 1h + 4h + 1d indicators + live price + key levels |\n| Telegram bot prompt: “DOGE now” | Returns short-term 15m + 1h analysis snapshot             |\n| Strategy trigger inside n8n     | Enables other workflows to consume structured signal data |\n\n🎥 Watch Tutorial:\n\n🧾 Licensing & Attribution\n\n© 2025 Treasurium Capital Limited Company\nArchitecture, prompts, and trade report structure are IP-protected.\nNo unauthorized rebranding or redistribution permitted.\n\n🔗 For support: LinkedIn – Don Jayamaha\n\n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow"
+  ],
+  "tags": []
+}

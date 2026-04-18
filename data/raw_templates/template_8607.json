@@ -1,0 +1,15 @@
+{
+  "id": 8607,
+  "name": "Fetch Real-Time Bitget Spot Market Data with GPT-4o + Telegram",
+  "description": "Instantly fetch real-time Bitget spot market data directly in Telegram! This workflow integrates the Bitget REST v2 API with Telegram (plus optional AI-powered formatting) to deliver the latest crypto price, order book, candles, and recent trades. Perfect for crypto traders, analysts, and investors who need reliable market data at their fingertips—no API key required.&#x20;\n\nSign-up for Bitget for 6,200 USDT in rewards to trade: Collect Now\n\nHow It Works\n\nA Telegram bot listens for user requests (e.g., BTCUSDT).\nThe workflow connects to Bitget public endpoints to fetch:\n\n   Ticker (latest price & 24h stats)\n   Order book depth (top bids/asks)\n   Recent trades (price, side, volume, timestamp)\n   Candlestick data (1m, 15m, 1h, 4h, 1d)\n   Historical candles (optional, for backfill before endTime)\nA Calculator node derives useful metrics like mid-price and spread.\nA Think node reshapes raw JSON into Telegram-ready text.\nA splitter ensures reports over 4000 characters are chunked safely.\nThe final market insights are delivered instantly back to Telegram.\n\nWhat You Can Do with This Agent\n\n✅ Track live prices & 24h stats for any Bitget spot pair.\n✅ Monitor order book liquidity and spreads in real-time.\n✅ Analyze candlesticks across multiple timeframes.\n✅ Review recent trades to see execution flow.\n✅ Fetch historical candles for extended market context.\n✅ Receive clean, structured reports with optional AI-enhanced formatting.\n\nSet Up Steps\n\nCreate a Telegram Bot\n\n   Use @BotFather to generate a bot token.\nConfigure in n8n\n\n   Import Bitget AI Agent v1.02.json into your n8n instance.\n   Add your Telegram credentials (bot token + your Telegram ID in the User Authentication node).\n   Add an OpenAI key if you want AI-powered formatting.\n   (Optional) Add an *Bitget api key** .\n\nDeploy and Test\n\n   Send BTCUSDT to your bot.\n   Get live Bitget spot data instantly in Telegram!\n\n🚀 Unlock powerful, real-time Bitget insights in Telegram—zero setup, zero API keys required!\n\n📺 Setup Video Tutorial\n\nWatch the full setup guide on YouTube:\n\n🧾 Licensing & Attribution\n\n© 2025 Treasurium Capital Limited Company\nArchitecture, prompts, and trade report structure are IP-protected.\n\nNo unauthorized rebranding permitted.\n\n🔗 For support: Don Jayamaha – LinkedIn\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

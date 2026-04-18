@@ -1,0 +1,10 @@
+{
+  "id": 11195,
+  "name": "Generate Security Vulnerability Reports with Google Dorks, SerpAPI and PDF4me",
+  "description": "Google Dorks with SerpAPI\n\nHow it Works:\nAccepts a domain from a web form\nGenerates a list of Google dorks targeting that domain\nScrapes Google search results for each dork using SerpAPI\nFilters out junk links (Google internal, non-http)\nFormats valid results as a markdown report\nConverts the report to PDF using PDF4me\nEmails the report to your inbox with Gmail\n\nHow To Use:\nStep 1. Double Click the SerpAPI node and configure the API key\nStep 2. Double Click each PDF4me node and configure the API key\nStep 3. (Optional) Double Click and configure your OAuth credentials and gmail settings on the Gmail node.\nStep 4. Click 'Execute Workflow' and wait for your report to be generated.",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

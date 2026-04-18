@@ -1,0 +1,10 @@
+{
+  "id": 12239,
+  "name": "Audit Confluence space permissions and public links for compliance",
+  "description": "Audit permissions in Confluence to ensure compliance\n\nThis workflow scans selected Confluence spaces for public exposure risks, helping teams identify unintended access and potential data leakage.\n\nWhat it does\nDetects public exposure risks in Confluence spaces, including:\n  Anonymous access permissions at space level\n  Whether public links are enabled\n  Pages with active or blocked public links\nUses Confluence REST API v2 together with the Atlassian GraphQL API.\nProduces a consolidated per-space report containing:\n  Anonymous access permissions\n  Public link status\n  Pages with public links (title, status, URL, enabled-by user)\nIdeal for security audits, compliance reviews, and data leakage prevention.\n\nHow it works\nThe workflow starts via a Manual Trigger.\nA Set Variables node defines:\n  atlassianDomain\n  spaceKeys (comma-separated)\nGet Spaces (v2)** retrieves matching spaces and splits them into individual items.\nFor each space, three GraphQL queries run in parallel:\n  Retrieve anonymous access permissions\n  Check public link feature status at space level\n  Fetch pages with public links (ON / BLOCKED)\nResults from all three queries are merged and normalized into a single per-space report.\n\nSetup\nConfigure the Set Variables node:\n  atlassianDomain → your Confluence base URL  \n  spaceKeys → comma-separated list (e.g. ENG, HR)\nCreate an HTTP Basic Auth credential for Atlassian:\n  Email + API token\n  Assign it to all HTTP and GraphQL nodes\nEnsure the credential has permission to:\n  Read spaces\n  Read space permissions\n  Access GraphQL endpoints\nExecute the workflow manually to generate the report.\n\nNotes\nUses the Atlassian GraphQL API, which exposes permission and public-link data not fully available via REST.\nPages with blocked public links are included for visibility.\nThe GraphQL page query fetches up to 250 pages per space.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.graphql"
+  ],
+  "tags": []
+}

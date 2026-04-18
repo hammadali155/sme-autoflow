@@ -1,0 +1,12 @@
+{
+  "id": 13195,
+  "name": "Search Slack for n8n templates with OpenAI tips, Google Sheets cache and weekly analytics",
+  "description": "Slack Bot for n8n Template Search with AI Tips, Cache and Analytics\n\nSearch n8n workflow templates directly from Slack with AI-powered suggestions. Mention the bot with what you need in English, Spanish or Japanese and get matching templates plus actionable tips to improve your automation.\n\nWho is this for\n\nTeams using n8n who want to find workflow templates without leaving Slack. Great for multilingual teams and onboarding new members.\n\nWhat this workflow does\n\nDetects user intent (search, help, or browse categories) and routes accordingly\nExtracts keywords from 200+ known services and translates 150+ Japanese business terms to English\nChecks a Google Sheets cache before calling the n8n Templates API\nUses OpenAI (gpt-4o-mini) to generate contextual tips based on the search results and use case\nWhen no templates are found, the AI suggests alternative keywords and how to build the workflow from scratch\nLogs every search to Google Sheets and posts a weekly usage report to Slack\n\nSetup\n\nCreate a Slack App with app_mentions:read and chat:write scopes\nSet Slack credentials in n8n\nCreate an HTTP Header Auth credential for OpenAI (name: Authorization, value: Bearer sk-your-key)\nCreate a Google Sheet with two tabs: Cache (SearchQuery, CachedResponse, ResultCount, Timestamp) and Analytics (Timestamp, User, Query, Keywords, ResultCount, Intent, FromCache)\nConnect the Google Sheet in all four Sheets nodes\nSelect your Slack channel in the Trigger, Error Reply and Weekly Summary nodes\nActivate and test with a mention\n\nHow to customize\n\nAdd services to knownServices or extend jaToEn for more languages\nEdit the AI system prompts to change tone or tip style\nAdjust the weekly report schedule in the Schedule Trigger node\nReplace Google Sheets cache with Redis for better performance at scale",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

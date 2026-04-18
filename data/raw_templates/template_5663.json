@@ -1,0 +1,9 @@
+{
+  "id": 5663,
+  "name": "Paginate Shopify Products with GraphQL Cursor-based Navigation",
+  "description": "Shopify GraphQL cursor loop\n\nMany Shopify GraphQL queries have the ability to return a cursor which you can loop over, however the N8N GraphQL node does not natively have the ability to fetch pages.  \n\nThis simple 3 node workflow displays how to setup a cursor to fetch all items in a collection. \n\nNote : The pageSize in the \"Shopify, products\" node is set to 5 to illustrate how querying by cursor works. In production set this to a much larger value. \n\nAlso, Update the Endpoint in GraphQL node to reflect your Shopify store.",
+  "nodes": [
+    "n8n-nodes-base.graphql"
+  ],
+  "tags": []
+}

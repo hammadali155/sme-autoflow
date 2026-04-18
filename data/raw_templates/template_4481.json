@@ -1,0 +1,14 @@
+{
+  "id": 4481,
+  "name": "AI-Powered Candidate Screening and Evaluation Workflow using OpenAI and Airtable",
+  "description": "Who is this for?\n\nThis workflow is ideal for:\n\nHR professionals* and *recruiters** who want to automate and enhance the hiring process\nOrganizations** seeking AI-driven, consistent, and data-backed candidate evaluations\nHiring managers** using Airtable as their recruitment database\n\nWhat problem is this workflow solving?\n\nScreening candidates manually is time-consuming, inconsistent, and difficult to scale. This workflow solves that by:\n\nAutomating resume intake and AI evaluation**\nMatching candidates to job postings dynamically**\nGenerating standardized suitability reports**\nNotifying HR only when candidates meet the criteria**\nStoring all applications in a structured Airtable database**\n\nWhat this workflow does\n\nThis workflow builds an end-to-end AI-powered hiring pipeline using Airtable, OpenAI, and Google Drive. Here's how it works:\n\nAccept candidate applications via a public web form, including resume upload (PDF only)\nExtract text from uploaded resumes for processing\nStore resumes in Google Drive and generate shareable links\nMatch the application to a job posting stored in Airtable\nUse AI to evaluate candidates (via OpenAI GPT-4) against job descriptions and requirements\nGenerate suitability results including:\n\n   Match percentage\n   Screening status: Suitable, Not Suitable, Under Review\n   Detailed notes\nCombine AI output and files into one data object\nCreate a new candidate record in Airtable with all application data\nAutomatically notify HR via Gmail if a candidate is marked “Suitable”\n\nSetup\n\nView & Copy the Airtable base here:  \n👉 Candidate Screening – Airtable Base Template  \nSet up Google Drive folder\nConnect your OpenAI API key for the AI agent model\nConnect your Gmail account for email notifications\nDeploy the public-facing form to start receiving applications\nTest the workflow using a sample job and resume\n\nHow to customize this workflow to your needs\n\nExpand file support**: Allow DOC or DOCX uploads by adding format conversion nodes\nAdd multi-recipient email alerts**: Extend Gmail node for multiple HR recipients\nHandle “Under Review” differently**: Add additional logic to notify or flag these candidates\nSend rejection emails automatically**: Extend the IF branch for “Not Suitable” candidates\nSchedule interviews**: Integrate with Google Calendar or Calendly APIs\nAdd Slack notifications**: Send alerts to team channels for real-time updates\n\nContact me for consulting and support:   \n📧 billychartanto@gmail.com",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 12343,
+  "name": "Enrich contacts with Wiza and sync results to Airtable and HubSpot",
+  "description": "What it does\n\nReceives contact details via form, routes to appropriate Wiza API endpoints (email, phone, LinkedIn, or all), enriches data with verification, calculates quality scores (0-100), and stores results in both Airtable and HubSpot.\n\nWho's it for\n\nSales teams, recruiters, and marketing ops professionals who need to transform minimal contact info into complete, verified profiles at scale.\n\nRequirements\n\nn8n (self-hosted or cloud)\nWiza API Key (with Email/Phone/LinkedIn Finder access)\nAirtable API Key (optional)\nHubSpot API Key (optional)\n\nHow to set up\n\nImport workflow JSON into n8n\nConfigure Wiza, Airtable, and HubSpot credentials\nSet up Airtable base with required columns (Full Name, Email, Phone, LinkedIn, Data Quality Score)\nActivate workflow and share the form URL\n\nHow to customize\n\nAdjust quality scoring weights in the Code node\nAdd custom fields to the form trigger\nModify Airtable/HubSpot field mappings\nChange deduplication logic for emails",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

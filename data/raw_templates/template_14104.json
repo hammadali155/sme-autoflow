@@ -1,0 +1,13 @@
+{
+  "id": 14104,
+  "name": "Track leadership hires and send AI outreach using PredictLeads, OpenAI and Gmail",
+  "description": "Overview\n\nWatch target companies for C-level and VP hiring signals, then send AI-personalized outreach emails when leadership roles are posted.\n\nThis workflow reads a list of target company domains from Google Sheets, checks each one for leadership-level job openings via the PredictLeads Job Openings API, enriches matching companies with additional company data, and uses OpenAI to generate a personalized outreach email referencing the specific leadership hire. The email is sent automatically through Gmail.\n\nHow it works\n\nA schedule trigger runs the workflow daily at 8:00 AM.\nThe workflow reads target account domains from Google Sheets.\nIt loops through each company and fetches job openings from PredictLeads.\nIt filters for leadership roles such as CRO, CMO, CTO, VP, Head of, Chief, and Director.\nIf leadership roles are found, it enriches the company with PredictLeads company data such as industry, size, and location.\nIt builds a structured prompt combining company context and the detected leadership roles.\nIt sends the prompt to OpenAI to generate a personalized outreach email.\nIt sends the AI-generated email through Gmail with a tailored subject line.\nIt loops back to process the next company.\n\nSetup\n\nCreate a Google Sheet with these columns:\n\n  domain\n  company_name\nConnect your Gmail account using OAuth2 for sending outreach emails.\nAdd your OpenAI API key in the Generate Outreach Email HTTP Request node.\nAdd your PredictLeads API credentials using the X-Api-Key and X-Api-Token headers.\n\nRequirements\n\nGoogle Sheets OAuth2 credentials\nGmail OAuth2 credentials\nOpenAI API account using gpt-4o-mini\nPredictLeads API account: https://docs.predictleads.com\n\nNotes\n\nThe leadership role filter uses regex matching for roles such as CRO, CMO, CTO, VP, Vice President, Head of, and Chief. You can customize this as needed.\nThe AI prompt instructs OpenAI to write concise emails with a maximum of 150 words, referencing the specific leadership hire.\nPredictLeads Job Openings and Company API docs: https://docs.predictleads.com\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

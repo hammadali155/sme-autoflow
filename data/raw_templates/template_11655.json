@@ -1,0 +1,12 @@
+{
+  "id": 11655,
+  "name": "Monitor Website Uptime with Google Sheets, Slack, Email & Phone Call Alerts",
+  "description": "Who’s it for\nThis template is ideal for developers, agencies, hosting providers, and website owners who need real-time alerts when a website goes down. It helps teams react quickly to downtime by sending multi-channel notifications and keeping a historical uptime log for tracking performance over time.\n\nWhat it does / How it works\nThis workflow runs on a schedule and checks a list of websites stored in Google Sheets.  \nFor every website URL, it performs an HTTP status check and determines whether the site is up or down.  \nIf the website is up, the workflow logs the status and timestamp into a separate uptime log sheet.  \nIf the website is down, it sends immediate alerts through Slack and Gmail, and also triggers an automated phone call using a voice-call API service.  \nAll uptime and downtime events are logged automatically, enabling long-term monitoring and reporting.\n\nRequirements\nGoogle Sheets OAuth2 credentials  \nSlack credentials  \nGmail OAuth2 credentials  \nVoice-call API credentials (e.g., Vapi.ai)  \nA Google Sheet containing the list of website URLs  \nA second Google Sheet for logging uptime history  \n\nHow to set up\nConnect your Google Sheets, Slack, Gmail, and call-API credentials.  \nReplace both Google Sheet IDs with your own.  \nUpdate the HTTP Request node to reference your sheet’s URL column.  \nConfigure your Slack user or channel for downtime alerts.  \nAdd your API Key, assistant ID, and phone number variables to the call alert node.  \nAdjust the schedule interval in the Schedule Trigger node.  \n\nHow to customize the workflow\nAdd SMS alerts (Twilio, Vonage)  \nLog uptime to a database instead of Sheets  \nAdd retry logic for false positives  \nMonitor response time in addition to status codes  \nConnect alerts to your incident-management tools (PagerDuty, Jira, Discord)",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

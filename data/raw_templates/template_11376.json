@@ -1,0 +1,14 @@
+{
+  "id": 11376,
+  "name": "Create AI-generated Spotify playlists with GPT-5 and email the link",
+  "description": "How it works:\nWhen a user submits a form with event details, the workflow sends this information to OpenAI's GPT-5 model, which generates a curated list of 18–32 songs tailored to the occasion and audience. The workflow then searches Spotify for each recommended song, creates a new playlist on the user's Spotify account, adds all the tracks, and sends the user an email with a direct link to listen.\n\nKey Features:\nAI-Powered Playlist Generation: Uses OpenAI's GPT-5 model to create contextually relevant song recommendations based on event type, audience, and personal preferences.\nAutomated Spotify Integration: Searches Spotify's API for each song and automatically adds them to a new playlist on the user's account.\nOne-Click Listening: Users receive an email with a direct Spotify link to listen, follow, and modify the playlist immediately after creation.\nMulti-Language Support: The AI responds in the same language as the user's input, making the workflow accessible globally.\nEmail Confirmation: Users instantly receive an email notification confirming playlist creation with a shareable Spotify link.\n\n\nStep-by-step:\nForm Submission Trigger: \nUser submits event details (occasion, guests, preferences, and email) through the web form.\n\nAI Playlist Generation: \nOpenAI's GPT-5 generates a curated list of 18–32 songs based on the provided event context.\n\nSpotify Integration: \nThe workflow searches Spotify for each song, creates a new playlist, and adds all found tracks to the user's account.\n\nEmail Notification: \nUser receives an email with the playlist name and a direct Spotify link to listen immediately.\n\n\nAPI Keys Required\nOpenAI API Key: Required to access GPT-5 for generating playlist recommendations.\nSpotify Client ID & Secret: Required to authenticate with Spotify's API for searching, creating playlists, and adding tracks.\nSMTP Credentials: Required to send the confirmation email to the user (server, port, username, password, and sender email).\n\n\nResponse Generation\nThe AI model receives event details and generates a structured JSON response containing a playlist name, 18–32 song recommendations with artist credits, and HTML-formatted content for website integration, all in the user's language.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

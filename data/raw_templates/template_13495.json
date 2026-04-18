@@ -1,0 +1,13 @@
+{
+  "id": 13495,
+  "name": "Identify creator attendees from Eventbrite with influencers.club and SendGrid",
+  "description": "How it works:\n\nGet multi social platform data for event attendees with their email and send personalized emails to onboard them as organic creators or ambassadors.\n\nStep by step workflow to enrich event attendees emails from Eventbrite with multi social (Instagram, Tiktok, Youtube, Twitter, Onlyfans, Twitch and more) profiles, analytics and metrics using the influencers.club API and sending personalized partnership outreach via SendGrid.\n\nSet up:\n\nEventbrite (can be swapped for any event CRM, general CRM or Google Sheet)\nInfluencers.club\nSendGrid (can be swapped for any marketing email sender eg. Mailchimp, drip or programmatic email sender like Mailgun)",
+  "nodes": [
+    "n8n-nodes-base.sendGrid",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

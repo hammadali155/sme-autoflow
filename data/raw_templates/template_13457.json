@@ -1,0 +1,10 @@
+{
+  "id": 13457,
+  "name": "AI Company Research Agent (n8n+Airtable)",
+  "description": "Video Introduction\n\nWant to automate your inbox or need a custom workflow? 📞 Book a Call | 💬 DM me on Linkedin\n\nWhat This Workflow Does\n\nThis workflow automatically enriches your Airtable company database with AI-powered research. Whenever a new company is added to your Airtable base, an AI agent searches the web to discover the company's website and generates a concise 1-2 sentence summary of their business activities. The workflow then updates the Airtable record with these findings, eliminating manual research and keeping your data complete and current.\n\nKey Benefits\n\nAutomated data enrichment**: No more manual web searches for company information\nAI-powered accuracy**: Uses OpenAI with web search capabilities to find reliable, up-to-date information\nStructured output**: Returns data in a predictable JSON format for consistent record updates\nReal-time processing**: Triggers immediately when new companies are added\n\nSetup Requirements\n\nAirtable Configuration:\nYour Companies table must have a Created time field to trigger the workflow\nCreate an Airtable Personal Access Token at airtable.com/create/tokens with these scopes: data.records:read, data.records:write, and schema.bases:read\nEnsure your table has fields for Website and Company Details (or modify the field mappings accordingly)\n\nOpenAI Setup:\nRegister for an OpenAI account and obtain an API key\nAdd your OpenAI credentials in n8n\n\nWorkflow Configuration:\nUpdate the Airtable Trigger node with your base and table URLs\nUpdate the Airtable Update node with your specific base and table information\nCustomize the AI prompt if you need different research parameters or output fields\n\nOnce published, the workflow runs automatically whenever a new company is added to your table.",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

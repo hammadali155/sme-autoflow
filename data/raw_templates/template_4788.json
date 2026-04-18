@@ -1,0 +1,14 @@
+{
+  "id": 4788,
+  "name": "Automated Weekly Tech Stack Reports with BuiltWith, GPT-4o & Gmail",
+  "description": "\n\nAutomated weekly report that summarizes technology stack changes, trends, and insights from your tracked companies.\n\n🚀 What It Does\n\nCompiles weekly technology updates\nHighlights significant changes\nIdentifies emerging trends\nProvides actionable insights\nDelivers scheduled reports\n\n🎯 Perfect For\n\nCTOs and technical leaders\nSales and marketing teams\nBusiness intelligence\nTechnology consultants\nMarket researchers\n\n⚙️ Key Benefits\n\n✅ Weekly digest of changes  \n✅ Trend analysis  \n✅ Competitive intelligence  \n✅ Time-saving automation  \n✅ Data-driven decisions  \n\n🔧 What You Need\n\nBuiltWith API access\nn8n instance\nEmail service (for delivery)\nGoogle Sheets (for data storage)\n\n📊 Report Includes\n\nNew technology adoptions\nTechnology removals\nIndustry trends\nCompetitive analysis\nCustom metrics\n\n🛠️ Setup & Support\n\nQuick Setup\n\nGet your first report in 15 minutes with our step-by-step guide\n\n📺 Watch Tutorial\n\n💼 Get Expert Support\n\n📧 Direct Help\n\n\n\nStay ahead of technology trends with a comprehensive weekly digest of your industry's technology landscape.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

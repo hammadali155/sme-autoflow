@@ -1,0 +1,17 @@
+{
+  "id": 2869,
+  "name": "Test Webhooks in n8n Without Changing WEBHOOK_URL (PostBin & BambooHR Example)",
+  "description": "Using PostBin to Test Webhooks Without Changing WEBHOOK_URL  \n\nHow it Works  \nMany new n8n users struggle with testing webhooks when running n8n on localhost, as external services cannot reach localhost. This workflow introduces a technique using PostBin, which provides a temporary, publicly accessible URL to receive webhook requests.  \n\nGenerates a temporary webhook endpoint via PostBin.  \nUses this endpoint in place of localhost to test webhooks.  \nCaptures and displays the incoming webhook request data.  \nEnables debugging and iterating without modifying the WEBHOOK_URL environment variable.  \n\nSet Up Steps  \nEstimated time:** ~5–10 minutes  \nCreate a PostBin instance to generate a publicly accessible webhook URL.  \nCopy the PostBin URL and use it as the webhook destination in n8n.  \nTrigger the webhook from an external service or manually.  \nInspect the request payload in PostBin to verify data reception.  \n\n(EXAMPLE) Using PostBin for Webhook Testing in a BambooHR Integration  \n\nHow it Works  \nIn this example, we apply the PostBin technique to a BambooHR integration. Instead of manually configuring a webhook in BambooHR, this workflow automates webhook registration using the BambooHR API. The workflow:  \n\nUses the BambooHR API to programmatically register the PostBin URL as a webhook.  \nRetrieves the most recent webhook calls made by BambooHR to the PostBin URL.  \n(Optional) Sends a personalized Slack message for new employees using OpenAI.  \n\nSet Up Steps  \nEstimated time:** ~15–20 minutes  \nSet up PostBin using the steps from the first section.  \nLog into BambooHR to generate an API key for authentication.  \nRun the workflow to register the PostBin URL as a webhook in BambooHR via the API.\nRetrieve recent webhook calls from PostBin to validate data reception.  \n(Optional) Send a Slack notification using the processed data.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.bambooHr",
+    "n8n-nodes-base.postBin",
+    "n8n-nodes-base.debugHelper",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

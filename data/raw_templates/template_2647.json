@@ -1,0 +1,13 @@
+{
+  "id": 2647,
+  "name": "Sentiment Analysis Tracking on Support Issues with Linear and Slack",
+  "description": "This n8n template monitors active support issues in Linear.app to track the mood of their ongoing conversation between reporter and assignee using Sentiment Analysis. When sentiment dips into the negative, a notification is sent via Slack to alert the team.\n\nHow it works\nA scheduled trigger is used to fetch recently updated issues in Linear using the GraphQL node.\nEach issue's comments thread is passed into a simple Information Extractor node to identify the overall sentiment.\nThe resulting sentiment analysis combined with the some issue details are uploaded to Airtable for review.\nWhen the template is re-run at a later date, each issue is re-analysed for sentiment\nEach issue's new sentiment state is saved to the airtable whilst its previous state is moved to the \"previous sentiment\" column.\nAn Airtable trigger is used to watch for recently updated rows\nEach matching Airtable row is filtered to check if it has a previous non-negative state but now has a negative state in its current sentiment.\nThe results are sent via notification to a team slack channel for priority.\n\nCheck out the sample Airtable here: https://airtable.com/appViDaeaFw4qv9La/shrq6HgeYzpW6uwXL\n\nHow to use\nModify the GraphQL filter to fetch issues to a relevant issue type, team or person.\nUpdate the Slack channel to ensure messages are sent to the correct location or persons.\nThe Airtable also serves to give a snapshot of Sentiment across support tickets for a given period. It's possible to use this to assess the daily operations.\n\nRequirements\nLinear for issue tracking (but feel free to use another system if preferred)\nAirtable for Database\nOpenAI for LLM and Sentiment Analysis\n\nCustomising the workflow\nAdd more granular levels of sentiment to reduce the number of alerts.\nExplore different types of sentiment based on issue types and customer types. This may help prioritise alerts and response.\nRun across teams or categories of issues to get an overview of sentiment across the support organisation.",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.graphql",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 2325,
+  "name": "ERP AI chatbot for Odoo sales module with OpenAI",
+  "description": "Who is this for?\nThis workflow is for everyone who wants to have easier access to their Odoo sales data without complex queries.\n\nUse Case\nTo have a clear overview of your sales data in Odoo you typically needs to extract data from it manually to analyse it. This workflow uses OpenAI's language models to create an intelligent chatbot that provides conversational access to your Odoo sales opportunity data.\n\nHow it works\nCreates a summary of all Odoo sales opportunities using OpenAI\nUses that summary as context for the OpenAI chat model\nKeeps the summary up to date using a schedule trigger\n\nSet up steps:\nConfigure the Odoo credentials\nConfigure OpenAI credentials\nToggle \"Make Chat Publicly Available\" from the Chat Trigger node.",
+  "nodes": [
+    "n8n-nodes-base.odoo",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainSummarization",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.lmOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolCalculator"
+  ],
+  "tags": []
+}

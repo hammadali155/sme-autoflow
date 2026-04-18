@@ -1,0 +1,13 @@
+{
+  "id": 12428,
+  "name": "Triage tenant complaints with GPT-4.1, Slack, email and Google Sheets",
+  "description": "Who this is for\n\nProperty management teams handling multiple properties with high tenant complaint volumes who want AI-assisted triage.\n\nWhat this workflow does\n\nAutomatically classifies tenant complaints by urgency and type, escalates high-priority complaints, schedules medium-priority follow-ups, acknowledges low-priority complaints, and logs all activity for reporting.\n\nHow it works\n\nTenant submits a complaint through the portal.\nAI classifies complaint urgency and type.\nHigh-priority complaints trigger Slack notifications and follow-up tasks.\nTenant receives an AI-personalized acknowledgment email.\nGoogle Sheets logs each complaint with details.\n\nHow to set up\n\nConnect your form, Slack, Email, Google Sheets, and AI credentials. Customize AI prompts for your tenant complaint categories and test routing.\n\nRequirements\n\nn8n (cloud or self-hosted)\nAI node access\nSlack and Email credentials\nGoogle Sheets\n\nHow to customize\n\nAdjust complaint types, escalation rules, notification channels, or AI follow-up prompts.\n\nBuilt by QuarterSmart. Created by Hyrum Hurst.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

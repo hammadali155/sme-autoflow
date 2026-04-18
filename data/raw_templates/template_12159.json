@@ -1,0 +1,10 @@
+{
+  "id": 12159,
+  "name": "Automate Follower Resource Distribution on BlueSky with Keyword-Triggered DMs",
+  "description": "This workflow acts as an automated engagement bot. It sends a Direct Message (DM) with a link or resource to any follower who replies to your post with a specific target keyword.\n\nWho is this for\nIdeal for creators and community managers who want to distribute resources (PDFs, links, invites) to their audience automatically without manually messaging each person.\n\nWhat it does\nIt scans your notifications for new replies and applies a strict filter to ensure only the right people get messaged:\nTargeted:** It only monitors replies on the specific post you choose.\nKeyword Match:** Checks if the user's reply contains your specific trigger word (e.g., \"Send\").\nFollower Check:** Verifies if the user is following you (if not, it skips them).\nDelivery:** Opens a chat conversation and sends your pre-set message.\nEngagement:** Automatically \"Likes\" the user's reply to confirm receipt.\nAnti-Spam:** Remembers processed replies so it never messages the same user twice for the same interaction.\n\nHow to set up\nConfiguration: Open the first node (\"Configuration\") and enter:\n   BlueSky Credentials: Your Handle and App Password.\n   Target Post URL: The full link to the specific BlueSky post you want to monitor.\n   Trigger Keyword: The word users must type (e.g., \"Template\").\n   DM Message: The actual text/link to send them.\nActivate: Turn the workflow on. It runs every 30 minutes to batch-process new replies.\n\n🚀 The BlueSky Growth Suite\nThis workflow is part of a 3-part automation suite designed to help you grow on BlueSky:\nPart 1: Post Scheduler** (Manage content from Google Sheets)\nPart 2: Analytics Tracker** (Track likes/reposts back to Sheets)\nPart 3: Auto-DM Bot** (This template)",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

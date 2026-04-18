@@ -1,0 +1,14 @@
+{
+  "id": 12036,
+  "name": "Verify Property Ownership with Blockchain, GPT-4 Fraud Detection, and Compliance Tracking",
+  "description": "How It Works\nThis workflow automates property registration verification, fraud detection, and blockchain-based compliance tracking by systematically assessing fraud risk, validating transactions, ensuring data immutability through cryptographic hashing, and recording property records on the blockchain. It ingests property registration data, applies GPT-4–driven fraud analysis with risk scoring, and verifies transaction legitimacy against regulatory and contractual criteria. The system generates cryptographic hashes for property and lease records, validates compliance requirements using AI-based analysis, queries the blockchain for verification, logs transactions on-chain, stores audit records in structured sheets, and securely archives all supporting documentation. Designed for real estate firms, legal practices, and property management companies, it enables transparent verification, fraud mitigation, and tamper-resistant compliance tracking across the property lifecycle.\n\nSetup Steps\nConfigure property data source and set up OpenAI GPT-4 for fraud detection and compliance.\nConnect blockchain network credentials and configure hash generation parameters.\nSet up Google Sheets for audit logging and configure blockchain verification queries.\nDefine fraud risk thresholds, compliance criteria, and transaction validation rules.\n\nPrerequisites\nProperty registration data source; OpenAI API key; blockchain network access \nUse Cases\nReal estate firms automating fraud checks on property transactions; \nCustomization\nAdjust fraud detection criteria and risk thresholds, modify blockchain network selection.\nBenefits\nEliminates manual fraud detection, prevents title fraud and forgery ",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

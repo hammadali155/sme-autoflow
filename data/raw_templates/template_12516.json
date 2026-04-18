@@ -1,0 +1,17 @@
+{
+  "id": 12516,
+  "name": "Manage your WooCommerce store with OpenAI and MCP-powered AI assistant",
+  "description": "Who it's for\nThis n8n workflow is designed for WooCommerce store owners and e-commerce managers who want to automate their store operations through an intelligent AI assistant. The workflow creates a conversational interface that can manage products, process orders, handle customers, and provide store analytics through natural language commands.\n\nFeatures\nIntelligent AI Assistant**: Powered by OpenAI with specialized system prompts for e-commerce operations\nWooCommerce Integration: Complete MCP (Model Context Protocol) server implementation for seamless **WooCommerce REST API operations\nProduct Management**: Create, update, search, retrieve, and delete products automatically\nOrder Processing**: Create, update, retrieve, and manage orders including fulfillment status\nCustomer Management**: Create, update, retrieve, search, and delete customer information\nContext-Aware Automation: Uses conversation history and **WooCommerce data to minimize user input requirements\n\nRequirements\nWooCommerce API Keys (Consumer Key & Consumer Secret): For accessing your **WooCommerce store data and operations\nOpenAI API Credentials**: For powering the AI assistant\nNotification Service Credentials**:\n  Discord Bot API, Telegram Bot API, Rapiwa API (for WhatsApp), Gmail OAuth2\nConfigure Credentials\nWooCommerce API Keys**: Configure with proper permissions (read/write) for your store from the WooCommerce admin panel\nOpenAI API**: Set up with appropriate model access (gpt-4 or similar models)\nNotification Services**: Configure each service with proper API keys and target IDs\n\nImportant Notes\nMCP Server Setup: The workflow includes a **WooCommerce MCP Server that must be properly configured for production use\nTool Selection: The MCP Client includes specific **WooCommerce tools that can be enabled/disabled based on requirements\nSystem Prompt**: The AI assistant is configured with specialized e-commerce guidelines that can be customized\nConfirmation Requirements**: Irreversible actions like deletions will require confirmation\nRate Limiting: The workflow includes appropriate delays to prevent **WooCommerce API rate limiting\nNotification Content**: All notifications include a standard success message that can be customized\n\nProduction Deployment for MCP Server\nTo deploy this workflow in production\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.mcpClientTool"
+  ],
+  "tags": []
+}

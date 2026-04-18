@@ -1,0 +1,12 @@
+{
+  "id": 13519,
+  "name": "Get AI meeting briefs from Google Calendar with SerpAPI, Azure OpenAI and Slack",
+  "description": "📊 Description\nStreamline your meeting preparation with this AI-powered research automation. 📅🤖 Whenever a new event is created in your Google Calendar, this workflow automatically researches the attendee and their company, generates a concise AI-powered briefing, and delivers it directly to you on Slack. By combining real-time web search data with Azure OpenAI summarization, you walk into every meeting fully informed. No manual Googling. No last-minute scrambling. Just smart, automated meeting intelligence. 🚀\n🔄 What This Template Does\n📅 Monitors new Google Calendar events in real time.\n👥 Filters events with external attendees and extracts their name and company.\n🔎 Runs parallel Google searches (via SerpAPI) for the person and their company.\n🧹 Parses and cleans search results for structured research data.\n🔀 Merges personal and company insights into one dataset.\n🤖 Generates a concise meeting brief using Azure OpenAI (GPT-4o-mini).\n📨 Sends a formatted Slack DM with your personalized meeting briefing.\n✅ Key Benefits\n✅ Eliminates manual pre-meeting research\n✅ Automatically prepares you before every new event\n✅ Combines personal and company intelligence in one summary\n✅ Delivers insights directly to Slack in real time\n✅ Saves hours of repetitive Googling every week\n✅ Improves meeting confidence and preparation quality\n\n⚙️ Features\nGoogle Calendar new event trigger\nConditional attendee filtering logic\nParallel SerpAPI Google searches (person + company)\nJavaScript parsing and data cleaning nodes\nAzure OpenAI GPT-4o-mini summarization agent\nStructured AI-generated meeting brief\nSlack direct message delivery\nModular design for adding LinkedIn or news searches\n\n🔐 Requirements\nGoogle Calendar OAuth2 credentials\nSerpAPI API key\nAzure OpenAI API credentials (GPT-4o-mini deployment)\nSlack OAuth2 credentials (User ID required for DM delivery)\n\n🎯 Target Audience\nFounders and startup operators\nSales professionals and account executives\nRecruiters and hiring managers\nConsultants and client-facing teams\n",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi"
+  ],
+  "tags": []
+}

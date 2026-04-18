@@ -1,0 +1,15 @@
+{
+  "id": 10175,
+  "name": "Automate ASMR Glass Fruit Video Creation & Publishing with Veo, Shotstack & Postiz",
+  "description": "🎥 Veo Machine Reels Factory — Full User Guide\n🧭 Introduction\n\nThe Veo Machine Reels Factory is an automated content creation system built in n8n that turns creative ideas into fully rendered ASMR-style glass fruit reels, ready to post on TikTok, YouTube Shorts, and Instagram Reels.\n\nThis template connects multiple AI and automation services into a single, repeatable pipeline. It eliminates manual steps — from concept brainstorming to posting — allowing creators or marketing teams to produce viral short-form videos hands-free.\n\n⚙️ How It Works (In Short)\n\nThe workflow starts automatically every 8 hours (or manually when triggered).\n\nIt checks a Google Sheet to see which fruits have already been used.\n\nAn AI “Idea Agent” selects a new, unique glass fruit concept.\n\nAnother AI “Prompt Agent” writes a cinematic Google Veo 3 prompt describing the video.\n\nThe system sends that prompt to Google Veo, which generates the actual video file.\n\nThe video is automatically:\n\nConverted to 9:16 vertical format via Shotstack\n\nUploaded to Google Cloud Storage\n\nPosted to TikTok, YouTube, and Instagram through Postiz API\n\n🧱 Requirements\n\nBefore running this workflow, make sure you have the following ready:\n\nCategory\tRequirement\nGoogle Cloud:\tProject ID, Service Account Email, and Storage Bucket (e.g., veo_courses)\nVeo Access:\tAccess to Google Veo 3.0 API (through Vertex AI or similar endpoint)\nGoogle Sheets:\tA sheet with previous fruit ideas (used for avoiding duplicates)\nOpenAI Account:\tAPI key configured in n8n credentials\nShotstack Account:\tAPI key (for cropping to 9:16)\nPostiz Account:\tActive integrations for TikTok, YouTube, and Instagram\n\n🧩 Workflow Structure Overview\n\nThe workflow can be divided into five main parts:\n\n🕒 Automation & Data Input\n\n🧠 AI Generation (Idea + Prompt Creation)\n\n🎬 Video Generation with Google Veo\n\n📱 Video Conversion & Upload\n\n🚀 Auto-Publishing to Social Media",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleCloudStorage",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "n8n-nodes-base.jwt"
+  ],
+  "tags": []
+}

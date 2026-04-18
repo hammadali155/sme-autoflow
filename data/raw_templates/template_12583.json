@@ -1,0 +1,16 @@
+{
+  "id": 12583,
+  "name": "Generate HIPAA-safe patient-friendly EMR summaries with GPT-4, PDF tools and Google Drive",
+  "description": "Medical Sovereign: Atomic Patient Portal Generator & HIPAA Triage Hub\n\n🎯 Description\nThis is an elite-tier HealthTech solution designed for the secure processing of high-volume medical records. Monolithic EMR exports (often 200+ pages) are atomized into individual pages, allowing for granular, clinical-grade redaction and AI-driven summarization before being re-assembled into a secure patient portal summary.\n\n✨ The Sovereign Lifecycle\nPhase 1: Intake & Atomic Splitting - Ingests monolithic EMR PDFs and utilizes the Split PDF node to explode the chart into isolated \"Atomic Pages.\" This prevents \"PII leakage\"—a common failure in batch processing where data from one section accidentally remains visible in another.\nPhase 2: Clinical Classification & Triage - A sophisticated Code Node analyzes the text DNA of each page to identify its type: Labs, Prescriptions, Imaging, or Clinical Notes.\nPhase 3: HIPAA-Compliant Redaction - Applies a heavy-duty regex engine across the atomized stream to scrub sensitive PII, including SSNs, technician names, and provider-to-provider notes that should not be in a patient-facing portal.\nPhase 4: AI Intelligence & Anomaly Detection - An AI Agent (GPT-4) translates complex medical terminology into patient-friendly language. Simultaneously, an Anomaly Detector flags critical lab values (e.g., critical glucose levels) for immediate provider intervention.\nPhase 5: Secure Re-Assembly & Archival - Sanitized pages are re-assembled using the Merge PDF node. The final document is vaulted in Google Drive, while a forensic audit trail (including SHA-256 hashes of every action) is logged to PostgreSQL.\nPhase 6: Multi-Channel Alerts - High-severity findings trigger urgent Email Alerts to providers, while patients receive a secure Twilio SMS notification once their record is ready for viewing.\n\n💡 Key Technical Features\nFail-Safe Validation:* A compliance validator ensures that every page has undergone PII scrubbing before the final merge. Any failure triggers a *Stop & Error** to prevent data breaches.\nPerceptual Integrity:** Every redaction and clinical finding is assigned a severity score to prioritize provider review.\nForensic Auditing:** Every processed record creates an immutable paper trail for HIPAA/GDPR oversight.\n\n🚀 Benefits\n✅ 99.9% Redaction Precision - Page-level atomization ensures maximum data security.\n✅ Enhanced Patient Engagement - Translates overwhelming clinical data into clear, actionable summaries.\n✅ Regulatory Readiness - Built-in audit logs satisfy strict \"Right to Access\" and data privacy laws.\n\nTags: #healthtech #hipaa #medical-records #pdf-split #automation #ai #compliance\n\nCategory: Healthcare & Security | Difficulty: Advanced",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.twilio",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

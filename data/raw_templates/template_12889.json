@@ -1,0 +1,14 @@
+{
+  "id": 12889,
+  "name": "Sanitize Google Drive markdown text with a local Ollama model",
+  "description": "How it works\nDownloads markdown documents from a Google Drive folder containing private information, uses the Ollama model to identify and extract sensitive data, and stores the sanitized text in a single combined markdown document. \n\nSetup Steps\nGoogle cloud OAuth credentials for accessing google drive.\nA local Ollama model (currently using Ollama 3.1).\nLocal instance of N8N (for example, running in docker).\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmOllama"
+  ],
+  "tags": []
+}

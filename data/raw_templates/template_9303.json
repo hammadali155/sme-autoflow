@@ -1,0 +1,15 @@
+{
+  "id": 9303,
+  "name": "Automate Job Opportunity Digests with OpenRouter GPT-5 and Email",
+  "description": "n8n Forum Job Aggregator - AI-Powered Email Digest\n\nOverview\nAutomate your n8n community job board monitoring with this intelligent workflow that scrapes, analyzes, and delivers opportunities straight to your inbox. Perfect for freelancers, agencies, and developers looking to stay on top of n8n automation projects without manual checking.\n\nHow It Works\nScrapes the n8n community job board to find new postings from the last 7 days\nExtracts key metadata including job titles, descriptions, posting dates, and client details\nAnalyzes each listing using OpenRouter AI to generate concise summaries of project requirements and client needs\nDelivers a professionally formatted email digest with all opportunities organized and ready for review\n\nPrerequisites\nOpenRouter API Key**: Sign up at OpenRouter.ai to access AI summarization capabilities\nSMTP Email Account**: Gmail, Outlook, or any SMTP-compatible email service\n\nSetup Steps\nTime estimate: 5-10 minutes\n\nConfigure OpenRouter Credentials\n   Add your OpenRouter API key in n8n credentials manager\n   Recommended model: GPT-3.5-turbo or Claude for cost-effective summaries\n\nSet Up SMTP Email\n   Configure sender email address\n   Add recipient email(s) for digest delivery\n   Test connection to ensure delivery\n\nCustomize Date Range (Optional)\n   Default: Last 7 days of job postings\n   Adjust the date filter node to match your preferred frequency\n\nTest & Refine\n   Run a test execution\n   Review email formatting and AI summary quality\n   Customize HTML template styling to match your preferences\n\nCustomization Options\nScheduling**: Set up cron triggers (daily, weekly, or custom intervals)\nFiltering**: Add keyword filters for specific technologies or project types\nAI Prompts**: Modify the summarization prompt to extract different insights\nEmail Design**: Customize HTML/CSS styling in the email template node\n\nExample Use Cases\nFreelance Developers**: Never miss relevant n8n automation opportunities\nAgencies**: Monitor market demand and competitor activity\nJob Seekers**: Track n8n-related positions and consulting gigs\nMarket Research**: Analyze trends in automation project requests\n\nExample Output\nEach email digest includes:\nJob title and posting date\nAI-generated summary (e.g., \"Client needs workflow automation for Shopify order processing with Slack notifications\")\nDirect link to original posting\nOrganized by recency\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

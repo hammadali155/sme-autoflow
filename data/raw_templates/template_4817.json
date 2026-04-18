@@ -1,0 +1,10 @@
+{
+  "id": 4817,
+  "name": "Compose/Stitch Separate Images together using n8n & Gemini AI Image Editing",
+  "description": "This n8n template demonstrates how to use AI to compose or \"stitch\" separate images together to generate a new image which retains the source assets and consistent style.\n\nUse cases are many: Try producing storyboard scenes with consistent characters, marketing material with existing product assets or trying on different articles on fashion!\n\nGood to know\nAt time of writing, each image generated will cost $0.039 USD. See Gemini Pricing for updated info.\nThe model used in this workflow is geo-restricted! If it says model not found, it may not be available in your country or region.\n\nHow it works\nWe'll import our required assets via our Cloud storage using the HTTP node.\nThe images are then converted to base64 strings and aggregated so we can use it for our AI model.\nGemini's image generation model is used which takes all 3 images and a prompt that we define. Our prompt instructs the model on how to compose the final image.\nGemini generates a new image but uses the original 3 assets to do so. The consistency to the source images is very high and shows little signs of hallucinations!\nGemini's output is base64 so we use a \"Convert to file\" node to convert the data to binary.\nThe final binary image is then uploaded to Google Drive to complete the demonstration.\n\nHow to use\nThe manual trigger node is used as an example but feel free to replace this with other triggers such as webhook or even a form.\nTechnically, you should be able to compose even more images but of course, the generation will take longer and cost more.\n\nRequirements\nGemini account for LLM and Image generation\nGoogle drive for upload\n\nCustomising this workflow\nAI Image editing can be used for many use-cases. Try a popular use-case such as virtual try-on for fashion or applying branding on editing image assets.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive"
+  ],
+  "tags": []
+}

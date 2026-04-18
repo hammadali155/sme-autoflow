@@ -1,0 +1,22 @@
+{
+  "id": 5156,
+  "name": "Transform Books into 100+ Social Media Posts with DeepSeek AI and Google Drive",
+  "description": "📚🤖✨ Your Automated Content Factory: Turn Any Book into 100+ Social Media Ideas Instantly Never run out of content again by automatically generating a massive library of social media posts from a single document.\n\n🚀 Overview\n\nThis automation is a game-changer for content creators, marketers, and authors. It transforms any book or long document into a treasure trove of over 100 ready-to-use, short-form content ideas for platforms like TikTok, Instagram Reels, and YouTube Shorts. Drop a file, and get a batch of viral-ready posts back.\n\n😩 The Problem\n\nYou have amazing, valuable content locked away in books, e-books, or long reports. Turning that content into a steady stream of engaging social media posts is a painful, manual grind. You spend countless hours rereading chapters, trying to pinpoint interesting facts, brainstorming catchy hooks, and writing dozens of unique posts. It's a creative bottleneck that drains your time and energy, making it impossible to post consistently and scale your reach.\n\n✨ The Solution\n\nThis workflow acts as your personal AI content team, working 24/7. Simply drop a book file (like a PDF or TXT) into a designated Google Drive folder. The automation instantly gets to work:\nIt reads and understands the entire book, breaking it down chapter by chapter.\nAn advanced AI agent then analyzes the core ideas, emotional hooks, and surprising facts within the text.\nIt generates 5-10 unique, viral content ideas for each chapter, complete with an irresistible hook, the core message, and a call-to-action to drive engagement.\nFinally, it neatly saves all of these brilliant ideas into a new document in another Google Drive folder, ready for you to use. It's a complete, hands-off content repurposing machine.\n\n⚙️ Simple Setup\n\nThis workflow is a pre-built blueprint, designed to be up and running in minutes!\n\nUpload:** Simply upload the provided JSON file into your n8n instance.\nDetailed Setup:** Follow all the instructions of the Detailed Setup.\nActivate:** Turn the workflow on, and it's ready to go! Let your new automated employee get to work.\n\n🌐 Explore more workflows\n❤️ Buy more workflows at: adamcrafts\n🦾 Custom workflows at: adamcrafts@cloudysoftwares.com\nadamaicrafts@gmail.com",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+    "@n8n/n8n-nodes-langchain.embeddingsCohere",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+    "@n8n/n8n-nodes-langchain.informationExtractor",
+    "@n8n/n8n-nodes-langchain.lmChatDeepSeek"
+  ],
+  "tags": []
+}

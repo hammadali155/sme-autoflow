@@ -1,0 +1,12 @@
+{
+  "id": 14084,
+  "name": "Generate and enrich local business leads with Decodo, OpenAI and Gmail",
+  "description": "End-to-End Local Business Lead Generation, Enrichment and Outreach Pipeline with Decodo\n\nThis workflow finds local business leads on Google Maps, enriches them with website and AI analysis, and sends personalized cold emails to qualified prospects automatically.\n\nWho’s it for?\nThis template is for agencies, freelancers, B2B growth teams, and sales operators who want a repeatable outbound lead generation system for local business prospecting.\n\nHow it works\nThe workflow starts on a schedule and loads the search, scoring, and sender settings from one configuration node.\nDecodo scrapes Google Maps search results for businesses that match your niche and city.\nThe workflow extracts lead details such as business name, address, phone number, website, and rating, then stores each lead in Google Sheets.\nEach discovered lead is checked for a website. If no website is available, the lead is marked and skipped from enrichment.\nFor leads with a website, Decodo scrapes the site and OpenAI scores the business, summarizes it, and suggests enrichment fields such as business type, pain points, and contact email.\nThe workflow updates the lead in Google Sheets with the enrichment data.\nEnriched leads are filtered by score threshold, website presence, email availability, and contact status.\nFor each qualified lead, the workflow scrapes more website content and uses OpenAI to write a personalized outreach email.\nGmail sends the email, and the lead is marked as contacted in Google Sheets.\n\nHow to set up\nAdd credentials for Decodo, OpenAI, Google Sheets, and Gmail. Replace the placeholder Google Sheet ID in the configuration node. Create a Leads sheet with all required columns used in the workflow. Update the niche, city, geo, max leads, score threshold, and sender fields. This template uses the Decodo community node, so it is intended for self-hosted n8n only. Replace the placeholder image above with a real workflow screenshot before submission.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 13680,
+  "name": "Route and escalate student advising requests with OpenAI, Gmail and Slack",
+  "description": "How It Works\nThis workflow automates student academic advising by deploying a multi-agent AI system that triages student queries, routes them intelligently, and escalates when human intervention is needed. Designed for academic institutions, it eliminates manual triage bottlenecks and ensures timely, context-aware responses. A student event triggers the webhook, which feeds into a Status Agent to classify the student's situation. A routing node directs the request to an Academic Orchestration Agent, which delegates to specialized sub-agents—Advising, Notification, or Escalation—based on query type. Results are routed by action type, checked for escalation, then dispatched via student email, faculty email, or Slack advisor alert before logging completion.\n\nSetup Steps\nImport workflow and configure Student Event Webhook URL.\nAdd OpenAI API credentials to all OpenAI Model nodes.\nConfigure Gmail credentials for student and faculty email nodes.\nAdd Slack credentials and set target advisor channel for Slack alert.\nSet escalation thresholds in the \"Check if Escalation Required\" node.\nTest with sample student event payload via webhook.\n\nPrerequisites\nOpenAI API key\nGmail account with OAuth2\nSlack workspace with bot token\nUse Cases\nAutomated academic query triage for universities\nCustomization\nAdd new sub-agents for career or financial advising\nBenefits\nReduces advisor workload through intelligent auto-triage\nEnsures urgent cases are escalated instantly",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

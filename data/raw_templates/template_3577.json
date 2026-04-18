@@ -1,0 +1,15 @@
+{
+  "id": 3577,
+  "name": "Travel Planning Assistant with MongoDB Atlas, Gemini LLM and Vector Search",
+  "description": "Building agentic AI workflows often requires multiple moving parts: memory management, document retrieval, vector similarity, and orchestration. \n\nUntil now, these pieces had to be custom-wired. \n\nBut with the new native n8n nodes for MongoDB Atlas, we reduce that overhead dramatically.\n\n\nWith just a few clicks:\n\nStore and recall long-term memory from MongoDB\n\nQuery vector embeddings stored in Atlas Vector Search\n\nUse these results in your LLM chains and automation logic\n\nIn this example we present an ingestion and AI Agent flows that focus around Travel Planning. The different interest points that we want the agent to know about can be ingested into the vector store.\n\nThe AI Agent will use the vector store tool to get relevant context about those points of interest if it needs to. \n\nPrerequisites\nMongoDB Atlas project and Cluster\nOpenAI Valid API Key for embeddings (can be other provider)\nGemini API Key for the LLM (can be other provider)\n\nHow it works:\n\nThere are 2 main flows. \n\nOne is ingesting flow:\nGets a document from a webhook and use MongoDB Vector Atlas to embed the document title and description into points_of_interest collection.\nEmbeddings are stored in a field named embedding\nEmbeddings used are OpenAI's but it can be any type of supported embedders.\n\nSecond flow is an AI Agent node with Chat Memory Stored in MongoDB Atlas and a Vector Search node as a tool:\nChat Message Trigger**: Chatting with the AI Agent will trigger the conversation store in the MongoDB Chat Memory node.\nWhen data is necessary like a location search or details it will go to the \"Vector Search\" tool.\nVector Search Tool** - uses Atlas Vector Search index created on the points_of_interest collection:\n\n// index name : \"vector_index\"\n// If you change an embedding provider make sure the numDimensions correspond to the model.\n{\n  \"fields\": [\n    {\n      \"type\": \"vector\",\n      \"path\": \"embedding\",\n      \"numDimensions\": 1536,\n      \"similarity\": \"cosine\"\n    }\n  ]\n}\n\nAdditional Resources\nMongoDB Atlas Vector Search\nn8n Atlas Vector Search docs\n\n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.memoryMongoDbChat",
+    "@n8n/n8n-nodes-langchain.vectorStoreMongoDBAtlas"
+  ],
+  "tags": []
+}

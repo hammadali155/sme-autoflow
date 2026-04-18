@@ -1,0 +1,11 @@
+{
+  "id": 14005,
+  "name": "Archive Outlook email attachments to DATEV DMS and notify Slack",
+  "description": "This workflow watches your Outlook inbox for new emails with attachments and archives those attachments in DATEV DMS. It skips emails without attachments, looks up a related DATEV client, processes each attachment separately, uploads the file to DATEV DMS, creates the matching document entry, optionally sends a Slack notification, and then marks the email as archived in Outlook.\n\nHow it works\nThe workflow starts when a new email arrives in Outlook.\nEmails without attachments are skipped.\nA DATEV client is retrieved for the email.\nAttachments are processed one by one.\nEach file is uploaded to DATEV DMS and linked to a document.\nA Slack message can be sent after a successful upload.\nThe Outlook email is then marked as archived.\n\nSetup steps\nConnect your Microsoft Outlook OAuth2 credentials.\nConnect your DATEVconnect credentials.\nOptionally connect Slack credentials.\nReplace the demo client lookup with your own client-matching logic.\nAdjust the folder, registry, and metadata fields in the document creation step.\nUpdate the Outlook archive action to match your process.",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.microsoftOutlook",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

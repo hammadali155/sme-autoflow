@@ -1,0 +1,12 @@
+{
+  "id": 11667,
+  "name": "Batch Resume Analysis with Google Gemini AI and Google Sheets",
+  "description": "How it works\nYou have several resumes you need to review manually? well this workflows allows you to upload upto 20 bunches pdf at once. AI does the heavy lifting, saving time, reducing repetive tasks and achieving high accuracy.\n\nThe job description and qualificattion goes under the agent System message.\n\nSetup steps.\nIt will take you roughly 20minutes to finish setting up this workflow.\nn8n Form Allow multiple file submission\nJavaScript Code allow mapping of each file individually\nSystem message adjust the system message to fit the job description and qualification.\nGoogle Sheet make a copy",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": 5040,
+  "name": "Generate Deep Research Markdown Reports with GPT, Tavily Search, and Google Sheets",
+  "description": "This workflow generates deep researched report in markdown format and saves it in Google Sheet, that I then use for generating blogs for my website - Architjn Blogs\n\nHow it works\nUser submits a search topic through a form.\nAI generates five deep-dive subtopics for that main topic.\nAI creates a research report intro, title, and table of contents based on those topics.\nEach subtopic is sent to a search API (Tavily) to collect top 5 sources.\nAI writes detailed Markdown content for each subtopic using retrieved sources.\nFinal content, ToC, intro, and clickable sources are saved to a Google Sheet.\n\nSet up steps\nRequires connections to OpenRouter (AI), Tavily (search API), and Google Sheets.\nImport into n8n and connect credentials for the above services.\nConfigure Google Sheet with proper column headers and grant edit access.\nEstimated setup time: 20–30 minutes with working API keys.\nIncludes embedded instructions and markdown-style annotations for guidance.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

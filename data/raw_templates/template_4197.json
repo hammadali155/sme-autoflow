@@ -1,0 +1,12 @@
+{
+  "id": 4197,
+  "name": "Improve AI Agent System Prompts with GPT-4o Feedback Analysis and Email Delivery",
+  "description": "AI Agent System Prompt 'Auto-Tuner'\n\n This workflow configures an AI agent which provides an edited system prompt for an autonomous AI agent Based on the following pieces of information provided by the user in an input form:\n\nAgent name\nAgent purpose\nWhat's working\nWhat's not working\nCurrent system prompt\n\nThere are two additional form elements that I've marked as non-required but if you want to force more detail from the user you can mark these as required:\n\nExample prompt\nExample output\n\nThis information gets sent to the AI agent which is configured with a system prompt of its own and the form elements are concatenated into a user prompt prompting the agent to evaluate the system prompt, deliver an improved version, and provide some notes for logging. The output structure is constrained with JSON. OpenAI 4o is recommended for its overall strong adherence to structured outputs.\n\nOnce the agent delivers its improved system prompt, this gets passed to the user via email notification. The final delivery stage can be alternated according to user preference \n\nWhen This Is Useful\n\nAnyone working on AI agent configurations will likely be familiar with the pivotal importance of the system prompt in directing the desired behavior of the agent. \n\nFrequently this requires long hours of iteration before a consistent desired behaviour is achieved.\n\nSometimes we can figure out what's working and not based on our own intuition and experience, but at other times soliciting the outside perspective of another AI tool can be a helpful way to consider alternative explanations or improve our own prompt engineering.  \n\nThis configuration is intended to speed up this iterative process and reduce the amount of time we spend working on system prompts to configure effective agent workflows \n\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 12712,
+  "name": "Re-engage dormant leads with Claude emails using Crunchbase, NewsAPI, Hunter, and Gmail",
+  "description": "What this workflow does\n\n  Automatically re-engages dormant leads by detecting trigger events (funding rounds, company news, leadership changes) and generating personalized outreach emails. The workflow identifies leads inactive for 90+ days, checks multiple data sources for re-engagement opportunities, and sends AI-generated email drafts to sales reps for approval.\n\nHow it works\n\n  Schedule - Runs weekly (every Monday by default)\n  CRM Data - Pulls leads that have been inactive for 90+ days\n  Trigger Detection - Checks three sources in parallel:\n     Crunchbase for funding events\n     NewsAPI for company news\n     Hunter.io for leadership changes\n  AI Email - Claude generates a personalized re-engagement email based on the detected trigger\n  Rep Notification - Sends the complete lead profile and email draft to the assigned sales rep for review\n\nSetup steps\n\n  Replace Load inactive leads (mock) with your CRM integration (Salesforce, HubSpot, Pipedrive)\n  Add API credentials for trigger detection:\n     NewsAPI (free at newsapi.org)\n     Crunchbase (optional, paid)\n     Hunter.io (free tier available)\n  Add your Anthropic API credentials for Claude\n  Add your Gmail OAuth credentials\n  Test with Test workflow manually node before enabling schedule\n\nAPI keys required\n\n  | Service | Purpose | Cost |\n  |---------|---------|------|\n  | NewsAPI | Company news detection | Free (100 req/day) |\n  | Crunchbase | Funding event detection | $99/mo (optional) |\n  | Hunter.io | Leadership change detection | Free tier available |\n  | Anthropic | AI email generation | Pay per use |\n  | Gmail | Send notifications | Free |\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic"
+  ],
+  "tags": []
+}

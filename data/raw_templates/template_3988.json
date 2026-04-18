@@ -1,0 +1,19 @@
+{
+  "id": 3988,
+  "name": "Access Control for AI Agents (RBAC) using Airtable and Telegram",
+  "description": "Purpose\n\nThis workflow allows granular control over the access to tools connected to AI Agents (including Multi-Agent setups) using Role Based Access Control.\n\nDemo & Explanation\n\nHow it works\n\nUser permissions are managed in Airtable where every restricted AI tool is listed by name and connected via roles to users\nRequests to the Main Agent can be sent through a Telegram message (can be replaced by Whatsapp, IMAP or similar)\nOn every request the Telegram username is used to query a list of all allowed tools which are linked in Airtable\nA LangChain Code node is used to compare that list against the connected tools\nEvery tool which is not permitted to be used is being replaced by a tool, which has a status response, telling the Agent to return a message to the user, that he is not authorized to use the tool\nOtherwise allowed tools are passed through to the Agent, as if they were connected directly to the Agent\nThe parameters can also be passed to a sub-agent called as a sub-workflow where permissions can be checked the same way\nEvery response is sent back to the same Telegram conversation\n\nSetup\n\nClone the workflow and select the belonging credentials. You'll need an OpenAI and Airtable Account as well as a Telegram Bot (refer to the docs for the Telegram credentials).\nCopy this Airtable Template into your workspace\nFollow the instructions given in the yellow sticky notes\nActivate the workflow\n\nHow to use\n\nTry this example:\n\nCreate a new line in Airtable under “Users” containing your Telegram username and your full name\nSet the roles “basic” and “info”\nConsider temporarily disconnecting or resetting the chat memories so they do not remember previous confirmations\nStart a new chat, asking about your permitted roles - you should get a list of those\nAsk about the current weather in your city - you should be informed, that you do not have permission to access that information\nBack in Airtable add the role “weather” to your user\nNow ask the Agent the same question again - It should give you a proper answer this time\n\nFrom here on you can add tools and create roles to your likings.\n\nDisclaimer\n\nPlease note, that this workflow can only run on self-hosted n8n instances, since it requires the LangChain Code Node.",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.code",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.toolWikipedia",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.toolHttpRequest"
+  ],
+  "tags": []
+}

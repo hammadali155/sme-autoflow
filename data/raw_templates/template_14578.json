@@ -1,0 +1,15 @@
+{
+  "id": 14578,
+  "name": "Generate overdue lead follow-up Gmail drafts with Google Sheets and Gemini",
+  "description": "Automatically identifies overdue sales leads and generates personalized follow-up emails using AI.\n\nHow it works\n\nRuns every weekday\nReads leads from Google Sheets\nFilters leads with no contact for 5+ days\nDownloads last meeting transcript from Google Drive\nUses Google Gemini to write a personalized email\nSaves the email as a Gmail Draft for review\nUpdates lead status in the Sheet\n\nSetup\n\nGoogle Sheets with columns: Current Status, Last Contact, Name, Company, Email, Meeting Transcript, Sales Rep\nGoogle Drive access for transcript files\nGoogle Gemini API key (free from Google AI Studio)\nGmail account\nSlack workspace\n\nSupported file types\n\nPDF\nTXT\n\nNotes\n\nEmails are saved as drafts only — not sent automatically\nSupported lead statuses: New\nSkips leads with status: Draft Created, Sent, Closed\n\nInspiration\n\nThis workflow was built to solve a real problem at an educational institute.\nThe sales team needed someone to remind them about follow-ups and draft personalized emails — but hiring a personal assistant wasn't financially feasible.\n\nBased on that, this system acts as that assistant: it tracks overdue leads, reads meeting transcripts, and writes personalized follow-up emails automatically.\n\nI kept this stack free where possible — using Google Gemini's free tier for AI. \nFor small sales teams, I believe the daily token limits are more than sufficient, making this a zero-cost automation.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

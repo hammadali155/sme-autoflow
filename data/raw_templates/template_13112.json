@@ -1,0 +1,12 @@
+{
+  "id": 13112,
+  "name": "Create LinkedIn image posts with captions using Google Gemini and LinkedIn",
+  "description": "Transform your quotes into stunning LinkedIn posts with AI!\n\nThis workflow automatically generates professional image designs and engaging captions from your text input using Google Gemini AI.\n\nSimply enter your quote on the custom HTML interface, and the workflow creates a beautiful visual design paired with a compelling LinkedIn caption. Edit the caption to match your style, then post directly to LinkedIn, all from one seamless interface.\n\nPerfect for content creators, marketers, and professionals who want to maintain an active LinkedIn presence without spending hours on design and copywriting.\n\nWhat you'll need:\nGoogle Gemini API credentials\nLinkedIn API credentials\nCustom HTML website (included in setup)\n\nWatch the full setup tutorial: Watch now",
+  "nodes": [
+    "n8n-nodes-base.linkedIn",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

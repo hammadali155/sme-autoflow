@@ -1,0 +1,15 @@
+{
+  "id": 11862,
+  "name": "Intelligent Real-Time Financial Fraud Detection and Risk Scoring Engine",
+  "description": "How It Works\nAutomates fraud risk detection for financial transactions by analyzing real-time webhook events through AI-powered scoring. Target audience: fintech companies, payment processors, and banking teams preventing fraud losses. Problem solved: manual fraud checks are reactive and slow; automated detection catches suspicious transactions instantly. Workflow receives transactions via webhook, configures processing parameters, runs OpenAI GPT-4 fraud analysis, calculates risk scores, branches on risk level, holds high-risk transactions, alerts fraud teams, logs incidents, and documents evidence for compliance investigations.\n\nSetup Steps\nConfigure webhook endpoint for transaction ingestion. \nSet OpenAI API key and fraud detection prompts. \nConnect Google Sheets for incident logging. \nEnable email alerts to fraud team distribution list. \nMap risk thresholds (high/low).\n\nPrerequisites\nOpenAI API key, webhook-capable transaction source, Gmail for alerts, Google Sheets access, incident tracking database.\n\nUse Cases\nPayment processors detecting card fraud, fintech platforms catching account takeovers \n\nCustomization\nAdjust risk thresholds and scoring logic. Add phone/SMS alerts for urgency.  \n\nBenefits\nDetects fraud within seconds, reduces financial losses by up to 90% ",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

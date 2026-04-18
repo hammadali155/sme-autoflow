@@ -1,0 +1,18 @@
+{
+  "id": 2341,
+  "name": "Build a Tax Code Assistant with Qdrant, Mistral.ai and OpenAI",
+  "description": "This n8n workflows builds another example of creating a knowledgebase assistant but demonstrates how a more deliberate and targeted approach to ingesting the data can produce much better results for your chatbot.\n\nIn this example, a government tax code policy document is used. Whilst we could split the document into chunks by content length, we often lose the context of chapters and sections which may be required by the user.\n\nOur approach then is to first split the document into chapters and sections before importing into our vector store. Additionally, using metadata correctly is key to allow filtering and scoped queries.\n\nExample\n\nHuman: \"Tell me about what the tax code says about cargo for intentional commerce?\"\n\nAI: \"Section 11.25 of the Texas Property Tax Code pertains to \"MARINE CARGO CONTAINERS USED EXCLUSIVELY IN INTERNATIONAL COMMERCE.\" In this section, a person who is a citizen of a foreign country or an en...\"\n\nHow it works\n\nThe tax code policy document is downloaded as a zip file from the government website and its pages are extracted as separate chapters.\nEach chapter is then parsed and split into its sections using data manipulation expressions.\nEach section is then inserted into our Qdrant vector store tagged with its source, chapter and section numbers as metadata.\nWhen our AI Agent needs to retrieve data from our vector store, we use a custom workflow tool to perform the query to Qdrant.\nBecause we're relying on Qdrant's advanced filtering capabilities, we perform the search using the Qdrant API rather than the Qdrant node.\nWhen the AI Agent, needs to pull full wording or extracts, we can use Qdrant's scroll API and metadata filtering to do so. This makes Qdrant behave like a key-value store for our document.\n\nRequirements\nA Qdrant instance is required for the vector store and specifically for it's filtering functionality.\nMistral.ai account for Embeddings and AI models.\n\nCustomising this workflow\n\nDepending on your use-case, consider returning actual PDF pages (or links) to the user for the extra confirmation and to build trust.\n\nNot using Mistral? You are able to replace but note to match the distance and dimension size of Qdrant collection to your chosen embedding model.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.compression",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant"
+  ],
+  "tags": []
+}

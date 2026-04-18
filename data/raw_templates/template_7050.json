@@ -1,0 +1,11 @@
+{
+  "id": 7050,
+  "name": "Export Amazon Product Reviews in Bulk to Google Sheets via RapidAPI",
+  "description": "What it does\nPulls up to 700 Amazon reviews per product (recent and top-rated) and writes them straight into a Google Sheet tab you choose.\n\nPerfect for\n• Brand and product managers tracking sentiment\n• Marketplace sellers analysing competitor feedback\n• Agencies building product-review dashboards\n\nApps used\nRapidAPI Real-Time Amazon Data, Google Sheets, n8n Form Trigger\n\nHow it works\n\nForm Trigger collects brand, product and sheet info.\nCode node extracts the ASIN and builds 70 API requests (10 pages × star ratings).\nSplit-in-batches loops through the request list, throttled by two Wait nodes.\nHTTP Request fetches reviews from RapidAPI.\nIF node drops empty or error responses.\nSplit Out breaks arrays into single reviews.\nGoogle Sheets appends every review to the target tab.\nLoop continues until all pages finish.\n\nSetup\n\nFill in Brand name, Product / Model Name, Amazon Product URL, Tab URL to insert reviews in the form.\nGrab your X-RapidAPI-Key from RapidAPI → Add as httpHeaderAuth credential.\nConnect Google Sheets OAuth2 and make the spreadsheet Anyone with the link can edit.\nOpen Workflow Settings → set timezone if you plan to schedule runs.\nHit Execute workflow or share the form link.\n\nCredentials\n• Real-Time Amazon Data (RapidAPI HTTP Header Auth)\n• Google Sheets OAuth2\n\nLimits and notes\n• \\~100 RapidAPI calls for the free plan. Plan quota accordingly.\n• Assumes Amazon returns 10 pages per star rating; fewer pages skip silently.\n• Large sheets may hit Google API write quotas.\n\n\nIf you have any questions in running the workflow, feel free to reach out to me at my youtube channel: https://www.youtube.com/@hunyaochong",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

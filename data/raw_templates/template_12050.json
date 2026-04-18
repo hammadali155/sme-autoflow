@@ -1,0 +1,14 @@
+{
+  "id": 12050,
+  "name": "Automate Zoom Attendance Follow-ups with Recordings & Google Sheets Tracking",
+  "description": "Workflow Overview\nZoom Attendance Evaluator with Follow-up is an n8n automation workflow that automatically evaluates Zoom meeting attendance and sends follow-up emails to no-shows and early leavers with recordings and materials.\nWho's it for\nCompanies and organizations that regularly host online seminars and webinars\nEducational institutions conducting online classes\nAnyone looking to streamline participant attendance management and follow-up processes\nHow it works\nScheduled execution: Runs automatically every hour\nFetch meeting data: Retrieves recent Zoom meetings and participant information\nEvaluate attendance: Automatically classifies participants into four categories:\n   No-show: 0 minutes attended\n   Early-leaver: Less than 50% attendance\n   Partial attendance: 50-80% attendance\n   Full attendance: Over 80% attendance\nAutomatic follow-up: Sends automated emails with recording links and materials to no-shows and early leavers\nRecord keeping: Logs all follow-ups to Google Sheets for tracking\nRequirements\nZoom account: OAuth2 authentication setup required\nSMTP email server: Configuration needed (Gmail, SendGrid, etc.)\nGoogle Drive: For storing handout materials\nGoogle Sheets: For attendance logging\nCredentials for each service configured in n8n\nHow to customize the workflow\nAdjust attendance thresholds: Modify the 50% and 80% values in the \"Evaluate Attendance\" node code\nChange execution frequency: Configure the time interval in the \"Schedule Trigger\" node\nCustomize email template: Edit subject and body in the \"Prepare Email Data\" node\nNext session registration link: Replace the placeholder URL in the code with your actual registration link\nThis workflow completely automates post-meeting follow-up tasks, helping improve participant engagement and reduce manual work.",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.zoom",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

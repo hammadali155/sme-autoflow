@@ -1,0 +1,15 @@
+{
+  "id": 12195,
+  "name": "Predict disaster damage and coordinate property response with GPT-4, Google Sheets, Calendar and Gmail",
+  "description": "How It Works\nThis automated disaster response workflow streamlines emergency management by monitoring multiple alert sources and coordinating property protection teams. Designed for property managers, insurance companies, and emergency response organizations, it solves the critical challenge of rapidly identifying at-risk properties and deploying resources during disasters.The system continuously monitors weather, seismic, and flood alerts from authoritative sources. When threats are detected, it cross-references property databases to identify affected locations, calculates insurance exposure, and generates damage assessments using OpenAI's GPT-4. Teams receive automated maintenance schedules while property owners and insurers get instant email notifications with comprehensive reports. This eliminates manual monitoring, reduces response time from hours to minutes, and ensures no vulnerable properties are overlooked during emergencies.\n\nSetup Steps\n\nConfigure alert fetch nodes with weather/seismic/flood API endpoints\nConnect property database credentials (specify database type)\nAdd OpenAI API key for GPT-4 damage assessments\nSet up Gmail/SMTP credentials for owner and insurer notifications\nCustomize insurance calculation formulas and team scheduling logic\n\nPrerequisites\n\nWeather/seismic/flood alert API access, property database (SQL/Sheets/Airtable) \n\nUse Cases\n\nInsurance companies automating claims preparation, property management firms protecting rental portfolios \n\nCustomization\n\nModify alert source APIs, adjust damage assessment prompts \n\nBenefits\n\nReduces emergency response time by 90%, eliminates manual alert monitoring \n\n \n\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

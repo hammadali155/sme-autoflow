@@ -1,0 +1,18 @@
+{
+  "id": 4426,
+  "name": "Evaluate RAG Response Accuracy with OpenAI: Document Groundedness Metric",
+  "description": "This n8n template demonstrates how to calculate the evaluation metric \"RAG document groundedness\" which in this scenario, measures the ability to provide or reference information included only in retrieved vector store documents.\n\nThe scoring approach is adapted from https://cloud.google.com/vertex-ai/generative-ai/docs/models/metrics-templates#pointwise_groundedness\n\nHow it works\nThis evaluation works best for an agent that requires document retrieval from a vector store or similar source.\nFor our scoring, we need to collect the agent's response and the documents retrieved and use an LLM to assess if the former is based off the latter.\nA key factor is to look out information in the response which is not mentioned in the documents.\nA high score indicates LLM adherence and alignment whereas a low score could signal inadequate prompt or model hallucination.\n\nRequirements\nn8n version 1.94+\nCheck out this Google Sheet for a sample data https://docs.google.com/spreadsheets/d/1YOnu2JJjlxd787AuYcg-wKbkjyjyZFgASYVV0jsij5Y/edit?usp=sharing\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "n8n-nodes-base.evaluation"
+  ],
+  "tags": []
+}

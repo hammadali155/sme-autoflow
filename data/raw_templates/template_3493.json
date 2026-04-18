@@ -1,0 +1,12 @@
+{
+  "id": 3493,
+  "name": "Monitor SSL Certificate Expiry with Google Sheets and Multi-Channel Alert",
+  "description": "SSL Expiry Alert System\n\nWho is this for?\nThis workflow is ideal for administrators or IT professionals responsible for monitoring SSL certificates of multiple websites to ensure they do not expire unexpectedly.\n\nProblem\nSSL certificates play a crucial role in ensuring secure communication over the internet. However, if not monitored closely, they can expire, leading to potential security risks and service disruption. This workflow helps in proactively monitoring SSL certificate expiry dates.\n\nFunctionality\nPulls URLs to monitor from a Google Sheet.\nChecks SSL certificates using SSL-Checker.io.\nUpdates Google Sheet with SSL details such as expiry date and certificate status.\nSends email alerts for SSL certificates nearing expiry (&lt;30 days) or invalid certificates.\n\nSetup\nClone the provided Google Sheet and update the Google Sheet URL in the \"URLs to Monitor\" node.\nSet up Google Sheets and Gmail credentials in n8n.\nConfigure the Discourse Trigger for weekly monitoring.\nCustomize email/telegram/ntfy alert settings as needed.\n\nCustomization\nModify the frequency of monitoring by adjusting the trigger interval in the \"Weekly Trigger\" node.\nCustomize email content and recipients in the \"Send Alert Email\" node.\nExtend functionality by adding additional checks or actions based on SSL certificate status.\n\nNote\nEnsure proper authentication and authorization for accessing Google Sheets, SSL-Checker.io, and Gmail accounts within the workflow.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

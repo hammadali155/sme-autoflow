@@ -1,0 +1,16 @@
+{
+  "id": 12727,
+  "name": "Generate VEED AI talking head videos from sheet rows with OpenAI or ElevenLabs",
+  "description": "A production-ready n8n workflow that generates AI avatar videos from images and text using VEED Fabric 1.0, with flexible multi-platform publishing capabilities.\n\nKey Capabilities\n\nUnlimited Scale\nProcess any number of videos**: Sequential processing ensures each video is fully generated and published before moving to the next\nBatch processing**: Add multiple video requests to Google Sheet and let the workflow process them automatically\nNo context mixing**: Each video maintains its own configuration throughout the entire pipeline\n\nFlexible Publishing\nPer-video platform selection**: Each video can target different platforms (e.g., Video 1 → Instagram+YouTube, Video 2 → Telegram only)\nOptional publishing**: Leave PLATFORMS column empty to generate videos without publishing (videos saved to Drive)\nSupported platforms**: Instagram Reels, YouTube/Shorts, Facebook, Telegram, Threads\nPlatform-specific formatting**: Automatic optimization for each platform's requirements\n\nSmart Processing\nTwo TTS providers**: Choose OpenAI or ElevenLabs per video\nConfigurable quality**: Select resolution (480p/720p) and aspect ratio (9:16, 16:9, 1:1) per video\nApproval workflow**: Review videos before publishing with email approve/reject buttons\nError handling**: Automatic error detection with detailed email notifications\n\nStatus Tracking\nReal-time status updates**: Google Sheet updates as workflow progresses (new → processing → published)\nDetailed results**: Per-platform success/failure tracking with post URLs\nEmail reports**: Comprehensive publishing reports with links to all posted content\n\nHow It Works\nInput: Add rows to Google Sheet with video details\nTTS: Generate speech using OpenAI or ElevenLabs\nVideo: VEED Fabric 1.0 creates talking head video\nApproval: Email with video preview and approve/reject buttons\nPublish: Sequential publishing to selected platforms\nReport: Status update in sheet + email with results\n\nRequirements\nFal.ai API Key (for VEED)\nGoogle OAuth (Sheets, Drive, Gmail)\nTTS: OpenAI or ElevenLabs API Key\nSocial Media credentials (optional, only for platforms you use)\nTelegram Bot Token (optional, only for Telegram)\n\nNode: n8n-nodes-veed\nAuthor: VEED.io",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.youTube",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

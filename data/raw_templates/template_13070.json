@@ -1,0 +1,13 @@
+{
+  "id": 13070,
+  "name": "Debounce Telegram support messages and aggregate replies with OpenAI",
+  "description": "This workflow prevents your AI support bot from responding to every single message by intelligently aggregating rapid-fire messages from users before generating a comprehensive response.\n\nWho's it for\n\nSupport teams and bot developers who want to provide better AI responses by letting users fully explain their issue before the bot responds, reducing unnecessary back-and-forth and improving response quality.\n\nHow it works\n\nWhen a user sends a message to your Telegram bot, the workflow:\nChecks if the user has an active session within the last 60 seconds\nIf no session exists, creates a new one and starts a 60-second timer\nIf a session is active, appends the new message to the existing conversation\nAfter 60 seconds of the first message, fetches all aggregated messages\nSends the complete conversation to OpenAI for a comprehensive response\nDelivers the AI-generated answer back to the user via Telegram\nClears the session for the next interaction\n\nRequirements\n\nTelegram bot token (set up via BotFather)\nOpenAI API key\nPostgreSQL database with a user_sessions table containing columns: user_id, session_id, messages (jsonb array), first_message_at, wait_expires_at, status, and resume_url\nn8n instance (self-hosted or cloud)\n\nHow to set up\n\nConfigure your Telegram credentials in the Telegram Trigger node\nAdd your OpenAI API key to the OpenAI Chat Model node\nSet up PostgreSQL credentials and create the required database table\nAdjust the wait time (default 60 seconds) in the Wait node if needed\nActivate the workflow and test with your Telegram bot\n\nHow to customize\n\nModify the aggregation window by changing the wait duration\nCustomize the AI prompt in the AI Agent node for different response styles\nAdd additional logic to handle specific keywords or commands\nIntegrate other AI models or add context from external sources",
+  "nodes": [
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

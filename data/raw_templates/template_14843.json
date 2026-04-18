@@ -1,0 +1,14 @@
+{
+  "id": 14843,
+  "name": "Analyze stocks in Warren Buffett style from Telegram with OpenAI and Gmail",
+  "description": "This workflow turns a simple Telegram message into a full stock research report inspired by Warren Buffett’s value investing approach. A user sends a ticker symbol such as AAPL, MSFT, or AMZN, and the workflow validates the input, runs AI-powered research, performs discounted cash flow calculations, and sends a polished HTML report to Gmail with a final verdict.\n\nIt is designed as a reusable finance analysis template for creators, developers, and automation builders who want to combine Telegram, AI agents, live research, and email delivery in one workflow. Templates in n8n are intended to help users learn, reuse best practices, and quickly adapt a workflow to their own setup, so this version is structured to be easy to follow and reconfigure after import.\n\nWhat this workflow does\nReceives a stock ticker from Telegram and cleans the input before processing.\n\nValidates the ticker format and stops invalid requests early with a helpful reply.\n\nUses an AI agent to generate a Buffett-style investment analysis.\n\nUses SerpAPI for live company and market research.\n\nUses a calculator tool for DCF and margin-of-safety math.\n\nSends the final HTML report to Gmail and confirms completion in Telegram.\n\nSetup instructions\nImport the workflow into n8n and reconnect your credentials for Telegram, OpenAI, SerpAPI, and Gmail. n8n templates are designed to be imported and then configured in the user’s own environment.\n\nOpen the Extract Ticker, Chat ID & Email node and replace YOUR_EMAIL@gmail.com with your destination email address.\n \nCreate or connect your Telegram bot credentials, then test by sending a stock ticker like AAPL or MSFT.\n\nConnect your Gmail OAuth2 account so the workflow can send the HTML report email.\n\nActivate the workflow and run a live test from Telegram.\n\nRequirements\nTelegram Bot API credentials\nOpenAI API credentials\nSerpAPI credentials\nGmail OAuth2 credentials\n\nBest for\nFinance research demos\nAI agent workflow examples\nTelegram-to-email automations\nValue investing and stock analysis use cases\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolSerpApi"
+  ],
+  "tags": []
+}

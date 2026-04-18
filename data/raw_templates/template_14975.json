@@ -1,0 +1,10 @@
+{
+  "id": 14975,
+  "name": "Convert Supabase support FAQs to audio with Google Cloud TTS and Webflow",
+  "description": "Enhance your support documentation with an audio-first experience. This workflow converts Supabase FAQ entries into high-quality audio using Google Cloud TTS, hosts them via a CDN, and embeds them into your Webflow support pages.\n\n🎯 What This Workflow Does\n\nThis template transforms static FAQ content into a professional audio library through a multi-stage process.\n\n🔔 Step 1 — Webhook Intake & Intelligent Fetch\n\nWebhook Trigger:** Processes specific FAQ IDs or categories on demand  \nSupabase Query:** Fetches unprocessed or requested FAQ records  \n\n📋 Step 2 — Data Enrichment & SSML Preparation\n\nDeduplication:** Ensures each FAQ is processed only once  \nSSML Formatting:** Adds pauses and emphasis for natural speech delivery  \n\n🗣️ Step 3 — Google Cloud TTS & Hosting\n\nAudio Generation:** Converts text to MP3 using Google Cloud TTS (WaveNet)  \nCDN Hosting:** Uploads audio via UploadToURL to generate a public URL  \n\n🌐 Step 4 — CMS Update & Database Write-Back\n\nWebflow Update:** Inserts audio URL into FAQ pages for playback  \nSupabase Update:** Marks records as published with timestamps  \n\n💼 Step 5 — Reporting & Confirmations\n\nMicrosoft Teams Alert:** Sends summary with audio links  \nWebhook Response:** Returns JSON confirmation to trigger source  \n\n✨ Key Features\n\nAccessibility First:** Enables audio-based support consumption  \nSSML Intelligence:** Improves clarity with structured speech formatting  \nRate-Limit Safe:** Processes items sequentially to avoid API limits  \nReliable Hosting:** UploadToURL ensures stable public audio URLs  \n\n🔧 Setup Requirements\n\nRequired Integrations\n\nSupabase:** FAQ table  \nGoogle Cloud TTS:** API enabled  \nWebflow:** CMS API access  \nUploadToURL:** CDN hosting  \nMicrosoft Teams:** Webhook URL  \n\nUpgrade your support experience. Import this template to turn your FAQ library into a voice-enabled support center.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

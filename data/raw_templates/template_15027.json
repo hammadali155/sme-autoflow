@@ -1,0 +1,16 @@
+{
+  "id": 15027,
+  "name": "Forecast property CAPEX and ROI weekly using Google Sheets and GPT-4o",
+  "description": "How It Works\nThis workflow automates weekly capital expenditure (CAPEX) forecasting for property portfolios using a multi-agent AI architecture. It targets property managers, asset managers, and facilities finance teams who need data-driven maintenance budgeting without manual spreadsheet analysis. Three Google Sheets sources, namely: maintenance records, property data, and tenant feedback, are merged into a unified dataset. A Main Prediction Agent orchestrates three specialist sub-agents: a CAPEX Prioritizer that ranks spending needs, an ROI Simulator that models return scenarios, and a Quote Requester that fetches vendor estimates. Each agent is backed by dedicated AI models, memory, and tools including a Calculator and Financial Modeling Tool. Structured predictions are parsed, split by category, formatted, saved back to Google Sheets, and pushed to an external budgeting system via POST, delivering a fully automated, auditable CAPEX planning pipeline every week.\n\nSetup Steps\nConnect Google Sheets credentials to all three read nodes and the Save Predictions node.\nSet correct Sheet IDs for maintenance, property, and tenant feedback tabs.\nAdd Claude or OpenAI API credentials to all Chat Model nodes.\nConfigure the Financial Modeling Tool with your cost rate assumptions.\nReplace the POST placeholder URL in Update Budgeting System with your actual endpoint.\n\nPrerequisites\nGoogle Sheets account with populated maintenance, property, and tenant data\nClaude or OpenAI API credentials\nExternal budgeting system with a POST-compatible API endpoint\nUse Cases\nWeekly CAPEX forecasting for multi-property real estate portfolios\nAutomated ROI modelling for planned renovations or equipment replacement\nCustomization\nAdd more data sources (e.g., IoT sensors, ERP exports). \nBenefits\nEliminates manual CAPEX spreadsheet work with autonomous AI forecasting.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

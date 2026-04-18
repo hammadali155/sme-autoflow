@@ -1,0 +1,21 @@
+{
+  "id": 3563,
+  "name": "Build an AI Powered Phone Agent 📞🤖 with Retell, Google Calendar and RAG",
+  "description": "This Workflow simulates an AI-powered phone agent with RetellAI with two main functions:\n\n📅 Appointment Booking – It can schedule appointments directly into Google Calendar.  \n🧠 RAG-based Information Retrieval – It provides answers using a Retrieval-Augmented Generation (RAG) system. For example, it can respond to questions such as store opening hours, return policies, or product details.\n\nThe guide also explains how to purchase a dedicated phone number (with a +1 prefix) and link it to the AI agent. This setup is cost-effective, as it uses a FREE $10 credit to operate without additional charges in the beginning.\n\n✨ Advantages\n\n🕐 24/7 Availability** – The AI agent can answer calls and assist customers at any time.  \n🤖 Automation** – It reduces the workload on human staff by handling repetitive tasks like appointment scheduling and FAQ responses.  \n🔌 Easy Integration** – Built with n8n, it’s flexible and customizable for various platforms and tools.  \n💸 Low-cost Setup** – Using the free credit, businesses can get started without an upfront investment.\n\n📦 Use Cases\n\n🛍 E-commerce** – Answer common product questions or order inquiries.  \n🏬 Retail Stores** – Provide store hours, address info, and return policies.  \n🍽 Restaurants** – Take reservations or share menu information.  \n💼 Service Providers** – Book appointments or consultations.  \n📞 Any Local Business** – Offer phone support without needing a live operator.\n\nHow It Works  \nThis Workflow simulates an AI-powered phone agent with two primary functions:  \n\nAppointment Booking  \n   The workflow captures call events (e.g., call_ended or call_analyzed) and extracts key details (transcript, caller info, duration, etc.).  \n   Using OpenAI, it summarizes the conversation and parses structured data (e.g., names, contact info, dates).  \n   For scheduling, it converts user-provided dates into Google Calendar-compatible formats and creates events automatically.  \n\nRAG-Based Information Retrieval  \n   When a query is received (e.g., store hours, product details), the workflow retrieves relevant information from a Qdrant vector store.  \n   An AI agent processes the query using the retrieved data and responds via a webhook, ensuring accurate, context-aware answers.   \n\nSet Up Steps  \nPrepare Qdrant Vector Store  \n   Create/refresh a Qdrant collection (via HTTP requests).  \n   Upload and vectorize documents (e.g., from Google Drive) using OpenAI embeddings.  \n\nConfigure RetellAI Agent  \n   Sign up for RetellAI, create an agent, and set the webhook URLs (n8n_call for call events, n8n_rag_function for RAG queries).  \n   Purchase a Twilio phone number and link it to the agent.  \n\nn8n Workflow Setup  \n   Connect OpenAI, Qdrant, Google Calendar, and Telegram nodes with credentials.  \n   Customize prompts for summarization, date parsing, and RAG responses.  \n   Test the workflow to ensure data flows from call events → processing → actions (e.g., calendar bookings, Telegram alerts).  \n\nDeploy  \n   Trigger the workflow via RetellAI webhooks during calls.  \n   Monitor outputs (e.g., call summaries in Telegram, calendar events).  \n\nNote: Replace placeholders (e.g., QDRANTURL, COLLECTION, CHAT_ID) with actual values. \n\n👉 Subscribe to my new YouTube channel. Here I’ll share videos and Shorts with practical tutorials and FREE templates for n8n.\n\nNeed help customizing?  \nContact me for consulting and support or add me on Linkedin.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.googleCalendar",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 4037,
+  "name": "Manage WhatsApp Chats Centrally on Slack",
+  "description": "This workflow enables seamless, bidirectional communication between WhatsApp and Slack using n8n. It automates the reception, processing, and forwarding of messages (text, media, and documents) between users on WhatsApp and private Slack channels.\n\nKey Features & Flow:\n\n1. WhatsApp to Slack Flow\nTrigger: The workflow starts with a WhatsApp Trigger node that listens for new incoming messages via a webhook.\nChannel Handling: It checks if a Slack channel with the WhatsApp sender’s number exists\nIf not, it creates a private Slack channel with the sender's number as the name.\nMessage Type Routing: A Switch Node (Message Type) inspects the message type (text, image, audio, document).\nBased on type: Text: Sends the message directly to Slack.\nImage/Audio/Document: Retrieves media URL via WhatsApp API → downloads the media → uploads it to the appropriate Slack channel.\n\n2. Slack to WhatsApp Flow\nTrigger: A Slack Trigger listens for new messages or file uploads in Slack.\nMessage Type Routing: A second Switch Node (Checking Message Type) checks if the message is text or media.\nRouting Logic: Text Message: Extracts and forwards it to the WhatsApp contact (identified by the Slack channel name).\nMedia/File Message: Retrieves media file URL from Slack → downloads it → sends it as a document via WhatsApp API.\n\nKey Integrations: \nWhatsApp Cloud API: For receiving messages, downloading media, and sending messages.\nSlack API: For creating/getting channels, posting messages, and uploading files.\nHTTP Request Node: Used to securely download media from Slack and WhatsApp servers with proper authentication.\n\nAutomation Use Case:\nThis workflow is ideal for businesses that handle customer support or conversations over WhatsApp and wish to log, respond, and collaborate using Slack as their internal communication tool.\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.whatsApp"
+  ],
+  "tags": []
+}

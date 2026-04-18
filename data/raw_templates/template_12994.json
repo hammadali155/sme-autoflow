@@ -1,0 +1,13 @@
+{
+  "id": 12994,
+  "name": "Generate and send AI-powered sales quotes with Gmail, OpenAI and Supabase",
+  "description": "An automated quote generation system that monitors your inbox, classifies quote requests using AI, calculates intelligent pricing based on historical data, and provides a professional dashboard for review and sending quotes with one click.\n\nhttps://github.com/nickpuru/proposal-generation",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.supabase",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

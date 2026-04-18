@@ -1,0 +1,10 @@
+{
+  "id": 13694,
+  "name": "Pull new backlinks into Google Sheets with DataForSEO and Gmail email report",
+  "description": "\n\nThis workflow helps you keep track of new backlinks by automatically generating a daily report in Google Sheets with the DataForSEO API, and delivering it via Gmail.\n\nOn each run, the workflow connects to the DataForSEO Backlinks API to retrieve the latest backlink data for your target domain or URL. It then organizes the results into a structured Google Sheets report, complete with key backlink metrics such as referring source URL, referring domain, spam score, domain rating (DR), and dofollow link attributes where present.\n\nOnce the report is updated, the workflow automatically sends you an email notification via Gmail with a direct link to the Google Sheet, making it easy to review new links and measure link-building progress day-to-day. \n\nWho’s it for\nThis workflow is especially useful for SEO teams, link-building specialists, and website owners who want automated daily overview of new backlinks.\n\nWhat it does\nThis workflow automatically monitors newly detected backlinks and sends you a daily report via email.\n\nHow it works\nTriggers automatically on a daily basis.\n\nFetches backlinks for your target domain or URL using the DataForSEO Backlinks API.\n\nExtracts newly discovered backlinks and their key metrics.\n\nCreates or updates a Google Sheets report with the latest data.\n\nSends an automated email with a direct link to your report.\n\nRequirements\nDataForSEO account and API credentials \nGoogle Sheets connection in n8n\nGmail connection in n8n\n\nCustomization\nYou can easily customize this workflow by changing the number of backlinks analyzed, selecting additional backlink details for your report, saving daily reports in other tools (like Notion or Airtable), or changing how often the workflow runs.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

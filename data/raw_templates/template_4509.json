@@ -1,0 +1,12 @@
+{
+  "id": 4509,
+  "name": "🏛️ Daily US Congress Members Stock Trades Report via Firecrawl + OpenAI + Gmail",
+  "description": "📬 What This Workflow Does\nThis workflow automatically scrapes recent high-value congressional stock trades from Quiver Quantitative, summarizes the key transactions, and delivers a neatly formatted report to your inbox — every single day.\n\nIt combines Firecrawl's powerful content extraction, OpenAI's GPT formatting, and n8n's automation engine to turn raw HTML data into a digestible, human-readable email.\n\nWatch Full Tutorial on how to build this workflow here:\nhttps://www.youtube.com/watch?v=HChQSYsWbGo&t=947s&pp=0gcJCb4JAYcqIYzv\n\n🔧 How It Works\n🕒 Schedule Trigger\nFires daily at a set hour (e.g., 6 PM) to begin the data pipeline.\n\n🔥 Firecrawl Extract API (POST)\nTargets the Quiver Quantitative “Congress Trading” page and sends a structured prompt asking for all trades over $50K in the past month.\n\n⏳ Wait Node\nAllows time for Firecrawl to finish processing before retrieving results.\n\n📥 Firecrawl Get Result API (GET)\nRetrieves the extracted and structured data.\n\n🧠 OpenAI Chat Model (GPT-4o)\nFormats the raw trading data into a readable summary that includes:\n\nDate of Transaction\n\nStock/Asset traded\n\nAmount\n\nCongress member’s name and political party\n\n📧 Gmail Node\nSends the summary to your inbox with the subject “Congress Trade Updates - QQ”.\n\n🧠 Why This is Useful\nCongressional trading activity often reveals valuable signals — especially when high-value trades are made.\nThis workflow:\n\nSaves time manually tracking Quiver Quant updates\n\nConverts complex tables into a daily, readable email\n\nKeeps investors, researchers, and newsrooms in the loop — hands-free\n\n🛠 Requirements\nFirecrawl API Key (with extract access)\n\nOpenAI API Key\n\nGmail OAuth2 credentials\n\nn8n (self-hosted or cloud)\n\n💬 Sample Output:\nCongress Trade Summary – May 21\n\nNancy Pelosi (D) sold TSLA for $85,000 on April 28\n\nJohn Raynor (R) purchased AAPL worth $120,000 on May 2\n... and more\n\n🪜 Setup Steps\nAdd your Firecrawl, OpenAI, and Gmail credentials in n8n.\n\nAdjust the schedule node to your desired time.\n\nCustomize the OpenAI system prompt if you want a different summary style.\n\nDeploy the workflow — and enjoy your daily edge.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

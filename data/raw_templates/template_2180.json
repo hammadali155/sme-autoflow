@@ -1,0 +1,13 @@
+{
+  "id": 2180,
+  "name": "Scrape and summarize posts of a news site without RSS feed using AI and save them to a NocoDB",
+  "description": "The News Site from Colt, a telecom company, does not offer an RSS feed, therefore web scraping is the choice to extract and process the news.\n\nThe goal is to get only the newest posts, a summary of each post and their respective (technical) keywords.\n\nNote that the news site offers the links to each news post, but not the individual news. We collect first the links and dates of each post before extracting the newest ones.\n\nThe result is sent to a SQL database, in this case a NocoDB database.\n\nThis process happens each week thru a cron job.\n\nRequirements:\nBasic understanding of CSS selectors and how to get them via browser (usually: right click &rarr; inspect)\nChatGPT API account - normal account is not sufficient\nA NocoDB database - of course you may choose any type of output target\n\nAssumptions:\nCSS selectors work on the news site\nThe post has a date with own CSS selector - meaning date is not part of the news content\n\n\"Warnings\"\nNot every site likes to be scraped, especially not in high frequency\nEach website is structured in different ways, the workflow may then need several adaptations.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.nocoDb",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.openAi",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

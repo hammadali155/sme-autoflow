@@ -1,0 +1,13 @@
+{
+  "id": 13320,
+  "name": "Monitor multi-cloud costs and enforce policies with OpenAI and Slack alerts",
+  "description": "How It Works\nThis workflow automates cloud cost intelligence and governance for organizations struggling with unpredictable cloud spending and budget overruns. Designed for FinOps teams, cloud architects, and finance departments, it solves the critical challenge of monitoring multi-cloud expenses and enforcing cost policies in real-time. The system performs daily cloud cost checks, simulates spending scenarios, analyzes data through dual AI agents (Cost Intelligence Agent identifies optimization opportunities, Governance Agent enforces policies), routes alerts by severity, and notifies stakeholders via Slack and email. By automating cost analysis, anomaly detection, and policy enforcement, organizations prevent budget violations, optimize resource allocation, and maintain financial accountability—essential for enterprises managing complex cloud infrastructures where uncontrolled spending can escalate rapidly.\n\nSetup Steps\nConnect Daily Trigger (schedule time aligned with billing cycle updates)\nConfigure Cloud Provider APIs \nAdd OpenAI API keys to Cost Intelligence Agent and Governance Agent nodes\nSet budget thresholds and cost policies in Governance Agent prompts\nConfigure Slack webhooks for critical and high-priority alerts\nLink Gmail credentials for finance team report distribution\n\nPrerequisites\nCloud provider API access (AWS/Azure/GCP billing), OpenAI API account\nUse Cases\nMulti-cloud cost optimization, budget compliance enforcement\nCustomization\nModify AI prompts for company-specific cost policies, adjust severity thresholds for alerts\nBenefits\nPrevents budget overruns through proactive alerts, reduces cloud waste by 30-50%",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.slack",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

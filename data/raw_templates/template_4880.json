@@ -1,0 +1,11 @@
+{
+  "id": 4880,
+  "name": "Segment WooCommerce Customers for Targeted Marketing with RFM Analysis",
+  "description": "Overview\n\nThis workflow is designed for eCommerce store owners and marketing teams who use WooCommerce. It helps segment customers based on their purchasing behavior using the RFM (Recency, Frequency, Monetary) model. By identifying high-value customers, new buyers, and at-risk segments, you can tailor your marketing strategies and improve customer retention.\n\nHow It Works\n\nTrigger: The workflow can be started manually or on a scheduled basis (e.g., weekly).\nRetrieve Orders: It fetches completed orders from your WooCommerce store from the past year.\nRFM Analysis: It groups orders by customer and calculates their RFM scores.\nCustomer Segmentation: Based on RFM scores, customers are categorized into marketing segments (e.g., Champions, At Risk, Lost).\nSummary Report: Generates a styled HTML report with a table summarizing customer segments and suggested marketing actions.\n\nSetup Instructions\n\nConnect WooCommerce:\n\n   Go to the WooCommerce node.\n   Add or select your WooCommerce API credentials. You need the Base URL, Consumer Key, and Consumer Secret.\n   Ensure API access is enabled in your WooCommerce settings.\n\nCustomize Segmentation (Optional):\n\n   In the \"Calculate RFM Scores\" code node, you can adjust the logic that assigns segment labels based on score combinations.\n   You can also update the marketing suggestions in the second \"Code\" node.\n\nRun the Workflow:\n\n   Use the \"Manual Start\" node for testing.\n   Enable the \"Weekly Trigger\" node to automate execution.\n\nView Report:\n\n   The final HTML node outputs a complete styled report.\n   You can send this via email or integrate it with other services.\n\nRequirements\n\nWooCommerce store with API access enabled.\nValid API credentials (Base URL, Consumer Key, Consumer Secret).\nn8n instance with access to the internet.",
+  "nodes": [
+    "n8n-nodes-base.wooCommerce",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html"
+  ],
+  "tags": []
+}

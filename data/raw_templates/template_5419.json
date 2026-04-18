@@ -1,0 +1,7 @@
+{
+  "id": 5419,
+  "name": "Process Multiple Files with Forms: A Tutorial on Binary Data and Loops",
+  "description": "Let a user load multiple files with a Form node, and process the binary data. A very important workflow for many tools. \n\nThis is a learning example of several core concepts that are hard to grasp in n8n:\n$binary data\nLoop and $runIndex\nSplit Out\n\nThe Save File deomonstrates how to access the binary data correctly, but could be swapped to POST the files to an AI, for example.\n",
+  "nodes": [],
+  "tags": []
+}

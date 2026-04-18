@@ -1,0 +1,12 @@
+{
+  "id": 7427,
+  "name": "Generate Weekly Grocery Lists in Notion with Automated Email Notifications",
+  "description": "Who’s it for\nBusy homemakers, creators, and anyone who wants a simple, no-cost way to plan weekly meals and get a ready-to-shop grocery list—without extra apps.\n\nWhat it does\nRuns on a weekly Cron schedule, generates a grocery list, creates rows in your Notion database (Ingredient, Quantity, Status), and emails the list (optional Telegram confirmation). It includes a Notion connection check, detailed error notifications (email and optional Telegram), a success email with timestamp, and optional persistent logging to a Notion “Logs” database.\n\nRequirements\nNotion account + integration connected to your database  \nSMTP credentials for the Email node  \n(Optional) Telegram bot and chat ID for alerts  \n(Optional) Notion log database if you want persistent logs\n\nHow to set up\nImport the workflow and open Set: Configuration to fill:\n   fromEmail, emailTo, notifyEmail, notionDb, telegramChatId  \n   (Optional) logToNotion (true/false), notionLogDb\nIn Notion, create a DB with properties:\n   Ingredient (Title), Quantity (Rich text), Status (Select: “To Buy”)\nAttach your Notion and SMTP credentials (and Telegram if used).\nRun once to test, then set Cron to your preferred weekly time.\n\nHow to customize\nEdit the recipe/grocery items in the Code node.\nChange the Cron schedule (test with “Every minute,” then revert to weekly).\nEnable Telegram alerts, and/or turn on Notion logging for audit trails.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

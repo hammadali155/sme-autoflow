@@ -1,0 +1,18 @@
+{
+  "id": 11899,
+  "name": "Consolidate Stripe, PayPal, Shopify and bank revenue and prepare tax filings with OpenAI",
+  "description": "How It Works\nConsolidates daily revenue from Stripe, PayPal, Shopify, and bank feeds into a single system. The workflow automatically normalizes data across payment sources, uses AI to categorize income transactions, calculates reporting-period totals, and generates tax-compliant CSV and XML submissions. Designed for e-commerce businesses, SaaS companies, and multi-channel retailers managing complex revenue streams, it eliminates manual reconciliation, reduces filing errors, and speeds up financial reporting by automating the entire pipeline from data collection to government submission.\n\nSetup Steps\nConnect Stripe/PayPal/Shopify accounts with API keys to respective nodes.\nConfigure bank feed authentication \nSet OpenAI credentials for AI Income Categorizer node.\nLink Google Drive and Gmail \nAdd government tax API endpoint and authentication credentials.\n\nPrerequisites\nStripe, PayPal, Shopify, or bank APIs; OpenAI account; Google Workspace;  \n\nUse Cases\nQuarterly tax preparation for e-commerce; multi-channel revenue reconciliation; \n\nCustomization\nModify normalization rules per jurisdiction; add expense categories to AI prompt;  \n\nBenefits\nEliminates manual reconciliation; reduces tax filing time by 80%; improves accuracy;  ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.payPal",
+    "n8n-nodes-base.shopify",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.stripe",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

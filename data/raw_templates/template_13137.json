@@ -1,0 +1,12 @@
+{
+  "id": 13137,
+  "name": "Validate and orchestrate lawsuit responses with OpenAI and Google Sheets",
+  "description": "How It Works\nThis workflow automates the complex process of managing lawsuit responses through intelligent task validation and multi-authority coordination. Designed for legal departments, compliance teams, and government agencies handling litigation matters, it solves the critical challenge of ensuring timely, accurate responses while maintaining proper oversight across multiple organizational levels. The system receives lawsuit notifications, validates critical information, and intelligently routes tasks based on authority levels. It orchestrates human oversight at strategic checkpoints, merges authority paths for comprehensive review, and generates detailed orchestration reports. By automating document preparation and multi-trail logging, it ensures accountability while reducing manual coordination overhead. The workflow seamlessly integrates validation results, manages execution plans, and prepares final responses through systematic processes, ultimately delivering compliant lawsuit responses through secure multi-trail communication channels.\n\nSetup Steps\nConfigure Workflow Execution Webhook trigger endpoint\nConnect Workflow Configuration node with workflow parameters  \nSet up Prepare Request Data node with lawsuit data structure mapping\nConfigure Fetch Authority Rules node with OpenAI/Nvidia API credentials \nConnect Check Validation Result node with boundary enforcement parameters\nConfigure Human Checkpoint nodes (High/Medium Authority) with approval routing\nSet up Merge Authority Paths node for consolidation logic\nConfigure Orchestration Export node with Google Sheets credentials\nPrerequisites\nOpenAI or Nvidia API credentials for validation processing, Google Sheets access for orchestration logging\nUse Cases\nGovernment litigation departments managing multi-level approval workflows\nCustomization\nModify authority routing logic for organizational hierarchies\nBenefits\nReduces response coordination time by 70%, eliminates manual routing errors",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

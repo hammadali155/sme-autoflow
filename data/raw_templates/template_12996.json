@@ -1,0 +1,13 @@
+{
+  "id": 12996,
+  "name": "Qualify and route real estate leads with Anthropic Claude, MLS/CRM, and Google Sheets",
+  "description": "How It Works\nThis workflow automates real estate lead qualification and routing by enriching leads from multiple sources with AI-powered analysis and directing them to appropriate sales agents based on priority. Designed for real estate brokers, sales managers, and lead generation teams, it solves the critical challenge of quickly identifying high-value prospects from high-volume lead streams while ensuring timely agent follow-up. The system triggers on schedule, fetches leads simultaneously from MLS portals and CRM/email sources, aggregates all leads into unified dataset, splits leads for parallel processing, then deploys AI agents using Anthropic's Claude to analyze lead quality, buying intent, budget capacity, and urgency. Based on enrichment scores, leads are routed to best-fit agents by priority tier, with engagement tracking logged to Google Sheets for performance monitoring and optimization.\n\nSetup Steps\nConfigure Schedule Trigger with desired lead processing frequency\nSet up MLS/portal integration API credentials in Fetch Leads from MLS/Portals node\nConfigure CRM/email system API access in Fetch Leads from CRM/Email node\nConnect Anthropic API credentials for AI Lead Enrichment Agent\nCustomize Structured Output Parser with your lead scoring criteria\nUpdate Check Lead Priority node with priority threshold rules\nConfigure agent routing logic in Route to Best-Fit Agent nodes by priority tier\n\nPrerequisites\nActive Anthropic API account, MLS/real estate portal API access, CRM system with API integration \nUse Cases\nInbound lead qualification from property portals, open house inquiry processing, email campaign lead scoring \nCustomization\nModify AI enrichment prompts for market-specific criteria, adjust priority scoring algorithms for business goals\nBenefits\nReduces lead response time by 75%, ensures high-value prospects receive immediate attention",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

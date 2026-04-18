@@ -1,0 +1,11 @@
+{
+  "id": 14804,
+  "name": "Convert Google Sheets scripts into HeyGen AI videos",
+  "description": "Automate HeyGen Video Generation from Google Sheets\nEffortlessly convert text scripts in Google Sheets into AI-generated videos using HeyGen.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

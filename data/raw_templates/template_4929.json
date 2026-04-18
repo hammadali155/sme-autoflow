@@ -1,0 +1,11 @@
+{
+  "id": 4929,
+  "name": "Scheduled Multi-Photo Facebook Posts with Cloudinary from Windows Directory",
+  "description": "📘 Multi-Photo Facebook Post (Windows Directory) – How to Use\n✅ Requirements\nTo run this automation, make sure you have the following:\n\n✅ n8n installed on your local Windows machine\n\n✅ Cloudinary or any other file hosting service for uploading image files\n\n✅ Facebook Page Access Token with the required permissions (pages_manage_posts, pages_read_engagement, pages_show_list, etc.)\n\n🚀 How to Use\nImport the provided n8n workflow template into your n8n instance.\n\nVerify the image directory path – ensure that the images you want to post are stored in a local folder (e.g. E:\\Autopost-media\\YourPage\\Images).\n\nCheck the caption and hashtag files – this includes:\n\ndescription.txt (for the post message)\n\nhashtag.txt (for additional tags)\n\nSet your Facebook credentials – insert your Facebook Page Access Token in the designated credential field in the workflow.\n\n⚙️ How It Works (Workflow Logic)\nRead Text Files\n\nThe workflow reads description.txt and hashtag.txt from the local directory.\n\nThese are combined to form the message body for the Facebook post.\n\nSelect Images to Post\n\nThe Limit node defines how many images to post per run (e.g. 3 images).\n\nSelected image files are uploaded to a file server (like Cloudinary) to obtain public URLs.\n\nPost to Facebook (Multi-Photo)\n\nA multi-photo post is created using the uploaded image URLs and the composed message.\n\nMove Posted Images\n\nAfter the post is successfully published, the original image files are moved to a new folder.\n\nThe destination folder is automatically created using the current date (e.g. E:\\Autopost-media\\YourPage\\Images\\20250614).",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

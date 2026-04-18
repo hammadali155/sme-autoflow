@@ -1,0 +1,13 @@
+{
+  "id": 13012,
+  "name": "Generate AI case studies from Feedspace testimonials with Google Gemini and publish to WordPress",
+  "description": "Who is this for?\nThis template is for teams who collect customer testimonials on feedpsace (via forms) and want to automatically convert them into professional case studies using AI and publish them to WordPress.\n\nWhat this workflow does\n\nThis workflow listens for incoming testimonial data via a webhook, extracts the relevant fields, uses an AI agent to generate a complete case study (including title, sections, and structure), and publishes the final content directly to WordPress.\n\nThe AI is instructed to vary tone, angle, and structure across case studies to avoid repetitive content and improve SEO value.\n\nRequirements:\nFeedspace account with webhook integration enabled\nAccess to a WordPress site with REST API enabled\nAn AI API key (Google Gemini or compatible model)\n\nSetup steps\nConnect to Feedspace\n\tActivate the workflow and copy the Production webhook URL\n\tGo to Feedspace → Automations → Webhooks\n\tPaste the webhook URL and activate it\n\tSee https://www.feedspace.io/help/automation/ for more information\nAdd your AI API credentials to the AI model node\nConnect your WordPress account in the WordPress node\nSend testimonial data to the webhook in this format:\n\tReviewer name\n\tRating\n\tText feedback\n\tEvent or feedback type\n\tActivate the workflow\n\n\n\nHow it works\n\nReceives testimonial data through feedpsace webhook\nExtracts reviewer name, rating, feedback, and event type\nFilters for text-based testimonials\nUses an AI agent to:\nChoose a unique case study angle and tone\nGenerate structured HTML content\nCreate an SEO-optimized title\nParses and validates the AI output\nPublishes the generated case study to WordPress as a post\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

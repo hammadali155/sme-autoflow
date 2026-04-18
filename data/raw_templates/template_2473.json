@@ -1,0 +1,10 @@
+{
+  "id": 2473,
+  "name": "Generate SEO Seed Keywords Using AI",
+  "description": "What this workflow does:\nThis flow uses an AI node to generate Seed Keywords to focus SEO efforts on based on your ideal customer profile. You can use these keywords to form part of your SEO strategy.\n\nOutputs:\nList of 20 Seed Keywords\n\nSetup\nFill the Set Ideal Customer Profile (ICP)\nConnect with your credentials\nReplace the Connect to your own database with your own database\n\nPre-requisites / Dependencies\nYou know your ideal customer profile (ICP)\nAn AI API account (either OpenAI or Anthropic recommended)\n\nMore templates and n8n workflows &gt;&gt;&gt; @simonscrapes\n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic"
+  ],
+  "tags": []
+}

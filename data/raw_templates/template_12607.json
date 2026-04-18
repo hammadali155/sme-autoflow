@@ -1,0 +1,11 @@
+{
+  "id": 12607,
+  "name": "Monitor SSL certificate expiry with Google Sheets and SMTP email alerts",
+  "description": "Who is this for?\n\nDevOps engineers, sysadmins, and website owners who manage multiple domains and need proactive SSL certificate expiration monitoring without manual checks.\n\nWhat it does\n\nAutomatically monitors SSL certificates across multiple domains, tracks expiration status in a Google Sheet dashboard, and sends beautifully formatted HTML email alerts before certificates expire.\n\n✅ No API rate limits — Uses direct OpenSSL commands, so you can scan unlimited domains with zero API costs or restrictions.\n\nHow it works\n\nTriggers on schedule (every 3 days at 10AM)\nReads domain list from your Google Sheet\nChecks each domain's SSL certificate using OpenSSL commands\nParses expiration dates, issuer info, and calculates days remaining\nUpdates Google Sheet with current status for all domains\nSends styled email alerts only when certificates are expiring soon\n\nSet up steps\n\nConnect your Google Sheets OAuth2 credentials\nCreate a Google Sheet with these columns: Domain, Expiry Date, Days Left, Status, Issuer, Last Checked (the workflow matches on the Domain column to update results)\nAdd your domains to scan in the Domain column\nUpdate the Sheet ID in the Read Domain List from Google Sheets and Update Google Sheet with Results nodes\nConnect SMTP credentials in the Send Alert Email via SMTP node\nOptionally adjust ALERT_THRESHOLD_DAYS in two nodes: Prepare Domain List and Set Threshold and Parse SSL Results and Identify Expiring Certs (default: 20 days)\n\nSetup time: ~10 minutes",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

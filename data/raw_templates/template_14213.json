@@ -1,0 +1,14 @@
+{
+  "id": 14213,
+  "name": "Summarize Bitcoin news in Japanese and post to Discord with Gemini AI",
+  "description": "Automate your Bitcoin content pipeline by turning the latest CoinDesk headlines into structured Japanese summaries posted to Discord every six hours — completely hands-free.\nWho is this for\nCrypto traders, Discord community managers, and content creators who want to keep their audience updated on Bitcoin news without writing posts manually. No coding required.\nWhat this workflow does\nOn a six-hour schedule, the workflow fetches the three newest articles from the CoinDesk RSS feed. Each article is sent to Google Gemini 2.5 Flash via a Basic LLM Chain node. A Structured Output Parser then extracts the AI response into four clean fields: a one-line Japanese summary, a brief AI commentary, the article URL, and hashtags. The structured post is delivered to a Discord channel via webhook. Each post is also saved to Google Sheets for auditing, and a Slack notification confirms every successful run.\nHow to set up\n\nOpen the Set config values node and fill in your Google Sheet ID, Discord Webhook URL, and hashtags.\nAdd your Google Gemini API credential to the Gemini 2.5 Flash node (free tier works).\nIn Discord, go to your channel settings → Integrations → Webhooks, create a new webhook, and paste the URL into Set config values.\nConnect your Google Sheets OAuth2 credential and set the target sheet name.\nAdd your Slack credential and update the channel ID in the Notify Slack node.\nActivate the workflow — it will run automatically every six hours.\n\nRequirements\n\nGoogle Gemini API key (free tier works)\nDiscord server with webhook permission\nGoogle Sheets OAuth2 credential\nSlack API credential\n\nHow to customize\n\nSwap the RSS URL in Set config values to follow Ethereum, Solana, or any crypto feed.\nEdit the prompt inside Basic LLM Chain to change language or post style.\nUpdate the hashtags in Set config values.\nAdjust the posting interval in the Schedule Trigger node (default: every 6 hours).\nAdd a Filter node between RSS and LLM to post only articles matching specific keywords.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.discord",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

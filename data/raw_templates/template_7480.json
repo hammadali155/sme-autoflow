@@ -1,0 +1,14 @@
+{
+  "id": 7480,
+  "name": "Generate Personalized Startup Ideas with Claude Analysis and Gmail Reports",
+  "description": "Get Started with n8n now!\n\nWho's it for\nThis workflow is designed for developers, entrepreneurs, and startup enthusiasts who want personalized, AI-driven startup idea generation and analysis. Perfect for solo developers seeking side project inspiration, startup accelerators evaluating concepts, or anyone looking to validate business ideas with professional-grade analysis.\n\nHow it works\nThe workflow uses a three-stage Claude AI agent pipeline to create comprehensive startup analyses. The first agent generates innovative startup ideas based on your technical skills and preferences. The second agent acts as a venture capitalist, critically analyzing market viability, competition, and execution challenges. The third agent performs sentiment analysis and synthesizes a final recommendation with actionable next steps.\n\nHow to set up\nConfigure Anthropic API credentials for all three Claude AI model nodes\nSet up Gmail OAuth2 for email delivery\nFill out the \"My Information\" node with your developer profile\nUpdate the recipient email address in the Gmail node\nTest with the manual trigger before enabling daily automation\n\nRequirements\nn8n account\nAnthropic API account for Claude AI access\nGmail account with OAuth2 configured\nBasic understanding of developer skills and market preferences\n\nHow to customize the workflow\nModify the AI agent prompts to focus on specific industries or business models. Adjust temperature settings for different creativity levels. Add database storage to track idea history. Configure the form trigger for team-wide idea generation or integrate with Slack for automated sharing.\n\nGot a good idea?\nVisit my site https://techpoweredgrowth.com to get help getting to the next level\nOr reach out to luka.zivkovic@techpoweredgrowth.com",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

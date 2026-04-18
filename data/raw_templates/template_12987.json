@@ -1,0 +1,15 @@
+{
+  "id": 12987,
+  "name": "Orchestrate hospital event responses with Anthropic Claude and scheduling, task, and insurance APIs",
+  "description": "How It Works\nThis workflow automates hospital operational event management by intelligently processing incoming events and orchestrating appropriate responses across multiple hospital systems. Designed for hospital operations managers, healthcare IT teams, and clinical administrators, it solves the complex challenge of coordinating rapid responses to diverse hospital events including patient admissions, equipment alerts, staffing emergencies, and clinical escalations. The system receives event triggers via webhook, uses AI-powered orchestration to analyze event context and determine required actions, then intelligently routes tasks to appropriate systems including appointment scheduling, task management, and insurance verification. It calculates priority scores, assigns tasks, verifies insurance coverage, and merges results while masking sensitive PHI data for compliance. The workflow leverages Anthropic's Claude and multiple AI tools to ensure context-aware decision-making aligned with hospital protocols.\n\nSetup Steps\nConfigure webhook URL endpoint for hospital event system integration\nSet up Anthropic API credentials for Claude model access in orchestration agent\nConfigure Hospital Orchestration Agent Tool with your facility's event protocols\nConnect Schedule Appointment API with hospital scheduling system credentials\nSet up Task Management API integration for staff assignment system\nConfigure Insurance Verification API with payer network access credentials\n\nPrerequisites\nActive Anthropic API account, hospital event management system with webhook capability\nUse Cases\nPatient admission coordination, equipment failure response, code blue orchestration\nCustomization\nModify orchestration agent prompts for facility-specific protocols\nBenefits\nReduces event response time by 75%, ensures consistent protocol adherence",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolCode"
+  ],
+  "tags": []
+}

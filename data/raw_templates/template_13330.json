@@ -1,0 +1,16 @@
+{
+  "id": 13330,
+  "name": "Detect procurement fraud and monitor supplier compliance with GPT-4o and Slack",
+  "description": "How It Works\nThis workflow automates procurement fraud detection and supplier compliance monitoring for organizations managing complex purchasing operations. Designed for procurement teams, audit departments, and compliance officers, it solves the challenge of identifying fraudulent transactions, contract violations, and supplier misconduct across thousands of purchase orders and vendor relationships. The system schedules continuous monitoring, generates sample transaction data, analyzes patterns through dual AI agents (Price Reasonableness validates pricing against market rates, Delivery Agent assesses fulfillment performance), orchestrates comprehensive risk evaluation through Orchestration Agent, routes findings by severity (critical/high/medium/low), and triggers multi-channel responses: critical issues activate immediate Slack/email alerts with detailed logging; high-priority cases receive escalation workflows; medium/low findings generate routine compliance reports. By combining AI-powered anomaly detection with intelligent routing and coordinated notifications, organizations prevent fraud losses by 75%, ensure vendor compliance, maintain audit trails, and enable procurement teams to focus on strategic sourcing rather than manual transaction reviews.\n\nSetup Steps\nConnect Schedule Trigger for monitoring frequency\nConfigure procurement systems with API credentials\nAdd AI model API keys to Price Reasonableness, Delivery, and Orchestration Agent nodes\nDefine fraud indicators and compliance thresholds in agent prompts based on company policies\nLink Slack webhooks for critical and high-priority fraud alerts to procurement and audit teams\nConnect email credentials for stakeholder notifications and escalation workflows\n\nPrerequisites\nProcurement system API access, AI service accounts, market pricing databases for benchmarking\nUse Cases\nInvoice fraud detection, bid rigging identification, duplicate payment prevention\nCustomization\nModify agent prompts for industry-specific fraud patterns, adjust risk scoring algorithms\nBenefits\nPrevents fraud losses by 75%, automates compliance monitoring across unlimited transactions",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 8463,
+  "name": "Create & Send GA4 Report with Insights via Email",
+  "description": "Who’s it for\nMarketing, growth, and analytics teams who want a decision-ready GA4 summary—automatically calculated, clearly color-coded, and emailed as a polished HTML report.\n\nHow it works / What it does\nGet Client (Form Trigger)* collects *GA4 Property ID (“Account ID”), **Key Event, date ranges (current & previous), Client Name, and recipient email.\nOverall Metrics This Period / Previous Period (GA4 Data API)** pull sessions, users, engagement, bounce rate, and more for each range.\nForm Submits This Period / Previous Period (GA4 Data API)** fetch key-event counts for conversion comparisons.\nCode** normalizes form dates for API requests.\nAI Agent* builds a *valid HTML email**:  \n  Calculates % deltas, applies green for positive (#10B981) and red for negative (#EF4444) changes.\n  Writes summary and recommendations.\n  Produces the final HTML only.\nSend a message (Gmail)** sends the formatted HTML report to the specified email address with a contextual subject.\n\nHow to set up\n1) Add credentials: Google Analytics OAuth2, OpenAI (Chat), Gmail OAuth2.  \n2) Ensure the form fields match your GA4 property and event names; “Account ID” = GA4 Property ID. \nProperty ID - https://take.ms/vO2MG\nKey event - https://take.ms/hxwQi\n3) Publish the form URL and run a test submission.\n\nRequirements\nGA4 property access (Viewer/Analyst) • OpenAI API key • Gmail account with send permission.\n\nResources\nGoogle OAuth2 (GA4) – https://docs.n8n.io/integrations/builtin/credentials/google/oauth-generic/  \nOpenAI credentials – https://docs.n8n.io/integrations/builtin/credentials/openai/  \nGmail OAuth2 – https://docs.n8n.io/integrations/builtin/credentials/google/  \nGA4 Data API overview – https://developers.google.com/analytics/devguides/reporting/data/v1\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

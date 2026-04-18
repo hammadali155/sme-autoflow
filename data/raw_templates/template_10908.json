@@ -1,0 +1,14 @@
+{
+  "id": 10908,
+  "name": "Automate School Lunch Allergy Checks with Google Sheets, Slack & AI Menu Suggestions",
+  "description": "Who is it for?\nThis template is designed for school nutritionists, cafeteria managers, and school administrators who are responsible for managing student dietary needs and ensuring food safety.\nWhat it does\nThe workflow operates in two main scenarios: immediate allergy alerting and proactive menu analysis.\nAutomated Allergy Alert System: It reads upcoming menus, student allergy lists, and teacher rosters from your Google Sheets. If it finds a potential conflict—like a student with a dairy allergy scheduled for a cheese-based meal—it automatically sends a detailed, AI-generated alert to the correct teacher in Slack and logs the event in Google Drive.\nProactive AI Menu Assistant: Beyond daily alerts, the workflow uses AI to analyze the entire monthly menu. It identifies \"high-risk\" days with numerous potential allergy issues and generates a strategic \"Menu Improvement Report\" with suggestions for safer, alternative dishes. This report is sent directly to you via Slack, helping you make informed decisions before finalizing the menu.\nBuilt-in Error Handling: If any part of the workflow fails, it immediately sends a detailed error notification to an administrator, ensuring the system remains reliable.\nHow to set up\nConnect Credentials: First, ensure you have created and connected credentials for Google (for Sheets and Drive) and Slack in your n8n instance.\nConfigure Google Sheets Nodes: In the three Read... nodes (Read Monthly Menu, Read Student Allergy List, Read Teacher List), update the Document ID and Sheet Name to point to your specific files. The column structure of your sheets should match the data being used in the workflow.\nConfigure Slack Nodes: In all four Slack nodes, select the correct recipient User or Channel for each type of notification (e.g., send allergy alerts to teachers, but error alerts to your IT admin).\nConfigure Google Drive Node: In the Log Alert to Google Drive node, select the target Drive and Folder where you want your audit logs to be saved.\n(Optional) Configure AI Model: You can configure the OpenRouter Chat Model nodes if you want to use a specific LLM or add your own API key.\nRequirements\nAn active n8n instance.\nA Google account with access to Google Sheets and Google Drive.\nA Slack workspace and account.\nAn OpenRouter account to power the AI features.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

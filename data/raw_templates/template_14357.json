@@ -1,0 +1,13 @@
+{
+  "id": 14357,
+  "name": "Classify GitHub issues and create Linear tasks using OpenAI",
+  "description": "How it works  \nThis workflow automatically processes new GitHub issues and uses AI to classify them by type and priority. It extracts key issue data, sends it to an AI model for structured analysis, and formats the output for task creation. The workflow then creates a task in Linear and adds a comment back to the GitHub issue. This ensures consistent triage and faster issue handling without manual effort.\n\nStep-by-step  \n\nCapture and filter new issues**  \n  Github Trigger – Listens for new issues or comments in the repository.  \n  If – Filters events to process only newly opened issues.  \n  Edit Fields – Extracts and structures title, description, author, and URL.  \n\nAI classification and formatting**  \n  Information Extractor – Sends issue data to AI for classification (type, priority, labels).  \n  Code in JavaScript – Cleans, validates, and formats AI output for consistent use.  \n    OpenAI Chat Model (sub-node) – Provides the language model powering the AI classification. \n  Merge – Combines original issue data with AI-processed output. \n\nTask creation and feedback**  \n \n  Create an issue – Creates a structured task in Linear with priority and description.  \n  Create a comment on an issue – Posts a comment back to GitHub with classification results.  \n\nWhy use this?  \n\nEliminates manual issue triage and prioritization work  \nEnsures consistent classification using AI-driven logic  \nSpeeds up response time for bugs, features, and questions  \nAutomatically syncs GitHub issues with Linear tasks  \nImproves team visibility with instant feedback on each issue  ",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.linear",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

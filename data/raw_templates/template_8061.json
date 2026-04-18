@@ -1,0 +1,13 @@
+{
+  "id": 8061,
+  "name": "Generate Daily Business Digest with Notion, Gmail, Stripe, Calendar, and GPT-4o",
+  "description": "💬 \"I used to start my day reacting to emails… now I start with purpose.\"\n\nWhat if you could wake up and know exactly what to focus on — without checking 5 different apps?\n\nThis soft-tech workflow delivers a personalized morning digest every day that shows you\n\n✅ Today’s top 3 priorities (from Notion or Google Tasks)\n✅ Yesterday’s income (from Stripe, PayPal, or invoices)\n✅ Upcoming client meetings (from Google Calendar)\n✅ One motivational note (AI-generated, based on your mood)\n✅ One household reminder (optional: groceries, chores, family)\n\nAll sent to your email or Telegram — before you even open your laptop\n\n🎯 Perfect for:\n\nTax preparers during busy season\nConsultants, coaches, and freelancers\nSalon owners, shopify store operators, daycare providers\n\nAnyone running a solo business who wants to start strong\n\n🔧 Tools Used:\n\nNotion • Google Calendar • Gmail • Stripe/PayPal • GPT-4o • Cron\n\n📦 What You Get:\n\nReady-to-import n8n JSON workflow\nStep-by-step setup guide (PDF)\nNotion Daily Dashboard template\nCustomizable AI prompt library\n5-minute video walkthrough (optional)\n\n💡 Why You’ll Love It:\n\nNo more “Where do I even start?\n\nBuild momentum with a clear, calm morning ritual\nStay aware of income without being obsessive\nBlend business + personal in a healthy way\nFeel like a CEO — even if you’re a team of one\n\n🚀 Set it up once. Get clarity every morning. Forever\n\n👉 Start your day with focus — not frenzy. ",
+  "nodes": [
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.stripe",
+    "n8n-nodes-base.openAi"
+  ],
+  "tags": []
+}

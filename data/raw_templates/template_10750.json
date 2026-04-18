@@ -1,0 +1,15 @@
+{
+  "id": 10750,
+  "name": "Automate Blog-to-Social Media with GPT-4 for LinkedIn, X, and Reddit",
+  "description": "\nTurn your blog into a set-and-forget content engine: every new article is instantly repurposed into channel-specific social posts with visuals, keeping your brand visible on LinkedIn, X, and Reddit without extra copywriting time. Perfect for lean marketing teams who want consistent, always-on distribution from a single source of content.\n\nHow it works\n• Watches your blog RSS feed (or receives a single URL) and detects new articles.\n• Saves each post in Postgres so every article is only processed once.\n• Fetches the article HTML, extracts the main body content and sends it to OpenAI (GPT-4.1).\n• OpenAI creates platform-optimized copy: 1 LinkedIn post, 1 X/Twitter post, 1 Reddit post + image prompts.\n• Generates on-brand images with OpenAI and publishes everything automatically to LinkedIn, X, and Reddit.\n• You can also trigger it manually or via webhook whenever you want to push a specific campaign.\n\nSetup Steps\n• Time: around 20–40 minutes for someone familiar with n8n and the platforms.\n• Create a Postgres table “rss_items” with fields: guid (PRIMARY KEY), title, link, published_at.\n• Add credentials in n8n for:\n  – Postgres\n  – OpenAI\n  – LinkedIn OAuth2\n  – X/Twitter OAuth2 + OAuth1 (for media upload)\n  – Reddit OAuth2\n• In the RSS node, set your blog feed URL (for example: https://yourblog.com/feed).\n• In the webhook node, confirm the URL/path you want external tools or other workflows to call with a “link” field.\n• Run the manual trigger with one test blog URL to verify:\n  – Article content is extracted correctly.\n  – AI returns LinkedIn/X/Reddit posts and image prompts.\n  – Posts and images appear correctly on all social accounts.\n• Once tests look good, enable the Schedule Trigger so Blog2Social AI runs automatically at your chosen interval.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.twitter",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.reddit",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 11997,
+  "name": "Fetch Property Listings from 99Acres & MagicBricks with Apify and Google Sheets",
+  "description": "Fetch Property Listings from 99Acres & MagicBricks with Apify and Google Sheets\n\nWho’s it for\nUsers who want to automatically fetch and organize property listings from 99Acres and MagicBricks into Google Sheets without manual copying.\n\nHow it works / What it does\nUsers submit search URLs via a form.\nThe workflow uses Apify scrapers to fetch listings from 99Acres & MagicBricks.\nData is cleaned, standardized (ID, Title, Price, Price per Sqft, URL), and deduplicated.\nListings are automatically appended to their respective Google Sheets tabs.\n\nHow to set up\nConnect your Google Sheets account in all Google Sheets nodes.\nOpen the form trigger and submit valid search URLs.\nRun the workflow or submit the form live.\nA new spreadsheet is created and populated automatically.\n\nRequirements\nGoogle Sheets account\nApify API key for 99Acres & MagicBricks scrapers\nValid property search URLs\n\nHow to customize the workflow\nChange sheet names or spreadsheet title in the “Create Master Spreadsheet” node.\nAdjust API parameters in the HTTP Request nodes (like max retries or proxy settings).\nModify the Code nodes to include additional fields or filters.\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

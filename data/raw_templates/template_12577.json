@@ -1,0 +1,15 @@
+{
+  "id": 12577,
+  "name": "Monitor HubSpot deal risk with OpenAI scoring and Slack alerts",
+  "description": "How it works  \nThis workflow runs on a daily schedule to analyze all active HubSpot deals and their latest engagement activity. It applies AI-driven behavioral scoring to predict conversion probability and deal health. High-risk or stalled deals automatically trigger Slack alerts. All insights are logged in Google Sheets for forecasting and performance tracking.\n\nStep-by-step  \n\nStep 1 – Trigger and collect active deals**  \n  Schedule Trigger – Runs the workflow automatically at a fixed time each day.  \n  Get Active Deals from HubSpot – Retrieves all non-closed deals with key properties like value, stage, and activity dates.  \n  Formatting Data – Cleans and normalizes deal data while calculating metrics such as deal age and inactivity duration.  \n\nStep 2 – Enrich deals with engagement data**  \n  If – Filters only active deals to ensure closed deals are excluded.  \n  Loop Over Items – Processes each deal individually to handle enrichment safely.  \n  HTTP Request – Fetches engagement associations linked to each deal.  \n  Get an engagement – Retrieves detailed engagement records from HubSpot.  \n  Extracts Data – Structures engagement content, timestamps, and internal notes for AI analysis.  \n\nStep 3 – Analyze risk and notify the team**  \n  AI Agent – Analyzes behavioral signals and predicts conversion probability, risk level, and next actions.  \n  Format Data – Parses the AI output into structured fields and risk indicators.  \n  Filter Alerts Needed – Identifies deals that require immediate attention.  \n  Send Slack Alert – Sends a detailed alert with risks, signals, and recommended actions.  \n  Append or update row in sheet – Stores analysis results in Google Sheets for tracking and forecasting.  \n\nWhy use this?  \n\nDetect deal risk early using consistent, AI-based analysis  \nReduce manual pipeline reviews for sales managers  \nProvide clear, actionable next steps to sales reps  \nKeep a historical log of deal health and forecasts  \nImprove close rates through timely, data-driven intervention  \n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

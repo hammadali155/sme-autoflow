@@ -1,0 +1,13 @@
+{
+  "id": 14381,
+  "name": "Generate AI document titles for Paperless-ngx with GPT-4o Mini",
+  "description": "What it does\nThis template automatically generates a professional, structured title for newly-ingested Paperless-ngx documents using AI (OpenAI GPT), then removes a processing tag to mark the document as handled.\n\nHow it works\nA webhook fires when a document needs titling (e.g., from a Paperless post-consumption script)\nThe document URL is validated, then the OCR text is fetched from the Paperless API\nAll PII is scrubbed from the text using n8n's Guardrails node before sending to AI\nGPT generates a title using the format: [YYYY-MM-DD] - [Document Type] - [Subject]\nThe specified processing tag is looked up and removed, then the document is updated\n\nRequirements\nAn AI provider account, such as OpenAI, Anthropic, Gemini. As configured the template uses OpenAI, but any model should work.\nA running Paperless-ngx instance that has network accessibility to your n8n server\nHow to use\nNeeds to be set up in conjunction with a running Paperless-ngx instance. See Paperless-ngx instructions here\n\nCustomization\nEdit the system message in the AI Agent node (Generate Document Name) to change the document naming convention and other guidelines\nChange the workflows on your Paperless-ngx instance to suit different needs.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.guardrails"
+  ],
+  "tags": []
+}

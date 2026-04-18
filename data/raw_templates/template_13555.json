@@ -1,0 +1,10 @@
+{
+  "id": 13555,
+  "name": "Gamify Keephub form response times and email a ranked leaderboard via Gmail",
+  "description": "Who is this for\n\nHR teams, internal comms managers, and operations leads using Keephub who want to turn form completions into a friendly competition and drive faster engagement across the organisation.\n\nWhat it does\n\nEnter a Keephub Form ID — and optionally a competition start time — into a simple web form. The workflow will:\n\n📋 1. Fetch every submission for that form from the Keephub API.\n⏱️ 2. Calculate how quickly each person responded (from your custom start time, or from form creation if left blank).\n👤 3. Enrich each result with the submitter's name and org-unit via the Keephub orgchart.\n📬  4. Build a polished HTML leaderboard — complete with KPI cards, bar charts, and an org-unit breakdown — and email it to you.\n\nHow to set up\n\n📦 1. Install the n8n-nodes-keephub community node from Settings → Community nodes.\n🔑 2. Add your Keephub Bearer token or Keephub Login credential in any Keephub node.\n📧 3. Connect a Gmail (or SMTP) credential to the email node.\n▶️ 4. Activate the workflow and open the generated form URL.\n\nRequirements\n\nA Keephub account with API access.\nA Gmail or SMTP email credential that will be used to send emails\n\nHow to customize\n\nReplace Gmail with Outlook, SendGrid, or any email node.\nEdit the Code node's HTML to match your company branding.\nSwap the Form Trigger for a Cron trigger to run the competition on a schedule.\n\n⚠️ Requires n8n-nodes-keephub v1.5 or later. Update the community node before running.",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

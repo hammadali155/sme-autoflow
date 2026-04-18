@@ -1,0 +1,18 @@
+{
+  "id": 6148,
+  "name": "Publish LinkedIn & X Posts with Telegram Bot, Gemini AI & Vector Memory",
+  "description": "This workflow contains community nodes that are only compatible with the self-hosted version of n8n.\n\nOverview\n\nThis is a Telegram Bot capable of receiving information from the user in the form of text messages, voice messages, images or documents (e.g., presentations, PDFs, HTML pages), and publishing posts to the user's social platforms.\n\nThe bot always sends the user a draft of the post for verification before publishing it.\n\nThe bot saves relevant information to its long-term memory (vector store), so you don't need to repeat it in every interaction (e.g., who you are, your company, product, etc.).\n\nThis template supports creating posts in LinkedIn and X.\n\nSetup\n\nRequirements\nTo use this template your will need:\nGoogle's AI Studio API key. Get one here: https://aistudio.google.com/app/apikey\nTelegram Bot API key. You receive one when you register a new Telegram Bot via @BotFather bot in Telegram.\nLinkedIn API key. Follow the instructions here to create one: https://docs.n8n.io/integrations/builtin/credentials/linkedin/\nX API key. Follow the instructions here to create one: https://docs.n8n.io/integrations/builtin/credentials/twitter/\n\nStep-by-step instruction\nImport this template\nCreate a new Telegram Bot or get an API key for existing one.\nConfigre Telegram nodes with Telegram API key.\nObtain a Google's AI Studio API key. Set it in \"Describe document\", \"Describe audio\" and \"Google Gemini Chat Model\".\nCreate an API key for LinkedIn.\nCreate an API key for X.\nSet our LinkedIn key in \"Create post in LinkedIn\" nodes.\nSet your X key in \"Create X (Twitter) post\" node.\n\nOther\nBright-colored notes in the template highlight information that needs to be set before launching the template.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+    "@n8n/n8n-nodes-langchain.memoryManager",
+    "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

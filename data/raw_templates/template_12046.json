@@ -1,0 +1,11 @@
+{
+  "id": 12046,
+  "name": "Automate Facebook Group Problem-Solving Content with GPT-4 and Apify",
+  "description": "🧠 FB Group Problem Solver - Auto - Generate Helpful Posts\n\nFor: Business Owners, Community managers, coaches, consultants, and business owners who want to build authentic relationships in Facebook groups without spending hours scrolling and crafting responses.\n\nPain Point Solved: Tired of manually browsing Facebook groups to find engagement opportunities? This workflow automatically discovers what your community is struggling with and writes genuine, helpful posts that position you as a trusted problem-solver.\n\nHow It Works\n\nThis workflow runs on autopilot to:\nScan your target Facebook groups for recent posts\nIdentify the most common problems and pain points\nAnalyze the community's language and communication style\nGenerate authentic, value-packed posts that solve real problems\nSave ready-to-publish content to your Google Sheet\n\nWhat You'll Need\n\nGoogle Sheets account (for group URLs and post storage)\nPAID Apify account with Facebook Groups Scraper actor\nOpenAI API key (GPT-4 recommended)\nn8n instance (self-hosted or cloud)\n\nQuick Setup\n\nImport workflow and connect your Google Sheets\nAdd your Apify API key and configure the Facebook scraper\nInsert OpenAI API keys in the three AI nodes\nList your FB groups in the input sheet (URL, Name, Niche)\nTest manually, then schedule to run daily/weekly\n\nResults\n\nGet 2 post variations for each identified problem, written in the group's natural tone and style. Posts are non-promotional, genuinely helpful, and designed to spark engagement while building trust.\n\nTime saved: 3-5 hours per week of manual group monitoring and content creation\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.toolThink"
+  ],
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": 14441,
+  "name": "Automate privacy risk detection, approvals, and audit reports with GPT-4o, Slack, Gmail, and Google Sheets",
+  "description": "How It Works\nThis workflow automates data privacy compliance governance for privacy officers, legal operations teams, and data protection leads. It eliminates the manual effort of monitoring data usage events, classifying privacy risks, routing approval requests, and generating audit-ready compliance reports. Data usage events arrive via a webhook trigger while a scheduled audit runs in parallel, ensuring continuous and periodic coverage. Both feeds pass to the Privacy Governance Agent, backed by a governance model and shared memory — which coordinates three specialist tools: a Data Privacy Agent Tool (privacy policy assessment using a privacy model and Legal Database API), a Risk Detection Agent Tool (risk classification using a dedicated risk model), and an Audit Log Tool. Approval requests are routed via an Approval Request Tool with Slack notifications, and outputs are structured via a Compliance Output Parser and Approval History Tool. Results are routed by risk level, critical alerts trigger Slack notifications immediately, high-risk alerts follow a parallel Slack path, before all cases converge to prepare an audit record, store a compliance record in Google Sheets, prepare a compliance report, and distribute it via Gmail.\n\nSetup Steps\nImport workflow; configure the Data Usage Event Trigger webhook URL and Scheduled Compliance Audit interval.\nAdd AI model credentials to the Privacy Governance Agent, Data Privacy Agent Tool, and Risk Detection Agent Tool.\nConnect the Legal Database API Tool with your privacy regulatory database endpoint and credentials.\nLink Slack credentials to the Slack Notification Tool, Send Critical Alert, and Send High Risk Alert nodes.\nLink Gmail credentials to the Send Compliance Report node.\nConnect Google Sheets credentials; set sheet IDs for Compliance Record and Audit Log tabs.\n\nPrerequisites\nOpenAI API key (or compatible LLM)\nSlack workspace with bot credentials\nGmail account with OAuth credentials\nGoogle Sheets with compliance and audit tabs pre-created\nUse Cases\nPrivacy officers automating GDPR and PDPA data usage event monitoring and risk classification\nCustomisation\nSwap the Legal Database API to target jurisdiction-specific frameworks (GDPR, CCPA, PDPA, HIPAA)\nBenefits\nDual-trigger ingestion ensures continuous and scheduled privacy coverage with no monitoring gaps\n",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

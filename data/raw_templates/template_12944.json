@@ -1,0 +1,13 @@
+{
+  "id": 12944,
+  "name": "Create a daily market brief from Google Sheets, Alpha Vantage, Reddit, OpenAI, and Slack",
+  "description": "📊 Description\nThis workflow automatically creates a daily market intelligence brief for your stock portfolio. Instead of checking prices, news, and social media separately, it brings everything together into one clear update.\nOn a scheduled basis, the workflow reads your stock list from Google Sheets and processes each stock individually. It fetches the latest stock price data, recent market news, and investor sentiment from public sources. All this information is then analyzed by AI to identify what truly matters, filtering out noise and repeated information.\nThe AI generates a concise market summary that highlights overall sentiment, key drivers, risks, and one actionable insight for the day. The final result is sent directly to Slack as a clean, easy-to-read message, helping you stay informed without manual effort.\nThis workflow is ideal for anyone who wants a clear daily view of market conditions without spending hours monitoring multiple platforms.\n\n⚙️ What This Workflow Does\nRuns automatically on a daily schedule\nReads stock symbols from Google Sheets\nFetches latest stock price data\nCollects recent market news\nGathers investor sentiment from public discussions\nUses AI to summarize market-moving signals\nSends one actionable daily brief to Slack\n\n✅ Key Benefits\nSaves time by automating market monitoring\nReduces noise and highlights what actually matters\nCombines prices, news, and sentiment in one place\nProvides clear daily insights instead of raw data\nEasy to adjust for different portfolios or schedules\n\n🧩 Features\nScheduled daily execution\nPortfolio-based stock tracking\nMarket news collection via RSS\nSocial sentiment analysis from Reddit\nAI-driven market intelligence summary\nStructured output for alerts or reporting\nSlack integration for daily delivery\n\n🔐 Requirements\nTo use this workflow, you will need:\nAlpha Vantage API key for stock price data\nOpenAI account for AI analysis\nGoogle Sheets access for portfolio input\nSlack account for message delivery\nn8n instance (cloud or self-hosted)\n\n🎯 Target Audience\nStock investors\nPortfolio managers\nMarket analysts\nFinance teams\nFounders and operators tracking markets\nAutomation builders in finance\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

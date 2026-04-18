@@ -1,0 +1,11 @@
+{
+  "id": 13403,
+  "name": "Route Typeform responses to Google Sheets, Slack, and Gmail with confirmations",
+  "description": "How it works\n\nReceives form submissions via a webhook endpoint.\nExtracts the name, email, and message from each submission.\nLogs every submission to a Google Sheets spreadsheet with a timestamp.\nSends a confirmation email to the submitter via Gmail.\nReturns a JSON success response to your frontend.\n\nA simple way to handle contact forms without building a backend.\n\nSetup steps\n\nEstimated setup time:** 5 minutes\nSet your webhook path in the trigger node.\nConnect your Google Sheets account and set the spreadsheet ID.\nCreate a \"Submissions\" sheet with columns: name, email, message, submitted_at.\nConnect your Gmail account for sending confirmation emails.\nPoint your form's action URL to the webhook and activate.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

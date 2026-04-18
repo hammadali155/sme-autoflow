@@ -1,0 +1,18 @@
+{
+  "id": 3469,
+  "name": "Gumroad Clientbell: Auto-Log Sales, Ping Telegram, & Thank via Email",
+  "description": "Who is this for?  \nThis template is perfect for Gumroad creators, solopreneurs, digital product sellers, and freelancers who want to track and thank customers automatically — without spending time on manual work.\n\nWhat problem does this solve?  \nEvery sale is a moment to build trust. But manually checking your inbox for new orders, logging clients, and remembering to send a thank-you note? It’s time-consuming and inconsistent.\n\nThis workflow handles it all:  \nFrom sale → to sheet → to ping → to personalized “thank you” — all fully automated.\n\nWhat this workflow does:  \n✅ Triggers on each new sale on Gumroad  \n📋 Extracts buyer details, amount paid, and product purchased  \n📈 Logs the sale to a Google Sheet for tracking  \n📲 Sends a Telegram approval message to notify you  \n💌 (Optional) Sends a Gmail thank-you email to the buyer  \n🔁 Keeps your workflow organized with color-coded notes and sample data\n\n⚙️ Setup Instructions:\n\nCreate Gumroad API and connect the trigger node  \nAuthenticate with Google Sheets to store each client  \nConnect your Telegram bot for real-time alerts  \n(Optional) Setup Gmail API for sending thank-you emails  \nCustomize the email copy & sheet headers (e.g. % cut, timestamps)\n\n🗒 Color-coded workflow notes:\n\nTo make customization smooth, the workflow includes a color-coded sticky note system:\n\n🟩 Green Notes – Main building blocks (trigger, logging, ping, email)  \n🟦 Blue Notes – Setup guidance and editable fields (e.g. your email or brand name)  \n🟨 Yellow Notes – Optional upgrades (e.g. swap Gmail, use AI email generator, change to WhatsApp)\n\nEach step has comments or hints to make your setup easy — whether you're new to n8n or a seasoned automator.\n\n🔧 How to customize this workflow?\n\n🎯 Swap Gmail with Outlook, SMTP, or Mailgun  \n🤖 Use AI (e.g. OpenAI or Claude) to draft personalized emails dynamically  \n📞 Replace Telegram with WhatsApp, Discord, or Slack  \n🗃️ Log to Airtable or Notion instead of Google Sheets  \n🧠 Add approval logic or advanced tagging in Gmail\n\n🧾 Licensing & Support\n\nThis template is built by Velebit from Innovatio. External links (Gumroad store or support email) are included in the notes for optional help and upgrades.\n\nA separate license applies to the paid version on Gumroad, which includes additional modules and commercial use rights.\n\n📩 Support & customization: velebit@innovatio.design\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.twilio",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.hubspot",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.microsoftOutlook",
+    "n8n-nodes-base.notion",
+    "@n8n/n8n-nodes-langchain.agent"
+  ],
+  "tags": []
+}

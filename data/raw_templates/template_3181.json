@@ -1,0 +1,12 @@
+{
+  "id": 3181,
+  "name": "Import Odoo Product Images from Google Drive",
+  "description": "Objective\nThis workflow automatically imports product images from Google Drive and associates them with templates and products in Odoo.\n",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.googleChat",
+    "n8n-nodes-base.odoo",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

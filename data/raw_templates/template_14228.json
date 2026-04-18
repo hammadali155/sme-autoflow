@@ -1,0 +1,10 @@
+{
+  "id": 14228,
+  "name": "Send a daily Shopify order report with Streamline Connector and Gmail",
+  "description": "Generate and email a daily Shopify order report using Streamline Connector. The workflow retrieves recent orders, filters those from the last 24 hours, formats them into a clean HTML summary, and sends the report to a specified email address. Ideal for daily operational visibility, sales monitoring, and automated reporting without manual exports.\n\nHow it works\n\nThe workflow runs on a daily schedule or can be triggered manually  \nStreamline Connector retrieves orders from your Shopify store  \nOrders from the last 24 hours are filtered from the results  \nEach order is formatted into an HTML report  \nThe report is sent to the configured Gmail address as a daily summary  \n\nSet up steps\n\nEstimated setup time: ~2 minutes  \n\nCreate a Streamline Connector credential using your Shop ID  \nSelect the credential in the Streamline Connector node  \nCreate or connect your Gmail credential in the send email node  \nChange the recipient email address in the Gmail node  \nSave the workflow and activate it to begin sending daily reports  \n\nUse cases\n\nReceive automated daily sales summaries  \nMonitor new orders without logging into Shopify  \nShare order activity with stakeholders via email  \nMaintain a daily operational snapshot for reporting  \nTrigger downstream workflows based on daily order volume",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

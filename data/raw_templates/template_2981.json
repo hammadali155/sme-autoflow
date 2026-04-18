@@ -1,0 +1,16 @@
+{
+  "id": 2981,
+  "name": "✍️🌄 Your First Wordpress + AI Content Creator - Quick Start",
+  "description": "✍️🌄 WordPress + AI Content Creator\n\nThis workflow automates the creation and publishing of multi-reading-level content for WordPress blogs. It leverages AI to generate optimized articles, automatically creates featured images, and provides versions of the content at different reading levels (Grade 2, 5, and 9).\n\nHow It Works\n\nContent Generation & Processing 🎯\nStarts with a manual trigger and a user-defined blog topic\nUses AI to create a structured blog post with proper HTML formatting\nSeparates and validates the title and content components\nSaves a draft version to Google Drive for backup\n\nMulti-Reading Level Versions 📚\nAutomatically rewrites the content for different reading levels:\nGrade 9: Sophisticated language with appropriate metaphors\nGrade 5: Simplified with light humor and age-appropriate examples\nGrade 2: Basic language with simple metaphors and child-friendly explanations\n\nWordPress Integration 🌐\nCreates a draft post in WordPress with the Grade 9 version\nGenerates a relevant featured image using Pollinations.ai\nAutomatically uploads and sets the featured image\nSends success/error notifications via Telegram\n\nSetup Steps\n\nConfigure API Credentials 🔑\nSet up WordPress API connection\nConfigure OpenAI API access\nSet up Google Drive integration\nAdd Telegram bot credentials for notifications\n\nCustomize Content Parameters ⚙️\nAdjust reading level prompts as needed\nModify image generation settings\nSet WordPress post parameters\n\nTest and Deploy 🚀\nRun a test with a sample topic\nVerify all reading level versions\nCheck WordPress draft creation\nConfirm notification system\n\n\nThis workflow is perfect for content creators who need to maintain a consistent blog presence while catering to different audience reading levels. It's especially useful for educational content, news sites, or any platform that needs to communicate complex topics to diverse audiences.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

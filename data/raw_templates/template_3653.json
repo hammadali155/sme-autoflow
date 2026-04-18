@@ -1,0 +1,10 @@
+{
+  "id": 3653,
+  "name": "Collect WhatsApp questionnaire responses in Postgres (Module \"Anketa\")",
+  "description": "Who is this for?\nThis workflow is designed for businesses or organizations looking to collect and store user responses from questionnaires via a WhatsApp bot, with data saved in a Postgres database.\n\nWhat problem is this workflow solving?\nThis workflow streamlines the process of collecting and managing user responses to questionnaires. It helps automate data collection from multiple users and stores the responses in a centralized database for easy access and analysis.\n\nWhat this workflow does\nBasis version:\nAdd questions to the anketa_question table.\nSave the responses of users who complete the questionnaire in whatsapp into the database.\n\nAdditional version:\nAll features from basis version.\nThe bot sends a lead magnet from Google Drive after filling out the form.\nIf the user has not answered all the questions, the bot sends a reminder after a certain time (configurable).\n\nSetup\nCreate Tables in Postgres DB  \n   Replace \"n8n\" in the provided SQL script with your database schema name.\n   Run the SQL script in your Postgres database (this is available within the workflow).\n\nAdd Credentials  \n   Set up WhatsApp OAuth credentials and account details.\n   Set up Postgres credentials to connect the workflow to your database.\n\nHow to customize this workflow to your needs\nModify the questions in the anketa_question table to suit your specific survey or data collection requirements.\nAdjust the WhatsApp link and communication flow to align with your branding or messaging needs.\nCustomize the database table schema if you need to capture additional fields or change the format of the data stored.",
+  "nodes": [
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.whatsApp"
+  ],
+  "tags": []
+}

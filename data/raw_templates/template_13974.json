@@ -1,0 +1,9 @@
+{
+  "id": 13974,
+  "name": "Retrieve a LinkedIn contact’s name from a profile URL with LinkUp",
+  "description": "Summary  \nThis workflow retrieves a LinkedIn contact’s full name from their profile URL using the LinkUp AI Search API. It’s a lightweight alternative to web scraping or complex APIs — integrating neatly into your existing n8n automations.\n\nHow it works  \nThe workflow reads LinkedIn URLs from a Data Table.  \nEach URL is sent to LinkUp via an HTTP Request node using natural language.  \nLinkUp returns the corresponding contact name.  \nThe Data Table is automatically updated with the retrieved name.  \n\nHow to use  \nCreate a Data Table named LinkedInURL with two fields:  \n   url (String)  \n   name (String)  \nAdd one or more LinkedIn profile URLs, for example:  \n   https://www.linkedin.com/in/stephaneheckel/  \nStore your LinkUp API key in the Settings component.  \n   You can get one at https://app.linkup.so/api-keys.  \nRun the workflow. The name field will populate with the correct LinkedIn names.  \n\nRequirements  \nLinkUp** account\nn8n** version: tested on 1.122.4 (Ubuntu)\n\nNeed Help?\nFeel free to comment this post.\nContact me on LinkedIn or ask in the Forum!",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

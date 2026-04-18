@@ -1,0 +1,12 @@
+{
+  "id": 12714,
+  "name": "Curate and send weekly AI newsletters with Tavily, Gemini, and Gmail",
+  "description": "What this workflow does\n\n  Automatically curates and sends a weekly newsletter by combining your internal blog posts with external news. The workflow researches your topic using Tavily, has Gemini write professional newsletter content, and delivers a beautifully formatted HTML email via Gmail.\n\nHow it works\n\n  Weekly Trigger - Runs on a configurable schedule (default: every 7 days at 9:30 AM)\n  Dual Research - Tavily searches your company blog for internal updates AND external sources for market news in parallel\n  AI Writing - Gemini generates a complete newsletter with warm intro, product updates section, and curated news\n  Email Assembly - Merges AI content with a professional HTML template\n  Delivery - Gmail sends the formatted newsletter to your subscribers\n\nSetup steps\n\n  Open the Set newsletter config node to customize:\n     Topic (what Tavily searches for)\n     Newsletter name, author, email title\n     Logo URL, blog URL, subscribe URL\n  Add your Tavily API credentials (get a key at tavily.com)\n  Add your Google Gemini API credentials\n  Add your Gmail OAuth credentials\n  Update the recipient email in the Send newsletter node\n  Test with manual execution before enabling the schedule\n\nAPI keys required\n\n  | Service | Purpose | Cost |\n  |---------|---------|------|\n  | Tavily | Web search for blog + news | Free tier available |\n  | Google Gemini | Newsletter writing | Free tier available |\n  | Gmail | Email delivery | Free |\n\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 2098,
+  "name": "Chat with OpenAI Assistant (by adding a memory)",
+  "description": "OpenAI Assistant is a powerful tool, but at the time of writing it doesn't automatically remember past messages from a conversation.\n\nThis workflow demonstrates how to get around this, by managing the chat history in n8n and passing it to the assistant when required.\n\nThis makes it possible to use OpenAI Assistant for chatbot use cases.\n\nNote that to use this template, you need to be on n8n version 1.28.0 or later.\n\n",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.openAiAssistant",
+    "@n8n/n8n-nodes-langchain.memoryManager"
+  ],
+  "tags": []
+}

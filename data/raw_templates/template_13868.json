@@ -1,0 +1,12 @@
+{
+  "id": 13868,
+  "name": "Auto-generate sticky notes and rename nodes",
+  "description": "This is an official n8n workflow that helps you follow our sticky note and naming guidelines - required for getting your template published on the n8n template library.\n\nHow it works:\n\nParses the workflow's nodes, connections, and spatial layout.\nUses GPT-4o to group nodes into logical clusters and generate descriptive sticky notes.\nResolves any overlapping sticky notes through iterative collision detection.\nOptionally renames all nodes to follow descriptive naming conventions via a second AI pass.\n\nSetup steps\n\nAdd your OpenAI API credentials to the two OpenAI Chat Model nodes.\nPaste your target workflow JSON into the \"Set Workflow Variables\" node.\nSet renameNodes to true or false depending on whether you want node renaming.",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

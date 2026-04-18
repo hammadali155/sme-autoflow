@@ -1,0 +1,13 @@
+{
+  "id": 3012,
+  "name": "🌐 Confluence Page AI Chatbot Workflow",
+  "description": "🌐 Confluence Page AI Chatbot Workflow\n\nThis n8n workflow template enables users to interact with an AI-powered chatbot designed to retrieve, process, and analyze content from Confluence pages. By leveraging Confluence's REST API and an AI agent, the workflow facilitates seamless communication and contextual insights based on Confluence page data.\n\n🌟 How the Workflow Works\n\n🔗 Input Chat Message\nThe workflow begins when a user sends a chat message containing a query or request for information about a specific Confluence page.\n\n📄 Data Retrieval\nThe workflow uses the Confluence REST API to fetch page details by ID, including its body in the desired format (e.g., storage, view).\nThe retrieved HTML content is converted into Markdown for easier processing.\n\n🤖 AI Agent Interaction\nAn AI-powered agent processes the Markdown content and provides dynamic responses to user queries. The agent is context-aware, ensuring accurate and relevant answers based on the Confluence page's content.\n\n💬 Dynamic Responses\nUsers can interact with the chatbot to:\n  Summarize the page's content.\n  Extract specific details or sections.\n  Clarify complex information.\n  Analyze key points or insights.\n\n🚀 Use Cases\n\n📚 Knowledge Management**: Quickly access and analyze information stored in Confluence without manually searching through pages.\n📊 Team Collaboration**: Facilitate discussions by summarizing or explaining page content during team chats.\n🔍 Research and Documentation**: Extract critical insights from large documentation repositories for efficient decision-making.\n♿ Accessibility**: Provide an alternative way to interact with Confluence content for users who prefer conversational interfaces.\n\n🛠️ Resources for Getting Started\n\nConfluence API Setup:\n   Generate an API token for authentication via Atlassian's account management portal.\n   Refer to Confluence's REST API documentation for endpoint details and usage instructions.\n\nn8n Installation:\n   Install n8n locally or on a server using the official installation guide.\n\nAI Agent Configuration:\n   Set up OpenAI or other supported language models for natural language processing.\n\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}

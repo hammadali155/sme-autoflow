@@ -1,0 +1,21 @@
+{
+  "id": 2987,
+  "name": "Personal Portfolio CV  Rag Chatbot - with Conversation Store and Email Summary",
+  "description": "Personal Portfolio CV Rag Chatbot - with Conversation Store and Email Summary\n\nTarget Audience\nThis template is perfect for:\n\nIndividuals looking to create a working professional and interactive personal portfolio chatbot. \n\nDevelopers interested in integrating RAG Chatbot functionality with conversation storage.\n1. Description\nCreate a stunning Personal Portfolio CV with integrated RAG Chatbot capabilities, including conversation storage and daily email summaries.\n\n2.Features:\n\nTraining: Setup Ingestion stage\nUpload your CV to Google Drive and let the Drive trigger updates to read your resume cv and convert it into your vector database (RAG purpose). Modify any parts as needed.\n\nChat & Track:\n Use any frontend/backend interface to call the chat API and chat history API.\n\nReporting Daily Chat Conversations:\n Receive daily automatic summaries of chat conversations. Data stored via NocoDB.\n\n3.Setup Guide:\nStep-by-Step Instructions:\n\nEnsure all credentials are ready. Follow the notes provided.\n\nIngestion:\nUpload your CV to Google Drive.\nThe Drive triggers RAG update in your vector database. You can change the folder name, files and indexname of the vector database accordingly.\nChat:\nUse any frontend/backend interface to call the chat API (refer to the notes for details) .\n\n[optional] Use any frontend/backend interface to call the update chat history API (refer to the notes for details).\n\n3.Tracking Chat:\n\nGet daily automatic summaries of chat conversations.Format email conversations report as you like.\n\nYou are ready to go!\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.nocoDb",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

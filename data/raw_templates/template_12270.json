@@ -1,0 +1,10 @@
+{
+  "id": 12270,
+  "name": "Create AI sci‑fi book review videos with ChatGPT, Fal.ai and Nexrender",
+  "description": "This n8n workflow is an end-to-end AI-powered video generation pipeline that takes a dataset of sci-fi book, generates reviews with GenAI, dynamically injects assets into After Effects via Nexrender, and automatically produces fully rendered videos — ready for publishing.\n\nIt demonstrates:\n    •    AI content generation inside render jobs\n    •    Dynamic After Effects templating\n    •    Adaptive composition logic\n    •    Fully automated creative production at scale\n\nBuilt as a demo for the Nexrender n8n integration, it shows how to turn raw ideas into finished video content with zero manual editing.\n\nRequirements:\nNexrender Trial - https://www.nexrender.com/get-trial,\nN8N - https://n8n.io/,\nFal.ai - https://fal.ai/,\nAfter Effects Project file - https://drive.google.com/file/d/1XmDcBMM34IFQ2Cv28pzumDmk2OwW2_9q/view?usp=share_link,\nNexrender Integration - https://n8n.io/integrations/nexrender/\n\nHow It Works:\n• Imports a sci-fi books dataset into n8n\n• Uses GenAI (ChatGPT) to generate book reviews and narrative content\n• Cleans and structures the AI output for video rendering\n• Dynamically injects text and assets into an After Effects template via n8n Nexrender Integration\n• Submits the job to Nexrender for rendering\n• Generates AI-powered visuals inside the render job\n• Automatically adjusts composition length based on each review\n• Outputs a fully produced video — no manual editing required\n",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": 3691,
+  "name": "Generate AI News LinkedIn Posts with GPT-4o-mini, NewsAPI, and Qdrant",
+  "description": "Overview\nAutomated LinkedIn content generator that:\n\nFetches trending AI news using NewsAPI\nEnhances content with Qdrant vector store context\nGenerates professional LinkedIn posts using GPT-4o-mini\nTracks email interactions in Google Sheets\n🛠️ Prerequisites\nAPI Keys : NewsAPI, OpenAI (GPT-4o-mini), Qdrant\nAccounts : Gmail Oauth, Google Sheets, LinkedIn developer API\nEnvironment Variables :\nOPENAI_API_KEY\nNEWSAPI_KEY\nQDRANT_URL/QDRANT_API_KEY\n📁 Google Sheets Setup\nCreate a spreadsheet with these columns:\n\nISO date\nEmail address\nUnique ID\n\"Approve\" or \"Reject\"\n\n⚙️ Setup Instructions\nPre-populate Qdrant :\nCreate collection \"posts\" with LinkedIn post examples\nAdd 10+ example posts for style reference\nNode Configuration :\nUpdate Gmail credentials (OAuth2)\nSet fromEmail/toEmail in email nodes\nConfigure Google Sheets document IDs\nTest Workflow :\nRun Schedule Trigger manually first\nVerify email notifications work\nCheck Qdrant vector store connectivity\n\n🎨 Customization Options\nTone Adjustment : Modify system message in \"AI Agent\"\nPost Style : Update prompt in \"Generate LinkedIn Post\"\nFilter Criteria : Edit NewsAPI URL parameters\nScheduling : Change interval in Schedule Trigger",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.vectorStoreQdrant"
+  ],
+  "tags": []
+}

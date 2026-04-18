@@ -1,0 +1,11 @@
+{
+  "id": 10068,
+  "name": "Find Domain-Based Gmail Addresses for Outreach with EmailListVerify & Google Sheet",
+  "description": "Who is this template for?\nThis template is designed for link building. When you reach out to some small blogs it is common for the owner to have an address like DomainName@gmail.com.\n\nThis workflow will find such emails for you. \n\nWhat problem does this workflow solve?\nGet from a list of domain names to a list of email addresses. This is perfect to prepare a cold outreach campaign for link building.\n\nThis workflow allows you to find email addresses with any extension. I recommend searching for Gmail as a starting Point. But you can also use workflow to check for other email providers.\n\nPro-tip: Check the email provider used in the geography you target:\nLapost.net for France\nSeznam.cz for Czechia\n\nWhat this workflow does\nThis workflow will:\nGenerate email candidates based on the domain name and root you are providing\nCheck if those email addresses are valid using EmailListVerify\n\n##Requirement\nThis template uses:\nGoogle Sheet to handle input and output data\nEmailListVerify to discover email (from $0.05 per email)\n\nSetup (10 minutes)\n1: Make a copy of the GoogleSheet template\n2: In \"[Input] pattern\" sheet write the email extension you want to check. Gmail is a no-brainer. Depending on the location you target, you might want to include local email providers like laposte.net for France.\n3: In \"[Input] domain\" put the domain for which you want to find email addresses. \n4: Add your EmailListVerify API key to setting to the 3rd step\n5: Update Google Sheet node to point to your copy of the template\n6: Trigger the workflow",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

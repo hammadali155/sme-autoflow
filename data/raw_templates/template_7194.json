@@ -1,0 +1,11 @@
+{
+  "id": 7194,
+  "name": "Website Uptime Monitoring with GPT-4 Analysis and Gmail Notifications",
+  "description": "How it works\nChecks if a website is up, sends the HTTP result to an AI model (ChatGPT) for analysis, and emails a clear success or failure message. Great for a quick “is this site up?” check you can trigger from any system via HTTP.\n\nWebhook — Receives a POST with the target URL.\nHTTP Request — Attempts to fetch the URL.\nMessage a model — Uses ChatGPT to explain the status and cause of any error.\nIF — Checks if the HTTP status code equals 200.\nGmail Success — Sends a success email with AI explanation.\nGmail Error — Sends an error email with AI explanation and next steps.\n\nSet up steps\nEstimated setup: 5–10 minutes.\nBeginner friendly — no advanced config required.\nAdd your Webhook URL where needed and connect your Gmail account.\nKeep detailed instructions and configuration notes inside Sticky Notes in your workflow.\n\nInputs\nSend a POST request to your Webhook with:\n{ \"url\": \"https://example.com\" }\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

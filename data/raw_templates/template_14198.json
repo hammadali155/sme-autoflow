@@ -1,0 +1,10 @@
+{
+  "id": 14198,
+  "name": "Qualify lead lists and find professional emails with OpenAI and Google Sheets",
+  "description": "Qualify Lead Lists And Find Professional Emails With OpenAI and Google Sheets\n\nDrop a lead list into Google Drive. This workflow reads it, finds professional emails using OpenAI, and splits leads into Qualified and Unqualified sheets fully automated.\n\nHow It Works\n\nWatch For New Leads\nGoogle Drive trigger monitors a folder. When a new spreadsheet lands, the workflow fires.\n\nRead Lead Sheet\nPulls every row from the new spreadsheet.\n\nNormalize Lead Data\nStandardizes fields: full name, company, website, LinkedIn URL, industry, job title, and location.\n\nFind Email via OpenAI\nEach lead is sent to GPT-4o to find a verified professional email. Returns the email, source, and confidence score (high / medium / low).\n\nRate-Limited Batching\nLeads process in batches of 3 with a 1.5s delay to respect API rate limits.\n\nHas Valid Email?\nIf a valid email was found (contains @), the lead goes to the Qualified sheet. Otherwise it goes to Unqualified -- both written back to the same spreadsheet.\n\nSetup\n\nGoogle Drive / Sheets -- Connect your Google OAuth2 credentials. Update the folder ID in the trigger node.\nOpenAI -- Connect your OpenAI API credential to the Find Email via OpenAI node.\nInput Sheet -- Needs columns: first name, last name, company, corporate website, linkedin industry, linkedin url, job title, location\nOutput Tabs -- Create two tabs named Qualified and Unqualified with columns: fullName, companyName, companyWebsite, linkedinUrl, jobTitle, location, email, source, confidence\n\nUse Cases\nQualify exported Apollo / LinkedIn Sales Nav lead lists before outreach\nEnrich scraped conference attendee lists with verified emails\nPre-qualify inbound lead dumps before loading into your CRM or sequencer\n\nBuilt by Devon Toh",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

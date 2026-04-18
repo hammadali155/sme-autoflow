@@ -1,0 +1,14 @@
+{
+  "id": 4777,
+  "name": "Transform Documents into Engaging LinkedIn Posts with GPT-4.1 and Email Approval",
+  "description": "🚀 How it works (Fonctionnement résumé) :\n\nCe template permet de transformer un document (PDF, TXT, DocX...) en post LinkedIn engageant, prêt à être publié ou validé par email, le tout avec l’aide d’une IA spécialisée en copywriting LinkedIn. Voici les étapes clés :\n\nFormulaire de dépôt : L'utilisateur charge un fichier ou colle un texte.\nDétection du type de contenu : Un Switch analyse le type de fichier (PDF, DOCX, TXT, ou texte brut). Attention pour DocX nécessite un compte Make pour transformer le doc (mais cela fonctionne aussi sans docX)\nExtraction du contenu : Selon le format, le bon module d'extraction est utilisé.\nGénération d’un post LinkedIn : L'IA transforme le contenu en post LinkedIn selon une méthodologie de copywriting optimisée.\nValidation par email : Un email est envoyé à l’utilisateur pour approbation avec possibilité d’ajouter une image.\nPublication automatique : Si l'utilisateur valide, le post est publié sur LinkedIn.\n\n⚙️ Setup Steps :\n\nConnecte tes comptes :\n\n   Google Docs OAuth\n   LinkedIn OAuth\n   OpenAI (via gpt-4.1-mini ou un autre modèle)\n   SMTP + IMAP pour l'envoi et la lecture d'emails\n\nConfigure les champs du formulaire dans le nœud Form Trigger selon ton usage.\n\nPersonnalise le prompt IA dans le nœud AI Agent si tu veux adapter le ton ou la méthodologie.\n\nVérifie les emails dans le nœud d'envoi (Send Email) et de lecture (Email Trigger (IMAP)), pour que la validation fonctionne.\n\nTeste le workflow avec différents fichiers pour t'assurer que tous les types sont bien traités (PDF, DOCX, TXT, etc.).\n\n🧩 Cas d’usage typiques :\n\nCréer des posts à partir de notes de réunion ou de rapports.\nValoriser un article ou une publication professionnelle sous forme de contenu LinkedIn.\nDéléguer à l'IA le premier jet de ton contenu réseau.\nBonus surveille une newsletter de ta messagerie pour proposer un post pertinent sur LinkedIn (vous pouvez supprimer il fonctionne en parallèle)\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.googleDocs",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

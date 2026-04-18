@@ -1,0 +1,12 @@
+{
+  "id": 5411,
+  "name": "Optimize SEO Meta Tags in Google Sheets with Google Gemini",
+  "description": "🔁 Loop & Optimize Meta Tags with Google Gemini\n\nThis workflow automates the shortening of meta titles and descriptions for SEO—directly from your Google Sheet, row by row, using Google Gemini.\n\n✅ What it does\nReads rows from a Google Sheet (meta_title, meta_description, row_index)\nLoops through each row and checks if content exists\nSends the data to Google Gemini for length-optimized output\nCleans and parses the response\nUpdates the original sheet with the shortened results\n\n🛠️ Setup Requirements\nGoogle Sheets (OAuth2 credentials connected in n8n)\nGoogle Gemini API key (configured in n8n credentials)\n\nSheet must contain:\nrow_index\nmeta_title\nmeta_description\n\nOutput will be written into:\nmeta_titleFixed\nmeta_descriptionFixed\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

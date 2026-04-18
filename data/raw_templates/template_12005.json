@@ -1,0 +1,11 @@
+{
+  "id": 12005,
+  "name": "Movie Release Calendar: Add TMDB Films to Google Calendar via Telegram Bot",
+  "description": "Add Upcoming Movies from TMDB to Your Google Calendar Via Telegram\n\nThis n8n template demonstrates how to automatically fetch upcoming movie releases from TMDB and let users add selected movies to their Google Calendar directly from Telegram.\n\nHow it works\n\nOn a daily schedule, the workflow queries the TMDB API for upcoming movie releases.\nEach movie is checked against an n8n data table to avoid duplicates.\nNew movies are stored in the data table for tracking.\nMovie details are sent to a Telegram chat with an inline “Add to calendar” button.\nWhen the button is pressed, the workflow retrieves the movie data from the table.\nA calendar event is created in Google Calendar using the movie’s release date.\n\nUse cases\n\nTracking upcoming movie releases\n\nPersonal or shared release calendars\n\nTelegram-based reminders for entertainment events\n\nAutomating calendar updates from public APIs\n\nRequirements\n\nTMDB API access token\n\nTelegram bot token and user ID\n\nGoogle Calendar OAuth credentials\n\nOne n8n data table for storing movie metadata",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleCalendar"
+  ],
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": 13469,
+  "name": "Extract invoice data from Gmail to Airtable with Mistral OCR and GPT-4.1-mini",
+  "description": "This n8n template demonstrates how to automatically process invoice attachments from email using OCR and AI. When an invoice is received in Gmail, the workflow extracts structured invoice data and stores it in Airtable while preventing duplicates.\n\nThis automation is useful for freelancers, agencies, and finance teams who receive invoices by email and want to maintain a structured invoice database without manual data entry.\n\nWho’s it for\n\nThis workflow is designed for:\n\nFreelancers managing client invoices\n\nAgencies handling multiple invoice emails\n\nFinance teams automating invoice intake\n\nAutomation consultants building accounting workflows\n\nHow it works\n\nWhen a new email with an attachment arrives in Gmail, the workflow checks whether the subject contains the word “invoice”. The attachment is uploaded to an image-hosting service to generate a public URL.\n\nThe invoice file is then processed using OCR to extract text content. An AI agent analyzes the extracted text and converts it into structured invoice fields such as invoice number, sender, recipient, dates, description, and amount. \n\nBefore saving, Airtable is searched to ensure the invoice does not already exist. Valid invoices are stored automatically, while invalid data triggers an error notification email.\n\nHow to set up\n\nConnect Gmail credentials and enable attachment download.\n\nConnect Airtable credentials and create an invoice table.\n\nAdd your imgbb API key in the HTTP Request node.\n\nConnect your OCR provider (Mistral).\n\nConnect your OpenAI API credentials.\n\nActivate the workflow and send a test invoice email.\n\nRequirements\n\nGmail account\n\nAirtable account\n\nOpenAI API key\n\nMistral OCR API key\n\nimgbb API key\n\nn8n instance (cloud or self-hosted)\n\nHow to customize the workflow\n\nYou can customize this workflow by:\n\nModifying the AI prompt used for invoice extraction\n\nAdding new invoice fields in Airtable\n\nChanging validation rules\n\nSupporting additional invoice formats (PDF, PNG, JPG)\n\nAdding integrations with accounting tools like QuickBooks or Stripe",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "n8n-nodes-base.mistralAi"
+  ],
+  "tags": []
+}

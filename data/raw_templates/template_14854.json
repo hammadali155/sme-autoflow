@@ -1,0 +1,11 @@
+{
+  "id": 14854,
+  "name": "Publish daily gaming guides from Reddit using Google Gemini to your web app",
+  "description": "This workflow automatically monitors a set of subreddits on a daily schedule, fetches the top trending posts via RSS, and uses a Google Gemini AI model to identify the most discussion-worthy post. It then generates a full, SEO-optimized guide in Markdown — complete with step-by-step walkthroughs, data tables, and pro tips — and publishes the result to a web app endpoint.\nHow it works:\n\nA Schedule Trigger fires once per day\nA configurable list of subreddits is looped over one by one\nEach subreddit's hot posts are fetched via Reddit's public RSS feed\nRaw XML is parsed and cleaned into structured post data\nGemini AI picks the best post and writes a complete guide\nThe guide is sent via HTTP POST to your publishing endpoint\n\nWhat you'll need to configure:\n\nYour subreddit list (in the Code node)\nA Google Gemini (PaLM) API credential\nYour publishing endpoint URL + any required auth headers\n\nUse cases: Gaming blogs, niche community newsletters, auto-publishing pipelines for any topic-focused subreddit.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

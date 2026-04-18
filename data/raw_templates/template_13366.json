@@ -1,0 +1,9 @@
+{
+  "id": 13366,
+  "name": "Upload videos to Facebook Pages and Groups with Facebook Graph API",
+  "description": "Purpose:\nUploads videos to Facebook Pages or Groups automatically, either via a Form Trigger or triggered by another workflow.\n\nFeatures:\nAccepts video file, message, target_id (Page/Group ID), and access_token.\nPrepares metadata and handles chunked uploads for large videos.\nInitiates, transfers, and completes upload using Facebook Graph API.\nModular and reusable for integration into larger automation pipelines.\n\nWho it’s for:\nContent creators, social media managers, agencies, or SaaS builders wanting automated Facebook video posting.\n\nSetup:\nImport workflow into n8n (cloud or self-hosted).\nActivate workflow.\nFill in target_id and Page Access Token in the form or pass via sub-workflow.\nUpload video and message.\nVideo is posted automatically.\n\nRequirements:\nn8n instance (cloud or self-hosted)\nFacebook Page/Group Access Token with publish_video permission\nVideo file to upload",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

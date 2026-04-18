@@ -1,0 +1,14 @@
+{
+  "id": 12956,
+  "name": "Generate AI voice receptionists for local businesses with Claude, VAPI and Google Maps",
+  "description": "Generate AI voice receptionist agents for local businesses using VAPI\n\nAutomate the creation of personalized AI phone receptionists for local businesses by scraping Google Maps, analyzing websites, and deploying voice agents to VAPI.\n\nWho is this for?\n\nAgencies** offering AI voice solutions to local businesses\nConsultants** helping SMBs modernize their phone systems\nDevelopers** building lead generation tools for voice AI services\nEntrepreneurs** launching AI receptionist services at scale\n\nWhat this workflow does\n\nThis workflow automates the entire process of creating customized AI voice agents:\n\nCollects business criteria through a form (city, keywords, quantity)\nScrapes Google Maps for matching local businesses using Apify\nFetches and analyzes each business website\nGenerates tailored voice agent prompts using Claude AI\nAutomatically provisions voice assistants via VAPI API\nLogs all created agents to Google Sheets for tracking\n\nThe AI adapts prompts based on business type (salon, restaurant, dentist, spa) with appropriate tone, services, and booking workflows.\n\nSetup requirements\n\nApify account** with Google Maps Scraper actor access\nAnthropic API key** for prompt generation\nOpenRouter API key** for website analysis\nVAPI account** with API access\nGoogle Sheets** connected via OAuth\n\nHow to set up\n\nImport the workflow template\nAdd your Apify credentials to the scraping node\nConfigure Anthropic and OpenRouter API keys\nReplace YOUR_VAPI_API_KEY in the HTTP Request node header\nConnect your Google Sheets account\nCreate a Google Sheet with columns: Business Name, Category, Address, Phone, Agent ID, Agent URL\nUpdate the Sheet URL in both Google Sheets nodes\nActivate the workflow and submit the form\n\nCustomization options\n\nBusiness templates**: Edit the prompt in \"Generate Agent Messages\" to add new business categories\nVoice settings**: Modify ElevenLabs voice parameters (stability, similarity boost)\nLLM model**: Switch between GPT-4, Claude, or other models via OpenRouter\nOutput format**: Customize the results page HTML in the final Form node",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.informationExtractor",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+    "@n8n/n8n-nodes-langchain.anthropic"
+  ],
+  "tags": []
+}

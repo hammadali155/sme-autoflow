@@ -1,0 +1,12 @@
+{
+  "id": 4680,
+  "name": "Automatic Gmail Message Categorization with GPT-4 Content Analysis & Labels",
+  "description": "Who is this for?\n\nThis workflow is ideal for Gmail users and teams who receive a high volume of emails and want to streamline inbox management. It suits professionals seeking to organize messages automatically, including sales teams, project managers, support staff, and anyone who benefits from automated email categorization.\n\nWhat problem is this workflow solving? / Use case\n\nManually labeling emails is time-consuming and can lead to inconsistent organization. This automated n8n workflow uses Gmail and OpenAI to analyze incoming messages and apply the appropriate labels, such as \"Quotation\", \"Inquiry\", \"Project progress\", and \"Notification\", based on content—improving productivity and ensuring important messages are prioritized.\n\nWhat this workflow does\n\nThe workflow retrieves new Gmail messages, analyzes their content with OpenAI, and automatically assigns pre-defined Gmail labels that match the email’s intent. This ensures emails are sorted efficiently using AI-powered content analysis and Gmail’s labeling system.\n\nSetup\n\nEnsure Gmail labels (e.g., \"Quotation\", \"Inquiry\") are created in your Gmail account.\nConnect your Gmail and OpenAI accounts as credentials in n8n.\nImport the workflow into your n8n instance and update node configurations to match your Gmail label names.\n\nHow to customize this workflow to your needs\n\nEdit or add Gmail labels both in your Gmail account and within the workflow logic.\nAdjust the prompt or parameters sent to OpenAI to better match your categorization style.\nExpand or refine the list of label categories to fit your team’s or business’s requirements.\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 13856,
+  "name": "Scrape Apollo.io leads and sync them to Google Sheets with ScraperCity",
+  "description": "Who is this for\n\nThis workflow is for B2B sales teams, growth hackers, and revenue operators who need a reliable, low-cost pipeline of verified leads from Apollo.io -- without manually exporting CSVs or hitting Apollo's export limits. If you are prospecting into a specific industry, job title, or company size, this workflow automates the entire sourcing and storage process.\n\nHow it works\n\nYou configure your target audience once in the \"Configure Search Parameters\" node (job titles, industry, company size, lead count).\nThe workflow sends a scrape request to ScraperCity's Apollo filter endpoint, which pulls verified contacts at $0.0039 per contact.\nBecause scrapes run asynchronously and can take 10-60 minutes, the workflow polls ScraperCity every 60 seconds until the job completes.\nOnce the scrape succeeds, the workflow downloads the results, parses the CSV data, removes duplicates, and appends clean rows to your Google Sheet.\n\nHow to set up\n\nCreate a ScraperCity account at scrapercity.com and copy your API key.\nIn n8n, create an \"Header Auth\" credential named \"ScraperCity API Key\" with the header name \"Authorization\" and value \"Bearer YOUR_KEY\".\nConnect your Google Sheets OAuth2 credential.\nSet your Google Sheet document ID and sheet name in the \"Save Leads to Google Sheets\" node.\nEdit the \"Configure Search Parameters\" node with your target filters.\n\nRequirements\n\nScraperCity account (scrapercity.com)\nGoogle Sheets OAuth2 credential\nA Google Sheet with headers matching the contact fields\n\nHow to customize the workflow\n\nChange job titles, industry, company size, and lead count in \"Configure Search Parameters\".\nSwap Google Sheets for HubSpot, Airtable, or a webhook to push leads directly into your CRM.\nAdd a Slack notification node after the final write step to alert your team when new leads arrive.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

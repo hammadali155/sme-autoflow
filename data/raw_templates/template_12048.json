@@ -1,0 +1,16 @@
+{
+  "id": 12048,
+  "name": "AI News Digest: Summarize Top Stories with GPT-4o and DALL-E for Telegram",
+  "description": "Title:\nCreate daily AI news digest and send to Telegram\n\n\nDescription:\n\n\nStay ahead of the rapidly evolving artificial intelligence landscape without the information overload. This workflow acts as your personal AI news editor, automatically curating, summarizing, and visualizing the top stories of the day, delivered directly to your Telegram.\n\n\nIt goes beyond simple RSS aggregation by using an AI Agent to rewrite headlines and summaries into a digestible format and includes a \"Chat Mode\" where you can ask follow-up questions about the news directly within the n8n interface.\n\nWho is it for\nAI Enthusiasts & Researchers:** Keep up with the latest papers and releases without manually checking multiple sites.\nTech Professionals:** Get a morning briefing on industry trends to start your day informed.\nContent Creators:** Find trending topics for newsletters or social media posts effortlessly.\n\nHow it works\nNews Aggregation: Every morning at 8:00 AM, the workflow fetches RSS feeds from top tech sources (Google News AI, The Verge, and TechCrunch).\nSmart Filtering: A Code node aggregates the articles, removes duplicates, and ranks them by recency to select the top 5 stories.\nAI Summarization: An AI Agent (powered by OpenAI) analyzes the selected stories and writes a concise, engaging summary for each.\nVisual Generation: DALL-E generates a unique, futuristic header image based on the day's news context.\nDelivery: The digest is formatted with Markdown and emojis, then sent to your specified Telegram chat.\nInteractive Chat: A separate branch allows you to chat with an AI Agent via the n8n Chat interface to discuss the news or ask general AI questions.\n\nHow to set up\nConfigure Credentials:\n    Set up your OpenAI API credential.\n    Set up your Telegram API credential.\nGet Telegram Chat ID:\n    Create a bot with @BotFather on Telegram.\n    Send a message to your bot.\n    Use @userinfobot to find your numeric Chat ID.\nUpdate Workflow Settings:\n    Open the Workflow Configuration node.\n    Paste your Chat ID into the telegramChatId value field.\nActivate: Toggle the workflow to \"Active\" to enable the daily schedule.\n\nRequirements\nn8n Version:** Must support LangChain nodes.\nOpenAI Account:** API Key with access to GPT-4o-mini (or preferred model) and DALL-E 3.\nTelegram Account:** To create a bot and receive messages.\n\nHow to customize\nChange News Sources:** Edit the RSS URLs in the Workflow Configuration node to track different topics (e.g., Crypto, Finance, Sports).\nAdjust Personality:** Modify the system prompt in the AI News Summarizer Agent node to change the tone of the summaries (e.g., \"explain it like I'm 5\" or \"highly technical\").\nChange Schedule:** Update the Daily 8 AM Trigger node to your preferred time zone and frequency.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

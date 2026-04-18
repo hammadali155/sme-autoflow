@@ -1,0 +1,13 @@
+{
+  "id": 2735,
+  "name": "Stock Technical Analysis with Google Gemini",
+  "description": "The purpose of this workflow, \"Sell: Stock Vision,\" is to create an AI-powered technical analysis agent capable of analyzing financial charts for equity stocks and cryptocurrencies. This workflow provides users with actionable insights into market trends, price movements, candlestick patterns, and technical indicators to support informed trading decisions.\n\nHow It Works\n\nIntegration with TradingView:** The workflow uses the Chart-Img.com API to fetch detailed financial charts for the specified stock or cryptocurrency.\nAI-Powered Analysis:** The workflow employs advanced AI models, including Google's Gemini Chat Model, to analyze the retrieved charts for candlestick patterns, support/resistance levels, and technical indicators like MACD and RSI.\nNews and Sentiment Analysis:** By integrating with SerpAPI, the workflow gathers relevant news about the stock or cryptocurrency to evaluate its potential impact on market movements.\nComprehensive Insights:** It provides detailed trading strategies, including buy/sell recommendations, stop-loss levels, and risk-reward evaluations.\nContinuous Memory:** The AI agent uses buffer memory to retain context for enhanced analysis and continuity.\n\nUse Case\nThis workflow is perfect for traders and analysts who need reliable and AI-powered market analysis to make informed trading decisions efficiently.\n\nTutorial\n\nObtain API keys for Chart-Img.com and SerpAPI.\nConfigure the workflow in your n8n instance by inputting the required API keys and connecting the nodes.\nTrigger the workflow by providing the stock or cryptocurrency symbol, and let the agent do the rest!\n\nhttps://youtu.be/9fR4qNMT5LM\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 4857,
+  "name": "Create a Notion AI Assistant with Google Gemini for Managing Tasks & Content",
+  "description": "This n8n workflow template uses community nodes and is only compatible with the self-hosted version of n8n. \n\nBuild an AI agent for Notion (with Notion official MCP server)\n\nUse case\n\nThis template empowers Notion power-users to build their own AI assistant, deeply integrated with their workspace. It solves the constant problem of copy-pasting and context-switching between a separate AI chat and Notion by creating a direct, conversational bridge. Now you can interact with an intelligent agent that can create, retrieve, and update your Notion databases and pages on your behalf, turning your workspace into a truly dynamic productivity hub.\n\nHow it works\n\nWhen you send a message via the chat interface, the workflow passes it to your chosen AI model. The model, connected to the official Notion tool server, analyzes your request to see if it can be fulfilled by one of its available Notion actions. If it matches a tool, the workflow executes the command using the Notion API—like creating a new page or searching a database—and the AI then confirms the action is complete back in the chat.\n\nSetup\n\nPrerequisite: This template is for self-hosted n8n instances only, as it requires a community node. \n\nCopy this workflow into your self-hosted n8n instance \nInstall the required community node (n8n-nodes-mcp).\nAdd your credentials for your chosen AI Model and the Notion MCP Server.\nTest the workflow by starting chatting with your new Notion assistant.\n\nHow to adjust it to your needs\n\nYou can use the AI model you want and even easily compare different AI models.\nYou can start from this template and then provide other tools to your AI agent to build more powerful workflows.",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": 12168,
+  "name": "Automate Video Creation with Gemini Prompts and Vertex AI to Google Drive",
+  "description": "Automate video creation: AI generates ideas, Vertex AI renders videos, and auto-uploads to Google Drive with complete tracking.\n\nWhat You Get\n\nGemini AI for creative prompts\nVertex AI video generation\nAuto-upload to Google Drive\nComplete Google Sheets logging\nSmart retry logic\nBase64 to MP4 conversion\n\nSetup\n\nEnable Vertex AI in Google Cloud\nGet Gemini API key\nRun gcloud auth print-access-token for ACCESS TOKEN\nImport workflow & configure credentials\nAdd prompts & test\n\nFlow\n\nSchedule → Gemini AI → Vertex AI → Wait → Convert → Upload → Log\n\nResources\n\nGoogle Sheets Template\n\n⚠️ Note: ACCESS TOKEN expires hourly - refresh using gcloud auth print-access-token\n\n📧 LinkedIn: linkedin.com/in/yourprofile\n\n🔗 More n8n Products: Click here",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

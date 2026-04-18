@@ -1,0 +1,11 @@
+{
+  "id": 15014,
+  "name": "Repurpose YouTube videos into multi-platform content with OpenAI and Anthropic",
+  "description": "Advanced Multi-Platform Content Distribution System\n\nWhat This Workflow Does:\nMonitors your YouTube channel for new videos\nDownloads and processes video transcripts\nUses AI to generate multiple content formats\nAutomatically publishes to various platforms\nHandles rate limiting with strategic wait periods\n\nContent Outputs:\n✂️ Short-form clips (60s scripts)\n📝 Blog posts (SEO optimized)\n🧵 Twitter/X threads\n📱 LinkedIn posts\n🎯 SEO-optimized titles & descriptions\n\nKey Features:\n⏱️ Rate limiting with Wait nodes\n🔄 Error handling & retries\n🎨 AI-powered content adaptation\n📊 Multi-format generation\n🚀 Auto-publishing pipeline\n\nRequirements:\nYouTube Data API key\nOpenAI/Anthropic API key\nPlatform credentials (Twitter, LinkedIn, WordPress)\nGoogle Drive (optional backup)\n\nWorkflow Stages:\n1️⃣ Video Discovery & Transcript Extraction\n2️⃣ AI Content Generation (with rate limiting)\n3️⃣ Content Formatting & Optimization\n4️⃣ Multi-Platform Publishing\n\n📊 Monitoring & Success Tracking\n\nMetrics Tracked:\nVideos processed\nContent pieces generated\nSuccessful publications\nFailed attempts\nAPI costs\nProcessing time\n\nLogging:\nAll content saved to Google Drive for:\nBackup purposes\nQuality review\nPerformance analysis\nFuture optimization\n\nNotifications:\nSlack alerts on completion\nEmail summary reports\nError notifications\n\nAnalytics Integration:\nTrack performance across:\nBlog pageviews\nTwitter engagement\nLinkedIn impressions\nSEO rankings\n\nOptimization Loop:\nUse analytics to:\nRefine AI prompts\nAdjust publishing times\nIdentify top-performing formats\nImprove content quality\n\n💡 Tip: Adjust wait times based on your API rate limits!",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

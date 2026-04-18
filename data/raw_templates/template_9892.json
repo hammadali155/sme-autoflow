@@ -1,0 +1,11 @@
+{
+  "id": 9892,
+  "name": "Automate Job Posting Across Multiple Boards with Google Sheets and BrowserAct",
+  "description": "\nPost Jobs to Multiple Boards from Google Sheets using BrowerAct\n\nThis powerful n8n template turns a Google Sheet into a control panel for automating job postings across multiple job boards.\n\nThis workflow is perfect for HR teams, recruiters, and hiring managers who want to streamline their hiring process by posting jobs to multiple boards from a single source of truth.\n\nSelf-Hosted Only \nThis Workflow uses a community contribution and is designed and tested for self-hosted n8n instances only.\n\nHow it works\nThe workflow is triggered in two ways: manually (to batch-post all \"Ready to Post\" jobs) or automatically via a Google Sheets Trigger when a single row is updated.\nAn If node filters for jobs marked with the status 'Ready to Post'.\nA BrowserAct node takes the job details (title, description, logins, target URL) and runs an automation to post the job on the specified board.\nAn If node checks if the posting was successful. If it fails, a Slack alert is sent.\nA Code node parses the successful result from BrowserAct to get the status and live URL.\nThe workflow Updates the row in Google Sheets with the Live_URL and changes the Status to 'Posted'.\nA final Slack message is sent to a channel to confirm the successful posting.\n\nRequirements\nBrowserAct** API account for automated posting\nBrowserAct* \"Automated Job Posting to Niche Job Site (Custom Site)*\" Template | User needs to customize the workflow based on the target site.\nBrowserAct** n8n Community Node -&gt; (n8n Nodes BrowserAct)\n\nGoogle Sheets** credentials\nSlack** credentials for sending notifications\n\nNeed Help?\nHow to Find Your BrowseAct API Key & Workflow ID\nHow to Connect n8n to Browseract\nHow to Use & Customize BrowserAct Templates\nHow to Use the BrowserAct N8N Community Node\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 6586,
+  "name": "Automatically Enrich Salesforce Accounts with Web Crawling, LinkedIn Data, GPT",
+  "description": "Crawl the web, mine LinkedIn, think with GPT, and auto‑enrich Salesforce—all inside n8n.\n\n🔧 How It Works (High-Level)\n\nListen – Trigger on new Salesforce Accounts.  \nDiscover – Crawl the company site (depth-limited) + grab/parse LinkedIn.  \nDistill – GPT (JSON mode) returns a clean insight object + HTML summary.  \nEnrich – Update the Account record in Salesforce automatically.\n\n🛠 Setup Steps (≈15–25 minutes)\n\nImport the workflow JSON into n8n.  \nConnect Credentials: Salesforce OAuth2 + OpenAI API key.  \nTune Settings: Set maxDepth (default = 1), confirm the model (e.g., gpt‑4o).  \nTest with a sample Account to verify crawl + update.  \nEnable Trigger and let it run.\n\n💼 Business Impact\n\nZero manual research**: Insights appear in Salesforce instantly.  \nConsistent data**: Unified JSON schema + confidence rating.  \nFaster qualification**: Reps see services, size, HQ, etc., without leaving SF.  \nScalable & automated**: Works 24/7 on every new Account.  \nAI-ready outputs**: Raw JSON for automations, HTML for dashboards/Lightning.\n\n🌟 Optional Enhancements\n\nPush insights to Slack/Teams.  \nAuto-create tasks if rating &lt; 60 or data missing.  \nArchive raw HTML to S3 for audits.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.salesforce",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

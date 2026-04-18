@@ -1,0 +1,13 @@
+{
+  "id": 12076,
+  "name": "Manage Recruitment Tasks in Slack with Recrutei ATS & GPT-4 Agent",
+  "description": "Overview: Recrutei ATS - Ultimate Internal AI Agent\n\nThis workflow transforms Slack into a powerful command center for recruitment. Using an AI Agent (LangChain) integrated with the Recrutei ATS API and MCP, your team can manage candidates, vacancies, tags and a lot more directly through Slack messages.\n\nKey Features\nNatural Language Processing:** Use GPT-4 to interpret complex requests like \"Find candidates for the Python role and tag them as 'Senior'\".\nCandidate Management:** Create prospects, disqualify candidates, or move them between pipeline stages.\nVacancy Insights:** Add and read comments on vacancies directly from the chat.\nTagging System:** Create, list, and delete tags dynamically.\n\nSetup Instructions\nSlack Trigger: Connect your Slack account and invite the bot to your desired channel.\nOpenAI: Configure your API Key. This agent uses GPT-4o-mini (or GPT-4) for high-reasoning capabilities.\nHTTP Request Tools: Every \"Tool\" node (Pink nodes) needs your Recrutei API Token.\n    Replace the Authorization header with your Bearer YOUR_TOKEN.\n    Update the Base URL if necessary.\nSlack Post: Ensure the bot has permissions to write in the channel.",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.mcpClientTool"
+  ],
+  "tags": []
+}

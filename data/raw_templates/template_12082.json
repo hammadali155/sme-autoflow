@@ -1,0 +1,13 @@
+{
+  "id": 12082,
+  "name": "Capture and score multi-channel leads with GPT-4, Gmail and Google Sheets",
+  "description": "Complete AI-powered sales system\nAutomates lead capture, qualification, and follow-up from multiple channels.\nAI INTELLIGENCE:\n\nAutomatic GPT-4 analysis\nDetects: sentiment, urgency, intent, budget signals\nIdentifies pain points and interests\nGenerates personalized responses\n\nLEAD SCORING ENGINE:\nScore 0-100 based on 10+ variables:\n\nChannel (Referral +30, LinkedIn +25, WhatsApp +20, Web Form +15, Email +10)\nPositive sentiment (+15)\nHigh urgency (+25)\nPurchase intent (+30)\nHigh budget (+20)\nDecision maker (+20)\nEngagement (+5 per interaction, max 25)\n\nMULTI-CHANNEL INPUT:\n\nGmail (incoming emails)\nWebhook for web forms\nWebhook for WhatsApp/Telegram\nAll normalized to unified format\n\nSMART ROUTER - 5 FLOWS:\n\nSchedule Demo: Hot lead with Calendly CTA\nSend Info: Informative response\nCreate Task: Slack notification for call\nNurturing: Cold lead, value-driven email\nDisqualify: Invalid lead\n\nAUTO CRM:\n\nDetects new vs existing leads\nStores last 10 interactions history\nUpdates score and stage automatically\nComplete interaction log\n\nHOT LEAD ALERTS (Score 70+):\nInstant Slack notification with lead data, company, score, stage, intent, urgency, pain points, and AI summary.\nAUTO-NURTURING (Daily 10AM):\n\nFilters leads with score 20-60\nNo contact in 3+ days\nAI personalized follow-up emails\nMax 10 per day\n\nWEEKLY REPORT (Monday 9AM):\n\nTotal and new leads\nActive hot leads count\nAverage score\nDistribution by stage and channel\n\nSETUP:\n\nGoogle Sheets with 3 tabs: Leads, Interactions, Tasks\nOpenAI API Key\nGmail connected\nSlack channels: #sales, #errors\n\nIDEAL FOR:\n\nB2B Startups\nDigital agencies\nConsulting firms\nSaaS companies\nAny business with multi-channel leads\n\nReplaces HubSpot, Pipedrive, Close.io - 100% customizable, no monthly fees.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

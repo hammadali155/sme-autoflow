@@ -1,0 +1,18 @@
+{
+  "id": 13500,
+  "name": "Generate M&A due diligence reports with Decodo, OpenAI and Pinecone",
+  "description": "Turn unstructured pitch decks and investment memos into polished Due Diligence PDF reports automatically. This n8n workflow handles everything from document ingestion to final delivery, combining internal document analysis with live web research to produce analyst-grade output in minutes.\n\nThe Problem It Solves\n\nReviewing a single deal manually reading the deck, cross-checking claims online, formatting the summary easily takes half a day. Multiply that by 10–20 inbound deals per week, and your team is buried in low-leverage work before any real analysis begins.\n\nThis workflow compresses that cycle into a single automated pipeline.\n\nHow It Works\n\nUpload: Send a PDF, DOCX, or PPTX to the webhook endpoint.\nParse: LlamaParse extracts clean Markdown from complex layouts, preserving tables and financial data.\nEnrich: The workflow identifies the target company, then pulls supplementary data from the open web (corporate pages, risk signals) using Decodo's search and scraping APIs to verify and contextualize claims made in the source documents.\nAnalyze: An AI Agent runs six targeted retrieval queries against the combined dataset: revenue history, key risks, business model, competitive landscape, management profile, and deal terms.\nDeliver: Results render into a branded HTML template, convert to PDF via Puppeteer, upload to Cloudflare R2, and return a download link.\n\nEach deal gets a unique namespace in Pinecone, so documents are isolated and repeat uploads skip redundant parsing.\n\nWhat You Need\n\n| Service | Role |\n| --- | --- |\n| n8n | Workflow orchestration |\n| LlamaIndex Cloud | Document parsing (LlamaParse) |\n| Pinecone | Vector storage & retrieval |\n| OpenAI API | Embeddings (text-embedding-3-small) & LLM analysis (GPT-5.4) |\n| Decodo API | Web search & page scraping |\n| Cloudflare R2 | Report file storage (S3-compatible) |\n\nQuick Start\n\nImport the workflow JSON into your n8n instance.\nAdd credentials for OpenAI, Pinecone, LlamaIndex (Header Auth), Decodo, and Cloudflare R2 (S3-compatible).\nUpdate the R2 base URL in the \"Build Public Report URL\" node.\nFire a test POST with a sample deck to the webhook.\n\nCustomization Ideas\n\nSwap the HTML template to match your firm's branding and report structure.\nExtend the AI Agent prompt to cover additional dimensions like ESG scoring or technical debt.\nRoute the finished PDF to Slack, email, or your CRM instead of (or alongside) R2.\n\nTroubleshooting\n\n| Symptom | Likely Fix |\n| --- | --- |\n| Parsing times out | Increase the Wait node duration; check file size against LlamaParse limits |\n| Thin or generic analysis | Verify the source PDF is text-based, not a scanned image, enable OCR if needed |\n| Broken PDF layout | Simplify CSS in the HTML render node; older Puppeteer builds handle basic layouts better |\n\nCreated by: Khmuhtadin\nCategory: Business Intelligence | Tags: AI, RAG, Due Diligence, Decodo\n\nPortfolio • Store • LinkedIn • Medium • Threads",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.s3",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader"
+  ],
+  "tags": []
+}

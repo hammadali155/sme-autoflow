@@ -1,0 +1,16 @@
+{
+  "id": 14911,
+  "name": "Analyze npm packages with Firecrawl, GitHub, npm APIs, Gemini and GPT",
+  "description": "This workflow analyzes any npm package and delivers a data-driven recommendation using Firecrawl + APIs + AI reasoning.\n\n🔥 Why Firecrawl is Important Here\n\nAt the core of this workflow is Firecrawl, which is used to:\n\n• Discover accurate npm package URLs dynamically\n• Identify the correct GitHub repository (even for tricky packages)\n• Enable AI agent to search & validate package context\n• Provide a fallback when direct API mapping is not straightforward\n\n👉 Instead of hardcoding URLs, Firecrawl makes this workflow fully dynamic and scalable.\n\n🔍 What it does\n\nThis workflow:\n\n• Accepts a package name via form\n• Uses Firecrawl Search to find npm + GitHub sources\n• Extracts clean URLs using logic layer\n• Fetches real-time data using APIs (GitHub + npm)\n• Calculates health metrics (activity, issue ratio)\n• Uses AI to generate insights + recommendations\n• Sends a clean Slack-ready report\n\n⚙️ How it works (High-level)\n• User submits package name\n• Firecrawl searches npm & GitHub (dynamic discovery layer)\n• Code node extracts clean, usable URLs\n• GitHub API → stars, issues, license\n• GitHub API → last commit activity\n• npm API → weekly downloads\n• Metrics calculated (health signals)\n• AI Agent analyzes + recommends\n• Slack message sent\n\n🧠 Key Capabilities\n\n• Firecrawl-powered dynamic URL discovery (no hardcoding)\n• Real-time package evaluation using APIs\n• AI-powered reasoning (not just raw data)\n• Risk scoring (Low / Medium / High)\n• Handles invalid or missing packages gracefully\n• Produces structured + human-readable output\n\n⚠️ Error Handling\n\n• Firecrawl ensures fallback discovery for URLs\n• API failures → handled using \"continue on fail\"\n• Missing package → fallback response with suggestions\n• Partial data → marked as \"unknown\"\n• URL detection failures → fallback to default npm URL\n\n📦 Requirements\n\n• Firecrawl API key ⭐ (core component)\n• GitHub OAuth credential\n• Google Gemini API key\n• Slack credential (optional for output)\n\n💡 Example Use Cases\n\n• Package evaluation before production use\n• Comparing npm alternatives\n• Developer productivity tooling\n• Automated tech due diligence\n\n🎯 Output\n\n• Structured JSON (for automation)\n• Slack-ready formatted report (for humans)",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

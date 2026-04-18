@@ -1,0 +1,10 @@
+{
+  "id": 4500,
+  "name": "Sync GitHub Workflows to n8n After Pull Request Merges",
+  "description": "Who is this for?\n\nThis template is ideal for developers, DevOps engineers, and automation managers who manage their n8n workflows using GitHub. It helps teams streamline their CI/CD automation by syncing changes from GitHub directly into n8n after a pull request (PR) is merged.\n\nWhat problem is this workflow solving?\n\nManually restoring workflows after reviewing and merging code in GitHub can be tedious and error-prone. This workflow solves that by automating the restore process, ensuring that any new or updated workflow committed to your GitHub repo is automatically imported into your n8n environment.\n\nWhat this workflow does\n\nTriggers when a GitHub pull request is closed and merged.\nFetches the details of the merge commit.\nRetrieves the list of added and modified workflow files.\nDownloads and decodes each workflow file.\nCreates or updates** the corresponding workflow in your n8n instance automatically.\n\nSetup\n\nConnect GitHub: Use the GitHub Trigger node and configure GitHub API credentials.\nNote: I'd recommended to use GitHub PAT (Personal Access Token) classic with repo and admin:repo_hook permission scopes enabled.\nConnect n8n API: Provide your n8n API credentials in the n8n nodes. - Check this doc\nSet repository variables: Update github_owner and repo_name in the Define Local Variables node.\nEnable webhook: Make sure your GitHub repository has a webhook for pull_request events pointing to this workflow.\n\nHow to customize this workflow to your needs\n\nModify filters to handle only certain branches or file paths.\nAdd Slack or email notifications to confirm successful imports.\nInsert logging or version tagging for better traceability.\nExtend with conditional logic for workflow testing before applying changes.\n\nThis automated flow provides a seamless CI/CD loop between GitHub and n8n, empowering teams to manage workflow versioning efficiently and securely.",
+  "nodes": [
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

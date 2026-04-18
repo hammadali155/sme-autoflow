@@ -1,0 +1,12 @@
+{
+  "id": 14882,
+  "name": "Detect churn risk from competitor tech adoption using PredictLeads and Gmail",
+  "description": "Monitor customers for competitor tech adoption via PredictLeads and alert CSMs to prevent churn.\n\nThis workflow uses PredictLeads to monitor existing customers for competitor tool adoption (HubSpot, Salesforce, Zoho CRM) and renewal timing risk, then alerts Customer Success Managers so they can take proactive action before customers churn.\n\nHow it works\nSchedule trigger runs weekly and loads customer domains from Google Sheets\nFetches each customer's full tech stack via PredictLeads Technology Detections API\nLooks up technology details by ID in PredictLeads to identify competitor tools\nDetects if customer adopted competitor tools (HubSpot, Salesforce, Zoho CRM)\nCalculates days until renewal and flags high-risk accounts (competitor detected + within 90 days)\nSends churn risk alert email to the assigned CSM\n\nSetup\nCreate Google Sheet with columns: company_domain, renewal_date, csm_email\nConnect Gmail OAuth2 for CSM alert emails\nConnect Slack OAuth2 for team notifications (optional)\nAdd PredictLeads API credentials (X-Api-Key and X-Api-Token headers)\nRequirements\nPredictLeads API account (https://docs.predictleads.com)\nGoogle Sheets OAuth2 credentials\nGmail OAuth2 credentials\nSlack OAuth2 credentials (optional)\nCustomization\nAdjust competitor list in \"Detect Competitor Usage\" Code node\nModify 90-day renewal window threshold in \"Calculate Renewal Risk\" node\nChange notification channel from Slack to another platform if needed",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

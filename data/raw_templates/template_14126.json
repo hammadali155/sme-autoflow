@@ -1,0 +1,11 @@
+{
+  "id": 14126,
+  "name": "Find local GMB leads with 1-star reviews using Apify and Google Sheets",
+  "description": "Overview\n\nAutomatically scrapes Google My Business listings using Apify's Google Maps Scraper, filters results to businesses with 1-star reviews, and exports structured lead data into a dedicated Google Sheet tab per run.\n\nIdeal for agencies and freelancers identifying local businesses with poor online reputations — potential leads for reputation management or review response services.\n\nHow it works\n\nFill in the built-in form with a business type (e.g. \"plumber\") and location (e.g. \"Miami, FL\")\nThe workflow launches the Apify Google Maps Scraper actor and polls every 10 seconds until the run completes\nResults are filtered — only businesses with at least one 1-star review continue\nA new tab is created in your Google Sheet named {query}-{timestamp} and all matching leads are appended with full contact and review data\n\nWhat you get per lead\n\nBusiness Name and GMB profile URL\nCity / Address\nPrimary and alternative phone number\nBusiness email (if available)\nNegative review URL (lowest-ranked review link)\nNegative review URL with image attached\nTotal 1-star review count\n\nSet up steps\n\nApify credential — Create a free account at apify.com, generate an API token, and add it as an HTTP Header Auth credential in n8n named Apify Token (header name: Authorization, value: Bearer YOUR_TOKEN)\nGoogle Sheets credential — Connect a Google Sheets OAuth2 account in n8n\nSheet ID — Open the Build Search Query node and replace YOUR_GOOGLE_SHEET_ID_HERE with your Google Sheet ID (found in the sheet URL: docs.google.com/spreadsheets/d/{SHEET_ID}/edit)\nActivate the workflow — your unique form URL will appear in the Form Trigger node\n\nRequirements\n\nApify account (free tier includes ~$5 monthly usage credits — enough for dozens of searches)\nGoogle account with Google Sheets access\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

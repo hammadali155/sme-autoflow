@@ -1,0 +1,13 @@
+{
+  "id": 12038,
+  "name": "Predict tenant churn and manage retention with GPT-4, Gmail, Slack and your CRM",
+  "description": "How It Works\nAutomates daily tenant analytics, churn risk evaluation, and proactive retention by unifying tenant data from multiple sources, applying GPT-4–based risk scoring, detecting early churn indicators, routing high-risk tenants to retention specialists, and initiating targeted engagement campaigns. It retrieves tenant profiles, service requests, and feedback data, performs GPT-4 analysis with detailed churn risk insights, assesses engagement levels, escalates high-risk tenants to dedicated communication teams, delivers personalized loyalty incentives and engagement emails, and updates CRM systems and retention dashboards. Designed for property management companies and SaaS providers.\nSetup Steps\nConfigure tenant data sources.\nConnect OpenAI GPT-4 API for risk analysis and churn prediction.\nSet up Gmail, Slack, and CRM credentials for communication and tracking.\nDefine churn risk thresholds, retention messaging templates, and reward programs.\n\nPrerequisites\nTenant/customer data source; service request system; feedback collection tool;  \n\nUse Cases\nProperty management automating tenant retention across portfolios; \n\nCustomization\nAdjust churn risk algorithms and thresholds,  \n\nBenefits\nPredicts churn before it happens, enables proactive retention ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

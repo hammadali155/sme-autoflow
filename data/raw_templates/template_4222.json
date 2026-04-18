@@ -1,0 +1,13 @@
+{
+  "id": 4222,
+  "name": "Control Your 3D Printer with GPT-4o and OctoPrint API Conversations",
+  "description": "Ever wanted to just tell your 3d printer what to do remotely? \n\nThis game changer let's you converse with OpenAI agents to manage OctoPrint connected 3d printers. Great for remote management and monitoring with easy to read responses.\n\nQuery what jobs are available, Load a print job (upload workflow in development, will be released soon for community use), start the print job and request detailed reports on your printers performance as it runs. \n\nChat &gt; AI &gt; OctoPrint API &gt; Your 3d Printer\n\n++Example 1:++\n\nHuman Input: \"What print job is running?\"\n\nAI Response: \n\nCurrent Print Job Details,\nJob Name: Stand v1.gcode\nFile Size: 2,533,233 bytes\nEstimated Print Time: Approximately 6 hours 15 minutes (22536 seconds)\nProgress: \nCompletion: 1.97%,\nCurrent Position in File: 49,940 bytes,\nTime Spent Printing: 2,611 seconds (~43.5 minutes),\nTime Remaining: Approximately 5 hours 34 minutes (20,123 seconds),\n\nStatus,\nCurrent State: Printing.\"\n\n++Example 2++\nHuman Input: \"Is my 3d Printer ok?\"\n\nAI Response:\n\"Status: Printing,\nOperational: Yes,\n\n++Temperature:++\nBed Temperature: \nActual: 50°C,\nTarget: 50°C,\n\nNozzle (Tool 0) Temperature:\nActual: 200°C,\nTarget: 200°C,\n\n\n++Connection Status:++\nConnection State: Currently connected to the printer,\nPort: /dev/ttyUSB0,\nBaudrate: 115200,\n\nSummary,\nYour 3D printer is currently operational and printing without errors. The bed and nozzle temperatures are both at their target values.\"",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.discord",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}

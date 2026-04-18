@@ -1,0 +1,10 @@
+{
+  "id": 13288,
+  "name": "Sync NetSuite inventory items between NetSuite and Salesforce products",
+  "description": "Short Description\n\nAutomatically exports inventory items records from NetSuite and syncs them into Salesforce — creating or updating Products.\n\nWho is this for / Use case\n\nThis template is designed for businesses and integration developers who:\n\nUse NetSuite as their ERP or CRM system.\nNeed to automatically sync products data into Salesforce.\nWant a reliable, scalable solution that supports pagination and upserts.\nPrefer a ready-to-use, easily customizable workflow built on n8n.\n\nHow it works\n\nInitialize pagination offset.\nFetch Salesforce Pricebook values data.\nInitialize pagination offset.\nFetch NetSuite list of Inventory Items.\nSplit the retrieved array into individual items.\nGet details for each Inventory Item from NetSuite.\nFind certain price value fetched from NetSuite\nUpserts Product into Salesforce\nRepeat until all records are processed, then end the workflow.\n\nSetup / Configuration\n\nImport the workflow into your n8n instance.\nSet your NetSuite and Salesforce credentials.\nEnsure your Salesforce Account/Contact objects have a matching External ID field.\n(Optional) Adjust mapping fields or filters to your data needs.\nExecute manually or trigger on a schedule (e.g., daily sync).",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": 13683,
+  "name": "Audit contract governance risk with OpenAI, Slack and email routing",
+  "description": "How It Works\nThis workflow automates contract governance auditing by deploying a multi-agent AI system that validates contracts, assesses risk, checks compliance, and routes alerts based on risk level. Designed for legal, procurement, and compliance teams, it eliminates manual contract review bottlenecks and ensures timely escalation of high-risk issues. A schedule trigger initiates the workflow, simulating a contract audit data input. A Contract Validation Agent performs initial validation via OpenAI, then passes results to a Governance Orchestration Agent, which delegates to Risk Assessment and Compliance Checker sub-agents. Risk scores are routed by level—low, medium, or high—triggering appropriate notifications via Slack or email escalation before logging the audit trail.\n\nSetup Steps\nSet schedule trigger interval to match audit frequency requirements.\nAdd OpenAI API credentials to all OpenAI Chat Model nodes.\nConfigure Slack credentials and set target channel for risk notifications.\nAdd Gmail/SMTP credentials to the Send Email Escalation node.\nDefine risk thresholds in the Route by Risk Level rules node.\n\nPrerequisites\nSlack workspace with bot token\nGmail or SMTP credentials\nBasic n8n workflow knowledge\nUse Cases\nAutomated periodic contract risk auditing for procurement teams\nCompliance breach detection with instant escalation to legal\nCustomization\nReplace simulated data with live contract database or webhook input\nBenefits\nEliminates manual contract review with scheduled AI auditing\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": 4253,
+  "name": "Send Linkedin Connection Request with Airtop",
+  "description": "Automating LinkedIn Connection Requests\n\nUse Case\n\nAutomatically sending LinkedIn connection requests to prospects can significantly streamline your outreach process. This automation ensures you only send requests to users you're not already connected with, and can optionally include a personalized message.\n\nWhat This Automation Does\n\nThis automation sends a LinkedIn connection request using the following input parameters:\n\nlinked_url**: The LinkedIn profile URL of the person you want to connect with.\nairtop_profile**: The name of your Airtop Profile authenticated on LinkedIn.\nmessage* *(optional): The note you want to include with your connection request.\n\nHow It Works\n\nStarts an Airtop browser session using your authenticated profile.\nOpens the target LinkedIn profile in a new browser window.\nDetects if you're already connected or if a connection request is pending.\nIf the \"Connect\" button is available:\n   If no message is provided, clicks \"Connect\" and sends the request without a note.\n   If a message is provided, clicks \"Add a note\", types the message, and sends the request.\nTerminates the browser session.\n\nSetup Requirements\n\nAirtop API Key — free to generate.\nAn Airtop Profile logged in to LinkedIn (requires one-time authentication).\n\nNext Steps\n\nPair with People Enrichment**: Use with the LinkedIn Profile Finder to generate URLs before sending requests.\nCRM Integration**: Log connection attempts and responses in your CRM.\nCampaign Sequencing**: Combine with message follow-up automations for a complete outreach flow.\n\nRead more about automating Linkedin Connection Requests ",
+  "nodes": [
+    "n8n-nodes-base.airtop"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 12070,
+  "name": "Automate Employee Leave Approvals with GPT, Gmail & Calendar Integration",
+  "description": "How it works  \nThis workflow automates the complete employee leave approval process from submission to final resolution. Employees submit leave requests through a form, which are summarized professionally using AI and sent for approval via email. The workflow waits for the approver’s response and then either sends an approval confirmation or schedules a clarification discussion automatically. All communication is handled consistently with no manual follow-ups required.\n\nStep-by-step  \nStep 1: Capture leave request, generate summary, and request approval**  \n  On form submission – Captures employee details, leave dates, reason, and task handover information.  \n  AI Agent – Generates a professional, manager-ready summary of the leave request.  \n    OpenAI Chat Model – Provides the language model used to generate the summary.  \n    Structured Output Parser – Extracts the email subject and HTML body from the AI response.  \n  Send message and wait for response – Emails the summary to the approver and pauses the workflow until approval or rejection.  \n  If – Routes the workflow based on the approval decision. \n\nStep 2: Notify employee or schedule discussion automatically**   \n    Approved path  \n      Send a message – Sends an official leave approval email to the employee.  \n    Clarification or rejection path  \n      Booking Agent – Determines the next business day and finds the first available 10-minute slot.  \n        OpenAI – Applies scheduling logic to select the earliest valid slot.  \n        Get Events – Fetches existing calendar events to avoid conflicts.  \n        Check Availability – Confirms free time within working hours.  \n        Output Parser – Extracts the final meeting start time.  \n      Send a message1 – Emails the employee with the scheduled discussion details.  \n\nWhy use this?  \nEliminate manual approval follow-ups and email back-and-forth  \nEnsure consistent, professional communication for every leave request  \nAutomatically handle both approvals and clarification scenarios  \nReduce manager effort with AI-generated summaries  \nSchedule discussions without manual calendar coordination  \n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

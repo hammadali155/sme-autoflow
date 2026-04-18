@@ -1,0 +1,17 @@
+{
+  "id": 4577,
+  "name": "Automated Revenue Predictions from Stripe Data with GPT-4 and Google Sheets",
+  "description": "CFO Forecasting Agent - Marketplace Listing\n\nHeadlines (Choose Your Favorite)\n\nOption 1 - Direct & Professional\n\"AI-Powered CFO Forecasting Agent: Automated Revenue Predictions from Stripe Data\"\n\nOption 2 - Benefit-Focused\n\"Automate Your Financial Forecasting: Daily Revenue Predictions with AI Intelligence\"\n\nOption 3 - Action-Oriented\n\"Transform Stripe Sales Data into Intelligent 3-Month Revenue Forecasts Automatically\"\n\nMarketplace Description\n\n🚀 AI-Powered Financial Forecasting on Autopilot\n\nTurn your Stripe sales data into intelligent revenue forecasts with this comprehensive CFO Forecasting Agent. This workflow automatically analyzes your transaction history, identifies trends, and generates professional 3-month revenue predictions using OpenAI's GPT-4.\n\n✨ What This Workflow Does:\n\n📊 Automated Data Collection**: Fetches and processes all Stripe charges daily\n🤖 AI-Powered Analysis**: Uses OpenAI GPT-4 to analyze trends and predict future revenue\n📈 Structured Forecasting**: Generates monthly forecasts with confidence levels and insights\n💾 Multi-Platform Storage**: Saves results to both Supabase database and Google Sheets\n🕒 Scheduled Execution**: Runs automatically every day to keep forecasts current\n🧠 Smart Context**: Optional Pinecone integration for historical context and improved accuracy\n\n🔧 Key Features:\n\nDaily automated execution** at 9 AM\nStructured JSON output** with forecasts, trends, and confidence levels\nDual storage system** for data backup and easy reporting\nRAG-enabled** for enhanced forecasting with historical context\nProfessional CFO-grade insights** and trend analysis\n\n📋 Prerequisites:\n\nStripe account with API access\nOpenAI API key (GPT-4 recommended)\nGoogle Sheets API credentials\nSupabase account (optional)\nPinecone account (optional, for enhanced context)\n\n🎯 Perfect For:\n\nSaaS companies tracking subscription revenue\nE-commerce businesses needing sales forecasts\nStartups requiring investor-ready financial projections\nFinance teams automating reporting workflows\n\n📦 What You Get:\n\nComplete n8n workflow with all nodes configured\nDetailed documentation and setup instructions\nSample data structure and output formats\nReady-to-use Google Sheets template\n\n💡 Need Help or Want to Learn More?\n\nCreated by Yaron Been - Automation & AI Specialist\n\n📧 Support: Yaron@nofluff.online\n🎥 YouTube Tutorials: https://www.youtube.com/@YaronBeen/videos\n💼 LinkedIn: https://www.linkedin.com/in/yaronbeen/\n\nGet more automation tips, tutorials, and advanced workflows on my channels!\n\n🏷️ Tags: \nAI, OpenAI, Stripe, Forecasting, Finance, CFO, Automation, Revenue, Analytics, GPT-4",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.stripe",
+    "n8n-nodes-base.supabase",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.vectorStorePinecone"
+  ],
+  "tags": []
+}

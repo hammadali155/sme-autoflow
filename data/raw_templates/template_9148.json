@@ -1,0 +1,16 @@
+{
+  "id": 9148,
+  "name": "Real-time Sales Quote Creation in Odoo via Telegram with Google Gemini AI",
+  "description": "Overview\n\nThis template connects Telegram with Odoo to let your sales team create sales quotes and check product availability in real-time — just by sending chat messages.\n\nIt’s designed for sales representatives, distributors, and small business owners who want to manage quotes and product information quickly without logging into Odoo.\n\n⚙️ How It Works\n\nOnce configured, this workflow listens to your Telegram bot for incoming messages.\nBased on the message text, it performs different actions in Odoo:\n\nProduct Queries\nSales reps can ask about products directly in Telegram:\n\n“What’s the price of Product B?”\n“How many units of Product A are available?”\n\nThe workflow fetches real-time data from Odoo and replies instantly.\n\nSales Quote Creation\nSales reps can also create new sales quotes by typing messages like:\n\n“My customer Amazon, his email address is abc@amazon.com\n wants to buy 10 pcs of Product A and 15 pcs of Product B.”\n\nThe workflow extracts relevant details, creates a sales quote in Odoo, and sends confirmation back in Telegram.\n\n🧰 Setup Instructions\n\nCreate a Telegram Bot\n\nGo to @BotFather\n on Telegram.\n\nCreate a new bot and copy the API Token.\n\nPrepare Odoo\n\nEnable the Sales and Product modules.\n\nGenerate an API Key from your Odoo user account.\n\nNote your Odoo URL (e.g., https://yourcompany.odoo.com).\n\nImport Workflow\n\nOpen your n8n instance (self-hosted or cloud).\n\nClick Import Workflow and upload the provided JSON file.\n\nAdd Credentials\n\nConfigure your Telegram credentials (Bot Token).\n\nConfigure your Odoo credentials (Base URL + API Key).\n\nActivate the Workflow\n\nSet the workflow to active to start listening for Telegram messages.\n\nSend a sample message to your bot to test.\n\n🧠 Use Cases\nSales reps capturing orders in the field\nSMEs managing customer inquiries directly from Telegram\nReal-time price and stock lookups without opening Odoo\nAutomation of repetitive sales quote tasks\n\n🎛️ Customization Options\n\nThis workflow can be easily adapted to your business needs:\n\nChange trigger platform: Replace Telegram with WhatsApp, Slack, or Discord using the respective n8n nodes.\n\nExtend data fields: Add fields like delivery date, salesperson, or payment terms.\n\nAuto-confirm orders: Add a node to automatically confirm a Sales Quote once approved.\n\n✅ Requirements\nOdoo v14 or later (with Sales module enabled)\nTelegram Bot Token\nn8n instance (Cloud or self-hosted)\n\n💬 Example Prompts\n\nProduct Query:\n“What’s the price of Product B?”\n“How many units of Product A are available?”\n\nOrder Entry:\n“My customer Amazon, his email address is abc@amazon.com\n wants to buy 10 pcs of Product A and 15 pcs of Product B.”",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.odoo",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.textClassifier"
+  ],
+  "tags": []
+}

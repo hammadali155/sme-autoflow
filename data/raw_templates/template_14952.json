@@ -1,0 +1,12 @@
+{
+  "id": 14952,
+  "name": "Send a curated tech RSS digest to Gmail with OpenAI GPT-5 Mini",
+  "description": "Workflow: RSS to E-Mail\n*7 Nodes + AI Model\n⚙️ Pipeline Steps\nDaily Morning Trigger\nFires every day at 8:00 AM.\n\nDefine RSS Sources\nOutputs 27 curated RSS feed URLs across 7 categories:\n\nCategory --------Sources\n\n\nFetch RSS Feeds\nReads each feed (includes error handling so one broken feed won't kill the workflow).\n\nClean and Prepare for AI\nDeduplicates by URL, strips HTML tags, truncates descriptions, sorts by date, and keeps the 150 most recent articles.\n\nAI Article Curator (GPT-5 Mini)\nReviews all articles and picks the 30 most interesting and diverse ones.\n\nBuild Digest Email\nGenerates a beautiful HTML email with a purple gradient header, numbered article cards with titles, descriptions, dates, and source attribution.\n\nSend Digest Email\nSends the final curated digest via Gmail.\n\n🚀 How to Activate\nTo get this workflow running, you need to:\n\n\t• Connect OpenAI: Add your credentials to the AI model node.\n\n\t• Connect Gmail: Add your credentials to the Send node.\n\n\t• Set Target Email: Update your email address in the \"Send Digest Email\" node (it is currently a placeholder).\n\nEnable: Toggle the workflow to Active.\n\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

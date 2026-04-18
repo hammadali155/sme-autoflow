@@ -1,0 +1,10 @@
+{
+  "id": 13237,
+  "name": "Classify Gmail invoice attachments with Google Gemini and forward to freee",
+  "description": "Classify and forward Gmail invoice attachments to freee with Google Gemini\n\nAutomatically analyze email attachments with AI and forward invoices/receipts to freee's File Box.\n\nHow it works\n\nPolls Gmail for new emails with attachments every minute\nExtracts text from PDF attachments and sends it to Google Gemini for classification\nIf Gemini identifies the document as an invoice or receipt, re-fetches the attachment and forwards it to freee's File Box email address\n\nSetup steps\n\nGet freee receiving email: freee Accounting → File Box → Settings\nSet environment variable: Set FREEE_FORWARDING_EMAIL to freee's receiving address\nConfigure Credentials:\n   Gmail OAuth2 (read + send permissions)\n   Google Gemini API\nActivate the workflow",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

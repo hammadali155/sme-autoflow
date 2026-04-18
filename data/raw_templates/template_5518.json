@@ -1,0 +1,9 @@
+{
+  "id": 5518,
+  "name": "Automate Gmail Inbox Organization with Rule-based Categorization and Smart Actions",
+  "description": "How it works:\nThe organizer continuously monitors your Gmail inbox. It analyzes sender and subject to categorize emails (Work, Purchases, Newsletter) and automatically applies labels. Based on the category, it performs specific actions, such as marking important emails or archiving newsletters.\n\nSet up steps:\nThe initial setup requires Gmail access permission and defining the categorization rules and desired actions for each email type. This process can be configured in approximately 5 to 10 minutes, depending on the complexity of the rules you wish to establish.",
+  "nodes": [
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

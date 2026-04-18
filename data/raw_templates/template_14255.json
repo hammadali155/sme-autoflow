@@ -1,0 +1,15 @@
+{
+  "id": 14255,
+  "name": "Create YouTube SEO metadata and thumbnails from Google Drive videos with Gemini, LemonFox and upload-post",
+  "description": "Automated YouTube SEO, Thumbnail Generation & Video Upload via AI, Google Drive & LemonFox\n\nPre-requesties:\nVideo uploaded to gdrive.\nAnd sponsor file with the similar formart \"videotitle_sponsors.txt\"\n\nNode-by-Node Functional Breakdown\n\nThis workflow is an end-to-end \"Content-to-Publish\" engine. I’ve broken it down by the specific stage of production:\n\nStage 1: The Intake & Access\n| Node Name | What it does |\n| :--- | :--- |\n| When File Added in Drive | The Trigger: Watches your \"transcript\" folder. The moment you drop a video file here, the engine starts. |\n| If Video Mime Type | The Gatekeeper: Ensures the file is actually a video (e.g., .mp4) and not a random document or image before proceeding. |\n| Grant Temp File Access | The Key: Temporarily changes the Drive file's permissions to \"Anyone with link\" so external AI tools (LemonFox) can download and process it. |\n\nStage 2: Transcription & Data Prep\n| Node Name | What it does |\n| :--- | :--- |\n| Post Audio to Lemonfox | The Ears: Sends the video to LemonFox AI to extract the spoken word into a structured SRT (subtitle) format. |\n| Clean SRT Content | The Editor: A JavaScript node that cleans up technical formatting issues and unescapes characters to make the text readable for the AI. |\n| Create Text File in Drive | The Archive: Saves your clean transcript back to Google Drive for your records. |\n| Search/Fetch Sponsor Info | The Researcher: Looks for a specific .txt file named after your video that contains sponsor details (Name/Email) so they can be credited. |\n\nStage 3: AI Strategy & Creative\n| Node Name | What it does |\n| :--- | :--- |\n| Content Analysis Agent | The Strategist: Uses Gemini to analyze the transcript and find the \"Big Idea.\" It then writes a high-CTR Title, SEO Description, and Tags. |\n| Parse Structured Output | The Translator: Ensures the AI's creative writing is formatted as strict JSON so the next \"Upload\" step can understand it. |\n| Generate Thumbnail Image | The Artist: Takes a specific \"Thumbnail Prompt\" written by the AI and uses Gemini (Nano Banana) to generate a high-quality 16:9 image. |\n\nStage 4: Publishing & Cleanup\n| Node Name | What it does |\n| :--- | :--- |\n| Upload to YouTube API | The Publisher: Hits your upload endpoint, sending the original video link, the AI-generated metadata, and the AI-generated thumbnail. |\n| Delete Original File Permissions | The Security Guard: Immediately revokes the \"Anyone with link\" access to your Google Drive file, locking it back down for privacy. |",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

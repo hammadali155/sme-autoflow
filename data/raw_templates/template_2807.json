@@ -1,0 +1,11 @@
+{
+  "id": 2807,
+  "name": "Create QuickBooks Online Customers With Sales Receipts For New Stripe Payments",
+  "description": "Streamline your accounting by automatically creating QuickBooks Online customers and sales receipts whenever a successful Stripe payment is processed. Ideal for businesses looking to reduce manual data entry and improve accounting efficiency.\n\nHow it works\n\nTrigger: The workflow is triggered when a new successful payment intent event is received from Stripe.\nRetrieve Customer Data: Fetches customer details from Stripe associated with the payment.\nCheck QuickBooks Customer: Searches QuickBooks Online to see if the customer already exists using their email address.\nCreate or Use Existing Customer: If the customer doesn't exist in QuickBooks, they are created; otherwise, the existing customer is used.\nGenerate Sales Receipt: A sales receipt is created in QuickBooks Online with payment details, including item descriptions, amounts, and currency.\n\nSet up steps\n\nConnect Accounts: Authenticate both your QuickBooks Online and Stripe accounts in n8n.\nWebhook Setup: Configure the Stripe webhook to send payment_intent.succeeded events to this workflow.\nTest the Workflow: Trigger a test payment in Stripe to validate the integration.\nCustomize Details: Adjust item descriptions or other fields in the QuickBooks sales receipt JSON body as needed.\n\nThis workflow requires basic familiarity with n8n, but setup can be completed in under 15 minutes for most users.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.quickbooks",
+    "n8n-nodes-base.stripe"
+  ],
+  "tags": []
+}

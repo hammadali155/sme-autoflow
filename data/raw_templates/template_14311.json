@@ -1,0 +1,15 @@
+{
+  "id": 14311,
+  "name": "Track competitor prices and email AI insights with Google Sheets, Groq and Gmail",
+  "description": "How it works  \nThis workflow automatically monitors competitor product prices stored in Google Sheets. It scrapes product pages, extracts pricing and offer data using AI, and compares it with historical values. Based on changes, it updates records and generates a market intelligence report. The workflow then emails the report and resets data for the next execution cycle.\n\nStep-by-step  \n\nStep 1: Database sync**  \n  Schedule Trigger – Runs the workflow at a scheduled time.  \n  Get row(s) in sheet – Fetches competitor data and product URLs.  \n\nStep 2: Scraping**  \n  Loop Over Items – Processes each competitor entry.  \n  HTTP Request3 – Retrieves raw HTML using ScraperAPI.  \n  Clean Content – Cleans and prepares text for AI processing.  \n\nStep 3: Price extraction**  \n  AI Agent1 – Extracts product name, price, and offers.  \n  Groq Chat Model1 – Provides AI extraction capability.  \n  current Price and offer – Converts AI output into structured data.  \n  If2 – Checks if it's the first recorded entry.  \n  First time price and offer added – Stores initial values.  \n  If1 – Compares current vs previous price and offers.  \n  Updated current price and offer in sheet – Updates if changes detected.  \n  If No changes then update – Updates sheet even when no change is found.  \n\nStep 4: Analysis**  \n  Get row(s) in sheet1 – Retrieves updated dataset.  \n  Data Aggregator – Builds structured market comparison data.  \n  AI Agent – Generates strategic insights and recommendations.  \n    Groq Chat Model – Powers the analysis output.  \n  Update row in sheet – Saves AI-generated summary in sheet. \n\nStep 5: Reporting**   \n  Edit Fields1 – Formats the report into HTML email layout.  \n  Send a message – Sends the final report via Gmail.  \n\nStep 6: Reset**  \n  Get row(s) in sheet2 – Retrieves final processed data.  \n  Update row in sheet1 – Moves current data to history and clears fields.  \n\nWhy use this?  \nEnsures all price scenarios (change or no change) are handled properly  \nKeeps your Google Sheets always updated with accurate data  \nProvides AI-powered competitive intelligence automatically  \nSends clean, formatted reports without manual effort  \nMaintains structured historical tracking for better decision-making  \n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.lmChatGroq"
+  ],
+  "tags": []
+}

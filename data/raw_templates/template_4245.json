@@ -1,0 +1,11 @@
+{
+  "id": 4245,
+  "name": "Gmail to Telegram: Email Summaries with OpenAI GPT-4o",
+  "description": "🧑‍💼 Who is this for?\n\nThis workflow is for anyone who receives too many emails and wants to stay informed without drowning in their inbox.\n\nIf you're constantly checking your Gmail and wish you had someone summarizing messages and sending just the important parts to your phone, this is for you. Especially useful for solopreneurs, customer support, busy professionals, or newsletter addicts.\n\n🧠 What problem is this workflow solving?\n\nEmail is powerful, but also overwhelming. Important info gets buried in threads, and staying on top of things can mean hours wasted scanning messages.\n\nThis workflow turns that chaos into clarity: as soon as a new email arrives, you get a concise AI-generated summary in Telegram — straight to your pocket.\n\nNo more checking Gmail constantly. No more missing key updates. Just a clean, human-style summary, written in the language you choose.\n\n⚙️ What this workflow does\n\nWatches your Gmail inbox for new messages\nPrepares the content, including sender, subject, and message body\nSends it to OpenAI to generate a friendly, casual summary\nDelivers that summary to your Telegram chat\n\nAll in seconds, completely automated.\n\n🛠️ Setup\n\nConnect your accounts: Gmail, Telegram, and OpenAI credentials must be added to the respective nodes.\nSet your Telegram chat ID: Use a bot like @userinfobot to get it.\nCustomize the language in the Set summary language node (default is English).\nActivate the workflow — and watch it go.\n\n🧩 How to customize this workflow to your needs\n\nYou can make this workflow your own in a few easy ways:\n\nSummarize only some emails**: Add a Filter node after the Gmail trigger (e.g., only messages from certain senders).\nChange the tone or detail of summaries**: Tweak the system prompt in the Summary generation agent.\nUse a different model**: Swap OpenAI’s GPT-4o for another provider like Claude or DeepSeek.\nTranslate to your preferred language**: Just change \"english\" to \"español\", \"français\", etc.",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

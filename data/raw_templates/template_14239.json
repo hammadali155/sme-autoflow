@@ -1,0 +1,12 @@
+{
+  "id": 14239,
+  "name": "Screen and score investment deals with AI using OpenAI, Gmail, and Telegram",
+  "description": "Screen and Score Investment Deals with AI using OpenAI, Gmail, and Telegram\n\nAutomatically screens incoming deal submissions using AI, scores them against investment criteria, and routes to the right action.\n\nWho is this for?\nVC firms, PE funds, angel investors, or M&A advisors who receive deal flow via email or form submissions.\n\nWhat problem does this solve?\nManually reviewing every pitch deck and deal memo is time-consuming. Most deals don't meet investment criteria. This agent screens, scores, and prioritizes deals so your team focuses on the best opportunities.\n\nHow it works:\nNew Email Received / Deal Submission Webhook - captures deals from email or form\nNormalize Email/Webhook Data - standardizes fields from either source\nBuild Deal Text - combines email body + attachment info into screening text\nHas Deal Content? - validates there is enough content to screen\nExtract Deal Info - OpenAI - AI extracts company, industry, revenue, ask, team, highlights, red flags\nScore Deal - OpenAI - AI scores on 5 criteria (industry fit, revenue, growth, team, clarity)\nIs PASS? / Is REVIEW? - routes by verdict (PASS/REVIEW/REJECT)\nTelegram Alerts - notifies with deal summary and scores\nLog Deal to Pipeline Sheet - tracks all deals in a pipeline spreadsheet\n\nSetup:\nAdd credentials: Gmail, OpenAI, Telegram Bot, Google Sheets\nReplace YOUR_TELEGRAM_CHAT_ID with your chat ID\nCreate a Google Sheet with columns: received_at, company_name, industry, stage, revenue, ask_amount, overall_score, verdict, one_line_summary, recommendation, key_highlights, red_flags, sender_name, sender_email, source, industry_fit, revenue_stage, growth_trajectory, team_strength, deal_clarity\nReplace YOUR_GOOGLE_SHEET_ID with your sheet ID\n\nCustomization:\nEdit the scoring criteria in the Score Deal OpenAI prompt\nAdjust score thresholds for PASS/REVIEW/REJECT\nAdd Slack notifications instead of Telegram\nAdd auto-decline email for REJECT deals\nConnect to a CRM instead of Google Sheets",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": 12663,
+  "name": "Create and schedule LinkedIn posts from Google Sheets with Gemini and DALL·E",
+  "description": "Overview\nThis n8n automation is a complete LinkedIn Content Engine that turns simple topic ideas into fully written, visual, and scheduled posts. It features a \"Human-in-the-Loop\" design, meaning AI handles the heavy lifting of writing and image creation, but nothing goes live until you manually approve it in Google Sheets.\n\nHow It Works\nThe system runs two separate workflows in parallel:\n\n1. The \"Creator\" Workflow\n\nInput: Detects when you add a new topic to your \"Content Calendar\" Google Sheet.\n\nBrand Alignment: Pulls your specific \"Brand Voice\" guidelines from a separate tab to ensure the AI sounds like you.\n\nCreation: Uses Gemini Flash 1.5 to write the post and DALL-E 3 to generate a matching professional image.\n\nDrafting: Uploads the image to ImgBB and saves the full draft back to your sheet with a status of \"Draft.\"\n\n2. The \"Publisher\" Workflow\n\nDaily Scan: Wakes up every morning to check your Content Calendar.\n\nVerification: Looks for posts that match two criteria:\n\nDate Scheduled matches today's date.\nStatus is marked as \"Approved\" (by you).\n\nPublishing: If both match, it automatically uploads the text and image to LinkedIn and updates the sheet status to \"Posted.\"\n\nTools Used: n8n, Google Sheets, OpenRouter (Gemini / OpenAI), ImgBB.\n\nConnect & Learn More\nYouTube Channel: Simon Scrapes – More tutorials on AI & Automation.\n\nCommunity: Skool Community – Master AI & Automation with us.\n\nFull Video Tutorial: Watch the step-by-step build here",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

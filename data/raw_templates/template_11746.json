@@ -1,0 +1,10 @@
+{
+  "id": 11746,
+  "name": "Automate Personalized Assignment Reminders for Students with Canvas",
+  "description": "Canvas: Send students their pending assignments\n\nHow it works\nTrigger the workflow and set the Canvas base URL and target course name.\nFetch all instructor courses and locate the course ID that matches the name.\nRetrieve enrolled students and their unsubmitted submissions for the course, handling paginated results.\nMerge student records with submission data, convert due dates to local time, and build a per-student summary.\nSend a Canvas conversation to each student with a personalized list of pending assignments and links.\n\nSetup\n[ ] Connect Canvas API credentials (Bearer and header auth used by the workflow).\n[ ] Enter your Canvas base URL (e.g. https://your_educational_institution.instructure.com).\n[ ] Set the exact course name to check for pending work.\n[ ] Confirm the teacher account can view students and send conversations.\n[ ] Run the workflow manually to verify output and delivery.\n[ ] Edit the message subject or body template if you need different wording.\n",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

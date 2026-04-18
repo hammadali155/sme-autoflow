@@ -1,0 +1,13 @@
+{
+  "id": 4553,
+  "name": "Generate Guerrilla Marketing Campaign Plans with AI Swarm Intelligence",
+  "description": "🧠 Who is this for?\nStartup founders designing creative growth strategies  \nMarketing teams seeking low-cost, high-impact campaigns  \nConsultants and agencies needing fast guerrilla plans  \nCreators exploring AI-powered content and campaigns  \n\n❓ What problem does this workflow solve?\nBuilding a full guerrilla marketing strategy usually takes hours of brainstorming, validation, and formatting. This template does all of that in minutes using a swarm of AI agents, from idea generation to KPIs, and even kills bad ideas before you waste time on them.\n\n⚙️ What this workflow does\nStarts with a chat input where you describe your business or idea  \nA “Swarm Intelligence” loop:  \n  One AI agent generates guerrilla ideas  \n  Another agent critically validates the idea and gives honest feedback  \n  If the idea is weak, it asks for a new one  \nIf accepted, the swarm continues with 16 AI specialists generating:  \n  🎯 Objectives  \n  🧍‍♂️ Personas  \n  🎤 Messaging  \n  🧨 Tactics  \n  📢 Channels  \n  🧮 Budget  \n  📊 KPIs  \n  📋 Risk plan and more  \nMerges all chapters into a final Markdown file  \nLets you download the campaign in seconds  \n\n🛠️ Setup\nImport the workflow to your n8n instance  \n(Optional) Configure your LLM (OpenAI or Ollama) in the “OpenAI Chat Model” node   \nType your business idea (e.g., “Luxury dog collar brand for Instagram dads”)  \nWait for flow completion\nDownload the final marketing plan file  \n\n🤖 LLM Flexibility (Choose Your Model)\nSupports any LLM via LangChain:  \n  Ollama (LLaMA 3.1, Mistral, DeepSeek)  \n  OpenAI (GPT-4, GPT-3.5)  \nTo switch models, just replace the “Language Model” node, no other logic needs updating  \n\n\n\n📌 Notes\nOutput is professional and ready-to-pitch  \nBuilt-in pessimistic validator filters out bad ideas before wasting time  \n\n📩 Need help?\nEmail: sinamirshafiee@gmail.com  \nHappy to support setup or customization!",
+  "nodes": [
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.informationExtractor"
+  ],
+  "tags": []
+}

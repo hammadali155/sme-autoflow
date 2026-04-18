@@ -1,0 +1,11 @@
+{
+  "id": 5333,
+  "name": "Post New Articles from Feeds to Slack Channel",
+  "description": "This workflow contains community nodes that are only compatible with the self-hosted version of n8n. \n\n📄 Post New Articles from Feeds to Slack Channel\n\n🧠 What This Workflow Does\n\nThis workflow automates the discovery and sharing of fresh articles from a curated list of RSS feeds. It performs the following steps:\n\nReads a list of RSS feed URLs from a Google Sheet (Feeds tab).\nFetches the latest articles from each feed.\nChecks for duplicates against previously published links stored in another sheet (Posted Articles tab).\nFilters out already shared articles.\nPosts the new articles to a designated Slack channel with formatted titles and links.\nLogs the newly shared articles back into the Google Sheet to prevent duplicates.\n\n🛠️ Prerequisites\n\nTo use this workflow, you must have:\n\n✅ Google Sheets OAuth2 credentials set up in n8n  \n  (Used to access and update the RSS feed and post history sheets)\n\n✅ Slack OAuth2 credentials  \n  (Used to post messages to a specific Slack channel)\n\n✅ A Google Spreadsheet with:\n  Feeds tab – Columns: title, link  \n  Posted Articles tab – Columns: title, link, pubDate\n\n🔧 Environment Variables or Custom Values\n\nYou will need to set the following n8n variable or replace with direct input:\n\n{{$vars.Daily_Industry_News_Automation_Google_Sheet}}:  \n  Reference to the Google Sheet Document ID (you can use a static ID if preferred)\n\nAlso update:\nSlack channelId: Replace with your actual Slack channel ID if not dynamically referenced\n\n⏰ Trigger & Scheduling\n\nTrigger type**: Cron node  \nDefault schedule: Every day at **7:00 AM\n\nYou can modify this in the “Trigger Workflow” node to suit your own schedule.\n\n🎯 Intended Use Case\n\nThis workflow is ideal for:\n\nMarketing teams curating daily or weekly news digests\nFounders or industry professionals monitoring sector updates\nAutomating internal Slack news updates\nAvoiding duplicate content when sourcing from multiple feeds",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

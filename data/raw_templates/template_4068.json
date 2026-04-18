@@ -1,0 +1,13 @@
+{
+  "id": 4068,
+  "name": "Find Reddit Prospects & Generate Personalized Responses with Llama3 AI and Google Sheets",
+  "description": "Turn Reddit into Your Most Powerful Lead Generation Channel\n\nDiscover hot prospects on Reddit who are actively discussing problems your product can solve - without spending hours manually searching and responding. This intelligent workflow automatically finds relevant conversations, analyzes intent with Llama3 AI, and crafts personalized responses that drive conversions.\n\n🔍 Automated Prospect Discovery\nStop wasting time manually searching Reddit. Let AI find people who genuinely need your solution - while you focus on higher-value tasks. The workflow monitors target subreddits 24/7, ensuring you never miss a potential lead.\n\n🧠 Intelligent Relevance Filtering\nNot all mentions are quality leads. Our sophisticated Llama3 AI engine analyzes post content, sentiment, and intent to identify true business opportunities. Say goodbye to false positives and low-quality interactions.\n\n💬 Personalized Response Generation\nGeneric outreach gets ignored. This workflow crafts individualized responses that reference specific pain points from each post, positioning your solution as the perfect answer to their problem - dramatically increasing engagement rates.\n\n📊 Complete Activity Tracking\nEvery interaction is automatically logged in Google Sheets, creating a comprehensive database of your Reddit prospecting activities. Track which posts received responses, measure engagement, and refine your targeting over time.\n\n🔄 Set It and Forget It\nOnce configured, the entire process runs autonomously. No more daily Reddit searches or manual outreach - just check your dashboard to see new prospects and conversations.\n\nPerfect For:\nSaaS businesses targeting specific use cases\nConsultants and agencies looking for clients with specific problems\nProduct companies monitoring customer pain points\nSupport teams finding users who need help\n\nTechnical Requirements:\nReddit API credentials\nOllama with Llama3 model\nGoogle account for tracking\n\nGet started today and transform Reddit from a time-sink into your most efficient lead generation channel!",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.reddit",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOllama"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 12811,
+  "name": "Run automated technical SEO audits with SE Ranking and Google Sheets",
+  "description": "\nWho is this for\nSEO agencies tracking client site health over time\nWeb developers monitoring technical SEO improvements\nWebsite owners measuring audit progress week over week\n\nWhat this workflow does\nRun a technical SEO audit on any website, wait for completion, then export audit history to Google Sheets for trend tracking and progress monitoring.\n\nWhat you'll get\nOverall health score (0-100) for your site\nErrors, warnings, and notices count by category\nAudit history tracking (last 10 audits)\nTrend analysis over time in Google Sheets\nProgress monitoring week over week\n\nHow it works\nStarts a new audit for your domain\nWaits for the crawl to finish (~5 min for small sites)\nChecks if done—automatically retries if not complete\nPulls the full report with health score and issue counts\nFetches last 10 audits for the domain\nExports audit history to Google Sheets with 10 columns\n\nRequirements\nSE Ranking account with API access (Get one here)\nSE Ranking community node installed (Install from npm)\nWebsite Audit subscription in SE Ranking\nGoogle Sheets account (optional)\n\nSetup steps\nInstall the SE Ranking community node\nAdd your SE Ranking API credentials\nReplace example.com with your domain in the Create audit node\nConnect Google Sheets credentials (optional)\nSelect your spreadsheet for export\n\nCustomization\nChange the domain and audit title in the Create audit node\nAdjust wait times if auditing larger sites (5 min default may not be enough)\nConnect a Schedule Trigger to run audits automatically each week\nChange limit in List audits node to get more/fewer historical audits (max 100)",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

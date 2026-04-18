@@ -1,0 +1,16 @@
+{
+  "id": 13072,
+  "name": "Get a daily cybersecurity news digest on Telegram and Slack with GPT-4",
+  "description": "Daily Cyber News Digest to Telegram\n\nWorkflow Created By: Abdullah Dilshad 📧 iamabdullahdishad@gmail.com\n\nStay informed with automated daily summaries.\nThis workflow aggregates cyber news from multiple trusted sources, uses AI to intelligently select and summarize the top 5 most relevant articles, and delivers a clean, concise digest directly to your Telegram chat every morning at 10:00 AM.\n\nWhat This Workflow Does\nCollects Data: Fetches cybersecurity news from multiple global APIs.\n\nFilters Noise: Uses AI to discard irrelevant updates.\n\nSummarizes: Generates short, professional summaries (1–2 sentences).\n\nDelivers: Automatically sends a formatted digest to Telegram within message length limits.\n\nHow It Works\nSchedule Trigger\n\nRuns automatically every day at 10:00 AM (customizable).\n\nNews Collection\n\nFetches articles using the keyword \"cyber\" from:\n\nGNews\n\nNewsAPI\n\nData Processing\n\nMerges articles from both sources into a single, unified dataset.\n\nAI-Powered Selection\n\nOpenAI analyzes all fetched articles.\n\nIntelligently selects the Top 5 most relevant cybersecurity stories.\n\nSmart Summarization\n\nEach article is condensed into 1–2 clear sentences.\n\nIncludes: Publication date, Source name, and Article link.\n\nTelegram Delivery\n\nSends a clean, formatted digest to your specified Telegram chat.\n\nEnsures the total message length stays under Telegram’s 4096-character limit.\n\nSetup Instructions\nGet API Keys\n\nSign up for free API keys from GNews.io and NewsAPI.org.\n\nConnect Accounts\n\nAdd your Telegram and OpenAI credentials in n8n.\n\nConfigure Telegram\n\nEnter your Telegram Chat ID in the \"Send a Text Message\" node.\n\nCustomize the Schedule\n\nChange the trigger time if you prefer delivery at a different hour.\n\nCustomization & Use Cases\nThis workflow is fully reusable and scalable. You can replace the keyword \"cyber\" to track any topic relevant to your needs.\n\nExample Topics:\n\n🤖 Artificial Intelligence (AI)\n\n💰 Cryptocurrency & Blockchain\n\n🚀 Startups & Venture Capital\n\n📱 Consumer Technology\n\n🏭 Industry-specific updates\n\nNote:\n This workflow is designed to be adapted for individual tracking, team updates, or competitor analysis.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": 12407,
+  "name": "Extract YouTube auto-generated transcripts for AI analysis and storage",
+  "description": "🎬 Extract YouTube auto-generated transcripts and save them for AI processing\n\nDirect YouTube API - Auto-Generated Only\nExtracts the auto-generated transcript from any YouTube video automatically.\n\n🔄 How It Works (5 Steps)\n📥 Input: youtubeVideoUrl only\n🌐 Fetch: GET YouTube page HTML to extract INNERTUBE_API_KEY\n🔑 Extract: Parse API key and video ID\n🎥 Metadata: GET caption metadata\n🤖 Auto-Detect: Find auto-generated transcript (kind: asr)\n📝 Fetch & Parse: Download and clean transcript\n\n🔄 Setup steps\nImport the workflow to your n8n instance\nActivate the workflow\nProvide the YouTube video URL via webhook or manual trigger\nThe workflow will automatically extract the auto-generated transcript\nAccess the results in the specified output format\n\n🎯 Use Cases\nExtract auto-generated transcripts automatically\nNo language selection needed\nPerfect for bulk transcript collection\nAI processing, summarization, analysis\nContent accessibility\n\n✅ Output Format\n{\n  \"fullTranscript\": \"Auto-generated transcript text...\",\n  \"wordCount\": 1234,\n  \"transcript\": [...timestamps...]\n}\n`",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

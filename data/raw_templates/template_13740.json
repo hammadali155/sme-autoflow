@@ -1,0 +1,17 @@
+{
+  "id": 13740,
+  "name": "Route and qualify email leads with Gmail, Gemini, Slack, Sheets and Salesforce",
+  "description": "Email Lead Router: Gmail → Gemini → Salesforce Pipeline\n\nWho is this for?  \nEvent sales teams & conference organizers processing 100+ sponsor/partner emails weekly who need instant lead qualification, Salesforce automation, & pipeline analytics.\nWhat problem is this workflow solving?  \nEvent email chaos kills revenue:  \n\n200+ sponsor emails/week → manual Salesforce entry  \nNo sentiment/intent scoring = missed $ opps  \n10+ hours/week routing + logging  \nFragmented pipeline visibility  \n\nZero-drop AI qualification → auto-Salesforce → team routing.\n\nWhat this workflow does\n\nGmail Trigger captures event inbox emails  \nGemini #1 scores sentiment (Positive/Neutral/Negative + confidence)  \nGemini #2 extracts topic, intent, urgency (1-10), org, budget signals  \nUpserts Salesforce Lead (deduped by email) w/ 9 custom fields: Sentiment__c, Urgency_Score__c, etc.  \nHot leads (Positive + urgency ≥7) → auto Salesforce Opportunity  \nCreates Salesforce Task w/ AI-suggested follow-up action  \nLogs to email_analytics Data Table + Google Sheets (Looker Studio dashboard)  \nRoutes: Positive → Hot email + Slack #hot-leads (2h); Neutral → Follow-up + #follow-ups (24h); Negative → Insights + #insights  \n\nSetup (8 minutes):  \n\nGmail OAuth2 (event inbox)  \nGoogle Gemini API  \nSalesforce OAuth2* + *9 custom Lead fields** (Sentiment__c, Urgency_Score__c, etc.)  \nSlack OAuth2 + channels (#hot-leads, #follow-ups, #insights)  \nemail_analytics Data Table ID  \nUpdate Send Email recipients  \nTest w/ Evaluation Dataset  \n\nHow to customize:  \n\nTune urgency threshold (7→8)  \nAdd event keywords (webinar/tradeshow)  \nSwap Slack → Teams; Salesforce → HubSpot  \nMulti-inbox territory routing  \n\nROI:  \n\n100% Salesforce coverage** (no manual entry)  \n8x faster qualification** (2min vs 16h/week)  \n30% opp velocity** (auto opps/tasks)  \nLive Looker dashboard** → data-driven decisions  \n\nNeed help customizing?: \nContact me for consulting and support: LinkedIn / Message \nKeywords: event sales leads, Salesforce automation, Gemini lead scoring, email sentiment, sales pipeline n8n, AI sales routing",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.salesforce",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.sentimentAnalysis",
+    "@n8n/n8n-nodes-langchain.informationExtractor",
+    "n8n-nodes-base.evaluation"
+  ],
+  "tags": []
+}

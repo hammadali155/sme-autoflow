@@ -1,0 +1,7 @@
+{
+  "id": 3807,
+  "name": "Hostinger Daily VPS Snapshot and server metrics",
+  "description": "Keep your Hostinger VPS servers secure with automated backups! This n8n (self-hosted) workflow for is designed to create daily snapshots and send server metrics effortlessly, ensuring you always have an up-to-date recovery copy.\n\nKey Features:\n✅ Automated Snapshots: Daily execution with zero manual intervention.\n✅ Smart Replacement: Hostinger allows only 1 snapshot per VPS—the workflow automatically replaces the previous one.\n✅ Notifications: Alerts via WhatsApp (Evolution API) or other configurable channels for execution confirmation.\n\nQuick Setup:\nPrerequisites:\n\nInstall the Community Node n8n-nodes-hostinger-api and n8n-nodes-evolution-api in your n8n instance.\n\nGenerate a Hostinger API Key in their dashboard: hpanel.hostinger.com/profile/api.\n\nWorkflow Configuration:\nAdd the Hostinger API credential in the first node and reuse it across the workflow.\n\nCustomize the schedule (e.g., daily at 2 AM) and notification method (Evolution API for WhatsApp, email, etc.).\n\nImportant Note:\nHostinger overwrites the previous snapshot with each new execution, keeping only the latest version.\n\nVPS Metrics avaliables (send in messages):\n\n🔹Status: snapshot status\n🔹Date: snapshot date time\n🔹Server: server name\n🔹IP: external server IP\n\n⚙️ Métrics: \n🔹 Number of vCPUs \n🔹 Ram usage / avaliable \n🔹 Hard Disk usage / avaliable\n🔹 Operational Sys and version\n🔹 Uptime time (days, hours)",
+  "nodes": [],
+  "tags": []
+}

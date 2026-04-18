@@ -1,0 +1,10 @@
+{
+  "id": 14068,
+  "name": "Track student attendance from CSV, email parents, and build an HTML dashboard",
+  "description": "🚀 Overview\n\nAutomatically monitors daily student attendance from CSV files, identifies absent students, sends parent email alerts via SMTP, calculates risk scores, and generates an interactive HTML dashboard — all on a weekday schedule with no manual work needed.\n\n⚙️ How it works\n\nSchedule trigger — runs Monday–Friday at 17:30\nData ingestion — reads student_attendance.csv and filters to today's records only\nAbsence check — splits students into Absent / Present branches\nContact merge — matches absent students with parent data from student_contacts.csv\nAlert logic — calculates risk level, attendance %, consecutive streak, and trend (Improving / Stable / Worsening)\nParent email — sends a colour-coded HTML alert via SMTP for each absent student\nDashboard builder — generates dashboard.html with 5 tabs: Today, Weekly, Monthly, Full History, and At-Risk\nReport update — appends records to attendance_report.csv for historical tracking\n\n🛠 Setup steps\n\nUpload student_attendance.csv to the n8n files folder\nUpload student_contacts.csv to the n8n files folder\nCreate an empty attendance_report.csv in the n8n files folder\nAdd smtp_user in Settings → Variables\nConfigure SMTP credentials in the Send Email node\nAdjust the cron schedule if needed (default: 17:30 Mon–Fri)\n\n🔧 Required CSV formats\n\nstudent_attendance.csv\n\n| StudentID | Date | Status | Class | Subject | Teacher |\n|-----------|------|--------|-------|---------|---------|\n| S101 | 12-01-2026 | Absent | Grade 6 | Math | Mr Singh |\n\nstudent_contacts.csv\n\n| StudentID | ParentName | Email | Phone |\n|-----------|------------|-------|-------|\n| S101 | Anita Kumar | parent@email.com | +919999999999 |\n\n📊 Dashboard Preview\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

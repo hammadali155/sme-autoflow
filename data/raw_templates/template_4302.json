@@ -1,0 +1,11 @@
+{
+  "id": 4302,
+  "name": "Airtable Base Backups to S3",
+  "description": "This workflow exports every table in a base as its own CSV, saves the files in a time-stamped folder in Amazon S3, pings you on Slack, and optionally prunes older copies. You get an automated weekly backup that is easy to inspect or re-import as needed. You can easily swap the S3 node for the storage provider of your choice.\n\n++How it works++\n\nWeekly Backup\nSchedule trigger fires weekly\nSets and formats the week ex. [2025-W12]\nCreate a folder in S3 bucket with the week\nLoops through all tables in Airtable base creating CSVs and uploading to the new path\nSlack message is sent on completion\n\nMonthly Prune\nSchedule trigger fires weekly\nSets a cut-off date 4 weeks in the past\nLists folders in S3\nDeletes all folders &gt; 4 weeks old\n\n++Setup Steps++\n\nClone workflow\nSwap credentials for Airtable, AWS, and Slack\n\tEnsure AWS credential has appropriate IAM policy to manage bucket & objects\nSet workflow to \"Active\" \n\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.awsS3"
+  ],
+  "tags": []
+}

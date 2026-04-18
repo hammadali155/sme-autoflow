@@ -1,0 +1,15 @@
+{
+  "id": 11526,
+  "name": "Analyze high-priority tenders from Airtable to Slack for Go/No-Go approval",
+  "description": "📊 Description\nStreamline management decision-making by automatically evaluating high-priority tenders, generating AI-powered executive summaries, and routing them for approval inside Slack. 🤖📩 This workflow pulls pending tenders from Airtable, uses GPT-4o-mini to evaluate urgency, business opportunity, and risk, and generates a structured summary with a Go/No-Go recommendation. Tenders that qualify are pushed to Slack with interactive approval buttons, and the final decision instantly updates Airtable and triggers a confirmation email to your bid team. Perfect for fast-moving procurement, bidding, and sales teams that require structured, high-quality tender assessments. 📊⚡\n\n🔁 What This Template Does\n1️⃣ Runs daily via Schedule Trigger to fetch high-priority pending tenders from Airtable. ⏰\n 2️⃣ Sends each tender to the AI agent for evaluation (urgency, risk, opportunity). 🤖\n 3️⃣ Generates structured JSON output:\n — urgency\n — priorityScore\n — executive summary\n — Go/No-Go recommendation\n — reasoning\n 4️⃣ Formats AI output for Slack review and Airtable updates. 📝\n 5️⃣ Checks if tender qualifies as “High urgency + High score + Go.” 🚦\n 6️⃣ Sends interactive Slack message with Approve/Reject buttons. 💬\n 7️⃣ If approved → updates Airtable status to Approved and sends Gmail confirmation. 📧\n 8️⃣ If rejected or low-score → updates Airtable status accordingly. ✏️\n 9️⃣ If no priority tenders exist → sends fallback Slack notification. 📭\n\n⭐ Key Benefits\n✅ Eliminates manual tender review and scoring\n ✅ AI creates consistent, executive-ready summaries\n ✅ Fast approval flow inside Slack with built-in decision logging\n ✅ Clear Go/No-Go framework for quality tender selection\n ✅ Updates Airtable automatically with final decision\n ✅ Sends email confirmation for approved tenders — ensuring next steps start immediately\n\n🧩 Features\nDaily Airtable lookup for high-priority tenders\nGPT-4o-mini AI scoring & structured evaluation\nAutomatic Go/No-Go decision logic\nSlack interactive approval (Approve / Reject)\nAuto-update to Airtable (Status = Approved / Pending)\nGmail confirmation email to the bid team\nJSON output parser for reliable AI formatting\nTender link embedding for quick access\n\n🔐 Requirements\nAirtable Personal Access Token\nOpenAI API key (GPT-4o-mini)\nSlack API credentials\nGmail OAuth2 credentials\nAirtable table with tender fields (Priority, Status, Summary, Dates, etc.)\n\n🎯 Target Audience\nProcurement teams evaluating multiple tenders\nManagement teams needing fast approval workflows\nBusiness development & bidding teams\nCompanies tracking tenders in Airtable\nOrganizations adopting AI-assisted decision processes\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

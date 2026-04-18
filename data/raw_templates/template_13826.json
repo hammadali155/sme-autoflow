@@ -1,0 +1,13 @@
+{
+  "id": 13826,
+  "name": "Generate AI songs from text prompts with Suno, OpenAI, Google Drive and Slack",
+  "description": "Build a fully automated music generation workflow in n8n using Suno to create and store AI-generated songs.\n\nWhat's the Goal?\nAutomate end-to-end AI music creation — from a simple text prompt to a fully generated, stored, and shareable song — using Suno's API inside n8n with zero manual effort.\n\nWhy Does It Matter?\nAI music generation is powerful but manual. This workflow lets you batch-generate songs, integrate music into apps or content pipelines, and store outputs automatically — saving hours of repetitive work.\n\nHow It Works\nWebhook or Schedule triggers the flow with a text prompt\nPrompt is enriched/formatted for best Suno results\nSuno API call initiates song generation\nWorkflow polls until song is ready (async wait loop)\nSong metadata & audio URL retrieved\nFile downloaded and saved to cloud storage (Google Drive / S3)\nMetadata logged to Google Sheets / Airtable\nNotification sent via Slack / Email\n\nConfiguration Requirements\nSuno API key (via RapidAPI or official Suno API access)\nCloud storage credentials (Google Drive / AWS S3)\nGoogle Sheets or Airtable credentials (for logging)\nSlack Bot Token or SMTP (for notifications)\nOptional: OpenAI API key (for prompt enrichment)\n\nSetup Guide\nImport workflow into n8n\nConnect credentials (Suno/RapidAPI, Google Drive, Sheets, Slack)\nConfigure Set node: default genre, mood, duration, style tags\nTest with a manual trigger and a sample prompt\nActivate webhook → send prompts to trigger URL\nMonitor generation status and tune polling interval\nCheck storage & logs for generated songs\n\nContact Us\nhttps://www.oneclickitsolution.com/contact-us/\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

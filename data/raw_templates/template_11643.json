@@ -1,0 +1,12 @@
+{
+  "id": 11643,
+  "name": "Manage Contact Form Submissions with Google Sheets, Slack Alerts & Gmail Replies",
+  "description": "How it works\n\nThis workflow is triggered when the contact form is submitted.\n\nIt automatically saves the inquiry details to Google Sheets and sends a notification to Slack.\nYou can then review the inquiry and reply directly from Slack using the Contact button.\n\nHow to use\n\nOpen the Gmail node and set up the Credential.\nOpen the Google Sheets node and set up the Credential.\nOpen the Slack node and set up the Credential to allow sending messages.\n    You can create a new Slack App here.\nOpen the ContactWebhook node and configure Basic Auth.\nOpen the Config node and update the contactWebhookUrl parameter to match the Production URL from the ContactWebhook node.\n\nCustomizing this workflow\n\nYou can customize the Slack notification message in the Config node.\nYou can modify the reply email body in the Gmail node.\n    We recommend including a scheduling link (e.g., to book a meeting).",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

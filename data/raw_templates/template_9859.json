@@ -1,0 +1,15 @@
+{
+  "id": 9859,
+  "name": "Monitor AI research papers with Gemini-powered filtering and email summaries",
+  "description": "This n8n workflow template implements an intelligent research paper monitoring system that automatically tracks new publications in ArXiv's Artificial Intelligence category, filters them for relevance using LLM-based analysis, generates structured summaries, and delivers a formatted email digest.\n\nThe system uses a three-stage pipeline architecture:\nautomated paper retrieval from ArXiv's API\nAI-powered relevance filtering and analysis via Google Gemini\nIntelligent summarization with HTML formatting for clean email delivery\n\nThis eliminates the need to manually browse ArXiv daily while ensuring you only receive summaries of papers genuinely relevant to your research interests.\n\nWhat This Template Does (Step-by-Step)\n\nRuns on a configurable schedule (Tuesday-Friday) to fetch new papers from ArXiv's cs.AI category via their API.\nUses Google Gemini with structured output parsing to analyze each paper's relevance based on your defined criteria for \"applicable AI research.\"\nGenerates concise, structured summaries for the three selected papers using a separate LLM call\nAggregates three relevant paper's data and summaries into a single, readable digest\n\nImportant Notes\nThe workflow only runs Tuesday through Friday, as ArXiv typically doesn't publish new papers on weekends\nCustomize the \"Paper Relevance Analyzer\" criteria to match your specific research interests\nAdjust the similarity threshold and selection logic to control how many papers are included in each digest\n\nRequired Integrations:\nArXiv API (no authentication required)\nGoogle Gemini API (for relevance analysis and summarization)\nEmail service (SMTP or email provider like Gmail, SendGrid, etc.)\n\nBest For:\n🎓 Academic researchers tracking AI developments in their field\n💼 ML practitioners and data scientists staying current with new techniques\n🧠 AI enthusiasts who want curated, digestible research updates\n🏢 Technical teams needing regular competitive intelligence on emerging approaches\n\nKey Benefits:\n✅ Automates daily ArXiv monitoring, saving 60+ minutes of manual research time\n✅ Uses AI to pre-filter papers, reducing information overload by 80-90%\n✅ Delivers structured, readable summaries instead of raw abstracts\n✅ Fully customizable relevance criteria to match your specific interests\n✅ Professional HTML formatting makes digests easy to scan and share\n✅ Eliminates the risk of missing important papers in your field",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

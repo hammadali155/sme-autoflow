@@ -1,0 +1,15 @@
+{
+  "id": 12430,
+  "name": "Send package and visitor alerts with Slack, SMS, email, Google Sheets and Claude",
+  "description": "Who this is for\n\nProperty management teams handling multiple properties with high package/visitor traffic who want automated tenant and management notifications.\n\nWhat this workflow does\n\nAutomatically classifies package and visitor events, sends notifications to tenants, alerts property managers, and logs activity for accountability.\n\nHow it works\n\nPackage/visitor system triggers workflow.\nAI classifies urgency and type.\nNotifications sent via Email, SMS, and Slack.\nGoogle Sheets logs all events.\nOptional AI follow-up suggestions for unclaimed packages or missed visitors.\n\nHow to set up\n\nConnect Webhook, Slack, Email, SMS, and AI. Test routing and logging. Adjust AI prompts for local building protocols.\n\nRequirements\n\nAI Node\nWebhook from package/visitor system\nSlack, Email, SMS credentials\nGoogle Sheets\n\nBuilt by QuarterSmart. Created by Hyrum Hurst.\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.sms77",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

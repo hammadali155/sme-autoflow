@@ -1,0 +1,23 @@
+{
+  "id": 12571,
+  "name": "Pick a Topic & Auto-Publish Translated Content on Multiple Social Media Platform",
+  "description": "Who it's for\nThis n8n workflow is designed for content creators, digital marketers, and social media managers who want to automate their entire content creation and publishing process across multiple platforms. It provides a complete end-to-end system capable of taking a single specific idea and automatically generating a full piece of content from it—complete with images, translations, and platform-optimized formatting. The workflow then publishes the final content to WordPress, Facebook, LinkedIn, and Telegram.\n\nFeatures\nMulti-platform publishing:** WordPress, Facebook, LinkedIn, Telegram\nAI-powered content generation using OpenAI (LangChain):* Can generate a *full article or content piece from a single specific idea or topic**\nMulti-language support:** Automatic translation via Google Translate API\nAutomatic image processing:** Resizing, optimization, and WordPress upload\nGoogle Sheets integration:** For topic management, content queueing, and status tracking\nNotifications:** Send updates via Discord, Telegram, WhatsApp, and Gmail\nFlexible workflow triggers:** Supports both manual form submissions and automated scheduled publishing\n\nRequirements\nOpenAI API access for content generation\nGoogle Translate API credentials\nWordPress API access\nSocial media API credentials (Facebook, Telegram, LinkedIn)\nGoogle Sheets OAuth2 credentials\nGoogle Drive access for image storage\n\nConfigure Credentials\nGoogle APIs**: Configure Google Sheets, Google Drive, and Google Translate with proper OAuth2 credentials\nOpenAI API**: Set up with appropriate model access (gpt-4.1-mini)\nWordPress API**: Configure with your WordPress site credentials\nSocial Media APIs**: Set up each platform with proper API keys and target IDs\nNotification Services**: Configure each service with proper API keys and target IDs\n\nImportant Notes\nForm captures topic, type, user, word count, company info, domain, language, and image\nAI content generation uses customizable prompts\nImages resized up to 5000x5000 px before upload\nContent can be translated via Google Translate API\nWorkflow publishes text and image posts across platforms\nGoogle Sheets tracks content status in real-time\n\nSupport & Help\nWhatsApp**: Chat on WhatsApp\nDiscord**: SpaGreen Community\nFacebook Group**: SpaGreen Support\nWebsite**: https://spagreen.net\nDeveloper Portfolio**: Codecanyon SpaGreen",
+  "nodes": [
+    "n8n-nodes-base.editImage",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.wordpress",
+    "n8n-nodes-base.facebookGraphApi",
+    "n8n-nodes-base.linkedIn",
+    "n8n-nodes-base.microsoftTeams",
+    "n8n-nodes-base.googleTranslate",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": 5496,
+  "name": "Extract Email Tasks with Gmail, ChatGPT-4o and Supabase",
+  "description": "\n📩 Gmail → GPT → Supabase | Task Extractor\n\nThis n8n workflow automates the extraction of actionable tasks from unread Gmail messages using OpenAI's GPT API, stores the resulting task metadata in Supabase, and avoids re-processing previously handled emails.\n\n✅ What It Does\n\nTriggers on a schedule to check for unread emails in your Gmail inbox.\nLoops through each email individually using SplitInBatches.\nChecks Supabase to see if the email has already been processed.\nIf it's a new email:\n   Formats the email content into a structured GPT prompt\n   Calls ChatGPT-4o to extract structured task data\n   Inserts the result into your emails table in Supabase\n\n🧰 Prerequisites\n\nBefore using this workflow, you must have:\n\nAn active n8n Cloud or self-hosted instance\nA connected Gmail account with OAuth credentials in n8n\nA Supabase project with an emails table and:\n    ALTER TABLE emails ADD CONSTRAINT unique_email_id UNIQUE (email_id);\n  An OpenAI API key with access to GPT-4o or GPT-3.5-turbo\n\n🔐 Required Credentials\n\n| Name            | Type       | Description                       |\n|-----------------|------------|-----------------------------------|\n| Gmail OAuth     | Gmail      | To pull unread messages           |\n| OpenAI API Key  | OpenAI     | To generate task summaries        |\n| Supabase API    | HTTP       | For inserting rows via REST API   |\n\n🔁 Environment Variables or Replacements\n\nSupabase_TaskManagement_URI → e.g., https://your-project.supabase.co\nSupabase_TaskManagement_ANON_KEY → Your Supabase anon key\n\nThese are used in the HTTP request to Supabase.\n\n⏰ Scheduling / Trigger\n\nTriggered using a Schedule node\nDefault: every X minutes (adjust to your preference)\nUses a Gmail API filter: unread emails with label = INBOX\n\n🧠 Intended Use Case\n\n&gt; Designed for productivity-minded professionals who want to extract, summarize, and store actionable tasks from incoming email — without processing the same email twice or wasting GPT API credits.\n\nThis is part of a larger system integrating GPT, calendar scheduling, and optional task platforms (like ClickUp).\n\n📦 Output (Stored in Supabase)\n\nEach processed email includes:\nemail_id\nsubject\nsender\nreceived_at\nbody (email snippet)\ngpt_summary (structured task)\nrequires_deep_work (from GPT logic)\ndeleted (initially false)",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.supabase",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

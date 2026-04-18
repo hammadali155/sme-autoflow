@@ -1,0 +1,12 @@
+{
+  "id": 12695,
+  "name": "Automate Xero invoices and payments using webhooks, PostgreSQL and WhatsApp",
+  "description": "This workflow automates the full invoicing and payment process using n8n and Xero. It allows businesses to generate invoices, track payments, send WhatsApp notifications, and keep records synced automatically, without manual follow-ups or repetitive admin work.\n\nIt’s designed to plug into your existing tools and scale as your operations grow.\n\nHow It Works\n\nA webhook receives invoice or payment data from your app, form, or system\nXero automatically creates or updates the invoice\nPayments are tracked and verified in real time\nClients receive WhatsApp notifications for invoices, reminders, or payments\nAll records are logged in a database and synced to Google Calendar and Google Sheets\nAutomated responses confirm successful actions or errors\n\nEverything runs in the background once connected.\n\nSetup\n\nConnect your Xero account to n8n\nSet up a database (PostgreSQL via Supabase) for logging invoices and payments\nConnect Google Calendar for scheduling and tracking\nConnect Twilio WhatsApp for client notifications\nPoint your system or payment source to the provided webhook URL\nNo complex coding required. I guide you through the setup and ensure everything is tested.\n\nNeed Help or Customization?\n\nIf you’d like this workflow customized for your business or want help setting it up properly, feel free to reach out.\n\n🔗 Connect with me on LinkedIn:\n👉 Click here to connect\n\nI’m happy to walk you through it or adapt it to your specific use case.",
+  "nodes": [
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.twilio",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.xero"
+  ],
+  "tags": []
+}

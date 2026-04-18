@@ -1,0 +1,10 @@
+{
+  "id": 5404,
+  "name": "B2B lead qualification",
+  "description": "This automated n8n workflow qualifies B2B leads via voice calls using the VAPI API and integrates the collected data into Google Sheets. It triggers when a new lead’s phone number is added, streamlining lead qualification and data capture.\n\nWhat is VAPI?\nVAPI is an API service that enables voice call automation, used here to qualify leads by capturing structured data through interactive calls.\n\nGood to Know\n\nVAPI API calls may incur costs based on usage; check VAPI pricing for details.\nEnsure Google Sheets access is properly authorized to avoid data issues.\nUse credential fields for the HTTP Request node 'Bearer token' instead of hardcoding.\nUse a placeholder Google Sheet document ID (e.g., \"your-sheet-id-placeholder\") to avoid leaking private data.\n\nHow It Works\n\nDetect when a new phone number is added for a lead using the New Lead Captured node.\nUse the Receive Lead Details from VAPI node to capture structured data (name, company, challenges) via a POST request.\nTrigger an outbound VAPI call to qualify the lead with the Initiate Voice Call (VAPI) node.\nStore the collected data into a Google Sheet using the Save Qualified Lead to CRM Sheet node.\nSend a success response back to VAPI with the Send Call Data Acknowledgement node.\n\nHow to Use\n\nImport the workflow into n8n.\nConfigure VAPI API credentials in the HTTP Request node using credential fields.\nSet up Google Sheets API access and authorize the app.\nCreate a Google Sheet with the following columns: Name (text), Company (text), Challenges (text), Date (date).\nTest with a sample lead phone number to verify call initiation and data storage.\nAdjust the workflow as needed and retest.\n\nRequirements\n\nVAPI API credentials\nGoogle Sheets API access\n\nCustomizing This Workflow\nModify the Receive Lead Details from VAPI node to capture additional lead fields or adjust call scripts for specific industries.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

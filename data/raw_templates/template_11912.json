@@ -1,0 +1,17 @@
+{
+  "id": 11912,
+  "name": "Automated Resume Screening & Interview Scheduling with Gmail, GPT & Airtable",
+  "description": "How it works\n\nThe workflow detects incoming job-application emails, extracts resumes, and parses them for AI analysis. It evaluates each candidate against three open roles and assigns a fit score with structured reasoning. Low-scoring applicants are stored for review, while strong candidates move into an automated scheduling flow. The system checks availability on the next business day, books the slot, sends a confirmation email, and records all details in Airtable.\n\nStep-by-step\n\nDetect and collect job-application data\nGmail Trigger1** – Monitors inbox for all new emails.\nMessage a model2** – Classifies whether the email is a job application.\nIf2** – Continues only when the AI result is YES.\nGet a message1** – Fetches the full message and attachments.\nUpload file1** – Uploads the resume to Google Drive.\nExtract from File1** – Converts the PDF resume into text.\n\nAnalyze the resume and evaluate fit\nAvailable Positions1** – Defines the three open roles.\nMessage a model3** – Produces recommended role, fit score, strengths, gaps, skills, and reasoning.\nIf3** – Routes candidates based on fit_score ≥ 8.\nCreate a record3** – Stores lower-scoring applicants in Airtable.\nGet Next Business Day1** – Calculates the schedule window for qualified candidates.\n\nCheck availability on the next business day\nAI Agent1** – Orchestrates availability search using calendar nodes.\nGet Events1** – Retrieves events for the target day.\nCheck Availability1** – Evaluates free 1-hour slots.\nOpenAI Chat Model2** – Reasoning engine for the agent.\nStructured Output Parser1** – Returns clean JSON with start_time and end_time.\nOpenAI Chat Model3** – Supports structured parsing.\n\nSchedule the interview and notify the candidate\nCreate an event1** – Books the interview in Google Calendar.\nSend a message1** – Sends an HTML confirmation email to the candidate.\nCreate a record2** – Saves shortlisted candidate and interview data in Airtable.\n\nWhy use this?\n\nRemoves manual screening by automating email intake and resume parsing.\nEnsures consistent AI-based role matching and scoring.\nBooks interviews automatically using real calendar availability.\nKeeps all applicant and scheduling data organized in Airtable.\nProvides a fully hands-off, end-to-end hiring pipeline.\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

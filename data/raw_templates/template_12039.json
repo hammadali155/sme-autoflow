@@ -1,0 +1,15 @@
+{
+  "id": 12039,
+  "name": "Analyze real estate submarket trends with GPT-4, Gmail, and Slack alerts",
+  "description": "How It Works\nAutomates daily real estate market opportunity analysis by aggregating MLS listings, public property records, demographic information, and macroeconomic indicators, applying GPT-4 for investment evaluation, assessing investment thresholds, and notifying investors of high-potential properties. Simultaneously collects MLS data, public records, demographic profiles, and economic metrics, consolidates the datasets, applies GPT-4 to perform comprehensive investment analysis including ROI projections and risk assessment, calculates key financial metrics via an investment calculator, validates opportunities against predefined thresholds, and sends alerts to acquisition teams and investors through email and Slack. Designed for real estate investors and property acquisition firms seeking automated, data-driven investment insights.\n\nSetup Steps\nConnect MLS data provider, public records database, and demographic data source APIs.\nConfigure OpenAI GPT-4 API for investment analysis and opportunity scoring.\nSet up investment calculator integration and ROI calculation parameters.\nConnect Gmail and Slack for team notifications; define investment thresholds.\n\nPrerequisites\nMLS data access; public records database; demographic data provider; macroeconomic data source \n\nUse Cases\nReal estate investment firms automating deal sourcing across markets; \n\nCustomization\nAdjust investment analysis criteria and thresholds \n\nBenefits\nIdentifies investment opportunities automatically ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 12337,
+  "name": "Create a daily visual journal from Discord chats with GPT-4, DALL-E and Notion",
+  "description": "I wanted a journal but never had the discipline to write one. Most of my day happens in Discord anyway, so I built this to do it for me.\n\nEvery night, it reads my Discord channel, asks GPT-4 to write a short reflection, generates an image that captures the vibe of the day, and saves everything to Notion. I wake up with a diary entry I didn't have to write.\n\nHow it works\nRuns daily at whatever time you set\nGrabs messages from a Discord channel (last 100)\nFilters to today's messages only\nGPT-4 writes a title, summary, mood, and tags\nDALL-E generates an image based on the day's themes\nUploads image to Cloudinary (Notion needs a public URL)\nCreates a Notion page with everything formatted nicely\n\nSetup\nDiscord Bot credentials (read message history permission)\nOpenAI API key\nFree Cloudinary account for image hosting\nNotion integration connected to your database\n\nNotion database properties needed\nTitle (title)\nDate (date)\nSummary (text)\nMood (select): 😊 Great, 😌 Good, 😐 Neutral, 😔 Low, 🔥 Productive\nMessage Count (number)\n\nTakes about 15 minutes to set up. I use Gallery view in Notion with the AI image as cover - looks pretty cool after a few weeks.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.discord",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

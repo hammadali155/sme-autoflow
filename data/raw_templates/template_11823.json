@@ -1,0 +1,14 @@
+{
+  "id": 11823,
+  "name": "Extract Video Metadata & Auto-Upload to YouTube with GPT-4o SEO Optimization",
+  "description": "Video Metadata Extraction & YouTube Auto-Upload with AI\n\nAutomatically process video files, extract metadata, generate AI-optimized titles/descriptions/tags, and upload directly to YouTube with proper categorization and thumbnail handling.\n\nKey Features\n\nYouTube Node Integration**: Direct video upload to YouTube with full metadata\nBinary Data Handling**: Proper video and thumbnail binary processing\nAI-Powered SEO Optimization**: Generates engaging titles, descriptions, and tags\nVideo Metadata Extraction**: Analyzes video properties (duration, resolution, codec)\nThumbnail Processing**: Extracts or uploads custom thumbnails\nCategory Auto-Selection**: AI determines optimal YouTube category\n\nHow It Works\n\nVideo Intake: Receives video file via webhook or cloud storage trigger\nMetadata Extraction: Analyzes video file for technical properties\nAI Content Generation: Creates SEO-optimized title, description, and tags\nThumbnail Processing: Extracts frame or uses provided thumbnail\nYouTube Upload: Uploads video with all metadata\nPost-Upload Processing: Retrieves video ID, creates playlist entry\nNotification: Sends confirmation with video URL\n\nRequired Credentials\n\nYouTube OAuth2 (for video upload)\nOpenAI API (for AI metadata generation)\nGoogle Drive or Dropbox (optional, for cloud storage triggers)\nGmail (for notifications)\nGoogle Sheets (for tracking)\n\nUnique Features\n\nUses YouTube node for direct video upload (rarely used in templates)\nBinary data manipulation** for video and thumbnail handling\nAI-generated SEO metadata** optimized for YouTube algorithm\nCategory detection** using AI classification\nMerge node** with chooseBranch for conditional flows\n\nExample Request\n\n{\n  \"videoFile\": \"&lt;binary data&gt;\",\n  \"projectName\": \"Product Demo 2024\",\n  \"targetAudience\": \"developers\",\n  \"language\": \"en\",\n  \"thumbnailFile\": \"&lt;binary data&gt;\",\n  \"playlistId\": \"PLxxxxxxxx\",\n  \"publishTime\": \"2024-01-15T14:00:00Z\"\n}\n\nSupported Video Formats\n\nMP4, MOV, AVI, MKV, WebM\nMaximum file size: 128GB (YouTube limit)\nRecommended: MP4 with H.264 codec\n\nOutput\n\n{\n  \"videoId\": \"dQw4w9WgXcQ\",\n  \"videoUrl\": \"https://youtu.be/dQw4w9WgXcQ\",\n  \"title\": \"AI-Generated Title\",\n  \"description\": \"SEO-optimized description...\",\n  \"tags\": [\"tag1\", \"tag2\", \"tag3\"],\n  \"category\": \"Science & Technology\",\n  \"uploadStatus\": \"processed\",\n  \"thumbnailUrl\": \"https://i.ytimg.com/vi/...\"\n}\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.youTube",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

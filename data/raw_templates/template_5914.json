@@ -1,0 +1,16 @@
+{
+  "id": 5914,
+  "name": "TechCrunch AI Article Scraper & Classifier with GPT-4.1-nano to Sheets & Telegram",
+  "description": "How it works\nThis workflow scrapes the latest Artificial Intelligence articles from TechCrunch, then processes and classifies the content using OpenAI and LangChain nodes. The final result is saved to Google Sheets and sent as a summary to a Telegram group.\n\nWorkflow Logic:\nTrigger: Schedules daily at 6AM Bangkok time.\n\nScraper: Extracts URLs and publish dates from TechCrunch's AI category.\n\nFilter: Only continues if the article is from yesterday (to avoid duplication).\n\nContent Fetch: Downloads and extracts article body text.\n\nAI Agent:\n\nSummarizes the article in Thai.\n\nScores it using strict journalism criteria (max 100).\n\nCategorizes the news into one of 9 predefined categories.\n\nOutput:\n\nSaves all structured data to Google Sheets.\n\nSends a summary to a Telegram group.\n\nSet up steps\n🕒 Estimated setup time: 10–15 minutes\n\nConnect your credentials:\n\nGoogle Sheets (OAuth2)\n\nTelegram\n\nOpenAI account (via LangChain model)\n\nUpdate the Telegram chatId and Google Sheets documentId/sheetName values.\n\nDeploy and activate the workflow. It runs daily without manual intervention.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.html",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

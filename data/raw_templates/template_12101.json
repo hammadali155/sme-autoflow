@@ -1,0 +1,13 @@
+{
+  "id": 12101,
+  "name": "Monitor Brand Reputation with SerpAPI, Azure OpenAI & Asana Crisis Alerts",
+  "description": "📊 Description\nAutomate proactive brand reputation monitoring across public platforms using AI-driven risk analysis 🤖. This workflow continuously scans Reddit, Glassdoor, and review sites via SerpAPI to detect negative sentiment, public complaints, and early crisis signals 🔍. Each mention is analyzed with AI to assess risk level and urgency, ensuring no critical issue goes unnoticed. High-risk threats automatically trigger real-time Google Chat alerts and create priority Asana tasks 🚨, enabling fast, coordinated response without manual monitoring.\n\n🔍 What This Template Does\nRuns on an hourly schedule ⏰ to continuously track brand mentions online.\nSearches public platforms like Reddit and review sites using SerpAPI 🔍.\nParses and structures insights from AI-powered search results 📄.\nAnalyzes sentiment and crisis risk using Azure OpenAI 🤖.\nFilters high-risk reputation threats automatically ⚠️.\nSends instant Google Chat alerts for urgent issues 💬.\nCreates priority Asana tasks to ensure fast team action ✅.\n\n✅ Key Benefits\n✅ Detect brand crises before they escalate publicly\n✅ Eliminate manual reputation monitoring across platforms\n✅ Get real-time alerts only for high-risk issues\n✅ Centralize crisis response with automatic task creation\n✅ Improve brand trust and response time\n✅ AI-powered, scalable, and always-on monitoring\n\n⚙️ Features\nHourly automated monitoring trigger\nSerpAPI Google AI Mode search integration\nAI-based sentiment and crisis risk classification\nStructured JSON output for reliability\nGoogle Chat alerts for instant visibility\nAsana task creation for crisis management\nFail-safe handling for malformed AI responses\n\n🔑 Requirements\nSerpAPI account (Google AI Mode search)\nAzure OpenAI credentials\nGoogle Chat OAuth2 credentials\nAsana OAuth2 credentials\nBrand name or keywords for monitoring\n\n🎯 Target Audience\nSaaS founders and startup teams\nBrand, PR, and reputation managers\nDigital agencies managing multiple clients\nCustomer support and crisis response teams\n",
+  "nodes": [
+    "n8n-nodes-base.asana",
+    "n8n-nodes-base.googleChat",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi"
+  ],
+  "tags": []
+}

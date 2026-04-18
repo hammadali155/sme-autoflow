@@ -1,0 +1,13 @@
+{
+  "id": 14131,
+  "name": "Convert PDF content to an MCQ question bank in Excel with Google Gemini",
+  "description": "🚀 Convert PDF to MCQ Question Bank in Excel with AI (Gemini)\n\nConvert any PDF into a structured Multiple Choice Question (MCQ) bank with answer keys and explanations — fully automated using n8n and Google Gemini.\n\n🎯 Use Case\n\nTeachers & Educators  \nTrainers & Course Creators  \nHR & Corporate Training Teams  \nEdTech Builders  \n\n⚙️ Features\n\nWebhook-based PDF upload  \nFile validation (max 5MB + file existence check)  \nPDF text extraction  \nAutomatic text chunking  \nAI-generated MCQs using Google Gemini  \nClean JSON parsing  \nExport to Excel (.xlsx)  \nUpload to Google Drive  \nSend results via Email & Telegram  \n\n🔄 Workflow Steps\n\nWebhook Trigger  \nValidate File  \nConditional Check (Success / Failed)  \nExtract Text from PDF  \nChunk Text  \nGenerate MCQs (Google Gemini)  \nClean JSON Output  \nConvert to Excel  \nUpload to Google Drive  \nSend via Telegram  \nSend via Email  \n\n🔌 Requirements\n\nn8n (self-hosted or cloud)  \nGoogle Gemini API Key  \nGoogle Drive credentials  \nEmail (SMTP / Gmail)  \nTelegram Bot Token  \n\n📥 How to Use\n\nSend POST request to webhook with form-data:\n\nfile → PDF file  \nemail → (optional)  \ntelegram_chat_id → (optional)  \n\n📤 Output\n\nExcel file with MCQs  \nStored in Google Drive  \nDelivered via Email / Telegram  \n\n⚠️ Notes\n\nMax file size: 5MB  \nWorks best with text-based PDFs  \nAI output quality depends on input clarity  \n\n💡 Ideas for Improvement\n\nDifficulty level classification  \nMulti-language support  \nLMS export (Moodle, Google Forms)  \nBulk PDF processing  \n\n💰 Commercial Use\n\nThis workflow can be used for:\nInternal automation  \nClient services  \nDigital product monetization  \n\n❤️ Support\n\nIf you find this useful:\nUpvote on n8n  \nShare with others  ",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

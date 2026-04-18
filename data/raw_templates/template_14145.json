@@ -1,0 +1,16 @@
+{
+  "id": 14145,
+  "name": "Handle GDPR access and erasure emails with Gmail, GPT-4o, Supabase and Airtable",
+  "description": "🚀 How it works\n\n  Handles GDPR Article 15 (access) and Article 17 (erasure) requests\n  end-to-end — from inbound email to legally-compliant response — with\n  zero manual intervention and a full audit trail.\n\n  📬 Monitors Gmail inbox for incoming data subject requests\n  🤖 AI Agent classifies the request (access or erasure), extracts the\n    requester email and data subject email with structured JSON output\n  🗄️  Queries Supabase for all personal data records matching the subject\n  📋 Queries Airtable CRM for matching contact records\n  📝 Second AI Agent compiles all found data into a GDPR-compliant HTML report\n  ✉️  Access requests — sends a full data report to the requester\n  🗑️  Erasure requests — deletes records from both Supabase and Airtable,\n    then sends a deletion confirmation\n  🔒 Logs every request to Google Sheets with timestamp for your audit trail\n\n🛠️  Set up steps\n\n  Estimated setup time: ~20 minutes\n\n  Gmail Trigger — connect Gmail OAuth2; point it at your DSR inbox\n  OpenAI — connect OpenAI API credential (used by both AI Agent nodes)\n  Supabase — connect Supabase API credential; update the table name from users to match your schema\n  Airtable — connect Airtable Personal Access Token; replace YOUR_BASE_ID and YOUR_TABLE_NAME\n  Google Sheets — connect Google Sheets OAuth2; replace YOUR_AUDIT_SHEET_ID; create a tab named DSR Audit Log\n  Follow the sticky notes inside the workflow for per-node guidance\n\n📋 Prerequisites\n\n  Gmail account receiving GDPR requests\n  OpenAI API key (GPT-4o)\n  Supabase project with a users/contacts table\n  Airtable base with a Contacts table containing an Email field\n  Google Sheets for audit log\n\nCustom Workflow Request with Personal Dashboard\n\nkumar@smartflowcraft.com\n\nhttps://www.smartflowcraft.com/contact\n\nMore free templates\nhttps://www.smartflowcraft.com/n8n-templates\n",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.supabase",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

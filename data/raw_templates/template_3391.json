@@ -1,0 +1,9 @@
+{
+  "id": 3391,
+  "name": "Stripe Payment Order Sync – Auto Retrieve Customer & Product Purchased",
+  "description": "Overview\n\nThis automation template is designed to streamline your payment processing by automatically triggering upon a successful Stripe payment. The workflow retrieves the complete payment session and filters the information to display only the customer name, customer email, and the purchased product details. This template is perfect for quickly integrating Stripe transactions into your inventory management, CRM, or notification systems.\n\nStep-by-Step Setup Instructions\n\nStripe Account Configuration:\n   Ensure you have an active Stripe account.\n   Connect your Stripe Credentials.\n  \nRetrieve Product and Customer Data:\n   Utilize Stripe’s API within the automation to fetch the purchased product details.\n   Retrieve customer information such as: email and full name.\n\nIntegration and Response:\n   Map the retrieved data to your desired format.\n   Trigger subsequent nodes or actions such as sending a confirmation email, updating a CRM system, or logging the transaction.\n\nPre-Conditions and Requirements\n\nStripe Account:** A valid Stripe account with access to API keys and webhook configurations.\nAPI Keys:** Ensure you have your Stripe secret and publishable keys ready.\n\nCustomization Guidance\n\nData Mapping:** Customize the filtering node to match your specific data schema or to include additional data fields if needed.\nAdditional Actions:** Integrate further nodes to handle post-payment actions like sending SMS notifications, updating order statuses, or generating invoices.\n\nEnjoy seamless integration and enhanced order management with this automation template!",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

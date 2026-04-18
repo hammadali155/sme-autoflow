@@ -1,0 +1,12 @@
+{
+  "id": 12434,
+  "name": "Create Telegram podcast digests from Apple Podcasts with BrowserAct and Gemini",
+  "description": "Create Telegram podcast digests from Apple Podcasts using BrowserAct & Gemini\n\nThis workflow automates the creation of engaging podcast summaries for your Telegram channel. It scrapes a podcast feed (like Apple Podcasts Top Charts), uses AI to format the episodes into a clean, readable HTML list with emojis, and publishes the digest directly to your subscribers.\n\nTarget Audience\nPodcast curators, news aggregators, and community managers who want to share daily or weekly updates.\n\nHow it works\nScheduled Fetch: The workflow runs on a set schedule (e.g., daily).\nScrape Feed: BrowserAct visits the podcast chart or RSS feed URL to extract episode titles, show names, and descriptions.\nFormat Digest: An AI Agent (using Google Gemini) processes the raw list. It formats each item into HTML (bold titles, italic show names), adds visual separators, and splits the digest into multiple messages if it exceeds Telegram's character limit.\nPublish: The workflow loops through the formatted message parts and sends them sequentially to your Telegram channel.\n\nHow to set up\nConfigure Credentials: Connect your Telegram, BrowserAct, and Google Gemini accounts in n8n.\nPrepare BrowserAct: Ensure the Top Charts Podcast template is saved in your BrowserAct account.\nConfigure Telegram: Ensure your bot is an admin in the target channel and add the Chat ID to the Send a text message node.\nActivate: Turn on the workflow.\n\nRequirements\nBrowserAct* account with the *Top Charts Podcast** template.\nTelegram** account (Bot Token).\nGoogle Gemini** account.\n\nHow to customize the workflow\nChange Source: Update the BrowserAct template to scrape Spotify charts or a specific RSS feed URL.\nAdjust Format: Modify the system prompt in the AI Agent node to change the emoji style or layout of the digest.\nAdd Filters: Add a Code node before the AI step to filter out episodes based on keywords (e.g., only show \"Tech\" podcasts).\n\nNeed Help?\nHow to Find Your BrowserAct API Key & Workflow ID\nHow to Connect n8n to BrowserAct\nHow to Use & Customize BrowserAct Templates\nWorkflow Guidance and Showcase Video\n\n🎙️ Automate Your Podcast Feed: Apple Top Charts to Telegram with n8n\n",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": 8860,
+  "name": "PDF RAG Agent with Telegram Chat & Auto-Ingestion from Google Drive",
+  "description": "\nHow it works\n\nThis workflow creates an intelligent document assistant called \"Mookie\" that can answer questions based on your uploaded documents. Here's how it operates:\n\nDocument Ingestion:** The system can automatically load PDF files from Google Drive or accept PDFs uploaded directly through Telegram, then processes and stores them in a PostgreSQL vector database using Mistral embeddings\nSmart Retrieval:** When users ask questions via Telegram or a web chat interface, the AI agent searches through the stored documents to find relevant information using vector similarity matching\nContextual Responses:** Using GPT-4 and the retrieved document context, Mookie provides accurate answers based solely on the ingested documents, avoiding hallucination by refusing to answer questions not covered in the stored materials\nMemory & Conversation:** The system maintains conversation history for each user, allowing for natural follow-up questions and contextual discussions\n\nSet up steps\n\nEstimated setup time: 30-45 minutes\nYou'll need to configure several external services and credentials:\n\nSet up a PostgreSQL database with PGVector extension for document storage\nCreate accounts and API keys for Azure OpenAI (GPT-4), Mistral Cloud (embeddings), and Google Drive access\n\tConnect your own LLM's if you don't have these credentials.\nConfigure a Telegram bot and obtain API credentials for chat functionality\nUpdate webhook URLs throughout the workflow to match your n8n instance\nTest the document ingestion pipeline with sample PDFs\nVerify the chat interfaces (both Telegram and web) are responding correctly\n\n&gt;The workflow includes approval mechanisms for PDF ingestion and handles both automated bulk processing from Google Drive and real-time document uploads through Telegram. Read the sticky notes provided in the template code for clear instructions.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
+    "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi",
+    "@n8n/n8n-nodes-langchain.vectorStorePGVector"
+  ],
+  "tags": []
+}

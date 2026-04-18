@@ -1,0 +1,15 @@
+{
+  "id": 11816,
+  "name": "Automated CV Anonymization for GDPR Compliance with GPT-4 and Stirling PDF",
+  "description": "Overview\nAutomatically anonymize CVs/resumes while preserving professional information. Perfect for recruitment agencies ensuring GDPR compliance and bias-free hiring.\n\nFeatures\nSupports multiple file formats (PDF, DOCX, etc.)\nMulti-language support (preserves original language)\nRemoves PII: names, emails, phones, addresses\nPreserves: skills, experience, dates, achievements\nOutputs professionally formatted PDF\n\nRequirements\nOpenAI API key (GPT-4 recommended)\nStirling PDF service (self-hosted or cloud)\nn8n version 1.0+\n\nSetup Instructions\nConfigure OpenAI credentials\nSet up Stirling PDF API endpoint\nUpdate API key in HTTP Request nodes\nActivate workflow\nTest with sample CV\n\nUsage\nPOST to webhook endpoint with CV file as UploadCV field.\n\nUse Cases\nRecruitment agencies (GDPR compliance)\nHR departments (bias-free screening)\nJob boards (candidate privacy)",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.compression",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

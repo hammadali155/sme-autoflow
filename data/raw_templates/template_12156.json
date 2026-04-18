@@ -1,0 +1,10 @@
+{
+  "id": 12156,
+  "name": "Track BlueSky Post Engagement Metrics in Google Sheets Automatically",
+  "description": "This workflow automatically syncs engagement metrics (Likes, Reposts, Replies) from BlueSky back to your content calendar in Google Sheets. It ensures your reporting is always up to date without manual data entry.\n\nWho is this for\nGreat for social media managers, agencies, and creators who need to report on content performance or analyze which post topics are driving the most engagement.\n\nWhat it does\nThe workflow uses a smart \"Active Window\" strategy to save API calls and ensure stability:\nFetch:** Pulls rows from your Google Sheet that are marked as \"Posted.\"\nSmart Filter:** Only processes posts published in the last 14 days (catching viral spikes while ignoring old archived content).\nSafe Updates:** Queries the BlueSky API for the latest stats. If a post has been deleted, it handles the error gracefully instead of breaking the workflow.\nSync:** Updates the Like Count, Repost Count, and Reply Count columns in your sheet.\n\nHow to set up\nGoogle Sheet: Ensure your sheet has these columns: Post Link, Posted At, Like Count, Repost Count, Reply Count.\n   (A sample Google Sheet link is provided inside the workflow notes).\nCredentials: Enter your BlueSky Handle and App Password in the \"Configuration\" node.\nSelect Sheet: In both the \"Get row(s)\" and \"Update row\" nodes, select your specific Google Sheet.\nSchedule: Set the trigger to run once daily (e.g., at 9 AM).\n\n🚀 The BlueSky Growth Suite\nThis workflow is part of a 3-part automation suite designed to help you grow on BlueSky:\nPart 1: Post Scheduler** (Manage content from Google Sheets)\nPart 2: Analytics Tracker** (This template)\nPart 3: Lead Magnet Bot** (Auto-DM users who reply to your posts)",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

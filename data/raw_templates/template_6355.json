@@ -1,0 +1,11 @@
+{
+  "id": 6355,
+  "name": "Automated DNS Records Lookup for Subdomains with HackerTarget API Reports",
+  "description": "🧠 EnumX: Auto DNS Lookup for Subdomains with Markdown Export\n\nWho’s it for\n\nSecurity engineers, red teamers, or automation-curious teams looking to enhance passive reconnaissance with minimal effort. Ideal for early-stage security setups, bug bounty hunters, and SME SOC analysts.\n\nWhat it does\n\nThis workflow performs passive subdomain enumeration and DNS record lookup for a given domain. It parses the data, generates a clean markdown report, and sends it via email.\n\n🌐 Uses HackerTarget APIs for subdomain and DNS data\n\n🧠 Parses records (A, AAAA, CNAME, TXT, MX, NS, SOA)\n\n📨 Sends a structured markdown report to a designated inbox\n\n🛡️ Useful for recon, misconfiguration detection, and compliance evidence\n\nHow to set up\nReplace the email address in the Gmail node with your recipient.\n\n(Optional) Replace HackerTarget API with your own recon APIs.\n\nClick Execute Workflow or trigger via cron on schedule.\n\nView the full markdown output in your inbox.\n\nRequirements\nFree Gmail account (with n8n Gmail OAuth2 configured)\n\n(Optional) Replace example.com with your target domain\n\nInternet access (API calls use HTTPS)\n\nHow to customize the workflow\nModify the target domain via the \"🌐 Target Domain\" Set node\n\nAdjust markdown format in “📝 Format DNS Markdown”\n\nReplace Gmail node with Slack/Telegram/Notion if preferred\n\nAdd additional enrichment nodes (e.g., Shodan, VirusTotal) for deeper analysis\n\n*💼 This template is part of the CYBERPULSE AI BlueOps/RedOps suite. ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

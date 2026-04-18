@@ -1,0 +1,11 @@
+{
+  "id": 11693,
+  "name": "Scrape LinkedIn profiles into Google Sheets using Google Custom Search",
+  "description": "Who’s it for\nThis template is ideal for recruiters, founders, sales teams, and lead-generation specialists who want to quickly collect LinkedIn profiles based on role, industry, and region. It is perfect for users who want profile lists for outreach, research, hiring, or market analysis without manually searching LinkedIn.\n\nWhat it does / How it works\nThis workflow begins with a web form where you enter three inputs: position, industry, and region.  \nOnce the form is submitted, the workflow performs a Google Custom Search query restricted to LinkedIn profile URLs.  \nThe results are processed to extract structured profile information such as:\n\nName  \nJob title (cleaned using custom logic)  \nLinkedIn profile link  \nDescription / bio snippet  \nProfile image URL  \n\nThe workflow automatically handles pagination by detecting whether more results are available and continues fetching until the limit is reached.  \nAll extracted profiles are appended or updated in a Google Sheet so you always maintain an organized and deduplicated list.\n\nRequirements\nGoogle Sheets OAuth2 credentials  \nGoogle Custom Search API key  \nGoogle CSE (Custom Search Engine) ID  \nA Google Sheet with the required columns (name, title, profile link, description, image link, searched position, searched industry, searched region)\n\nHow to set up\nConnect your Google Sheets credentials.  \nAdd your Custom Search API key and CSE ID inside the HTTP Request node.  \nSelect your target Google Sheet in the “Append or update row in sheet” node.  \nOpen the form URL and submit your position, industry, and region.  \nRun the workflow to begin scraping profiles.\n\nHow to customize the workflow\nModify search query structure for niche industries  \nAdd enrichment tools (Hunter.io, Clearbit, People Data)  \nExpand pagination limit beyond the default  \nAdd filters to remove non-relevant results  \nOutput data to CRM tools like HubSpot, Notion, Airtable, or Sheets  ",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

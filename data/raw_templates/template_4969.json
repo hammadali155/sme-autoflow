@@ -1,0 +1,12 @@
+{
+  "id": 4969,
+  "name": "Automated TikTok video creation pipeline with GPT-4o-mini and Sisif.ai",
+  "description": "Description\n\nThis workflow creates an automated video content pipeline that generates creative TikTok-style videos using AI. It combines OpenAI's GPT-4o-mini for idea generation with Sisif.ai's text-to-video AI technology to produce engaging short-form content automatically.\n\nPerfect for: Content creators, social media managers, marketing teams, and anyone who wants to maintain a consistent flow of AI-generated video content without manual intervention.\n\nPrerequisites\n\nSisif.ai Account**: Sign up at sisif.ai and get your API token from sisif.ai/api/\nOpenAI Account**: Get your API key from OpenAI platform\nn8n Instance**: Self-hosted or cloud instance\n\nHow it Works\n\nThe workflow operates on a scheduled cycle, generating fresh video content every 6 hours:\n\n🤖 AI Idea Generation: OpenAI's GPT-4o-mini acts as a creative video strategist, generating unique, trend-aware video concepts optimized for TikTok and social media\n🎬 Video Creation: Sisif.ai transforms each creative prompt into a high-quality 5-second video in 540x960 resolution\n⏱️ Smart Monitoring: The workflow intelligently monitors video generation progress, waiting for completion before proceeding\n📊 Data Processing: Final video data is structured and prepared for further use or storage\n\nKey Features\n\n⚡ Fully Automated\nRuns every 6 hours without manual intervention\nGenerates 4 unique videos daily (28 videos per week)\nSelf-monitoring with automatic retry logic\n\n🎯 Optimized for Social Media\nTikTok-perfect 540x960 resolution\n5-second duration for maximum engagement\nTrend-aware content generation\nAction-packed, visual storytelling\n\n🔧 Smart Architecture\nSimple HTTP requests for reliable operation\nBearer token authentication for secure API access\nAutomatic status checking and waiting logic\nError handling and retry mechanisms",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured"
+  ],
+  "tags": []
+}

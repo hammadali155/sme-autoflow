@@ -1,0 +1,14 @@
+{
+  "id": 14671,
+  "name": "Generate weekly Brevo campaign analytics reports with Groq and Google Sheets",
+  "description": "How it works:\n\nThis workflow fetches sent campaign data from Brevo on a schedule, calculates key metrics (open rate, click rate, bounce rate), and stores results in Google Sheets. It then filters to a rolling 7-day window, runs an AI analysis to generate an executive summary with performance highlights and recommendations, and delivers a structured HTML report by email to stakeholders.\n\nStep-by-step:\n\nData collection\n   Schedule Trigger – Fires the workflow on your chosen day and time.\n   HTTP Request (Brevo) – Fetches sent campaign data via the Brevo API.\n   Transform Data – Calculates open rate, click rate, and bounce rate per campaign.\n   Write to Google Sheets – Appends processed results to the historical database.\n\nData preparation\n   Read from Google Sheets – Retrieves the latest stored campaign records.\n   Filter to 7-day window – Narrows data to the last 7 days for trend analysis.\n   Aggregate Results – Summarises campaign performance across the window.\n\nAI analysis\n   AI Summary Engine – Evaluates trends and generates an executive summary.\n      LLM (Groq or alternative) – Provides the AI model for analysis.\n   Format AI Output – Structures the summary for use in the report.\n\nReport delivery\n   Build HTML Report – Compiles metrics, highlights, and recommendations into a styled email.\n   Send via Gmail – Delivers the final report to stakeholder recipients.\n\nWhy use this?\nAutomates the full reporting lifecycle from data pull to inbox delivery.\nSurfaces top-performing campaigns and list health issues without manual review.\nKeeps a growing historical database for long-term trend tracking.\nEasily adjustable reporting window, thresholds, and notification channels.\nWorks with any AI provider — swap Groq for any compatible LLM.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGroq"
+  ],
+  "tags": []
+}

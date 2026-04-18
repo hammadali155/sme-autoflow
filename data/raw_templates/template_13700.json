@@ -1,0 +1,16 @@
+{
+  "id": 13700,
+  "name": "Detect and enforce abuse cases with OpenAI, Slack, Gmail and Sheets",
+  "description": "How It Works\nThis workflow automates platform trust and safety operations by deploying a multi-agent AI system that detects abuse signals, investigates behaviour, scores risk, checks policy compliance, and enforces actions automatically. Designed for platform safety teams, content moderation managers, and compliance officers, it eliminates manual triage delays and ensures high-severity violations are actioned immediately. An abuse signal webhook triggers behaviour analysis via OpenAI, classifying signals by severity. A routing node directs cases to a Governance Agent, which orchestrates Investigation, Risk Scoring, and Policy Compliance Checker sub-agents. Enforcement data is prepared, then routed by action type-logging to abuse records, alerting the security team via Slack, sending escalation emails, or triggering auto-enforcement actions based on threshold checks—before all outcomes are logged.\n\nSetup Steps\nConfigure Abuse Signal Webhook URL and authenticate incoming POST requests.\nAdd OpenAI API credentials to all OpenAI Model nodes.\nConnect Google Sheets for abuse records and enforcement action logging.\nConfigure Slack credentials and set security team alert channel.\nAdd Gmail/SMTP credentials to Send Escalation Email node.\n\nPrerequisites\nSlack workspace with bot token\nGmail or SMTP credentials\nGoogle Sheets for abuse and enforcement logging\nUse Cases\nReal-time abuse detection and auto-suspension on social platforms\nCustomization\nReplace OpenAI with Anthropic Claude or NVIDIA NIM models\nBenefits\nEliminates manual abuse triage with real-time AI signal processing",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCode",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

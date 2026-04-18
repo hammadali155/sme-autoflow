@@ -1,0 +1,11 @@
+{
+  "id": 13152,
+  "name": "Gamify fitness tracking with GPT-4o-mini multi-agents and Google Sheets",
+  "description": "Title:\nGamify fitness tracking with AI multi-agents and Google Sheets\nOverview\nThis template transforms fitness tracking into a gamified pirate adventure using AI multi-agents. It scores your health activities and assigns a dynamic \"Bounty\" reward.\n\nHow it works\nFetch Data: Retrieves your current \"Bounty\" from Google Sheets.\nAI Analysis: A central AI Scorer evaluates your report (meals, workouts, or injuries) and assigns a score from 0-100.\nLogic: JavaScript calculates the bounty increase based on the AI's score.\nRouting: The Switch node routes you to a specialized agent (Chef, Samurai, Doctor, or Navigator).\nLogging: Saves the conversation to Google Sheets for progress tracking.\n\nSetup steps\nGoogle Sheets: Create a sheet with two tabs:\n   Profile (Columns: ID, Total_Bounty)\n   Log (Columns: Date, Crew, Inquiry, Response)\nSpreadsheet ID: Replace YOUR_SPREADSHEET_ID in all 6 Google Sheets nodes.\nCredentials: Connect your Google Sheets and AI (OpenRouter/OpenAI) accounts.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "tags": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": 12829,
+  "name": "Generate AI video clips from YouTube automatically with Reka Vision",
+  "description": "Try It Out!\n\nThis n8n template demonstrates how to use Reka Vision to automatically generate a customized video clip from a YouTube video using AI. The workflow keeps you informed by sending an email when the work is done, ready to be published on social!\n\nHow it works\nLooking at the RSS feed of a YouTube channel, the flow will be triggered when there is a new video published.\nUsing Reka's API, we will submit a request for creating a clip using AI. You can customize: \n  the template used\n  the prompt to generate the clip\n  if you want captions or not\n  the minimum or maximum duration of the clip\nWait a little while, the magic happens\nCheck if the job status is completed\n  If yes, it send an success email\n  if no, it will loop\nImplement best practices with a failsafe after 10 iterations in the loop; it will send an error email \n\nGettting Started\nEdit those nodes with your settings and credentials.\nWhen New Video**: Set the Feed URL to the YouTube channel you want to follow (ex: \nCreate a clip**: Add your credential. Change the prompt and adjust the setting to your preferences\nSend _ EMail**: Personalize the email the way you like.\n\nRequirements\nReka AI API key (it's free! Get yours from here from Reka)\nGmail account (feel free to change it to another mail provider)\n\nNeed Help?\nJoin the Discord\n\nHappy clipping!\n",
+  "nodes": [
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

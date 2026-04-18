@@ -1,0 +1,12 @@
+{
+  "id": 14220,
+  "name": "Classify cold email replies and notify via Telegram with OpenAI and Instantly",
+  "description": "Classify Cold Email Replies and Notify via Telegram with OpenAI and Instantly\n\nAutomatically classifies incoming cold email replies as HOT, WARM, or COLD using AI and sends priority Telegram notifications with auto-acknowledgment for fast response times.\n\nWho is this for?\nOutbound sales teams using Instantly for cold email who want instant lead classification and speed-to-lead automation.\n\nWhat problem does this solve?\nManually checking inboxes for replies is slow. Hot leads go cold while you sleep. This workflow classifies replies in seconds, notifies you on Telegram, and auto-acknowledges warm/hot leads so they know you're responsive.\n\nHow it works:\nInstantly Reply Webhook - receives reply event from Instantly\nRespond 200 OK - acknowledges webhook immediately\nValidate Payload - checks required fields (email, reply body)\nExtract Lead Fields - normalizes lead data (email, name, subject, campaign)\nClassify Reply - OpenAI - GPT-4o-mini classifies as HOT/WARM/COLD with reasoning\nParse Classification - extracts classification + carries forward lead data\nIs HOT? / Is WARM? - routes to the right notification branch\nTelegram - HOT/WARM/COLD Lead - sends priority-formatted notification\nAuto-Ack HOT/WARM Gmail - instantly sends acknowledgment email to engaged leads\nLog Reply to Sheet - logs everything for tracking\n\nSetup:\nAdd credentials: OpenAI, Gmail, Telegram Bot, Header Auth\nReplace YOUR_TELEGRAM_CHAT_ID with your chat ID (message @userinfobot)\nCreate a Google Sheet with columns: timestamp, lead_email, lead_name, classification, campaign, subject, reply_snippet, reasoning, auto_ack_sent, manual_reply_sent, manual_reply_at\nReplace YOUR_GOOGLE_SHEET_ID with your sheet ID\nConfigure Instantly webhook: Settings &gt; Integrations &gt; Webhooks &gt; reply_received event &gt; paste your n8n webhook URL\n\nCustomization:\nEdit the OpenAI system prompt to adjust classification criteria\nModify auto-ack email copy in the Gmail nodes\nAdjust Telegram message formatting per branch",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

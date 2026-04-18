@@ -1,0 +1,14 @@
+{
+  "id": 2673,
+  "name": "Create a Google Analytics Data Report with AI and sent it to E-Mail and Telegram",
+  "description": "What this workflow does\nThis workflow retrieves Google Analytics data from the last 7 days and the same period in the previous year. The data is then prepared by AI as a table, analyzed and provided with a small summary.\nThe summary is then sent by email to a desired address and, shortened and summarized again, sent to a Telegram account.\n\nThis workflow has the following sequence:\n\ntime trigger (e.g. every Monday at 7 a.m.)\nretrieval of Google Analytics data from the last 7 days\nassignment and summary of the data\nretrieval of Google Analytics data from the last 7 days of the previous year\nallocation and summary of the data\npreparation in tabular form and brief analysis by AI.\nsending the report as an email\npreparation in short form by AI for Telegram (optional)\nsending as Telegram message.\n\nRequirements\nThe following accesses are required for the workflow:\nGoogle Analytics (via Google Analytics API): Documentation\nAI API access (e.g. via OpenAI, Anthropic, Google or Ollama)\nSMTP access data (for sending the mail)\nTelegram access data (optional for sending as Telegram message): Documentation\n\nFeel free to contact me via LinkedIn, if you have any questions!",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleAnalytics",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

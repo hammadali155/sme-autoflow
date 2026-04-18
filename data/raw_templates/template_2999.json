@@ -1,0 +1,30 @@
+{
+  "id": 2999,
+  "name": "🐶 AI Agent for PetShop Appointments (Agente de IA para agendamentos de PetShop)",
+  "description": "🐶🤖 AI Agent for Pet Shops – Automate Customer Service & Bookings! 🐾💡\nTransform Your Pet Shop with AI-Powered Automation! 🚀\nEnhance customer experience and optimize operations with this n8n AI Agent designed for pet shops. 📲🐾 Automate client interactions, appointment scheduling, and service recommendations—saving time and increasing revenue!\n\n🔹 Key Features:\n✅ Instant WhatsApp responses – AI-powered chatbot handles customer inquiries. 💬\n✅ Automated appointment scheduling – Clients can book services hassle-free. 📅✂️\n✅ Personalized reminders – Reduce no-shows with automated notifications. 📢🐾\n✅ Customer data & service history management – Track interactions effortlessly. 📊📁\n✅ Product & service recommendations – Improve sales with smart suggestions. 🎁🐶\n\n📌 How It Works\n1️⃣ The workflow captures customer inquiries via WhatsApp.\n2️⃣ AI processes requests, provides information, and offers booking options.\n3️⃣ Clients can schedule grooming, vet visits, or other services in seconds.\n4️⃣ Automated reminders ensure appointments are remembered.\n5️⃣ Customer data is stored for better service personalization.\n\n⚙️ Setup & Customization\n🔧 Connect your WhatsApp API (evolution) for instant messaging.\n🔧 Integrate with Google Calendar for appointment booking.\n🔧 Customize reminders, services, and pricing rules to fit your business.\n\n💡 Reduce manual work, improve customer satisfaction, and scale your pet shop with AI automation!\n\n🐶🤖 [PT-BR] Agente de IA para Pet Shops – Atendimento e Agendamentos Automatizados! 🐾💡\nTransforme Seu Pet Shop com Automação Inteligente! 🚀\nOtimize o atendimento ao cliente e agilize processos com este Agente de IA para n8n. 📲🐾 Automatize interações, agendamentos e recomendações de serviços—economizando tempo e aumentando as vendas!\n\n🔹 Principais Funcionalidades:\n✅ Atendimento automático no WhatsApp – IA responde clientes instantaneamente. 💬\n✅ Agendamento de serviços automatizado – Clientes marcam banho, tosa ou consultas facilmente. 📅✂️\n✅ Lembretes personalizados – Reduza faltas com notificações automáticas. 📢🐾\n✅ Gestão de clientes e histórico de serviços – Controle dados de forma eficiente. 📊📁\n✅ Sugestão de produtos e serviços – Venda mais com recomendações inteligentes. 🎁🐶\n\n📌 Como Funciona\n1️⃣ O fluxo recebe perguntas dos clientes via WhatsApp.\n2️⃣ A IA processa os pedidos e fornece opções de agendamento.\n3️⃣ O cliente escolhe o serviço desejado e agenda em segundos.\n4️⃣ Lembretes automáticos garantem que os clientes não esqueçam os horários.\n5️⃣ O histórico do cliente é salvo para oferecer um atendimento mais personalizado.\n\n⚙️ Configuração e Personalização\n🔧 Conecte sua API do WhatsApp (evolution) para interação automática.\n🔧 Integre ao Google Calendar para gerenciar agendamentos.\n🔧 Personalize valores, serviços e regras de envio de lembretes conforme sua necessidade.\n\n💡 Automatize processos, melhore a experiência do cliente e escale seu pet shop com IA! 🚀",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.postgres",
+    "n8n-nodes-base.redis",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.crypto",
+    "n8n-nodes-base.supabase",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.textSplitterCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.toolCalculator",
+    "@n8n/n8n-nodes-langchain.toolWorkflow",
+    "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+    "@n8n/n8n-nodes-langchain.openAi",
+    "@n8n/n8n-nodes-langchain.textClassifier",
+    "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+    "@n8n/n8n-nodes-langchain.toolVectorStore"
+  ],
+  "tags": []
+}

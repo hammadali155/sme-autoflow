@@ -1,0 +1,13 @@
+{
+  "id": 12079,
+  "name": "Handle Calendly bookings, cancellations and reschedules with Gmail, Google Calendar, Sheets and Slack",
+  "description": "Complete Calendly automation that handles confirmations, cancellations and reschedules in a single workflow.\nWHAT IT DOES:\n\nLogs all meetings to Google Sheets automatically\nCreates events in organizer's Google Calendar\nSends professional HTML emails to guests\nNotifies your team on Slack (#meetings)\nHandles errors with Slack alerts (#errors)\n\nINCLUDED FLOWS:\n\nNew booking: Sheets + Calendar + Slack + Confirmation email\nCancellation: Sheets (updates status) + Slack + Cancellation email\nReschedule: Sheets + Slack + Email with new date/time\n\nSETUP:\n\nConnect Google Sheets (create sheet with columns: Event ID, Date Logged, Name, Email, Meeting Type, Date, Time, Status, Meeting URL, Timezone)\nConnect Google Calendar\nConnect Slack (create channels #meetings and #errors)\nConnect Gmail\nConfigure webhook in Calendly &gt; Integrations &gt; Webhooks\n\nCUSTOMIZABLE:\nEmails include professional HTML design with editable colors and text directly in the code nodes.\nIDEAL FOR:\nConsultants, coaches, agencies and sales teams using Calendly.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.googleCalendar",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": 13141,
+  "name": "Detect financial risk and orchestrate compliance with GPT‑4o, Slack and email",
+  "description": "How It Works\nThis workflow automates comprehensive risk signal detection and regulatory compliance management across financial and claims data sources. Designed for risk management teams, compliance officers, and financial auditors, it solves the critical challenge of identifying potential risks while ensuring timely regulatory reporting and stakeholder notifications.\nThe system operates on scheduled intervals, fetching data from multiple sources including financial APIs and claims databases, then merging these streams for unified analysis. It employs an AI-powered risk signal agent to detect anomalies, regulatory violations, and compliance issues. The workflow intelligently routes findings based on risk severity, orchestrating parallel processes for critical risks requiring immediate escalation and standard risks needing documentation. It manages multi-channel notifications through Slack and email, generates comprehensive compliance documentation, and maintains detailed audit trails. By coordinating regulatory analysis, exception handling, and evidence collection, it ensures complete risk visibility while automating compliance workflows.\n\nSetup Steps\nConfigure Schedule Trigger with risk monitoring frequency\nConnect Workflow Configuration node with data source parameters\nSet up Fetch B2B Data and Fetch Claims Data nodes with respective API credentials\nConfigure Merge Financial Data node for data consolidation\nConnect Calculate Risk Metrics node with risk scoring algorithms\nSet up Risk Signal Agent with OpenAI/Nvidia API credentials for anomaly detection\nConfigure parallel output parsers\nConnect Check Critical Risk node with severity routing logic\nSet up Route by Risk Level node for workflow branching\n\nPrerequisites\nOpenAI or Nvidia API credentials for AI-powered risk analysis, financial data API access\nUse Cases\nInsurance companies monitoring claims fraud patterns, financial institutions detecting transaction anomalies\nCustomization\nAdjust risk scoring algorithms for industry-specific thresholds\nBenefits\nReduces risk detection time by 80%, eliminates manual compliance monitoring",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

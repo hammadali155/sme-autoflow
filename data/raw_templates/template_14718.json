@@ -1,0 +1,12 @@
+{
+  "id": 14718,
+  "name": "Escalate overdue and blocked Jira tickets with Gmail and Google Chat",
+  "description": "How it works\nFetches all open sprint tickets daily from your Jira project\nAnalyzes each ticket for overdue days and blocked status\nRoutes to the right escalation level: assignee email → team Google Chat alert → manager escalation\n\nSet up steps\nAdd your Jira Software Cloud credentials in n8n\nAdd your Gmail OAuth2 credentials in n8n\nOpen the ⚙️ CONFIG node and fill in your 4 values (Jira domain, project key, manager email, Google Chat webhook)\nTest with the Manual Trigger, then enable the Schedule Trigger",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.jira",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

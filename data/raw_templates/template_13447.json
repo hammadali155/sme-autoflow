@@ -1,0 +1,15 @@
+{
+  "id": 13447,
+  "name": "Moderate and govern user content with OpenAI GPT-4o, Slack and Gmail",
+  "description": "\nHow It Works\nThis workflow automates end-to-end AI-driven content moderation for platforms managing user-generated content, including marketplaces, communities, and enterprise systems. It is designed for product, trust & safety, and governance teams seeking scalable, policy-aligned enforcement without subjective scoring. The workflow validates structured review, goal, and feedback data using a Performance Signal Agent that standardizes moderation signals and removes ambiguity. A Governance Agent then orchestrates policy enforcement, eligibility checks, escalation logic, and audit preparation. Content enters via webhook, is classified, validated, and routed by action type (approve, flag, escalate). Enforcement logic determines whether to store clean content, flag violations, or trigger escalation emails and team notifications. All actions are logged for traceability and compliance. This template solves inconsistent moderation decisions, lack of structured governance controls, and manual escalation overhead by embedding deterministic checkpoints, structured outputs, and audit-ready logging into a single automated pipeline.\n\nSetup Steps\nConnect OpenAI API credentials for AI agents.\nConfigure Google Sheets or database for logging.\nConnect Gmail for escalation emails.\nDefine moderation policies and routing rules.\nActivate webhook and test sample content.\n\nPrerequisites\nn8n account, OpenAI API key, Google Sheets or DB access, Gmail credentials, defined moderation policies.\nUse Cases\nMarketplace listing moderation, enterprise HR review screening\nCustomization\nAdjust policy rules, add risk scoring, integrate Slack instead of Gmail\nBenefits\nImproves moderation accuracy, reduces manual review, enforces governance consistency\n",
+  "nodes": [
+    "n8n-nodes-base.emailSend",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.agentTool"
+  ],
+  "tags": []
+}

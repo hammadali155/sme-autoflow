@@ -1,0 +1,16 @@
+{
+  "id": 3951,
+  "name": "Extract and Organize Colombian Invoices with Gmail, GPT-4o & Google Workspace",
+  "description": "🧾 Personal Invoice Processor\n\nThis N8N workflow automates the extraction and organization of personal invoices in Colombia received via Gmail. It includes the following key steps:\n\n🔁 Flow Summary\n\nEmail Trigger\n   Polls Gmail every 30 minutes for emails with .zip attachments (assumed to contain invoices).\n   Expects ZIP file following DIAN standards.\n\nZIP File Handling\n   Extracts all files.\n   Filters only PDF and XML files for processing.\n\nData Extraction & Processing\n   Uses LangChain Agent + OpenAI (GPT-4o-mini) to extract:\n     Tipo de documento (Factura / Nota Crédito)\n     Número de factura\n     Fecha de emisión (YYYY-MM-DD)\n     NIT emisor y receptor (sin dígito de verificación)\n     Razón social del emisor\n     Subtotal, IVA, Total\n     CUFE\n     Resumen de compra (max 20 words, formatted sentence)\n\nValidation\n   Ensures Total = Subtotal + IVA using a calculator node.\n\nStorage\n   Uploads the original PDF to Google Drive.\n   Renames the file to: YYYY-MM-DD-NUMERO_FACTURA.pdf.\n   Inserts or updates invoice details in Google Sheets using a unique Key (NIT_Emisor + Numero_Factura) to prevent duplication.\n\n&gt; ⚙️ Designed for personal use with minimal latency tolerance and high automation reliability.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.compression",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolCalculator"
+  ],
+  "tags": []
+}

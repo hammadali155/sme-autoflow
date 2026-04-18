@@ -1,0 +1,11 @@
+{
+  "id": 13712,
+  "name": "Review and approve Google Sheets orders by email and notify via LINE",
+  "description": "Automatically processes new orders added to Google Sheets. Small orders are approved instantly; large orders trigger an HTML email with one-click Approve / Reject links — each handled by an independent webhook, so multiple orders can be reviewed simultaneously without blocking each other.\n\nWhat makes this different\nUnlike Wait-node designs that block when multiple orders queue up, this workflow uses a stateless token pattern: each order gets a unique token written back to the sheet. Approval links carry the token; the handler validates it on every click — safe, idempotent, and fully concurrent.\n\nKey features\nGoogle Sheets Trigger polls for new rows automatically — no external caller needed\nConfigurable approval threshold (default: 500)\nDuplicate-processing guard: skips rows that already have a status\nOne-click Approve / Reject email with styled HTML buttons\nToken validation: tampered or expired links return a 403 error page\nAlready-processed guard: clicking the same link twice shows a friendly message\nLINE push notification for every outcome (auto-approved, approved, rejected)\nAll results written back to Google Sheets with a reviewedAt timestamp\n\nIntegrations\nGoogle Sheets · Gmail · LINE Messaging API · n8n Webhook\n\nRequired sheet columns\norderId · customerName · amount · approvalToken · status\n\n💡 Want more automation templates?\n👉 https://jasonchuang0818.gumroad.com/l/n8n-content-automation-bundle\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail"
+  ],
+  "tags": []
+}

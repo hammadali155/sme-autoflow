@@ -1,0 +1,12 @@
+{
+  "id": 13521,
+  "name": "Send employee leave alerts from Google Sheets via Slack and Gmail",
+  "description": "📊 Description\nAutomate employee leave tracking and communication with structured notifications and reminders 📅📣. This workflow checks a centralized Google Sheet daily to detect when leave periods start or end. When leave begins, it notifies your HR Slack channel and reminds the employee to update their availability. When leave ends, it sends a return notification and follow-up reminder. All actions are reflected back in Google Sheets to maintain a single source of truth.\nIdeal for growing teams that want a simple, reliable way to manage leave visibility without manual follow-ups or status tracking.\n\nWhat This Template Does\n🌐 Runs automatically on a daily schedule\n 📄 Reads employee leave data from Google Sheets\n 🧮 Validates and evaluates leave start and end dates\n 🔀 Routes employees into activation or reset flows\n 📣 Sends Slack notifications to the HR or admin channel\n 📧 Sends reminder emails to employees at the right time\n 📊 Updates leave status in Google Sheets to prevent duplicates\n 🔁 Processes employees sequentially for reliable execution\n\nKey Benefits\n✅ Eliminates manual leave tracking\n ✅ Improves visibility for HR and leadership\n ✅ Ensures employees receive timely reminders\n ✅ Prevents duplicate notifications using status flags\n ✅ Keeps Google Sheets updated as the single source of truth\n ✅ Scales easily as your team grows\n\nFeatures\nDaily scheduled leave check\nGoogle Sheets as centralized leave database\nSmart activation and reset logic\nSlack channel notifications\nAutomated employee reminder emails\nStatus tracking with idempotent processing\nSequential execution to avoid API rate limits\nConfigurable Slack channel settings\n\nRequirements\nGoogle Sheets OAuth2 credentials\nSlack OAuth2 credentials\nGmail OAuth2 credentials\nGoogle Sheet with the following columns:\nEmployee Email, Name, Start Date, End Date, Status, Last Updated\n\nTarget Audience\n🏢 HR and People Operations teams\n 🚀 Growing startups managing distributed teams\n 📊 Operations teams needing structured leave tracking\n 🤖 Automation builders creating internal workflow systems\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": 11540,
+  "name": "Create a one-minute video from Telegram prompts with Veo 3 and Fal.ai",
+  "description": "One-Minute VEO Video Generator  \nAutomated, Consistent, High-Quality Short-Form Video Creation\n\nThis workflow turns a single Telegram prompt into a fully generated, visually consistent, one-minute video using Veo 3. It’s built for creators, agencies, and brands that want fast, scalable short-form content without sacrificing quality.\n\nWhether you're posting on YouTube Shorts, TikTok, Instagram Reels, or need polished short ads, this automation gives you studio-level output on autopilot.\n\n🚀 What This Workflow Does\nThe workflow listens for a specific Telegram message and instantly triggers a complete AI-powered production pipeline:\n\nGenerates one minute of smooth, coherent video  \nEnsures visual consistency across all scenes  \nSaves all video assets in Google Drive  \nUses public sharing links so FAL can reliably process and merge clips  \nDelivers the final result back to the user automatically\n\nIt’s your fully automated video studio — no timeline editing, no manual rendering, no hassle.\n\n⚡ How to Use It\n\n1 — Send a Prompt to Telegram\nMessage your bot with the trigger command, along with the topic for your video. Example:\n\n&gt; “/makevideo Create a motivational video about resilience.”\n\nThis immediately starts the workflow.\n\n2 — Let AI Build Your One-Minute Video\nUsing Veo 3, the system:\nGenerates structured, consistent video scenes  \nMaintains coherent visuals from start to finish  \nKeeps pacing smooth and story flow intact  \n\nYou don't have to write a script or prompt multiple times — everything is handled automatically.\n\n3 — Auto-Store Assets in Google Drive\nEach generated clip is uploaded into a public, designated Google Drive folder.  \nThis allows FAL to fetch and process the video URLs seamlessly during merging and final production.\n\n4 — Receive the Final Video\nOnce complete, the workflow sends you the fully generated one-minute video directly in Telegram.  \nYou can save it, post it, or reuse it as needed.\n\n📈 Perfect For Fast Content Growth\n\nGreat For:\nYouTube Shorts  \nTikTok  \nInstagram Reels  \nFacebook Reels  \nX video posts  \nAny short-form content platform  \n\nAlso Ideal For:\nShort ads  \nPromo videos  \nB2B explainer clips  \nTraining content  \nCourse material intros  \n\nAnywhere you need fast, consistent, high-quality video — this workflow delivers.\n\n🎯 Summary\nThis workflow simplifies content creation to one step: send a Telegram prompt.  \nEverything else — generation, consistency, merging, hosting, delivery — is fully automated.\n\nIf you want a reliable, scalable way to create one-minute videos for social growth or marketing, this automation is one of the most efficient systems you can deploy.\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": 13085,
+  "name": "Create and publish AI videos with Sora 2 Cameos, Gemini, and Blotato",
+  "description": "Overview\n\nThis workflow automatically creates short-form AI videos using Sora 2 Cameos, powered by n8n and AI agents.\n\nIt connects viral content collection, AI script and prompt generation, video rendering, video merging, and multi-platform publishing into a single fully automated system. Once configured, the workflow runs end to end without manual editing or intervention.\n\nThe workflow is designed for creators, marketers, and affiliate builders who want to scale faceless or avatar-style AI videos consistently using viral ideas and automated publishing.\n\nWhat can this workflow do?\n\nAutomatically collect viral content ideas from external sources  \nAnalyze viral ideas and generate structured Sora 2–ready prompts  \nCreate AI videos using pre-selected Sora 2 Cameos characters  \nMerge multiple AI video clips into a single final video  \nPublish videos automatically to TikTok, Facebook, and Instagram  \nTrack publishing status, success, and errors in Google Sheets  \n\nThis workflow reduces manual video production work while keeping the process structured, scalable, and repeatable.\n\nHow it works\n\nThe workflow starts by automatically collecting viral content ideas on a schedule and storing them in Google Sheets as a content backlog.\n\nBefore prompt generation, a Cameos character is selected and configured manually on Sora2.com. This selected avatar is used consistently across all generated videos.\n\nEach viral idea is then analyzed to extract hooks, themes, and video direction. An AI Agent generates structured scripts and Sora 2–ready prompts based on both the viral content and the selected Cameos character.\n\nThese prompts are sent to the Sora 2 Cameos video generation API to render short video clips. The workflow monitors rendering status and retries if needed.\n\nOnce all clips are ready, they are automatically merged into a single final video. The finished video is published to social platforms such as TikTok, Facebook, and Instagram. Publishing results and errors are logged back to Google Sheets for monitoring and optimization.\n\nSetup steps\n\nConnect an AI model (Gemini or compatible LLM) for script and prompt generation  \nSelect and configure a Cameos character on Sora2.com  \nAdd Sora 2 Cameos API credentials for AI video generation  \nConfigure the video merge step to combine multiple clips into one final video  \nConnect social publishing APIs (TikTok, Facebook, Instagram)  \nConnect Google Sheets for content intake and status tracking  \n\nOnce configured, the workflow runs automatically on a schedule without manual input.\n\nDocumentation\n\nFor a full walkthrough, optimization tips, and scaling strategies, watch the detailed tutorial on YouTube.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.toolThink",
+    "@n8n/n8n-nodes-langchain.googleGemini"
+  ],
+  "tags": []
+}

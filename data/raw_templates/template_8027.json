@@ -1,0 +1,11 @@
+{
+  "id": 8027,
+  "name": "Fully Automate Blog Creation with GPT & Publish to WordPress via Google Sheets",
+  "description": "Creating high-quality, SEO-friendly blog posts consistently can be time-consuming. This template helps content creators, bloggers, SEO specialists, and agencies fully automate their blogging workflow. By combining AI content generation (GPT), Google Sheets for keyword management, and WordPress for direct publishing, this workflow saves hours of manual work and ensures professional results.\n\n⚡ Use Cases\n\nAutomate content creation for niche blogs.\n\nGenerate SEO-optimized articles from keyword lists.\n\nKeep a consistent publishing schedule without manual effort.\n\nScale content production for agencies or affiliate sites.\n\n✅ Pre-requirements\n\nBefore using this template, you will need:\n\nGoogle Sheets API credentials (for managing topics & keywords).\n\nAI API key (e.g., OpenAI, LM Studio, Ollama, or any connected model).\n\nWordPress credentials with API access.\n\nBasic understanding of n8n workflow editor.\n\n🔧 Step-by-Step Setup\n\nConnect Google Sheets:\nAdd your API credentials.-\nUse the sheet to store keywords, titles, and categories.\nIntegrate AI Model (GPT or others):\nInsert your API key into the AI node.\nCustomize the SEO writing prompt for Rank Math 90+ score.\n\nContent Processing:\n\nThe workflow will fetch one keyword at a time.\n\nAI will generate a 1200–1500+ word SEO blog post.\n\nOutput is cleaned into proper HTML.\n\nPublish to WordPress:\n\nConfigure the WordPress node with your site credentials.\n\nAutomatically post as Draft or Published.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

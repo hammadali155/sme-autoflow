@@ -1,0 +1,15 @@
+{
+  "id": 13148,
+  "name": "Summarize Gmail into Notion with OpenAI and create audio digests in Google Drive",
+  "description": "Gmail → AI Summary → Notion + Audio Digest\n\nThis n8n workflow turns incoming Gmail emails into structured AI summaries and optional audio digests, automatically delivered to Notion and Google Drive.\n\nIt is designed to reduce email overload by transforming raw messages into concise, readable, and listenable content.\n\nWhat this workflow does\n\nOn a scheduled basis, the workflow:\n\nRetrieves Gmail messages (all subjects or filtered)\n\nMarks processed emails as read to avoid duplicates\n\nExtracts and normalizes the email body\n\nUses OpenAI to generate a clean, structured summary\n\nFrom the summary, the workflow branches into two outputs:\n\nText summary\n\nThe final AI-generated summary is appended as a block in Notion\n\nIdeal for daily logs, knowledge bases, or team dashboards\n\nAudio transcript (optional)\n\nThe summary text is converted into speech using a TTS model\n\nThe audio file is uploaded to Google Drive\n\nA shareable link is generated\n\nThe audio reference is added back into Notion\n\nKey features\n\nAutomated Gmail ingestion\n\nAI-powered email summarization\n\nJavaScript preprocessing for clean input\n\nNotion integration for structured storage\n\nText-to-speech audio generation\n\nGoogle Drive hosting for audio files\n\nError-aware branching for TTS generation\n\nIdempotent and schedule-safe execution\n\nTypical use cases\n\nDaily or weekly email digests\n\nExecutive summaries of inbox activity\n\nAudio briefings you can listen to on the go\n\nKnowledge capture from important emails\n\nReducing cognitive load from long email threads\n\nWho this template is for\n\nProfessionals dealing with high email volume\n\nTeams using Notion as a central workspace\n\nn8n users building AI productivity automations\n\nAnyone who wants emails summarized instead of skimmed\n\nThis template is designed to be practical, extensible, and production-ready, and can be easily adapted to:\n\nmultiple Gmail labels\n\ndifferent summary styles\n\nalternative TTS providers\n\nadditional destinations (Slack, Docs, databases)",
+  "nodes": [
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

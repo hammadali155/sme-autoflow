@@ -1,0 +1,12 @@
+{
+  "id": 13071,
+  "name": "Generate PDF invoices with line item support from Airtable using Google Sheets",
+  "description": "Stop manually copy-pasting client data into Word templates. This workflow automates the entire invoicing process, handling complex line items, VAT calculations, PDF generation, and CRM syncing in under 20 seconds.\n\nIt is designed to solve the \"Admin Trap\" by connecting your database (Airtable) to your document generator (Google Drive/Docs) via a Webhook trigger.\n\n⚡ What this workflow does\nReceives Data: Listens for a Webhook (compatible with frontends like Lovable, Softr, or standard forms) containing the Client ID and a list of Services.\n\nSplits Line Items: Uses a \"Split In Batches\" logic to iterate through multiple services/products, ensuring every line item is recorded individually.\n\nDatabase Sync: Creates a parent \"Invoice\" record and links child \"Service\" records in Airtable.\n\nGenerates PDF: Populates a Google Doc/Sheet template with dynamic client data and service rows, then exports it as a PDF.\n\nFiles & Links: Uploads the PDF to a designated Google Drive folder and attaches the file URL back to the specific Invoice record in Airtable.\n\n🛠 Setup Requirements\n1. Airtable Base Structure\n\nYou need three linked tables to make this work:\n\nClients: Stores Address, VAT Number, and Email.\n\nInvoices: The master record containing Date, Total Amount, and the Invoice PDF attachment field.\n\nServices: Stores individual line items (Value, Units, VAT Amount) linked to the Invoices table.\n\n2. Google Drive Template\n\nCreate a Google Doc or Sheet.\n\nUse {{variable_name}} placeholders for Client Name, Address, and Invoice ID.\n\nEnsure you have a section for line items that matches the automation loop.\n\n💡 Use Case\nPerfect for freelancers, agencies, and founders who want to trigger invoices from a dashboard or dropdown menu without manually calculating VAT or typing out addresses.\n\n👋 Need help building this? Want to automate & scale your business?\n\nI help founders automate their \"boring work\" so they can focus on sales.\n\nhttps://www.linkedin.com/in/sergiomedinah/\nhttps://sergio-medina.com/",
+  "nodes": [
+    "n8n-nodes-base.airtable",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

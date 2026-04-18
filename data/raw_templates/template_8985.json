@@ -1,0 +1,12 @@
+{
+  "id": 8985,
+  "name": "AI Lead Scoring & Routing with Google Gemini, Sheets and Slack Notifications",
+  "description": "Form Lead Scoring with AI → Google Sheets + Slack  \n\nWhen a new lead fills out your Typeform or any other form, this workflow classifies the message with AI, stores it in the right Google Sheet tab, and can send your team a Slack alert.  \n\nBenefits  \nGet new leads in real time from any form  \nClassify each lead with AI (hot / neutral / cold)  \nSave leads to the correct Google Sheets tab automatically  \nSend Slack alerts for hot leads so you act fast  \nKeep your pipeline clean and easy to scan  \n\nHow It Works  \nWebhook receives a new form submission  \nParse name, email, phone, message, and timestamp  \nAI analyzes the message and returns hot / neutral / cold  \nRoute to the matching Google Sheets tab (Hot, Neutral, Cold)  \n(Optional) Post a Slack message with key details  \n\nWho Is This For  \nAgencies running paid ads and lead forms  \nSales teams that need quick triage  \nCoaches, creators, and SaaS teams with waitlists  \n\nSetup  \nConnect your form tool (Typeform or other) to a webhook  \nAdd Google Gemini (or your AI model) credentials  \nConnect Google Sheets (Spreadsheet ID + Tab names)  \n(Optional) Connect Slack and select a channel  \nTest with a few submissions to check routing  \n\nROI & Monetization  \nRespond faster to hot leads → higher close rates  \nSave 2–4 hours/week on manual sorting  \nOffer as “AI lead scoring” for clients ($500–$2k/month)  \n\nStrategy Insights  \nIn the full walkthrough, I show how to:  \nWrite a short, reliable prompt for clear labels  \nMap form fields cleanly into Sheets  \nFormat Slack alerts for quick reading  \nExpand with auto-replies or CRM sync later  \n\nCheck Out My Channel  \n\nFor more AI automation systems that get real results, check out my YouTube channel where I share the exact strategies I use to build automation workflows, win clients, and scale to $20k+ monthly revenue.\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+    "@n8n/n8n-nodes-langchain.sentimentAnalysis"
+  ],
+  "tags": []
+}

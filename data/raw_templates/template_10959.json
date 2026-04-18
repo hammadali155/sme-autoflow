@@ -1,0 +1,12 @@
+{
+  "id": 10959,
+  "name": "Monitor eBay deals with GPT-4 scoring,Decodo & Telegram notifications",
+  "description": "What this workflow does\n\nThis workflow automatically monitors eBay Deals and sends Telegram alerts when relevant, high-quality deals are detected.\n\nIt combines:\nWeb scraping with Decodo**\nJavaScript pre-processing (no raw HTML sent to the LLM)**\nAI-based product classification and deal scoring**\nRule-based filtering using price and score**\n\nOnly valuable deals reach the final notification.\n\nHow it works (overview)\n\nThe workflow runs manually or on a schedule.\nThe eBay Deals page is scraped using Decodo, which handles proxies and anti-bot protections.  \nDecodo – Web Scraper for n8n\nJavaScript extracts only key product data (ID, title, price, URL, image).\nAn AI Agent classifies each product and assigns a deal quality score (0–10).\nPrice and score rules are applied.\nMatching deals are sent to Telegram.\n\nHow to configure it\n\n1. Decodo\nAdd your Decodo API credentials to the Decodo node.\nOptionally change the target eBay URL.\n\n2. AI Agent\nAdd your LLM credentials (e.g. Google Gemini).\nNo HTML is sent to the model — only compact, structured data.\n\n3. Telegram\nAdd your Telegram Bot Token.\nSet your chat_id in the Telegram node.\nCustomize the alert message if needed.\n\n4. Filtering rules\nAdjust price limits and minimum deal score in the IF node",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

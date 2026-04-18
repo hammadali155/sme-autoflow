@@ -1,0 +1,14 @@
+{
+  "id": 10168,
+  "name": "Automate News Intelligence with Gemini AI for RSS Feeds to Notion and Slack",
+  "description": "Who’s it for\n\nTeams that monitor multiple news sources and want an automated, tagged, and prioritized briefing—PMM, PR/Comms, Sales/CS, founders, and research ops.\n\nWhat it does / How it works\n\nEach morning the workflow reads your RSS feeds, summarizes articles with an LLM, assigns tags from a maintained dictionary, saves structured records to Notion, and posts a concise Slack digest of top items. Core steps: Daily Morning Trigger → Workflow Configuration (Set) → Read RSS Feeds → Get Tag Dictionary → AI Summarizer and Tagger → Parse AI Output → Write to Notion Database → Sort by Priority → Top 3 Headlines → Format Slack Message → Post to Slack.\n\nHow to set up\n\nOpen Workflow Configuration (Set) and edit: rssFeeds (array of URLs), notionDatabaseId, slackChannel.\n\nConnect your own credentials in n8n for Notion, Slack, Google Sheets (if used for the tag dictionary), and your LLM provider.\n\nAdjust the trigger time in Daily Morning Trigger (e.g., weekdays at 09:00).\n\nRequirements\n\nn8n (Cloud or self-hosted)\n\nSlack app with chat:write to the target channel\n\nNotion database with properties: summary (rich_text), tags (multi_select), priority (number), url (url), publishedDate (date)\n\nOptional Google Sheet for the tag dictionary (or replace with another source)\n\nHow to customize the workflow\n\nScoring & selection: Change priority rules, increase “Top N” items, or sort by recency.\n\nTaxonomy: Extend the tag dictionary; refine the AI prompt for stricter tagging.\n\nOutputs: Post per-tag Slack threads, send DMs, or create Notion relations to initiatives.\n\nSources: Add more feeds or mix in APIs/newsletters.\n\nSecurity: Do not hardcode API keys in HTTP nodes; keep credentials in n8n.",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.notion",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

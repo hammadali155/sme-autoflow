@@ -1,0 +1,14 @@
+{
+  "id": 3700,
+  "name": "Automated Generation of AI Advertising Photos for Product Marketing",
+  "description": "How it works\n\nThis workflow automates the transformation of standard product images into professional product photography featuring human models\nIt uses AI to analyze product images, create tailored photography prompts, and generate high-quality enhanced versions\n\nSet up steps\n\nYou'll need an OpenAI API key and access to gpt-image-1 (verify your organization)\nSet up a Google Sheets spreadsheet with columns: Image-URL, Prompt, Output\nCreate a Google Drive folder to store the generated images\n\nRequirements:\n\nOpenAI API access (for image generation and analysis)\nGoogle Sheets and Google Drive accounts\nBasic product images (URLs) as input\nThe spreadsheet must contain a column named \"Image-URL\" with links to the product images\n\nThis workflow automatically:\n\nReads product image URLs from your Google Sheet\nDownloads the images for processing\nAnalyzes each image to understand what product it contains\nCreates specialized photography prompts ensuring each product is shown with a human model\nGenerates professional product photography using OpenAI's image generation capabilities\nUploads results to Google Drive and updates your spreadsheet with links\n\nExtra:\nYou can also use the included simple image generation workflow to directly create images via prompt without product image input. This option lets you quickly generate images through the OpenAI API using just text prompts",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.googleDrive",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.openAi"
+  ],
+  "tags": []
+}

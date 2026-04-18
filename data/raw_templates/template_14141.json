@@ -1,0 +1,15 @@
+{
+  "id": 14141,
+  "name": "Scrape B2B leads from Apollo, generate Groq AI emails, and send via Gmail",
+  "description": "This n8n workflow automates your entire B2B outreach pipeline from lead discovery to personalized cold email delivery. Submit a form, let Apollo find and enrich your leads, review AI-generated emails in your sheet and send them all with one click.\n\nHow it works\n\nForm Trigger** accepts Job Title, Location and Number of Leads to kick off the workflow\nApollo** searches for matching people and enriches each lead with email, phone, LinkedIn URL and company data\nDuplicate check** runs automatically to skip any leads already in your sheet\nLeads are saved** to Google Sheet with outreach status set to Pending\nManual Trigger** runs the email generation section using Groq LLM to write a personalized cold email per lead\nGenerated emails** are saved to the sheet for review before sending\nGmail** sends each email and updates the outreach status to Mail Sent\n\nHow to use\n\nRun Trigger 1 — Form to scrape and enrich leads from Apollo\nReview leads in your Google Sheet\nRun Trigger 2 — Manual to generate and send cold emails\nUpdate the AI Cold Email Writer node with your company details before running\n\nRequirements\n\nApollo** account with API Key\nGoogle Sheets** account\nGroq** account with API Key\nGmail** account\n\nCustomising this workflow\n\nReplace Groq with OpenAI or any other LLM for email generation\nExtend with a follow-up sequence to re-engage leads who did not reply\n\n\n\n\n\n\n\n\n\n\n\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.gmail",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.lmChatGroq"
+  ],
+  "tags": []
+}

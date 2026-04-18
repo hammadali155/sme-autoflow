@@ -1,0 +1,10 @@
+{
+  "id": 13631,
+  "name": "Monitor YouTube channels and publish VideoDB AI summaries to Notion",
+  "description": "\n\nThis n8n template demonstrates how to monitor YouTube channels and create AI-generated summaries in Notion.\nIt helps you build a searchable video knowledge base without watching every new upload manually.\n\nWho’s it for\n\nResearch teams tracking industry content\nPR professionals monitoring brand mentions, product reviews, and industry news for daily press briefings\nContent teams building internal learning libraries\n\nGood to know\n\nThe workflow uses RSS, so it triggers when new feed items appear.\nLong videos may take more time to process and summarize.\nMake sure your VideoDB account has enough balance before running this workflow. Track usage rates at console.videodb.io/dashboard/usage.\n\nHow it works\n\nAn RSS trigger watches a YouTube channel feed.\nNew video links are sent to VideoDB for upload and transcription.\nVideoDB summarizes the transcript into key points.\nn8n creates a Notion database entry with title, link, and summary.\nYour Notion workspace becomes a continuously updated content archive.\n\nHow to use\n\nAdd credentials for VideoDB and Notion.\nSet your target YouTube RSS URL in the trigger node.\nConfigure the Notion database ID and field mapping.\nTest with a sample feed item, then activate the workflow.\n\nRequirements\n\nVideoDB API key (Get one here)\nNotion workspace with API access\nYouTube channel RSS feed URL ( You can checkout websites such as https://tubepilot.ai/tools/youtube-rss-feed-generator/ for getting the RSS Feed for any YT Channel )\nn8n instance (cloud or self-hosted)\n\nCustomising this workflow\n\nTrack multiple channels by adding more RSS triggers.\nChange the AI prompt for shorter or more detailed summaries.\nAdd topic tags or sentiment fields in Notion.\nSend Slack updates when a new summary is created.\n\nDisclaimer:\nThis workflow uses VideoDB's Verified Community Node and will only work on self-hosted n8n instances.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.notion"
+  ],
+  "tags": []
+}

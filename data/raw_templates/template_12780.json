@@ -1,0 +1,15 @@
+{
+  "id": 12780,
+  "name": "Generate podcast topic ideas from RSS feeds with Gemini, SerpAPI and Notion",
+  "description": "🤖 Automated AI content researcher: YouTube & RSS to Notion via Gemini\n\n\nThis workflow is basically my shortcut for researching popular topics to create podcast content on without spending all day on YouTube, scrolling X and reading websites. \n\nIt grabs the latest videos and articles from the last 24 hours, runs them through Gemini Pro (with SerpAPI to double-check inputs), and then spits out actual content hooks and thumbnail ideas.\n\nEverything gets cleaned up into a neat Notion database so I can just log in, see what's hot, and start working on the podcast.\n\nWhat you need\nTo use this workflow, you need credentials for the following services:\n\nGoogle Gemini API: (Free tier available via Google AI Studio) for the LLM.\n\nSerpAPI: To allow the AI Agent to browse live Google search results.\n\nGoogle Sheets: To maintain your list of target RSS feeds.\n\nNotion: For storing the researched content.\n\nTelegram: For mobile notifications.\n\nResources\nVideo Tutorial: https://youtu.be/IoHayi68Ckk \n\nCreated by: Scalo Labs",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.notion",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.outputParserStructured",
+    "@n8n/n8n-nodes-langchain.toolSerpApi",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": 14676,
+  "name": "Send a daily AI crypto news digest from Brave Search to Telegram with GPT-4.1-mini",
+  "description": "Crypto News Digest — Daily Telegram Bot\n\nAutomatically fetch the latest crypto headlines every morning and receive a clean AI-generated summary straight to your Telegram — fully hands-off once activated.\n\nWhat This Workflow Does\n\nEvery day at a scheduled time, this workflow pulls the freshest cryptocurrency news from Brave Search, processes the top 5 results, generates a concise digest using OpenAI, and delivers it directly to a Telegram chat. No manual input, no dashboards to check — the news comes to you.\n\nHow It Works\n\nSchedule Trigger fires automatically every day at 08:00 UTC\nBrave Search queries the News API for the latest crypto headlines from the past 24 hours\nFormat Top 5 cleans and normalizes the raw results into structured article objects\nBuild Prompt assembles the articles into a formatted input string for the language model\nMake Summary sends the prompt to OpenAI (gpt-4.1-mini), which generates a structured digest with a headline and 2–3 sentence summary per story, plus a final Market Mood line\nSend to Telegram delivers the completed digest to your configured chat or channel\n\nWhat You Get\n\nA clean, plain-text daily message in Telegram containing:\n\n5 headlines from the past 24 hours\nA concise 2–3 sentence summary per story\nA Market Mood line summarizing the overall sentiment of the day\n\nCustomize for Any News Topic\n\nThis workflow is built to be easily repurposed. To switch from crypto to any other topic, simply update the Query field in the Brave Search node.\n\nExamples:\nartificial intelligence AI news today\nstock market nasdaq sp500 news\ntech industry startup funding news\nreal estate housing market news US\n\nIf you change the topic, also update the system prompt inside the Make Summary node to reflect the new subject and audience.\n\nRequirements\n\nBrave Search API key (plan with News search enabled)\nOpenAI API key\nTelegram Bot token and target Chat ID",
+  "nodes": [
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

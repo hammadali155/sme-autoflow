@@ -1,0 +1,16 @@
+{
+  "id": 11421,
+  "name": "Collect Viral Instagram AI Art with GPT-4 Analysis and Telegram Delivery",
+  "description": "Who is this for?\n\nThis template is perfect for:\nAI art enthusiasts** who want to stay updated on trending AI-generated artwork\nContent curators** looking to automate art discovery\nJapanese-speaking users** who want translated captions\nSocial media managers** tracking AI art trends across platforms\n\nWhat this workflow does\n\nThis workflow automatically collects viral AI art posts from Instagram and delivers them to your Telegram with Japanese translations. It runs daily and filters only high-engagement posts to ensure quality content.\n\nKey Features:\n📸 Collects from 4 AI art hashtags (#AIart, #midjourney, #stablediffusion, #aiartwork)\n🔥 Filters viral posts only (100+ likes threshold)\n🇯🇵 Auto-translates captions to Japanese via DeepL\n⚠️ Sends error alerts to Telegram if something goes wrong\n⏱️ Built-in rate limiting to avoid API blocks\n\nHow it works\n\nSchedule Trigger - Runs daily at 18:00\nInstagram Scraping - Apify collects posts from multiple AI art hashtags\nViral Filter - Only posts with 100+ likes and valid captions pass through\nTranslation - DeepL translates captions from English to Japanese\nImage Download - Fetches the post image\nTelegram Delivery - Sends photo with translated caption, likes count, and source link\nRate Limiting - 3-second delay between posts to avoid API limits\n\nSetup Requirements\n\nApify account** - Sign up at apify.com for Instagram scraping\nDeepL API key** - Get free API access at deepl.com/pro-api\nTelegram Bot** - Create via @BotFather and get your Chat ID\n\nHow to set up\n\nImport this workflow into n8n\nSet up credentials:\n   Connect your Apify account\n   Add your DeepL API key\n   Configure Telegram Bot token\nReplace YOUR_TELEGRAM_CHAT_ID with your actual Chat ID in both Telegram nodes\n(Optional) Adjust the viral threshold in the Filter node\n(Optional) Modify hashtags in the Apify node\nActivate the workflow\n\nHow to customize\n\nChange hashtags:** Edit the directUrls array in the Apify node\nAdjust viral threshold:** Change the 100 value in the Filter node\nChange schedule:** Modify the trigger time in the Schedule Trigger node\nChange language:** Update the translateTo parameter in the DeepL node\nModify caption format:** Edit the caption template in the Telegram node\n\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.slack",
+    "n8n-nodes-base.telegram",
+    "n8n-nodes-base.deepL",
+    "n8n-nodes-base.code",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+  ],
+  "tags": []
+}

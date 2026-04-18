@@ -1,0 +1,9 @@
+{
+  "id": 2977,
+  "name": "Line Chatbot Handling AI Responses with Groq and Llama3",
+  "description": "Workflow overview:\nThis workflow is designed for dynamic and intelligent conversational capabilities. It incorporates Meta's llama3.3-versatile model for personal assistant. There are no issues when sending simple text to the LINE reply API, so in this workflow you can see how to handle large and complex text sending from AI chat without any errors.\n\nWorkflow description:\nUser uses Line Messaging API to send message to the chatbot, create line business ID from here: Line Business\nSet the message from Step 1 to the proper value\nSend the message to process at Groq using API key that we have created from Groq\nSend the reply message from AI Agent back to Line Messaging API account\n\nKey Features:\n\nUtilizes Meta's llama 3.3 model for robust conversational capabilities\nHandles large and complex text interactions with ease, ensuring reliable connections to LINE Messaging API\nDemonstrates effective strategies for processing and responding to large and complex text inputs from AI chat\n\nTo use this template, you need to be on n8n version 1.79.0 or later.",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

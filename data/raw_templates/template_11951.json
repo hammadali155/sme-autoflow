@@ -1,0 +1,15 @@
+{
+  "id": 11951,
+  "name": "Send AI-Curated Weekly News Digests with RSS, Vector DB & GPT-4o",
+  "description": "What this workflow does\n\nThis workflow implements a two-stage news automation system\ndesigned for reusable and topic-driven email delivery.\nNews articles are continuously collected from multiple platforms\nusing RSS feeds and stored in a vector database with semantic\nembeddings and category metadata.\n\nInstead of fetching news on demand, the workflow separates\ndaily ingestion from weekly delivery. This allows the same\nnews data to be reused across different topics, audiences,\nor delivery schedules.\n\nOn a weekly basis, relevant articles are retrieved from the\nvector store based on defined areas of interest and item limits.\nThe selected news is then processed by an AI agent, which\nconverts the raw articles into a structured, email-ready format\nbefore sending the final content to users.\n\nHow it works\n\nNews articles are collected daily from multiple RSS feeds\nArticles are categorized and stored in a vector database\nOn a weekly trigger, topic preferences are evaluated\nRelevant articles are retrieved using vector-based search\nAn AI agent formats the content for email delivery\nThe email is sent to the user\n\nSetup\n\nTo use this workflow, complete the following steps:\n\nAdd and configure your RSS feed sources\nConnect a vector database and embedding model\nConfigure AI model credentials for content generation\nSet up email service credentials\nDefine weekly scheduling and topic inputs\nTest retrieval and email output\n\nCustomization\n\nYou can customize this workflow by:\n\nAdding or removing RSS feed sources\nAdjusting news categories or topic filters\nChanging the number of articles retrieved per topic\nModifying the AI agent’s writing tone or structure\nReusing the vector store for other content workflows\nUpdating email frequency or delivery format\n\nRequirements\n\nRSS feed URLs\nVector database credentials\nAI model credentials\nEmail service credentials\n",
+  "nodes": [
+    "n8n-nodes-base.gmail",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+    "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+    "@n8n/n8n-nodes-langchain.documentDefaultDataLoader"
+  ],
+  "tags": []
+}

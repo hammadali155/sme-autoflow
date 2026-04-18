@@ -1,0 +1,12 @@
+{
+  "id": 14360,
+  "name": "Generate and approve Google review replies with Groq AI and Slack",
+  "description": "How it works  \nThis workflow automatically handles new Google reviews by generating AI-powered replies and deciding how to respond based on rating. Positive reviews are replied to instantly, while lower ratings are routed for manual approval via Slack. It ensures fast engagement without losing control over sensitive responses. The process runs continuously using a real-time trigger.\n\nStep-by-step  \n\nCapture new reviews**  \n  Fetch New Reviews – Triggers when a new review is posted in Google Business Profile.  \n  Edit Fields – Extracts and formats reviewer name, rating, and review text.  \n\nGenerate AI response**  \n  AI Agent – Creates a contextual, human-like reply based on the review content.  \n    Groq Chat Model – Powers the AI Agent with a language model for response generation.  \n\nDecision and response handling**  \n  If – Checks if the review rating is positive (4 or 5 stars).  \n  Reply to review – Automatically posts reply for positive reviews.  \n  Send message and wait for response – Sends review + AI reply to Slack for approval if rating is lower.  \n  If1 – Checks whether the Slack response is approved.  \n  Reply to review1 – Posts the approved reply back to Google Business Profile.  \n\nWhy use this?  \n\nRespond instantly to positive reviews and boost customer engagement  \nMaintain control over sensitive or negative feedback with approval flow  \nSave time by automating repetitive review responses  \nEnsure consistent tone using AI-generated replies  \nImprove brand reputation with faster, structured responses  ",
+  "nodes": [
+    "n8n-nodes-base.slack",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatGroq",
+    "n8n-nodes-base.googleBusinessProfile"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 4724,
+  "name": "Track Website Visibility in Google's AI Overview with SerpAPI and Google Sheets",
+  "description": "\nThis template helps anyone track how often their website appears in Google’s AI Overview. a growing part of search results that can’t currently be tracked using traditional SEO tools. \nWith this workflow, users can:\nInput a list of keywords (from Google Search Console or manual research).\nUse the SerpApi to pull Google search results.\nExtract AI Overview content and its list of sources.\nMap that information into a structured Google Sheet, including whether your site is listed in those sources.\n\nSetup is straightforward and fully automated, but you'll need: \nA SerpApi key\nA connected Google Sheets account\n\nWho is this for?\nThis workflow is designed for SEO professionals, digital marketers, and site owners who want to track their website’s visibility in Google AI Overviews.\n\nWhat problem does it solve?\nAI Overviews are rapidly becoming more common in Google search results. However, there's no tool (yet) that tells you if your website is appearing in those answers. This is a blind spot for SEO. This workflow helps you check your site’s presence in AI Overviews manually, at scale.\n\nWhat does the workflow do?\nThe workflow:\nTakes a list of target keywords (exported from GSC or elsewhere)\nUses SerpApi to get search results from Google\nExtracts the AI Overview block and its sources\nChecks if your domain is among them\nSaves all results into a Google Sheet \n\nThe final Google Sheet will contain: Keyword | AI Overview Exists | List of Sources | Is my domain listed\n\nSetup\nYou’ll need:\nA SerpApi API key\nA Google Sheet with your list of keywords\nA connected Google Sheets account in n8n\n\nHow to customize this workflow\nChange the list of keywords (pull from GSC or edit the sheet manually)\nReplace the placeholder domain with your own\nAdjust the Google Sheet column mapping as needed\n",
+  "nodes": [
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code"
+  ],
+  "tags": []
+}

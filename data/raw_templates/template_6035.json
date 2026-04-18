@@ -1,0 +1,12 @@
+{
+  "id": 6035,
+  "name": "🤖 Create Your First AI Agent with Weather & Web Scraping (Starter Kit)",
+  "description": "This workflow contains community nodes that are only compatible with the self-hosted version of n8n.\n\nHow it works\n\nThis template is your personal launchpad into the world of AI-powered automation. It provides a fully functional, interactive AI chatbot that you can set up in minutes, designed specifically for those new to AI Agents.\n\nWhat is an AI Agent?\nThink of it as a smart assistant that doesn't just talk—it acts. You give it a set of \"tools\" (like other n8n tool nodes), and it intelligently decides which tool to use to answer your questions or complete your tasks.\n\nThis starter kit comes with a pre-built \"toolbox\" of superpowers, allowing your agent to:\nGet the Weather:** Ask for the forecast anywhere in the world.\nGet the News:** Fetch the latest headlines from n8n, CNN, and others.\n\nThe workflow is designed to be a hands-on learning experience, with detailed sticky notes explaining every component, from the chat interface to the agent's \"brain\" and \"memory.\"\n\nSet up steps\n\nSetup time: ~2-3 minutes\n\nThis workflow is designed to be incredibly easy to start. You only need one free API key to get it working.\n\nAdd Your AI Key:\n    The workflow uses Google's Gemini model by default. You will need a free Gemini API key.\n    Find the Gemini node on the canvas. The sticky note right below it (How to Get Google Gemini Credentials) provides a link and simple instructions to get your key.\n    In the Gemini node, click the Credential dropdown and select + Create New Credential to add your key.\n\nActivate the Workflow:\n    At the top-right of the screen, click the \"Inactive\" toggle switch. It will turn green and say \"Active\". Your agent is now live!\n\nStart Chatting:\n    Open the Example Chat Window node (it has a 💬 icon).\n    In its parameter panel, you will see a Chat URL. Click the link to copy it.\n    Paste the URL into a new browser tab and start asking your agent questions!\n\nOptional: The template also includes disabled OpenAI chat model node and tools for Google Calendar, and Gmail. You can enable and configure these later to change the underlying AI model or give your agent even more superpowers!",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+    "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+  ],
+  "tags": []
+}

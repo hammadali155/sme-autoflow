@@ -1,0 +1,7 @@
+{
+  "id": 1747,
+  "name": "Joining different datasets",
+  "description": "Task:\nMerge two datasets into one based on matching rules\n\nWhy:\nA powerful capability of n8n is to easily branch out the workflow in order to process different datasets. Even more powerful is the ability to join them back together with SQL-like joining logic.\n\nMain use cases:\n Appending data sets\n Keep only new items\n Keep only existing items",
+  "nodes": [],
+  "tags": []
+}

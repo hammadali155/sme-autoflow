@@ -1,0 +1,9 @@
+{
+  "id": 3149,
+  "name": "Image-Based Data Extraction API using Gemini AI",
+  "description": "This n8n workflow provides a ready-to-use API endpoint for extracting structured data from images. It processes an image URL using an AI-powered OCR model and returns the extracted details in a structured JSON format.  \n\nUse Cases  \nDocument OCR** – Extract details from ID cards, invoices, receipts, etc.  \nText Extraction from Images** – Process screenshots, scanned documents, and photos.  \nAutomated Form Processing** – Digitize and capture information from paper forms.  \nBusiness Card Data Extraction** – Extract names, emails, and phone numbers from business cards.  \n\nHow It Works  \nSend a GET request with an image URL and define the required extraction parameters.  \nThe image is converted to base64 for processing.  \nThe AI model (Gemini API - Flash Lite) extracts relevant text.  \nThe response returns structured JSON data containing only the requested fields.  \n\nFeatures  \n✔️ No-Code API Setup – Easily integrate into any application.  \n✔️ Customizable Extraction – Modify the request parameters to fit your needs.  \n✔️ AI-Powered OCR – Uses advanced models for accurate text recognition.  \n✔️ Automated Processing – Ideal for document processing and digitization.  \n\nIntegration  \nWorks with any frontend/backend system that supports API calls.  \nCan be used for workflow automation in CRM, ERP, and document management solutions.  \nSupports further customization based on specific OCR requirements.  ",
+  "nodes": [
+    "n8n-nodes-base.httpRequest"
+  ],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": 13531,
+  "name": "Extract order details from LINE messages and photos to Google Sheets with OpenAI",
+  "description": "Extract order details from LINE messages and photos to Google Sheets with OpenAI\n\nAutomatically extract order information from text messages or handwritten memo photos sent via LINE, confirm with the user, and append to a Google Sheets tracking sheet.\n\nHow it works\n\nReceives text or image messages from LINE Messaging API\nRoutes messages by type — text goes directly to the AI Agent, images are first downloaded via LINE API\nThe AI Agent (GPT-4o) analyzes the input, extracts order details, and asks the user for confirmation\nOnce approved, the order is appended as a new row in Google Sheets\n\nSetup steps\n\nLINE Messaging API: Create a LINE channel and set the webhook URL to this workflow's trigger endpoint\nOpenAI Credentials: Set up your OpenAI API key in n8n Credentials\nGoogle Sheets Credentials: Set up Google Sheets OAuth2 in n8n Credentials\nConfigure Spreadsheet: Open the \"Append Row to Google Sheets\" node and set your Spreadsheet ID and sheet name\nActivate the workflow",
+  "nodes": [
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+    "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+  ],
+  "tags": []
+}
