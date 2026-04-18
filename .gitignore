@@ -26,3 +26,7 @@ chroma_db/
 .DS_Store
 Thumbs.db
 *.pyc
+
+/rag/chroma_db/
+chroma_db.zip
+deploy_hf.py

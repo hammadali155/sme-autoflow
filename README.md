@@ -1,3 +1,12 @@
+---
+title: SME AutoFlow Backend
+emoji: ⚡
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+app_port: 7860
+---
 # SME AutoFlow ⚡
 
 **AI-powered n8n workflow generator that turns plain English business requirements into deployable automation pipelines.**

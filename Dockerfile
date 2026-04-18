@@ -7,6 +7,7 @@ WORKDIR /app
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    unzip \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user for security (Hugging Face Spaces requirement)
@@ -33,5 +34,5 @@ USER appuser
 # Expose the designated port for Hugging Face Spaces
 EXPOSE 7860
 
-# Run the FastAPI app via Uvicorn on port 7860
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Extract the vector DB on startup and run the FastAPI app via Uvicorn on port 7860
+CMD unzip -o chroma_db.zip -d rag/ && uvicorn api.main:app --host 0.0.0.0 --port 7860
