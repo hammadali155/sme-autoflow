@@ -14,10 +14,14 @@ Usage:
 """
 
 import json
+import os
 from typing import Any
 
 import requests
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---------------------------------------------------------------------------
 # Page config
@@ -99,9 +103,9 @@ st.markdown("""
 # Constants
 # ---------------------------------------------------------------------------
 try:
-    API_BASE_URL = st.secrets.get("API_BASE_URL", "http://localhost:8000")
+    API_BASE_URL = st.secrets.get("API_BASE_URL") or os.environ.get("API_BASE_URL", "http://localhost:8000")
 except Exception:
-    API_BASE_URL = "http://localhost:8000"
+    API_BASE_URL = os.environ.get("API_BASE_URL", "http://localhost:8000")
 
 EXAMPLE_PROMPTS = [
     "Send a Slack notification when a new payment is received in Stripe",
