@@ -34,5 +34,5 @@ USER appuser
 # Expose the designated port for Hugging Face Spaces
 EXPOSE 7860
 
-# Extract the vector DB on startup and run the FastAPI app via Uvicorn on port 7860
-CMD unzip -o chroma_db.zip -d rag/ && uvicorn api.main:app --host 0.0.0.0 --port 7860
+# Extract the vector DB on startup (using semicolon to ignore zip warning exit codes) and run the FastAPI app
+CMD unzip -o chroma_db.zip -d rag/ ; uvicorn api.main:app --host 0.0.0.0 --port 7860
