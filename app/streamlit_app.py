@@ -249,6 +249,10 @@ def deploy_to_n8n(
     workflow_json: dict[str, Any], base_url: str, api_key: str
 ) -> dict[str, Any]:
     """Deploy the generated workflow to a live n8n instance."""
+    base_url = base_url.strip()
+    if not base_url.startswith("http://") and not base_url.startswith("https://"):
+        base_url = "http://" + base_url
+        
     url = f"{base_url.rstrip('/')}/api/v1/workflows"
     headers = {"X-N8N-API-KEY": api_key, "Content-Type": "application/json"}
 
