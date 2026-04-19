@@ -181,12 +181,20 @@ prompt = st.text_area(
 
 # Quick-fill example buttons
 st.markdown("**Try an example:**")
+
+def set_prompt(text):
+    st.session_state["main_prompt"] = text
+
 cols_ex = st.columns(3)
 for i, example in enumerate(EXAMPLE_PROMPTS):
     with cols_ex[i]:
-        if st.button(f"📝 Example {i + 1}", key=f"example_{i}", use_container_width=True):
-            st.session_state["main_prompt"] = example
-            st.rerun()
+        st.button(
+            f"📝 Example {i + 1}", 
+            key=f"example_{i}", 
+            use_container_width=True, 
+            on_click=set_prompt, 
+            args=(example,)
+        )
 
 st.markdown("---")
 
