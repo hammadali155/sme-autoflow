@@ -256,9 +256,16 @@ def deploy_to_n8n(
     url = f"{base_url.rstrip('/')}/api/v1/workflows"
     headers = {"X-N8N-API-KEY": api_key, "Content-Type": "application/json"}
 
+    # Strictly filter out hallucinated node properties that violate the n8n API schema
+    valid_node_keys = {"id", "name", "type", "typeVersion", "position", "parameters", "webhookId", "notes", "credentials", "executeOnce", "alwaysOutputData", "retryOnFail", "continueOnFail"}
+    cleaned_nodes = []
+    for node in workflow_json.get("nodes", []):
+        cleaned_node = {k: v for k, v in node.items() if k in valid_node_keys}
+        cleaned_nodes.append(cleaned_node)
+
     payload = {
         "name": workflow_json.get("name", "SME AutoFlow Generated Workflow"),
-        "nodes": workflow_json.get("nodes", []),
+        "nodes": cleaned_nodes,
         "connections": workflow_json.get("connections", {}),
         "settings": workflow_json.get("settings", {}),
     }
